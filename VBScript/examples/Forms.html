@@ -1,0 +1,31 @@
+
+<HTML><HEAD><TITLE>Client-Side Validation</TITLE></HEAD><BODY>
+<SCRIPT LANGUAGE=VBScript>
+Function Form1_OnSubmit()
+    If Form1.UserName.Value = "" then
+        Alert "Please enter your name!"
+	Form1_OnSubmit=False
+	Exit Function
+    End If
+    If Form1.BirthDay.Value = "" then
+        Alert "Please enter your birth date!"
+	Form1_OnSubmit=False
+	Exit Function
+    End If
+If Not IsDate(Form1.BirthDay.Value) Then
+        Alert "You entered an invalid birthday!"
+	Form1_OnSubmit=False
+	Exit Function
+    End If
+    Form1_OnSubmit=True
+    Alert "Thanks for the information!"
+End Function</SCRIPT>
+<H2>Enter Information in Both Fields</H2>
+<FORM NAME=Form1>
+Name:<INPUT Type=text, NAME=UserName><P>
+Birthday:<INPUT Type=text, NAME=Birthday><P>
+<INPUT Type=Submit NAME=Validate>
+</FORM><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>

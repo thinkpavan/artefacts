@@ -1,0 +1,23 @@
+
+<HTML><HEAD><TITLE>Hyperlinks In An Array</TITLE>
+<STYLE>
+LISTING {Font: 10pt Courier New}</STYLE>
+<SCRIPT LANGUAGE=VBScript>
+Dim LinkArray(3,2)
+LinkArray(1,1) = "Microsoft's Web Site"
+LinkArray(1,2) = "http://www.microsoft.com"
+LinkArray(2,1) = "Computer Science Department"
+LinkArray(2,2) = "http://www.usc.edu/dept/cs/"
+LinkArray(3,1) = "USC Site"
+LinkArray(3,2) = "http://www.usc.edu/"
+For i = 1 to 3
+Document.Write "<A HREF="
+Document.Write LinkArray(i,2)
+Document.Write ">"
+Document.Write LinkArray(i,1)
+Document.Write "</A><BR>"
+Next 
+</SCRIPT><HR></HEAD><BODY><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>

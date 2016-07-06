@@ -1,0 +1,47 @@
+
+<HTML>
+<HEAD><TITLE>Widget Pricing</TITLE>
+</SCRIPT>
+<STYLE>LISTING {Font: 10pt Courier New}</STYLE>
+<SCRIPT LANGUAGE=VBScript>
+	Sub Calc_OnClick()
+	Price=19.95
+	    Q = Document.Form1.Quantity.Value
+	    If Q >= 0 Then Discount = 0
+	    If Q >= 5 Then Discount = .10
+	    If Q >= 11 Then Discount = .15
+	    If Q >= 21 Then Discount = .20
+	    If Q >= 50 Then Discount = .25
+	    TotCost= Price * Q * (1-Discount)
+	    Savings = (Price * Q) - TotCost
+	    Msg = "Quantity: " & Q & Chr(13) 
+	    Msg = Msg & "Discount: " & Discount & Chr(13) 
+	    Msg = Msg & "Total cost: " & TotCost & Chr(13)
+	    Msg = Msg & "Your savings: " & Savings
+	    Alert Msg  End Sub
+</SCRIPT>
+</HEAD>
+
+<BODY>
+	Specify the quantity you are interested in and then click the 
+	button to find out the total cost of your widget order.<P>
+		<B>The current price for a Widget is $19.95.</B><P>
+	<FORM Name=Form1>
+		<B>Quantity:</B> <INPUT TYPE=Text NAME=Quantity Value=0 SIZE=5>
+		<INPUT TYPE=Button NAME=Calc Value=" Calc! "></FORM>
+		<TABLE BORDER=2 CELLPADDING=5 BGCOLOR=ffffff>
+			<TH>Quantity</TH><TH>Discount</TH>
+			<TR><TD>1-4</TD><TD>0%</TD></TR>
+			<TR><TD>5-10</TD><TD>10%</TD></TR>
+			<TR><TD>11-20</TD><TD>15%</TD></TR>
+			<TR><TD>21-50</TD><TD>20%</TD></TR>
+			<TR><TD>50+</TD><TD>25%</TD></TR>
+		</TABLE>
+	<div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website
+and thus does not guarantee the accuracy, integrity, or quality of such content.  
+All content on this website is provided by and is the sole responsibility of the person from 
+which such content originated, and such content does not necessarily reflect the opinions 
+of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>

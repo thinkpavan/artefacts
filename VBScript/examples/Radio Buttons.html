@@ -1,0 +1,38 @@
+
+<HTML><HEAD><TITLE>Borderless Frame Example</TITLE>
+<SCRIPT LANGUAGE="VBScript">
+Dim BookCount
+Dim Books()
+BookCount = 3
+ReDim Books(BookCount,2)
+i=1
+Books(i,1)="Apache, The Definitive Guide"
+Books(i,2)="Completely revised for the latest version of Apache."
+i=i+1
+Books(i,1)="HTML, The Definitive Guide"
+Books(i,2)="Curious about designing document, you must have it."
+i=i+1
+Books(i,1)="JavaScript, The Definitive Guide"
+Books(i,2)="A must-have reference, well-organized and detailed."</SCRIPT>
+</HEAD>
+<BODY>To find out more about these fine books, select a book title.<HR>
+<SCRIPT LANGUAGE=VBScript>
+Document.Write "<FORM Name=Form1><B><I>"
+For i = 1 to BookCount
+Document.Write "<INPUT TYPE=Radio NAME=Title ONCLICK=Title_OnClick()>"
+Document.Write Books(i,1)
+Document.Write "<BR>"
+Next
+Document.Write "</FORM></I></B>"
+Sub Title_OnClick()
+For i = 0 to BookCount-1
+If Document.Form1.Elements(i).Checked then TheBook=i+1
+Next
+Parent.Frames(0).Document.Write Books(TheBook,2)
+Parent.Frames(0).Document.Close
+End Sub</SCRIPT>
+<IFRAME src="ex13b.html" NAME=Info WIDTH=450 HEIGHT=200 SCROLLING=No FRAMEBORDER=0>
+</IFRAME><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>

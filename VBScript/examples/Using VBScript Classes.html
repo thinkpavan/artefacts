@@ -1,0 +1,71 @@
+
+<html><head><title>VBScript Class Example</title>
+<script type="text/vbscript">
+Option Explicit
+Class Person		'person has name, age and ssn
+ Private name, yearsOld, ssn
+ Public Property Let FirstName(fn)
+  name = fn
+ End Property
+ Public Property Get FirstName()
+  FirstName = name
+ End Property
+ Public Property Let Age(a)
+  yearsOld = a
+ End Property
+ Public Property Get Age ()
+  Age = yearsOld
+ End Property
+ Public Property Let SocialSecurityNumber(n)
+  If Validate(n) Then	'calls private method Validate
+   ssn = n
+  Else
+   ssn = "000-00-0000"
+   Call MsgBox("Invalid Social Security Format")
+  End If
+ End Property
+ Public Property Get SocialSecurityNumber()
+  SocialSecurityNumber = ssn
+ End Property
+ Private Function Validate (expression)
+  Dim regularExpression		'uses regular expressions
+  Set regularExpression = New RegExp	'creates an instance of a reg. exp.
+  regularExpression.Pattern = "^\d{3}-\d{2}-\d{4}$"
+  If regularExpression.Test(expression) Then
+   Validate = True
+  Else
+   Validate = False
+  End If
+ End Function
+ Public Function ToString( )     'returns output string with values
+  ToString = name & Space( 3 ) & age & Space( 3 ) & ssn
+ End Function
+End Class         'ends the definition of the Person class
+Sub cmdButton_OnClick()
+ Dim p                ' declare object reference
+ Set p = new Person   ' instantiate person object
+ With p
+  .FirstName = Document.Forms(0).txtBox1.Value
+  .Age =  CInt(Document.Forms(0).txtbox2.Value)
+  .SocialSecurityNumber = Document.Forms(0).txtBox3.Value
+  Call MsgBox(.ToString( ))
+ End With
+End Sub
+</script>
+</head>
+<body>
+<h3>Example using VBScript Class definitions and Regular Expressions</h3>
+Enter a value in each field.
+Person is defined as a class with Name, Age and Social Security Number.
+See the source code for details.
+<form action = "">Enter first name
+<input type=text name=txtBox1 size=10>
+<p>Enter age
+<input type=text name=txtBox2 size=5></p>
+<p>Enter social security number
+<input type=text name=txtBox3 size=10></p><p>
+<input type=button name=cmdButton value=Enter></p>
+</form><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</body></html>

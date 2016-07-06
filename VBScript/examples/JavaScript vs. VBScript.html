@@ -1,0 +1,36 @@
+
+<HTML><HEAD><TITLE>VBScript & JavaScript</TITLE>
+</HEAD><BODY>
+<H1>JavaScript versus VBScript</H1>
+The same routine in both JavaScript and VBScript,
+prompts for a value and then displays the square root. 
+<HR>
+<Input Name="VBS" Type="Button" Value="VBScript Example">
+<Input Name="JS" Type="Button" Value="JavaScript Example" OnClick="JS_OnClick()">
+<SCRIPT LANGUAGE="VBScript">
+Sub VBS_OnClick
+Num = InputBox("Enter a Number")
+if Num = "" then Exit Sub
+if IsNumeric(Num) then
+if Num >= 0 then MsgBox "Square root is " & sqr(Num)
+End If
+End Sub
+</SCRIPT>
+<SCRIPT LANGUAGE=JavaScript>
+function JS_OnClick() {
+var Num = prompt("Enter a Number","")
+if (Num == "") {
+return false}
+if (IsNumber(Num)) {
+if (Num >= 0) {
+alert ("Square root is " + Math.sqrt(Num))}}}
+function IsNumber(x) {
+for (var i = 0; i < x.length; i++) {
+var c=x.substring(i, i+1)
+if (c < "0" || c > "9") {
+return false
+}}return true}
+</SCRIPT><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>

@@ -1,0 +1,20 @@
+
+<HTML><HEAD></HEAD><BODY>
+<H1>Example 2</H1>
+Clicking a button executes a subroutine that randomly changes the background or foreground color of this page.
+<INPUT TYPE=Button Name=btnFG Value="Foreground">
+<INPUT TYPE=Button Name=btnBG Value="Background">
+<SCRIPT LANGUAGE=VBScript>
+Sub btnFG_OnClick
+Color = hex(rnd()* 16777215)
+Document.FGColor = Color
+btnFG.Value = Color
+End Sub
+Sub btnBG_OnClick
+Color = hex(rnd()* 16777215)
+Document.BGColor = Color
+btnBG.Value = Color
+End Sub </SCRIPT><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>
