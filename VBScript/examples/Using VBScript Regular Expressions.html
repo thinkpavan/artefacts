@@ -1,0 +1,50 @@
+
+<html><head><title>Regular Expression Example</title>
+<script type=text/vbscript>
+Function RegExpTest_OnClick( ) 
+Dim regEx, retVal, patrn, strng     ' Create variables. 
+Set regEx = New RegExp     ' Create regular expression. 
+patrn = "is."
+strng =  "IS1 is2 IS3 is4" 
+regEx.Pattern = patrn                    ' Set pattern. 
+regEx.IgnoreCase = False        ' Set case sensitivity. 
+retVal = regEx.Test(strng)   ' Execute the search test.
+If retVal Then 
+  RegExpTest = "One or more matches were found." 
+Else 
+  RegExpTest = "No match was found." 
+End If 
+MsgBox RegExpTest
+End Function 
+
+</script>
+
+</head><body>
+<h3>Regular Expression Example - Test Method</h3>
+
+<pre>
+Function RegExpTest(patrn, strng) 
+Dim regEx, retVal                    ' Create variable. 
+Set regEx = New RegExp     ' Create regular expression. 
+regEx.Pattern = patrn                    ' Set pattern. 
+regEx.IgnoreCase = False        ' Set case sensitivity. 
+retVal = regEx.Test(strng)   ' Execute the search test.
+If retVal Then 
+  RegExpTest = "One or more matches were found." 
+Else 
+  RegExpTest = "No match was found." 
+End If 
+End Function 
+MsgBox(RegExpTest("is.", "IS1 is2 IS3 is4")) 
+</pre>
+<form>
+<input type=button name=RegExpTest value="Start Function">
+</form>
+
+
+
+<div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</body>
+</html>

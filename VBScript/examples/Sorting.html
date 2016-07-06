@@ -1,0 +1,45 @@
+
+<HTML><HEAD><TITLE>Sorting an Array</TITLE>
+<SCRIPT LANGUAGE="VBScript">
+Dim Data(100)
+Sub Generate_OnClick()
+Randomize()
+'Generate numbers
+Numbers = ""
+For i = 1 to 100
+Data(i)=Int(Rnd()*100 + 1)
+Numbers=Numbers & Data(i) & chr(13) & chr(10)
+Next
+Form1.Input.Value=Numbers
+End Sub
+Sub Sort_OnClick()
+'Sort the array
+For i = 1 To Ubound(Data) -1 
+For j = i + 1 to Ubound(Data)
+If Data(i) > Data(j) Then
+Temp = Data(j)
+Data(j) = Data(i)
+Data(i) = Temp
+End if
+Next
+Next
+Numbers =""
+For i = 1 to UBound(Data)
+Numbers = Numbers & Data(i) & Chr(13) & Chr(10)
+Next 
+Form1.Output.Value = Numbers
+End Sub
+</SCRIPT></HEAD>
+<BODY BGCOLOR=lightblue>
+<H1>Sorting an Array</H2><P>
+Click the Generate button to generate 100 random numbers in the text box on the left.
+Then click the Sort button to sort these numbers and put them in the text box on the right.
+<P><INPUT TYPE=Button Name=Generate VALUE="Generate">
+<INPUT TYPE=Button Name=Sort VALUE="Sort">
+<FORM NAME=Form1><P>
+<TEXTAREA NAME=Input ROWS=12 COLS=15></TEXTAREA>
+<TEXTAREA NAME=Output ROWS=12 COLS=15></TEXTAREA>
+</FORM>
+<div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>

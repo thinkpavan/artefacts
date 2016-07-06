@@ -1,0 +1,22 @@
+
+<HTML><HEAD><TITLE>Sample Document</TITLE></HEAD>
+<BODY TEXT=000000 BGCOLOR=FFFFFF>
+<H1>Welcome</H1> 
+Click the button below to reverse the foreground and background colors.<P><HR>
+<INPUT TYPE=Button NAME=MyButton Value="Click Me">
+<SCRIPT LANGUAGE="VBScript">
+Sub MyButton_onClick()
+If Document.Bgcolor="#ffffff" then
+    Document.Fgcolor="#ffffff"
+        Document.Bgcolor="#000000"
+	Exit Sub
+    End If
+    If Document.Bgcolor="#000000" then
+        Document.Fgcolor="#000000"
+        Document.Bgcolor="#ffffff"
+    End If    
+End Sub
+</SCRIPT><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>

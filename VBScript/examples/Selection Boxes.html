@@ -1,0 +1,30 @@
+
+<HTML><HEAD><TITLE>Select Control</TITLE>
+<SCRIPT LANGUAGE=VBScript>
+Sub Button1_OnClick()
+ItemNum = Document.Form1.Select1.selectedIndex
+If ItemNum > 8 then
+MsgBox "No item is selected"
+Exit Sub
+End If
+ItemText = Document.Form1.Select1.Options(ItemNum).Text 
+Msg = "You selected Item #" & ItemNum +1 & ": " & ItemText
+Msgbox Msg
+End Sub</SCRIPT></HEAD>
+<BODY LANGUAGE=VBScript BGCOLOR=aaccaa>
+<H1>Select Control Example</H1>
+This example demonstrates how to determine 
+which item in a select box is selected.
+<HR>
+<FORM NAME="Form1">
+<SELECT NAME=Select1 SIZE=6>
+<Option >Apples	 <Option>Peaches
+<Option>Watermelon  <Option>Pears
+<Option>Plums<Option>Oranges
+<Option>Tangerines
+<Option>Strawberries&nbsp;&nbsp;&nbsp;&nbsp;
+</SELECT><P>
+<INPUT TYPE=Button Name=Button1 Value="Click Me"></FORM><div style="display: block; font-family: Verdana, Geneva, Arial; font-size: 10px">
+The University of Southern California does not screen or control the content on this website and thus does not guarantee the accuracy, integrity, or quality of such content.  All content on this website is provided by and is the sole responsibility of the person from which such content originated, and such content does not necessarily reflect the opinions of the University administration or the Board of Trustees
+</div>
+</BODY></HTML>
