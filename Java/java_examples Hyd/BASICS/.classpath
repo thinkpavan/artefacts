@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="POLY1/|POLY2/" kind="src" path="CLASSES1"/>
+	<classpathentry kind="src" path="CLASSES1/POLY1"/>
+	<classpathentry kind="src" path="CLASSES1/POLY2"/>
+	<classpathentry kind="src" path="classes10"/>
+	<classpathentry kind="src" path="classes11"/>
+	<classpathentry kind="src" path="classes12"/>
+	<classpathentry kind="src" path="CLASSES2"/>
+	<classpathentry kind="src" path="CLASSES3"/>
+	<classpathentry kind="src" path="CLASSES4"/>
+	<classpathentry excluding="CARS/" kind="src" path="CLASSES5"/>
+	<classpathentry kind="src" path="CLASSES5/CARS"/>
+	<classpathentry kind="src" path="CLASSES6Interfaces"/>
+	<classpathentry kind="src" path="CLASSES7   abstract"/>
+	<classpathentry kind="src" path="CLASSES8"/>
+	<classpathentry excluding="ISEQUAL/|CLONING/" kind="src" path="CLASSES9"/>
+	<classpathentry kind="src" path="CLASSES9/CLONING"/>
+	<classpathentry kind="src" path="CLASSES9/ISEQUAL"/>
+	<classpathentry kind="src" path="classes91"/>
+	<classpathentry excluding="FRAGILE/" kind="src" path="classes92"/>
+	<classpathentry kind="src" path="classes92/FRAGILE"/>
+	<classpathentry excluding="CLONING/" kind="src" path="classes93"/>
+	<classpathentry kind="src" path="classes93/CLONING"/>
+	<classpathentry kind="src" path="coreclasses1"/>
+	<classpathentry excluding="FILES/|FILES2/|FILTER/|Readers/" kind="src" path="coreclasses2"/>
+	<classpathentry kind="src" path="coreclasses2/FILES"/>
+	<classpathentry kind="src" path="coreclasses2/FILES2"/>
+	<classpathentry kind="src" path="coreclasses2/FILTER"/>
+	<classpathentry kind="src" path="coreclasses2/Readers"/>
+	<classpathentry kind="src" path="FAX"/>
+	<classpathentry kind="src" path="FLOATOP"/>
+	<classpathentry kind="src" path="FOR"/>
+	<classpathentry kind="src" path="IFELSE"/>
+	<classpathentry kind="src" path="intoperations"/>
+	<classpathentry excluding="TUTAPP/|TUT4/|TUT1/|TUTSWG/|TUT5/|TUTAWT/|tutthread/|TUT3/|TUT2/" kind="src" path="JAVA"/>
+	<classpathentry kind="src" path="JAVA/TUT1"/>
+	<classpathentry kind="src" path="JAVA/TUT2"/>
+	<classpathentry kind="src" path="JAVA/TUT3"/>
+	<classpathentry kind="src" path="JAVA/TUT4"/>
+	<classpathentry kind="src" path="JAVA/TUT5"/>
+	<classpathentry kind="src" path="JAVA/TUTAPP"/>
+	<classpathentry kind="src" path="JAVA/TUTAWT"/>
+	<classpathentry kind="src" path="JAVA/TUTSWG"/>
+	<classpathentry kind="src" path="JAVA/tutthread"/>
+	<classpathentry kind="src" path="LITERALS"/>
+	<classpathentry kind="src" path="mmdatatypes"/>
+	<classpathentry kind="src" path="operators"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="coreclasses2/FILTER"/>
+</classpath>
