@@ -1,0 +1,570 @@
+
+
+<html>
+<head>
+<meta name="keywords" content=".NET Consulting, .NET Training, .NET Framework Training, .NET FAQ, ASP.NET FAQ, VB.NET FAQ, .NET Compact Framework, Framework Class Library, Common Language Runtime, ASP.NET Training, VB.NET Training, Windows CE, .NET Webservices, ASP.NET WebForms">
+<meta name="description" content="Wintellect is a Windows software consulting and education firm whose mission is to help companies ship great software faster.">
+<title>Wintellect - Resources - FAQs - ASP.NET FAQs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i>a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i>d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; 
+  document.MM_sr=new Array; 
+  for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){
+   	document.MM_sr[j++]=x; 
+		if(!x.oSrc) 
+		x.oSrc=x.src; 
+		x.src=a[i+2];
+	}
+}
+
+function imageToggle(imageID){
+	var objStr,obj;
+	var ImageSCR = document.images[imageID];
+	var ImageArray = new Array("http://www.wintellect.com/images/Close_Arrow.gif",
+							   "http://www.wintellect.com/images/Open_Arrow.gif")
+
+	if (ImageSCR.src==ImageArray[0]) {
+		document.images[imageID].src = ImageArray[1];
+		setCookie(imageID + "Open", "Open", "", "", "wintellect.com", "");
+		return true;
+	} else if (ImageSCR.src==ImageArray[1]) {
+		document.images[imageID].src = ImageArray[0];
+		setCookie(imageID + "Open", "Close", "", "", "wintellect.com", "");
+		return true;
+	}
+}
+
+function imageswapToggle(imageID,action){
+	var objStr,obj;
+	var ImageSCR = document.images[imageID];
+	var ImageArray = new Array("http://www.wintellect.com/images/sideboxes/sideboxes_02.gif",
+							   "http://www.wintellect.com/images/sideboxes/sideboxes_b.gif",
+							   "http://www.wintellect.com/images/sideboxes/sideboxes_cl_02.gif",
+							   "http://www.wintellect.com/images/sideboxes/sideboxes_cl_b.gif");
+							   
+	if (action=="swap") {
+		if (ImageSCR.src==ImageArray[0]) {
+			document.images[imageID].src = ImageArray[1];
+			return true;
+		} else if (ImageSCR.src==ImageArray[1]) {
+			document.images[imageID].src = ImageArray[0];
+			return true;
+		} else if (ImageSCR.src==ImageArray[2]) {
+			document.images[imageID].src = ImageArray[3];
+			return true;
+		} else if (ImageSCR.src==ImageArray[3]) {
+			document.images[imageID].src = ImageArray[2];
+			return true;
+		}
+	} else if(action=="toggle") {
+		if (ImageSCR.src==ImageArray[1]) {
+			document.images[imageID].src = ImageArray[3];
+			return true;
+		} else if (ImageSCR.src==ImageArray[3]) {
+			document.images[imageID].src = ImageArray[1];
+			return true;
+		}
+	}
+}
+
+function Toggle(id){
+	if (document.all){
+		if(document.all[id].style.display == 'none'){
+			document.all[id].style.display = '';
+		} else {
+			document.all[id].style.display = 'none';
+		}
+	}
+}
+
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+
+function setCookie(name, value, expires, path, domain, secure) {
+  var curCookie = name + "=" + escape(value) +
+      ((expires) ? "; expires=" + expires.toGMTString() : "") +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      ((secure) ? "; secure" : "");
+  document.cookie = curCookie;
+}
+
+function deleteCookie(name) {
+  if (getCookie(name)) {
+    document.cookie = name + "=" + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+}
+
+function getCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + "=";
+  var begin = dc.indexOf("; " + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(";", begin);
+  if (end == -1)
+    end = dc.length;
+  return unescape(dc.substring(begin + prefix.length, end));
+}
+
+//-->
+</script>
+<link rel="stylesheet" href="/misc/ie_styles.css" type="text/css">
+</head>
+<body bgcolor=#FFFFFF background="/images/Background.gif" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('/images/Close_Arrow.gif','/images/Open_Arrow.gif')" name="main">
+<map name="Map">
+  <area shape="rect" coords="5,-1,54,14" href="/seminars/training.aspx" title="training" alt="training">
+  <area shape="rect" coords="60,2,120,14" href="/consulting.aspx" title="consulting" alt="consulting">
+  <area shape="rect" coords="129,1,193,14" href="/debug.aspx" title="debugging" alt="debugging">
+  <area shape="rect" coords="203,1,264,13" href="/contactus.aspx" title="contact us" alt="contact us">
+</map>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+  <tr> 
+    <td height=1> <img src="/images/spacer.gif" width=164 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=16 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=11 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=129 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=242 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=4 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=23 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=171 height=1 alt=" "></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td colspan=8> <img src="/images/spacer.gif" width=760 height=10 alt=" "></td>
+    <td> <img src="/images/spacer.gif" width=1 height=10 alt=" "></td>
+  </tr>
+  <tr> 
+    
+  <td height="59" colspan=3 rowspan=2 width=191 valign="top"><a href="/"><img src="/images/wintellect_02.gif" width=191 height=59 border="0" alt="Wintellect - Know how."></a></td>
+    <td height="59" rowspan=2> <img src="/images/spacer.gif" width=129 height=59 alt=" "></td>
+    <td colspan=3 align="right"> <img src="/images/wintellect_04.gif" width=272 height=16 usemap="#Map" border="0" alt=" "></td>
+    <td width="171" rowspan=3 bgcolor="#FF9900"> <img src="/images/wintellect_05.gif" width=171 height=81 alt=" "></td>
+    <td width=1> <img src="/images/spacer.gif" width=1 height=16 alt=" "></td>
+  </tr>
+  <tr> 
+    <td colspan=3> <img src="/images/spacer.gif" width=269 height=43 alt=" "></td>
+    <td width=1> <img src="/images/spacer.gif" width=1 height=43 alt=" "></td>
+  </tr>
+  <tr> 
+    <td width="164" height="22" bgcolor="#FF9900">&nbsp; </td>
+    <td colspan=2 width=27> <img src="/images/wintellect_08.gif" width=27 height=22 alt=" "></td>
+    <td height="22" colspan=2> <img src="/images/spacer.gif" width=371 height=22 alt=" "></td>
+    <td colspan=2 align="right"> <img src="/images/wintellect_10.gif" width=27 height=22 alt=" "></td>
+    <td bgcolor="#FF9900" width=1> <img src="/images/spacer.gif" width=1 height=22 alt=" "></td>
+  </tr>
+  <tr> 
+    <td width="164" height="5"> <img src="/images/spacer.gif" width=164 height=5></td>
+    <td width="16" rowspan=4> <img src="/images/spacer.gif" width=16 height=591></td>
+    <td colspan=3 rowspan=2 background="/images/extention.gif" height=38 valign="top"><img src="/images/titles/ASPNET_FAQs_title.gif" alt="ASP.NET FAQs"></td>
+	<td rowspan="2" background="/images/extention.gif" height=38 valign="top">
+	<span><a href="/portal/login.aspx?refurl=%2fresources%2ffaqs%2fdefault.aspx%3ffaq_id%3d1%26page%3d3"><img src="/images/login.gif" alt="Log in" border="0" /></a></span>
+	
+	</td>
+    <td width="23" rowspan=4> <img src="/images/spacer.gif" width=23 height=591></td>
+    <td width="171" height="5"> <img src="/images/spacer.gif" width=171 height=5></td>
+    <td width=1 height=5> <img src="/images/spacer.gif" width=1 height=5></td>
+  </tr>
+  <tr> 
+    <td width="164" rowspan=4 valign="top" bgcolor="#0099CC">
+		<table class="flyoutMenu" cellpadding="2" border="0" style="width:155px;"><tr><td><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="TrainingArrow.click();"><a href="javascript:;" ID="TrainingArrow" onClick="Toggle('Training1');imageToggle('TrainingArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="TrainingArrow" alt=">"></a>&nbsp;<a href="/seminars/" ID="TrainingArrow" onClick="Toggle('Training1');imageToggle('TrainingArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Training</a></td></tr></table><div id="Training1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="TrainingMicrosoft__NET_Courses.click();" ><a href="/seminars/training.aspx?courses=1" ID="TrainingMicrosoft__NET_Courses">Microsoft .NET Courses</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingCompetitive_Edge_Series.click();" ><a href="/seminars/training.aspx?courses=8" ID="TrainingCompetitive_Edge_Series">Competitive Edge Series</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingSQL_Courses.click();" ><a href="/seminars/training.aspx?courses=7" ID="TrainingSQL_Courses">SQL Courses</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingWin32_Programming_Courses.click();" ><a href="/seminars/training.aspx?courses=5" ID="TrainingWin32_Programming_Courses">Win32 Programming Courses</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingXML_Courses.click();" ><a href="/seminars/training.aspx?courses=6" ID="TrainingXML_Courses">XML Courses</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink" rowspan="2" " onclick="ConsultingHeading.click();"><img src="/images/spacer.gif" border="0" width="6" height="6" alt=" ">&nbsp;<a href="/consulting" ID="ConsultingHeading">Consulting</a></td></tr></table><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink" rowspan="2" " onclick="DebuggingHeading.click();"><img src="/images/spacer.gif" border="0" width="6" height="6" alt=" ">&nbsp;<a href="/debug.aspx" ID="DebuggingHeading">Debugging</a></td></tr></table><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink" rowspan="2" " onclick="SupportHeading.click();"><img src="/images/spacer.gif" border="0" width="6" height="6" alt=" ">&nbsp;<a href="/consulting/services/support" ID="SupportHeading">Support</a></td></tr></table><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="Upcoming_EventsArrow.click();"><a href="javascript:;" ID="Upcoming_EventsArrow" onClick="Toggle('Upcoming_Events1');imageToggle('Upcoming_EventsArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="Upcoming_EventsArrow" alt=">"></a>&nbsp;<a href="/events/" ID="Upcoming_EventsArrow" onClick="Toggle('Upcoming_Events1');imageToggle('Upcoming_EventsArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Upcoming Events</a></td></tr></table><div id="Upcoming_Events1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="Upcoming_EventsCourse_Schedule.click();" ><a href="/events/seminars.aspx" ID="Upcoming_EventsCourse_Schedule">Course Schedule</a><br></td></tr><tr><td class="flyoutSubLink" onclick="Upcoming_EventsPublic_Speaking_Schedule.click();" ><a href="/events/speaking.aspx" ID="Upcoming_EventsPublic_Speaking_Schedule">Public Speaking Schedule</a><br></td></tr><tr><td class="flyoutSubLink" onclick="Upcoming_EventsCourse_Registration.click();" ><a href="/events/registration.aspx" ID="Upcoming_EventsCourse_Registration">Course Registration</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="Special_OffersArrow.click();"><a href="javascript:;" ID="Special_OffersArrow" onClick="Toggle('Special_Offers1');imageToggle('Special_OffersArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="Special_OffersArrow" alt=">"></a>&nbsp;<a href="/special/" ID="Special_OffersArrow" onClick="Toggle('Special_Offers1');imageToggle('Special_OffersArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Special Offers</a></td></tr></table><div id="Special_Offers1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="Special_OffersFree_Programming_Microsoft__NET_.click();" ><a href="/special/win.aspx" ID="Special_OffersFree_Programming_Microsoft__NET_">Free Programming Microsoft .NET </a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="_NET_BooksArrow.click();"><a href="javascript:;" ID="_NET_BooksArrow" onClick="Toggle('_NET_Books1');imageToggle('_NET_BooksArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="_NET_BooksArrow" alt=">"></a>&nbsp;<a href="/books/" ID="_NET_BooksArrow" onClick="Toggle('_NET_Books1');imageToggle('_NET_BooksArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">.NET Books</a></td></tr></table><div id="_NET_Books1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_Microsoft__NET_Framework_Programming__In_C__.click();" ><a href="/about/instructors/richter/app_net.aspx" ID="_NET_BooksApplied_Microsoft__NET_Framework_Programming__In_C__">Applied Microsoft .NET Framework Programming (In C#)</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_Microsoft__NET_Framework_Programming_In_Microsoft_Visual_Basic__NET.click();" ><a href="/about/instructors/richter/app_net_VB.aspx" ID="_NET_BooksApplied_Microsoft__NET_Framework_Programming_In_Microsoft_Visual_Basic__NET">Applied Microsoft .NET Framework Programming In Microsoft Visual Basic .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_SOAP__Implementing__NET_XML_Web_Services.click();" ><a href="http://www.samspublishing.com/catalog/product.asp?product_id={2DC6FAAA-E161-4534-A13E-2DCE4883F3BD}" ID="_NET_BooksApplied_SOAP__Implementing__NET_XML_Web_Services">Applied SOAP: Implementing .NET XML Web Services</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_XML_Programming_for_Microsoft__NET.click();" ><a href="/about/instructors/esposito/app_xml.aspx" ID="_NET_BooksApplied_XML_Programming_for_Microsoft__NET">Applied XML Programming for Microsoft .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksBuilding_Web_Solutions_with_ASP_NET_and_ADO_NET_.click();" ><a href="/about/instructors/esposito/web_solutions.aspx" ID="_NET_BooksBuilding_Web_Solutions_with_ASP_NET_and_ADO_NET_">Building Web Solutions with ASP.NET and ADO.NET </a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksProgramming_Microsoft__NET.click();" ><a href="/about/instructors/prosise/netbook.aspx" ID="_NET_BooksProgramming_Microsoft__NET">Programming Microsoft .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksProgramming_Visual_Basic__NET.click();" ><a href="http://www.vb2themax.com/HtmlDoc.asp?Table=Books&ID=101000" ID="_NET_BooksProgramming_Visual_Basic__NET">Programming Visual Basic .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksProgramming_Microsoft_ASP_NET.click();" ><a href="http://www.wintellect.com/resources/amazoninfo.aspx?asin=0735619034" ID="_NET_BooksProgramming_Microsoft_ASP_NET">Programming Microsoft ASP.NET</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="ResourcesArrow.click();"><a href="javascript:;" ID="ResourcesArrow" onClick="Toggle('Resources1');imageToggle('ResourcesArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Open_Arrow.gif" border="0" width="6" height="6"  Name="ResourcesArrow" alt=">"></a>&nbsp;<a href="/resources/" ID="ResourcesArrow" onClick="Toggle('Resources1');imageToggle('ResourcesArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Resources</a></td></tr></table><div id="Resources1" style="display: "><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="ResourcesArticles_By_Wintellectuals.click();" ><a href="/resources/articles.aspx" ID="ResourcesArticles_By_Wintellectuals">Articles By Wintellectuals</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesBooks_By_Wintellectuals.click();" ><a href="/resources/authors.aspx" ID="ResourcesBooks_By_Wintellectuals">Books By Wintellectuals</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesRecommended_Reading.click();" ><a href="/resources/recommendedreading.aspx" ID="ResourcesRecommended_Reading">Recommended Reading</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesFAQs.click();" ><a href="/resources/faqs/default.aspx" ID="ResourcesFAQs">FAQs</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesOnline_Interviews.click();" ><a href="/resources/interviews.aspx" ID="ResourcesOnline_Interviews">Online Interviews</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesNewsletter_Archives.click();" ><a href="/resources/archived_newsletters.aspx" ID="ResourcesNewsletter_Archives">Newsletter Archives</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesPartner_Websites.click();" ><a href="/resources/partners.aspx" ID="ResourcesPartner_Websites">Partner Websites</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesTip_Archive.click();" ><a href="/resources/tip/tip_archive.aspx" ID="ResourcesTip_Archive">Tip Archive</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesTutorials.click();" ><a href="/resources/tutorials/menu.aspx" ID="ResourcesTutorials">Tutorials</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesWintellect_Challenge.click();" ><a href="/resources/challenge.aspx" ID="ResourcesWintellect_Challenge">Wintellect Challenge</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesWintellect_s_DevChat_Forums.click();" ><a href="/forum" ID="ResourcesWintellect_s_DevChat_Forums">Wintellect's DevChat Forums</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="About_WintellectArrow.click();"><a href="javascript:;" ID="About_WintellectArrow" onClick="Toggle('About_Wintellect1');imageToggle('About_WintellectArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="About_WintellectArrow" alt=">"></a>&nbsp;<a href="/about/" ID="About_WintellectArrow" onClick="Toggle('About_Wintellect1');imageToggle('About_WintellectArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">About Wintellect</a></td></tr></table><div id="About_Wintellect1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="About_WintellectMission_Statement.click();" ><a href="/about/default.aspx" ID="About_WintellectMission_Statement">Mission Statement</a><br></td></tr><tr><td class="flyoutSubLink" onclick="About_WintellectPrivacy_Policy.click();" ><a href="/about/privacy.aspx" ID="About_WintellectPrivacy_Policy">Privacy Policy</a><br></td></tr><tr><td class="flyoutSubLink" onclick="About_WintellectInstructors.click();" ><a href="/about/instructors.aspx" ID="About_WintellectInstructors">Instructors</a><br></td></tr><tr><td class="flyoutSubLink" onclick="About_WintellectPress_Releases.click();" ><a href="/about/press/" ID="About_WintellectPress_Releases">Press Releases</a><br></td></tr></table></div></td></tr></table><br>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF9900">
+      <table width="100%" border="0" cellspacing="5" cellpadding="0" class="sideboxHead">
+        <tr>
+          <td class="sideboxHead">newsletter</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#0099CC">
+        <table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+        <td class="sideboxBody">
+
+			<table width="100%" border="0" cellspacing="5" cellpadding="0">
+			  <tr>
+				<td class="sideboxBody" align="center">
+				  <form action="/newsletter/add_delete.asp" method="POST">
+					<label for="email">Your Email Address:</label><br>
+					  <input type="TEXT" size="15" id="email" name="email" class="inputTextBox">
+					<table width="137" border="0" cellspacing="0" cellpadding="0" align="center">
+					  <tr> 
+						<td class="sideboxBody"> 
+						  <input type="RADIO" id="subscribe" name="subscribe" value="subscribe" checked align="TOP">
+						  <label for="subscribe">Subscribe</label><br>
+						  <input type="RADIO" id="unsubscribe" name="subscribe" value="unsubscribe" align="TOP">
+						  <label for="unsubscribe">Unsubscribe</label></td>
+					  </tr>
+					</table>
+						<input type="HIDDEN" name="ListNumber" value="1">
+						<input type="SUBMIT" value="  Submit  " name="SUBMIT" class="inputTextBox">
+						<p>Sponsored by:<br><a href="http://www.aspnetpro.com/af.asp?id=234"><img src="/images/aspcampaign_100x30_flash.gif" width="100" height="30" border="0" alt="Sponsored by: asp.netPRO"></a></p>
+					  <!-- <p>Sponsored by:<br><a href="http://msdn.microsoft.com/msdnmag"><img src="/images/2mmlogo2.gif" width="100" height="30" border="0" alt="Sponsored by: MSDN"></a></p> -->
+				  </form>
+				</td>
+			  </tr>
+			</table>
+		          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+		<table width="164" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="164" height="5" alt=" "></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FF9900">
+          <table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+            <td class="sideboxHead">special promos</td>
+          </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="164" height="5" alt=" "></td>
+      </tr>
+      <tr>
+        <td bgcolor="#0099CC">
+          <table width="100%" border="0" cellspacing="5" cellpadding="0">
+            <tr>
+              <td class="sideboxBody" align="center"><br>
+<a href="/forum/"><img src="/images/promo/wintellect-forums.gif" alt="Have Questions?  Check out the Wintellect Forums." border="" /></a><br><br><a href="/special/win.aspx"><img src="/images/promo/Pro_MS_NET.gif" alt="Win a signed copy of Programming Microsoft .NET!" border="" /></a><br><br>              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+   </td>
+    <td width="171" headers="71" rowspan=2 valign="top" bgcolor="#0099CC"><img src="/images/wintellect_17.gif" width=171 height=71 alt=" "></td>
+    <td width=1 bgcolor="#0099CC"> <img src="/images/spacer.gif" width=1 height=33 alt=" "></td>
+  </tr>
+  <tr> 
+    <td colspan=4 rowspan=2 valign="top"><br>
+	<!-- Start Body -->
+
+<form name="_ctl0" method="post" action="default.aspx?faq_id=1&amp;page=3" id="_ctl0">
+<input type="hidden" name="__VIEWSTATE" value="dDwxNjkzMjU2NzIyO3Q8O2w8aTwyPjs+O2w8dDw7bDxpPDE+O2k8Mz47PjtsPHQ8cDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+Pjs+Ozs+O3Q8QDA8cDxwPGw8VmlzaWJsZTtQYWdlQ291bnQ7XyFJdGVtQ291bnQ7XyFEYXRhU291cmNlSXRlbUNvdW50O0RhdGFLZXlzOz47bDxvPHQ+O2k8MT47aTwxMD47aTwxMD47bDw+Oz4+Oz47Ozs7Ozs7Ozs7PjtsPGk8MD47PjtsPHQ8O2w8aTwxPjtpPDI+O2k8Mz47aTw0PjtpPDU+O2k8Nj47aTw3PjtpPDg+O2k8OT47aTwxMD47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PEA8SG93IGRvZXMgc2V0dGluZyBhIFdlYiBjb250cm9sJ3MgQXV0b1Bvc3RCYWNrIHByb3BlcnR5IHRvIHRydWUgY2F1c2UgYSBwYWdlIHRvIHBvc3QgYmFjayB0byB0aGUgc2VydmVyPztcPHAgY2xhc3M9Im1haW4iXD5XaXRoIGEgc3ByaW5rbGUgb2YgSmF2YVNjcmlwdCBhbmQgYSBkYXNoIG9mIER5bmFtaWMgSFRNTCAoREhUTUwpLiBFbnRlciB0aGlzIGludG8gYSBXZWIgZm9ybTpcPC9wXD5cPFRBQkxFIFdJRFRIPTc1JSBCT1JERVI9MCBDRUxMUEFERElORz0wIENFTExTUEFDSU5HPTAgYWxpZ249ImNlbnRlciJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMS5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMy5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiM5Q0Q4RUIiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPlw8VEQgV0lEVEg9MiBiZ2NvbG9yPSIjRkY5OTAwIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA1LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIGJnY29sb3I9IiM5Q0Q4RUIiIFdJRFRIPTExXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTExIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgdmFsaWduPSJ0b3AiIGJnY29sb3I9IiM5Q0Q4RUIiIGNsYXNzPSJjb2RlIlw+XDxmb250IGNvbG9yPSJibGFjayJcPiAmbHRcO2FzcDpUZXh0Qm94IElEPSJVc2VyTmFtZSIgQXV0b1Bvc3RCYWNrPSJ0cnVlIiBSdW5BdD0ic2VydmVyIiAvJmd0XDtcPC9mb250XD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDkuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEwLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEyLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMy5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+Clw8L1RSXD4KXDwvVEFCTEVcPlw8cCBjbGFzcz0ibWFpbiJcPkFuZCB0aGUgY29udHJvbCByZXR1cm5zIHRoaXM6XDwvcFw+XDxUQUJMRSBXSURUSD03NSUgQk9SREVSPTAgQ0VMTFBBRERJTkc9MCBDRUxMU1BBQ0lORz0wIGFsaWduPSJjZW50ZXIiXD4KXDxUUlw+Clw8VEQgQ09MU1BBTj0yIFJPV1NQQU49MiBXSURUSD0xMyBIRUlHSFQ9MTNcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDEuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD5cPFREIGJnY29sb3I9IiNGRjk5MDAiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTJcPlw8L1REXD5cPFREIENPTFNQQU49MiBST1dTUEFOPTJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDMuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9MTFcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wNS5naWYiIFdJRFRIPTIgSEVJR0hUPTEwXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIHZhbGlnbj0idG9wIiBiZ2NvbG9yPSIjOUNEOEVCIiBjbGFzcz0iY29kZSJcPlw8Zm9udCBjb2xvcj0iYmxhY2siXD4gJmx0XDtpbnB1dCBuYW1lPSJVc2VyTmFtZSIgdHlwZT0idGV4dCIgaWQ9IlVzZXJOYW1lIiBvbmNoYW5nZT0iX19kb1Bvc3RCYWNrKCdVc2VyTmFtZScsJycpIiBsYW5ndWFnZT0iamF2YXNjcmlwdCIgLyZndFw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOy5cPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Llw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsuXDxiclw+Jmx0XDtzY3JpcHQgbGFuZ3VhZ2U9ImphdmFzY3JpcHQiJmd0XDtcPGJyXD4mbHRcOyEtLVw8YnJcPiZuYnNwXDsmbmJzcFw7ZnVuY3Rpb24gX19kb1Bvc3RCYWNrKGV2ZW50VGFyZ2V0LCBldmVudEFyZ3VtZW50KSB7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7dmFyIHRoZWZvcm0gPSBkb2N1bWVudC5jdHJsMFw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsuXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsuXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsuXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7dGhlZm9ybS5zdWJtaXQoKVw7XDxiclw+Jm5ic3BcOyZuYnNwXDt9XDxiclw+Ly8gLS0mZ3RcO1w8YnJcPiZsdFw7L3NjcmlwdCZndFw7XDwvZm9udFw+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiIgV0lEVEg9MTFcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTEgSEVJR0hUPTEwXD5cPC9URFw+XDxURCBXSURUSD0yIGJnY29sb3I9IiNGRjk5MDAiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA5LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMC5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9MTFcPlw8L1REXD5cPFREIENPTFNQQU49MiBST1dTUEFOPTJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMi5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiNGRjk5MDAiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMTMuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPgpcPC9UUlw+Clw8L1RBQkxFXD5cPHAgY2xhc3M9Im1haW4iXD5UaGUgJmx0XDtpbnB1dCZndFw7IHRhZyBpbmNsdWRlcyBhbiBcPGlcPm9uY2hhbmdlXDwvaVw+IGF0dHJpYnV0ZSB0aGF0IGFjdGl2YXRlcyBhIEphdmFTY3JpcHQgZnVuY3Rpb24gbmFtZWQgXDxpXD5fX2RvUG9zdEJhY2tcPC9pXD4gb24gdGhlIGNsaWVudCB3aGVuIHRoZSBjb250cm9sIGxvc2VzIHRoZSBpbnB1dCBmb2N1cyBmb2xsb3dpbmcgYSB0ZXh0IGNoYW5nZS4gXDxpXD5fX2RvUG9zdEJhY2tcPC9pXD4gcHJvZ3JhbW1hdGljYWxseSBwb3N0cyB0aGUgcGFnZSBiYWNrIHRvIHRoZSBzZXJ2ZXIgYnkgY2FsbGluZyB0aGUgXDxpXD5TdWJtaXRcPC9pXD4gbWV0aG9kIG9mIHRoZSBESFRNTCBvYmplY3QgdGhhdCByZXByZXNlbnRzIHRoZSBcPGlcPmZvcm0gKHRoZWZvcm0pXDwvaVw+Llw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPjs+Ozs+Oz4+Oz4+O3Q8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PEA8SSBzb21ldGltZXMgc2VlIEFTUC5ORVQgYXBwcyB0aGF0IGluY2x1ZGUgQVNIWCBmaWxlcy4gV2hhdCBhcmUgQVNIWCBmaWxlcz87XDxwIGNsYXNzPSJtYWluIlw+QVNIWCBmaWxlcyBjb250YWluIEhUVFAgaGFuZGxlcnPigJRzb2Z0d2FyZSBtb2R1bGVzIHRoYXQgaGFuZGxlIHJhdyBIVFRQIHJlcXVlc3RzIHJlY2VpdmVkIGJ5IEFTUC5ORVQuIFRoZSBmb2xsb3dpbmcgY29kZSBpbnN0aXR1dGVzIGEgc2ltcGxlIEhUVFAgaGFuZGxlcjpcPC9wXD5cPFRBQkxFIFdJRFRIPTc1JSBCT1JERVI9MCBDRUxMUEFERElORz0wIENFTExTUEFDSU5HPTAgYWxpZ249ImNlbnRlciJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMS5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMy5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiM5Q0Q4RUIiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPlw8VEQgV0lEVEg9MiBiZ2NvbG9yPSIjRkY5OTAwIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA1LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIGJnY29sb3I9IiM5Q0Q4RUIiIFdJRFRIPTExXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTExIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgdmFsaWduPSJ0b3AiIGJnY29sb3I9IiM5Q0Q4RUIiIGNsYXNzPSJjb2RlIlw+XDxmb250IGNvbG9yPSJibGFjayJcPiAmbHRcOyVAIFdlYkhhbmRsZXIgTGFuZ3VhZ2U9IkMjIiBDbGFzcz0iSGVsbG8iJSZndFw7XDxiclw+XDxiclw+dXNpbmcgU3lzdGVtLldlYlw7XDxiclw+XDxiclw+cHVibGljIGNsYXNzIEhlbGxvIDogSUh0dHBIYW5kbGVyXDxiclw+e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtwdWJsaWMgdm9pZCBQcm9jZXNzUmVxdWVzdCAoSHR0cENvbnRleHQgY29udGV4dClcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7c3RyaW5nIG5hbWUgPSBjb250ZXh0LlJlcXVlc3RbIk5hbWUiXVw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtjb250ZXh0LlJlc3BvbnNlLldyaXRlICgiSGVsbG8sICIgKyBuYW1lKVw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO31cPGJyXD5cPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7cHVibGljIGJvb2wgSXNSZXVzYWJsZVw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDt7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtnZXQgeyByZXR1cm4gdHJ1ZVw7IH1cPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7fVw8YnJcPn1cPC9mb250XD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDkuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEwLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEyLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMy5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+Clw8L1RSXD4KXDwvVEFCTEVcPlw8cCBjbGFzcz0ibWFpbiJcPklmIHRoaXMgY29kZSBpcyBwbGFjZWQgaW4gYW4gQVNIWCBmaWxlIG5hbWVkIEhlbGxvLmFzaHggYW5kIHJlcXVlc3RlZCB1c2luZyB0aGUgVVJMIGh0dHA6Ly8uLi4vaGVsbG8uYXNoeD9OYW1lPUplZmYsIGl0IHJldHVybnMgIkhlbGxvLCBKZWZmIiBpbiB0aGUgSFRUUCByZXNwb25zZS4gQVNIWCBmaWxlcyBwcm92aWRlIGRldmVsb3BlcnMgd2l0aCBhIGNvbnZlbmllbnQgd2F5IHRvIGRlcGxveSBIVFRQIGhhbmRsZXJzIHdpdGhvdXQgY3VzdG9taXppbmcgQ09ORklHIGZpbGVzIG9yIG1vZGlmeWluZyB0aGUgSUlTIG1ldGFiYXNlLlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPiBcPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD47Pjs7Pjs+Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxAPENhbiBJIGNyZWF0ZSBBU1AuTkVUIHNlcnZlciBjb250cm9scyBvZiBteSBvd24/O1w8cCBjbGFzcz0ibWFpbiJcPlllcy4gWW91IGNhbiBtb2RpZnkgZXhpc3Rpbmcgc2VydmVyIGNvbnRyb2xzIGJ5IGRlcml2aW5nIGZyb20gdGhlIGNvcnJlc3BvbmRpbmcgY29udHJvbCBjbGFzc2VzIG9yIGNyZWF0ZSBzZXJ2ZXIgY29udHJvbHMgZnJvbSBzY3JhdGNoIGJ5IGRlcml2aW5nIGZyb20gXDxpXD5TeXN0ZW0uV2ViLlVJLkNvbnRyb2xcPC9pXD4uIEFsdGhvdWdoIGEgZnVsbCB0cmVhdG1lbnQgb2YgY3VzdG9tIGNvbnRyb2xzIGlzIGJleW9uZCB0aGUgc2NvcGUgb2YgdGhpcyBGQVEsIGhlcmUncyBhIHNpbXBsZSBjdXN0b20gY29udHJvbCB0aGF0IHdyaXRlcyAiSGVsbG8sIHdvcmxkIiB0byBhIFdlYiBwYWdlOlw8L3BcPlw8VEFCTEUgV0lEVEg9NzUlIEJPUkRFUj0wIENFTExQQURESU5HPTAgQ0VMTFNQQUNJTkc9MCBhbGlnbj0iY2VudGVyIlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAxLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjRkY5OTAwIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMi5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+XDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAzLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iIzlDRDhFQiJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTExXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+XDxURCBXSURUSD0yIGJnY29sb3I9IiNGRjk5MDAiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDUuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiIgV0lEVEg9MTFcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTEgSEVJR0hUPTEwXD5cPC9URFw+XDxURCB2YWxpZ249InRvcCIgYmdjb2xvcj0iIzlDRDhFQiIgY2xhc3M9ImNvZGUiXD5cPGZvbnQgY29sb3I9ImJsYWNrIlw+IHVzaW5nIFN5c3RlbVw7XDxiclw+dXNpbmcgU3lzdGVtLldlYlw7XDxiclw+dXNpbmcgU3lzdGVtLldlYi5VSVw7XDxiclw+XDxiclw+bmFtZXNwYWNlIFdpbnRlbGxlY3RcPGJyXD57XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3B1YmxpYyBjbGFzcyBIZWxsb0NvbnRyb2wgOiBDb250cm9sXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3tcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3Byb3RlY3RlZCBvdmVycmlkZSB2b2lkIFJlbmRlciAoSHRtbFRleHRXcml0ZXIgd3JpdGVyKVw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3dyaXRlci5Xcml0ZSAoIkhlbGxvLCBXb3JsZCEiKVw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDt9XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO31cPGJyXD59XDwvZm9udFw+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiIgV0lEVEg9MTFcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTEgSEVJR0hUPTEwXD5cPC9URFw+XDxURCBXSURUSD0yIGJnY29sb3I9IiNGRjk5MDAiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA5LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMC5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9MTFcPlw8L1REXD5cPFREIENPTFNQQU49MiBST1dTUEFOPTJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMi5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiNGRjk5MDAiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMTMuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPgpcPC9UUlw+Clw8L1RBQkxFXD5cPHAgY2xhc3M9Im1haW4iXD5BIGN1c3RvbSBjb250cm9sIGVtaXRzIEhUTUwgYnkgb3ZlcnJpZGluZyB0aGUgdmlydHVhbCBcPGlcPlJlbmRlclw8L2lcPiBtZXRob2QgaXQgaW5oZXJpdHMgZnJvbSBcPGlcPkNvbnRyb2xcPC9pXD4gYW5kIHVzaW5nIHRoZSBwcm92aWRlZCBcPGlcPkh0bWxUZXh0V3JpdGVyXDwvaVw+IHRvIHdyaXRlIGl0cyBvdXRwdXQuXDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+Oz47Oz47Pj47Pj47dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8QDxXaGF0IGRvZXMgdGhlIFN5c3RlbS5XZWIuVUkuUGFnZS5SZWdpc3RlckNsaWVudFNjcmlwdEJsb2NrIG1ldGhvZCBkbywgYW5kIGRvIEkgbmVlZCBpdCB3aGVuIEkgd3JpdGUgY3VzdG9tIEFTUC5ORVQgc2VydmVyIGNvbnRyb2xzPztcPHAgY2xhc3M9Im1haW4iXD5cPGlcPlJlZ2lzdGVyQ2xpZW50U2NyaXB0QmxvY2tcPC9pXD4gZW5hYmxlcyBhIGN1c3RvbSBjb250cm9sIHRvIHJlZ2lzdGVyIGEgYmxvY2sgb2YgY2xpZW50LXNpZGUgc2NyaXB0IHRoYXQgdGhlIGNvbnRyb2wgcmV0dXJucyB0byBhIGJyb3dzZXIuIFdoeSBkb2VzIGl0IGV4aXN0PyBTbyB0aGUgc2FtZSBzY3JpcHQgYmxvY2sgZG9lc24ndCBnZXQgcmV0dXJuZWQgbXVsdGlwbGUgdGltZXMgaWYgdGhlIHBhZ2UgY29udGFpbnMgbXVsdGlwbGUgaW5zdGFuY2VzIG9mIGEgY29udHJvbCB0aGF0IGVtaXRzIGNsaWVudC1zaWRlIHNjcmlwdC4gSGVyZSdzIHRoZSBzb3VyY2UgY29kZSBmb3IgYSBjdXN0b20gY29udHJvbCBjYWxsZWQgXDxpXD5BbGVydEJ1dHRvblw8L2lcPiB0aGF0IHJlbmRlcnMgaXRzZWxmIGFuIGFzICZsdFw7aW5wdXQgdHlwZT0ic3VibWl0IiZndFw7IHRhZyB3aXRoIGFuIFw8aVw+b25jbGlja1w8L2lcPiBhdHRyaWJ1dGUgdGhhdCBkaXNwbGF5cyBhIG1lc3NhZ2UgdXNpbmcgYSBKYXZhU2NyaXB0IGFsZXJ0Olw8L3BcPlw8VEFCTEUgV0lEVEg9NzUlIEJPUkRFUj0wIENFTExQQURESU5HPTAgQ0VMTFNQQUNJTkc9MCBhbGlnbj0iY2VudGVyIlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAxLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjRkY5OTAwIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMi5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+XDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAzLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iIzlDRDhFQiJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTExXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+XDxURCBXSURUSD0yIGJnY29sb3I9IiNGRjk5MDAiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDUuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiIgV0lEVEg9MTFcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTEgSEVJR0hUPTEwXD5cPC9URFw+XDxURCB2YWxpZ249InRvcCIgYmdjb2xvcj0iIzlDRDhFQiIgY2xhc3M9ImNvZGUiXD5cPGZvbnQgY29sb3I9ImJsYWNrIlw+IHVzaW5nIFN5c3RlbVw7XDxiclw+dXNpbmcgU3lzdGVtLldlYlw7XDxiclw+dXNpbmcgU3lzdGVtLldlYi5VSVw7XDxiclw+dXNpbmcgU3lzdGVtLlRleHRcO1w8YnJcPlw8YnJcPm5hbWVzcGFjZSBXaW50ZWxsZWN0XDxiclw+e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtwdWJsaWMgY2xhc3MgQWxlcnRCdXR0b24gOiBDb250cm9sXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3tcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3Byb3RlY3RlZCBzdHJpbmcgX1RleHRcO1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7cHJvdGVjdGVkIHN0cmluZyBfTWVzc2FnZVw7XDxiclw+XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtwdWJsaWMgc3RyaW5nIFRleHRcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3tcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtnZXQgeyByZXR1cm4gX1RleHRcOyB9XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7c2V0IHsgX1RleHQgPSB2YWx1ZVw7IH1cPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO31cPGJyXD5cPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3B1YmxpYyBzdHJpbmcgTWVzc2FnZVw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO2dldCB7IHJldHVybiBfTWVzc2FnZVw7IH1cPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtzZXQgeyBfTWVzc2FnZSA9IHZhbHVlXDsgfVw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7fVw8YnJcPlw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7cHJvdGVjdGVkIG92ZXJyaWRlIHZvaWQgT25QcmVSZW5kZXIgKEV2ZW50QXJncyBlKVw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO1BhZ2UuUmVnaXN0ZXJDbGllbnRTY3JpcHRCbG9jayAoXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Il9fZG9BbGVydCIsXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7IiZsdFw7c2NyaXB0IGxhbmd1YWdlPVxcImphdmFzY3JpcHRcXCImZ3RcO1xcbiIgK1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyImbHRcOyEtLVxcbiIrXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7ImZ1bmN0aW9uIF9fZG9BbGVydCAobWVzc2FnZSlcXG4iICtcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsie1xcbiIgK1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyIgYWxlcnQgKG1lc3NhZ2UpXDtcXG4iICtcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsifVxcbiIgK1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyItLSZndFw7XFxuIitcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsiJmx0XDsvc2NyaXB0Jmd0XDsiXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7KVw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDt9XDxiclw+XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtwcm90ZWN0ZWQgb3ZlcnJpZGUgdm9pZCBSZW5kZXIgKEh0bWxUZXh0V3JpdGVyIHdyaXRlcilcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO3tcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtTdHJpbmdCdWlsZGVyIGJ1aWxkZXIgPSBuZXcgU3RyaW5nQnVpbGRlciAoKVw7XDxiclw+XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7YnVpbGRlci5BcHBlbmQgKCImbHRcO2lucHV0IHR5cGU9XFwic3VibWl0XFwiIHZhbHVlPVxcIiIpXDtcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtidWlsZGVyLkFwcGVuZCAoX1RleHQpXDtcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtidWlsZGVyLkFwcGVuZCAoIlxcIiBvbmNsaWNrPVxcImphdmFzY3JpcHQ6X19kb0FsZXJ0IChcXCciKVw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7YnVpbGRlci5BcHBlbmQgKE1lc3NhZ2UpXDtcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtidWlsZGVyLkFwcGVuZCAoIlxcJylcO1xcIiAvJmd0XDsiKVw7XDxiclw+XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7d3JpdGVyLldyaXRlIChidWlsZGVyLlRvU3RyaW5nICgpKVw7XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDt9XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO31cPGJyXD59XDwvZm9udFw+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiIgV0lEVEg9MTFcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTEgSEVJR0hUPTEwXD5cPC9URFw+XDxURCBXSURUSD0yIGJnY29sb3I9IiNGRjk5MDAiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA5LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMC5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9MTFcPlw8L1REXD5cPFREIENPTFNQQU49MiBST1dTUEFOPTJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMi5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiNGRjk5MDAiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMTMuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPgpcPC9UUlw+Clw8L1RBQkxFXD5cPHAgY2xhc3M9Im1haW4iXD5JZiB0aGUgY29udHJvbCdzIHJlZ2lzdGVyIHRhZyBwcmVmaXggaXMgXDxpXD53aW5cPC9pXD4sIHRoZW4gdGhlIGZvbGxvd2luZyBzdGF0ZW1lbnQgZGVjbGFyZXMgYW4gXDxpXD5BbGVydEJ1dHRvblw8L2lcPiBjb250cm9sIHRoYXQsIHdoZW4gY2xpY2tlZCwgZGlzcGxheXMgIkhlbGxvLCB3b3JsZCIgaW4gYSBtZXNzYWdlIGJveDpcPC9wXD5cPFRBQkxFIFdJRFRIPTc1JSBCT1JERVI9MCBDRUxMUEFERElORz0wIENFTExTUEFDSU5HPTAgYWxpZ249ImNlbnRlciJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMS5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMy5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiM5Q0Q4RUIiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPlw8VEQgV0lEVEg9MiBiZ2NvbG9yPSIjRkY5OTAwIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA1LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIGJnY29sb3I9IiM5Q0Q4RUIiIFdJRFRIPTExXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTExIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgdmFsaWduPSJ0b3AiIGJnY29sb3I9IiM5Q0Q4RUIiIGNsYXNzPSJjb2RlIlw+XDxmb250IGNvbG9yPSJibGFjayJcPiAmbHRcO3dpbjpBbGVydEJ1dHRvbiBUZXh0PSJDbGljayBNZSIgTWVzc2FnZT0iSGVsbG8sIHdvcmxkIiBSdW5BdD0ic2VydmVyIiAvJmd0XDtcPC9mb250XD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDkuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEwLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEyLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMy5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+Clw8L1RSXD4KXDwvVEFCTEVcPlw8cCBjbGFzcz0ibWFpbiJcPlRoZSBjb250cm9sIHVzZXMgXDxpXD5SZWdpc3RlckNsaWVudFNjcmlwdEJsb2NrXDwvaVw+IHRvIHJlZ2lzdGVyIHRoZSBjbGllbnQtc2lkZSBzY3JpcHQgYmxvY2sgdGhhdCBpdCByZXR1cm5zLiBUaGF0IHNjcmlwdCBibG9jayBjb250YWlucyB0aGUgXDxpXD5fX2RvQWxlcnRcPC9pXD4gZnVuY3Rpb24gcmVmZXJlbmNlZCBieSB0aGUgJmx0XDtpbnB1dCZndFw7IHRhZydzIFw8aVw+b25jbGlja1w8L2lcPiBhdHRyaWJ1dGUuIEl0J3MgcmV0dXJuZWQgb25seSBvbmNlIG5vIG1hdHRlciBBbGVydEJ1dHRvbnMgYSBwYWdlIGNvbnRhaW5zLiBcPGlcPlJlZ2lzdGVyQ2xpZW50U2NyaXB0QmxvY2tcPC9pXD4gc2hvdWxkIGFsd2F5cyBiZSBjYWxsZWQgZnJvbSB0aGUgY29udHJvbCdzIFw8aVw+T25QcmVSZW5kZXJcPC9pXD4gbWV0aG9kIHNvIEFTUC5ORVQgY2FuIGNvbnRyb2wgdGhlIHNjcmlwdCdzIHBvc2l0aW9uIGluIHRoZSBvdXRwdXQuXDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+Oz47Oz47Pj47Pj47dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8QDxXaGF0J3MgdGhlIGRpZmZlcmVuY2UgYmV0d2VlbiBcPGlcPlBhZ2UuUmVnaXN0ZXJDbGllbnRTY3JpcHRCbG9ja1w8L2lcPiBhbmQgXDxpXD5QYWdlLlJlZ2lzdGVyU3RhcnR1cFNjcmlwdFw8L2lcPj87XDxwIGNsYXNzPSJtYWluIlw+XDxpXD5SZWdpc3RlckNsaWVudFNjcmlwdEJsb2NrXDwvaVw+IGlzIGZvciByZXR1cm5pbmcgYmxvY2tzIG9mIGNsaWVudC1zaWRlIHNjcmlwdCBjb250YWluaW5nIGZ1bmN0aW9ucy4gXDxpXD5SZWdpc3RlclN0YXJ0dXBTY3JpcHRcPC9pXD4gaXMgZm9yIHJldHVybmluZyBibG9ja3Mgb2YgY2xpZW50LXNjcmlwdCBcPGlcPm5vdFw8L2lcPiBwYWNrYWdlZCBpbiBmdW5jdGlvbnPigJRpbiBvdGhlciB3b3JkcywgY29kZSB0aGF0J3MgdG8gZXhlY3V0ZSB3aGVuIHRoZSBwYWdlIGlzIGxvYWRlZC4gVGhlIGxhdHRlciBwb3NpdGlvbnMgc2NyaXB0IGJsb2NrcyBuZWFyIHRoZSBlbmQgb2YgdGhlIGRvY3VtZW50IHNvIGVsZW1lbnRzIG9uIHRoZSBwYWdlIHRoYXQgdGhlIHNjcmlwdCBpbnRlcmFjdHMgYXJlIGxvYWRlZCBiZWZvcmUgdGhlIHNjcmlwdCBydW5zLlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPlw8cCBjbGFzcz0ibWFpbiJcPlw8L3BcPjs+Ozs+Oz4+Oz4+O3Q8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PEA8Q2FuIGEgY2FsZW5kYXIgY29udHJvbCBiZSBjdXN0b21pemVkIHNvIHRoYXQgaXQgbGltaXRzIHVzZXJzIHRvIHNlbGVjdGluZyBjZXJ0YWluIGRheXMgb2YgdGhlIHdlZWssIGFuZCBvbmx5IGRhdGVzIHRoYXQgZmFsbCBvbiBvciBhZnRlciB0b2RheSdzIGRhdGU/O1w8cCBjbGFzcz0ibWFpbiJcPlllcy4gVGhlIHNlY3JldCBpcyB0byBjdXN0b21pemUgdGhlIGNvbnRyb2wgYnkgcHJvY2Vzc2luZyBcPGlcPkRheVJlbmRlclw8L2lcPiBldmVudHMsIHdoaWNoIGFyZSBmaXJlZCBhcyB0aGUgY2FsZW5kYXIgcmVuZGVycyBlYWNoIGFuZCBldmVyeSBjZWxsLiBIZXJlJ3MgYW4gZXhhbXBsZSB0aGF0IGxpbWl0cyBzZWxlY3Rpb25zIHRvIGZ1dHVyZSBGcmlkYXlzIGFuZCBTYXR1cmRheXM6XDwvcFw+XDxUQUJMRSBXSURUSD03NSUgQk9SREVSPTAgQ0VMTFBBRERJTkc9MCBDRUxMU1BBQ0lORz0wIGFsaWduPSJjZW50ZXIiXD4KXDxUUlw+Clw8VEQgQ09MU1BBTj0yIFJPV1NQQU49MiBXSURUSD0xMyBIRUlHSFQ9MTNcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDEuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD5cPFREIGJnY29sb3I9IiNGRjk5MDAiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTJcPlw8L1REXD5cPFREIENPTFNQQU49MiBST1dTUEFOPTJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDMuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9MTFcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wNS5naWYiIFdJRFRIPTIgSEVJR0hUPTEwXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIHZhbGlnbj0idG9wIiBiZ2NvbG9yPSIjOUNEOEVCIiBjbGFzcz0iY29kZSJcPlw8Zm9udCBjb2xvcj0iYmxhY2siXD4gJmx0XDthc3A6Q2FsZW5kYXIgT25EYXlSZW5kZXI9Ik9uRGF5UmVuZGVyIiBSdW5BdD0ic2VydmVyIiAvJmd0XDtcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Llw8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsuXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOy5cPGJyXD4mbmJzcFw7Jm5ic3BcO3ZvaWQgT25EYXlSZW5kZXIgKE9iamVjdCBzZW5kZXIsIERheVJlbmRlckV2ZW50QXJncyBlKVw8YnJcPiZuYnNwXDsmbmJzcFw7e1w8YnJcPiZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcO2UuRGF5LklzU2VsZWN0YWJsZSA9XDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7KGUuRGF5LkRhdGUuRGF5T2ZXZWVrID09IERheU9mV2Vlay5GcmlkYXkgfHxcPGJyXD4mbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDtlLkRheS5EYXRlLkRheU9mV2VlayA9PSBEYXlPZldlZWsuU2F0dXJkYXkpICYmXDxiclw+Jm5ic3BcOyZuYnNwXDsmbmJzcFw7Jm5ic3BcOyZuYnNwXDsmbmJzcFw7ZS5EYXkuRGF0ZSAmZ3RcOz0gRGF0ZVRpbWUuTm93XDtcPGJyXD4mbmJzcFw7Jm5ic3BcO31cPC9mb250XD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDkuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEwLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEyLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMy5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+Clw8L1RSXD4KXDwvVEFCTEVcPlw8cCBjbGFzcz0ibWFpbiJcPlRoZSBcPGlcPkRheVJlbmRlckV2ZW50QXJnc1w8L2lcPiBwYXNzZWQgdG8gYSBcPGlcPkRheVJlbmRlclw8L2lcPiBldmVudCBoYW5kbGVyIGhhcyBhIHByb3BlcnR5IG5hbWVkIFw8aVw+RGF5XDwvaVw+IHRoYXQgaWRlbnRpZmllcyB0aGUgZGF5IGJlaW5nIHJlbmRlcmVkLiBUaGlzIGV4YW1wbGUgc2V0cyBcPGlcPkRheSdzIElzU2VsZWN0YWJsZVw8L2lcPiBwcm9wZXJ0eSB0byB0cnVlIG9yIGZhbHNlIGRlcGVuZGluZyBvbiB3aGV0aGVyIHRoZSBkYXkgY3VycmVudGx5IGJlaW5nIHJlbmRlcmVkIHJlcHJlc2VudHMgYSBsZWdpdGltYXRlIHNlbGVjdGlvbi4gU2V0dGluZyBcPGlcPklzU2VsZWN0YWJsZVw8L2lcPiB0byBmYWxzZSBwcmV2ZW50cyB0aGUgY29udHJvbCBmcm9tIHBsYWNpbmcgYSBoeXBlcmxpbmsgaW4gdGhlIGNvcnJlc3BvbmRpbmcgY2VsbCwgZWZmZWN0aXZlbHkgbWFraW5nIHRoYXQgY2VsbCB1bnNlbGVjdGFibGUuXDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+Oz47Oz47Pj47Pj47dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8QDxJcyBpdCBuZWNlc3NhcnkgdG8gbG9jayBhcHBsaWNhdGlvbiBzdGF0ZSBiZWZvcmUgYWNjZXNzaW5nIGl0PztcPHAgY2xhc3M9Im1haW4iXD5Pbmx5IGlmIHlvdSdyZSBwZXJmb3JtaW5nIGEgbXVsdGlzdGVwIHVwZGF0ZSBhbmQgd2FudCB0aGUgdXBkYXRlIHRvIGJlIHRyZWF0ZWQgYXMgYW4gYXRvbWljIG9wZXJhdGlvbi4gSGVyZSdzIGFuIGV4YW1wbGU6XDwvcFw+XDxUQUJMRSBXSURUSD03NSUgQk9SREVSPTAgQ0VMTFBBRERJTkc9MCBDRUxMU1BBQ0lORz0wIGFsaWduPSJjZW50ZXIiXD4KXDxUUlw+Clw8VEQgQ09MU1BBTj0yIFJPV1NQQU49MiBXSURUSD0xMyBIRUlHSFQ9MTNcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDEuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD5cPFREIGJnY29sb3I9IiNGRjk5MDAiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTJcPlw8L1REXD5cPFREIENPTFNQQU49MiBST1dTUEFOPTJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDMuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9MTFcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wNS5naWYiIFdJRFRIPTIgSEVJR0hUPTEwXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIHZhbGlnbj0idG9wIiBiZ2NvbG9yPSIjOUNEOEVCIiBjbGFzcz0iY29kZSJcPlw8Zm9udCBjb2xvcj0iYmxhY2siXD4gQXBwbGljYXRpb24uTG9jayAoKVw7XDxiclw+QXBwbGljYXRpb25bJnF1b3RcO0l0ZW1zU29sZCZxdW90XDtdID0gKGludCkgQXBwbGljYXRpb25bJnF1b3RcO0l0ZW1zU29sZCZxdW90XDtdICsgMVw7XDxiclw+QXBwbGljYXRpb25bJnF1b3RcO0l0ZW1zTGVmdCZxdW90XDtdID0gKGludCkgQXBwbGljYXRpb25bJnF1b3RcO0l0ZW1zTGVmdCZxdW90XDtdIC0gMVw7XDxiclw+QXBwbGljYXRpb24uVW5Mb2NrICgpXDtcPC9mb250XD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDkuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEwLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEyLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMy5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+Clw8L1RSXD4KXDwvVEFCTEVcPlw8cCBjbGFzcz0ibWFpbiJcPkJ5IGxvY2tpbmcgYXBwbGljYXRpb24gc3RhdGUgYmVmb3JlIHVwZGF0aW5nIGl0IGFuZCB1bmxvY2tpbmcgaXQgYWZ0ZXJ3YXJkcywgeW91IGVuc3VyZSB0aGF0IGFub3RoZXIgcmVxdWVzdCBiZWluZyBwcm9jZXNzZWQgb24gYW5vdGhlciB0aHJlYWQgZG9lc24ndCByZWFkIGFwcGxpY2F0aW9uIHN0YXRlIGF0IGV4YWN0bHkgdGhlIHdyb25nIHRpbWUgYW5kIHNlZSBhbiBpbmNvbnNpc3RlbnQgdmlldyBvZiBpdC5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD47Pjs7Pjs+Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxAPFRoZSBBU1AuTkVUIGFwcGxpY2F0aW9uIGNhY2hlIGRvZXNuJ3QgaGF2ZSBMb2NrIGFuZCBVbkxvY2sgbWV0aG9kcyBhcyBhcHBsaWNhdGlvbiBzdGF0ZSBkb2VzLiBEb2VzIHRoaXMgbWVhbiBJIG5ldmVyIG5lZWQgdG8gbG9jayBpdD87XDxwIGNsYXNzPSJtYWluIlw+Tm8uIEl0IG1lYW5zIHlvdSBoYXZlIHRvIGNvbWUgdXAgd2l0aCB5b3VyIG93biBtZWNoYW5pc20gZm9yIGxvY2tpbmcuIFw8aVw+U3lzdGVtLlRocmVhZGluZy5SZWFkZXJXcml0ZXJMb2NrXDwvaVw+IGlzIHRoZSBwZXJmZWN0IHRvb2wgZm9yIHRoZSBqb2IuIEFzc3VtaW5nIFw8aVw+cndsb2NrXDwvaVw+IGlzIGFuIGluc3RhbmNlIG9mIFw8aVw+UmVhZGVyV3JpdGVyTG9ja1w8L2lcPiwgaGVyZSdzIGhvdyB5b3UnZCBsb2NrIHRoZSBhcHBsaWNhdGlvbiBjYWNoZSBkdXJpbmcgYW4gdXBkYXRlOlw8L3BcPlw8VEFCTEUgV0lEVEg9NzUlIEJPUkRFUj0wIENFTExQQURESU5HPTAgQ0VMTFNQQUNJTkc9MCBhbGlnbj0iY2VudGVyIlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAxLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjRkY5OTAwIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMi5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+XDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzAzLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iIzlDRDhFQiJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTExXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+XDxURCBXSURUSD0yIGJnY29sb3I9IiNGRjk5MDAiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDUuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgYmdjb2xvcj0iIzlDRDhFQiIgV0lEVEg9MTFcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTEgSEVJR0hUPTEwXD5cPC9URFw+XDxURCB2YWxpZ249InRvcCIgYmdjb2xvcj0iIzlDRDhFQiIgY2xhc3M9ImNvZGUiXD5cPGZvbnQgY29sb3I9ImJsYWNrIlw+IHJ3bG9jay5BY3F1aXJlV3JpdGVyTG9jayAoVGltZW91dC5JbmZpbml0ZSlcO1w8YnJcPkNhY2hlWyJJdGVtc1NvbGQiXSA9IChpbnQpIENhY2hlIFsiSXRlbXNTb2xkIl0gKyAxXDtcPGJyXD5DYWNoZVsiSXRlbXNMZWZ0Il0gPSAoaW50KSBDYWNoZSBbIkl0ZW1zTGVmdCJdIC0gMVw7XDxiclw+cndsb2NrLlJlbGVhc2VXcml0ZXJMb2NrICgpXDtcPC9mb250XD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIiBXSURUSD0xMVw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9zcGFjZXIuZ2lmIiBXSURUSD0xMSBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIFdJRFRIPTIgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDkuZ2lmIiBXSURUSD0yIEhFSUdIVD0xMFw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIENPTFNQQU49MiBST1dTUEFOPTIgV0lEVEg9MTMgSEVJR0hUPTEzXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEwLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+XDxURCBiZ2NvbG9yPSIjOUNEOEVCIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEyLmdpZiIgV0lEVEg9MTMgSEVJR0hUPTEzXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPlw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8xMy5naWYiIFdJRFRIPTEwIEhFSUdIVD0yXD5cPC9URFw+Clw8L1RSXD4KXDwvVEFCTEVcPlw8cCBjbGFzcz0ibWFpbiJcPkFuZCBoZXJlJ3MgaG93IHlvdSdkIHJlYWQgIkl0ZW1zU29sZCIgYW5kICJJdGVtc0xlZnQiIHZhbHVlcyBmcm9tIHRoZSBjYWNoZTpcPC9wXD5cPFRBQkxFIFdJRFRIPTc1JSBCT1JERVI9MCBDRUxMUEFERElORz0wIENFTExTUEFDSU5HPTAgYWxpZ249ImNlbnRlciJcPgpcPFRSXD4KXDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yIFdJRFRIPTEzIEhFSUdIVD0xM1w+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMS5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPlw8VEQgYmdjb2xvcj0iI0ZGOTkwMCJcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMDIuZ2lmIiBXSURUSD0xMCBIRUlHSFQ9Mlw+XDwvVERcPlw8VEQgQ09MU1BBTj0yIFJPV1NQQU49Mlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wMy5naWYiIFdJRFRIPTEzIEhFSUdIVD0xM1w+XDwvVERcPgpcPC9UUlw+Clw8VFJcPgpcPFREIGJnY29sb3I9IiM5Q0Q4RUIiXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTEwIEhFSUdIVD0xMVw+XDwvVERcPgpcPC9UUlw+Clw8VFJcPlw8VEQgV0lEVEg9MiBiZ2NvbG9yPSIjRkY5OTAwIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzA1LmdpZiIgV0lEVEg9MiBIRUlHSFQ9MTBcPlw8L1REXD5cPFREIGJnY29sb3I9IiM5Q0Q4RUIiIFdJRFRIPTExXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTExIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgdmFsaWduPSJ0b3AiIGJnY29sb3I9IiM5Q0Q4RUIiIGNsYXNzPSJjb2RlIlw+XDxmb250IGNvbG9yPSJibGFjayJcPiByd2xvY2suQWNxdWlyZVJlYWRlckxvY2sgKFRpbWVvdXQuSW5maW5pdGUpXDtcPGJyXD5pbnQgc29sZCA9IChpbnQpIENhY2hlWyJJdGVtc1NvbGQiXVw7XDxiclw+aW50IGxlZnQgPSAoaW50KSBDYWNoZSBbIkl0ZW1zTGVmdCJdXDtcPGJyXD5yd2xvY2suUmVsZWFzZVJlYWRlckxvY2sgKClcO1w8L2ZvbnRcPlw8L1REXD5cPFREIGJnY29sb3I9IiM5Q0Q4RUIiIFdJRFRIPTExXD4gXDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L3NwYWNlci5naWYiIFdJRFRIPTExIEhFSUdIVD0xMFw+XDwvVERcPlw8VEQgV0lEVEg9MiBiZ2NvbG9yPSIjRkY5OTAwIlw+IFw8SU1HIFNSQz0iL2ltYWdlcy9leHRyYWJveC9leHRyYWJveF8wOS5naWYiIFdJRFRIPTIgSEVJR0hUPTEwXD5cPC9URFw+Clw8L1RSXD4KXDxUUlw+Clw8VEQgQ09MU1BBTj0yIFJPV1NQQU49MiBXSURUSD0xMyBIRUlHSFQ9MTNcPiBcPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMTAuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD5cPFREIGJnY29sb3I9IiM5Q0Q4RUIiXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvc3BhY2VyLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTExXD5cPC9URFw+XDxURCBDT0xTUEFOPTIgUk9XU1BBTj0yXD5cPElNRyBTUkM9Ii9pbWFnZXMvZXh0cmFib3gvZXh0cmFib3hfMTIuZ2lmIiBXSURUSD0xMyBIRUlHSFQ9MTNcPlw8L1REXD4KXDwvVFJcPgpcPFRSXD4KXDxURCBiZ2NvbG9yPSIjRkY5OTAwIlw+XDxJTUcgU1JDPSIvaW1hZ2VzL2V4dHJhYm94L2V4dHJhYm94XzEzLmdpZiIgV0lEVEg9MTAgSEVJR0hUPTJcPlw8L1REXD4KXDwvVFJcPgpcPC9UQUJMRVw+XDxwIGNsYXNzPSJtYWluIlw+QXMgd2l0aCBhcHBsaWNhdGlvbiBzdGF0ZSwgbG9ja2luZyB0aGUgYXBwbGljYXRpb24gY2FjaGUgaXMgb25seSBuZWNlc3Nhcnkgd2hlbiBwZXJmb3JtaW5nIG11bHRpc3RlcCB1cGRhdGVzIHRoYXQgYXJlIHRvIGJlIHRyZWF0ZWQgYXMgYXRvbWljIG9wZXJhdGlvbnMuXDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+XDxwIGNsYXNzPSJtYWluIlw+XDwvcFw+Oz47Oz47Pj47Pj47dDw7bDxpPDA+Oz47bDx0PDtsPGk8MD47PjtsPHQ8QDxJZiBJIHVwZGF0ZSBzZXNzaW9uIHN0YXRlLCBzaG91bGQgSSBsb2NrIGl0LCB0b28/IEFyZSBjb25jdXJyZW50IGFjY2Vzc2VzIGJ5IG11bHRpcGxlIHJlcXVlc3RzIGV4ZWN1dGluZyBvbiBtdWx0aXBsZSB0aHJlYWRzIGEgY29uY2VybiB3aXRoIHNlc3Npb24gc3RhdGU/O1w8cCBjbGFzcz0ibWFpbiJcPkNvbmN1cnJlbnQgYWNjZXNzZXMgYXJlbid0IGFuIGlzc3VlIHdpdGggc2Vzc2lvbiBzdGF0ZSwgZm9yIHR3byByZWFzb25zLiBPbmUsIGl0J3MgdW5saWtlbHkgdGhhdCB0d28gcmVxdWVzdHMgZnJvbSB0aGUgc2FtZSB1c2VyIHdpbGwgb3ZlcmxhcC4gVHdvLCBpZiB0aGV5IGRvIG92ZXJsYXAsIEFTUC5ORVQgbG9ja3MgZG93biBzZXNzaW9uIHN0YXRlIGR1cmluZyByZXF1ZXN0IHByb2Nlc3Npbmcgc28gdGhhdCB0d28gdGhyZWFkcyBjYW4ndCB0b3VjaCBpdCBhdCBvbmNlLiBTZXNzaW9uIHN0YXRlIGlzIGxvY2tlZCBkb3duIHdoZW4gdGhlIFw8aVw+SHR0cEFwcGxpY2F0aW9uXDwvaVw+IGluc3RhbmNlIHRoYXQncyBwcm9jZXNzaW5nIHRoZSByZXF1ZXN0IGZpcmVzIGFuIFw8aVw+QWNxdWlyZVJlcXVlc3RTdGF0ZVw8L2lcPiBldmVudCBhbmQgdW5sb2NrZWQgd2hlbiBpdCBmaXJlcyBhIFw8aVw+UmVsZWFzZVJlcXVlc3RTdGF0ZVw8L2lcPiBldmVudC5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD47Pjs7Pjs+Pjs+Pjt0PDtsPGk8MD47PjtsPHQ8O2w8aTwwPjs+O2w8dDxAPEFTUC5ORVQncyBhcHBsaWNhdGlvbiBjYWNoZSBzdXBwb3J0cyBleHBpcmF0aW9uIHBvbGljaWVzIGFuZCBjYWNoZSByZW1vdmFsIGNhbGxiYWNrcy4gRXhwaXJhdGlvbiBwb2xpY2llcyBhcmUgYmFzZWQgb24gdGltZSBkZXBlbmRlbmNpZXMgYW5kIGZpbGUgZGVwZW5kZW5jaWVzLiBBcmUgZGF0YWJhc2UgZGVwZW5kZW5jaWVzIHN1cHBvcnRlZCwgdG9vPyBJbiBvdGhlciB3b3JkcywgY2FuIEkgaGF2ZSBhbiBpdGVtIGF1dG9tYXRpY2FsbHkgcmVtb3ZlZCBmcm9tIHRoZSBjYWNoZSBpbiByZXNwb25zZSB0byBhIGRhdGFiYXNlIHVwZGF0ZT87XDxwIGNsYXNzPSJtYWluIlw+SW4gQVNQLk5FVCB2ZXJzaW9uIDEueCwgbm8uIEhvd2V2ZXIsIHlvdSBjYW4gZm9yZ2UgYSBsaW5rIGJldHdlZW4gZGF0YWJhc2VzIGFuZCB0aGUgQVNQLk5FVCBhcHBsaWNhdGlvbiBjYWNoZSBieSBjb21iaW5pbmcgZmlsZSBkZXBlbmRlbmNpZXMgd2l0aCBkYXRhYmFzZSB0cmlnZ2Vycy4gRm9yIGRldGFpbHMsIGFuZCBmb3Igd29ya2luZyBzYW1wbGUgY29kZSwgc2VlIEplZmYgUHJvc2lzZSdzIFw8YSBocmVmPSJodHRwOi8vbXNkbi5taWNyb3NvZnQuY29tL21zZG5tYWcvaXNzdWVzLzAzLzA0L3dpY2tlZGNvZGUvZGVmYXVsdC5hc3B4IiIgdGFyZ2V0PSJfYmxhbmsiXD5XaWNrZWQgQ29kZVw8L2FcPiBjb2x1bW4gaW4gdGhlIEFwcmlsIDIwMDMgaXNzdWUgb2YgTVNETiBNYWdhemluZS5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD47Pjs7Pjs+Pjs+Pjs+Pjs+Pjs+Pjs+Pjs+rKo2Nu7XuWV/WdAJ3wITZCMnQGQ=" />
+
+
+<table cellspacing="0" rules="all" border="0" id="myDataGrid" style="border-width:0px;border-collapse:collapse;">
+	<tr class="main">
+		<td>
+				<b>How does setting a Web control's AutoPostBack property to true cause a page to post back to the server?</b>
+				<blockquote><p class="main">With a sprinkle of JavaScript and a dash of Dynamic HTML (DHTML). Enter this into a Web form:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> &lt;asp:TextBox ID="UserName" AutoPostBack="true" RunAt="server" /&gt;</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">And the control returns this:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> &lt;input name="UserName" type="text" id="UserName" onchange="__doPostBack('UserName','')" language="javascript" /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;.<br>&lt;script language="javascript"&gt;<br>&lt;!--<br>&nbsp;&nbsp;function __doPostBack(eventTarget, eventArgument) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var theform = document.ctrl0;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theform.submit();<br>&nbsp;&nbsp;}<br>// --&gt;<br>&lt;/script&gt;</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">The &lt;input&gt; tag includes an <i>onchange</i> attribute that activates a JavaScript function named <i>__doPostBack</i> on the client when the control loses the input focus following a text change. <i>__doPostBack</i> programmatically posts the page back to the server by calling the <i>Submit</i> method of the DHTML object that represents the <i>form (theform)</i>.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="1"></td>
+	</tr><tr class="main">
+		<td>
+				<b>I sometimes see ASP.NET apps that include ASHX files. What are ASHX files?</b>
+				<blockquote><p class="main">ASHX files contain HTTP handlers-software modules that handle raw HTTP requests received by ASP.NET. The following code institutes a simple HTTP handler:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> &lt;%@ WebHandler Language="C#" Class="Hello"%&gt;<br><br>using System.Web;<br><br>public class Hello : IHttpHandler<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;public void ProcessRequest (HttpContext context)<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string name = context.Request["Name"];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context.Response.Write ("Hello, " + name);<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;public bool IsReusable<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get { return true; }<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">If this code is placed in an ASHX file named Hello.ashx and requested using the URL http://.../hello.ashx?Name=Jeff, it returns "Hello, Jeff" in the HTTP response. ASHX files provide developers with a convenient way to deploy HTTP handlers without customizing CONFIG files or modifying the IIS metabase.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"> </p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="2"></td>
+	</tr><tr class="main">
+		<td>
+				<b>Can I create ASP.NET server controls of my own?</b>
+				<blockquote><p class="main">Yes. You can modify existing server controls by deriving from the corresponding control classes or create server controls from scratch by deriving from <i>System.Web.UI.Control</i>. Although a full treatment of custom controls is beyond the scope of this FAQ, here's a simple custom control that writes "Hello, world" to a Web page:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> using System;<br>using System.Web;<br>using System.Web.UI;<br><br>namespace Wintellect<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;public class HelloControl : Control<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected override void Render (HtmlTextWriter writer)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Write ("Hello, World!");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">A custom control emits HTML by overriding the virtual <i>Render</i> method it inherits from <i>Control</i> and using the provided <i>HtmlTextWriter</i> to write its output.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="3"></td>
+	</tr><tr class="main">
+		<td>
+				<b>What does the System.Web.UI.Page.RegisterClientScriptBlock method do, and do I need it when I write custom ASP.NET server controls?</b>
+				<blockquote><p class="main"><i>RegisterClientScriptBlock</i> enables a custom control to register a block of client-side script that the control returns to a browser. Why does it exist? So the same script block doesn't get returned multiple times if the page contains multiple instances of a control that emits client-side script. Here's the source code for a custom control called <i>AlertButton</i> that renders itself an as &lt;input type="submit"&gt; tag with an <i>onclick</i> attribute that displays a message using a JavaScript alert:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> using System;<br>using System.Web;<br>using System.Web.UI;<br>using System.Text;<br><br>namespace Wintellect<br>{<br>&nbsp;&nbsp;&nbsp;&nbsp;public class AlertButton : Control<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected string _Text;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected string _Message;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public string Text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get { return _Text; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set { _Text = value; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public string Message<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get { return _Message; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;set { _Message = value; }<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected override void OnPreRender (EventArgs e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page.RegisterClientScriptBlock (<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"__doAlert",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;script language=\"javascript\"&gt;\n" +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;!--\n"+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"function __doAlert (message)\n" +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"{\n" +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" alert (message);\n" +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"}\n" +<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"--&gt;\n"+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&lt;/script&gt;"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected override void Render (HtmlTextWriter writer)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuilder builder = new StringBuilder ();<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builder.Append ("&lt;input type=\"submit\" value=\"");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builder.Append (_Text);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builder.Append ("\" onclick=\"javascript:__doAlert (\'");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builder.Append (Message);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;builder.Append ("\');\" /&gt;");<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;writer.Write (builder.ToString ());<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">If the control's register tag prefix is <i>win</i>, then the following statement declares an <i>AlertButton</i> control that, when clicked, displays "Hello, world" in a message box:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> &lt;win:AlertButton Text="Click Me" Message="Hello, world" RunAt="server" /&gt;</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">The control uses <i>RegisterClientScriptBlock</i> to register the client-side script block that it returns. That script block contains the <i>__doAlert</i> function referenced by the &lt;input&gt; tag's <i>onclick</i> attribute. It's returned only once no matter AlertButtons a page contains. <i>RegisterClientScriptBlock</i> should always be called from the control's <i>OnPreRender</i> method so ASP.NET can control the script's position in the output.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="4"></td>
+	</tr><tr class="main">
+		<td>
+				<b>What's the difference between <i>Page.RegisterClientScriptBlock</i> and <i>Page.RegisterStartupScript</i>?</b>
+				<blockquote><p class="main"><i>RegisterClientScriptBlock</i> is for returning blocks of client-side script containing functions. <i>RegisterStartupScript</i> is for returning blocks of client-script <i>not</i> packaged in functions-in other words, code that's to execute when the page is loaded. The latter positions script blocks near the end of the document so elements on the page that the script interacts are loaded before the script runs.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="5"></td>
+	</tr><tr class="main">
+		<td>
+				<b>Can a calendar control be customized so that it limits users to selecting certain days of the week, and only dates that fall on or after today's date?</b>
+				<blockquote><p class="main">Yes. The secret is to customize the control by processing <i>DayRender</i> events, which are fired as the calendar renders each and every cell. Here's an example that limits selections to future Fridays and Saturdays:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> &lt;asp:Calendar OnDayRender="OnDayRender" RunAt="server" /&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;&nbsp;&nbsp;.<br>&nbsp;&nbsp;void OnDayRender (Object sender, DayRenderEventArgs e)<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Day.IsSelectable =<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(e.Day.Date.DayOfWeek == DayOfWeek.Friday ||<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Day.Date.DayOfWeek == DayOfWeek.Saturday) &&<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.Day.Date &gt;= DateTime.Now;<br>&nbsp;&nbsp;}</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">The <i>DayRenderEventArgs</i> passed to a <i>DayRender</i> event handler has a property named <i>Day</i> that identifies the day being rendered. This example sets <i>Day's IsSelectable</i> property to true or false depending on whether the day currently being rendered represents a legitimate selection. Setting <i>IsSelectable</i> to false prevents the control from placing a hyperlink in the corresponding cell, effectively making that cell unselectable.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="6"></td>
+	</tr><tr class="main">
+		<td>
+				<b>Is it necessary to lock application state before accessing it?</b>
+				<blockquote><p class="main">Only if you're performing a multistep update and want the update to be treated as an atomic operation. Here's an example:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> Application.Lock ();<br>Application[&quot;ItemsSold&quot;] = (int) Application[&quot;ItemsSold&quot;] + 1;<br>Application[&quot;ItemsLeft&quot;] = (int) Application[&quot;ItemsLeft&quot;] - 1;<br>Application.UnLock ();</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">By locking application state before updating it and unlocking it afterwards, you ensure that another request being processed on another thread doesn't read application state at exactly the wrong time and see an inconsistent view of it.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="7"></td>
+	</tr><tr class="main">
+		<td>
+				<b>The ASP.NET application cache doesn't have Lock and UnLock methods as application state does. Does this mean I never need to lock it?</b>
+				<blockquote><p class="main">No. It means you have to come up with your own mechanism for locking. <i>System.Threading.ReaderWriterLock</i> is the perfect tool for the job. Assuming <i>rwlock</i> is an instance of <i>ReaderWriterLock</i>, here's how you'd lock the application cache during an update:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> rwlock.AcquireWriterLock (Timeout.Infinite);<br>Cache["ItemsSold"] = (int) Cache ["ItemsSold"] + 1;<br>Cache["ItemsLeft"] = (int) Cache ["ItemsLeft"] - 1;<br>rwlock.ReleaseWriterLock ();</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">And here's how you'd read "ItemsSold" and "ItemsLeft" values from the cache:</p><TABLE WIDTH=75% BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_01.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_02.gif" WIDTH=10 HEIGHT=2></TD><TD COLSPAN=2 ROWSPAN=2> <IMG SRC="/images/extrabox/extrabox_03.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#9CD8EB"> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD>
+</TR>
+<TR><TD WIDTH=2 bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_05.gif" WIDTH=2 HEIGHT=10></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD valign="top" bgcolor="#9CD8EB" class="code"><font color="black"> rwlock.AcquireReaderLock (Timeout.Infinite);<br>int sold = (int) Cache["ItemsSold"];<br>int left = (int) Cache ["ItemsLeft"];<br>rwlock.ReleaseReaderLock ();</font></TD><TD bgcolor="#9CD8EB" WIDTH=11> <IMG SRC="/images/extrabox/spacer.gif" WIDTH=11 HEIGHT=10></TD><TD WIDTH=2 bgcolor="#FF9900"> <IMG SRC="/images/extrabox/extrabox_09.gif" WIDTH=2 HEIGHT=10></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 ROWSPAN=2 WIDTH=13 HEIGHT=13> <IMG SRC="/images/extrabox/extrabox_10.gif" WIDTH=13 HEIGHT=13></TD><TD bgcolor="#9CD8EB"><IMG SRC="/images/extrabox/spacer.gif" WIDTH=10 HEIGHT=11></TD><TD COLSPAN=2 ROWSPAN=2><IMG SRC="/images/extrabox/extrabox_12.gif" WIDTH=13 HEIGHT=13></TD>
+</TR>
+<TR>
+<TD bgcolor="#FF9900"><IMG SRC="/images/extrabox/extrabox_13.gif" WIDTH=10 HEIGHT=2></TD>
+</TR>
+</TABLE><p class="main">As with application state, locking the application cache is only necessary when performing multistep updates that are to be treated as atomic operations.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="8"></td>
+	</tr><tr class="main">
+		<td>
+				<b>If I update session state, should I lock it, too? Are concurrent accesses by multiple requests executing on multiple threads a concern with session state?</b>
+				<blockquote><p class="main">Concurrent accesses aren't an issue with session state, for two reasons. One, it's unlikely that two requests from the same user will overlap. Two, if they do overlap, ASP.NET locks down session state during request processing so that two threads can't touch it at once. Session state is locked down when the <i>HttpApplication</i> instance that's processing the request fires an <i>AcquireRequestState</i> event and unlocked when it fires a <i>ReleaseRequestState</i> event.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="9"></td>
+	</tr><tr class="main">
+		<td>
+				<b>ASP.NET's application cache supports expiration policies and cache removal callbacks. Expiration policies are based on time dependencies and file dependencies. Are database dependencies supported, too? In other words, can I have an item automatically removed from the cache in response to a database update?</b>
+				<blockquote><p class="main">In ASP.NET version 1.x, no. However, you can forge a link between databases and the ASP.NET application cache by combining file dependencies with database triggers. For details, and for working sample code, see Jeff Prosise's <a href="http://msdn.microsoft.com/msdnmag/issues/03/04/wickedcode/default.aspx"" target="_blank">Wicked Code</a> column in the April 2003 issue of MSDN Magazine.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="10"></td>
+	</tr>
+</table>
+
+</form>
+<table width="100%"><tr><td width="50%" class="main">Page: 3 of 9</td><td width="50%" align="right" class="main">Jump to Page: <a href="/resources/faqs/default.aspx?faq_id=1&page=2" class="main"><< Previous</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=1" class="main">1</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=2" class="main">2</a> 3 <a href="/resources/faqs/default.aspx?faq_id=1&page=4" class="main">4</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=5" class="main">5</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=6" class="main">6</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=7" class="main">7</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=8" class="main">8</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=9" class="main">9</a> <a href="/resources/faqs/default.aspx?faq_id=1&page=4" class="main">Next >></a> </td></tr></table>
+
+	<!-- End Body -->
+		<br><br>
+		  <div align="center" class="footer"><b>Wintellect &reg;</b><br>
+			10207 Technology Drive &#149; Suite 302 &#149; Knoxville, TN  37932<br>
+			Sales Office: 877-968-5528 or 603-965-0060 &#149; Corporate Office: 865-966-5528 &#149; 
+			Email: <a href="mailto:info@wintellect.com" class="footer">info@wintellect.com</a> 
+			&#149; <a href="/about/privacy.aspx" class="footer">Privacy Policy</a></div>
+		<br>
+	</td>
+    <td width=1 height=38 bgcolor="#0099CC"><img src="/images/spacer.gif" width=1 height=38 alt=""></td>
+  </tr>
+  <tr> 
+    <td width="171" bgcolor="#0099CC" valign="top"><span></span><br>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF9900">
+      <table width="100%" border="0" cellspacing="5" cellpadding="0" class="sideboxHead">
+        <tr>
+          <td class="sideboxHead">premium partner</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#0099CC">
+        <table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+        <td class="sideboxBody">
+
+			<br><center><img src="/images/cert_prt_rgb.gif" align="center" alt="Microsoft Certified Partner"><br><br>
+			  <a href="http://www.msdn.microsoft.com/vstudio/community/codewise/default.asp" border="0">
+			    <img src="/images/Partner_Logos/code_wise_120_40_member.gif" 
+					alt="Microsoft .NET CodeWise Community Member" height="40" width="120" border="0">
+			</center>
+		          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+	</td>
+    <td width="1" bgcolor="#0099CC"><img src="/images/spacer.gif" alt="." width="1" height="515"></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan=4><img src="/images/spacer.gif" alt="." width="1" height="500"></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#0099CC"></td>
+    <td bgcolor="#0099CC" width="1"></td>
+  </tr>
+</table>
+</body>
+</html>
+

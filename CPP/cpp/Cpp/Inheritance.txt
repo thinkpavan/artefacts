@@ -1,0 +1,21 @@
+
+// Inheritance //
+  Inheritance is the process of extending the features 
+of Base class to a derived class i.e., an object 
+of derived class contains the features of both the classes. 
+
+ syntax  :
+   class  <Baseclass>
+     {
+	------
+	-------
+     } ;
+
+  class  <derived>  : <Visibilty mode>  <Baseclass>
+    {
+	-------
+	-------	
+   };
+
+//  Type of Inheritances//
+ 

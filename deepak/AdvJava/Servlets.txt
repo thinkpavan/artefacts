@@ -1,0 +1,157 @@
+Note: CLASSPATH=C:\JSDK2.0\lib\jsdk.jar
+
+Simple Servlet Program:
+
+packages: 
+java.servlet.*;
+java.io.*;
+
+Classes:
+GenericServlet
+HttpServlet
+
+Interface:
+Servlet
+
+Methods:
+init(): servlet class variables can be initialised using this method
+service(): implemention code of servlet class
+destroy(): is executed when servlet program is terminated
+
+Java Beans:
+Reusablity can be implemented by using components
+VB : Active X  Controls
+VB.Net 
+C#
+MS-Office : Graph
+Server Application: Common Component
+Client Application: Software which calls the server component
+
+-->A Java Bean is a reusable piece of software developed in Java that supports three fudamentals of every component -properties, methods and events
+
+Need of JavaBeans:
+Redistribution or reuse of code and code compartmentalisation are the two basic reasons why jb tech come into existence.
+
+BDK:
+-->The java bdk according to sun Microsytems, is intended to support the development of jb's components and act as a standard reference base for both component developers and tool vendors.
+-->It allows you to test the functionality of your bean components including properties and events
+
+Running Beanbox:
+c:\bdk1.2\beanbox\run.bat
+
+Manifest File:
+-->This specifies which of the components in the jar(java archive) file are bean components
+
+Name: sunw/demo/display/one.gif
+Name: sunw/demo/display/two.gif
+Name: sunw/demo/display/three.gif
+Name: sunw/demo/display/display.class
+Java-Bean:True
+-->.mft extension
+
+Deploying:
+-->create a java archive 
+-->Tools such as bdk expect your beans to be archived in the form of a java archive also called as jar file
+--> .jar files exist in a compressed form thus enabling speedy downloads on the internet
+--> jar utility is used to create java archive
+syntax: jar cfm sqr.jar sqr.mft *.class
+
+
+example:
+import java.awt.*;
+import java.awt.event.*;
+public class Square extends Canvas{
+//properties or private data fields
+private String oper1="5";
+private String ans="0";
+public Dimension getPreferredSize()
+{
+return new Dimension(200,200);
+}
+public void setOper1(String op1)
+{
+oper1=op1;
+}
+public void getOper1()
+{
+return oper1;
+}
+public String getSolution(){
+int intop1=0;
+if((oper1!=null))
+{
+intop1=Integer.parseInt(oper1);
+int solution=0;
+solution=intop1*intop1;
+return new Integer(solution).toString();
+}
+}
+public Square(){
+addMouseListener(new MouseAdapter(){
+public void mousePressed(MouseEvent me)
+{
+ans="The square is"+getSolution();
+repaint();}
+});
+}
+public void paint(Graphics g)
+{
+g.drawString(ans,20,20);
+}
+}
+
+Two Main classes for Servlets are
+i. GenericServlet(Class)
+	a. ServletRequest (Interfaces)
+	b. ServletResponse
+Methods:
+init()
+service()
+destroy()
+ii. HttpServlet (Class)
+	a. HttpServletRequest (Interfaces)
+	b. HttpServletResponse
+Methods:	
+init()
+service()
+destroy()
+doGet()
+doPost()
+
+Note:
+<Form name="f1" method="post"/"get" action="URL">
+get: 
+-->data will be sended in non encrypted format
+-->sended by taking less time
+-->less amount of data can be transferred (255 chars)
+post:
+-->data will be sended in encrypted format
+-->sended by taking more time
+-->more amount of data can be transferred
+
+Other Servlet APIs classes and interfaces:
+i) Class ServletInputstream:
+provides an input stream for reading data recieved from a client's request. The ServletInputStream class is used to define an input
+syntax: 
+pub abstract class ServletInputStream extends InputStream
+ii)Class ServletOutputStream:
+Provides an output stream for writing data out to the client. This class actually provides overriden print() and println() methods.
+syntax: 
+pub abstract class ServletInputStream extends InputStream
+iii) ServletRequest interface:
+This method supports non-Http protocols and is used by the servlets that extend the GenericServlet class.
+a. getContentLength():- Returns an integer representing the total length of the requests data portion
+Syntax: pub abstract int getContenLength()
+b. getContentType():
+This returns a type of the requested data. The common types are
+Text/plain		ASCII text, contains formatting tags
+Text/html		HTML formatted documents
+Image/gif		GIF image
+Image/jpeg		JPEF image
+syntax: pub abstract String getContentType()
+c. getParameter():
+d. getParameters():
+
+i) Displaying html form using servlet file
+ii) more on doget() and dopost() methods
+

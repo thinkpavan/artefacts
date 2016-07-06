@@ -1,0 +1,144 @@
+
+Ex : 1
+Browser detection
+How to detect the client's browser
+
+<html>
+<head>
+
+<script type="text/javascript">
+document.write("You are browsing this site with: "+ navigator.appName)
+</script>
+
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+Ex : 2
+More details
+How to detect more details about the client
+
+<html>
+<body>
+<script type="text/javascript">
+document.write("BROWSER: ")
+document.write(navigator.appName + "<br>")
+document.write("BROWSERVERSION: ")
+document.write(navigator.appVersion + "<br>")
+document.write("CODE: ")
+document.write(navigator.appCodeName + "<br>")
+document.write("PLATFORM: ")
+document.write(navigator.platform + "<br>")
+document.write("REFERRER: ")
+document.write(document.referrer + "<br>")
+</script>
+</body>
+</html>
+
+
+
+Ex : 3
+Monitor
+How to detect details about the client's monitor
+
+<html>
+<body>
+<script type="text/javascript">
+document.write("SCREEN RESOLUTION: ")
+document.write(screen.width + "*")
+document.write(screen.height + "<br>")
+document.write("AVAILABLE VIEW AREA: ")
+document.write(window.screen.availWidth + "*")
+document.write(window.screen.availHeight + "<br>")
+document.write("COLOR DEPTH: ")
+document.write(window.screen.colorDepth + "<br>")
+</script>
+</body>
+</html>
+
+
+
+
+
+
+Ex : 4
+Redirect
+How to redirect the user to different pages, depending on browser
+
+
+<html>
+<head>
+<script type="text/javascript">
+function redirectme()
+{
+bname=navigator.appName
+if (bname.indexOf("Netscape")!=-1)
+	{
+	window.location="tryjs_netscape.htm"
+	return
+	}
+if (bname.indexOf("Microsoft")!=-1)
+	{
+	window.location="tryjs_microsoft.htm"
+	return
+	}
+window.location="tryjs_other.htm"
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" onclick="redirectme()" value="Redirect">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+Ex : 5
+Message
+How to write a different message to the user, 
+depending on the browser
+
+<html>
+<head>
+<script type="text/javascript">
+function browserversion()
+{
+txt="Your Browser is unknown"
+
+browser=navigator.appVersion
+
+if (browser.indexOf("2.")>-1)
+{
+txt="Your Browser is from the stone-age"
+}
+if (browser.indexOf("3.")>-1)
+{
+txt="You should update your Browser."
+}
+if (browser.indexOf("4.")>-1)
+{
+txt="Your Browser is good enough"
+}
+document.forms[0].message.value=txt
+}
+</script>
+</head>
+
+<body onload="browserversion()">
+
+<form>
+<input type="text" name="message" size="50">
+</form>
+
+</body>
+</html>
+

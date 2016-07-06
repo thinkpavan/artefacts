@@ -1,0 +1,212 @@
+The Date object
+The Date object is used to work with dates and times. 
+
+syntax : 
+var   d = new Date()
+var   d = new Date("Month dd, yyyy hh:mm:ss")
+var   d = new Date("Month dd, yyyy")
+var   d = new Date(yy,mm,dd,hh,mm,ss)
+var   d = new Date(yy,mm,dd)
+var   d = new Date(milliseconds)
+ 
+ex :
+var d = new Date("October 12, 1988 13:14:00")
+var d = new Date("October 12, 1988")
+var d = new Date(88,09,12,13,14,00)
+var d = new Date(88,09,12)
+var d = new Date(500)
+ 
+The Date object's methods are described below:
+
+Methods 		Explanation 
+=========	===========
+Date()		 Returns a Date object 
+
+getDate()		 Returns the date of a Date object 			(from 1-31) 
+
+getDay()		 Returns the day of a Date object
+		 (from 0-6. 0=Sunday, 1=Monday) 	
+
+getMonth()	 Returns the month of a Date object
+		 (from 0-11. 0=January,1=February)
+
+getFullYear()	 Returns the year of a Date object
+		 (four digits)  
+
+getYear()		 Returns the year of a Date object 
+		(from 0-99).  
+
+getHours()	 Returns the hour of a Date object
+		 (from 0-23)  
+
+getMinutes()	 Returns the minute of a Date object
+		(from 0-59)  
+
+getSeconds()	 Returns the second of a Date object
+		 (from 0-59)  
+
+getMilliseconds()	 Returns the millisecond of a Date 			object (from 0-999)  
+
+getTime()		 Returns the number of milliseconds
+		 since midnight 1/1-1970  
+
+getTimezoneOffset()	 Returns the time difference between 		the user's computer and GMT  
+
+getUTCDate()	 Returns the date of a Date object in
+		 universal (UTC) time  
+
+getUTCDay()	 Returns the day of a Date object in
+		 universal time  
+
+getUTCMonth()	Returns the month of a Date object 			in universal time  
+
+getUTCFullYear()	 Returns the four-digit year of a Date
+		 object in universal time  
+
+getUTCHours()	 Returns the hour of a Date object in
+		 universal time  
+
+getUTCMinutes()	Returns the minutes of a Date 				object in universal time  
+
+getUTCSeconds()	Returns the seconds of a Date 			object in universal time  
+
+getUTCMilliseconds() Returns the milliseconds of a Date 			object in universal time  
+
+parse()		 Returns a string date value that 			holds the number of milliseconds 			since January 01 1970 00:00:00  
+
+setDate()		Sets the date of the month in the 			Date object (from 1-31)  
+
+setFullYear()	Sets the year in the Date object 			(four digits)  
+
+setHours()	 Sets the hour in the Date object 			(from 0-23)  
+
+setMilliseconds()	Sets the millisecond in the Date 			object (from 0-999)  
+
+setMinutes()	 Set the minute in the Date object 			(from 0-59)  
+
+setMonth()	 Sets the month in the Date object
+		 (from 0-11. 0=January, 1=February)  
+setSeconds()	 Sets the second in the Date object 			(from 0-59)  
+
+setTime()		 Sets the milliseconds after 1/1-1970 
+
+setYear()		Sets the year in the Date object 			(00-99)  
+
+setUTCDate()	 Sets the date in the Date object, in 
+		universal time (from 1-31)  
+
+setUTCDay()	 Sets the day in the Date object, in
+		 universal time (from 0-6. Sunday=0, 		Monday=1, etc.)  
+
+setUTCMonth()	 Sets the month in the Date object, in
+		 universal time (from 0-11. 		0=January, 1=February)  
+
+setUTCFullYear()	 Sets the year in the Date object, in
+		 universal time (four digits)  
+
+setUTCHour() 	Sets the hour in the Date object, in
+		 universal time (from 0-23)  
+
+setUTCMinutes() 	Sets the minutes in the Date object, 		in universal time (from 0-59) 
+setUTCSeconds()	 Sets the seconds in the Date object, 		in universal time (from 0-59) 
+setUTCMilliseconds() Sets the milliseconds in the Date 		object, in	 universal time (from 			0-999)  
+
+toGMTString() 	Converts the Date object to a string, 		set to GMT time zone  
+
+toLocaleString()	 Converts the Date object to a string, 
+		set to the current time zone 
+
+toString()		 Converts the Date object to a string 
+
+
+Ex :
+// To Display Day, Month And Year 
+<html>
+<body>
+<script type="text/javascript">
+	var d = new Date()
+	document.write(d.getDate())
+	document.write(".")
+	document.write(d.getMonth() + 1)
+	document.write(".")
+	document.write(d.getFullYear())
+</script>
+</body>
+</html>
+
+
+Ex  : 
+<html>
+<body>
+
+<script type="text/javascript">
+var d = new Date()
+document.write(d.getHours() + " : " + d.getMinutes() + " : " + d.getSeconds())
+</script>
+
+</body>
+</html>
+
+
+Ex : 
+
+<script type="text/javascript">
+var d = new Date()
+d.setFullYear("1990")
+document.write(d)
+</script>
+
+Ex  :
+
+<script type="text/javascript">
+var d = new Date()
+document.write(d.getUTCHours())
+document.write(".")
+document.write(d.getUTCMinutes())
+document.write(".")
+document.write(d.getUTCSeconds())
+</script>
+
+Ex :
+<script type="text/javascript">
+var d=new Date()
+var weekday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+var monthname=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
+document.write(weekday[d.getDay()] + " ")
+document.write(d.getDate() + ". ")
+document.write(monthname[d.getMonth()] + " ")
+document.write(d.getFullYear())
+</script>
+
+Ex :
+
+<html>
+<head>
+<script type="text/javascript">
+var timer = null
+
+function stop()
+{
+clearTimeout(timer)
+}
+
+function start()
+{
+var time = new Date()
+var hours = time.getHours()
+var minutes = time.getMinutes()
+minutes=((minutes < 10) ? "0" : "") + minutes
+var seconds = time.getSeconds()
+seconds=((seconds < 10) ? "0" : "") + seconds
+var clock = hours + ":" + minutes + ":" + seconds 
+document.forms[0].display.value = clock
+timer = setTimeout("start()",1000)
+}
+</script>
+</head>
+<body onload="start()" onunload="stop()">
+<form >
+<input type="text" name="display" size="20">
+</form>
+</body>
+</html>

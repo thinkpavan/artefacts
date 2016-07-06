@@ -1,0 +1,231 @@
+Examples
+
+Ex :
+Alert box
+How to display an alert box.
+
+<html>
+<body>
+
+<script type="text/javascript">
+alert("Hello World!")
+
+
+/////////////////////
+Confirm box
+How to display a confirm box.
+
+
+var name = confirm("Press a button")
+if (name == true)
+{
+document.write("You pressed OK")
+}
+else
+{
+document.write("You pressed Cancel")
+}
+
+
+//////////////////////////////
+Prompt box
+How to display a prompt box.
+
+
+var name = prompt("Please enter your name","")
+if (name != null && name != "")
+{
+document.write("Hello " + name)
+}
+
+
+//////////////////////////////////
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
+
+Ex :
+Open a new window when clicking on a button
+How you can display a new window.
+
+
+Ex :
+Open a new window when clicking on a button
+How you can display a new window.
+
+
+
+<html>
+<head>
+
+<script language=javascript>
+function openwindow() 
+{
+   window.open("http://www.aptech-education.com")
+}
+</script>
+
+</head>
+<body>
+<form>
+<input type=button value="Open Window" onclick="openwindow()">
+</form>
+</body>
+</html>
+
+
+Ex :
+Open a new window and control its appearance
+How you can display a new window, but also decide the new window's appearance.
+
+
+<html>
+<head>
+
+<script type="text/javascript">
+function openwindow()
+{
+window.open("http://www.sample.com","my_new_window","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=400, height=400")
+}
+</script>
+
+</head>
+<body>
+
+<form>
+<input type="button" 
+value="Open Window" 
+onclick="openwindow()">
+</form>
+
+</body>
+</html>
+
+
+Ex :
+Multiple windows
+How to pop up more than one window with just one click.
+
+
+
+<html>
+<head>
+
+<script language=javascript>
+function openwindow() 
+{
+window.open("http://www.microsoft.com/")
+window.open("http://www.aptech-education.com/")
+}
+</script>
+
+</head>
+<body>
+<form>
+<input type=button value="Open Windows" onclick="openwindow()">
+</form>
+</body>
+</html>
+
+Ex :
+Location
+How to send the client to a new location (URL/page).
+
+
+<html>
+<head>
+
+<script type="text/javascript">
+function locate()
+{
+location="http://www.sample.com/"
+}
+</script>
+
+</head>
+<body>
+
+<form>
+<input type="button" onclick="locate()" value="New location">
+</form>
+
+</body>
+</html>
+
+Ex :
+Refresh
+How to refresh a document.
+
+
+<html>
+<head>
+
+<script type="text/javascript">
+function refresh()
+{
+location.reload()
+}
+</script>
+</head>
+
+<body>
+<form>
+<input type="button" value="Refresh" onclick="refresh()">
+</form>
+</body>
+</html>
+
+Ex :
+Status bar
+How to write some text in the windows status bar.
+
+
+
+<html>
+<head>
+<script type="text/javascript">
+function load()
+{
+window.status = "put your message here"
+}
+</script>
+</head>
+<body onload="load()">
+<p>Look in the statusbar</p>
+</body>
+</html>
+
+
+
+Ex :
+Print page
+How to print the page.
+
+
+
+<html>
+
+<head>
+<script type="text/javascript">
+function printpage()
+{
+window.print()
+}
+</script>
+
+</head>
+<body>
+
+<form>
+<input type="button" value="Print this page" onclick="printpage()">
+</form>
+
+</body>
+</html>

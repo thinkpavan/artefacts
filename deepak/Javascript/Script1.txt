@@ -1,0 +1,27 @@
+
+JavaScript is used in millions of Web pages to improve the design, validate forms, and much more. JavaScript was developed by Netscape and is the most popular scripting language on the internet.
+
+JavaScript works in all major browsers that are version 3.0 or higher.
+
+What is JavaScript?
+
+JavaScript was designed to add interactivity to HTML pages 
+
+JavaScript is a scripting language - a scripting language is a lightweight programming language 
+
+JavaScript is usually embedded directly in HTML pages 
+
+JavaScript is an interpreted language (means that scripts execute without preliminary compilation) 
+
+JavaScript is supported by all major browsers, like Netscape and Internet Explorer 
+
+Java and JavaScript are two completely different languages!
+
+Java (developed by Sun Microsystems) is a powerful and very complex programming language - in the same category of languages like C and C++.
+
+JavaScript can react to events - A JavaScript can be set to execute when something happens, like when a page has finished loading or when a user clicks on an HTML element 
+
+JavaScript can read and write HTML elements - A JavaScript can read and change the content of an HTML element 
+
+JavaScript can be used to validate data - A JavaScript can be used to validate form data before it is submitted to a server, this will save the server from extra processing 
+

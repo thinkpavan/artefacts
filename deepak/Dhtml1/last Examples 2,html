@@ -1,0 +1,567 @@
+ex  :  1
+//Pre load Image 
+
+<html>
+<head>
+<script type="text/javascript">
+img2=new Image()
+img2.src="landscape3.gif" 
+function changeImage()
+{
+document.getElementById('myImage').src=img2.src
+}
+</script>
+</head>
+
+<body>
+
+<p>When you mouse over the image, a new image will appear.</p>
+<img id="myImage" onmouseover="changeImage()" border="0" width="160" height="120" src="landscape2.jpg">
+<p>The new image appears instantly, because your browser has already loaded the image.</p>
+
+</body>
+</html>
+
+
+
+
+
+Ex: 2
+//Change Back ground Image
+
+<html>
+<head>
+<script type="text/javascript">
+function bgChange(bg)
+{
+document.body.background=bg
+}
+</script>
+</head>
+
+<body>
+
+<b>Mouse over these images, and the background will change</b>
+<table width="300" height="100">
+ <tr>
+  <td onmouseover="bgChange('paper.jpg')" 
+      background="paper.jpg">
+  </td>
+  <td onmouseover="bgChange('bluesilk.jpg')" 
+      background="bluesilk.jpg">
+  </td>
+  <td onmouseover="bgChange('bgdesert.jpg')" 
+      background="bgdesert.jpg">
+  </td>
+</tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+// Ex :  3
+//Moving Image
+
+<html>
+<head>
+<script type="text/javascript">
+var i=1
+function starttimer()
+{
+document.getElementById('myimage').style.position="relative"
+document.getElementById('myimage').style.left=+i
+i++
+timer=setTimeout("starttimer()",10)
+}
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+
+<body onload="starttimer()" onunload="stoptimer()">
+<img id="myimage" src="smiley.gif" width="32" height="32" />
+</body>
+</html>
+
+
+
+
+// Ex :  4
+
+Drag And Drop
+
+<html>
+<head>
+<style>
+img
+{
+position:relative;
+}
+</style>
+<script type="text/javascript">
+function coordinates()
+{
+
+if (event.srcElement.id=="moveMe")
+	{
+pleft=document.getElementById('moveMe').style.pixelLeft
+ptop=document.getElementById('moveMe').style.pixelTop
+	xcoor=event.clientX
+	ycoor=event.clientY
+	document.onmousemove=moveImage
+	}
+}
+
+function moveImage()
+{
+if (event.button==1)
+	{
+	document.getElementById('moveMe').style.pixelLeft=pleft+event.clientX-xcoor
+	document.getElementById('moveMe').style.pixelTop=ptop+event.clientY-ycoor
+	return false
+	}
+}
+
+document.onmousedown=coordinates
+</script>
+</head>
+<body>
+<img id="moveMe" src="images/smiley.gif" width="32" height="32"><br />
+<b>Drag and drop the image</b>
+</body>
+</html>
+
+
+
+
+
+
+// Image Viewer
+<html>
+<head>
+<script type="text/javascript">
+myImages=new Array()
+myImages[0]="w3schools.gif"
+myImages[1]="bulbon.gif"
+myImages[2]="landscape.jpg"
+myImages[3]="w3schools.gif"
+myImages[4]="bulboff.gif"
+myImages[5]="smiley.gif"
+imagecounter=myImages.length-1
+i=0
+
+function first()
+{
+document.getElementById('imageviewer').src=myImages[0]
+i=0
+}
+
+function previous()
+{
+if (i>0)
+	{
+	i--
+	document.getElementById('imageviewer').src=myImages[i]
+	}
+}
+
+function next()
+{
+if (i<imagecounter)
+	{
+	i++
+	document.getElementById('imageviewer').src=myImages[i]
+	}
+}
+
+function last()
+{
+document.getElementById('imageviewer').src=myImages[imagecounter]
+i=imagecounter
+}
+</script>
+</head>
+
+<body onload="first()">
+<center>
+<form>
+<input type="button" value="First" onclick="first()">
+<input type="button" value="Previous" onclick="previous()">
+<input type="button" value="Next" onclick="next()">
+<input type="button" value="Last" onclick="last()">
+</form>
+<img id="imageviewer">
+</center>
+</body>
+</html>
+
+
+
+
+
+//Back Ground To Buttons
+
+<html>
+<head>
+<style>
+input
+{
+background-image:url('landscape.jpg');
+}
+</style>
+<script type="text/javascript">
+function over()
+{
+if (event.srcElement.tagName=="INPUT")
+	{
+	event.srcElement.style.backgroundImage="url('w3schools.gif')"
+	}
+}
+
+function out()
+{
+if (event.srcElement.tagName=="INPUT")
+	{
+	event.srcElement.style.backgroundImage="url('landscape.jpg')"
+	}
+}
+</script>
+</head>
+
+<body>
+<p>Mouse over these buttons</p>
+<form onmouseout="out()" onmouseover="over()">
+<input class="a" type="button" value="Button 1"><br />
+<input class="b" type="button" value="Button 2"><br />
+<input class="c" type="button" value="Button 3"><br />
+</form>
+</body>
+
+</html>
+
+
+
+
+
+// Shaking Image
+
+<html>
+<head>
+<script type="text/javascript">
+function shakeleft()
+{
+document.getElementById('image').style.position="relative"
+document.getElementById('image').style.left="3"
+timer=setTimeout("shakeright()",10)
+}
+
+function shakeright()
+{
+document.getElementById('image').style.left="0"
+timer=setTimeout("shakeleft()",10)
+}
+
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+
+<body>
+<b>Mouse over the image to see it shake</b><br />
+<img id="image" src="smiley.gif"
+onmouseover="shakeleft()"
+onmouseout="stoptimer()" width="32" height="32" />
+</body>
+
+</html>
+
+
+
+
+
+// Digital Clock
+
+<html>
+<head>
+<script type="text/javascript">
+function getDigits()
+{
+num=new Array("0fdr.gif","1fdr.gif","2fdr.gif","3fdr.gif",
+"4fdr.gif","5fdr.gif","6fdr.gif","7fdr.gif","8fdr.gif","9fdr.gif")
+time=new Date()
+hour=time.getHours()
+if (hour<10)
+	{
+	document.getElementById('hour1').src=num[0]
+	h2="'" + hour + "'"
+	h2=h2.charAt(1)
+	document.getElementById('hour2').src=num[h2]
+	}
+else
+	{
+	h1="'" + hour + "'"
+	h1=h1.charAt(1)
+	document.getElementById('hour1').src=num[h1]
+	h2="'" + hour + "'"
+	h2=h2.charAt(2)
+	document.getElementById('hour2').src=num[h2]
+	}
+minute=time.getMinutes()
+if (minute<10)
+	{
+	document.getElementById('minute1').src=num[0]
+	m2="'" + minute + "'"
+	m2=m2.charAt(1)
+	document.getElementById('minute2').src=num[m2]
+	}
+else
+	{
+	m1="'" + minute + "'"
+	m1=m1.charAt(1)
+	document.getElementById('minute1').src=num[m1]
+	m2="'" + minute + "'"
+	m2=m2.charAt(2)
+	document.getElementById('minute2').src=num[m2]
+	}
+second=time.getSeconds()
+if (second<10)
+	{
+	document.getElementById('second1').src=num[0]
+	s2="'" + second + "'"
+	s2=s2.charAt(1)
+	document.getElementById('second2').src=num[s2]
+	}
+else
+	{
+	s1="'" + second + "'"
+	s1=s1.charAt(1)
+	document.getElementById('second1').src=num[s1]
+	s2="'" + second + "'"
+	s2=s2.charAt(2)
+	document.getElementById('second2').src=num[s2]
+	}
+}
+function showTime()
+{
+timer=setTimeout("getDigits()",10)
+interval=setInterval("getDigits()",1000)
+}
+function stopInterval()
+{
+clearTimeout(timer)
+clearInterval(interval)
+}
+</script>
+</head>
+
+<body onload="showTime()" onunload="stopInterval()" bgcolor="#000000">
+<img id="hour1" />
+<img id="hour2" />
+<img id="minute1" />
+<img id="minute2" />
+<img id="second1" />
+<img id="second2" />
+</body>
+</html>
+
+
+
+
+// FILTERS
+// B/W  to Color
+
+<html>
+<head>
+<style>
+img
+{
+filter:gray()
+}
+</style>
+<script type="text/javascript">
+function color()
+{
+document.getElementById('myImage').style.filter=false
+}
+function gray()
+{
+document.getElementById('myImage').style.filter="gray()"
+}
+</script>
+</head>
+
+<body>
+<b>Mouse over the image</b><br />
+<img id="myImage" src="landscape.jpg" onmouseover="color()" onmouseout="gray()" width="160" height="120">
+</body>
+</html>
+
+
+
+
+
+// Gradually Show Image
+
+<html>
+<head>
+<style>
+img
+{
+filter:alpha(opacity=10)
+}
+</style>
+<script type="text/javascript">
+function clean()
+{
+interval=setInterval("makeclean(myImage)",10)
+}
+
+function foggy()
+{
+clearInterval(interval)
+document.getElementById('myImage').filters.alpha.opacity=10
+}
+
+function makeclean()
+{
+if (document.getElementById('myImage').filters.alpha.opacity<100)
+	{
+	document.getElementById('myImage').filters.alpha.opacity+=5
+	}
+else if (window.interval)
+	{
+	clearInterval(interval)
+	}
+}
+</script>
+</head>
+
+<body>
+<img id="myImage" src="landscape.jpg" onmouseover="clean()" onmouseout="foggy()" width="160" height="120">
+<b>Mouse over the image</b>
+</body>
+</html>
+
+
+
+
+
+// Mask Filter
+
+<html>
+<head>
+<style>
+div
+{
+position:absolute;
+left:10px;
+top:100px;
+width:160px;
+height:120px;
+}
+</style>
+<script type="text/javascript">
+function getFilter()
+{
+document.getElementById('myDiv').style.filter="mask(color=#ffffff)"
+}
+function noFilter()
+{
+document.getElementById('myDiv').style.filter=false
+}
+</script>
+</head>
+
+<body>
+<p>This example demonstrates how to dynamically insert the mask filter.</p>
+<p>Mouse over the image below</p>
+<div><img src="landscape.jpg" width="160" height="120"></div>
+<div onmouseover="getFilter()" onmouseout="noFilter()" id="myDiv">
+<h1>Mouse over this image landscape</h1></div>
+</body>
+</html>
+
+
+
+
+
+// Moving Mask Filter
+
+<html>
+<head>
+<style>
+div
+{
+width:160px;
+height:120px;
+}
+img
+{
+position:relative;
+}
+span
+{
+position:absolute;
+left:0px;
+top:0px;
+}
+</style>
+<script type="text/javascript">
+mouseover=true
+
+function coordinates()
+{
+if (!moveMe)
+	{
+	return
+	}
+if (event.srcElement.id=="moveMe")
+	{
+	mouseover=true
+	pleft=document.getElementById('moveMe').style.pixelLeft
+	ptop=document.getElementById('moveMe').style.pixelTop
+	xcoor=event.clientX
+	ycoor=event.clientY
+	document.onmousemove=moveImage
+	}
+}
+
+function moveImage()
+{
+if (mouseover&&event.button==1)
+	{
+	document.getElementById('moveMe').style.pixelLeft=pleft+event.clientX-xcoor
+	document.getElementById('moveMe').style.pixelTop=ptop+event.clientY-ycoor
+	return false
+	}
+}
+function mouseup()
+{
+mouseover=false
+}
+document.onmousedown=coordinates
+document.onmouseup=mouseup
+</script>
+
+</head>
+<body>
+<span>Move the circle</span>
+<br>
+<div style="position:absolute;left:0;top:20;">
+<img src="landscape.jpg" width="160" height="120" /></div>
+<div style="position:absolute;left:0;top:20;filter:mask(color=#ffffff);width:160;height:120">
+<img id="moveMe" src="smiley.gif" width="40" height="40"></div>
+</body>
+</html>
+
+
+
+

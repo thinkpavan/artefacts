@@ -1,0 +1,47 @@
+
+
+	Types of iterators and their description
+	
+	
+	
+input		used to read from a container. An input iterator can
+			be move only in the forword direction( ie begining 
+			of the container to the end of the container) one 
+			element at a time. Input iterator uses a one pass 
+			algorithm. Ie the same iterator cannot be used to 
+			pass throuh the same sequence twise
+
+
+output		used to write an element to a container. An output 
+			iterator can move onlu in the forword direction
+			one element at a time. Output iterator supports one
+			 pass algorithm.
+							
+							
+forword		Combines the capabilities of input and output
+			iterator and retain their position in the container
+	
+	
+bidirectional	Combines the capabilities of a forword iterator with 
+				the ability  to move in the backword direction 
+				Forword iterator supports multipass algorithms
+							
+	
+	
+random access	Combies the capability of a bidirectional iterator 
+				with the ability to directly access any element of 
+				container (ie. to jump forword or backwords by an 
+				arbitraty location)
+							
+							
+							
+							
+								input			output
+							
+										
+										forword
+									
+										
+								      bidirectional
+								 	
+									  random access

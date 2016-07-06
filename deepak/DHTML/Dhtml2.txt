@@ -1,0 +1,96 @@
+Which Attributes can be Used with CSS-P?
+First, the element must specify the position attribute (relative or absolute).
+
+Then we can set the following CSS-P attributes:
+
+left - the element's left position 
+top - the element's top position 
+visibility - specifies whether an element should be visible or hidden 
+z-index - the element's stack order 
+clip - element clipping 
+overflow - how overflow contents are handled 
+
+-------------------------------------------------------------------
+
+Position
+The CSS position property allows you to control the positioning of an element in a document.
+
+position:relative
+The position:relative property positions an element relative to its current position.
+
+The following example positions the div element 10 pixels to the right from where it's normally positioned:
+
+div
+{
+position:relative;
+left:10;
+}
+ 
+
+position:absolute
+The position:absolute property positions an element from the margins of the window.
+
+The following example positions the div element 10 pixels to the right from the left-margin of the the window:
+
+div
+{
+position:absolute;
+left:10;
+}
+ 
+
+
+-------------------------------------------------------------------
+
+Visibility
+The visibility property determines if an element is visible or not.
+
+visibility:visible
+The visibility:visible property makes the element visible.
+
+h1
+{
+visibility:visible;
+}
+ 
+
+visibility:hidden
+The visibility:hidden property makes the element invisible.
+
+h1
+{
+visibility:hidden;
+}
+ 
+
+
+-------------------------------------------------------------------
+Z-index
+The z-index property is used to place an element "behind" another element. Default z-index is 0. The higher number the higher priority. z-index: -1 has lower priority.
+
+h1
+{
+z-index:1;
+}
+h2
+{
+z-index:2;
+}
+ 
+
+In the example above, if the h1 and h2 elements are positioned on top of each other, the h2 element will be positioned on top of the h1 element.
+
+
+-------------------------------------------------------------------
+Filters
+The filter property allows you to add more style effects to your text and images.
+
+h1
+{
+width:100%;
+filter:glow;
+}
+ 
+
+Note: Always specify the width of the element if you want to use the filter property.
+

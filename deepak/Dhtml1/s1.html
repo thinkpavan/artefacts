@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE></TITLE>
+<style type="text/JavaScript">
+
+function setBackground(thistag)
+ {
+	with(thistag)
+	 {
+		if(color == "yellow")
+		 { backgroundColor = "blue" ; }
+		else
+		 if(color == "white")
+		  { backgroundColor = "black" ; }
+		 
+	 }
+ }
+
+ with(tags)
+  {
+	H1.color = "white";
+	H2.color = "yellow";
+	H3.color = "purple";  
+  }
+
+tags.H1.apply setBackground(tags.H1);
+tags.H2.apply setBackground(tags.H2);
+tags.H3.apply setBackground(tags.H3);
+
+</script>
+
+</HEAD>
+<BODY bgcolor="white">
+
+
+<h1> This is heading 1 </h1>
+<h2> This is heading 2 </h2>
+<h3> This is heading 3 </h3>
+</BODY>
+</HTML>

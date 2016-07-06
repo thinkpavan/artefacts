@@ -1,0 +1,96 @@
+Scriplets:
+-->These contains the code that are valid for the language specified in the language directive
+-->These can make of use of declarations, expressions
+
+<%@page language="java"%>
+<%@page import="java.util.Date"%>
+<%java.util.Date now=new java.util.Date()%>
+<html>
+<body>
+<%now=new java.util.Date()%>
+<b>The time now is :</b>
+<%=now.getHours()%>:
+<%=now.getMinutes()%>:
+<%=now.getSeconds()%>
+</body>
+</html>
+
+<%@page language="java"%>
+<%@page import="java.util.Date"%>
+<%java.util.Date now=new java.util.Date()%>
+<html>
+<body>
+<%
+now=new java.util.Date();
+out.println("<b>"+"Current System Time is :"+now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()+"</b>");
+%>
+</body>
+</html>
+
+Programming Constructs:
+if ..else
+switch
+loops
+Exception Handling
+
+Scriplets
+<%!int num=0;%>
+<%num=num+1;%>
+<%=num%>
+
+Errors:
+a. Compile time errors (Syntactical errors)
+b. Logical errors
+c. Runtime errors: Exceptions
+20 10	2
+20  0 	
+
+Structured Exception Handling:
+try: Statements which may raise the exceptions
+catch : Statments executed if exception is raised
+finally: common statements to be executed if exception is raised or not raised
+-->Multiple catch blocks
+
+Handling JSP Errors
+-----------------------------
+a. Translation Errors: (Compile time)
+Errrors displayed when page is requested first time
+b. Request Time errors: (Runtime errors)
+Occurs during the subsequent requests
+
+creating a user defined JSP Error Page:
+File Name: myerrpage.jsp
+
+<%@page isErrorPage="true"%>
+<html>
+<body>
+<h1><Center>JSP User Defined Error Page</Center></h1>
+<table>
+<Tr>
+<td>Exception</td>
+<td><%=exception%></td>
+</tr>
+<tr>
+<td>Message</td>
+<td><%=exception.getMessage()%></td>
+</tr>
+</table>
+</body>
+</html>
+
+Using error page in other jsp file:
+<%@ page errorPage="myerrpage.jsp"%>
+<html>
+<body>
+<%
+int fn=100;
+int sn=0;
+int res=fn/sn;
+out.println(res);
+%>
+</body>
+</html>
+
+
+
+

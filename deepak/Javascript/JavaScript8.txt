@@ -1,0 +1,159 @@
+
+JavaScript String Object
+
+The String object
+The String object is used to work with text.
+
+
+Properties 	Explanation 
+---------------	-----------------
+length 		Returns the number of characters in 			a string 
+
+
+Methods 		Explanation 
+-----------		-----------------
+anchor() 		Returns a string as an anchor 
+big() 		Returns a string in big text   
+blink() 		Returns a string blinking 
+bold() 		Returns a string in bold 
+charAt() 		Returns the character at a specified 			position 
+charCodeAt() 	Returns the Unicode of the character 		at a specified position 
+concat() Returns two concatenated strings 4.0 4.0   
+fixed() Returns a string as teletype 2.0 3.0   
+fontcolor() Returns a string in a specified color 2.0 3.0   
+fontsize() Returns a string in a specified size 2.0 3.0   
+fromCharCode() Returns the character value of a Unicode 4.0 4.0   
+indexOf() Returns the position of the first occurrence of a specified string inside another string. Returns -1 if it never occurs 2.0 3.0   
+italics() Returns a string in italic 2.0 3.0   
+lastIndexOf() Returns the position of the first occurrence of a specified string inside another string. Returns -1 if it never occurs. Note: This method starts from the right and moves left! 2.0 3.0   
+link() Returns a string as a hyperlink 2.0 3.0   
+match() Similar to indexOf and lastIndexOf, but this method returns the specified string, or "null", instead of a numeric value 4.0 4.0   
+replace() Replaces some specified characters with some new specified characters 4.0 4.0   
+search() Returns an integer if the string contains some specified characters, if not it returns -1 4.0 4.0   
+slice() Returns a string containing a specified character index 4.0 4.0   
+small() Returns a string as small text 2.0 3.0   
+split() Splits a string into an array of strings  4.0 4.0 1.0 
+strike() Returns a string strikethrough 2.0 3.0   
+sub() Returns a string as subscript 2.0 3.0   
+substr() Returns the specified characters. 14,7 returns 7 characters, from the 14th character (starts at 0) 4.0 4.0   
+substring() Returns the specified characters. 7,14 returns all characters from the 7th up to but not including the 14th (starts at 0) 2.0 3.0 1.0 
+sup() Returns a string as superscript 2.0 3.0   
+toLowerCase() Converts a string to lower case 2.0 3.0 1.0 
+toUpperCase() Converts a string to upper case 2.0 3.0 1.0 
+
+
+
+// Length Example //
+<html>
+<body>
+
+<script type="text/javascript">
+var str="W3Schools is great!"
+document.write("<p>" + str + "</p>")
+document.write(str.length)
+</script>
+
+</body>
+</html>
+
+
+
+
+// font color example
+<html>
+<body>
+
+<script type="text/javascript">
+
+var txt="W3Schools is great!!"
+
+document.write("<p>" + txt.fontcolor() + "</p>")
+document.write("<p>" + txt.fontcolor('red') + "</p>")
+document.write("<p>" + txt.fontcolor('blue') + "</p>")
+document.write("<p>" + txt.fontcolor('green') + "</p>")
+
+</script>
+
+</body>
+</html>
+
+
+// Index of example //
+
+<html>
+<body>
+
+<script type="text/javascript">
+var str="W3Schools is great!"
+var pos=str.indexOf("School")
+if (pos>=0)
+{
+document.write("School found at position: ")
+document.write(pos + "<br />")
+}
+else
+{
+document.write("School not found!")
+}
+</script>
+
+<p>This example tests if a string contains a specified word. If the word is found it returns the position of the first character of the word in the original string. Note: The first position in the string is 0!</p>
+
+</body>
+</html>
+
+//match example  //
+
+<html>
+<body>
+
+<script type="text/javascript">
+var str = "W3Schools is great!"
+document.write(str.match("gret"))
+</script>
+
+<p>This example tests if a string contains a specified word. If the word is found it returns the word.</p>
+
+</body>
+</html>
+
+
+// substr and substring  example  //
+<body>
+
+<script type="text/javascript">
+var str="W3Schools is great!"
+document.write(str.substr(2,6))
+document.write("<br /><br />")
+document.write(str.substring(2,6))
+</script>
+
+<p>
+The substr() method returns a specified part of a string. If you specify (2,6) the returned string will be from the second character (start at 0) and 6 long.
+</p>
+
+<p>
+The substring() method also returns a specified part of a string. If you specify (2,6) it returns all characters from the second character (start at 0) and up to, but not including, the sixth character.
+</p>
+
+</body>
+</html>
+
+// toLowercase toUppercase  example  //
+<html>
+<body>
+
+<script type="text/javascript">
+var str=("Hello JavaScripters!")
+document.write(str.toLowerCase())
+document.write("<br>")
+document.write(str.toUpperCase())
+</script>
+
+</body>
+</html>
+
+
+
+
+

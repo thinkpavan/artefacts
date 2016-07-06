@@ -1,0 +1,30 @@
+- Approved users don't have to be moderated
+- Is there currently a way to display a welcome message / header 
+  specific to certain groups? For instance, I would like to display 
+  a message to all Guests encouraging them to register on the site, 
+  however, I do not want this message visible to Members or Administrators.
+- It would be nice to have a Popup + Web + EMail notification for Personal 
+  Messages + an option in the Profile to disable it.
+- tooltips for user profile links (View profile).
+- somehow show that there are messages to be moderated.
+- Keep deleted posts for later purge. Option for moderators to tell why the post was deleted.
+- Admin can change user password
+- Language strings: tooltips for buttons (reply, quote, ...)
+- Censoring: <http://forum.yetanotherforum.net/posts.aspx?t=339>
+- Unicode support: <http://forum.yetanotherforum.net/default.aspx?g=posts&m=1036#1036>
+- Limit sigs to 5 lines or something...
+- Link correctly back to forum from install.
+- Anonymous login
+- In the list of topics of a forum, can be showed a different image for topics 
+  with most activity then other (more than 10 or configurable numbers of posts).
+- A fast response text box (only simple text with post button) at the bottom of 
+  an open topic if the user can reply. So if I read a topic and want to reply 
+  "on the fly" I can do it immediatly.
+- Fix translation again for richedit.
+- Add colors to rich editor.
+- Ok this is what i get after i try to add a sub forum.... "User 'pro-logic' isn't registered."
+- Possible to modify subject of messages?!?
+- Disable user registration.
+- "New posts" icons should also check sub-forums.
+- Forum dropdowns: http://forum.yetanotherforum.net/default.aspx?g=posts&t=474&find=unread
+- Error deleting posts with attachments.

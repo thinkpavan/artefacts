@@ -1,0 +1,38 @@
+Question 1 
+  You have developed a Windows application that assists users in maintaining their timesheets. After successfully testing the application, you decide to deploy it on users' computers. You ask four users to install the application on their computers and provide feedback. Three users reported that they are able to create timesheets and are happy with the application's performance. However, the fourth user reports that she is getting an error message similar to "The dynamic link library mscoree.dll could not be found." Which of the following steps should you suggest the user take in order to resolve this error message?
+ 
+    
+ A)  Ask the user to copy all assemblies from the \bin folder to the Global Assembly Cache.
+ 
+ B)  Ask the user to install the application after installing Internet Explorer 6.0.
+ 
+ C)  Ask the user to install the application after installing MDAC 2.7.
+ 
+ D)  Ask the user to install the application after installing the .NET Framework.
+ 
+ 
+Explanation
+
+
+Answer D is correct. The mscoree.dll file is the core file of the Common Language Runtime. If the user is getting the specified error message, the most likely reason is that the .NET Framework is not installed or is not properly installed on the user's computer. Answer A is incorrect because a similar installation is working on other computers. Answers B and C are incorrect because mscoree.dll is not a part of Internet Explorer 6.0 or MDAC 2.7, and reinstalling those applications will not resolve the problem.
+
+
+Question 2 
+  Your application includes a DataSet object that contains a DataTable object named Suppliers. This DataTable object contains all rows from the Suppliers table in your database. You want to bind an object to a DataGrid control on a form such that the DataGrid control displays only the suppliers from Michigan. You want a quick solution. What should you do?
+ 
+    
+ A)  Create a filtered array by calling the DataTable.Select method on the Suppliers data table and bind the array to the DataGrid control.
+ 
+ B)  Create a new SqlCommand object to retrieve only suppliers from Michigan. Use a new SqlDataAdapter object to fill a new DataSet object with these suppliers. Bind the new DataSet object to the DataGrid control.
+ 
+ C)  Use a For Each loop to move through the entire Suppliers data table. Each time a DataRow object that represents a supplier from Michigan is found, that DataRow object is bound to the DataGrid control.
+ 
+ D)  Create a filtered DataView object from the Suppliers data table and bind the DataView object to the DataGrid control.
+ 
+ 
+Explanation
+
+
+Answer D is correct. You need to first create a filtered DataView object from the Suppliers table and bind the DataView object to the DataGrid. Answers A and C are incorrect because they do not give you objects that can be bound to the DataGrid control. Answer B is incorrect because, although the solution works, retrieving the data from the database for the second time is slower than filtering it from the existing DataTable object.
+
+

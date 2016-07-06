@@ -1,0 +1,37 @@
+
+Scripts in the BODY section will be executed WHILE the page loads.
+
+Scripts in the HEAD section will be executed when CALLED.
+
+
+Head section
+Scripts that contain functions go in the head section of the document. Script in the head section, is loaded before anyone uses it. 
+
+<html>
+<head>
+<script type="text/javascript">
+function message()
+{
+alert("This alert box was called with the onload event")
+}
+</script>
+</head>
+
+<body onload="message()">
+
+</body>
+</html>
+
+
+// External script  //
+
+To run the same script on several pages, without writing the script on each and every page,write a script in an external file, and save it with a .js file extension.
+
+Use the "src" attribute, from any of the pages to call this script
+
+ex :
+
+<script  src="sample.js">
+
+</script>
+

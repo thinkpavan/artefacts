@@ -1,0 +1,899 @@
+Programming with VB.Net
+App. Dev. Concepts
+Winforms in VB.net
+
+J2EE Platform (Java 2 Enterprise Edition) -->Sun Microsystems
+-->Java (language)
+-->JSP
+-->EJB
+-->JDBC
+-->JMS
+-->Servlets
+-->Applets
+-->Swings
+-->RMI
+Backend: Oracle
+
+.Net Platform -->Microsoft
+-->C# or VB.Net (language)
+-->Visual Studio.Net	(VB.Net projects, C# projects, VC++ projects)
+-->ASP.net
+-->COM
+-->DCOM
+-->DLL
+-->ADO.Net
+Backend: SQL Server
+
+Introduction to VB.Net(Visual Basic.Net)
+
+-->BASIC(Beginners All Purpose Symbolic Instruction Code)
+-->Visual Basic 6.0(GUI)
+--> it is a complete OOPL
+Windows Applications -->run on windows platform only
+RAD-->Rapid Application Development tool
+GUI Applications-->Graphical user applications
+
+Limations:
+-->It is not Object oriented programming language
+-->can not develop Console application(CUI's), Web Applications
+
+Visual Studio.Net (Integrated Development Environment) vs 7.0
+-->VB Projects
+	a. Windows
+	b. Console
+	c. Web
+	d. Web Services
+-->C# Projects
+	a. Windows
+	b. Console
+	c. Web
+	d. Web Services
+-->VC++ Projects
+	a. Windows
+	b. Console
+
+Basic Language Features of VB.Net
+-->Object Oriented features
+	a. Data Abstraction
+		Hiding all the feature of the program from the user. And allowing him to user only required feature.
+	b. Data Encapsulation
+		Conbinig data and data variables into a sngle block is called Encapsulation.
+	c. Inheritence
+		Process of reusing the existing classes in another classes.
+	d. Polymorphism
+		Existance of a function in more than one forms is called Polymorphism.
+-->Structured Error Handling (Exception Handling)
+		
+-->Multi Threading
+				
+Programs:
+Data-->process-->Information
+
+Forms of Data/ Datatypes in VB.Net: 
+In C: Premitive data types are char,int,float,double
+Data type modifiers are short,long,unsigned,signed
+		memory		value
+Byte: 		1 byte		0-255
+Short:		2 bytes		-32768 to 32767
+Integer:		4 bytes		-214 crores to 214 crores
+Long:		8 bytes		integer
+Decimal:		16 bytes		fractional
+Single:		4 bytes		fractional
+Double:		64 bytes		fractional
+Boolean:		2 bytes		true or false
+Char:		2 bytes		a-z, A-Z, 0-9 ,symbols  ('a', '9', '$')
+String:		2 to the power 31 chars	
+Object:		not fixed (variant)
+
+Variables:
+Elements used to hold the data temp'ly until program execution is completed.
+Syntax:
+DIM <variable name> as <data type>
+Ex:
+dim fn,sn as integer
+dim res as single
+res=fn/sn
+Note:
+i) Procedures: Sub procedures(Will not return any value) , Function Procedures(Will return value)
+ii) Comments:  single quote ( ' )
+iii) Output: System.Console.WriteLine("Welcome to the world of VB")
+System :Namespace
+Console: Class
+WriteLine: Function or method
+
+Writing programs in Visual Studio.Net:
+i)Write program in the default editor (Code Window)
+ii) To compile (Building Solution): Build-->Build Solution (Ctrl+Shift+B)
+iii) To execute (Start): Debug-->Start (F5)
+
+Writing Programs in Notepad:
+i) Write program in any text editor (notepad,wordpad)
+ii) Save the program with an extension .vb 
+(ex: myfile.vb)
+iii) start-->programs-->MS VS.Net-->VS.Net tools-->VS.Net Command Prompt
+iv)For Compiling vbc myfile.vb
+c:\> vbc myfile.vb -->myfile.exe
+v) For execution
+myfile.exe or myfile
+Or
+i) Write program in any text editor (notepad,wordpad)
+ii) Save the program with an extension .vb 
+(ex: myfile.vb)
+iii) Start-->Run-->Cmd (Microsoft command prompt)
+iv) change the directory to "d:\Program files\Microsoft visual studio.net\Frameworksdk\bin"
+v) run one batch file with a name "corvars.bat"
+vi)For Compiling vbc myfile.vb
+c:\> vbc myfile.vb -->myfile.exe
+vii) For execution
+myfile.exe or myfile
+
+Expression: Is a combination of one or more operands with operators
+ex: c=a+b
+=,+ operators
+a,b,c operands
+c=400+200
+Arithmetic expression
+Types:
+Arithmetic expressions
+Conditional expressions
+Logical expressions
+
+Operators:
+i)Arithmetic operators
+/, ^, *, +, -, MOD  (a mod b)
+c=10^2
+ii)Relational Operators: Comparision
+>,<,>=,<=,<>(not equal to) ,=(equal to), is (objects),like (used to compare the values in strings)
+iii) Logical Operators:
+Combining two conditions
+And, Or, Not
+ex: 10>5 And 6=6
+
+Truth Table:
+C1	C2	C1 AND C2	C1 OR C2 
+T	T	T		T
+T	F	F		T
+F	T	F		T
+F	F	F		F
+
+Cond	Not Cond
+T	F
+F	T
+
+Arithmetic Operators Precedence:
+2+10*5 -->52
+/ ^ * MOD
++ -
+
+10/5*2+10
+2*2+10
+4+10
+14
+
+Logical Operators precedence:
+ex: 10>5 And 6=6  Or 40<10
+i) Not
+ii) And
+iii) Or
+
+Operators Precedence:
+i)Arithmetic
+ii)Relational
+iii)logical
+
+10*2>5+1 And 6=6  Or 40<10
+20>6 and 6=6 or 40<10
+T and T or F
+T or F
+T
+
+Shortcut Operators: (Compound assiging operators)
++=, -=, *=, /=
+a+=b implies a=a+b
+
+Option Statements
+i) Option Explicit <on/off>
+on-->programmer has to declare all variables before using them in the program , this is default option
+Option explicit on
+Option explicit off-->without declaring variables,programmer can use them inside the program statements
+ii) Option Strict <on/off>
+Type Casting: or Type Conversion:
+dim num as integer
+dim val as single
+val=400
+num=val
+Types:
+Implicit: Done by system
+Explicit: Done by programmer
+Option Strict on: Implicit type casting is stopped ,
+Explicit is required
+Option Strict off: Implicit type casting is continued, 
+Explicit is not required (default)
+CType(): 
+Used to convert one type of data into another explicitly.
+Ctype(variable,data type)
+ex:num=Ctype(System.Console.ReadLine(),integer)
+or
+num=System.Convert.Toint32(System.Console.ReadLine())
+
+Note: If methods in System namespace are used frequently in the program then mention 'imports System' before starting the module
+
+Programming Constructs:
+Decision Constructs (Selection)
+if ...else
+if..else if..else..end if
+syntax:
+if condition then
+statement(s)
+else if condition then
+statement(s)
+else
+statement(s)
+end if
+Nested If: Inserted one if block into another
+if cond then
+	if cond then
+	statement(s)
+	end if
+end if
+
+Output:
+Enter any three numbers:
+90
+80
+100
+100 is highest
+
+select case (Switch case in c):
+syntax:
+select case <expression/variable>
+case value1
+statements
+case valuen
+statements
+[case else
+statements]
+end select
+
+Loops (Iteration):
+i) while loop
+syntax:
+while <condition>
+statements
+end while
+Output:
+Enter Mul table no:4
+Enter limit: 5
+4*1=4
+4*2=8
+4*5=20
+ii) Do loop:
+syntax:
+do [while|until <condition>]
+statements
+loop [while|until <condition]
+
+form 1:
+do while <condition>
+statements
+loop
+-->when condition evaluated into true loop continues, when it becomes false loop execution stops
+form 2:
+do until <condition>
+statements
+loop
+-->when condition evaluated into false loop continues, when it bocomes true loop execution stops
+form 3:
+do
+statements
+loop while <condition>
+form 4:
+do
+statements
+loop until <condition>
+
+iii) For loop: (Fixed Loop)
+syntax:
+for index=<range_begin> to <range_end> [step value]
+statements
+next [index]
+
+iv) For Each loop (Vbscript)
+Generally it is used to iterate the statements using collections or arrays
+for each <var> in <collection/array>
+statments
+next
+
+Output:
+Up to how many numbers: 20
+2	1
+4	3
+6	5
+8	7
+10	9
+12	11
+
+Nested loops: Inserting a any loop inside another loop
+Session 1
+	Session 1.1
+	Session 1.2
+	Session 1.3
+Session 2
+	Session 2.1
+	Session 2.2
+	Session 2.3
+Output:
+Enter no. of main sessions: 3
+Enter no. of sub sessions:2
+Session 1
+	Session 1.1
+	Session 1.2
+Session 2
+	Session 2.1
+	Session 2.2
+Session 3
+	Session 3.1
+	Session 3.2
+
+
+Shortcircuting operators: AndAlso , OrElse
+And, Or, Not
+-->In Case if Cond1=F and Cond2=T
+then
+Cond1 And Cond2-->System evaluates both the conditions and resultant will be false
+Cond1 AndAlso Cond2-->System evalueate first condition, when it finds it as flase system will not check for the second condition, directly it evaluates the total expression into false
+
+-->In case if Cond1=T and Cond2=F
+then
+Cond1 or Cond2-->System evaluates both the conditions and resultant will be true
+Cond1 OrElse Cond2-->System evalueate first condition, when it finds it as true system will not check for the second condition, directly it evaluates the total expression into true
+
+Exit Statement: (break)
+-->stops the loop execution abruptly 
+-->control comes out of the loop and executes the statements after the loop
+
+
+Inbuilt Functions:
+WriteLine()
+Write()
+ReadLine()
+CType()
+ToInt32()
+
+Procedures: (System Defined, User Defined)
+-->Set of statements executed for a particular task (Predefined task)
+-->Two forms viz., sub procedures, function procedures
+-->Sub procedures will not return any value, Function procedures can return value.
+
+a. Sub Procedures:
+Syntax:
+Sub <sub procedure name> ([argument(s)])
+statements
+End Sub
+
+Forms of Sub Procedures:
+-->Without arguments
+Output:
+Enter a number: 4
+Cube of 4 is 64
+
+Example:
+Module M
+'example for sub procedure without arguments
+sub cube()
+dim num as integer
+Console.Write("Enter any number:")
+num=Console.ReadLine()
+Console.WriteLine("Cube of "&num &" is "& (num*num*num))
+end sub
+
+'entry point of the program
+Sub Main()
+'cube
+'cube()
+call cube
+End Sub
+end module
+
+-->With arguments
+Module M
+'example for sub procedure with arguments
+sub cube(num as integer)
+Console.WriteLine("Cube of "&num &" is "& (num*num*num))
+end sub
+
+'entry point of the program
+Sub Main()
+'cube
+'cube()
+call cube(5)
+End Sub
+end module
+
+Points to Remembered:
+--> Remember the naming rules of variables for procedure names also
+--> No two procedures are created with same name (If mentioned it is called "Method Overloading")
+--> Arguments of same data type or different data types must be declared seperately
+sub cube(num1,num2 as integer) -->invalid
+sub cube(num1 as integer ,num2 as integer) -->valid
+-->while calling procedure, send the values according to number of arguments
+sub cube(num1 as integer ,num2 as integer) 
+calling:
+cube(10,5) or cube(a,b) -->valid
+cube(10) -->invalid
+-->Data types of Values sended must match with data type of arguments
+
+Questions:
+-->Write a Program to display first 15 even numbers
+-->Write a program to display as follows
+1
+12
+123
+1234
+12345
+
+Sub Procedures
+Function Procedures:
+syntax:
+function <function_name> ([argument(s)]) [as return type]
+statements
+[exit function]
+[statements]
+end function
+
+Example:
+import System
+Module M
+
+Function factorial(X as integer)
+dim fact as long
+fact=1
+for i=1 to X
+fact=fact*i
+next i
+Return fact 
+End Function
+
+Sub Main()
+Dim num as integer
+Dim res as integer
+Console.Write("Enter a number:")
+num=Console.ReadLine()
+res=factorial(num)
+Console.Write("Factorial of {0} is {1}",num,res)
+'Console.Write("Factorial of " & num & " is " & res)
+End Sub
+
+End Module
+
+Calling Procedures:
+i) Byval:
+while calling procedures byval, data in original variables is copied to procedure arguments. And modifications in procedure arguments will not effect the original variables
+example:
+imports System
+Module M
+Sub increment(Byval x as integer)
+x=x+2
+Console.WriteLine("The Value is {0}",x)
+End Sub
+
+q		Sub Main()
+Dim n as integer
+n=10
+Console.WriteLine("The Value is {0}",n)
+increment(n)
+Console.WriteLine("The Value is {0}",n)
+increment(n)
+End Sub
+End Module
+
+Inside:
+variable	: n (4 Bytes)	x
+data	: 10		10
+
+Output:
+The value is 10
+The value is 12
+The value is 10
+The value is 12
+
+
+ii) Byref (done using Pointers in C)
+while calling procedures byval, data in original variables is copied to procedure arguments. And modifications in procedure arguments will effect the original variables.
+Module M
+Sub increment(Byref x as integer)
+x=x+2
+Console.WriteLine("The Value is {0}",x)
+End Sub
+
+Sub Main()
+Dim n as integer
+n=10
+Console.WriteLine("The Value is {0}",n)
+increment(n)
+Console.WriteLine("The Value is {0}",n)
+End Sub
+End Module
+
+Inside:
+variable	: n (4 Bytes)	x
+data	: 10		1024
+address	: 1024
+Output:
+The value is 10
+The value is 12
+The value is 12
+
+Optional Aruguments: (default arguments in c++)
+Syntax:
+sub <Sub procedure name> (arg1 as type1,optional arg2 as type2=default value)
+statements
+End sub
+
+
+Sub square(num1 as integer,optional num2 as integer=10)
+Console.WriteLine("Square of {0} is {1}",num1,(num1*num1))
+Console.WriteLine("Square of {0} is {1}",num2,(num2*num2))
+End Sub
+
+Sub Main()
+square(5,6) 	'valid
+square(20) 	'valid
+End Sub
+
+Lifetime & Scope of variables:
+
+Sub disp()
+dim num as integer
+num=10
+Console.WriteLine("Num={0}",num)
+End Sub
+
+Sub Main()
+disp()
+disp()
+disp()
+Console.WriteLine("Num={0}",num) 'invalid
+End Sub
+
+Num=10
+
+LifeTime: until what time system maintains the variables inside the memory
+Scope: Upto what extent variables data can be accessed in the program
+
+Variables:
+Local: can be accessed with the block(sub procedure, function procedure etc)  they declared
+Global: can be accessed through out the program
+using the keyword 'public'
+
+Structured Exception Handling:
+Exception is error raised at runtime and due to which program will be terminated abruptly (Runtime Errors)
+Types Errors:
+-->Compile time errors (Syntactical errors)
+-->Logical errors
+-->Runtime errors (Exception)
+
+syntax:
+Try 
+[statements that may raise or throw exceptions]
+Catch <exception object> as <exception class> [when expr]
+statements that take some action if exception is thrown
+[Finally]
+statements that will be executed in any case
+End Try
+
+-->Try block must contain atleast one catch block
+-->Catch and finally can not be mentioned without Try block
+-->For one try only one finally block can be mentioned
+-->Multiple catch blocks can be mentioned
+
+Multiple catch blocks:
+Try
+statements
+Catch e as Exception
+statements
+Catch e1 as OverFlowException
+statements
+Finally
+statements
+End Try
+
+Examples for Runtime errors:  OverFlowException,  NullReference, ZeroDevideErrorException, FileNotException etc
+
+Arrays In VB.net:
+Is a group of data elements of same data type sharing single variable name(Identifier)
+
+Dim m1,m2,m3,m4 as integer
+syntax:
+Dim <array_name>(upper bound) as <data type>
+
+Dim marks(3) as integer 	' single dimension array
+
+marks(0)		marks(1)		marks(2)		marks(3)
+0		0		0		0
+Assigining values to array elements:
+<array_name>(index/sub script)=value
+marks(0)=90
+
+Types of Arrays:
+a. Single Dimension (Rank)
+b. Multiple Dimension or Multi Dimensional
+syntax: dim <array_name>(rows upper bound,cols upper bound) as <data type>
+dim marks(3,5) as integer
+no of rows : 4
+no of cols :6
+	
+	0	1	2	3	4	5
+0	90	80			50	
+1
+2
+3
+Note: 
+a. If Rank of an array is one means it is single dimension array, else multiple dimension
+b. If variables are not initialised the default value assigned to them by the system is '0'
+
+Assigining values to array elements in Multi Dimensional arrays:
+<array_name>(row index,col index)=value
+marks(0,0)=90
+marks(0,1)=80
+marks(0,4)=50
+
+Dense Arrays:
+Initialising Arrays instantly after declaration
+dim marks() as integer={80,90,60,50}
+
+Array related Functions:
+i) IsArray() --> user has to pass the array name, returns true if it is array else returns false
+dim marks(3) as integer
+dim num as integer
+Console.Write(IsArray(marks))		-->true
+Console.Write(IsArray(num))		-->false
+ii) UBound() -->Returns the ubound of the array
+dim marks(3) as integer
+Console.Write(marks.UBound())	-->3
+Console.Write(marks.LBound())	-->0
+
+iii) Length()
+returns the no. of elements present in array
+ex: 
+dim marks() as integer={90,79,99}
+marks.length() --> 3
+
+Multi demensional arrays:
+dim fmat(1,1) as integer
+
+Question 1:
+Enter elements for first matrix:
+3
+4
+5
+6
+
+Enter elements for Second matrix:
+5
+1
+3
+4
+
+Resultant matrix is:
+8 5
+8 10
+
+Question 2:
+Enter no. of rows and cols for first matrix: 
+2
+2
+Enter no. of rows and cols for Second matrix: 
+2
+2
+Matrix addition is not possible
+
+'Redim' Statement:
+-->used to change the dimension of the array which is already existing
+ex: redim <array_name>(new size)
+Points to remembered:
+-->Redim can not be used to change the data type of the existing array
+dim marks(3) as integer
+redim marks(3) as decimal	' invalid statement
+-->can not be used to change the initiliased values of the arrays
+-->if redim statement is used to the array, existing data is erased and default values are stored as '0'
+-->Redim cannot be used for changing the rank of the array
+single to muti dimension or vice versa
+dim marks(3) as integer
+redim marks(2,2) as integer 	'invalid statement
+-->Redim statement can be used within the procedure and not module level
+-->Actually using redim statement original content of the array is lost, to preserve this content use
+redim preserve arrname(new upper bound)
+
+Arrays and Exceptions:
+i) IndexOutOfRangeException
+
+Enumeration:
+-->Creating named constants
+-->Assigning names to the integer values,short,byte,long
+syntax:
+Enum <enumeration name> 
+enumerator1
+enumerator2
+enumerator3
+enumerator4
+End Enum
+Ex:
+Enum cities
+Hyderabad=500055
+Chennai=400049
+Bangalore
+Delhi
+Calcutta
+End Enum
+
+Console.WriteLine(cities.Hyderabad)	0
+
+Dim num as integer
+num=cities.Hyderabad
+
+dim marks(3) as integer
+Structures:
+Group of data elements of different data types
+Syntax:
+structure <structure name> 
+dim <var_name> as <data type>
+dim <var_name> as <data type>
+....
+end structure
+
+ex:
+structure student
+' structure members
+dim rno as integer
+dim sname as string
+dim fee as decimal
+end structure
+
+Creating structure Variable:
+syntax:
+Dim <structure variable name> as <structure name>
+ex: 
+Dim s1 as student
+
+Assigning values to structure members:
+<structure variable name>.<structure member name>=value
+ex: s1.rno=123
+
+Initialising Structures:
+Dim s1 as student
+s1.rno=123
+s1.sname="Ramu"
+s1.fee=5678.89
+
+Array of Structures:
+Dim s1,s2,s3,s4....s10 as student
+Dim s(9) as student
+
+Question 1:
+Enter How many employees: 2
+Enter Employee 1 details:
+123
+Ramu
+Manager
+8000
+Enter Employee 2 details:
+124
+Ram
+Ass. Manager
+6000
+
+Salary Details
+Eno	Ename	Job	Basic	da	pf	net
+123	ramu	mgr	8000	2000	1000      9000	
+124	ram	a. mgr	6000	2000	1000     7000
+
+if basic >5000
+da=2000
+pf=1000
+else
+da=1000
+pf=500
+net=basic+da-pf
+
+Procedures with in structures:
+-->Programmer can declare procedures(Sub Procedures or Function Procedures) inside the structure definition
+-->While calling procedures of structures, use structure variable
+<structure variable>.<procedure name>()
+
+Structures with in structures: (Nested Structures)
+
+Programming concepts of VB.Net
+
+Introduction for OOP:
+Object Oriented Programming
+i) Classes:
+-->class contains its own characterstics and functions
+Vehicle:
+characterstics
+no. of tyres
+seating capacity
+color
+weight
+tank capacity
+functions:
+break
+speed
+
+Man:
+height
+weight
+functions
+walk
+talk
+sleep
+think
+
+-->contains group of related properties and methods
+ii) Objects: Instance of the class
+Objects contains state and behaviour
+Man: Class
+Raju: Object
+height: 5 feet 7 inches
+wieght:60 kgs
+Function
+
+OOPS Features:
+i) Data Abstraction:
+-->Creating a appropriate class by grouping related properties and methods
+-->Properties and methods create inside the class are called as Class Members
+ii) Data Encapsulation:
+-->Hiding the data to other classes or other methods(procedures) present outside the class
+-->private access specifier variables or procedures cannot be accessed outside the class 
+-->create variables as private and methods as public methods.
+iii) Inheritence
+iv) Polymorphism
+
+Class:vehicle
+objects: car, bus, truck
+
+Syntax for creating Class:
+
+[public | private | protected ] class <class name>
+[public | private | protected] <var_name> as <data type>
+....
+....
+
+[public | private | protected] sub <procedure name>
+executable statements
+End sub
+...
+...
+
+End Class
+
+ex:
+public class student
+public rno as integer
+public sname as string
+public add as string
+public phone as integer
+
+public sub accept
+Console.WriteLine("Enter Student Details")
+End Sub
+End Class
+
+creating Object of the class:
+dim <object name> as <class name>
+
+Using object of the class accessing the class members:
+<object name>.<variable name>=value
+C.WL (<object name>.<variable name>)
+-->calling methods of a clas : <object_name>.<procedure name>
+Structure v/s Classes
+
+Structure					Class
+
+structure std				class std
+pub rno as integer				pub rno as integer			
+end structure				end class
+
+dim s as std				dim s as new std
+
+Multiple Classes In a Single Program:

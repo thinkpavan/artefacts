@@ -1,0 +1,65 @@
+<html><head><title>Creational Patterns - rules of thumb</title></head><body><h1><center>
+Creational Patterns<p>
+</p></center>
+Rules of thumb
+</h1>
+
+<ol>
+<li>
+Sometimes creational patterns are competitors: there are cases when
+either <b>Prototype</b> or <b>Abstract Factory</b> could be used
+profitably.  At other times they are complementory: <b>Abstract
+Factory</b> might store a set of <b>Prototypes</b> from which to clone
+and return product objects [GOF, p126], <b>Builder</b> can use one of
+the other patterns to implement which components get built.
+<b>Abstract Factory</b>, <b>Builder</b>, and <b>Prototype</b> can use
+<b>Singleton</b> in their implementation.  [GOF, pp81,134]<p>
+</p></li><li>
+<b>Abstract Factory</b>, <b>Builder</b>, and <b>Prototype</b> define a
+factory object that's responsible for knowing and creating the class of
+product objects, and make it a parameter of the system.  <b>Abstract
+Factory</b> has the factory object producing objects of several
+classes.  <b>Builder</b> has the factory object building a complex
+product incrementally using a correspondingly complex protocol.
+<b>Prototype</b> has the factory object (aka prototype) building a
+product by copying a prototype object.  [GOF, p135]<p>
+</p></li><li>
+<b>Abstract Factory</b> classes are often implemented with <b>Factory
+Method</b>s, but they can also be implemented using <b>Prototype</b>.
+[GOF, p95]<p>
+</p></li><li>
+<b>Abstract Factory</b> can be used as an alternative to <b>Facade</b>
+to hide platform-specific classes.  [GOF, p193]<p>
+</p></li><li>
+<b>Builder</b> focuses on constructing a complex object step by step.
+<b>Abstract Factory</b> emphasizes a family of product objects (either
+simple or complex).  <b>Builder</b> returns the product as a final
+step, but as far as the <b>Abstract Factory</b> is concerned, the
+product gets returned immediately.  [GOF, p105]<p>
+</p></li><li>
+<b>Builder</b> is to creation as <b>Strategy</b> is to algorithm.
+[Icon, p8-13]<p>
+</p></li><li>
+<b>Builder</b> often builds a <b>Composite</b>.  [GOF, p106]<p>
+</p></li><li>
+<b>Factory Method</b>s are usually called within <b>Template
+Method</b>s.  [GOF, p116]<p>
+</p></li><li>
+<b>Factory Method</b>: creation through inheritance.  <b>Prototype</b>:
+creation through delegation.<p>
+</p></li><li>
+Often, designs start out using <b>Factory Method</b> (less complicated,
+more customizable, subclasses proliferate) and evolve toward
+<b>Abstract Factory</b>, <b>Prototype</b>, or <b>Builder</b> (more
+flexible, more complex) as the designer discovers where more
+flexibility is needed.  [GOF, p136]<p>
+</p></li><li>
+<b>Prototype</b> doesn't require subclassing, but it does require an
+Initialize operation.  <b>Factory Method</b> requires subclassing,
+but doesn't require Initialize.  [GOF, p116]<p>
+</p></li><li>
+Designs that make heavy use of the <b>Composite</b> and <b>Decorator</b>
+patterns often can benefit from <b>Prototype</b> as well.  [GOF, p126]
+
+</li></ol>
+</body></html>

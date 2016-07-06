@@ -1,0 +1,142 @@
+
+JavaScript String Object
+
+The String object
+The String object is used to work with text.
+
+
+Properties 	Explanation 
+---------------	-----------------
+length 		Returns the number of characters in 			a string 
+
+
+Methods 		Explanation 
+-----------		-----------------
+anchor() 		Returns a string as an anchor 
+big() 		Returns a string in big text   
+blink() 		Returns a string blinking 
+bold() 		Returns a string in bold 
+charAt() 		Returns the character at a specified 			position 
+charCodeAt() 	Returns the Unicode of the character 		at a specified position 
+concat() 		Returns two concatenated strings 	
+fixed() 		Returns a string as teletype 
+fontcolor() 	Returns a string in a specified color 
+fontsize() 		Returns a string in a specified size fromCharCode() 	Returns the character value of a 			Unicode 
+indexOf() 		Returns the position of the first 			occurrence of a specified string 			inside another string. Returns -1 if it 			never occurs 
+italics() 		Returns a string in italic 
+lastIndexOf() 	Returns the position of the first 			occurrence of a specified string 			inside another string. Returns -1 if it 			never occurs. Note: This method 			starts from the right and moves left! 
+link() 		Returns a string as a hyperlink 
+match() 		Similar to indexOf and lastIndexOf, 			but this method returns the specified 			string, or "null", instead of a numeric 			value 
+replace() 		Replaces some specified characters 		with some new specified characters  
+search() 		Returns an integer if the string 				contains some specified characters, 			if not it returns -1	
+slice() 		Returns a string containing a 				specified character index 
+small() 		Returns a string as small text    
+split() 		Splits a string into an array of strings 
+strike() 		Returns a string strikethrough   
+sub() 		Returns a string as subscript    
+substr() 		Returns the specified characters. 			14,7 returns 7 characters, from the 			14th character (starts at 0) 	  
+
+substring() 	Returns the specified characters. 			7,14 returns all characters from the 			7th up to but not including the 14th 			(starts at 0)  
+
+sup() 		Returns a string as superscript    
+toLowerCase() 	Converts a string to lower case 
+
+toUpperCase() 	Converts a string to upper case 
+
+
+// Length Example //
+<html>
+<body>
+
+<script type="text/javascript">
+
+var str="School is great"
+
+document.write("<p>" + str + "</p>")
+
+document.write("<p> Length is :  " + str.length)
+
+</script>
+</body>
+</html>
+
+
+
+
+// font color example
+<html>
+<body >
+
+<script type="text/javascript">
+
+var   txt="School is great"
+
+document.write("<p>" + txt.fontcolor('red') + "</p>")
+
+document.write("<p>" + txt.fontcolor('blue') + "</p>")
+
+document.write("<p>" + txt.fontcolor('green') + "</p>")
+
+</script>
+</body>
+</html>
+
+// Index of example //
+
+<html>
+<body>
+
+<script type="text/javascript">
+
+var str="Aptech Computer Education"
+
+var pos = eval ( str.indexOf("cat") ) + 1
+
+if (pos>=0)
+{
+document.write(" Cat found at position: ")
+document.write(pos + "<br />")
+}
+else
+{
+document.write("Cat  not found!")
+}
+
+</script>
+</body>
+</html>
+
+//match example  //
+<html>
+<body>
+
+<script type="text/javascript">
+var str = "School is great!"
+document.write(str.match("gret"))
+</script>
+
+<p>This example tests if a string contains a specified word. If the word is found it returns the word.</p>
+
+</body>
+</html>
+
+
+// substr and substring  example  //
+// toLowercase toUppercase  example  //
+
+<body>
+
+<script language="JavaScript">
+var str="School Is Great!"
+
+document.write(str.substr(2,6))
+
+document.write("<br>" +str.substring(2,6))
+
+document.write("<br>" + str.toLowerCase())
+
+document.write("<br>" + str.toUpperCase())
+
+</script>
+</body>
+</html>

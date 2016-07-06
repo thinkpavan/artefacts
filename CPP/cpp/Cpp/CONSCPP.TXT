@@ -1,0 +1,71 @@
+ Constructors
+============
+
+      It is a member function of the class with same
+ name as the class. It is invoked implicitly whenever
+ an instance(i.e., Object) of the class is created.
+Constructors  doesnot have any return datatype
+
+      The features which an object of the class should
+ possess when it is instantiated are mentioned in the
+ constructor. It is used for initializing the object.
+
+  Types of Constructors
+  ======================
+  1 . Default Constructor.
+  2 . Parameterised Constructer.
+  3 . Copy Constructor.
+
+
+  1 . Default Constructor :
+
+      A default constructor is created automatically
+  if the class definition is not containing any
+  constructor.
+
+  2 . Parameterised  Constructor : A construtor with 
+input parameters is called Parameterised 
+constructor. A class may contain any no. of 
+parameterised constructors (But no two constructors 
+should be matching).
+
+ 3 . Copy Constructor :
+	It is a constructor with one input parameter i.e., a reference variable to an object of the same class.
+	This constructor is used to construct an 
+object with the features of an existing object. A 
+default copy constructor is created which contains 
+the code as copy all the features of input object 
+into the current object.
+
+	syntax :
+
+  	<classname>(<classname>&      <obj>)
+                       {
+		------
+		-----
+
+	         }
+
+
+
+
+
+
+  Destructor
+=========
+          It is member function with the same name 
+of the class preceded with a tilde(~) operator. It is 
+invoked implicitly when an object is destroyed. The 
+code to be executed when an object expires is 
+furnished in the destructor.
+
+          A destructor doesn't have any input arguements and doesn't have a return datatype.
+
+               ex
+	~Sample()
+   	    {
+	        ------
+	        ------
+	    }
+
+

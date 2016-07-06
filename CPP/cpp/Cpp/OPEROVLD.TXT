@@ -1,0 +1,19 @@
+Operator Overloading
+  ---------------------
+	The method of defining a new implementation
+  for existing operators is called  Operator Overloading.
+
+    syntax  :
+
+  RDT	operator  <operator>(Parameters,...)
+
+	  {
+
+	    ---
+	    ----
+            ---
+	  }	
+
+  Operators are overloaded for better readability
+  of the programs.
+

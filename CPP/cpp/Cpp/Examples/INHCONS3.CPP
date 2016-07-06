@@ -1,0 +1,64 @@
+include<iostream.h>
+#include<string.h>
+
+// Constructors in Inheritance
+
+class Base1
+  {
+     int   a;
+     float b;
+     public :
+
+     Base1(int ax,float bx):a(ax),b(bx)
+      {
+
+      }
+
+     void ShowBase1()
+      {
+       cout<<"\n  A  is  :  "<<a;
+       cout<<"\n  B  is  :  "<<b;
+     }
+  };
+
+class Base2
+  {
+     char text[20];
+     public :
+
+     Base2(char vtext[])
+      {
+        strcpy( text,vtext);
+
+      }
+
+     void ShowBase2()
+      {
+       cout<<"\n  Text is  :  "<<text;
+     }
+  };
+
+  class Derived : public Base1,public Base2
+   {
+     int  val;
+
+     public :
+     Derived(int x1,float x2,char x3[],int x4):Base1(x1,x2),Base2(x3),val(x4)
+      {
+      }
+
+    void Show()
+      {
+	ShowBase1();
+	ShowBase2();
+	cout<<"\n  Val is  : "<<val;
+      }
+   };
+
+ void main()
+   {
+
+     Derived  D(11,45.57,"Sample",90);
+
+     D.Show();
+   }

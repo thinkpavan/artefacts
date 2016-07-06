@@ -1,0 +1,41 @@
+// Features of proceure Oriented Programming (POP)  //
+
+*  Emphasis is on doing things. i.e., Algorithm development is given importance.
+
+*  Most of the data is placed global which is accessible by all the functions in the program.
+
+*  Large programs are divided into small blocks called functions.
+
+*  It employs Top - Down approach.
+
+
+// Features of Object Oriented Programming  (OOP) //
+
+*  Data is the critical element in the program
+
+*   Almost all the data is hidden i.e., only methods which operate on the data are made available to the user.
+
+*  Large programs are divided into objects.
+
+*  Code reusability is possible without any modification
+
+*  Template functions and template classes can be created
+
+*  It employs Bottom Up approach.
+
+
+// Concepts Of Object Oriented Programming //
+
+  1 .  Classes
+  2 . Objects
+  3 . Data Abstraction
+  4 . Data Encapsulation
+  5 . Inheritance
+  6 . Polymorphism
+  7 . Dynamic Binding
+  8 . Message Passing
+
+
+
+
+

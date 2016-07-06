@@ -1,0 +1,871 @@
+Java Components
+i) Java VM
+ii) Java API
+
+Java Platform
+-->Server side technologies (JSP, Servlets)
+-->Distributing computing (RMI)
+-->Component Development (Beans, EJB)
+-->Database connectivity (JDBC)
+-->Messaging Services(JMS)
+
+Server side programming:
+Validating users,
+Connecting users to the data base,
+Retrieving data from database to user
+Session Management (client information)
+
+Servlets:
+-->myservlet.java
+-->myservlet.class
+-->copy the class to c:\javawebserver2.0\servlets\myservlet.class
+-->in Browser http://localhost:8080/servlet/myservlet.class
+
+JSP -->Java Server Pages 
+-->mypage.jsp (html, java script, jsp scriplets)
+-->save the file in c:\javawebserver2.0\public_html
+-->in browser http://localhost:8080/mypage.jsp
+
+Computers:
+IBM Mainframes
+Centralised Mainframes
+Personal computer
+Networking:
+computers connected with network cables for data transfer
+
+Classification of Networks related to geographical area coverage
+i) Local Area Network (LAN) -->Intranet
+ii)Metro Area Network (MAN)
+iii) Wide Area Network (WAN)-->Internet
+
+Internet components
+i) Computer system
+ii) Phone line
+iii) Modem (Modulation Demodulation)
+iv) ISP: Internet Service Providers
+VSNL, Satyam online, dishnet online
+v) Browser
+Internet explorer
+Crazy browser
+Netscape communicator
+
+
+Web site: Group of web pages
+web site address:
+www.rediff.com
+
+Publish the Web site:
+Placing the web site in a popular web server
+
+SGML:
+standard generalised markup languages
+mother of all markup laguages
+HTML
+Hyper text markup language
+DHTML:(Dynamic HTML)
+Java script(sunmicro systems,netscape incorporation , vbscript(microsoft)
+XML: Extensible Mark up langauges
+WML: Wireless markup languages 
+Web pages can be display in mobile devices
+
+
+HTML file--> 
+i) Also called HTML doc, HTML Web Page
+ii) if contains the file extension as .html or .htm
+iii) can be created using the editors like notepad,wordpad,ms-word etc
+iv) To see the output of the html file, open the file in the browser(internet explorer)
+v) Comprises of pre defined tags (W3C->Www Consortium)
+
+HTML Document Structure:
+
+Four Parts:
+HTML,HEAD,TITLE,BODY
+
+<HTML>
+<HEAD>
+<TITLE>MY First HTML Page</TITLE>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>
+
+Heading Tags:
+<h1> to <h6>
+
+Attributes of HTML Tags:
+i) align:
+values : left,right,center
+
+<h1 align="left"> 
+
+
+Center Tag: <center>
+Paragraph Tag: <p> </p>, align attribute
+
+Formatting Tags:
+Bold : <b> or <strong>
+Italic: <i>
+UnderLine: <u>
+SuperScript : Text above the normal text <sup>
+SubScript : Text above the normal text <sub>
+StrikeThrough: <strike> 
+Note: all the above tags contains closing tags
+
+Increasing Font size, Font Color of paragraph/heading text:
+<font size=20 color="blue"> <font>
+
+Horizontal Line: <HR>
+Attributes: align,color,width, size
+
+Break/New Line : <br>
+
+Predetermined tag: <pre> </pre>
+
+Division Tag: <div>
+
+Numbered List:(Ordered List)
+<ol>
+<li>India</li>
+<li>Srilanka</li>
+</ol>
+Bulleted List:(Un ordered List)
+<ul>
+<li>India</li>
+<li>Srilanka</li>
+</ul>
+
+Type attribute can be used with ol, ul to decide the format of numbers or bullets
+
+Non Breakable space : &nbsp; 
+Provides a single space
+
+Comments:<!-- -->
+
+13-Feb-2004
+
+i)Font : 
+Face: times new roman,arial,arial black,impact,garamond etc
+Color: red, green, blue, dark red
+
+ii)Multicol:
+cols: no. of columns
+gutter: space between the cols
+width:width of each column
+Note: It is supported by netscape navigator
+
+iii) Body : BGcolor
+Ex: <Body bgcolor="yellow"> </body>	
+iv) Blink: <blink>
+v) image: <img> </img>
+src: used to mention the image file path
+align, border
+Ex:
+<img src="d:\html\26022.jpg" border=4 align=bottom>My Sweet Home</img>
+
+vi)HyperLink
+Internal: navigating form one web page other in the same web site
+External: navigating form one web page other in the different web site
+Anchor tag: <a>
+href (hyper reference) :used to mention the path of the file to linked
+
+vii)Bookmarks: linking sections of the single page within itself
+
+Table:
+------
+i)<table>
+Attributes: 
+align,border
+cell padding:space between the text and cell walls
+cell spacing:space between the cells
+ii) <tr> :table row
+bgcolor
+iii) <td>: table data
+align:
+colspan:
+rowspan:
+
+
+Frames
+<frameset rows cols>
+rows: no. frames to the displayed row wise
+cols: no. frames to the displayed columns wise
+
+in pixels: <frameset rows=200,300>
+in percentage: <frameset rows=40%,60%>
+as * :  <frameset rows=40%,40%,*>
+
+<frame>
+name: name of the frame
+src: name(including path) of the file to be displayed
+scrolling: scroll bar has to be displayed or not
+margin width=space between the left and right edges with the page
+margin height=space between the top and bottom edges with the page
+
+Style Sheets:
+-->Group of formatting effects
+-->Style rules
+Style Rule: 
+Selector {Declaration}
+Declaration:
+Property: value
+ex:
+
+h1{font-color:blue}
+h1-->selector
+font-color-->property
+blue-->value
+
+Inline Style Sheets
+Ex: <p style="color:red;font-size:25" align="justify">
+
+Internal Style Sheets
+Ex:
+<style>
+p{color:blue;font-size:25}
+h1{color:green}
+</style>
+
+Grouping Styles rules:
+p,h1{color:blue;font-size:25}
+
+Types of Selectors: 
+i) Simple selector
+ex: p{color:blue;font-size:25}
+ii) HTML Selectors
+p{color:blue;font-size:25}
+h1{color:green}
+
+iii) Class Selectors
+.aptech {color:green;font-size:15;font-style:underline}
+
+<p class=aptech>
+This is new para in the second line
+</p>
+
+iv) id selectors
+#kphb {font-style:underline;font-weight:bold;color:red}
+
+<p id=kphb>
+This is new para in the second line
+</p>
+
+v) Contextual Selectors
+
+External style sheets
+a. Linked Style sheets
+Steps:
+create a file with required style rules-->save the file with the extension .css-->link the css file to html file using the following tag in head section
+<link rel="stylesheet" href="c:\sasi\mystyle.css">
+
+b. Imported style sheets
+Steps:
+create a file with required style rules-->save the file with the extension .css-->import the css file to html file using the following tag in head section
+<style type="text/css">
+@import url("c:\sasi\mystyle.css");
+</style>
+Note: import will not update the web pages if changes are done in css file
+
+Forms in HTML(FrontEnd)
+Registration
+Feeback forms
+Order forms
+Compose screen of mail accounts
+
+Forms
+i) Header/Caption
+Ex 1:
+<form name="">
+controls
+</form>
+
+Ex 2:
+<form name="">
+<caption><h2>Registration Form</h2></caption>
+</form>
+
+ii)Controls
+	a. Data Accepting Controls (Input Fields)
+	b. Accepting instruction (Buttons)
+
+input tag: used to create the controls like textbox,password, checkbox,radiobutton,button(Submit,Reset) etc
+
+Attributes:
+type:type of control to be create
+name:to identify each control uniquely
+value:caption to be displayed
+size: size of the control
+maxlength: no. of characters to be entered
+
+List Controls:
+a. Textbox
+Ex: 
+<input type="text" name="uname" value="Aptech" size=30 maxlength=20>
+
+b. Password
+Ex:
+<input type="password" name="pwd" size=30 maxlength=20>
+
+c. CheckBox:
+<input type="checkbox" name="hsc" value="HSC">
+Attribute: checked
+d. Radio button:
+<input type="radio" name="hsc" value="HSC">
+
+
+e. TextArea:
+rows: descide the height of the textarea
+cols: descide the width of the textarea
+wrap: descides whether text to be wrapped (on/off)
+
+f. PullDownMenu:
+<select name="ctry">
+<option value="India">India
+</select>
+
+g. image:
+<input type="image" src="file path">
+
+h. Submit: data is sended to database if submit is clicked
+<input type="submit" name="submit" value="Submit">
+i. Reset: all user entered data and values are cleared and browser displays default values of the form
+
+<input type="Reset" name="reset" value="Clear">
+
+Accesskey Attribute of <input> tag:
+ex: 
+<input type="text" name="fname" accesskey="i"  size=20>
+
+
+-->NetBanking
+-->Online Universities
+-->Online shopping
+-->Online reservation
+
+Server Side Scripting Languages
+-->JavaScript (Sun, Netscape)
+-->VBScript (MS)
+-->JSP (SUN)
+-->ASP (MS)
+-->CGI (Common Gateway Interface)
+-->Servlets(SUN)
+
+Client Side Scripting Languages
+-->JavaScript (Sun, Netscape)
+-->VBScript (MS)
+
+Compilation: 
+
+Java				JavaScript
+code is compiled		client system interprets and output
+& downloaded from server,	is displayed in browser
+but executed at client
+
+Object orieted			Object based
+
+Variable data type		Not required
+must be declare
+
+Java Applets are distinct 	Javascript is embedded inside html
+from html
+
+Simple JavaScript Program:
+
+<html>
+<head>
+<script language="javascript">
+document.write("Welcome to the World of JAVASCRIPT")
+</script>
+</head>
+</html>
+
+
+Using HTML Tags in Javascript statements:
+<script language="javascript">
+document.write("<h1 align="center">Welcome to the World of JAVASCRIPT</h1>")
+</script>
+
+Adding Comments:
+Single line : //
+Multiple Line : /* 	*/
+
+Javascript Version 
+i)Javascript 1.0 (Javascript)
+ii)Javascript 1.1
+iii)Javascript 1.2
+iv)Javascript 1.3
+
+<script language="Javascript1.3">
+</script>
+
+Browser			JS	JS1.1	JS1.2	JS1.3
+Netscape 2		Y	N	N	N
+Netscape 3		Y		N	N
+Netscape 4		Y			N
+Netscape 4.06		Y
+Netscape 5		Y	
+IE 3			Y	N	N	N
+IE 4			Y			N
+IE 5			Y			N
+Opera 3.2.1		Y			
+Opera 3.5		Y	
+
+Java Script Entities:
+
+<html>
+<head>
+<script language="Javascript">
+mylink="C:\sasi\first.html"
+</script>
+</head>
+<body>
+<a href="&{mylink};">click here</a>
+</body>
+</html>
+
+Escape Sequences:
+\\
+\'
+\"
+\n
+\t
+\r
+\b
+
+
+xml doc: elements, attributes, entities 
+DTD section proposed by w3c
+
+Microsoft by XML Schemas:
+
+Limitations In DTD:
+i) Non-xml structure
+<DOCTYPE catalog [
+<!ELEMENT cd #PCDATA>
+]
+>
+ii)DTD's are not Extensible
+iii) No having the support of namespaces
+iv) Offer extemely limited data types (PCDATA,CDATA)
+v) Closed type of declaration
+
+Benifits using shemas:
+i) Richer datatypes
+string, boolean, number, datetime, binary (graphics files),uri
+number: integer,float
+datetime: time
+ii) Refinable 
+Models: closed, open
+
+schema
+
+Declaration of Elements
+<ElementType name="timeslot" content="textOnly" dt:type="time"/>
+
+<catalog>
+	<book id="1">
+		<title>
+		<author>
+		<price>
+		<company>
+	</book>
+</catalog>
+
+<Shema name="schshema" 
+xmlns="urn:schemas-microsoft-com:xml-data" 
+xmlns:dt="urn:schemas-microsoft-com:datatypes">
+
+<ElementType name="title" content="textOnly" dt:type="string"/>
+<ElementType name="author" content="textOnly" dt:type="string"/>
+<ElementType name="price" content="textOnly" dt:type="float"/>
+<ElementType name="company" content="textOnly" dt:type="string"/>
+<AttributeType name="id" dt:type="integer"/>
+
+<ElementType name="book" content="eltOnly">
+<element type="title" minOccurs="1" maxOccurs="1"/>
+<element type="author" minOccurs="1" maxOccurs="*"/>
+<element type="price" minOccurs="1" maxOccurs="1"/>
+<element type="company" minOccurs="1" maxOccurs="1"/>
+<attribute type="id" default="1"/>
+</ElementType>
+
+<ElementType name="catalog" content="eleOnly">
+<element type="book" minOccurs="1" maxOccurs="*"/>
+</ElementType>
+</Schema>
+
+ElementType element:
+name: name of the element
+content: empty,textOnly,eltOnly,mixed
+dt:type: used to mention type of data holded by element
+element
+type: name of the element to be initialised in the parent element
+minOccurs
+maxOccurs
+
+
+		Java Server Pages
+		---------------------
+Transformation of Computing:
+--> Centralized Mainframes Computing
+--> Client Server Computing (LAN)
+--> Distributed Computing (WAN)
+Application
+FrontEnd		Webserver		E-mail server
+
+File Server		DataBase server	
+
+Web Development Components:
+-->Web Page
+-->Web Browser
+-->Web Server
+-->Database (Oracle, Sybase, Sql-server, Access etc)
+
+Web Architecture:
+Three Tier Architecture in WebBased applications
+
+Presentation layer		Application 	Database 
+			Layer		Layer
+
+HTML,JS,VB script		Servlets,JSP,ASP	Oracle etc
+			CGI, SSJS etc
+1st Tier			2nd Tier		3rd Tier
+
+Steps followed by the total application while communication occurs between different layers/tiers in web based applications
+-->User will send the request using client system through browser
+-->Client opens the connection with the web server
+-->Web server with accepts that request and process
+-->Opens the connection with Database server
+-->Stores data or retrieves data
+-->Results are sended back to client
+
+Server Side Technologies:
+a. Used in application layer of three tier architecture
+b. All the bussiness rules are implemented in second layer by taking the help of any one or multiple server side technologies
+c. Examples 
+CGI  Common Gateway Interface
+Servlets : Introduted by sun microsystems in 1996
+Multiple requests---> Threads (Process) JVM-->Responds to clients
+JSP : Java server pages
+ASP: Active Server Pages developed by MS
+SSJS: Server Side Java Script
+
+Sample JSP Program
+-------------------------
+<html>
+<head>
+<title> My First JSP Program </title>
+</head>
+<body>
+<!-- JSP scriplet-->
+<% @page import="java.util.Date" %>
+<%out.println("Hello ! Welcom to the world of JSP");%>
+<br>
+<%="Current date is "+new Date()%>
+</body>
+</html>
+
+steps:
+-->Install JDK
+-->Install JavaWebServer
+-->Set the path =C:\jdk1.2\bin
+In Windows 2000 settings-->control panel-->system-->advanced tab-->environment variables-->path variable
+In windows 98 -->open autoexec.bat in notepad
+-->create the short cut for httpd file in javawebserver2.0\bin
+-->double click on the shortcut created to start the javawebserver
+-->create the jsp file and save the file with .jsp extension, save the file in public_html folder in javawebserver
+-->to see the output of the jsp file type the url as follows
+ex : http://localhost:8080/myfirst.jsp
+
+Example of jsp file with only HTML Tags:
+<html>
+<head>
+<title> My First JSP program</title>
+</head>
+<body>
+<h1 align=center>Welcome to the world of JSP</h1>
+<br>
+<center>
+<img src="c:\serverduke.gif">
+</center>
+</body>
+</html>
+
+Grouping JSP file in a single Folder:
+-->create a folder in Public_html
+-->save the required html, jsp files in the same
+-->while opening them in the browser , type the url as follows
+http://localhost:8080/<folder_name>/<file_name>
+ex: http://localhost:8080/Sasi/Home.jsp
+
+Sending data From one file to other in the web application
+-->using request.getParameter("name of the parameter")
+
+ Displaying applet class file in the browser through  jsp file
+
+Scriplets:
+-->These contains the code that are valid for the language specified in the language directive
+-->These can make of use of declarations, expressions
+
+<%@page language="java"%>
+<%@page import="java.util.Date"%>
+<%java.util.Date now=new java.util.Date()%>
+<html>
+<body>
+<%now=new java.util.Date()%>
+<b>The time now is :</b>
+<%=now.getHours()%>:
+<%=now.getMinutes()%>:
+<%=now.getSeconds()%>
+</body>
+</html>
+
+Declaration statements
+<%! int count=0;%>
+<%count=count+1;%>
+
+Conditional Statements
+Iteration Statements
+Exception handling
+try
+{
+....
+}
+catch(Exception e)
+{
+.....
+}
+
+
+Distributed Computing:
+Components:
+JavaBeans
+Using JavaBeans in JSP's
+-->With jb's API(Application Programming Interface) can create reusable, platform independent components
+-->JavaBean  Components are simply called as Beans
+-->A bean is nothing but a simple java class that follows a set of simple naming and design conventions outlined by the JavaBean Specifications
+
+BeanClass or Object 
+Properties and Methods
+
+Using jsp bean tags:
+To find and use the bean: jsp:useBean
+To set one or more properties: jsp:setProperty
+To get a property values: jsp:getProperty
+
+Example 1:
+
+public class Counter{
+int count;
+//constructor
+public Counter()
+{
+count=0;
+}
+public int getCount()
+{
+count++;
+return count;
+}
+public void setCount(int c)
+{
+count=c;
+}
+}
+
+Counter.java
+Counter.class
+
+<html>
+<head>
+<title>A simple JavaBean Usage</title>
+</head>
+<body>
+<%@ page language="java"%>
+<%@ page import="Counter"%>
+<jsp:useBean id="ctr" class="Counter"/>
+<jsp:setProperty name="ctr" property="count" value=20/>
+<jsp:getProperty name="ctr" property="count"/>
+</body>
+</html>
+
+myctr.jsp
+Example 2:
+public class CalcBean{
+private int val1,val2;
+public void setVal1(int num1){
+val1=num1;
+}
+public void setVal2(int num2){
+val2=num2;
+}
+
+public int getSum()
+{
+return val1+val2;
+}
+}
+CalcBean.java
+CalcBean.class
+
+<html>
+<body>
+<form method="get" action="calcbean.jsp">
+<b>Enter First Number:</b><br>
+<input type="text " name="value1" size="5">
+<br>
+<b>Enter Second Number:</b><br>
+<input type="text" name="value2" size="5">
+<br>
+<input type="submit" name="Submit" value="Submit">
+</form>
+</body>
+</html>
+File Name: accept.html
+<jsp:useBean id="calc" class="CalcBean"/>
+<jsp:setProperty name="calc" property="*"/>
+<html>
+<head><title>A Calculator using JavaBean</title></head>
+<body>
+<b>The Sum of Two Numbers:</b>
+<jsp:getProperty name="calc" property="sum"/>
+</body>
+</html>
+
+
+The Scope of Beans:
+<jsp:useBean id="ctr" class="Counter" scope="page|request|session|application"/>
+
+Page Scope:
+-->Beans with page scope are accessible only within the page where there were created
+-->Reference of the object with in the page scope is released when the response is sent back to the client or the request is forwarded to another.
+
+<html>
+<head>
+<title>A simple JavaBean Usage</title>
+</head>
+<body>
+<%@ page language="java"%>
+<%@ page import="Counter"%>
+<jsp:useBean id="ctr" class="Counter" scope="page"/>
+<body>
+<h1>A Page scope Example</h1>
+<b>The Current Value of the count property is :</b>
+<%ctr.getCount()%>
+</body>
+</html>
+
+Request Scope:
+-->the beans with the request scope are accessible only within the pages processing the same request that the object was created in.
+-->References to the object will be released only after the request is processed completely.
+-->references are stored in request object.
+-->share information between resources.
+
+Ex 1:
+<html>
+<head>
+<title>A simple JavaBean Usage</title>
+</head>
+<body>
+<%@ page language="java"%>
+<%@ page import="Counter"%>
+<jsp:useBean id="ctr" class="Counter" scope="request"/>
+<body>
+<h1>A Request scope Example 1:</h1>
+<%ctr.setCount(20);%>
+<jsp:forward page="requestbean.jsp">
+</body>
+</html>
+
+Ex 2: requestbean.jsp
+<html>
+<head>
+<title>A simple JavaBean Usage</title>
+</head>
+<body>
+<%@ page language="java"%>
+<%@ page import="Counter"%>
+<jsp:useBean id="ctr" class="Counter" scope="request"/>
+<body>
+<h1>A Request scope Example 2:</h1>
+<b>Current value of Count variable:</b>
+<%ctr.getCount();%>
+</body>
+</html>
+
+Session Scope:
+-->Beans with session scope can be accessible only within pages processing request that are in the same session
+-->illegal of creating session scope object after mentioning the value for the attribute session=false
+
+<html>
+<head>
+<title>A simple JavaBean Usage</title>
+</head>
+<body>
+<%@ page language="java"%>
+<%@ page import="Counter"%>
+<jsp:useBean id="ctr" class="Counter" scope="session"/>
+<body>
+<h1>A Session scope Example 2:</h1>
+<b>Current value of Count variable:</b>
+<%ctr.getCount();%>
+</body>
+</html>
+
+Application Scope:
+-->until the jsp engine is restarted, the bean created with the application scope will be available to all the clients for that particular application
+-->it is the common memory for all the clients connected to the application
+
+Compile time Error
+Runtime Errors
+Logical Errors
+
+Error pages:
+i) Translation Time errors:
+Occurs during the initial request
+ii) Request time errors:
+Occurs during the subsequent request
+Translation Errors:
+-->Occur when jsp is first requested and goes through the initial translation from the jsp source file to servlet class
+-->Results of compilation failures
+-->Requesting client will get the error status code 500 or server error
+Request Time Errors:
+-->Occur during the request time
+-->These are actually runtime errors, where can occur in either the body of the jsp or in the some other object that is called for the body of jsp
+ex: <br><b>The Result is:</b><%=200/0%> 
+Arithmetic exception
+
+User defined error pages:
+we can use exception object
+<td><%=exception%></td>
+
+applets,swings : GUI Application
+For Applets: java.awt.*, java.applet.*, java.awt.event.*
+For Swings: javax.swing.*, java.awt.event.*; java..applet.*
+limitations: 
+-->system has to load applet
+-->for each user system will create a seperate connection with the database
+
+
+Cookies:
+-->are small pieces of info that are deposited on the client by the server
+-->While sending resources to the client server may also send cookie to the client containing some state information
+-->Introduced by Netscape
+-->Implement  by including a set-cookie header, part of the http response
+syntax:
+Set-cookie:Name=value;expires=Date;Path=path;
+Set-cookie:Customer='HAL';  path=/;expires=Tuesday,19 Dec-2000 21:34:54 GMT
+
+Depending on the expiry date:
+-->If the cookie has well defined expiry age, it is either stored in a permanent storage file,or in seperate files as done by Internet Explorer. Netscape Navigator stores info in a single cookie.txt file
+-->It is stored in the client machine memory, while the browser program is still running
+
+Disadvantages:
+-->Users can choose not to accept any cookies
+-->The browsers may not be able to accept cookies
+
+Client Information:
+i)Cookies
+ii)URL Rewriting
+Note: When cookies are disabled in the browser
+Note: javax.servlet.http.Cookie.
+

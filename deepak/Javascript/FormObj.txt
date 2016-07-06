@@ -1,0 +1,404 @@
+
+Examples
+Ex : 1
+E-mail validation
+How you can validate an input-field that contains an e-mail address.
+
+<html>
+<head>
+<script type="text/javascript">
+function validate()
+{
+x=document.myForm
+at=x.myEmail.value.indexOf("@")
+if (at == -1)
+	{
+	alert("Not a valid e-mail")
+	return false
+	}
+}
+</script>
+</head>
+
+<body>
+
+<form name="myForm"
+action="tryjs_submitpage.htm"
+onsubmit="return validate()">
+
+Enter your E-mail address:
+<input type="text" name="myEmail"> 
+<input type="submit" value="Send input"> 
+</form>
+
+<p>This example only tests if the email
+address contains an "@" character.</p>
+
+<p>Any "real life" code will have to test for
+punctuations, spaces and other things as well.</p>
+</body>
+</html>
+
+
+
+
+
+Ex  : 2
+Value validation
+How you can validate an input-field with min and max values.
+
+
+<html>
+<head>
+
+<script type="text/javascript">
+function validate()
+{
+x=document.myForm
+txt=x.myInput.value
+if (txt>=1 && txt<=5)
+ {
+ return true
+ }
+else
+ {
+ alert("Must be between 1 and 5")
+ return false
+ }
+}
+</script>
+</head>
+
+<body>
+<form name="myForm" action="tryjs_submitpage.htm" onsubmit="return validate()">
+
+Enter a value from 1 to 5:
+<input type="text" name="myInput">
+
+<input type="submit" value="Send input">
+
+</form>
+</body>
+</html>
+
+
+
+Ex : 3
+
+Length validation
+How you can validate number of letters in an input-field.
+
+<html>
+<head>
+
+<script type="text/javascript">
+function validate()
+{
+x=document.myForm
+input=x.myInput.value
+if (input.length>5)
+ {
+ alert("Do not insert more than 5 characters")
+ return false
+ }
+else
+ {
+ return true
+ }
+}
+</script>
+</head>
+
+<body>
+<form name="myForm" action="tryjs_submitpage.htm" onsubmit="return validate()">
+
+In this input box you are not allowed to insert more than 5 characters:
+<input type="text" name="myInput">
+
+<input type="submit" value="Send input">
+
+</form>
+</body>
+</html>
+
+
+
+
+Ex : 4
+Form validation
+A form containing all of the validation above.
+
+<html>
+<head>
+
+<script type="text/javascript">
+function validate()
+{
+x=document.myForm
+at=x.myEmail.value.indexOf("@")
+code=x.myCode.value
+firstname=x.myName.value
+submitOK="True"
+if (at==-1) 
+ {
+ alert("Not a valid e-mail")
+ submitOK="False"
+ }
+if (code<1 || code>5)
+ {
+ alert("Your code must be between 1 and 5")
+ submitOK="False"
+ }
+if (firstname.length>10)
+ {
+ alert("Your name must be less than 10 letters")
+ submitOK="False"
+ }
+if (submitOK=="False")
+ {
+ return false
+ }
+}
+</script>
+
+</head>
+<body>
+
+<form name="myForm" action="tryjs_submitpage.htm" onsubmit="return validate()">
+
+Enter your e-mail: 
+<input type="text" name="myEmail"> 
+<br>
+Enter your code, value from 1 to 5: 
+<input type="text" name="myCode">
+<br>
+Enter your first name, max 10 letters: 
+<input type="text" name="myName">
+<br>
+<input type="submit" value="Send input"> 
+</form>
+</body>
+</html>
+
+
+
+
+
+Ex : 5
+Focus
+How to set focus on an input field.
+
+
+<html>
+<head>
+<script type="text/javascript">
+function setfocus()
+{
+document.forms[0].field.focus()
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" name="field" size="30"> 
+<input type="button" value="Get Focus" onclick="setfocus()"> 
+</form>
+</body>
+</html>
+
+
+
+
+
+Ex : 6
+Selected
+How to make the content in an input field selected.
+
+
+<html>
+<head>
+<script type="text/javascript">
+function setfocus()
+{
+document.forms[0].field.select()
+document.forms[0].field.focus()
+}
+</script>
+</head>
+<body>
+<form>
+<input type="text" name="field" size="30" value="input text"> 
+<input type="button" value="Selected" onclick="setfocus()"> 
+</form>
+</body>
+</html>
+
+
+
+
+
+Ex : 7
+Radio button
+How the client can select options from radio buttons.
+
+
+<html>
+<head>
+<script type="text/javascript">
+function check(browser)
+{
+document.forms[0].answer.value=browser
+}
+</script>
+
+</head>
+<body>
+
+<form>
+Which browser is your favorite<br>
+<input type="radio"
+name="browser" onclick="check(this.value)"
+value="Explorer">Microsoft Internet Explorer<br>
+
+<input type="radio"
+name="browser" onclick="check(this.value)"
+value="Netscape">Netscape Navigator<br>
+
+<input type="text" name="answer">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+Ex : 8
+Checkbox
+How the client can select options from checkboxes.
+
+
+<html>
+<head>
+<script type="text/javascript">
+function check()
+{
+coffee=document.forms[0].coffee
+answer=document.forms[0].answer
+txt=""
+for (i = 0; i<coffee.length; ++ i)
+{
+if (coffee[i].checked)
+{
+txt=txt + coffee[i].value + " "
+}
+}
+answer.value="You ordered a coffee with " + txt
+}
+</script>
+
+</head>
+<body>
+
+<form>
+How would you like your coffee?<br>
+<input type="checkbox"
+name="coffee" value="cream">With cream<br>
+
+<input type="checkbox"
+name="coffee" value="sugar">With sugar<br>
+
+<input type="text" name="answer" size="30">
+<input type="button" name="test" onclick="check()" value="Order">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+Ex : 9
+Select from a dropdown list
+How the client can select options from a drop down list.
+
+
+<html>
+<head>
+<script type="text/javascript">
+function put()
+{
+option=document.forms[0].dropdown.options[document.forms[0].dropdown.selectedIndex].text
+txt=option
+document.forms[0].favorite.value=txt
+}
+</script>
+
+</head>
+<body>
+
+<form>
+<p>
+Select your favorite browser:
+<select name="dropdown" onchange="put()">
+<option>Internet Explorer
+<option>Netscape Navigator
+</select>
+</p>
+<p>
+Your favorite browser is:
+<input type="text"
+name="favorite" value="Internet Explorer">
+</p>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+Ex : 10
+Select more than one option
+How the client can select many options from a drop down list.
+
+
+<html>
+<head>
+<script type="text/javascript">
+function put()
+{
+option=document.forms[0].dropdown.options[document.forms[0].dropdown.selectedIndex].text
+txt=document.forms[0].number.value
+txt=txt + option
+document.forms[0].number.value=txt
+}
+</script>
+
+</head>
+
+<body>
+<form>
+Select numbers:<br>
+<select name="dropdown">
+<option>1
+<option>2
+<option>3
+<option>4
+<option>5
+<option>6
+<option>7
+<option>8
+<option>9
+<option>0
+</select>
+ <input type="button" onclick="put()" value="-->"> <input type="text" name="number">
+</form>
+
+</body>
+</html>
+
+

@@ -1,0 +1,226 @@
+For Servlets: Note: CLASSPATH=C:\JSDK2.0\lib\jsdk.jar
+Simple HTML File:
+http://localhost:8080/home.html
+
+steps:
+-->Install JDK
+-->Install JavaWebServer
+-->Set the path =C:\jdk1.2\bin
+In Windows 2000 settings-->control panel-->system-->advanced tab-->environment variables-->path variable
+In windows 98 -->open autoexec.bat in notepad
+-->create the short cut for httpd.exe file in javawebserver2.0\bin
+-->double click on the shortcut created to start the javawebserver
+-->create the jsp file and save the file with .jsp extension, save the file in public_html folder in javawebserver
+-->to see the output of the jsp file type the url as follows
+ex : http://localhost:8080/myfirst.jsp
+
+Example of jsp file with only HTML Tags:
+<html>
+<head>
+<title> My First JSP program</title>
+</head>
+<body>
+<h1 align=center>Welcome to the world of JSP</h1>
+<br>
+<center>
+<img src="c:\serverduke.gif">
+</center>
+</body>
+</html>
+
+Grouping JSP file in a single Folder:
+-->create a folder in Public_html
+-->save the required html, jsp files in the same
+-->while opening them in the browser , type the url as follows
+http://localhost:8080/<folder_name>/<file_name>
+ex: http://localhost:8080/Sasi/Home.jsp
+
+Transferring Data From HTML file to JSP file:
+-->using request.getParameter("name of the parameter")
+
+Scriplets:
+-->These contains the code that are valid for the language specified in the language directive
+-->These can make of use of declarations, expressions
+
+<%@page language="java"%>
+<%@page import="java.util.Date"%>
+<%java.util.Date now=new java.util.Date()%>
+<html>
+<body>
+<%now=new java.util.Date()%>
+<b>The time now is :</b>
+<%=now.getHours()%>:
+<%=now.getMinutes()%>:
+<%=now.getSeconds()%>
+</body>
+</html>
+
+Declaration statements
+<%! int count=0;%>
+<%count=count+1;%>
+
+Conditional Statements
+a.
+<%
+if(condition)
+{
+statements
+}
+else
+{
+statements
+}
+%>
+b.
+<%
+switch(variable)
+{
+case value1:
+statements;
+break;
+.
+.
+default:
+statements;
+}
+
+Iteration Statements (Loops):
+while
+do-while
+for
+
+Types of Errors:
+a. Compile Time errors:
+All the syntax errors
+ex: int 2num; int if;
+b. Logical Errors:
+c. Runtime Errors: (Exception)
+Will be raised at time of execution of program
+Exception Handling: Handling runtime errors while writing the program
+Structure
+//statements may raise runtime exceptions
+try{
+executable statements;
+}
+catch(Exception e)
+{
+executable statements;
+}
+
+[
+finally
+{
+executable statements;
+}
+]
+
+
+jsp:forward:
+<jsp:forward page="relativeURLSpec">
+<jsp:param name="sname" value="Raju"/>
+<jsp:param name="add" value="HNO:4-50,BhagyaNagar Colony,Hyderabad"/>
+</jsp:forward>
+
+Error Pages:
+---------------
+Compile time Error
+Runtime Errors
+Logical Errors
+
+Error pages:
+i) Translation Time errors:
+Occurs during the initial request
+ii) Request time errors:
+Occurs during the subsequent request
+Translation Errors:
+-->Occur when jsp is first requested and goes through the initial translation from the jsp source file to servlet class
+-->Results of compilation failures
+-->Requesting client will get the error status code 500 or server error
+Request Time Errors:
+-->Occur during the request time
+-->These are actually runtime errors, where can occur in either the body of the jsp or in the some other object that is called for the body of jsp
+ex: <br><b>The Result is:</b><%=200/0%> 
+Arithmetic exception
+
+User defined error pages: 
+-->error pages developed by programmer can be used to display the error decription in readable format to the end user who requested a particular jsp page
+we can use exception object
+<td><%=exception%></td>
+
+JDBC: Java Database Connectivity
+
+HTML Form		Jsp Program		Database
+Presentation		Connection Code		(Access)
+			(Database connectivity)
+
+FrontEnds:
+Java
+Applets
+Swings
+Servlets
+JSPs
+BackEnds:
+Sql server
+Ms-Access
+Oracle
+Sybase
+Connection:
+JDBC
+
+-->JDBC is an API containing some set of classes used for accessing the data from the database.
+--> JSP based web applications may use JDBC to access a database through a finite number of database connections.
+--> Users are able to access the database with the help of platform specific plug-ins called drivers.
+
+Package: java.sql.*
+
+-->Driver Manager Class: This class manages the loading and unloading of drivers
+-->Driver Interface: This interface communicates with the database, either directly or through another database specific driver.
+-->Connection Interface: Its responsibility is to register with the Driver Manager class and Connect with the database
+--->Statement Interface: Used to encapsulate sql queries uses for retrieving data from the database
+Methods: executeQuery(), executeUpdate(), execute()
+
+class myclass
+{
+	int num;
+	public void disp()
+	{
+	....	
+	....
+	}
+}
+
+interface std
+{
+void disp();
+int max();
+int square(int);
+}
+
+Session Management:
+Applications
+-->User authentication
+-->Providing and maintaining personalized settings for the users
+
+Cookies:
+-->are small pieces of info that are deposited on the client by the server
+-->While sending resources to the client server may also send cookie to the client containing some state information
+-->Introduced by Netscape
+-->Implement  by including a set-cookie header, part of the http response
+syntax:
+Set-cookie:Name=value;expires=Date;Path=path;
+Set-cookie:Customer='HAL';  path=/;expires=Tuesday,19 Dec-2000 21:34:54 GMT
+
+Depending on the expiry date:
+-->If the cookie has well defined expiry age, it is either stored in a permanent storage file,or in seperate files as done by Internet Explorer. Netscape Navigator stores info in a single cookie.txt file
+-->It is stored in the client machine memory, while the browser program is still running
+
+Disadvantages:
+-->Users can choose not to accept any cookies
+-->The browsers may not be able to accept cookies
+
+Client Information:
+i)Cookies
+ii)URL Rewriting
+Note: When cookies are disabled in the browser
+Note: javax.servlet.http.Cookie.
+

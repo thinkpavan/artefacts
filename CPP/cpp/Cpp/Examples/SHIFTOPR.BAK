@@ -1,0 +1,55 @@
+#include<iostream.h>
+
+ // Over Loading right shift
+ // and left shift operator
+
+ class Emp
+   {
+     char empno[10];
+     char name[20];
+     char desig[20];
+     int  sal;
+
+      public :
+    friend istream& operator>>(istream&  ,Emp& );
+    friend ostream&  operator<<(ostream&  ,Emp&  );
+   };
+
+
+    istream& operator>>(istream&  Min,Emp& T)
+      {
+        cout<<endl;
+	cout<<"\n Enter Empno  :  ";
+	Min>>T.empno;
+	cout<<"\n Enter Name   :  ";
+	Min>>T.name;
+	cout<<"\n Enter Desig  :  ";
+	Min>>T.desig;
+	cout<<"\n Enter Salary :  ";
+	Min>>T.sal;
+
+         return Min;
+      }
+
+   ostream&  operator<<(ostream&  Mout,Emp&  T)
+      {
+        cout<<endl;
+	Mout<<"\n Empno  :  "<<T.empno;
+	Mout<<"\n Name   :  "<<T.name;
+	Mout<<"\n Desig  :  "<<T.desig;
+	Mout<<"\n Salary :  "<<T.sal;
+
+         return Mout;
+      }
+
+
+   void main()
+    {
+      Emp  A,B;
+
+      cout<<"\n Enter Employee Details ";
+      cin>>A>>B;
+
+      cout<<"\n Displaying Employee Details ";
+      cout<<A<<B;
+    }

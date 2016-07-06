@@ -1,0 +1,396 @@
+Ex : 1
+
+position:relative
+How to position an element relative to its normal position.
+
+
+<html>
+
+<head>
+<style>
+h1.ex1
+{
+position:relative;
+left:20px;
+}
+h1.ex2
+{
+position:relative;
+left:-20px;
+}
+</style>
+</head>
+
+<body>
+<h1>Normal Heading</h1>
+<h1 class="ex1">Heading +20</h1>
+<h1 class="ex2">Heading -20</h1>
+
+<p>
+Relative positioning moves an element relative to its original position.
+</p>
+<p>
+"left:20" adds 20 pixels to the element's LEFT position.
+</p>
+<p>
+"left:-20" subtracts 20 pixels from the element's LEFT position.
+</p>
+</body>
+
+</html>
+
+
+
+
+
+
+Ex : 2
+
+position:relative
+How to position all headings relative to its normal position.
+
+
+
+<html>
+
+<head>
+<style>
+h1
+{
+position:relative;
+left:40px;
+}
+</style>
+</head>
+
+<body>
+<h1>Heading A</h1>
+<p>This is a paragraph.</p>
+<h1>Heading B</h1>
+<p>This is a paragraph.</p>
+<h1>Heading C</h1>
+<p>This is a paragraph.</p>
+<h1>Heading D</h1>
+<p>This is a paragraph.</p>
+</body>
+
+</html>
+
+
+
+
+
+
+Ex : 3
+position:absolute
+How to position an element using an absolute value.
+
+<html>
+<head>
+<style>
+h1.x
+{
+position:absolute;
+left:100px;
+top:150px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="x">This is a heading</h1>
+
+<p>With absolute positioning, an element can be placed anywhere on a page.</p>
+
+<p>The LEFT position of the heading is 100 pixels from the left of the page.
+The TOP position is 150 pixels from the top of the page.</p>
+
+</body>
+</html>
+
+
+
+
+Ex : 4
+
+Visibility
+How to make an element invisible. Do you want the element to show or not?
+
+
+<html>
+<head>
+<style>
+h1.one
+{
+visibility:visible;
+}
+h1.two
+{
+visibility:hidden;
+}
+</style>
+</head>
+<body>
+
+<h1 class="one">Heading one</h1>
+<h1 class="two">Heading two</h1>
+
+<p>Where is heading two?</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+Z-index
+Z-index can be used to place an element "behind" another element, using Z-index priority.
+
+
+<html>
+
+<head>
+<style>
+img.x
+{
+position:absolute;
+left:0px;
+top:0px;
+z-index:2;
+}
+
+img.y
+{
+position:absolute;
+left:0px;
+top:0px;
+z-index:1;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1 class="y">This is a Heading</h1>
+<img class="x" src="bulbon.gif" width="100" height="180"> 
+<img class="y" src="bulbon.gif" width="200" height="280"> 
+
+<p>Default z-index is 0. Z-index -1 has lower priority.</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+Z-index
+Check that the elements now have changed their Z-index priority.
+
+
+<html>
+
+<head>
+<style>
+img.x
+{
+position:absolute;
+left:100px;
+top:0px;
+z-index:1;
+}
+</style>
+</head>
+
+<body>
+
+<h1>This is a Heading</h1>
+<img class="x" src="bulbon.gif" width="100" height="180"> 
+
+<p>Default z-index is 0. Z-index 1 has higher priority.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+Cursors
+Change the style of the mouse cursor with CSS.
+
+
+
+<html>
+<body>
+<p>Move the mouse over the words to see the cursor change</p> 
+<span style="cursor: auto">Auto</span><br />
+<span style="cursor: crosshair">Crosshair</span><br />
+<span style="cursor: default">Default</span><br />
+<span style="cursor: pointer">Pointer</span><br />
+<span style="cursor: hand">Hand</span><br />
+<span style="cursor: move">Move</span><br />
+<span style="cursor: e-resize">e-resize</span><br />
+<span style="cursor: ne-resize">ne-resize</span><br />
+<span style="cursor: nw-resize">nw-resize</span><br />
+<span style="cursor: n-resize">n-resize</span><br />
+<span style="cursor: se-resize">se-resize</span><br />
+<span style="cursor: sw-resize">sw-resize</span><br />
+<span style="cursor: s-resize">s-resize</span><br />
+<span style="cursor: w-resize">w-resize</span><br />
+<span style="cursor: text">text</span><br />
+<span style="cursor: wait">wait</span><br />
+<span style="cursor: help">help</span><br />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+Filters
+Change the style of your headings using the filter property.
+
+
+
+<html>
+<head>
+<style>
+h2
+{
+width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<h2 style="filter:glow()">Glow</h2>
+<h2 style="filter:blur()">Blur</h2>
+<h2 style="filter:fliph()">Flip H</h2>
+<h2 style="filter:flipv()">Flip V</h2>
+<h2 style="filter:shadow()">Shadow</h2>
+<h2 style="filter:dropshadow()">Drop Shadow</h2>
+<h2 style="filter:wave(Strength=2)">Wave</h2>
+
+<p>NOTE: Filters don't work if the width property of the element is not set.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+Filters on Images
+The filter property can also used on images, here are some filter examples which look good on images.
+
+
+
+<html>
+<head>
+<style>
+div
+{
+width:160px;
+height:120px;
+}
+</style>
+</head>
+<body>
+
+<img src="landscape.jpg" width="160" height="120" />
+
+Alpha: 
+<div style="filter:alpha(Opacity=20)">
+<img src="landscape.jpg" width="160" height="120" />
+</div>
+
+Gray: 
+<div style="filter:gray()">
+<img src="landscape.jpg" width="160" height="120" />
+</div>
+
+Invert: 
+<div style="filter:invert()">
+<img src="landscape.jpg" width="160" height="120" />
+</div>
+
+Xray: 
+<div style="filter:xray()">
+<img src="landscape.jpg" width="160" height="120" />
+</div>
+
+Mask: 
+<div style="position:absolute;left:10;top:610;">
+<img src="landscape.jpg" width="160" height="120" />
+</div>
+
+<div style="position: absolute; left: 10; top: 610; filter: mask(color=#ffffff); width: 160; height: 120">
+<h2>The mask value makes the text transparent</h2>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+Watermark
+A background picture that does not move when the rest of the page is scrolling.
+
+<html>
+<head>
+<style>
+body
+{
+background-attachment: fixed;
+background-image: url("bulboff.gif");
+background-repeat: no-repeat;
+}
+</style>
+</head>
+<body>
+
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+<br /><br /><br /><br /><br /><br /><br />
+<p>Scroll the page and see what happens</p>
+</body>
+</html>
+

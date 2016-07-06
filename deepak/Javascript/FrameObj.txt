@@ -1,0 +1,110 @@
+Examples
+
+
+Ex : 1
+Break out of frames
+If you are trapped in a frame or two, this is how you break out.
+
+
+<html>
+<head>
+
+<script type="text/javascript">
+function breakout()
+{
+if (window.top != window.self) 
+ {
+ window.top.location="tryjs_breakout.htm"
+ }
+}
+</script>
+
+</head>
+<body>
+
+<form>
+To break out of the frame:
+<input type="button" onclick="breakout()" value="Click me">
+</form>
+
+</body>
+</html>
+
+
+Ex : 2
+Update 2 frames
+How to update the 2 frames with one click.
+
+<html>
+
+<frameset rows="10%,*" frameborder="1">
+	<frame name="upperframe" src="demo_js_frame_a.htm">
+	<frame name="lowerframe" src="tryjs_twoframes_sourcepage.htm">
+</frameset>
+
+</html>
+
+//lowframe//
+The source code:
+
+<html>
+<head>
+<script type="text/javascript">
+function changeurl()
+{
+parent.upperframe.location="demo_js_frame_b.htm"
+parent.lowerframe.location="demo_js_frame_c.htm"
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" value="Change url" 
+onclick="changeurl()">
+</form>
+</body>
+</html>
+
+
+Ex  :  3
+Update 2 other frames
+How to update 2 frames from a 3rd. frame.
+
+<html>
+
+<frameset cols="80%,*" frameborder="1">
+ <frame name="leftframe" src="tryjs_threeframes_sourcepage.htm">
+ <frameset rows="30%,*" frameborder="1">
+  <frame name="upperframe" src="demo_js_frame_a.htm">
+  <frame name="lowerframe" src="demo_js_frame_b.htm">
+ </frameset>
+</frameset>
+
+</html>
+
+
+
+The source code:
+
+<html>
+<head>
+<script type="text/javascript">
+function changeurl()
+{
+parent.upperframe.location.href="demo_js_frame_c.htm"
+parent.lowerframe.location.href="demo_js_frame_d.htm"
+}
+</script>
+</head>
+<body>
+<form>
+<input type="button" value="Change url"
+onclick="changeurl()">
+</form>
+</body>
+</html>
+
+
+
+
+

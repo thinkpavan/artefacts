@@ -1,0 +1,28 @@
+A variable is a "container" for information you want to store.
+Variables are used to store data. A variable's value can change during the script. You can refer to a variable by name to see its value or to change its value.
+
+Rules for Variable names:
+
+Variable names are case sensitive 
+They must begin with a letter or the underscore character 
+
+
+Declare a Variable
+
+var <variablename> = <value>
+
+ (or)
+<variablename> = <value>
+
+-----------------------------------------------------------------------
+// Lifetime of Variables  //
+
+When you declare a variable within a function, the variable can only be accessed within that function. When you exit the function, the variable is destroyed. These variables are called local variables. You can have local variables with the same name in different functions, because each is recognized only by the function in which it is declared.
+
+If you declare a variable outside a function, all the functions on your page can access it. The lifetime of these variables starts when they are declared, and ends when the page is closed.
+
+-----------------------------------------------------------------------
+
+
+
+ 

@@ -1,0 +1,366 @@
+
+
+<html>
+<head>
+<meta name="keywords" content=".NET Consulting, .NET Training, .NET Framework Training, .NET FAQ, ASP.NET FAQ, VB.NET FAQ, .NET Compact Framework, Framework Class Library, Common Language Runtime, ASP.NET Training, VB.NET Training, Windows CE, .NET Webservices, ASP.NET WebForms">
+<meta name="description" content="Wintellect is a Windows software consulting and education firm whose mission is to help companies ship great software faster.">
+<title>Wintellect - Resources - FAQs - .NET Web Services FAQs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<script language="JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i>a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i>d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; 
+  document.MM_sr=new Array; 
+  for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){
+   	document.MM_sr[j++]=x; 
+		if(!x.oSrc) 
+		x.oSrc=x.src; 
+		x.src=a[i+2];
+	}
+}
+
+function imageToggle(imageID){
+	var objStr,obj;
+	var ImageSCR = document.images[imageID];
+	var ImageArray = new Array("http://www.wintellect.com/images/Close_Arrow.gif",
+							   "http://www.wintellect.com/images/Open_Arrow.gif")
+
+	if (ImageSCR.src==ImageArray[0]) {
+		document.images[imageID].src = ImageArray[1];
+		setCookie(imageID + "Open", "Open", "", "", "wintellect.com", "");
+		return true;
+	} else if (ImageSCR.src==ImageArray[1]) {
+		document.images[imageID].src = ImageArray[0];
+		setCookie(imageID + "Open", "Close", "", "", "wintellect.com", "");
+		return true;
+	}
+}
+
+function imageswapToggle(imageID,action){
+	var objStr,obj;
+	var ImageSCR = document.images[imageID];
+	var ImageArray = new Array("http://www.wintellect.com/images/sideboxes/sideboxes_02.gif",
+							   "http://www.wintellect.com/images/sideboxes/sideboxes_b.gif",
+							   "http://www.wintellect.com/images/sideboxes/sideboxes_cl_02.gif",
+							   "http://www.wintellect.com/images/sideboxes/sideboxes_cl_b.gif");
+							   
+	if (action=="swap") {
+		if (ImageSCR.src==ImageArray[0]) {
+			document.images[imageID].src = ImageArray[1];
+			return true;
+		} else if (ImageSCR.src==ImageArray[1]) {
+			document.images[imageID].src = ImageArray[0];
+			return true;
+		} else if (ImageSCR.src==ImageArray[2]) {
+			document.images[imageID].src = ImageArray[3];
+			return true;
+		} else if (ImageSCR.src==ImageArray[3]) {
+			document.images[imageID].src = ImageArray[2];
+			return true;
+		}
+	} else if(action=="toggle") {
+		if (ImageSCR.src==ImageArray[1]) {
+			document.images[imageID].src = ImageArray[3];
+			return true;
+		} else if (ImageSCR.src==ImageArray[3]) {
+			document.images[imageID].src = ImageArray[1];
+			return true;
+		}
+	}
+}
+
+function Toggle(id){
+	if (document.all){
+		if(document.all[id].style.display == 'none'){
+			document.all[id].style.display = '';
+		} else {
+			document.all[id].style.display = 'none';
+		}
+	}
+}
+
+function MM_displayStatusMsg(msgStr) { //v1.0
+  status=msgStr;
+  document.MM_returnValue = true;
+}
+
+function setCookie(name, value, expires, path, domain, secure) {
+  var curCookie = name + "=" + escape(value) +
+      ((expires) ? "; expires=" + expires.toGMTString() : "") +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      ((secure) ? "; secure" : "");
+  document.cookie = curCookie;
+}
+
+function deleteCookie(name) {
+  if (getCookie(name)) {
+    document.cookie = name + "=" + "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+  }
+}
+
+function getCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + "=";
+  var begin = dc.indexOf("; " + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(";", begin);
+  if (end == -1)
+    end = dc.length;
+  return unescape(dc.substring(begin + prefix.length, end));
+}
+
+//-->
+</script>
+<link rel="stylesheet" href="/misc/ie_styles.css" type="text/css">
+</head>
+<body bgcolor=#FFFFFF background="/images/Background.gif" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('/images/Close_Arrow.gif','/images/Open_Arrow.gif')" name="main">
+<map name="Map">
+  <area shape="rect" coords="5,-1,54,14" href="/seminars/training.aspx" title="training" alt="training">
+  <area shape="rect" coords="60,2,120,14" href="/consulting.aspx" title="consulting" alt="consulting">
+  <area shape="rect" coords="129,1,193,14" href="/debug.aspx" title="debugging" alt="debugging">
+  <area shape="rect" coords="203,1,264,13" href="/contactus.aspx" title="contact us" alt="contact us">
+</map>
+<table width=100% border=0 cellpadding=0 cellspacing=0>
+  <tr> 
+    <td height=1> <img src="/images/spacer.gif" width=164 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=16 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=11 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=129 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=242 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=4 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=23 height=1 alt=" "></td>
+    <td height=1> <img src="/images/spacer.gif" width=171 height=1 alt=" "></td>
+    <td></td>
+  </tr>
+  <tr> 
+    <td colspan=8> <img src="/images/spacer.gif" width=760 height=10 alt=" "></td>
+    <td> <img src="/images/spacer.gif" width=1 height=10 alt=" "></td>
+  </tr>
+  <tr> 
+    
+  <td height="59" colspan=3 rowspan=2 width=191 valign="top"><a href="/"><img src="/images/wintellect_02.gif" width=191 height=59 border="0" alt="Wintellect - Know how."></a></td>
+    <td height="59" rowspan=2> <img src="/images/spacer.gif" width=129 height=59 alt=" "></td>
+    <td colspan=3 align="right"> <img src="/images/wintellect_04.gif" width=272 height=16 usemap="#Map" border="0" alt=" "></td>
+    <td width="171" rowspan=3 bgcolor="#FF9900"> <img src="/images/wintellect_05.gif" width=171 height=81 alt=" "></td>
+    <td width=1> <img src="/images/spacer.gif" width=1 height=16 alt=" "></td>
+  </tr>
+  <tr> 
+    <td colspan=3> <img src="/images/spacer.gif" width=269 height=43 alt=" "></td>
+    <td width=1> <img src="/images/spacer.gif" width=1 height=43 alt=" "></td>
+  </tr>
+  <tr> 
+    <td width="164" height="22" bgcolor="#FF9900">&nbsp; </td>
+    <td colspan=2 width=27> <img src="/images/wintellect_08.gif" width=27 height=22 alt=" "></td>
+    <td height="22" colspan=2> <img src="/images/spacer.gif" width=371 height=22 alt=" "></td>
+    <td colspan=2 align="right"> <img src="/images/wintellect_10.gif" width=27 height=22 alt=" "></td>
+    <td bgcolor="#FF9900" width=1> <img src="/images/spacer.gif" width=1 height=22 alt=" "></td>
+  </tr>
+  <tr> 
+    <td width="164" height="5"> <img src="/images/spacer.gif" width=164 height=5></td>
+    <td width="16" rowspan=4> <img src="/images/spacer.gif" width=16 height=591></td>
+    <td colspan=3 rowspan=2 background="/images/extention.gif" height=38 valign="top"><img src="/images/titles/WEBSERVICES_FAQs_title.gif" alt=".NET Web Services FAQs"></td>
+	<td rowspan="2" background="/images/extention.gif" height=38 valign="top">
+	<span><a href="/portal/login.aspx?refurl=%2fresources%2ffaqs%2fdefault.aspx%3ffaq_id%3d3%26page%3d2"><img src="/images/login.gif" alt="Log in" border="0" /></a></span>
+	
+	</td>
+    <td width="23" rowspan=4> <img src="/images/spacer.gif" width=23 height=591></td>
+    <td width="171" height="5"> <img src="/images/spacer.gif" width=171 height=5></td>
+    <td width=1 height=5> <img src="/images/spacer.gif" width=1 height=5></td>
+  </tr>
+  <tr> 
+    <td width="164" rowspan=4 valign="top" bgcolor="#0099CC">
+		<table class="flyoutMenu" cellpadding="2" border="0" style="width:155px;"><tr><td><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="TrainingArrow.click();"><a href="javascript:;" ID="TrainingArrow" onClick="Toggle('Training1');imageToggle('TrainingArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="TrainingArrow" alt=">"></a>&nbsp;<a href="/seminars/" ID="TrainingArrow" onClick="Toggle('Training1');imageToggle('TrainingArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Training</a></td></tr></table><div id="Training1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="TrainingMicrosoft__NET_Courses.click();" ><a href="/seminars/training.aspx?courses=1" ID="TrainingMicrosoft__NET_Courses">Microsoft .NET Courses</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingCompetitive_Edge_Series.click();" ><a href="/seminars/training.aspx?courses=8" ID="TrainingCompetitive_Edge_Series">Competitive Edge Series</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingSQL_Courses.click();" ><a href="/seminars/training.aspx?courses=7" ID="TrainingSQL_Courses">SQL Courses</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingWin32_Programming_Courses.click();" ><a href="/seminars/training.aspx?courses=5" ID="TrainingWin32_Programming_Courses">Win32 Programming Courses</a><br></td></tr><tr><td class="flyoutSubLink" onclick="TrainingXML_Courses.click();" ><a href="/seminars/training.aspx?courses=6" ID="TrainingXML_Courses">XML Courses</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink" rowspan="2" " onclick="ConsultingHeading.click();"><img src="/images/spacer.gif" border="0" width="6" height="6" alt=" ">&nbsp;<a href="/consulting" ID="ConsultingHeading">Consulting</a></td></tr></table><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink" rowspan="2" " onclick="DebuggingHeading.click();"><img src="/images/spacer.gif" border="0" width="6" height="6" alt=" ">&nbsp;<a href="/debug.aspx" ID="DebuggingHeading">Debugging</a></td></tr></table><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink" rowspan="2" " onclick="SupportHeading.click();"><img src="/images/spacer.gif" border="0" width="6" height="6" alt=" ">&nbsp;<a href="/consulting/services/support" ID="SupportHeading">Support</a></td></tr></table><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="Upcoming_EventsArrow.click();"><a href="javascript:;" ID="Upcoming_EventsArrow" onClick="Toggle('Upcoming_Events1');imageToggle('Upcoming_EventsArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="Upcoming_EventsArrow" alt=">"></a>&nbsp;<a href="/events/" ID="Upcoming_EventsArrow" onClick="Toggle('Upcoming_Events1');imageToggle('Upcoming_EventsArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Upcoming Events</a></td></tr></table><div id="Upcoming_Events1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="Upcoming_EventsCourse_Schedule.click();" ><a href="/events/seminars.aspx" ID="Upcoming_EventsCourse_Schedule">Course Schedule</a><br></td></tr><tr><td class="flyoutSubLink" onclick="Upcoming_EventsPublic_Speaking_Schedule.click();" ><a href="/events/speaking.aspx" ID="Upcoming_EventsPublic_Speaking_Schedule">Public Speaking Schedule</a><br></td></tr><tr><td class="flyoutSubLink" onclick="Upcoming_EventsCourse_Registration.click();" ><a href="/events/registration.aspx" ID="Upcoming_EventsCourse_Registration">Course Registration</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="Special_OffersArrow.click();"><a href="javascript:;" ID="Special_OffersArrow" onClick="Toggle('Special_Offers1');imageToggle('Special_OffersArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="Special_OffersArrow" alt=">"></a>&nbsp;<a href="/special/" ID="Special_OffersArrow" onClick="Toggle('Special_Offers1');imageToggle('Special_OffersArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Special Offers</a></td></tr></table><div id="Special_Offers1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="Special_OffersFree_Programming_Microsoft__NET_.click();" ><a href="/special/win.aspx" ID="Special_OffersFree_Programming_Microsoft__NET_">Free Programming Microsoft .NET </a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="_NET_BooksArrow.click();"><a href="javascript:;" ID="_NET_BooksArrow" onClick="Toggle('_NET_Books1');imageToggle('_NET_BooksArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="_NET_BooksArrow" alt=">"></a>&nbsp;<a href="/books/" ID="_NET_BooksArrow" onClick="Toggle('_NET_Books1');imageToggle('_NET_BooksArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">.NET Books</a></td></tr></table><div id="_NET_Books1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_Microsoft__NET_Framework_Programming__In_C__.click();" ><a href="/about/instructors/richter/app_net.aspx" ID="_NET_BooksApplied_Microsoft__NET_Framework_Programming__In_C__">Applied Microsoft .NET Framework Programming (In C#)</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_Microsoft__NET_Framework_Programming_In_Microsoft_Visual_Basic__NET.click();" ><a href="/about/instructors/richter/app_net_VB.aspx" ID="_NET_BooksApplied_Microsoft__NET_Framework_Programming_In_Microsoft_Visual_Basic__NET">Applied Microsoft .NET Framework Programming In Microsoft Visual Basic .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_SOAP__Implementing__NET_XML_Web_Services.click();" ><a href="http://www.samspublishing.com/catalog/product.asp?product_id={2DC6FAAA-E161-4534-A13E-2DCE4883F3BD}" ID="_NET_BooksApplied_SOAP__Implementing__NET_XML_Web_Services">Applied SOAP: Implementing .NET XML Web Services</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksApplied_XML_Programming_for_Microsoft__NET.click();" ><a href="/about/instructors/esposito/app_xml.aspx" ID="_NET_BooksApplied_XML_Programming_for_Microsoft__NET">Applied XML Programming for Microsoft .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksBuilding_Web_Solutions_with_ASP_NET_and_ADO_NET_.click();" ><a href="/about/instructors/esposito/web_solutions.aspx" ID="_NET_BooksBuilding_Web_Solutions_with_ASP_NET_and_ADO_NET_">Building Web Solutions with ASP.NET and ADO.NET </a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksProgramming_Microsoft__NET.click();" ><a href="/about/instructors/prosise/netbook.aspx" ID="_NET_BooksProgramming_Microsoft__NET">Programming Microsoft .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksProgramming_Visual_Basic__NET.click();" ><a href="http://www.vb2themax.com/HtmlDoc.asp?Table=Books&ID=101000" ID="_NET_BooksProgramming_Visual_Basic__NET">Programming Visual Basic .NET</a><br></td></tr><tr><td class="flyoutSubLink" onclick="_NET_BooksProgramming_Microsoft_ASP_NET.click();" ><a href="http://www.wintellect.com/resources/amazoninfo.aspx?asin=0735619034" ID="_NET_BooksProgramming_Microsoft_ASP_NET">Programming Microsoft ASP.NET</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="ResourcesArrow.click();"><a href="javascript:;" ID="ResourcesArrow" onClick="Toggle('Resources1');imageToggle('ResourcesArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Open_Arrow.gif" border="0" width="6" height="6"  Name="ResourcesArrow" alt=">"></a>&nbsp;<a href="/resources/" ID="ResourcesArrow" onClick="Toggle('Resources1');imageToggle('ResourcesArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">Resources</a></td></tr></table><div id="Resources1" style="display: "><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="ResourcesArticles_By_Wintellectuals.click();" ><a href="/resources/articles.aspx" ID="ResourcesArticles_By_Wintellectuals">Articles By Wintellectuals</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesBooks_By_Wintellectuals.click();" ><a href="/resources/authors.aspx" ID="ResourcesBooks_By_Wintellectuals">Books By Wintellectuals</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesRecommended_Reading.click();" ><a href="/resources/recommendedreading.aspx" ID="ResourcesRecommended_Reading">Recommended Reading</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesFAQs.click();" ><a href="/resources/faqs/default.aspx" ID="ResourcesFAQs">FAQs</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesOnline_Interviews.click();" ><a href="/resources/interviews.aspx" ID="ResourcesOnline_Interviews">Online Interviews</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesNewsletter_Archives.click();" ><a href="/resources/archived_newsletters.aspx" ID="ResourcesNewsletter_Archives">Newsletter Archives</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesPartner_Websites.click();" ><a href="/resources/partners.aspx" ID="ResourcesPartner_Websites">Partner Websites</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesTip_Archive.click();" ><a href="/resources/tip/tip_archive.aspx" ID="ResourcesTip_Archive">Tip Archive</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesTutorials.click();" ><a href="/resources/tutorials/menu.aspx" ID="ResourcesTutorials">Tutorials</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesWintellect_Challenge.click();" ><a href="/resources/challenge.aspx" ID="ResourcesWintellect_Challenge">Wintellect Challenge</a><br></td></tr><tr><td class="flyoutSubLink" onclick="ResourcesWintellect_s_DevChat_Forums.click();" ><a href="/forum" ID="ResourcesWintellect_s_DevChat_Forums">Wintellect's DevChat Forums</a><br></td></tr></table></div><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutLink"  rowspan="2" onclick="About_WintellectArrow.click();"><a href="javascript:;" ID="About_WintellectArrow" onClick="Toggle('About_Wintellect1');imageToggle('About_WintellectArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;"><img src="/images/Close_Arrow.gif" border="0" width="6" height="6"  Name="About_WintellectArrow" alt=">"></a>&nbsp;<a href="/about/" ID="About_WintellectArrow" onClick="Toggle('About_Wintellect1');imageToggle('About_WintellectArrow');" onMouseOver="MM_displayStatusMsg('Done');return document.MM_returnValue;">About Wintellect</a></td></tr></table><div id="About_Wintellect1" style="display: none"><table width="155" cellpadding="0" cellspacing="0" border="0"><tr><td class="flyoutSubLink" onclick="About_WintellectMission_Statement.click();" ><a href="/about/default.aspx" ID="About_WintellectMission_Statement">Mission Statement</a><br></td></tr><tr><td class="flyoutSubLink" onclick="About_WintellectPrivacy_Policy.click();" ><a href="/about/privacy.aspx" ID="About_WintellectPrivacy_Policy">Privacy Policy</a><br></td></tr><tr><td class="flyoutSubLink" onclick="About_WintellectInstructors.click();" ><a href="/about/instructors.aspx" ID="About_WintellectInstructors">Instructors</a><br></td></tr><tr><td class="flyoutSubLink" onclick="About_WintellectPress_Releases.click();" ><a href="/about/press/" ID="About_WintellectPress_Releases">Press Releases</a><br></td></tr></table></div></td></tr></table><br>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF9900">
+      <table width="100%" border="0" cellspacing="5" cellpadding="0" class="sideboxHead">
+        <tr>
+          <td class="sideboxHead">newsletter</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#0099CC">
+        <table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+        <td class="sideboxBody">
+
+			<table width="100%" border="0" cellspacing="5" cellpadding="0">
+			  <tr>
+				<td class="sideboxBody" align="center">
+				  <form action="/newsletter/add_delete.asp" method="POST">
+					<label for="email">Your Email Address:</label><br>
+					  <input type="TEXT" size="15" id="email" name="email" class="inputTextBox">
+					<table width="137" border="0" cellspacing="0" cellpadding="0" align="center">
+					  <tr> 
+						<td class="sideboxBody"> 
+						  <input type="RADIO" id="subscribe" name="subscribe" value="subscribe" checked align="TOP">
+						  <label for="subscribe">Subscribe</label><br>
+						  <input type="RADIO" id="unsubscribe" name="subscribe" value="unsubscribe" align="TOP">
+						  <label for="unsubscribe">Unsubscribe</label></td>
+					  </tr>
+					</table>
+						<input type="HIDDEN" name="ListNumber" value="1">
+						<input type="SUBMIT" value="  Submit  " name="SUBMIT" class="inputTextBox">
+						<p>Sponsored by:<br><a href="http://www.aspnetpro.com/af.asp?id=234"><img src="/images/aspcampaign_100x30_flash.gif" width="100" height="30" border="0" alt="Sponsored by: asp.netPRO"></a></p>
+					  <!-- <p>Sponsored by:<br><a href="http://msdn.microsoft.com/msdnmag"><img src="/images/2mmlogo2.gif" width="100" height="30" border="0" alt="Sponsored by: MSDN"></a></p> -->
+				  </form>
+				</td>
+			  </tr>
+			</table>
+		          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+		<table width="164" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="164" height="5" alt=" "></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FF9900">
+          <table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+            <td class="sideboxHead">special promos</td>
+          </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="164" height="5" alt=" "></td>
+      </tr>
+      <tr>
+        <td bgcolor="#0099CC">
+          <table width="100%" border="0" cellspacing="5" cellpadding="0">
+            <tr>
+              <td class="sideboxBody" align="center"><br>
+<a href="/forum/"><img src="/images/promo/wintellect-forums.gif" alt="Have Questions?  Check out the Wintellect Forums." border="" /></a><br><br><a href="/special/win.aspx"><img src="/images/promo/Pro_MS_NET.gif" alt="Win a signed copy of Programming Microsoft .NET!" border="" /></a><br><br>              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+   </td>
+    <td width="171" headers="71" rowspan=2 valign="top" bgcolor="#0099CC"><img src="/images/wintellect_17.gif" width=171 height=71 alt=" "></td>
+    <td width=1 bgcolor="#0099CC"> <img src="/images/spacer.gif" width=1 height=33 alt=" "></td>
+  </tr>
+  <tr> 
+    <td colspan=4 rowspan=2 valign="top"><br>
+	<!-- Start Body -->
+
+<form name="_ctl0" method="post" action="default.aspx?faq_id=3&amp;page=2" id="_ctl0">
+<input type="hidden" name="__VIEWSTATE" value="dDwxNjkzMjU2NzIyO3Q8O2w8aTwyPjs+O2w8dDw7bDxpPDE+O2k8Mz47PjtsPHQ8cDxwPGw8VmlzaWJsZTs+O2w8bzxmPjs+Pjs+Ozs+O3Q8QDA8cDxwPGw8VmlzaWJsZTtQYWdlQ291bnQ7XyFJdGVtQ291bnQ7XyFEYXRhU291cmNlSXRlbUNvdW50O0RhdGFLZXlzOz47bDxvPHQ+O2k8MT47aTwxPjtpPDE+O2w8Pjs+Pjs+Ozs7Ozs7Ozs7Oz47bDxpPDA+Oz47bDx0PDtsPGk8MT47PjtsPHQ8O2w8aTwwPjs+O2w8dDw7bDxpPDA+Oz47bDx0PEA8V2hhdCBpcyBVRERJPztcPHAgY2xhc3M9Im1haW4iXD5VRERJIHN0YW5kcyBmb3IgVW5pdmVyc2FsIERlc2NyaXB0aW9uLCBEaXNjb3ZlcnksIGFuZCBJbnRlZ3JhdGlvbi4gV2hpbGUgVURESSBpcyBpbXBsZW1lbnRlZCBhcyBhIHNlcmllcyBvZiBXZWIgU2VydmljZXMgdGhhdCBleGVjdXRlIGFnYWluc3Qga25vd24gVURESSByZXBvc2l0b3JpZXMsIHlvdSBjYW4gaW1hZ2luZSBVRERJIGFzIGJlaW5nIGEgc29ydCBvZiAiWWVsbG93IFBhZ2VzIiBmb3IgV2ViIFNlcnZpY2VzLiBUaGUgcmVwb3NpdG9yaWVzLCBtYWludGFpbmVkIGJ5IE1pY3Jvc29mdCwgSUJNLCBhbmQgQXJpYmEsIGFyZSBkZXNpZ25lZCB0byBwcm92aWRlIHlvdSB3aXRoIGRldGFpbGVkIGluZm9ybWF0aW9uIHJlZ2FyZGluZyByZWdpc3RlcmVkIFdlYiBTZXJ2aWNlcyBmb3IgYWxsIHZlbmRvcnMuIFlvdSBxdWVyeSB0aGUgcmVwb3NpdG9yaWVzIGZvciBzcGVjaWZpYyBpbmZvcm1hdGlvbiBhbmQvb3IgV2ViIFNlcnZpY2VzIGFzIG5lY2Vzc2FyeSB0byBkaXNjb3ZlciBhbmQgdWx0aW1hdGVseSB1c2UgV2ViIFNlcnZpY2VzIHByb3ZpZGVkIGJ5IGFueSBudW1iZXIgb2YgdmVuZG9ycy5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD5cPHAgY2xhc3M9Im1haW4iXD5cPC9wXD47Pjs7Pjs+Pjs+Pjs+Pjs+Pjs+Pjs+Pjs+NGcfcgHMJVdOyb9SoaGishe/OqI=" />
+
+
+<table cellspacing="0" rules="all" border="0" id="myDataGrid" style="border-width:0px;border-collapse:collapse;">
+	<tr class="main">
+		<td>
+				<b>What is UDDI?</b>
+				<blockquote><p class="main">UDDI stands for Universal Description, Discovery, and Integration. While UDDI is implemented as a series of Web Services that execute against known UDDI repositories, you can imagine UDDI as being a sort of "Yellow Pages" for Web Services. The repositories, maintained by Microsoft, IBM, and Ariba, are designed to provide you with detailed information regarding registered Web Services for all vendors. You query the repositories for specific information and/or Web Services as necessary to discover and ultimately use Web Services provided by any number of vendors.</p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p><p class="main"></p></blockquote>
+				<hr align="center" color="#FF9900" width="75%" noshade>
+			</td><td valign="Top"><a name="1"></td>
+	</tr>
+</table>
+
+</form>
+<table width="100%"><tr><td width="50%" class="main">Page: 2 of 2</td><td width="50%" align="right" class="main">Jump to Page: <a href="/resources/faqs/default.aspx?faq_id=3&page=1" class="main"><< Previous</a> <a href="/resources/faqs/default.aspx?faq_id=3&page=1" class="main">1</a> 2 </td></tr></table>
+
+	<!-- End Body -->
+		<br><br>
+		  <div align="center" class="footer"><b>Wintellect &reg;</b><br>
+			10207 Technology Drive &#149; Suite 302 &#149; Knoxville, TN  37932<br>
+			Sales Office: 877-968-5528 or 603-965-0060 &#149; Corporate Office: 865-966-5528 &#149; 
+			Email: <a href="mailto:info@wintellect.com" class="footer">info@wintellect.com</a> 
+			&#149; <a href="/about/privacy.aspx" class="footer">Privacy Policy</a></div>
+		<br>
+	</td>
+    <td width=1 height=38 bgcolor="#0099CC"><img src="/images/spacer.gif" width=1 height=38 alt=""></td>
+  </tr>
+  <tr> 
+    <td width="171" bgcolor="#0099CC" valign="top"><span></span><br>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#FF9900">
+      <table width="100%" border="0" cellspacing="5" cellpadding="0" class="sideboxHead">
+        <tr>
+          <td class="sideboxHead">premium partner</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td height="5" bgcolor="#FFFFFF"><img src="/images/spacer.gif" width="1" height="5" alt=" "></td>
+  </tr>
+  <tr>
+    <td bgcolor="#0099CC">
+        <table width="100%" border="0" cellspacing="5" cellpadding="0">
+          <tr>
+        <td class="sideboxBody">
+
+			<br><center><img src="/images/cert_prt_rgb.gif" align="center" alt="Microsoft Certified Partner"><br><br>
+			  <a href="http://www.msdn.microsoft.com/vstudio/community/codewise/default.asp" border="0">
+			    <img src="/images/Partner_Logos/code_wise_120_40_member.gif" 
+					alt="Microsoft .NET CodeWise Community Member" height="40" width="120" border="0">
+			</center>
+		          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+	</td>
+    <td width="1" bgcolor="#0099CC"><img src="/images/spacer.gif" alt="." width="1" height="515"></td>
+  </tr>
+  <tr> 
+    <td>&nbsp;</td>
+    <td colspan=4><img src="/images/spacer.gif" alt="." width="1" height="500"></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#0099CC"></td>
+    <td bgcolor="#0099CC" width="1"></td>
+  </tr>
+</table>
+</body>
+</html>
+

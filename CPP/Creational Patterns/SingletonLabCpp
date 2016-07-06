@@ -1,0 +1,57 @@
+// Purpose.  Singleton design pattern lab.
+//
+// Problem.  The application would like a single instance of globalObject
+// to exist, and chooses to implement it as a global.  Globals should
+// always be discouraged.  Additionally, any code that references the
+// global object, has to first check if the pointer has been initialized,
+// and initialize it if it has not.
+//
+// Assignment.
+// o Replace the global variable globalObject with a private static data member.
+// o Provide the pattern-specified accessor function.
+// o Provide for initialization and init testing in the GlobalObject class.
+// o All client code should now use the Singleton accessor function instead of
+//   referencing the globalObject variable.
+// o Remove any client code dealing with globalObject initialization.
+// o Guarantee that the GlobalObject class cannot be instantiated.
+
+#include <iostream.h>
+
+
+class GlobalObject {
+public:
+   GlobalObject() : value_( 0 ) { }
+   int  getValue()              { return value_; }
+   void setValue( int val )     { value_ = val; }
+private:
+   int  value_;
+};
+
+GlobalObject*  globalObject;
+
+
+void foo( void ) {
+   if ( ! globalObject )
+      globalObject = new GlobalObject;
+   cout << "foo: globalObject's value is " << globalObject->getValue() << endl;
+}
+
+void bar( void ) {
+   if ( ! globalObject )
+      globalObject = new GlobalObject;
+   globalObject->setValue( 42 );
+   cout << "bar: globalObject's value is " << globalObject->getValue() << endl;
+}
+
+
+void main( void ) {
+   foo();
+   bar();
+   if ( ! globalObject )
+      globalObject = new GlobalObject;
+   cout << "main: globalObject's value is " << globalObject->getValue() << endl;
+}
+
+// foo: globalObject's value is 0
+// bar: globalObject's value is 42
+// main: globalObject's value is 42

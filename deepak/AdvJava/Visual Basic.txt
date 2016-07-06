@@ -1,0 +1,90 @@
+Visual Basic-->Basic
+Windows Applications
+Visual Basic.Net
+a. Windows Applications
+	i. Character user interface 
+	ii. Graphical user interface
+b. Internet Applications
+
+Softwares:
+System : OS, Traslators
+Application: Having Specific purpose
+
+Introduction:
+-->Types of Application Softwares
+	i. Character user interface (Console)
+	-->occupies less space
+	ii. Graphical user interface (Windows)
+	-->User Friendly
+	-->require more space
+-->RAD tools:
+Rapid Application Development Tools
+ex: VB, VC++, VB.net, C#, Developer 2000(D2K) etc
+-->Visual Programming
+Contains: Menu bar, Toolbar, Status  bar, dialogboxes etc
+-->Some Visual Interface Components
+Window(Form) , Label, Textbox, Check box, Radio button, Buttons, List box, Combo box etc
+-->Default Functionality
+Properties:
+Textbox
+Text-->initial value
+Multiline-->True/False
+password char--> *
+Methods: used to perform some actions
+Move, SetFocus etc
+Events:
+Actions done by user, program logic, or system
+ex: Button: click, dblclick, mouseover
+-->Event Driven Programming
+all the gui applications contains event driven programming.
+a. Events: actions
+b. Event Handlers: code to be executed if event is raised
+
+Visual Studio 6.0
+-->VB 6.0
+-->VC++ 6.0
+-->VJ++ 6.0
+-->Visual Interdev
+-->Visual Foxpro
+
+
+Programming in VB:
+Data-->Process-->Info
+Data Types:
+Numeric: integer, long integer, single, decimal, double, currency, Byte
+Text:  String (character array)
+Boolean : Boolean
+Date/time: Date
+Special DT's: Object, Variant
+Note: Variant is obselete in vb.net, same functionality can be done with Object
+
+Variable: Elements used to store the data temp'ly until program execution is terminated.
+
+Declaration Statement Syntax:
+Dim <variable_name> as <data Type>
+ex: dim num as integer
+num=40
+
+Expressions: Combination of operators and operands
+c=a+b
+c=a+20
+=, + -->operators
+c,a,b -->operands
+
+Operators
+Assigning Operators: '='  
+Note: No Compound Ass. opers: +=,-=
+a+=b --> a=a+b
+Arithmetic Operators: +, - , *, /, Mod
+Conditional or relational or comparision:
+Equal to : '='
+>,>=,<,<=,<> (Not equal to)
+Logical Operators: And, Or, Not
+M	N	M And N	M Or N	Not M
+T	T	T	T	F
+T	F	F	T	F
+F	T	F	T	T
+F	F	F	F	T
+
+Conditional Statments
+Loops

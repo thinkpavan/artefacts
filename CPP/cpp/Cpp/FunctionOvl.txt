@@ -1,0 +1,13 @@
+
+ // Default Arguments //
+    The formal parameters which are assigned default values are called default arguments.
+   Always the default arguments should be trailing arguments.
+
+
+//  Function Overloading  //
+
+    The method of defining more than one function
+with the same name but different no of arguments or 
+different type of arguments is called function overloading.
+
+

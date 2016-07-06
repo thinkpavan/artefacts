@@ -1,0 +1,274 @@
+<html><head><title>Factory Method</title></head><body><h1><center>Factory Method</center></h1>
+
+<h3>Intent</h3>
+
+<ul>
+<li>Define an interface for creating an object, but let subclasses decide
+which class to instantiate.  Factory Method lets a class defer
+instantiation to subclasses. [GoF, p107]
+</li><li>Defining a "virtual" constructor.
+</li><li>The <code>new</code> operator considered harmful.
+</li></ul>
+
+
+<h3>Problem</h3>
+
+A framework needs to standardize the architectural model for a range of
+applications, but allow for individual applications to define their own
+domain objects and provide for their instantiation.
+
+
+<h3>Discussion</h3>
+
+Factory Method is to creating objects as Template Method is to
+implementing an algorithm.  A superclass specifies all standard and
+generic behavior (using pure virtual "placeholders" for creation
+steps), and then delegates the creation details to subclasses that are
+supplied by the client.<p>
+
+Factory Method makes a design more customizable and only a little more
+complicated.  Other design patterns require new classes, whereas
+Factory Method only requires a new operation. [GoF, p136]</p><p>
+
+People often use Factory Method as the standard way to create objects;
+but it isn't necessary if: the class that's instantiated never changes,
+or instantiation takes place in an operation that subclasses can easily
+override (such as an initialization operation). [GoF, p136]</p><p>
+
+Factory Method is similar to Abstract Factory but without the emphasis
+on families.</p><p>
+
+Factory Methods are routinely specified by an architectural framework,
+and then implemented by the user of the framework.
+
+
+</p><h3>Structure</h3>
+
+The implementation of Factory Method discussed in the Gang of Four
+(below) largely overlaps with that of Abstract Factory.  For that
+reason, the presentation in this chapter focuses on the approach that has become popular since.
+
+<center>
+<img src="factory_method_files/factory_method_dcd_gof.gif">
+</center>
+
+An increasingly popular definition of factory method is: a
+<code>static</code> method of a class that returns an object
+of that class' type. But unlike a constructor, the actual
+object it returns might be an instance of a subclass.  Unlike
+a constructor, an existing object might be reused, instead of
+a new object created.  Unlike a constructor, factory methods
+can have different and more descriptive names (e.g.
+Color.make_RGB_color(float red, float green, float blue) and
+Color.make_HSB_color(float hue, float saturation, float brightness).
+[Davis, p3]
+
+<center>
+<img src="factory_method_files/factory_method_dcd_static.gif">
+</center>
+
+The client is totally decoupled from the implementation details
+of derived classes.  Polymorphic creation is now possible.
+
+<center>
+<img src="factory_method_files/gof3.jpg">
+</center>
+
+
+<h3>Example</h3>
+
+The Factory Method defines an interface for creating objects, but lets
+subclasses decide which classes to instantiate.  Injection molding
+presses demonstrate this pattern.  Manufacturers of plastic toys
+process plastic molding powder, and inject the plastic into molds of
+the desired shapes.  The class of toy (car, action figure, etc.) is
+determined by the mold. [Michael Duell, "Non-software examples of
+software design patterns", <cite>Object Magazine</cite>, Jul 97, p54]<p>
+
+</p><center>
+<img src="factory_method_files/pateximg3.gif">
+</center>
+
+<!--
+Non-software <a href=http://www.agcs.com/supportv2/techpapers/patterns/papers/tutnotes/sld004.htm>example 1</a><br>
+Non-software <a href=http://www.agcs.com/supportv2/techpapers/patterns/papers/tutnotes/sld005.htm>example 2</a>
+-->
+
+
+<h3>Check list</h3>
+
+<ol>
+<li>If you have an inheritance hierarchy that exercises polymorphism,
+consider adding a polymorphic creation capability by defining a
+<code>static</code> factory method in the base class.
+</li><li>Design the arguments to the factory method.  What qualities
+or characteristics are necessary and sufficient to identify the
+correct derived class to instantiate?
+</li><li>Consider designing an internal "object pool" that will allow
+objects to be reused instead of created from scratch.
+</li><li>Consider making all constructors <code>private</code> or
+<code>protected</code>.
+</li></ol>
+
+
+<h3>Before and after</h3>
+
+<table><tbody><tr><th>Before</th><th></th><th>After</th></tr>
+<tr><td valign="top"><pre>// The architect has done an admirable job of
+// decoupling the client from Stooge concrete
+// derived classes, and, exercising polymorphism.
+// But there remains coupling where instances are
+// actually created.  If we design an "extra
+// level of indirection" (a "factory method") and
+// have clients use it (instead of "new"), then
+// the last bit of coupling goes away.  The
+// "factory method" (aka "virtual constructor")
+// can be defined in the Stooge base class, or,
+// in a separate "factory" class.  Note that
+// main() is no longer dependent on Stooge
+// derived classes.
+
+class Stooge {
+public:
+   virtual void slap_stick() = 0;
+};
+
+class Larry : public Stooge {
+public:
+   void slap_stick() {
+      cout &lt;&lt; "Larry: poke eyes\n"; }
+};
+class Moe : public Stooge {
+public:
+   void slap_stick() {
+      cout &lt;&lt; "Moe: slap head\n"; }
+};
+class Curly : public Stooge {
+public:
+   void slap_stick() {
+      cout &lt;&lt; "Curly: suffer abuse\n"; }
+};
+
+int main( void ) {
+   vector<stooge*> roles;
+   int             choice;
+
+   while (true) {
+      cout &lt;&lt; "Larry(1) Moe(2) Curly(3) Go(0): ";
+      cin &gt;&gt; choice;
+      if (choice == 0)
+         break;
+      else if (choice == 1)
+         roles.push_back( new Larry );
+      else if (choice == 2)
+         roles.push_back( new Moe );
+      else
+         roles.push_back( new Curly );
+   }
+   for (int i=0; i &lt; roles.size(); i++)
+      roles[i]-&gt;slap_stick();
+   for (int i=0; i &lt; roles.size(); i++)
+      delete roles[i];
+}
+
+// Larry(1) Moe(2) Curly(3) Go(0): 2
+// Larry(1) Moe(2) Curly(3) Go(0): 1
+// Larry(1) Moe(2) Curly(3) Go(0): 3
+// Larry(1) Moe(2) Curly(3) Go(0): 0
+// Moe: slap head
+// Larry: poke eyes
+// Curly: suffer abuse
+</stooge*></pre></td><td> &nbsp; &nbsp; </td><td valign="top"><pre>// A factory method is a static method of a class that
+// returns an object of that class' type. But unlike a
+// constructor, the actual object it returns might be
+// an instance of a subclass. Another advantage of a
+// factory method is that it can return existing
+// instances multiple times. [Mark Davis]
+
+class Stooge {
+public:
+   // Factory Method
+   static Stooge* make_stooge( int choice );
+   virtual void slap_stick() = 0;
+};
+
+int main( void ) {
+   vector<stooge*> roles;
+   int             choice;
+   while (true) {
+      cout &lt;&lt; "Larry(1) Moe(2) Curly(3) Go(0): ";
+      cin &gt;&gt; choice;
+      if (choice == 0)
+         break;
+      roles.push_back( Stooge::make_stooge( choice ) );
+   }
+   for (int i=0; i &lt; roles.size(); i++)
+      roles[i]-&gt;slap_stick();
+   for (int i=0; i &lt; roles.size(); i++)
+      delete roles[i];
+}
+
+class Larry : public Stooge {
+public:
+   void slap_stick() {
+      cout &lt;&lt; "Larry: poke eyes\n"; }
+};
+class Moe : public Stooge {
+public:
+   void slap_stick() {
+      cout &lt;&lt; "Moe: slap head\n"; }
+};
+class Curly : public Stooge {
+public:
+   void slap_stick() {
+      cout &lt;&lt; "Curly: suffer abuse\n"; }
+};
+
+Stooge* Stooge::make_stooge( int choice ) {
+   if (choice == 1)
+      return new Larry;
+   else if (choice == 2)
+      return new Moe;
+   else
+      return new Curly;
+}
+</stooge*></pre></td></tr></tbody></table>
+
+
+<h3>Rules of thumb</h3>
+
+Abstract Factory classes are often implemented with Factory Methods,
+but they can be implemented using Prototype. [GoF, p95]<p>
+
+Factory Methods are usually called within Template Methods. [GoF,
+p116]</p><p>
+
+Factory Method: creation through inheritance. Prototype: creation
+through delegation.</p><p>
+
+Often, designs start out using Factory Method (less complicated, more
+customizable, subclasses proliferate) and evolve toward Abstract
+Factory, Prototype, or Builder (more flexible, more complex) as the
+designer discovers where more flexibility is needed. [GoF, p136]</p><p>
+
+Prototype doesn't require subclassing, but it does require an
+Initialize operation. Factory Method requires subclassing, but doesn't
+require Initialize. [GoF, p116]</p><p>
+
+The advantage of a Factory Method is that it can return the same
+instance multiple times, or can return a subclass rather than an
+object of that exact type. [Davis, p4]</p><p>
+
+Some Factory Method advocates recommend that as a matter of
+language design (or failing that, as a matter of style) absolutely
+all constructors should be private or protected.  It's no one
+else's business whether a class manufactures a new object or
+recycles an old one. [Davis, p5]</p><p>
+
+The <code>new</code> operator considered harmful.  There is a difference
+between requesting an object and creating one.  The <code>new</code>
+operator always creates an object, and fails to encapsulate
+object creation.  A Factory Method enforces that encapsulation,
+and allows an object to be requested without inextricable
+coupling to the act of creation. [Amsterdam, p19]
+</p></body></html>

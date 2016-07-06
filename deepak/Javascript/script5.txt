@@ -1,0 +1,88 @@
+Conditional Statements
+
+   if..else
+---------------
+    syntax :
+	if(condition)
+  	     {
+	--------------
+	-------------
+	      }
+	   else
+  	     {
+	--------------
+	-------------
+	      }
+     
+    switch..
+---------------------
+       syntax :
+              switch(<variable>)
+	{
+	    case constant value :
+		-----------
+	    break;
+	    case constant value :
+		-----------
+	    break;
+	   
+	  default :
+		--------------
+		--------------
+	}
+
+<script type="text/javascript">
+//If the time on your browser is less than 10,
+//you will get a "Good morning" greeting.
+//Otherwise you will get a "Good day" greeting.
+var d = new Date()
+var time = d.getHours()
+
+if (time < 10) 
+{
+document.write("Good morning!")
+}
+else
+{
+document.write("Good day!")
+}
+</script>
+
+
+
+
+
+<script type="text/javascript">
+//You will receive a different greeting based
+//on what day it is. Note that Sunday=0,
+//Monday=1, Tuesday=2, etc.
+var d=new Date()
+theDay=d.getDay()
+switch (theDay)
+{
+case 5:
+  document.write("Finally Friday")
+  break
+case 6:
+  document.write("Super Saturday")
+  break
+case 0:
+  document.write("Sleepy Sunday")
+  break
+default:
+  document.write("I'm looking forward to this weekend!")
+}
+</script>
+
+
+
+Looping
+Very often when you write code, you want the same block of code to run a number of times. You can use looping statements in your code to do this.
+
+In JavaScript we have the following looping statements:
+
+while - loops through a block of code while a condition is true 
+do...while - loops through a block of code once, and then repeats the loop while a condition is true 
+for - run statements a specified number of times 
+
+--------------------------------------------------------------------------------

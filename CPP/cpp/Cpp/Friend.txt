@@ -1,0 +1,32 @@
+
+  Friend Function : A function which is declared as
+  a friend to a class can access even the private
+  data of the class.
+    The keyword "friend" is used to declare a friend.
+
+     syntax :
+     class <classname>
+      {
+	---
+        	---
+      public :
+        	----
+        	----
+     friend RDT  <function name>(Parameters,...);
+
+     };
+
+
+
+
+  Friend Class
+	The member functions of a class, which is
+  declared friend to another class , has full access
+  to public , protected and even private data of the 
+  object of the class to which it is declared friend.
+
+
+
+
+
+ 

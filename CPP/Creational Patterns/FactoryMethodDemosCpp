@@ -1,0 +1,162 @@
+// Purpose.  Factory Method             #include <iostream>
+//           creation via inheritance   using namespace std;
+//
+// Discussion.  The architect has done  class Stooge {
+// an admirable job of decoupling the   public:
+// client from Stooge concrete derived     virtual void slapStick() = 0;
+// classes, and, exercising polymor-    };
+// phism.  But there remains coupling
+// where instances are actually         class Factory {
+// created.  If we design an "extra     public:
+// level of indirection" (a "factory       // Factory Method (virtual ctor)
+// method") and have clients use it        static Stooge* create( int );
+// (instead of "new"), then the last    };
+// bit of coupling goes away.  The
+// "factory method" (aka "virtual       void main( void ) {
+// constructor") can be defined in the     Stooge*  roles[10];
+// Stooge base class, or, in a             int      in, j, i = 0;
+// separate "factory" class.  Note
+// that main() is no longer dependent      while (1) {
+// on Stooge derived classes.                 cout << "L(1) M(2) C(3) Go(0): ";
+                                              cin >> in;
+#include <iostream>                           if ( ! in ) break;
+using namespace std;                          roles[i++] = Factory::create(in);
+                                           }
+class Stooge { public:                     for (j=0; j < i; j++)
+   virtual void slapStick() = 0;              roles[j]->slapStick();
+};                                         for (j=0; j < i; j++)
+                                              delete roles[j];
+class Larry : public Stooge { public:   }
+   void slapStick() {
+      cout << "Larry: poke eyes"        class Larry : public Stooge { public:
+         << endl; }                        void slapStick() {
+};                                            cout << "Larry: poke eyes"
+class Moe : public Stooge { public:              << endl; }
+   void slapStick() {                   };
+      cout << "Moe: slap head"          class Moe : public Stooge { public:
+         << endl; }                        void slapStick() {
+};                                            cout << "Moe: slap head"
+class Curly : public Stooge { public:            << endl; }
+   void slapStick() {                   };
+      cout << "Curly: suffer abuse"     class Curly : public Stooge { public:
+         << endl; }                        void slapStick() {
+};                                            cout << "Curly: suffer abuse"
+                                                 << endl; }
+void main( void ) {                     };
+   Stooge*  roles[10];
+   int      in, j, i = 0;               Stooge* Factory::create( int in ) {
+                                           if (in == 1)
+   cout << "L(1) M(2) C(3) Go(0): ";          return new Larry;
+   cin >> in;                              else if (in == 2)
+   while (in) {                               return new Moe;
+      if (in == 1)                         else
+         roles[i++] = new Larry;              return new Curly;
+      else if (in == 2)                 }
+         roles[i++] = new Moe;
+      else                              // L(1) M(2) C(3) Go(0): 1
+         roles[i++] = new Curly;        // L(1) M(2) C(3) Go(0): 2
+      cout << "L(1) M(2) C(3) Go(0): "; // L(1) M(2) C(3) Go(0): 3
+      cin >> in;                        // L(1) M(2) C(3) Go(0): 1
+   }                                    // L(1) M(2) C(3) Go(0): 0
+   for (j=0; j < i; j++)                // Larry: poke eyes
+      roles[j]->slapStick();            // Moe: slap head
+   for (j=0; j < i; j++)                // Curly: suffer abuse
+      delete roles[j];                  // Larry: poke eyes
+}
+
+
+
+// Purpose.  Factory Method design pattern demo.
+// 
+// Discussion.  Frameworks are applications (or subsystems) with "holes"
+// in them.  Each framework specifies the infrastructure, superstructure,
+// and flow of control for its "domain", and the client of the framework
+// may: exercise the framework's default behavior "as is", extend selected
+// pieces of the framework, or replace selected pieces.  The Factory
+// Method pattern addresses the notion of "creation" in the context of
+// frameworks.  In this example, the framework knows WHEN a new document
+// should be created, not WHAT kind of Document to create.  The
+// "placeholder" Application::CreateDocument() has been declared by the
+// framework, and the client is expected to "fill in the blank" for
+// his/her specific document(s).  Then, when the client asks for
+// Application::NewDocument(), the framework will subsequently call the
+// client's MyApplication::CreateDocument().
+
+#include <iostream.h>
+
+/* Abstract base class declared by framework */
+class Document {
+public:
+	Document( char* fn ) { strcpy( name, fn ); }
+	virtual void Open()  = 0;
+	virtual void Close() = 0;
+	char* GetName()      { return name; }
+private:
+	char  name[20];
+};
+
+/* Concrete derived class defined by client */
+class MyDocument : public Document {
+public:
+	MyDocument( char* fn ) : Document(fn) { }
+	void Open()   { cout << "   MyDocument: Open()" << endl; }
+	void Close()  { cout << "   MyDocument: Close()" << endl; }
+};
+
+
+/* Framework declaration */
+class Application {
+public:
+	Application() : _index(0) { cout << "Application: ctor" << endl; }
+	/* The client will call this "entry point" of the framework */
+	NewDocument( char* name )  {
+		cout << "Application: NewDocument()" << endl;
+		/* Framework calls the "hole" reserved for client customization */
+		_docs[_index] = CreateDocument( name );
+		_docs[_index++]->Open(); }
+	OpenDocument()  { }
+	void ReportDocs();
+	/* Framework declares a "hole" for the client to customize */
+	virtual Document* CreateDocument( char* ) = 0;
+private:
+	int        _index;
+	/* Framework uses Document's base class */
+	Document*  _docs[10];
+};
+
+void Application::ReportDocs() {
+	cout << "Application: ReportDocs()" << endl;
+	for (int i=0; i < _index; i++)
+		cout << "   " << _docs[i]->GetName() << endl; }
+
+
+/* Customization of framework defined by client */
+class MyApplication : public Application {
+public:
+	MyApplication() { cout << "MyApplication: ctor" << endl; }
+	/* Client defines Framework's "hole" */
+	Document* CreateDocument( char* fn ) {
+		cout << "   MyApplication: CreateDocument()" << endl;
+		return new MyDocument( fn ); }
+};
+
+void main() {
+	/* Client's customization of the Framework */
+	MyApplication  myApp;
+
+	myApp.NewDocument( "foo" );
+	myApp.NewDocument( "bar" );
+	myApp.ReportDocs();
+}
+
+// Application: ctor
+// MyApplication: ctor
+// Application: NewDocument()
+//    MyApplication: CreateDocument()
+//    MyDocument: Open()
+// Application: NewDocument()
+//    MyApplication: CreateDocument()
+//    MyDocument: Open()
+// Application: ReportDocs()
+//    foo
+//    bar

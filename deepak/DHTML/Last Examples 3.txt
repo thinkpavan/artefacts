@@ -1,0 +1,376 @@
+// Shake Window
+
+<html>
+<head>
+<script>
+function startEQ()
+{
+richter=20
+parent.moveBy(0,richter)
+parent.moveBy(0,-richter)
+parent.moveBy(richter,0)
+parent.moveBy(-richter,0)
+timer=setTimeout("startEQ()",10)
+}
+function stopEQ()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+<body>
+
+<form>
+<input type="button" onclick="startEQ()" value="Start an earthquake">
+<br />
+<br />
+<input type="button" onclick="stopEQ()" value="Stop the earthquake">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+//Text Transform
+<html>
+<head>
+<style>
+a:hover
+{
+text-transform:uppercase;
+}
+</style>
+</head>
+
+<body>
+<a href="default.asp">Mouse over this link</a> 
+</body>
+
+</html>
+
+
+
+// Letter Spacing
+
+<html>
+<head>
+<style>
+a:hover
+{
+letter-spacing: 2;
+}
+</style>
+</head>
+
+<body>
+<a href="default.asp">Mouse over this link</a> 
+</body>
+
+</html>
+
+
+
+
+// Glow Link
+
+<html>
+<head>
+<style>
+a
+{
+color:black;
+width:150;
+font:bold;
+}
+</style>
+<script type="text/javascript">
+var i
+function glow()
+{
+i=0
+interval=setInterval("makeglow(myLink)",10)
+}
+
+function back()
+{
+clearInterval(interval)
+document.getElementById('myLink').style.filter=false
+}
+
+function makeglow()
+{
+i++
+if (i<5)
+	{
+	document.getElementById('myLink').style.filter="glow(color=#FF00FF,strength=" + i + ")"
+	}
+else if (window.interval)
+	{
+	clearInterval(interval)
+	}
+}
+</script>
+</head>
+
+<body>
+<a href="default.asp" id="myLink" onmouseover="glow()" onmouseout="back()">Mouse over this link</a>
+</body>
+
+</html>
+
+
+
+
+// Shadow Link
+
+<html>
+<head>
+<style>
+a
+{
+color:black;
+height:25px;
+font:bold;
+text-decoration:none;
+}
+</style>
+<script type="text/javascript">
+function dropshadow()
+{
+document.getElementById('myLink').style.filter="shadow()"
+}
+function back()
+{
+document.getElementById('myLink').style.filter=false
+}
+</script>
+</head>
+
+<body>
+<a href="default.asp" id="myLink" onmouseover="dropshadow()" onmouseout="back()">Mouse over this link</h1>
+</body>
+
+</html>
+
+
+
+
+
+// Shake Link
+
+<html>
+<head>
+<script type="text/javascript">
+function shakeleft()
+{
+document.getElementById('myLink').style.position="relative"
+document.getElementById('myLink').style.left="3"
+timer=setTimeout("shakeright()",10)
+}
+function shakeright()
+{
+document.getElementById('myLink').style.left="0"
+timer=setTimeout("shakeleft()",10)
+}
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+
+<body>
+<a id="myLink" href="http://www.sample.com/"
+onmouseover="shakeleft()" onmouseout="stoptimer()">Mouse over this link</a>
+</body>
+
+</html>
+
+
+
+
+
+// Random Banner
+
+<html>
+<body>
+
+<script type="text/javascript">
+image0="/sample1.gif"
+href0="/Default.asp"
+alt0="sample.com"
+
+image1="sample2.jpg"
+href1="http://www.sample.com/html/html_reference.asp"
+alt1="HTML Reference"
+
+image2="sample3.jpg"
+href2="http://sample.com/xhtml/default.asp"
+alt2="ASP Free"
+
+len=3
+
+now=new Date()
+now=now.getSeconds()
+rnd=now%len
+
+image=eval("image"+rnd)
+href=eval("href"+rnd)
+alt=eval("alt"+rnd)
+
+document.write("<a href='" + href + "'>")
+document.write("<img src='" + image + "' alt='" + alt + "'></a>")
+</script>
+
+<h3>Refresh this page to see the banner change</h3>
+
+</body>
+</html>
+
+
+
+
+
+//Menu Navigation
+
+<html>
+<head>
+<style>
+span
+{
+border:groove 2px;
+padding:3px;
+font-family:arial;
+font-size:12px;
+width:100px;
+height:70px;
+background-color:#c0c0c0;
+position:relative;
+top:-80px;
+left:-10px;
+}
+</style>
+<script type="text/javascript">
+function showmenu(elmnt)
+{
+elmnt.style.top="-15px"
+}
+function hidemenu(elmnt)
+{
+elmnt.style.top="-80px"
+}
+</script>
+</head>
+<body>
+
+<span onmouseover="showmenu(this)" onmouseout="hidemenu(this)">
+<a href="/default.asp">HOME</a><br />
+<a href="/js/default.asp">JavaScript</a><br /><br /><hr />
+Tutorials<br />
+</span>
+<span onmouseover="showmenu(this)" onmouseout="hidemenu(this)">
+<p></p>
+<p></p>
+<p>
+<a href="http://www.microsoft.com">Explorer</a><br />
+<a href="http://my.netscape.com">Navigator</a><br /><br /></p>
+<hr />
+Browser<br />
+</span>
+<span onmouseover="showmenu(this)" onmouseout="hidemenu(this)">
+<p></p>
+<p></p>
+<p>
+<a href="http://www.altavista.com">Alta Vista</a><br />
+<a href="http://www.yahoo.com">Yahoo!</a><br /><br /></p>
+<hr />
+Search<br />
+</span>
+</body>
+</html>
+
+
+
+
+
+// Left Navigation
+
+<html>
+<head>
+<style>
+table
+{
+font-size:12;
+background-color:#c0c0c0;
+}
+span
+{
+border:groove 2px;
+padding:3;
+font-family:arial;
+font-size:12;
+width:90;
+height:40;
+background-color:#c0c0c0;
+position:relative;
+top:-15;
+left:-80;
+}
+</style>
+<script type="text/javascript">
+function showmenu(elmnt)
+{
+elmnt.style.left="-10"
+}
+
+function hidemenu(elmnt)
+{
+elmnt.style.left="-80"
+}
+</script>
+</head>
+<body>
+
+<span onmouseover="showmenu(this)" onmouseout="hidemenu(this)">
+<table border="0" width="100%">
+<tr>
+<td width="90%"><a href="/default.asp">HOME</a></td>
+<td rowspan="2">A</td>
+</tr><tr>
+<td><a href="/js/default.asp">JavaScript</a></td>
+</tr>
+</table>
+</span>
+
+<br />
+
+<span onmouseover="showmenu(this)" onmouseout="hidemenu(this)">
+<table width="100%">
+<tr>
+<td width="90%"><a href="http://www.microsoft.com">Explorer</a></td>
+<td rowspan="2">B</td>
+</tr><tr>
+<td><a href="http://my.netscape.com">Navigator</a></td>
+</tr>
+</table>
+</span>
+
+<br />
+
+<span onmouseover="showmenu(this)" onmouseout="hidemenu(this)">
+<table width="100%">
+<tr>
+<td width="90%"><a href="http://www.altavista.com">AltaVista</a></td>
+<td rowspan="2">C</td>
+</tr><tr>
+<td><a href="http://www.yahoo.com">Yahoo!</a></td>
+</tr>
+</table>
+</span>
+
+</body>
+</html>
+

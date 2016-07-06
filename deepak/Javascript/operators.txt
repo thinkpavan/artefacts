@@ -1,0 +1,33 @@
+
+// Operators //
+Arithmetic
+  	+   ,   -    ,    *    ,    /
+Modulo
+	%
+Logical
+	&&	And
+	||	OR
+	!	Not
+Relational
+	>
+	>=
+	<
+	<=
+	==
+	!=
+Increment/Decrement
+	++    ,    --
+Assignment
+	=  ,  +=   ,  -=  ,  *=  ,  /=  ,  %= 
+
+	ex :
+	a  +=  5			a=a +5
+	a  -=  5			a=a -5
+	a  *=  5			a=a *5
+	a  /=  5			a=a /5
+	a  %=  5			a=a %5
+
+ Conditional
+	(test Condition) ?   true part   :  false part
+	c = (a>b) ?  a  :  b
+

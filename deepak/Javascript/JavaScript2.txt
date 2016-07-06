@@ -1,0 +1,43 @@
+To insert a script in an HTML page, we use the <script> tag. Use the type attribute to define the scripting language
+
+ex : <script type="text/javascript">
+ 
+
+Then the <script> tag has to be closed
+
+ex : </script>
+ 
+Each code statement has to end with a semicolon if you want to put more than one statement on a single line.
+
+
+
+
+//document.write // command for writing some output to a page.
+
+  ex: document.write("Hello World!")
+
+
+
+prog1
+-------
+<html>
+<body>
+<script type="text/javascript">
+document.write("Hello World!")
+</script>
+</body>
+</html>
+
+
+
+Browsers that do not support scripts will display the script as page content. To prevent them from doing this, we may use the HTML comment tag:
+
+<script type="text/javascript">
+<!--
+    some statements
+//-->
+</script>
+ 
+
+The two forward slashes at the end of comment line (//) are a JavaScript comment symbol. This prevents the JavaScript compiler from compiling the line.
+

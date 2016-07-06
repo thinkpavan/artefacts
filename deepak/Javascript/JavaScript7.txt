@@ -1,0 +1,70 @@
+Conditional Statements
+
+if statement - use this statement if you want to execute a set of code when a condition is true 
+if...else statement - use this statement if you want to select one of two sets of lines to execute 
+
+	if( condition )
+	{
+		statements
+	}
+	else if ( condition )
+	{
+		statements
+	}
+	else
+	{
+		statements
+	}
+
+
+switch statement - use this statement if you want to select one of many sets of lines to execute 
+
+	switch( <variable>)
+	{
+	  case constantvalue1:
+		statements
+		break;
+		
+	  case constantvalue1:
+		statements
+		break;
+		
+	  default :	
+	    statements
+	}
+
+
+Looping
+Very often when you write code, you want the same block of code to run a number of times. You can use looping statements in your code to do this.
+
+In JavaScript we have the following looping statements:
+
+while - 
+loops through a block of code while a condition is true 
+   
+    while( condition )
+     {
+	---
+	---
+	---
+
+      }
+
+do...while - loops through a block of code once, and then repeats the loop while a condition is true 
+
+     do
+       {
+	-----
+	-----
+	-----
+       }while( condition );
+
+for - run statements a specified number of times 
+
+     for(  initialization ;  condition  ;  calculation )	
+         {
+	----------
+	----------
+	----------
+        }
+

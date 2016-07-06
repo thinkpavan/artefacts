@@ -1,0 +1,26 @@
+
+
+
+Standard Library conatiner header files
+
+
+
+	<vector>
+	
+	<list>
+	
+	<deque>
+	
+	<queue>                contains both queue and priority queue
+	
+	<stack>
+	
+	<map>					conatins both map and multimap
+	
+	<set>					conatins both set and multiset
+	
+	
+	
+	
+	
+	

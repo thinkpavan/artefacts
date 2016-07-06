@@ -1,0 +1,72 @@
+The Math object
+The built-in Math object includes mathematical constants and functions. 
+
+The Math object's properties and methods are described below:
+
+
+Properties 	Explanation 
+E 		Returns the base of a natural logarithm 
+LN2 		Returns the natural logarithm of 
+LN10 		Returns the natural logarithm of 10  
+LOG2E 		Returns the base-2 logarithm of E 
+LOG10E 		Returns the base-10 logarithm of E 
+PI 		Returns PI 
+SQRT1_2 	Returns 1 divided by the square root of 2 
+SQRT2 		Returns the square root of 2 
+
+Methods 		Explanation 
+abs(x) 		Returns the absolute value of x 
+acos(x) 		Returns the arccosine of x 
+asin(x) 		Returns the arcsine of x 
+atan(x) 		Returns the arctangent of x 
+atan2(y,x) 	Returns the angle from the x axis to a point 
+ceil(x) 		Returns the nearest integer greater than or 		equal to x  
+cos(x) 		Returns the cosine of x 
+exp(x) 		Returns the value of E raised to the power 		of x 
+floor(x) 		Returns the nearest integer less than or 			equal to x 
+log(x) 		Returns the natural log of x 
+max(x,y) 		Returns the number with the highest value of 		x and y 
+min(x,y) 		Returns the number with the lowest value of 			x and y 
+pow(x,y) 		Returns the value of the number x raised to 		the power of y 
+random() 		Returns a random number between 0 and 1 
+round(x) 		Rounds x to the nearest integer 
+sin(x) 		Returns the sine of x 
+sqrt(x) 		Returns the square root of x 
+tan(x) 		Returns the tangent of x 
+
+
+
+
+Ex :
+<html>
+<body>
+<script type="text/javascript">
+document.write(Math.round(7.25))
+document.write(Math.random())
+no=Math.random() * 10
+document.write(Math.round(no))
+document.write(Math.max(21,4))
+document.write(Math.min(2,4))
+</script>
+</body>
+</html>
+
+Ex:
+
+Examples
+Round
+How to round a specified number to the nearest whole number
+
+Random number
+The random method returns a random number between 0 and 1
+
+Random number from 0 to 10
+How to find a random number from 0 to 10 using the random() and round() methods.
+
+Max number
+How to test which of two numbers, has the higher value. 
+
+Min number
+How to test which of two numbers, has the lower value.
+
+

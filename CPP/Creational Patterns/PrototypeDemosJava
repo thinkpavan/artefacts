@@ -1,0 +1,106 @@
+// Abstract Factory might store a set of Prototypes from which to clone and
+// return product objects. [GOF, p126]
+
+public class FactoryProto {
+
+interface Xyz { Xyz cloan(); }
+
+static class Tom implements Xyz {
+   public Xyz    cloan()    { return new Tom(); }
+   public String toString() { return "ttt"; }
+}
+
+static class Dick implements Xyz {
+   public Xyz    cloan()    { return new Dick(); }
+   public String toString() { return "ddd"; }
+}
+
+static class Harry implements Xyz {
+   public Xyz    cloan()    { return new Harry(); }
+   public String toString() { return "hhh"; }
+}
+
+static class Factory {
+   private static java.util.Map prototypes = new java.util.HashMap();
+   static { prototypes.put( "tom",   new Tom()   );
+            prototypes.put( "dick",  new Dick()  );
+            prototypes.put( "harry", new Harry() ); }
+   public static Xyz makeObject( String s ) {
+      return ((Xyz)prototypes.get(s)).cloan();
+}  }
+
+public static void main( String[] args ) {
+   for (int i=0; i < args.length; i++)
+      System.out.print( Factory.makeObject( args[i] ) + "  " );
+}}
+
+// D:\Java\patterns> java FactoryProto tom dick tom harry tom
+// ttt  ddd  ttt  hhh  ttt
+
+
+
+// Purpose.  Prototype design pattern
+
+// 1. Create a "contract" with clone() and getName() entries
+// 2. Design a "registry" that maintains a cache of prototypical objects
+// 3. Populate the registry with an initializePrototypes() function
+// 4. The registry has a findAndClone() "virtual constructor" that can transform
+//    a String into its correct object (it calls clone() which then calls "new")
+// 5. All classes relate themselves to the clone() contract
+// 6. Client uses the findAndClone() virtual ctor instead of the "new" operator
+
+interface Prototype { Object clone();   String getName(); }  // 1. The clone()
+interface Command   { void   execute(); }                    //    contract
+
+class PrototypesModule {                  // 2. "registry" of prototypical objs
+   private static Prototype[] prototypes = new Prototype[9];
+   private static int         total      = 0;
+   public static void addPrototype( Prototype obj ) {
+      prototypes[total++] = obj;
+   }
+   public static Object findAndClone( String name ) {  // 4. The "virtual ctor"
+      for (int i=0; i < total; i++)
+         if (prototypes[i].getName().equals( name ))
+            return prototypes[i].clone();
+      System.out.println( name + " not found" );
+      return null;
+}  }
+                                                  // 5. Sign-up for the clone()
+class This implements Prototype, Command {        //    contract.  Each class 
+   public Object clone()   { return new This(); } //    calls "new" on itself
+   public String getName() { return "This"; }     //    FOR the client.
+   public void   execute() { System.out.println( "This: execute" ); }
+}
+class That implements Prototype, Command {
+   public Object clone()   { return new That(); }
+   public String getName() { return "That"; }
+   public void   execute() { System.out.println( "That: execute" ); }
+}
+class TheOther implements Prototype, Command {
+   public Object clone()   { return new TheOther(); }
+   public String getName() { return "TheOther"; }
+   public void   execute() { System.out.println( "TheOther: execute" ); }
+}
+
+public class PrototypeDemo {
+   public static void initializePrototypes() {    // 3. Populate the "registry"
+      PrototypesModule.addPrototype( new This() );
+      PrototypesModule.addPrototype( new That() );
+      PrototypesModule.addPrototype( new TheOther() );
+   }
+   public static void main( String[] args ) {
+      initializePrototypes();
+      Object[] objects = new Object[9];
+      int      total   = 0;
+      for (int i=0; i < args.length; i++) {     // 6. Client does not use "new"
+         objects[total] = PrototypesModule.findAndClone( args[i] );
+         if (objects[total] != null) total++; }
+      for (int i=0; i < total; i++) ((Command)objects[i]).execute();
+}  }
+
+// C:> java PrototypeDemo Garbage This That Nothing TheOther
+// Garbage not found
+// Nothing not found
+// This: execute
+// That: execute
+// TheOther: execute

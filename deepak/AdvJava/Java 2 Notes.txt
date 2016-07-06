@@ -1,0 +1,514 @@
+// CLASSPATH	C:\JSDK2.0\lib\jsdk.jar
+
+Java -->SunMicrosystem
+J2EE --> Java 2 Enterprise Edition
+Tools in this platform
+JSP-->Java server Pages
+Servlets
+applets
+EJB
+Beans
+JDBC -->Java Database Connectivity
+
+.Net PlatForm (CLR-->Common Language Runtime)
+-->VB.Net (Console,windows,Web (Asp.net))
+-->C#  (Console,windows,Web (Asp.net))
+-->VC++ (Console,windows)
+
+Features of Java:
+-->Platform independent
+-->Robust
+-->Reusalbility of Existing Softwares for new Projects
+-->Fully object oriented
+-->Security
+-->Portable
+-->Exception Handling
+-->Memory Management (Garbage Collection)
+-->Near to real world entities
+
+Installation:
+-->install jdk1.4 or jsdk1.4
+-->setting path for compilation and exection of java programs
+windows 95/98:
+open autoexec.bat in notepad-->set the path ' ;C:\jdk1.4\bin; ' -->run-->command-->system opens 'Microsoft windows command prompt'-->javac <filename.java>
+
+windows NT/2000:
+start-->settings-->control panel-->system-->Advanced tab-->Environment variables-->select the path-->edit-->type ';C:\jdk1.4\bin;'-->ok-->ok-->Ok
+
+Simple Java Program:
+
+class mfjp 
+{
+//entry point of the program
+public static void main(String args[])
+{
+System.out.println("Welcome to the world of JAVA");
+}
+}
+
+Java Platform:
+i) Java Virtual Machine
+Source Code (Myfile.java) ---(Compiler Javac)---->Byte Code (Myfile.class) -----(Java VM)-->Executes (Java Myfile)
+ii) Java API -->Application Programming Interface (Library)
+Packages-->Classes-->Methods and Properties
+
+Notations:
+-->Inbuilt packages : small letters
+ex: 
+java (root)
+java.util
+java.io
+
+-->Inbuilt Class Names: Starting Letter must be capital, and next coming words starting letter is also capital
+ex: System, Math
+
+-->Inbuilt Methods: starting word in  lower case and next coming words starting letter must be capital 
+ex: println(), charAt(),readLine(),parseInt()
+
+-->All reserved words or keywords must be in lower case
+ex: class, int,char,byte, if ,else, while ,do,switch,public, private, catch,try, finally etc
+
+Contents Program :
+-->Data
+Data Types:
+Integer:
+byte	- 1 byte	-127 to 128
+short	- 2 bytes  	-32767 to 32768
+int	- 4 bytes  	-214 crores to 214 crores
+long  	- 8 bytes
+Floating Point
+float	-4 btyes
+double	-8 bytes
+Other Data types:
+char 	-2 bytes
+boolean	- 1byte (true or false)
+String	- used to store group of characters (Character array)
+
+-->Variables : Elements used to store the data temp'ly until program exection is completed
+syntax:
+[access specifier] <data type> <variable_name>;
+public int x,y,z;
+-->Keywords:  Reserved words used for specific purpose in the programs
+--> Termination symbol  ';'
+--> Delimiters : { } 
+--> Statements
+i) Arithmetic
+ii) Declration
+iii) Assigning
+iv) Conditional expressions
+v) Control Statements
+	a. Selection
+	if..else, if..elseif..else, switch 
+	b. Iteration
+	while, do-while, for
+--> Identifiers: Names of the packages, classes, methods, variables, arrays etc
+-->Comments : statements ignored by compiler
+	a. single   //
+	b. multi line:  /*	*/ 	
+-->Escape sequences
+	a. /n
+	b. /t
+	c. /r  (Carraige return)
+	d. /'
+	e. /"
+	f. //
+
+IMPORTANT NOTE: 
+File name must be same as the class name which contains the main function
+
+println v/s print
+println(): prints the data or text including a new line
+ex:
+println("Hello world");
+println("Aptech");
+
+Output:
+Hello world
+Aptech
+print(): Prints the data without a new line
+
+Command Line Argumetns: 
+-->arguments array in the main function
+-->String args[] (string array)
+
+-->java myfriends  raju ramu rakesh
+args[0]=" raju"
+args[1]="ramu"
+
+Programming Constructs:
+i)
+if (condition)
+{
+statements;
+}
+elseif (Condition)
+{
+statements
+}
+else
+{
+statements;
+}
+ii) 
+switch (var/expression)
+{
+case value1:
+statements;
+break;
+
+case value2:
+statements;
+break;
+
+default:
+statements;
+}
+
+iii) 
+while (condition)
+{
+statements;
+}
+iv)
+do
+{
+statements
+}while(condtion);
+v)
+for((init;cond;inc/dec)
+{
+statements;
+}
+
+Question 1:
+java <file name> 70 90
+90 is highest
+
+Question 2:
+java <file name> 70 90 300
+300 is highest
+
+Question 3: 
+java <file name> 40 + 100
+Sum of 40 and 100 is 140
+Note:
+char ch=arg[1].charAt(0);
+switch (ch)
+{
+case '+':
+
+Question 4:
+java <file name> 9
+9*1=9
+9*2=18
+9*10=90
+Note: While
+
+Question 5:
+java <file name> 9   4
+9*1=9
+9*2=18
+9*4=36
+Note: for
+
+Question 5:
+java <file name> 9   4
+9*1=9
+9*2=18
+9*4=36
+Note: for
+
+Question 6:
+java <file name> 234
+Reverse of the given number is 432
+Note: Any Loop
+
+Final Variables: (const)
+Used to create variables of constant data
+final int num=500;
+
+Expressions:
+combination of operators and operands
+ex:
+c=a+b;
+a,b,c are operands
+=,+ are operators
+
+Operators:
+i) Arithmetic:
+	a. Unary (-, ++, --)
+	ex:   num=-a;
+	b. Binary (+, -, *, /, %)
+ii) Relational operators: >,>=,<,<=,==,!=
+iii) Logical or conditional: &&, ||, !, &, | 
+&&, || (shortcircuiting)
+cond1 	&&	cond2
+cond1 	||	cond2
+
+cond1 	&	cond2
+cond1 	|	cond2
+
+iv) Bitiwse operators: >>,<<, &, |, ^ (Xor), ~ 
+Interactive Java Programs:
+Class Name: BufferedReader
+readLine()
+
+class myclas
+{
+}
+myclass mc=new myclass();
+
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));	
+
+Arrays:
+Group of data elements of same data type sharing a single variable name.
+syntax:
+<data type> [] <array_name>=new <data type>[size];
+<data type> <array_name>[size]; ( In c or c++)
+ex:
+int [] marks=new int[4]; //declaring and initialising
+int [] marks; //declrating
+marks=new int[4]; //initialising
+
+'length' property of array class:
+returns the size of the array
+
+Question 1:
+Enter how many numbers:4
+90
+80
+50
+40
+Maximum is 90
+Minimum is 40
+Sum is 
+Average is 
+
+Two Dimensional Arrays:
+<data type> [][] <array_name>=new <data type>[row size][col size];
+ex: int [][]mat=new int[2][2];
+Accessing array element:
+<array name>[row index][col index]=value;
+mat[0][0]=60;
+
+Question :1
+Enter elements of first matrix : 
+5
+6
+7
+8
+Enter elements of first matrix : 
+4
+1
+2
+3
+Resultant Matrix after addition:
+9    7
+9    11
+
+
+Question :2
+Enter elements of first matrix : 
+5
+6
+7
+8
+Enter elements of first matrix : 
+4
+1
+2
+3
+Resultant Matrix after multiplication:
+9    7
+9    11
+
+Question :3
+Enter no. of rows and cols for first matrix:
+2
+3
+Enter no. of rows and cols for second matrix:
+2
+3
+Enter elements of first matrix : 
+4
+1
+2
+3
+Resultant Matrix after addition:
+9    7
+9    11
+
+Question :4
+Enter no. of rows and cols for first matrix:
+2
+2
+Enter no. of rows and cols for second matrix:
+2
+2
+Enter elements of first matrix : 
+4
+1
+2
+3
+Resultant Matrix after multiplication:
+9    7
+9    11
+
+Copying data From one array to other:
+System.arraycopy(from array name,from index,to array name,to index,no. of elements)
+String []emp={"Ramu","Rajesh","Rakesh","Anil"};
+String []tremp=new String[2];
+System.arraycopy(emp,1,tremp,0,2);
+
+Question 1:
+Enter no. of employees :4
+abc
+mmn
+xyz
+sdf
+Enter no. of emps for training: 3
+Enter start position :2
+Enter end positon: 4
+
+Employees selected for training are:
+mnn
+xyz
+sdf
+
+Programming:
+C and C++:
+data types, variables, expressions, decision constructs, loops, jump statements, arrays, functions, pointers, structures, unions, enum,
+Java: No pointers, structures,unions, enum
+union student
+{
+int rno;
+char name[20];
+float fee;
+};
+union student s;
+
+Object Oreiented Features:
+Objects: Contains some state and behaviour
+Instance of the class
+Class: Model of object
+
+i) Data Abstraction:
+Grouping the set of properties and methods for any class
+-->state is defined by properties
+-->behaviour is defined by methods or functions
+-->properties and methods are combinely called as class members
+Syntax:
+[public| private| protected] class <class name> {
+[public|private|protected] variables;
+[public|private|protected] methods;
+}
+Note: If user is not mentioning any access specifier system will treat it as default access specifier.
+
+example:
+class player
+{
+int nom,runs;
+double agg;
+String pname;
+void accept()
+{
+BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+System.out.print("Enter Player Name:")
+pname=br.readLine();
+System.out.print("Number of matches played:")
+nom=Integer.parseInt(br.readLine());
+System.out.print("Runs Scored:")
+runs=Integer.parseInt(br.readLine());
+}
+void calc()
+{
+agg=runs/nom;
+System.out.println(pname+"'s aggregate is :"+agg);
+}
+}
+Object Creation:
+<class name> <object name>=new <class_name>();
+ex:  player p=new player();
+p.accept();
+p.calc();
+
+Question 1:
+Enter How many players: 2
+Name of Player 1: A
+Runs :800
+No of Matches: 4
+Name of Player 2: B
+Runs :500
+No of Matches: 4
+
+Name	Runs	Matches	Agg
+A	 800	4	200
+B	500	4	125
+
+Operators:
+Compound Assigning Operators (Shortcut)
++=, -=,  *=, /=, %= 
+a+=b --> a=a+b
+
+Ternary Operator:
+variable=condition? true value:false value;
+
+Example:
+class ternary {
+public static void main(String arg[]) {
+int basic=6000;
+int pf;
+pf=basic>4000 ? 2000: 1000;
+System.out.println("Your PF is :"+pf);} }
+
+Numeric
+Integer : byte,short,int,long
+Type Casting:
+Conversion one type of data into another
+Implicit type Casting: Done by system automatically
+short num;
+byte i=56;
+num=i;
+Note: byte-->short-->int-->long-->float-->double or char-->int
+Explicit type Casting: Done by the programmer exclusively by using functions etc
+Ex:
+double d=456.76;
+int num=(int) d;-->system stores 456 into num
+Ex:
+String val="456";
+int num=Integer.parseInt(val);
+
+String Data type: Group of characters
+char []name=new char[20];
+String name;
+String class functions:
+i) length() -->count the no. of characters in the given string
+String msg="Hello World";
+int l=msg.lenth();  --> l=11
+ii) Concatenation : Combining Two Strings into a single string
+String s1,s2,res;
+s1="Hello ";
+s2="World";
+res=s1+s2; -->Hello World
+iii) subString()
+	a. subString(begin index)
+	b. subString(begin index, end index)
+iv)equals(): used to compare the two string values (considers case)
+str1.equals(str2);
+v)equalsIgnoreCase(): used to compare the two string values (ignores case)
+vi)startsWith(): used to check whether a given string starts with a given word or group of characters or not
+String str="The World";
+boolean ch=str.startsWith("The"); -->true
+vii) endsWith(): used to check whether a given string ends with a given word or group 
+viii) replace(oldchar,newchar): 
+String msg="raj Kumar";
+msg.replace('r','R');
+ix) toUpperCase():
+str1.toUpperCase();
+x) toLowerCase(): converts given string value into lower case
+xi)charAt(index):
+String str="Hello";
+char ch=str.charAt(1); --> e
+xii)IndexOf(char):
+String str="Hello";
+int pos=str.indexOf('l'); --> 2

@@ -1,0 +1,19 @@
+Before you continue you should have a basic understanding of the following:
+
+WWW, HTML and the basics of building Web pages 
+CSS 
+JavaScript 
+
+
+
+
+DHTML Technologies
+With DHTML a Web developer can control how to display and position HTML elements in a browser window.
+
+
+DHTML is NOT a W3C Standard!
+Dynamic HTML is not a standard defined by the World Wide Web Consortium (W3C), it is a "marketing term" that was used by Netscape and Microsoft to describe the new technologies the 4.x generation browsers would support.
+
+Dynamic HTML is a combination of technologies to make Web pages dynamic. W3C once said:
+
+"Dynamic HTML is a term used to describe the combination of HTML, style sheets and scripts that allows documents to be animated." 

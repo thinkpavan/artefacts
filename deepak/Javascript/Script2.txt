@@ -1,0 +1,30 @@
+
+//document.write // command for writing some output to a page.
+
+  ex: document.write("Hello World!")
+
+
+
+prog1
+-------
+<html>
+<body>
+<script type="text/javascript">
+document.write("Hello World!")
+</script>
+</body>
+</html>
+
+
+
+Browsers that do not support scripts will display the script as page content. To prevent them from doing this, we may use the HTML comment tag:
+
+<script type="text/javascript">
+<!--
+    some statements
+//-->
+</script>
+ 
+
+The two forward slashes at the end of comment line (//) are a JavaScript comment symbol. This prevents the JavaScript compiler from compiling the line.
+

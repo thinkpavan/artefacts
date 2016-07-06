@@ -1,0 +1,59 @@
+HTML 4.0 Event Handlers
+Event Occurs when... 
+onabort 
+a user aborts page loading 
+
+onblur 
+a user leaves an object 
+
+onchange 
+a user changes the value of an object 
+
+onclick 
+a user clicks on an object 
+
+ondblclick 
+a user double-clicks on an object 
+
+onfocus 
+a user makes an object active 
+
+onkeydown 
+a keyboard key is on its way down 
+
+onkeypress 
+a keyboard key is pressed 
+
+onkeyup 
+a keyboard key is released 
+
+onload 
+a page is finished loading. Note: In Netscape this event occurs during the loading of a page! 
+
+onmousedown 
+a user presses a mouse-button 
+
+onmousemove 
+a cursor moves on an object 
+
+onmouseover 
+a cursor moves over an object 
+
+onmouseout 
+a cursor moves off an object 
+
+onmouseup 
+a user releases a mouse-button 
+
+onreset 
+a user resets a form 
+
+onselect 
+a user selects content on a page 
+
+onsubmit 
+a user submits a form 
+
+onunload 
+a user closes a page 
+

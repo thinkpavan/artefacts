@@ -1,0 +1,47 @@
+
+
+// Object based //
+ Systems that allow objects to encapsulate both the data and methods and enforce object identity.
+
+// Object oriented //
+Object oriented systems are object based, and also support inheritance between classes and super classes and allow objects to send messages to themselves.
+
+// Abstract Datatype //
+ An abstraction that describes a set of objects in terms of an encapsulated or hidden data and operation on that data.
+
+// Abstraction //
+ The act of representing the essential features of something without including much detail.
+
+// Abstract Class  //
+ A base class that contains pure virtual functions is an abstract base class. No objects of an abstract class are created.
+
+// Data Hiding //
+  A property whereby the internal data structure of an object is hidden from the rest of the program. The data can be accessed only by the functions declared with in the class( of that object).
+
+//  Dynamic Binding  //
+  The address of the function are determined at run-time rather than compile time(i.e., Binding of the function to the call at run-time). This is also known as late binding.
+or run-time binding.
+
+// Static Binding //
+ The functions are bound to the code to be executed at compile time. This is also known as Early Binding or Compile time binding.
+
+
+// Overloading //
+ A language feature that allows a function or operator to be given more than one definition.
+
+// Overriding //
+ The ability to change the definition of an inherited method or attribute in a sub class.
+
+
+// Polymorphism//
+Polymorphism is the ability to take more than one form.
+A property by which the same message can be sent to objects of several different classes, and each can respond in a different way depending on its class.
+
+// Virtual Base Class //
+In multiple inheritance, a derived class can inherit the members of a base class via two or more inheritance paths. If the base class is not virtual,the derived class will inherit more than one copy of the members of the base class. 
+ 
+// Virtual Function //
+  When a virtual function is called via a pointer, the class of the object pointed to determines which function to be used. Virtual functions implement polymorphism, whereby objects belonging to different classes can respond to the same message in different ways.
+
+// Pure Virtual function //
+ A virtual function that is declared in a base class but not defined there. The derived classes should define the function, each of which generally provides a different definition.

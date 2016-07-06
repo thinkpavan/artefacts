@@ -1,0 +1,302 @@
+<html><head><title>Abstract Factory</title></head><body><h1><center>
+Abstract Factory
+</center></h1>
+
+
+<h3>Intent</h3>
+
+<ul>
+<li>Provide an interface for creating families of related or dependent
+objects without specifying their concrete classes.
+[GoF, p87]
+</li><li>A hierarchy that encapsulates: many possible "platforms", and
+the construction of a suite of "products".
+</li><li>The <code>new</code> operator considered harmful.
+</li></ul>
+
+
+<h3>Problem</h3>
+
+If an application is to be portable, it needs to encapsulate platform
+dependencies.  These "platforms" might include: windowing system,
+operating system, database, etc.  Too often, this encapsulatation is
+not engineered in advance, and lots of #ifdef case statements with
+options for all currently supported platforms begin to procreate like
+rabbits throughout the code.
+
+
+<h3>Discussion</h3>
+
+Provide a level of indirection that abstracts the creation of families
+of related or dependent objects without directly specifying their
+concrete classes.  The "factory" object has the responsibility for
+providing creation services for the entire platform family.  Clients
+never create platform objects directly, they ask the factory to do that
+for them.<p>
+
+This mechanism makes exchanging product families easy because the
+specific class of the factory object appears only once in the
+application - where it is instantiated.  The application can wholesale
+replace the entire family of products simply by instantiating a
+different concrete instance of the abstract factory.</p><p>
+
+Because the service provided by the factory object is so pervasive, it
+is routinely implemented as a Singleton.
+
+
+</p><h3>Structure</h3>
+
+<center>
+<img src="abstract_factory_files/abstract_factory_dcd.gif">
+</center>
+
+The Abstract Factory defines a Factory Method per product.  Each
+Factory Method encapsulates the <code>new</code> operator and the
+concrete, platform-specific, product classes.  Each "platform" is
+then modeled with a Factory derived class.
+
+<center>
+<img src="abstract_factory_files/gof1.jpg">
+</center>
+
+
+<h3>Example</h3>
+
+The purpose of the Abstract Factory is to provide an interface
+for creating families of related objects, without specifying concrete
+classes.  This pattern is found in the sheet metal stamping equipment
+used in the manufacture of Japanese automobiles.  The stamping equipment
+is an Abstract Factory which creates auto body parts.  The same
+machinery is used to stamp right hand doors, left hand doors, right
+front fenders, left front fenders, hoods, etc. for different models of
+cars.  Through the use of rollers to change the stamping dies, the
+concrete classes produced by the machinery can be changed within three
+minutes. [Michael Duell, "Non-software examples of software design
+patterns", <cite>Object Magazine</cite>, Jul 97, p54]<p>
+
+</p><center>
+<img src="abstract_factory_files/pateximg1.gif">
+</center>
+
+<!--
+Non-software <a href=http://www.agcs.com/supportv2/techpapers/patterns/papers/tutnotes/sld002.htm>example</a>
+-->
+
+
+<h3>Check list</h3>
+
+<ol>
+<li>Decide if "platform independence" and creation services are
+the current source of pain.
+</li><li>Map out a matrix of "platforms" versus "products".
+</li><li>Define a factory interface that consists of a factory method
+per product.
+</li><li>Define a factory derived class for each platform that
+encapsulates all references to the <code>new</code> operator.
+</li><li>The client should retire all references to <code>new</code>,
+and use the factory methods to create the product objects.
+</li></ol>
+
+
+<h3>Before and after</h3>
+
+<table><tbody><tr><th>Before</th><th></th><th>After</th></tr>
+<tr><td valign="top"><pre>// Trying to maintain portability across
+// multiple "platforms" routinely requires
+// lots of preprocessor "case" statements.
+// The Factory pattern suggests defining a
+// creation services interface in a Factory
+// base class, and implementing each
+// "platform" in a separate Factory derived
+// class.
+
+// BEFORE - The client creates "product"
+// objects directly, and must embed all
+// possible platform permutations in nasty
+// looking code.
+
+#define MOTIF
+
+class Widget {
+public:
+   virtual void draw() = 0;
+};
+
+class MotifButton : public Widget {
+public:
+   void draw() { cout &lt;&lt; "MotifButton\n"; }
+};
+class MotifMenu : public Widget {
+public:
+   void draw() { cout &lt;&lt; "MotifMenu\n"; }
+};
+
+class WindowsButton : public Widget {
+public:
+   void draw() { cout &lt;&lt; "WindowsButton\n"; }
+};
+class WindowsMenu : public Widget {
+public:
+   void draw() { cout &lt;&lt; "WindowsMenu\n"; }
+};
+
+void display_window_one() {
+#ifdef MOTIF
+   Widget* w[] = { new MotifButton,
+                   new MotifMenu };
+#else // WINDOWS
+   Widget* w[] = { new WindowsButton,
+                   new WindowsMenu };
+#endif
+   w[0]-&gt;draw();  w[1]-&gt;draw();
+}
+
+void display_window_two() {
+#ifdef MOTIF
+   Widget* w[] = { new MotifMenu,
+                   new MotifButton };
+#else // WINDOWS
+   Widget* w[] = { new WindowsMenu,
+                   new WindowsButton };
+#endif
+   w[0]-&gt;draw();  w[1]-&gt;draw();
+}
+
+int main( void ) {
+#ifdef MOTIF
+   Widget* w = new MotifButton;
+#else // WINDOWS
+   Widget* w = new WindowsButton;
+#endif
+   w-&gt;draw();
+   display_window_one();
+   display_window_two();
+}   
+
+// MotifButton
+// MotifButton
+// MotifMenu
+// MotifMenu
+// MotifButton
+</pre></td><td> &nbsp; &nbsp; </td><td valign="top"><pre>// AFTER - The client: creates a platform-
+// specific "factory" object, is careful
+// to eschew use of "new", and delegates
+// all creation requests to the factory.
+
+#define WINDOWS
+
+class Widget {
+public:
+   virtual void draw() = 0;
+};
+
+class MotifButton : public Widget {
+public:
+   void draw() { cout &lt;&lt; "MotifButton\n"; }
+};
+class MotifMenu : public Widget {
+public:
+   void draw() { cout &lt;&lt; "MotifMenu\n"; }
+};
+
+class WindowsButton : public Widget {
+public:
+   void draw() { cout &lt;&lt; "WindowsButton\n"; }
+};
+class WindowsMenu : public Widget {
+public:
+   void draw() { cout &lt;&lt; "WindowsMenu\n"; }
+};
+
+class Factory {
+public:
+   virtual Widget* create_button() = 0;
+   virtual Widget* create_menu() = 0;
+};
+
+class MotifFactory : public Factory {
+public:
+   Widget* create_button() {
+      return new MotifButton; }
+   Widget* create_menu()   {
+      return new MotifMenu; }
+};
+
+class WindowsFactory : public Factory {
+public:
+   Widget* create_button() {
+      return new WindowsButton; }
+   Widget* create_menu()   {
+      return new WindowsMenu; }
+};
+
+Factory* factory;
+
+void display_window_one() {
+   Widget* w[] = { factory-&gt;create_button(),
+                   factory-&gt;create_menu() };
+   w[0]-&gt;draw();  w[1]-&gt;draw();
+}
+
+void display_window_two() {
+   Widget* w[] = { factory-&gt;create_menu(),
+                   factory-&gt;create_button() };
+   w[0]-&gt;draw();  w[1]-&gt;draw();
+}
+
+int main( void ) {
+#ifdef MOTIF
+   factory = new MotifFactory;
+#else // WINDOWS
+   factory = new WindowsFactory;
+#endif
+
+   Widget* w = factory-&gt;create_button();
+   w-&gt;draw();
+   display_window_one();
+   display_window_two();
+}
+
+// WindowsButton
+// WindowsButton
+// WindowsMenu
+// WindowsMenu
+// WindowsButton
+</pre></td></tr></tbody></table>
+
+
+<h3>Rules of thumb</h3>
+
+Sometimes creational patterns are competitors: there are cases when
+either Prototype or Abstract Factory could be used profitably.  At
+other times they are complementory: Abstract Factory might store a set
+of Prototypes from which to clone and return product objects [GOF,
+p126], Builder can use one of the other patterns to implement which
+components get built.  Abstract Factory, Builder, and Prototype can use
+Singleton in their implementation.  [GoF, pp81,134]<p>
+
+Abstract Factory, Builder, and Prototype define a factory object that's
+responsible for knowing and creating the class of product objects, and
+make it a parameter of the system.  Abstract Factory has the factory
+object producing objects of several classes.  Builder has the factory
+object building a complex product incrementally using a correspondingly
+complex protocol.  Prototype has the factory object (aka prototype)
+building a product by copying a prototype object.  [GoF, p135]</p><p>
+
+Abstract Factory classes are often implemented with Factory Methods,
+but they can also be implemented using Prototype.  [GoF, p95]</p><p>
+
+Abstract Factory can be used as an alternative to Facade to hide
+platform-specific classes.  [GoF, p193]</p><p>
+
+Builder focuses on constructing a complex object step by step.
+Abstract Factory emphasizes a family of product objects (either simple
+or complex).  Builder returns the product as a final step, but as far
+as the Abstract Factory is concerned, the product gets returned
+immediately.  [GoF, p105]</p><p>
+
+Often, designs start out using Factory Method (less complicated, more
+customizable, subclasses proliferate) and evolve toward Abstract
+Factory, Prototype, or Builder (more flexible, more complex) as the
+designer discovers where more flexibility is needed.  [GoF, p136]</p><p>
+</p></body></html>

@@ -1,0 +1,12 @@
+Teamname,Played:INT,Won:INT,Avg:FLOAT,Rank:INT
+Australia,10,10,100.0,1
+NewZealand,10,8,90.0,3
+India,10,6,60.0,5
+Pakistan,10,9,93.6,2
+England,10,7,70.0,4
+Bangladesh,10,2,20.0,9
+SouthAfrica,10,4,40.0,7
+WestIndies,10,3,38.4,8
+Kenya,10,1,10.0,10
+Scotland,10,0,00.0,0
+SriLanka,10,5,50.0,6

@@ -1,0 +1,30 @@
+Note: 
+Applets, Panel  default layout is Flow Layout
+Frame, dialog default layout is border layout
+
+Window Events:
+class:WindowEvent
+Interface:WindowListener
+Methods:
+windowActivated(), windowClosed(),windowClosing(),windowDeactivated(),windowIconified(),windowDeiconified()
+
+Graphics Class:
+ 
+drawString(string,x,y): used to display given string at a given point
+drawChar(char arr[],int offset,int lenght,int x,int y)
+setColor(Color.red) -->used to set the color for string or shapes to be displayed
+drawLine(int x1,int y1,int x2,int y2)--> used to draw a line with specified co-ordinates
+ex :drawLine(20,100,100,100)
+drawOval(int x,int y, int width,int height)
+fillOval(int x,int y, int width,int height)
+drawRect(int x,int y,int width,int height)
+fillRect(int x,int y,int width,int height)
+drawRoundRect(int x,int y,int width,int height,int arcwidth,int archeight)
+fillRoundRect(int x,int y,int width,int height,int arcwidth,int archeight)
+Polygon:
+drawPolygon(x[],y[],int no. of points)
+int x[]={50,75,95,115,135};
+int y[]={50,30,60,75,160};
+drawPloygon(x,y,5);
+fillPloygon(x,y,5);
+

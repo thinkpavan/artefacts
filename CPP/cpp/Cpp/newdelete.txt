@@ -1,0 +1,9 @@
+
+   new  :  A keyword to dynamically allocate memory
+   at the runtime of program. In C Dynamic memory
+   alloc is done by malloc function. The "new"
+   keyword doesn't require type casting. It 
+   returns the address of the allocated memory.
+
+    delete : It is a keyword used to release the
+    memory allocated using "new" keyword.

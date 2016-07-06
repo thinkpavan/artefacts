@@ -1,0 +1,76 @@
+
+// The Array object//
+An Array object is used to store a set of values in a single variable name.
+ Each value is an element of the array and has an associated index number. 
+
+You can refer to a particular element in the array by using the name
+ of the array and the index number. The index number starts at zero. 
+
+You create an instance of the Array object with the "new" keyword.
+
+var family_names=new Array(5)
+ 
+
+
+The Array object's methods are described below:
+
+NN: Netscape, IE: Internet Explorer, ECMA: Web Standard
+
+Methods Explanation NN IE ECMA 
+
+length		 Returns the number of elements in an array. 
+		This property is assigned a value
+		when an array is created 3.0 4.0 1.0 
+
+concat()		 Returns an array concatenated of two arrays 4.0 4.0 1.0 
+
+join()		Returns a string of all the elements of an array
+		 concatenated together 3.0 4.0 1.0 
+
+reverse()		 Returns the array reversed  3.0 4.0 1.0 
+
+slice()		 Returns a specified part of the array 4.0 4.0   
+
+sort()		 Returns a sorted array 3.0 4.0 1.0 
+
+
+Ex:
+<html>
+<body>
+
+<script type="text/javascript">
+var famname = new Array(6)
+famname[0] = "Jan Egil"
+famname[1] = "Tove"
+famname[2] = "Hege"
+famname[3] = "Stale"
+famname[4] = "Kai Jim"
+famname[5] = "Borge"
+
+for (i=0; i<6; i++)
+{
+document.write(famname[i] + "<br>")
+}
+</script>
+
+</body>
+</html>
+
+
+Ex :  
+
+<html>
+<body>
+
+<script type="text/javascript">
+var famname = new Array("Jan Egil","Tove","Hege","Stale","Kai Jim","Borge")
+
+for (i=0; i<famname.length; i++)
+{
+document.write(famname[i] + "<br>")
+}
+</script>
+
+</body>
+</html>
+

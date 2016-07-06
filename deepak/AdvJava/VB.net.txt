@@ -1,0 +1,897 @@
+Visual Basic 6.0 --> Basic
+
+Visual Studio .Net (IDE)
+C#
+VC++
+VB.Net
+ASP.Net
+
+.Net Parts
+
+Platform
+CLR
+Class Library
+Enterprise Servers
+Building blocks
+Products and Services
+Support
+
+n-Tier Architecture
+
+E-Mail tool c#,asp.net
+Chatting
+Web Site
+Database
+
+
+JIT
+Application in windows-->MSIL Code-->JIT -->Application on unix
+
+
+
+Visual Basic .Net
+-----------------
+
+1.0.0.1
+
+major.minor.revision.build
+
+Basic program essentials
+i) Variables (intelisence)
+vb 6.0 --> dim var1 as integer
+	   dim var1,var2 as integer
+
+vb.net --> dim var1,var2 as integer
+	   In var1 user can store any type of data
+	   In var2 user has to give integer data
+	   dim var1 as integer,var2 as integer
+
+ii) Datatypes: integer,byte,boolean,string,date
+iii) Constants (Data)
+iv) Arrays
+v) Enumeration
+vi) Operators
+vii) Expression
+viii) statements
+ix) Procedures
+	Builtin
+	User defined
+x) Delimiters
+xi) Keywords
+
+Some Differences Between Data types of VB6.0 adn vb.net
+i)Decimal dt is used for storing currency in vb.net / currency is a seperate data type
+ii)DateTime dt is used date format values /
+double for storing date values
+iii) Object dt is used to store any type data/
+variant is a seperate data type
+
+Implicit Variables:
+using Variables in the code, without declaring them initially.
+syntax:
+implicit_variable_name=value
+ex: num=10
+
+Note:
+If programmer want to use implicit varibles, set the 'option explicit' property of project/solution into off.
+Right click on the project name in solution explorer-->click on property pages-->click on 'build' option available under 'common properties'-->select 'off' for 'option explicit '
+Changes in control structures
+i)while loop
+In vb 6.0
+while condition
+statement
+wend
+
+In vb.net
+while condition
+statements
+end while
+
+if condition
+statements
+end if
+
+select case expression/var
+case val1:
+statements
+case val2:
+statements
+..
+..
+case else:
+statements
+end select
+
+
+i) Type Conversion/Casting
+Explicit: using inbuilt methods 
+Implicit: by system
+Namespaces : group of classes
+Convert --class contains methods for Type conversion
+ex: Convert.ToInt32("23");
+
+Types of Explicit Conversion:
+i)Widening conversion: ex: short to int
+ii)Narrowing conversion: ex: int to short
+
+Note:
+Option Strict: this option is used to change the type conversion from implicit to explicit and vice versa.
+Available in solution property pages window.
+
+ii) Arrays in VB.net
+Syntax: 
+Dim <array name>(total no. of elements/size) as <data type>
+ex: Dim books(10) as String
+iii) Initialising Arrays
+Dim books() as String={"VB.net","Java","VB6.0"}
+books(0)="C sharp"
+
+iv) Redimension arrays
+redim books(20)-->data loss
+redim preserve books(20)-->no data loss
+Note:
+Redim can not be used for changing name of array and data type.
+
+v) Multidimensional arrays
+Dim <array name> (row size,col size) as <data type>
+Ex: dim books_price(10,2) as string
+books_price(0,0)= "VB.Net"
+books_price(0,1)="Rs 400"
+vi) Array length
+System.Array 
+System -->namespace
+Array -->class
+GetLength() -->used to find the no. of elements present in array
+Ex: Dim books() as String={"VB.net","WML"};
+Msgbox books.GetLength()
+
+vii)String class Functions
+Compare()-->used to compare the two string values
+String str1="Hello world"
+String str2="Aptech"
+res=String.Compare(str1,str2)
+returning '0' --> values are equal
+returning +ve value--> first string is highest than second string
+Concat()--> used to concat two string values
+String res=String.Concat("Hello","World")
+' res="HelloWorld"
+Replace-->Replaces a string in existing string
+String str1="Hello wd"
+String str2=str1.Replace("wd","World");
+str2="Hello World"
+SubString()-->used retrieve no. of characters from the existing string
+str1="Hello World"
+str2=str1.SubString(6,5)
+str2="world"
+Length()-->returns no of characters in a particular string
+str1="Hello world"
+Msgbox str1.Length()
+
+Procedures:
+Sub Procedures:
+Syntax:
+[private/public] Sub Procedures([argument(s)])
+executable statements
+End Sub
+
+Ex:
+Sub cube()
+	Dim num As Integer
+	'Convert.Toint32()
+        num = CInt(InputBox("Enter a number:"))
+        Label1.Text = "Cube of " & num & " is " & num * num * num
+    End Sub
+
+Calling Procedure: [call] <procedure name>
+
+Function Procedures:
+Syntax:
+[private/public] function <function_name> ([argument(s)]) as <return type>
+executable statments
+[return statement]
+end function
+
+
+Ex:
+
+Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Call cube()
+        Dim salary As Integer
+        salary = CInt(InputBox("Enter salary:"))
+        Label1.Text = "Salary Without Bonus:" & salary
+        salary = bonus(salary)
+        Label1.Text = "Salary With Bonus:" & salary
+    End Sub
+
+Function bonus(ByVal sal As Integer) As Integer
+        sal = sal + 1000
+	'returning function value 
+        ' bonus = sal
+        Return bonus
+    End Function
+
+Optional argument values (Default values)
+
+function max(byval n1 as integer,optional byval n2 as integer=50) as integer
+if n1>n2 then
+return n1
+else
+return n2
+end if
+end function
+
+sub click()
+dim res as integer
+res=max(20)
+end sub
+
+Procedures Call
+
+i) Call by value
+sub cal(Byval sal as integer)
+sal=sal+1000
+msgbox "value in sal in side procedure:" & sal
+end sub
+
+click()
+dim salary as integer
+salary=textbox1.text
+msgbox "value in sal  before procedure:" & salary
+cal(salary)
+msgbox "value in sal  after procedure:" & salary
+end sub
+
+ii) Call by reference
+
+sub cal(Byref sal as integer)
+sal=sal+1000
+msgbox "value in sal in side procedure:" & sal
+end sub
+
+click()
+dim salary as integer
+salary=textbox1.text
+msgbox "value in sal in before procedure:" & salary
+cal(salary)
+msgbox "value in sal in after procedure:" & salary
+end sub
+
+Arrays as Procedure Arguments:
+Ex:
+Declaration:
+sub orderdetails(Byval cname as string, Byval paramarray products() as string)
+...
+end sub
+Calling:
+orderdetails("HAL","Mouse","Keyboard","Harddisk","Processor")
+--> In the above example HAL is cname, remaining values are assigned to products array
+
+Points to be remembered:
+i)only one paramarray
+ii)single dimension array
+iii)Parameter array must be last argument of the procedure
+iv) it is optional by default
+
+
+Ex:
+    form_load()
+    max(50, 70, 80, 60)
+    End Sub
+
+    Sub max(ByVal ParamArray marks() As Integer)
+        Dim high, i As Integer
+        high = 0
+        For i = 0 To marks.Length - 1
+            If (marks(i) > high) Then
+                high = marks(i)
+            End If
+        Next
+        MsgBox("Highest marks are :" & high)
+    End Sub
+
+
+Overloading Procedures:
+
+sub orderdetails(byval cname as string,byval paramarray products() as string)
+...
+end sub
+
+sub orderdetails(byval ccode as integer,byval paramarray products() as string)
+...
+end sub
+
+-->no. of arguments
+max(byval n1 as integer,byval n2 as integer)
+max(byval n1 as integer,byval n2 as integer,byval n3 as integer)
+
+-->datatype of arguements
+max(byval n1 as integer,byval n2 as integer)
+max(byval n1 as double,byval n2 as double)
+
+-->changing the positions
+sub orderdetails(byval ccode as integer,byval cname as string)
+sub orderdetails(byval cname as string,byval ccode as integer)
+
+
+Object Oriented Features Implementation
+i) Data Abstration
+ii) Data Encapsulation
+class emp
+{
+private
+Variables
+public
+}
+iii)Inheritence
+	a. single
+	b. multiple
+	c. multilevel
+	d. hirarchical
+	e. hybrid
+iv) Polymorphism
+v)  Assemblies
+vi) Exception Handling
+
+
+Classes
+-------
+Syntax:
+[access specifiers] class <class name> 
+Member variables
+Member procedures
+End class
+
+Member Variables
+-->declaring general/normal variables
+public dim eno as integer
+
+Scope Of Member variables
+a. Private
+b. Friend
+c. Protected
+d. Public
+
+				pri	fri	prot	pub
+-->With in Class		yes	yes	yes	yes
+-->With in different 
+classes in same project		no	yes	no	yes
+-->with in diff. 
+inherited classes in
+same project			no	yes	yes	yes
+-->With in different 
+classes in diff project		no	no	no	yes
+-->with in diff. 
+inherited classes in
+diff project			no	no	yes	yes
+
+Member Methods
+	a. Sub Procedures
+	b. Functions
+Creating Object for the classes
+Dim <object name> as new <class name>()
+ex: dim e1 as new emp()
+
+Accessing class members using objects
+<object_name>.<member variable> =value
+<object_name>.<member function>
+
+Note:
+Class View: Used to display the list of class and its members of current project
+
+Class Properties
+Syntax:
+Public property ename() as string
+get
+return ename
+end get
+set(byval val as string)
+ename=val
+end set
+end property
+
+Readonly Properties
+Example:
+Public readonly property ename() as string
+get
+return ename
+end get
+end property
+
+WriteOnly properties
+Example:
+Public writeonly property ename() as string
+set(byval val as string)
+ename=val
+end set
+end property
+
+Constructors:
+Syntax:
+public sub New()
+initialization code
+end sub
+
+Ex: dim e1 as new emp()
+Note:
+i)used to initialise class variables with specific values
+ii)called implicitly at the time of object creation
+iii)must be public
+iv)will not return any value
+v)no need to use return statement
+
+Parameterized Constructors:
+public sub new(argument(s))
+....
+....
+end sub
+ex:
+public sub new (byval en as integer,byval enm as string)
+eno=en
+ename=enm
+end sub
+
+dim e1 as new emp(120,"Raju")
+
+Constructors with Optional Parameters:
+public sub new (optional byval en as integer=10,optional byval enm as string="ABC")
+eno=en
+ename=enm
+end sub
+
+signatures:
+emp()
+emp(20) // emp(int)
+emp(20,"Raju") // emp(int,string)
+
+
+Shared Variables:
+Syntax:
+Private/public shared ctr as integer
+
+Shared Methods:
+private/public shared function compare(byval n1 as integer,byval n2 as integer) as integer
+if n1>n2
+return n1
+else
+return n2
+end function
+
+Accessing Shared variables or methods
+<class name>.<var_name>=300
+or
+<class name>.<sub/func name>
+
+
+Types of Errors:
+i) Syntax errors (Compile Time Errors)
+ii) Logical Errors (Not meeting the user requirements, not getting correct output)
+iii) Runtime Errors (Can'nt find them at compile time)
+
+Exception Handling:
+In VB.Net exception Handling is done in two ways:
+a. Structured Exception Handling
+b. Unstructured Exception Handling
+
+Structured Exception Handling:
+Using Try..Catch..Finally blocks
+Try : Try block contains the statements which may rise the exception
+Catch : Statements to be executed if runtime exception is raised are enclosed in this block
+Finally : Statements to be executed before 'End Try' . It is optional
+
+Try
+....
+Catch [Condition]
+....
+Finally
+....
+End Try
+
+Example:
+Dim month() as String={"Jan","Feb","Mar","Apr","May"}
+Dim ctr as integer=0
+Try
+for ctr=0 to 6
+Msgbox (month(ctr))
+Next ctr
+Catch err as System.IndexOutofRangeException
+Msgbox (err.Tostring)
+finally
+Erase month // Delete *month
+End Try
+
+Handling Exceptions With Multiple Catch Blocks
+Try
+...
+Catch err as System.<ExceptionType>
+....
+Catch err as System.<ExceptionType>
+....
+Catch err as System.Exception
+....   'Common catch block for all types of exceptions
+End Try
+
+Exceptions:
+All exception Classess are available in System Namespace (Packages)
+i) ArithmeticException
+ii) FormatException
+iii) IndexOutOfRangeException
+iv) OverflowException 
+v) NullReferenceException 
+
+Types of Applications in VB.net
+Standalone
+i) Console Applications
+ii) Windows Applications
+Network
+i)ASP. Net Web Applications
+ii)Web Services
+
+Console Application:
+Structure:
+Module <module name>
+Sub Main()
+.....
+End Sub
+End Module
+
+Method for Output: 
+Console.WriteLine("Welcome to the world of VB.Net Console Applications")
+Method for Input:
+Console.ReadLine();
+
+To Compile and Execute the Console applications
+--->Write the program in any editor and save the file with .vb extension
+-->open windows command prompt
+-->run the batch file 'corvars.bat' in the directory 'C:\Program files\Microsoft.Net\FrameWorkSDK\bin'
+This batch will set the environment for vb.net compilation
+-->compile the module file as follows
+vbc maths.vb
+-->run the module file
+maths.exe or maths
+
+Note: If visual studio command prompt is used no need to run the batch file
+
+DataTypes:
+Integer Data 
+Byte: 1 byte
+Short : 2 bytes
+Integer: 4 bytes
+Long : 8 bytes
+
+Real Number
+Single: 4 Bytes
+Double : 8 Bytes
+Decimal : 16 Bytes
+
+Boolean : 1 byte
+Char : 1 byte
+String
+Object : user can store any type of data
+
+Procedures In VB.net
+i) Sub Procedure
+syntax:
+Sub <proc Name> ([arglist])
+......
+End Sub
+ii) Function Procedure
+syntax:
+Function <func_name> ([arglist]) [as return type]
+...
+End Function
+
+
+Console Applications:
+
+i) 
+How many Numbers:5
+Enter Number 1:50
+Enter Number 1:70
+Enter Number 1:80
+Enter Number 1:90
+Enter Number 1:60
+Sum is
+Avg is
+Max is
+Min is
+ii)
+Enter a number : 121
+It is palindrome
+
+Output:
+Enter gradevalue:100
+Your grade is A
+Note: Using Enumeration, Switch case
+
+Declaration Statement:
+Dim <arr_name>(upper_bound) as <data_type>
+ex: Dim marks(5) as integer
+
+Structures:
+--> A structure is useful when we wish to create a record-like structure for an entity
+-->A structure can hold not only fields(variables/properties)  but also methods and events
+-->Structure can be create inside the module also, not inside the procedures of the modules
+Syntax:
+Structure <name>
+[Variable Declaration]
+[Procedure Declaration]
+End Structure
+
+Redim keyword:
+-->To change the size of an array
+-->Redim can not be used to change the data type of an array nor can be used to change the initial values of the array
+-->Redim can not be used for changing the rank of an array
+-->Syntax: Redim <array_name>(new upper bound)
+-->Redim statement can be used only inside a procedure and not in the module level
+-->Using Redim keyword the original contents of the array are lost
+-->Content can be retained by using the keyword 'preserve'
+-->syntax: Redim preserve arr_name(new upper bound)
+-->in case if you increase the size
+
+class myclas{
+public void sum(); //abstract
+}
+
+Interfaces in VB.net:
+-->These are similar to classes except they have no implementation
+-->Methods are only declared in the interface and do not contain any code
+
+Syntax:
+Interface <interface name>
+[inherits <another interface>]
+...
+...
+End Interface
+
+Use in class
+Class <class_name> implements <interface_name>
+public sub <method_name>() implements <interface_name>.<method_name>
+' implementation code
+End Sub
+End Class
+
+Implementing Multiple inheritence
+Possible:
+Class <class_name> 
+implements int1,int2...
+..
+End Class
+Not Possible:
+Class <class_name>
+inherits c1,c2..
+...
+End class 
+
+Inheriting Class and Interface:
+Class <class name>
+inherits <class_name>
+implements <interface_name>
+....
+End Class
+
+Namespaces:
+-->Commonly used inbuilt namespace in Vb.Net is System
+-->Namespaces are used to organize nested entities such as other namespace, classes, interfaces and so on
+-->Modules and classes are generally put inside namespaces
+
+Syntax:
+Namespace <namespace_name>
+class <class name>
+...
+end class
+End Namespace
+
+Compile: vbc /t:library shapes.vb
+Using Namespace as reference: vbc /r:shapes.dll usename.vb
+
+Collections:
+-->In vb.net a collection is used to manage the objects that are explored by a class.
+-->create a public instance of type Microsoft.VisualBasic.Collection in the program
+
+Microsoft.VisualBasic.Collection  implements three interfaces:
+-->System.Collections.ICollection
+a. count() method that counts the total no. of items in a collection
+b. Additional methods for advanced operations like multithreading
+-->System.Collections.IEnumerable
+This is used when collection cotains objects
+-->System.Collections.IList
+It provides methods to add, remove and search items or objects in a collection
+
+Basic differences between arrays and collections: 
+Whenever there is a need for functinalities like adding items, removing items, itegrating through items for a group of objects it is better to use collection , since collection supports these functionality in terms of builtin methods
+
+Events:
+-->Events are the actions that are triggered either by a user action, Program logic or by the system
+-->Procedures containing codes that will process the event are called as event handlers
+
+[public|private|friend|protected friend] event <event_name> (argslist) [implements interface.eventname]
+
+Raising event: 
+sub <procedure_name>()
+raise <event_name>
+end sub
+
+Approaches of Event Handling for console applications in VB.Net
+-->Add Hanlder
+-->With Events
+AddHandler: An event can be associated with a method using AddHandler statement
+syntax: AddHandler <event_name> <handler method name>
+Note: RemoveHandler disassociates the event from the method
+RemoveHandler <event_name> <handler method name>
+
+With Events:
+-->Handles keyword is used to declare that a particular procedure will handle a specific event
+-->By using Handles keyword with a procedure declaration, we can enable the procedure to handle events that were raised by an object variable declared using the 'with events' keyword.
+
+Class UseEvent
+Public Event first
+Public sub Test()
+RaiseEvent first
+End sub
+
+Module event2
+Dim  withevents obj as UseEvent
+public sub Main()
+obj=new UseEvent()
+obj.Test()
+End Sub
+
+public sub OurHandler Handles obj.first
+System.Console.WriteLine("Event is Being Handled")
+End sub
+
+End Module
+
+Method Overloading
+-->Process of declaring methods of a class having the same name but different signature
+-->Signature comprises of name of method,number and type of arguments
+-->Return type is not a part  of signature
+syntax:
+[overloads] [public|private|protected|friend|protected friend] [sub <proc_name> |function <proc_name>] ( [args list]) [as return type]
+Example:
+overloads  function disp(a as integer) as integer
+end function
+overloads function disp(b as string) as string
+end function
+-->overloads key word is not mandatory
+-->it indicates that the method or property is being overloaded.
+
+Abstract Classes:
+--> Contains abstract methods or non abstract methods
+--> Cannot create the object seperately
+--> MustInherit keyword is used
+Example:
+
+imports System
+Module absdemo
+MustInherit class absclass
+public sub disp()
+Dim name as String
+Console.Write("Enter Your Name:")
+name=Console.ReadLine();
+Console.WriteLine("Hello " &name &"  U R in the Non-Abstract Method of Abstract Class")
+End Sub
+MustOverride sub square()
+End Class
+
+Public class X
+inherites absclass
+overrides sub square()
+dim num as integer
+num=Convert.Toint32(Console.ReadLine())
+Console.WriteLine("Square of " & num & " is " & (num*num))
+End Sub
+End Class
+End Module
+
+Final Classes:
+-->Programmer cannot inherit the final classes
+-->Can create the object
+Syntax:
+NotInheritable class <class name>
+...
+End Class
+
+Overriding in VB.Net:
+-->Is the process of overwritting the method of a base class in a derived class
+-->Base class method must marked as overridable & derived class must be marked as overrides
+-->MustOverride keyword is used infront of base class methods for which system will expect  the new definition. 
+
+Shadow Keyword:
+-->If user wants to hide an inherited class & invoke an overriden version of the method then we use the shadow keyword
+-->shadow keyword cannot be used with the overloads keyword
+
+NotOverridable Keyword:
+--> Used to indicate that a method property cannot be override
+--> Any methods which user want to call using base class object only
+
+Mybase:
+-->Used to refer to the base class method in a derived class that has overriden methods of the base class
+-->Mybase refers to immediate base class as its inherited members
+
+MyClass:
+-->Using this keyword user can refer the base class method by using the object of derived class.
+
+Delegates:
+-->In VB.net a delegate is referred as a representative of a function or a procedure
+-->User has to assign the reference of the function or procedure to the delegate object
+-->All delegates implicitly inherit from the System.Delegate class
+-->A delegate declaration must specify the parameters and/or the return type for the method which it represents
+syntax for delegate declaration:
+Delegate sub <name> (param1 as type,param2 as type...)
+or
+Delegate function <name>(param1 as type,param2 as type..) as <return type>
+
+Ex:
+imports System
+Module mydelegate
+Delegate sub mydel (n1 as integer,n2 as integer)
+sub max(fn as integer,sn as integer)
+dim m as integer
+if fn>sn then
+Console.WriteLine(fn &" is highest")
+elseif fn=sn then
+Console.WriteLine("Both are equal")
+else
+Console.WriteLine(sn &" is highest")
+End if
+End Sub
+sub sum(fn as integer,sn as integer)
+dim res as integer
+res=fn+sn
+Console.WriteLine("Result is :" & res)
+End Sub
+Sub Main()
+Dim x as mydel
+x=Addressof max
+x(40,20)
+x=Addressof sum
+x(50,29)
+End sub
+End Module
+
+Using the Invoke Method
+How event handling is used with delegates
+How to use the combine and Remove methods
+
+STRUCTURES:
+-->Procedures within structures:
+ex: Player
+-->Structures within structures: (Nested Structures)
+ex:
+structure dateofbirth
+pub day as integer
+pub month as integer
+pub year as integer
+End structure
+structure stud
+pub name as string
+pub rollno as integer
+pub dob as dateofbirth
+
+public sub accept()
+name
+rollno
+end sub
+pub sub acceptdob()
+dob.day
+dob.month
+dob.year
+end sub
+End Structure
+Sub main()
+dim s as stud
+s.accept()
+s.acceptdob()
+s.wl(s.name)
+s.wl(s.rollno)
+s.wl(s.dob.day)
+
+-->Introduction to Object oriented programming
+-->Features
+-->Object and classes
+	syntax for classes
+	syntax for objects
+-->Properties
+-->Methods
+-->Constructors and Destructors

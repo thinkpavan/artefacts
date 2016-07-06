@@ -1,0 +1,26 @@
+
+
+
+Events  :
+
+    onClick
+    onDblClick
+    onKeyUp
+    onKeyDown
+    onKeyPress
+    onMouseUp
+    onMouseDown
+    onMouseOver
+    onMouseOut
+    onMove
+    onload
+    onUnload
+    onFocus
+    onBlur
+    onReSize
+    onAbort
+    onError
+    onChange
+    onSelect
+    onSubmit
+

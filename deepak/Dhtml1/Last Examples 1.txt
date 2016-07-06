@@ -1,0 +1,673 @@
+
+// Element Access
+
+<html>
+<body>
+
+<h1 id="header">My header</h1>
+
+<script type="text/javascript">
+document.getElementById('header').style.color="red"
+</script>
+
+<p><b>Note:</b> It is the script that changes the style of the element!</p>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+// disable right click
+
+<html>
+<head>
+<script type="text/javascript">
+function disable()
+{
+if (event.button == 2)
+{
+alert("Sorry no rightclick on this page.\nNow you cannot view my source\nand you cannot steal my images")
+}
+}
+
+</script>
+</head>
+<body onmousedown="disable()">
+<p>Right-click on this page to trigger the event.</p>
+<p>Note that this is no guarantee that nobody can view the page source, or steal the images.</p>
+</body>
+</html>
+
+
+
+
+
+// Tool Tip
+
+<html>
+<head>
+<script type="text/javascript">
+function gettip(txt)
+{
+document.getElementById('tip').innerHTML=txt
+}
+
+function reset()
+{
+document.getElementById('tip').innerHTML=""
+}
+</script>
+</head>
+
+<body>
+<p>Mouse over these drinks:</p>
+
+<p onmouseover="gettip('Hot black drink')"
+onmouseout="reset()">Coffee</p>
+
+<p onmouseover="gettip('Cold white drink')"
+onmouseout="reset()">Milk</p>
+
+<p id="tip" >    </p>
+</body>
+</html>
+
+
+
+
+
+
+// Type Write message
+
+<html>
+<head>
+
+<script type="text/javascript">
+message="The best way to learn, is to study examples and practice"
+pos=0
+maxlength=message.length+1
+
+function writemsg()
+{
+if (pos<maxlength)
+	{
+	txt = message.substring(pos,0)
+	document.forms[0].msgfield.value=txt
+	pos++ 
+	     setTimeout("writemsg()", 50)
+	}
+}
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+
+<body onload="writemsg()"  onunload="stoptimer()">
+<form>
+<input  id="msgfield"   type ="text"  size="65">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+// Animation
+
+<html>
+<head>
+<script type="text/javascript">
+move=150
+var i=0
+var j=0
+var timer
+
+function moveheader()
+{
+document.getElementById('header').style.position="relative"
+if (i<=move)
+	{
+	document.getElementById('header').style.left=i
+	i++
+	}
+else
+	{
+	if (j<=move)
+		{
+		document.getElementById('header').style.top=j
+		j++
+		}
+	else
+		{
+		if (move>=0)
+			{
+			document.getElementById('header').style.left=move
+			document.getElementById('header').style.top=move
+			move--
+			}
+		}	
+	}	
+timer=setTimeout("moveheader()",1)
+}
+
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+
+<body onload="moveheader()" onunload="stoptimer()">
+<h1 id="header">Aptech</h1>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+// Bigger Text
+
+<html>
+<head>
+
+<script type="text/javascript">
+txtsize=0
+maxsize=100
+
+function writemsg()
+{
+if (txtsize<maxsize)
+	{
+	document.getElementById('msg').style.fontSize=txtsize
+	txtsize++
+	timer=setTimeout("writemsg()",10)
+	}
+}
+
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+<body onload="writemsg()" onunload="stoptimer()">
+<p id="msg">Aptech</p>
+</body>
+</html>
+
+
+
+
+
+//  Scrolling Text
+
+<html>
+<head>
+<style>
+p
+{
+font:12px arial;
+background:#CCCCCC;
+position:absolute;
+width:100;
+height:500;
+top:100;
+clip:rect(0 100 100 0);
+}
+</style>
+<script type="text/javascript">
+var interval
+startPosition=0
+topPosition=100
+endPosition=100
+speed=50
+
+function scrollit()
+{
+if (startPosition!=200)
+	{
+	startPosition=startPosition+1
+	topPosition=topPosition-1
+	document.getElementById('display').style.clip="rect(" + (startPosition + 1) + " 100 " + (startPosition + endPosition) + " 0)"
+	document.getElementById('display').style.top=topPosition
+	interval=setTimeout("scrollit()",speed)
+	}
+else
+	{
+	startPosition=0
+	topPosition=100
+	endPosition=100
+	interval=setTimeout("scrollit()",speed)
+	}
+}
+
+function stopinterval()
+{
+clearTimeout(interval)
+}
+</script>
+</head>
+
+<body onload="scrollit()" onunload="stopinterval()">
+<p id="display">
+<br /><br /><br /><br /><br /><br /><br />
+Hello , this script makes a scrolling text. <br />This is the sample text</p>
+</body>
+</html>
+
+
+
+
+
+
+//Blinking Header
+
+<html>
+<head>
+<script type="text/javascript">
+function blinking_header()
+{
+if ( !document.getElementById('blink').style.color)
+	{
+	document.getElementById('blink').style.color="red"
+	}
+
+if (document.getElementById('blink').style.color=="red")
+	{
+	document.getElementById('blink').style.color="black"
+	}
+else
+	{
+	document.getElementById('blink').style.color="red"
+	}
+timer=setTimeout("blinking_header()",100)
+}
+
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+</head>
+
+<body onload="blinking_header()" onunload="stoptimer()">
+<h1 id="blink">Blinking header</h1> 
+</body>
+
+</html>
+
+
+
+
+
+// Glowing Text
+
+<html>
+<head>
+<style>
+h1
+{
+width:400;
+}
+</style>
+
+<script type="text/javascript">
+var i
+function glow()
+{
+i=0
+interval=setInterval("makeglow()",10)
+}
+
+function back()
+{
+clearInterval(interval)
+document.getElementById('myHeader').style.filter=false
+}
+
+function makeglow()
+{
+i++
+if (i<5)
+	{
+	document.getElementById('myHeader').style.filter="glow(strength=" + i + ")"
+	}
+else if (window.interval)
+	{
+	clearInterval(interval)
+	}
+}
+
+</script>
+</head>
+
+<body>
+<h1 id="myHeader" onmouseover="glow()" onmouseout="back()">Mouse over this header</h1>
+</body>
+
+</html>
+
+
+
+// Drop Shadow Header
+<html>
+<head>
+<style>
+h1
+{
+color:black;
+height:50;
+font:bold;
+}
+</style>
+<script type="text/javascript">
+var i
+function dropshadow()
+{
+i=0
+interval=setInterval("makedropshadow()",10)
+}
+
+function back()
+{
+clearInterval(interval)
+document.getElementById('myHeader').style.filter=false
+}
+
+function makedropshadow()
+{
+i++
+if (i<15)
+	{
+	document.getElementById('myHeader').style.filter="dropshadow(offx=" + i + ")"
+	document.getElementById('myHeader').style.filter="dropshadow(offy=" + i + ")"
+	}
+else if (window.interval)
+	{
+	clearInterval(interval)
+	}
+}
+</script>
+</head>
+
+<body>
+<h1 id="myHeader" onmouseover="dropshadow()" onmouseout="back()">Mouse over this header</h1>
+</body>
+
+</html>
+
+
+
+
+
+
+
+// Identical Forms
+
+<html>
+<head>
+<script type="text/javascript">
+function sameInfo()
+{
+for (i=0; i<document.myForm1.option.length; i++)
+	{
+	document.myForm2.option[i].value=document.myForm1.option[i].value
+	}
+}
+</script>
+</head>
+<body>
+
+<form name="myForm1">
+First name: <input onkeyup="sameInfo()" type="text" name="option"><br />
+Last name: <input onkeyup="sameInfo()" type="text" name="option"><br />
+Address: <input onkeyup="sameInfo()" type="text" name="option"><br />
+E-mail: <input onkeyup="sameInfo()" type="text" name="option"><br />
+</form>
+
+<form name="myForm2">
+First name: <input type="text" name="option"><br />
+Last name: <input type="text" name="option"><br />
+Address: <input type="text" name="option"><br />
+E-mail: <input type="text" name="option"><br />
+</form>
+
+</body>
+</html>
+
+
+
+// Change Color of Input Field
+
+<html>
+<head>
+<script type="text/javascript">
+function changeColor(color)
+{
+document.getElementById('x').style.background=color
+}
+</script>
+</head>
+
+<body>
+
+<p>This example demonstrates how to change the background color of an input field.</p>
+<p>Mouse over the three colored table cells, and the input field will change background-color:</p>
+
+<table width="100%"><tr>
+<td bgcolor="red" onmouseover="changeColor('red')"> </td>
+<td bgcolor="blue" onmouseover="changeColor('blue')"> </td>
+<td bgcolor="green" onmouseover="changeColor('green')"> </td>
+</tr></table>
+
+<form>
+<input id="x" type="text" value="Mouse over the colors" size="20">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+// Change Back ground Image of Input Field
+
+<html>
+<head>
+<script type="text/javascript">
+function bgChange(bg)
+{
+document.getElementById('x').style.background="url(" + bg + ")"
+}
+</script>
+</head>
+
+<body>
+
+<p>This example demonstrates how to insert a background image to an input field</p>
+<p>Mouse over these images and the input field will get a background image.</p>
+
+<table width="300" height="100">
+<tr>
+<td onmouseover="bgChange('paper.jpg')" 
+background="paper.jpg">
+</td>
+<td onmouseover="bgChange('bgdesert.jpg')" 
+background="bgdesert.jpg">
+</td>
+</tr>
+</table>
+
+<form>
+<input id="x" type="text" value="Mouse over the images" size="20">
+</form>
+
+</body>
+</html>
+
+
+
+// Background Image to Radio Button
+
+<html>
+<head>
+<script type="text/javascript">
+function bgChange(bg)
+{
+document.getElementById('x').style.background="url(" + bg + ")"
+}
+</script>
+</head>
+
+<body>
+
+<p>This example demonstrates how to insert a background image to a radio button</p>
+<p>Mouse over these images and the radio button will get a background image.</p>
+
+<table width="300" height="100">
+ <tr>
+  <td onmouseover="bgChange('paper.jpg')" 
+      background="paper.jpg">
+  </td>
+  <td onmouseover="bgChange('bgdesert.jpg')" 
+      background="bgdesert.jpg">
+  </td>
+</tr>
+</table>
+
+<form>
+Mouse over the images
+<input id="x" type="radio" checked>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+// Back GroundColor of Button
+
+<html>
+<head>
+<script type="text/javascript">
+function changeColor(color)
+{
+document.getElementById('x').style.background=color
+}
+</script>
+</head>
+
+<body>
+
+<p>This example demonstrates how to change the background color of a button.</p>
+<p>Mouse over the three colored table cells, and the background color will change:</p>
+
+<table width="100%"><tr>
+<td bgcolor="red" onmouseover="changeColor('red')"> </td>
+<td bgcolor="blue" onmouseover="changeColor('blue')"> </td>
+<td bgcolor="green" onmouseover="changeColor('green')"> </td>
+</tr></table>
+
+<form>
+<input id="x" type="button" value="Mouse over the colors">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+//Change text color of button
+
+<html>
+<head>
+<script type="text/javascript">
+function changeColor(color)
+{
+document.getElementById('x').style.color=color
+}
+</script>
+</head>
+
+<body>
+
+<p>This example demonstrates how to change the text color of a button.</p>
+<p>Mouse over the three colored table cells, and the text color will change:</p>
+
+<table width="100%"><tr>
+<td bgcolor="red" onmouseover="changeColor('red')"> </td>
+<td bgcolor="blue" onmouseover="changeColor('blue')"> </td>
+<td bgcolor="green" onmouseover="changeColor('green')"> </td>
+</tr></table>
+
+<form>
+<input id="x" type="button" value="Mouse over the colors">
+</form>
+
+</body>
+</html>
+
+
+
+
+// Background image of button
+
+<html>
+<head>
+<script type="text/javascript">
+function bgChange(bg)
+{
+document.getElementById('x').style.background="url(" + bg + ")"
+}
+</script>
+</head>
+
+<body>
+
+<p>This example demonstrates how to insert a background image to a button</p>
+<p>Mouse over these images and the button will get a background image.</p>
+
+<table width="300" height="100">
+ <tr>
+  <td onmouseover="bgChange('paper.jpg')" 
+      background="paper.jpg">
+  </td>
+  <td onmouseover="bgChange('bgdesert.jpg')" 
+      background="bgdesert.jpg">
+  </td>
+</tr>
+</table>
+
+<form>
+<input id="x" type="button" value="Mouse over the images">
+</form>
+
+</body>
+</html>
+
+

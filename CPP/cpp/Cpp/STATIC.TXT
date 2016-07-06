@@ -1,0 +1,12 @@
+ Static data members : A static member of a class
+  is allocated memory even before instantiation of
+  the class. All the objects of the class share
+  the same variable i.e., only one variable is
+  made available for all the objects of the class.
+  A static member of the class can be accessed 
+  with class name and scope resolution(::) operator.
+
+Static Member Functions : These functions can be 
+invoked with the class name. The functions are used 
+to handle static data of the class.
+

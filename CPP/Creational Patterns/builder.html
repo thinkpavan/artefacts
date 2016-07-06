@@ -1,0 +1,350 @@
+<html><head><title>Builder</title></head><body><h1><center>Builder</center></h1>
+
+<h3>Intent</h3>
+
+<ul>
+<li>Separate the construction of a complex object from its representation
+so that the same construction process can create different
+representations. [GoF, p97]
+</li><li>Parse a complex representation, create one of several targets.
+</li></ul>
+
+
+<h3>Problem</h3>
+
+An application needs to create the elements of a complex aggregate.
+The specification for the aggregate exists on secondary storage and one
+of many representations needs to be built in primary storage.
+
+
+<h3>Discussion</h3>
+
+Separate the algorithm for interpreting (i.e. reading and parsing) a
+stored persistence mechanism (e.g. RTF files) from the algorithm for
+building and representing one of many target products (e.g. ASCII, TeX,
+text widget).  The focus/distinction is on creating complex
+aggregates.<p>
+
+The "director" invokes "builder" services as it interprets
+the external format.  The "builder" creates part of the complex object
+each time it is called and maintains all intermediate state.  When the
+product is finished, the client retrieves the result from the
+"builder".</p><p>
+
+Affords finer control over the construction process.  Unlike creational
+patterns that construct products in one shot, the Builder pattern
+constructs the product step by step under the control of the
+"director".
+
+
+</p><h3>Structure</h3>
+
+<center>
+<img src="builder_files/builder_dcd.gif">
+</center><p>
+
+The Reader encapsulates the parsing of the common input.  The
+Builder hierarchy makes possible the polymorphic creation of
+many peculiar representations or targets.</p><p>
+
+</p><center>
+<img src="builder_files/gof2.jpg">
+</center>
+
+
+<h3>Example</h3>
+
+The Builder pattern separates the construction of a complex object from
+its representation so that the same construction process can create
+different representations.  This pattern is used by fast food restaurants
+to construct children's meals.  Children's meals typically consist of a
+main item, a side item, a drink, and a toy (e.g., a hamburger, fries,
+Coke, and toy car).  Note that there can be variation in the content of
+the children's meal, but the construction process is the same.
+Whether a customer orders a hamburger, cheeseburger, or chicken, the
+process is the same.  The employee at the counter directs the crew to
+assemble a main item, side item, and toy.  These items are then placed
+in a bag.  The drink is placed in a cup and remains outside of the
+bag.  This same process is used at competing restaurants.  [Michael
+Duell, "Non-software examples of software design patterns",
+<cite>Object Magazine</cite>, Jul 97, p54]<p>
+
+</p><center>
+<img src="builder_files/pateximg2.gif">
+</center>
+
+<!--
+Non-software <a href=http://www.agcs.com/supportv2/techpapers/patterns/papers/tutnotes/sld003.htm>example</a>
+-->
+
+
+<h3>Check list</h3>
+
+<ol>
+<li>Decide if a common input and many possible representations
+(or outputs) is the problem at hand.
+</li><li>Encapsulate the parsing of the common input in a Reader class.
+</li><li>Design a standard protocol for creating all possible output
+representations.  Capture the steps of this protocol in a Builder
+interface.
+</li><li>Define a Builder derived class for each target representation.
+</li><li>The client creates a Reader object and a Builder object, and
+registers the latter with the former.
+</li><li>The client asks the Reader to "construct".
+</li><li>The client asks the Builder to return the result.
+</li></ol>
+
+
+<h3>Before and after</h3>
+
+<table><tbody><tr><th>Before</th><th></th><th>After</th></tr>
+<tr><td valign="top"><pre>// BEFORE - This implementation is arguably preferable.  Each
+// table class encapsulates a different layout.
+
+class JTable_Table {
+   private JTable m_table;
+
+   public JTable_Table( String[][] matrix ) {
+      m_table = new JTable( matrix[0].length, matrix.length );
+      TableModel model = m_table.getModel();
+      for (int i=0; i &lt; matrix.length; ++i)
+         for (int j=0; j &lt; matrix[i].length; ++j)
+            model.setValueAt( matrix[i][j], j, i );
+   }
+   public Component get_table() { return m_table; }
+}
+
+class GridLayout_Table {
+   private JPanel m_table = new JPanel();
+
+   public GridLayout_Table( String[][] matrix ) {
+      m_table.setLayout( new GridLayout(
+                         matrix[0].length, matrix.length ) );
+      m_table.setBackground( Color.white );
+      for (int i=0; i &lt; matrix[i].length; ++i)
+         for (int j=0; j &lt; matrix.length; ++j)
+            m_table.add( new Label( matrix[j][i] ) );
+   }
+   public Component get_table() { return m_table; }
+}
+
+class GridBagLayout_Table {
+   private JPanel m_table = new JPanel();
+
+   public GridBagLayout_Table( String[][] matrix ) {
+      GridBagConstraints c = new GridBagConstraints();
+      m_table.setLayout( new GridBagLayout() );
+      m_table.setBackground( Color.white );
+      for (int i=0; i &lt; matrix.length; ++i)
+         for (int j=0; j &lt; matrix[i].length; ++j) {
+            c.gridx = i;
+            c.gridy = j;
+            m_table.add( new Label( matrix[i][j] ), c );
+   }     }
+   public Component get_table() { return m_table; }
+}
+
+public class BuilderDemo {
+   public static String[][] read_data_file( String file_name ) {
+      String[][] matrix = null;
+      try {
+         BufferedReader br = new BufferedReader(
+                             new FileReader( file_name ) );
+         String line, cell = "";
+         String[] tokens;
+         boolean first_line = true;
+         int row=0, col=0;
+         while ((line = br.readLine()) != null) {
+            // Use "whitespace" to tokenize each line
+            // java.sun.com/docs/books/tutorial/extra/
+            //    regex/pre_char_classes.html
+            tokens = line.split( "\\s" );
+            int i = 0;
+            if (first_line) {
+               matrix = new String[Integer.parseInt( tokens[0] )]
+                                  [Integer.parseInt( tokens[1] )];
+               i = 2;
+               first_line = false;
+            }
+            for ( ; i &lt; tokens.length; ++i)
+               if (tokens[i].equals( "<row>" )) {
+                  matrix[col][row++] = cell;
+                  cell = "";
+                  col = 0;
+               } else if (tokens[i].equals( "<cell>" )) {
+                  matrix[col++][row] = cell;
+                  cell = "";
+               } else {
+                  cell += " " + tokens[i];
+               }
+         }
+         matrix[col][row] = cell;
+         br.close();
+      } catch( Exception ex ) { ex.printStackTrace(); }
+      return matrix;
+   }
+   public static void main( String[] args ) {
+      JFrame frame = new JFrame( "BuilderDemo - " + args[0] );
+      frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+      String[][] matrix = read_data_file( "BuilderDemo.dat" );
+      if (args[0].equals( "JTable_Table" ))
+         frame.getContentPane().add(
+            new JTable_Table( matrix ).get_table() );
+      else if (args[0].equals( "GridLayout_Table" ))
+         frame.getContentPane().add(
+            new GridLayout_Table( matrix ).get_table() );
+      else if (args[0].equals( "GridBagLayout_Table" ))
+         frame.getContentPane().add(
+            new GridBagLayout_Table( matrix ).get_table() );
+      frame.pack();
+      frame.setVisible( true );
+}  }
+</cell></row></pre></td><td> &nbsp; &nbsp; </td><td valign="top"><pre>// AFTER - The main() creates a reader/parser, and configures
+// it with a builder (an object that implements a standard
+// interface and knows how to create one of many possible
+// "results".  The reader reads and parses the common input
+// and delegates the construction to the configured builder.
+
+// This implementation demonstrates the spirit of the Builder
+// pattern -- but -- it is more intricate, and probably cannot
+// be justified for this fairly limited context.
+
+class Reader {
+   private Builder m_builder;
+
+   public Reader( Builder b ) { m_builder = b; }
+
+   public void construct( String file_name ) {
+      try {
+         BufferedReader br = new BufferedReader(
+                        new FileReader( file_name ) );
+         String line, cell = "";
+         String[] tokens;
+         boolean first_line = true;
+         while ((line = br.readLine()) != null) {
+            tokens = line.split( "\\s" );
+            int i = 0;
+            if (first_line) {
+               m_builder.set_width_and_height(
+                              Integer.parseInt( tokens[0] ),
+                              Integer.parseInt( tokens[1] ) );
+               i = 2;
+               first_line = false;
+            }
+            for ( ; i &lt; tokens.length; ++i)
+               if (tokens[i].equals( "<row>" )) {
+                  m_builder.build_cell( cell );
+                  cell = "";
+                  m_builder.start_row();
+               } else if (tokens[i].equals( "<cell>" )) {
+                  m_builder.build_cell( cell );
+                  cell = "";
+               } else {
+                  cell += " " + tokens[i];
+               }
+         }
+         m_builder.build_cell( cell );
+         br.close();
+      } catch( Exception ex ) { ex.printStackTrace(); }
+}  }
+
+interface Builder {
+   void set_width_and_height( int width, int height );
+   void start_row();
+   void build_cell( String value );
+   Component get_result();
+}
+
+class JTable_Builder implements Builder {
+   private JTable     m_table;
+   private TableModel m_model;
+   private int i = 0, j = 0;
+
+   public void set_width_and_height( int width, int height ) {
+      m_table = new JTable( height, width );
+      m_model = m_table.getModel();
+   }
+   public void start_row() {
+      ++i;
+      j = 0;
+   }
+   public void build_cell( String value ) {
+      m_model.setValueAt( value, i, j++ );
+   }
+   public Component get_result() { return m_table; }
+}
+
+class GridLayout_Builder implements Builder {
+   private JPanel m_panel = new JPanel();
+
+   public void set_width_and_height( int width, int height ) {
+      m_panel.setLayout( new GridLayout( height, width ) );
+      m_panel.setBackground( Color.white );
+   }
+   public void start_row() { }
+   public void build_cell( String value ) {
+      m_panel.add( new Label( value ) );
+   }
+   public Component get_result() { return m_panel; }
+}
+
+class GridBagLayout_Builder implements Builder {
+   private JPanel m_panel = new JPanel();
+   private GridBagConstraints c = new GridBagConstraints();
+   private int i = 0, j = 0;
+
+   public void set_width_and_height( int width, int height ) {
+      m_panel.setLayout( new GridBagLayout() );
+      m_panel.setBackground( Color.white );
+   }
+   public void start_row() {
+      ++i;
+      j = 0;
+   }
+   public void build_cell( String value ) {
+      c.gridx = j++;
+      c.gridy = i;
+      m_panel.add( new Label( value ), c );
+   }
+   public Component get_result() { return m_panel; }
+}
+
+public class BuilderDemo {
+   public static void main( String[] args ) {
+      Builder target = null;
+      try {
+         target = (Builder) Class.forName(
+                               args[0] ).newInstance();
+      } catch( Exception ex ) { ex.printStackTrace(); }
+      Reader parser = new Reader( target );
+      parser.construct( "BuilderDemo.dat" );
+
+      JFrame frame = new JFrame( "BuilderDemo - " + args[0] );
+      frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
+      frame.getContentPane().add( target.get_result() );
+      frame.pack();
+      frame.setVisible( true );
+}  }
+</cell></row></pre></td></tr></tbody></table>
+
+
+<h3>Rules of thumb</h3>
+
+Sometimes creational patterns are complementory: Builder can use one of
+the other patterns to implement which components get built. Abstract
+Factory, Builder, and Prototype can use Singleton in their
+implementations. [GoF, p81, 134]<p>
+
+Builder focuses on constructing a complex object step by step. Abstract
+Factory emphasizes a family of product objects (either simple or
+complex). Builder returns the product as a final step, but as far as
+the Abstract Factory is concerned, the product gets returned
+immediately. [GoF, p105]</p><p>
+
+Builder often builds a Composite. [GoF, p106]</p><p>
+
+Often, designs start out using Factory Method (less complicated, more
+customizable, subclasses proliferate) and evolve toward Abstract
+Factory, Prototype, or Builder (more flexible, more complex) as the
+designer discovers where more flexibility is needed. [GoF, p136]
+</p></body></html>

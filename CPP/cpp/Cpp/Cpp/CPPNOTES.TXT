@@ -1,0 +1,51 @@
+
+  Class : It is a user defined datatype. An entity
+  is defined as class. A class contains group of
+  variables and methods that operate on these
+  variables.
+
+ Object : A variable of class is called as Object,
+ because it has predefined methods of accessing.
+
+ Data Encapsulation :  The procedure of enclosing
+ data and methods that operate on these data items
+ is called Data Encapsulation.
+
+     The variables declared inside a class are
+ called as data members of the class.
+
+    The functions defined inside the class are
+ called member functions of the class.
+
+    syntax :
+
+      class  <class name>
+	{
+	   <mode of accessibility> :
+	     data members
+	     member functions
+
+	   <mode of accessibility> :
+	     data members
+	     member functions
+
+	};
+
+
+    // public //
+	  If a member is public, it can be accessed
+    by any function. In C++, members of a struct or
+    union are public by default.
+
+    // private // 
+	If a member is private, it can only be
+    accessed by member functions and friends of the
+    class in which it is declared. Members of a
+    class are private by default. 
+
+    // protected // 
+	If a member is protected, its access is the
+    same as for private. In addition, the member can
+    be used by member functions and friends of classes
+    derived from the declared class, but only in
+    objects of the derived type.

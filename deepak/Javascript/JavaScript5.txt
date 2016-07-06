@@ -1,0 +1,103 @@
+Operators are used to operate on values.
+
+
+-----------------------------------------------------------------------
+
+Arithmetic Operators
+Operator Description Example Result 
++ 	Addition  
+	x=2
+	x+2  	4  
+- 	Subtraction  
+	x=2
+	5-x  	3  
+* 	Multiplication  
+	x=4
+	x*5 	20  
+/ 	Division  
+	15/5	3
+	5/2  	2.5 
+% 	Modulus (division remainder)  
+	5%2	1
+	10%8	2
+	10%2	0
+ 
+++ 	Increment 
+	x=5
+	x++ 	 x=6  
+
+-- 	Decrement 
+	x=5
+	x--  	x=4  
+
+Assignment Operators
+Operator Example Is The Same As 
+	= 	x=y 	x=y 
+	+= 	x+=y  	x=x+y  
+	-= 	x-=y  	x=x-y  
+	*= 	x*=y  	x=x*y  
+	/= 	x/=y  	x=x/y 
+	%= 	x%=y  	x=x%y 
+
+Comparison Operators
+Operator Description Example 
+	== is equal to  	5==8 	returns false  
+	!= is not equal  	5!=8 	returns true  
+	> is greater than  	5>8 	returns false  
+	< is less than  	5<8 	returns true 
+	>= is greater than or equal to  
+			5>=8 	returns false 
+	<= is less than or equal to  
+			5<=8 	returns true 
+
+Logical Operators
+Operator Description Example 
+	&& 	and  
+	x=6	y=3 
+	    (x < 10 && y > 1) returns true
+ 
+	|| 	or  	
+	x=6	y=3
+	(x==5 || y==5) returns false
+ 
+	! 	not  	
+	x=6	y=3 
+	!(x==y) returns true
+ 
+
+String Operator
+A string is most often text, for example "Hello World!". To stick two or more string variables together, 
+use the + operator.
+
+	txt1="What a very"
+	txt2="nice day!"
+	
+	txt3=txt1+ "   " + txt2 
+ 
+
+The variable txt3 now contains "What a verynice day!".
+
+To add a space between two string variables, insert a space into the expression, OR in one of the strings.
+
+txt1="What a very"
+txt2="nice day!"
+txt3=txt1+" "+txt2
+or
+txt1="What a very "
+txt2="nice day!"
+txt3=txt1+txt2
+ 
+
+The variable txt3 now contains "What a very nice day!".
+
+
+Conditional Operator
+JavaScript also contains a conditional operator that assigns a value to a variable based on some condition.
+
+Syntax
+variablename=(condition)?value1 :  value2 
+ 
+
+Example
+val =  (visitor=="PRES")?"Dear President ":"Dear "
+ 

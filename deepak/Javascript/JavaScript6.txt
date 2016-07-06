@@ -1,0 +1,29 @@
+Functions
+A function contains some code that will be executed by an event or a call to that function. A function is a set of statements. You can reuse functions within the same script, or in other documents. You define functions at the beginning of a file (in the head section), and call them later in the document. 
+
+// A function with arguments //
+function myfunction(argument1,argument2,etc)
+{
+some statements
+}
+
+
+//Call a Function  //
+myfunction(argument1,argument2,etc)
+ 
+
+
+
+// A function with no arguments //
+function myfunction()
+{
+some statements
+}
+
+
+//Call a Function  //
+myfunction()
+
+
+
+Functions that will return a result must use the "return" statement. 

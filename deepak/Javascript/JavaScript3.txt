@@ -1,0 +1,72 @@
+Sometimes we want to execute a script when a page loads, other times when a user triggers an event.
+
+
+
+Scripts in the BODY section will be executed WHILE the page loads.
+
+Scripts in the HEAD section will be executed when CALLED.
+
+
+Head section
+Scripts that contain functions go in the head section of the document. Then we can be sure that the script is loaded before the function is called.Script in the head section, is loaded before anyone uses it. 
+<html>
+<head>
+<script type="text/javascript">
+function message()
+{
+alert("This alert box was called with the onload event")
+}
+</script>
+</head>
+
+<body onload="message()">
+
+</body>
+</html>
+
+
+
+
+Body section
+Execute a script that is placed in the body section.
+<html>
+<head>
+</head>
+
+<body>
+
+<script type="text/javascript">
+document.write("This message is written when the page loads")
+</script>
+
+</body>
+</html>
+
+
+
+
+
+External script
+To run the same script on several pages, without writing the script on each and every page,write a script in an external file, and save it with a .js file extension.
+Note: The external script cannot contain the <script> tag
+
+Use the "src" attribute, from any of the pages to call this script
+
+
+
+
+<html>
+<head>
+</head>
+<body>
+
+<script src="xxx.js">
+</script>
+
+<p>
+The actual script is in an external script file called "xxx.js".
+</p>
+
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+
+  cout   --  It is a predefined object of ostream class 		which resembles output stream
+
+  cin   --  It is a predefined object of istream class 			which resembles input stream
+
+   >>     --  It is overloaded right shift operator. It is 			called as extraction operator. It is used in 			combination with cin object.
+
+	ex  :    
+	int       a;
+	cin>>a;
+
+   <<     --  It is overloaded left shift operator. It is 			called as insertion operator. It is used in 			combination with cout object.
+
+	ex :
+
+	cout<<"Sample data ";

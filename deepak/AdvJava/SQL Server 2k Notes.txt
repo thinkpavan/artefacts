@@ -1,0 +1,1089 @@
+Features of MS SQL Server 2000
+i) Easy Installation
+ii) Integration with internet
+iii) Supports client server model
+iv) scalability and availability
+v) Operating system compatibility
+a. server component
+Windows NT 4.0(With option pack 5), windows 2000 server, window 2000 advanced server
+b. Client component
+windows 98, windows 2000 professional(7.0), unix, linux, novel netware, banyan vines, appletalk, os/2
+vi) Multiple protocol compatibility
+	Protocol: Set of rules followed to tranfer the data in the network
+	a. Appletalk --> Apple
+	b. TCP/IP --> Microsoft
+vii)SMP compatibility
+SMP --> Symmetrical Multi processing
+viii) Data Warehousing
+Placing different types of datasources into data warehousing
+ix) ANSI/ISO SQL-92 compatibility
+ANSI --> American national standards institute
+ISO --> International standards organization
+SQL --> Structured query language
+Trasact SQl (T-SQL)
+
+x) Data replication support
+xi) Full text search
+xii) Books online
+
+
+Default Databases created in SQL Server 2000
+System defined databases
+i)Master
+-->User accounts, system configuration
+-->helps the sql server to find out the details about other user created databases
+ii) Model:
+Template can be used to create any object(Table,view,role etc) common to all user defined databases to be created 
+iii) MSDB
+Tasks to be performed at a given point of time
+iv)tempbd:
+Used to store the transactions done by different users on different databases
+
+User databases
+i)Northwind
+ii)Pubs
+
+Retrieving data using SELECT statement (Queries)
+
+Select * from employee
+
+Filtering
+a. Verticle
+Retreving data from particular columns of the table
+syntax:
+select col1,col2,... from <table name>
+ex:
+select empid,fname from employee
+
+b. Horizontal
+Retreving particular records of the table basing on criteria
+syntax:
+select [col1],[col2]... | * from <table_name> 
+[where condition]
+ex:
+select * from employee where jobid=11
+
+c. Combination
+
+select emp_id,fname,minit,lname from employee
+where minit='M'
+
+
+-->Constants in query result set
+Ex: select 'Item name of '+icode + ' is '+iname  from item
+-->Assingning result set column names (Alias Names)
+Ex: select icode as 'Item Code',Iname as 'Item Name',Price from item
+-->Computed values in a selected list
+Ex: select icode,iname,price,price*.1 as 'Discount' from item
+-->Eliminating duplicates with Distinct
+Ex: select distinct iname from item
+-->Limiting results set using Top and Percent
+a. using only top
+Ex: select top 10 * from  item 
+b. using top and percent
+Ex: select top 100 percent * from  item 
+-->Using relational operators and wild card characters
+Relational operators >, >=, <, <=, <>,= 
+Ex: select * from item where price>20000
+-->Logical operators (AND,OR,NOT)
+Truth Tables
+M	N	M And N		M or N
+T	T	T		T
+T	F	F		T
+F	T	F		T	
+F	F	F		F
+
+Ex:
+select * from item where iname='cd' or price=250
+
+Wild Cards with like operator:
+a.  '%' --> any character of any length
+ex: select * from item where iname like 'c%'
+b. '_' --> any single character
+select * from item where iname like 'p_'
+c. '[]' --> Specified group of characters
+select * from item where iname like 'p[co]'
+d. [^] --> Not from the specified group of characters
+select * from item where iname like 'p[^ab]%'
+-->Sorting the rows with order by
+ex: select * from item order by price desc
+Note: default order is ascending order
+
+DataBase Objects
+i) Table
+ii)Fields (Attributes/Columns)
+iii)Rows
+iv) Constraint
+v) Index
+vi) Views
+vii) Stored Procedures (sp_help)
+viii) Triggers
+
+Sql server security:
+i) Login Authentication
+	a. SQL server Authentication
+	b. Windows Authentication
+ii) Permission Validation
+Database Administrator --> Data Control Language
+Create users
+Assignining permissions (select,insert,delete,update)
+
+Note: Default format of date data displayed in sql server is 'yyyy-mm-dd'
+
+Queries
+Operators
+i) Between
+Ex 1: select lastname,birthdate from employees where birthdate between '1960-01-01' and '1965-12-31'
+Ex 2: select * from employees where employeeid between 3 and 6
+ii) in
+Ex: select * from employees where employeeid in (2,5,6,8,12) 
+iii) is null
+Ex: select * from employees where region is null
+iv) is not null
+Ex: select * from employees where region is not null
+
+Advanced Searching techniques
+i) Unions,intersect operators
+ii) Subqueries
+iii) Aggregate fucntions
+iv) Group by clause
+
+Data Integrity
+Constraints : conditions implemented on fields of the table to accept valid data
+
+i) Primary Key Constraint
+--> Unique values are allowed
+--> Not Null values are allowed
+
+CCODE	CNAME	ADD
+HAL	Hindu	Hyd
+BPL	Hindu   HYD
+
+Table: EMP
+Fields: EMPNO	ENAME	JOB	SAL	SOCIAL SEC NO.
+
+Canditate Key : EMPNO, SSNO
+Primary key : EMPNO
+Alternate key: SSNO
+
+Syntax : create table emp (empno integer primary key...)
+
+Composite Primary key:
+1	1-50
+2	1-50
+
+RollNo	SemNo	Name	Add
+1	1	Raju	Hyd	
+2	1	Ramu	Hyd
+1	2	Raji	Hyd
+2	6
+
+syntax: create table student(rno integer,semno integer, primary key(rno,semno))
+
+ii)Foreign Key Constraint
+create table emp(empno integer primary key,ename varchar(25),deptno integer references department)
+ 
+iii) not null Constraint
+create table emp(ename varchar(25) not null)
+
+iv) Default Constraint
+ex : create table std (rno integer,name varchar(20),email varchar(20) default 'no email')
+inserting a record:
+insert into std values (2,'Rani',default)
+
+v)Check Constraint
+Ex:
+create table std (rno integer,name varchar(20),email varchar(20) default 'no email'
+,age integer check (age<=120))
+
+20/02/2k4
+----------
+Creating Default Constraint in Enterprise Manager
+Creation:
+open database -->right click on 'defaults' option in object list of database-->click 'new default'-->mention name of the default constraint-->enter the value-->click on ok button
+
+Binding Default to table fields:
+click on defaults-->right click on existing default constraint-->click on 'Bind columns'-->select the table-->select the field-->click 'Add' button-->click on ok
+
+Creating Rules in Enterprise Manager:
+open database -->right click on 'Rules' option in object list of database-->click 'new rule'-->mention name of the default constraint-->enter the rule(text) (ex: @city in ('Hyd','Sec-bad') )--> click on ok button
+
+Binding Default to table fields:
+click on rules-->right click on existing rule-->click on 'Bind columns'-->select the table-->select the field-->click 'Add' button-->click on ok
+
+Indexes: Faster data retrieval
+T-Sql Syntax:
+create [clustered] [nonclustered] [unique]
+index <index name> on <table_name> (column name)
+ex:
+create nonclustered index dept_idx on empl (dept)
+
+dept	no.of record
+10	1,2,7,8
+20	3,6
+30	4,5,9
+
+Note: 
+sp_helpindex <table name>: used to find the list of indexes in a table
+
+Points to be indexes:
+i) Assign index to those columns which are going to participate more in conditions
+ii) creating more indexes in table will increase data manipulation time
+
+Types of Indexes
+a. Clustered Index
+-->sorts the records in the table physically and logically
+b. Non Clustered Index
+-->maintains data about the records seperately
+c. Unique Index
+-->Does not allow duplicate values
+
+Creating Indexes in Enterprise Manager
+click on 'Tools' main menu option-->click on 'wizards'-->click on '+' symbol of database option-->click on 'create index wizard'-->click on ok button
+
+Views: Virtual Tables created on real tables
+Syntax:
+Create view <view name> 
+as
+query
+ex:
+create view emp_acc 
+as
+select * from emp where dept=10
+
+select * from emp_acc
+
+Advantages of views:
+End User:
+	a. Easy to Understand
+	b. Easy To Manipulate
+Developer/Designer:
+	a. Easy To restrict (Security)	
+	b. Easy To maintain
+
+Guidelines For Creating Views:
+i) Create views on existing tables of current database
+ii) Create views on existing views, 32 levels of views, 1024 columns can be mentioned
+iii) Can apply defaults, rules and triggers on views also
+iv) Try to mention similar name or related name for views
+v) View definition exist in the database after dropping table also.
+vi) cannot use 'orderby' clause in view definition
+
+Updating table data through views
+-->cannot insert records through views if they did not have primary key fields
+-->cannot insert data into tables through the views which contain derived columns 
+-->cannot insert data into tables through the view which contain columns created using aggregate functions
+
+create view <view name> as
+complex query
+
+select * from <view name>
+
+Note: To view the query used to create the view
+sp_helptext <view name>
+
+Creating,altering,renaming views in Enterprise Manager:
+
+Creating:
+Right click on 'views' option in database objects list-->click on 'New view'-->system displays view 'design view'-->select the table using 'add table' on toolbar-->select the columns and mention the condition if required-->save the view with a specific name-->click on run (!) button to see the result of the view
+Altering:
+Right click on view to be altered-->click on 'design view'-->modify the view in 'design view' and save the view
+Renaming:
+select the view to be renamed-->press f2-->type the new name for the view-->press enter key-->system displays a message box to confirm the rename action-->click on 'yes'
+(Note: If view to be renamed is a reference object for any other object in the data base they will get effected, to avoid this click on 'no' button in the message box)
+
+sp_help <object name>
+sp_helptext <view name>
+
+Stored Procedures:
+Set of T-SQL statements or programming constructs executed for a particular task
+Types:
+a. System defined Stored Procedures:  sp_help <table name>
+-->having prefix as 'sp'
+-->can execute only
+b. Extended Stored Procedures: 
+-->having prefix as 'xp'
+-->can be created or execute also
+-->are created,stored and maintained externally (not inside sql server databases)
+-->created in the form of .dll files (dynamic link library)
+-->can be created by only sysadmin user
+
+c. User Defined Stored Procedures: 
+-->created by database designer
+-->can be created or execute also
+-->are created,stored and maintained internally (inside sql server databases)
+-->can be created by any user containing stored procedure creation previlege
+
+Local Variables:
+Declaration Syntax:
+declare  
+{
+@local var_name data type
+@local var_name data type
+@local var_name data type
+}
+ex:
+Declare @city varchar(20)
+Assiging Values to Local Variables:
+set @city='Hyderabad'
+or
+select @city='Hyderabad'
+
+display:
+select @city
+
+Can be used in sql queires as follows
+Ex:
+declare @sal integer
+set @sal=5000
+select * from empl where salary=@sal (5000)
+
+System Variables:
+-->Created by Sql-server 2000 developers
+-->prefix as '@@'
+
+Ex:
+@@version->sql version details
+@@trancount-->
+@@servername-->
+@@rowcount-->
+nestlevel-->displays the nesting levels of stored procedures
+language-->
+servicename
+procid
+connections
+fetch_status:
+
+System Defined Stored Procedures:
+i) sp_help -->to know/display the details of a table
+ii)sp_helptext -->used to display the query/text used to create a view
+iii)sp_databases--> list of existing databases in sql server
+iv)sp_stored_procedures-->list of user defined stored procedures existing in current database
+v)sp_tables -->list of tables existing in current database
+vi)sp_password --> used change the current password
+sp_password <new password>
+vii)sp_server_info --> list the server info such as character set, version , sort order etc
+viii)sp_start_job -->starts the automation task
+ix) sp_stop_job --> stops the automated task currently running
+
+Creating User Defined Stored Procedure
+Syntax:
+Create Proc[edure] <procedure_name>
+as
+code
+
+Example:
+create proc first
+as
+begin
+declare
+@fn integer, 
+@sn integer, 
+@res integer
+set @fn=20
+set @sn=40
+set @res=@fn+@sn
+select @res as "Result is"
+end
+
+Executing Stored procedures:
+syntax: exec[ute] <stored procedure name>
+Ex: exec first
+
+Parameterized stored procedures:
+
+syntax:
+create procedure <proc_name> 
+@parameter_name datatype,
+@parameter_name datatype
+as
+code
+	
+void emp_proc(int dno)
+{
+select * from empl where dept=dno;
+}
+
+Example:
+create proc emp_proc 
+@dno integer
+as
+select * from empl where dept=@dno
+
+Executing:
+exec emp_proc 30
+
+Example:
+create proc emp_ins
+@eno integer,
+@ena varchar(20),
+@dno integer,
+@m integer,
+@sal integer
+as
+begin
+insert into empl values (@eno,@ena,@dno,@m,@sal)
+end
+
+executing:
+exec emp_ins 222,'Raj Kumar',30,105,8000
+
+void sum(int n1=20,int n2=90)
+{
+printf("Sum is %d",(n1+n2);
+}
+
+sum(); //valid
+sum(30); //error
+sum(45,89,67); //error
+sum(40,50); //valid
+
+
+Default Values Stored Procedures:
+
+create proc max
+@fn integer=10,
+@sn integer=30
+as
+begin
+if @fn>@sn
+select @fn as "Highest Value"
+else if @fn=@sn
+select 'Both are Equal'
+else
+select @sn as "Highest Value"
+end
+
+exec max 90,200
+
+Creating SP's in EnterPrise manager
+Example:
+CREATE PROCEDURE pow  @x integer, @y integer
+AS
+begin
+declare @i integer,@res integer
+
+set @i=@y
+set @res=1
+while @i>0
+begin
+set @res=@res*@x
+set @i=@i-1
+end
+
+select @res as 'Result'
+end
+GO
+a. Without wizard
+open the database-->right click on stored procedures-->new stored procedure-->type the code for new stored procedures-->click on 'check syntax'-->click on 'ok' button.
+b. With wizard
+tools-->wizards-->click on database-->click on 'stored procedure wizard'-->ok-->select the options given in the 4 steps of wizard-->fininsh
+Note: To change the code or any other settings , right click on the created sp and click on properties
+
+Creating SP's in Enterprice Manager
+	a. with parameters
+	b. without parameters
+Modify the existing SP's:
+To change the code or any other settings , right click on the created sp and click on properties
+Deleting the existing SP's:
+right click on the sp to be deleted-->click on delete-->drop all(after checking dependencies)
+In T-sql : drop proc <proc name>
+
+Triggers: Event Handling (MultiTasking)
+Create trigger <trigger name>
+on emp
+for insert
+as
+sql statements
+
+Programming Constructs
+
+Declaring a variables
+declare @var integer
+set @var=value
+
+i) 
+if <condition>
+begin
+statements
+end
+else
+begin
+statements
+end
+ii) if <condition>
+begin
+statements
+end
+else if <condition>
+begin
+statements
+end
+Example:
+create procedure maxi
+@fn as integer,
+@sn as integer,
+@tn as integer
+as
+begin
+if @fn>@sn
+	begin
+	if @fn>@tn
+	select 'Highest Value:',@fn
+	else
+	select 'Highest Value:',@tn
+	end
+else
+	begin
+	if @sn>@tn
+	select 'Highest Value:',@sn
+	else
+	select 'Highest Value:',@tn
+	end
+end
+
+iv) goto Statement(Jump statement)
+goto <label>
+
+v) Operators
+Assigning =
+Arithmetic + , - , * ,% , /
+Conditional >,>=,<,<=,==,<>
+Logical And , Or , Not
+
+
+label:
+statements
+Example:
+
+declare @num integer
+set @num=10
+if @num=10 
+goto TEN
+else
+select * from empl
+TEN:
+select * from empl where dept=@num
+
+v) While loop
+while <conition>
+begin
+statements
+<on some codition>
+break
+end
+
+CREATE PROCEDURE pow  @x integer, @y integer
+AS
+begin
+declare @i integer,@res integer
+set @i=@y
+set @res=1
+while @i>0
+begin
+set @res=@res*@x
+set @i=@i-1
+end
+
+select @res as 'Result'
+end
+
+Case statement:
+
+case expression/var
+when value1 then
+statements
+when value2 then
+statements
+else 
+statements
+Example:
+
+create proc dayname @dno integer
+as
+begin
+case @dno
+when 1 then
+select 'It is Monday'
+when 2 then
+select 'It is Tuesday'
+when 3 then
+select 'It is WednesDay'
+when 4 then
+select 'It is Thursday'
+else
+select 'Invalid Day'
+end
+
+Triggers:
+-->Mainly used to implement data integrity or bussiness rules (Constriants)
+-->Are executed by the system explicitly when a appropriate action(insert,delete,update) is done on the tables
+-->Also the objects of the database
+-->Mentions the tables names,views,stored procedures which are existing in the current database
+
+Syntax:
+create trigger <trigger name>
+on table
+for {[Delete] [,] [Insert] [,] [Update]}
+[With Encryption]
+as Sql Statement
+
+on -->mention on which table trigger has to be created
+for -->mention on which action trigger has to be raised
+with Encryption: used to restrict other user to see the text used to create the trigger
+as --> used to mention the statements to be executed when trigger is raised
+
+Example 1:
+create trigger empl_ins_tr
+on empl
+for insert
+as
+print '***** Trigger Raised ***** '
+select * from empl
+
+Example 2:
+create trigger empl_ins_tr1
+on empl
+for insert
+as
+if (select sal for inserted) >25000
+begin
+	print 'Salary must be less than or equal to 25000'
+	Rollback Transaction 
+end 
+Data Control Language :  Commit, Rollback
+
+insert into empl values (222,'Anil',30,105,30000)
+select * from empl
+
+Types Of Triggers:
+a. Insert Triggers
+b. Update Triggers
+	i. Table Level
+	ii. Column Level
+c. Delete Triggers
+
+Update Trigger:
+-------------------
+Table Level:
+Create trigger dept_up_tr
+on dept
+for update
+as
+if (select dno from inserted)>100
+begin
+	print 'Department Number must be under 100'
+	Rollback Transaction
+end
+Column Level:
+Create trigger dept_up_tr
+on dept
+for update
+as 
+if update(loc)
+begin
+print 'Can not modify location field values'
+rollback transaction
+end
+
+Delete Triggers:
+i) Data Integrity
+ii) Cascading Operations
+
+Example 1:
+create trigger empl_del
+on empl
+for delete
+as
+if (select count(*) from deleted)>5
+begin
+print 'More than Five Records cannot be deleted'
+rollback transaction
+end
+
+Example 2:
+create trigger empl_del1
+on dept
+for delete
+as
+begin
+declare @dno integer
+set @dno=select dno from deleted
+delete from empl where dept=@dno
+end
+(OR)
+create trigger empl_del1
+on dept
+for delete
+as
+begin
+delete from empl where dept=select dno from deleted
+end
+
+Points to be Remembered:
+i)Triggers can not be created on Views
+ii)Do not mention any non existing objects for triggers
+iii)Do not mention any create object statements in side triggers definition
+ex: create table, create view, create index etc
+iv) Do not mention any object modification statements in side triggers definition
+ex: alter table, alter view etc
+
+Nested Triggers:
+-->Designer can nest the triggers upto 32 levels
+
+sp_configure: used to allow the designer to nest the triggers
+sp_configure 'nested trigger',1 (Enable)
+sp_configure 'nested trigger',0 (Disable)
+
+Instead Of Triggers:
+-----------------------
+Normal Delete Trigger:
+create trigger demo_tr
+on demo
+for delete
+as
+select mname as 'Deleted Records' from deleted
+select mname as 'Table Demo' from demo
+
+Instead of Trigger:
+create trigger demo_itr
+on demo
+instead of delete
+as
+select mname as 'Deleted Records' from deleted
+select mname as 'Table Demo' from demo
+
+Difference:
+If user create  normal trigger on the table demo and deletes some records from the table, trigger is raised and displays deleted records and records remaining in the table
+But if user create instead of trigger, server will not delete the records from the table it displays the records to be deleted and maintains the same in the table also.
+
+Data Types in Sql server 2000:
+
+Numeric:
+integer
+String:
+varchar: variable char
+char: character
+
+mcode char(4)
+mname varchar(25)
+
+m001	raju
+
+Money:
+Date:
+Boolean
+
+Functions of DB Designer:
+-->required tables(Entities) for database
+-->required fields(Attributes) for each table
+-->assign appropriate datatype for each field
+-->assign constraints required in the table
+
+MCode	MName	MAdd	MPhone
+M001	Raju	Hyd	87686876
+M002	Ramu	Hyd	98076987
+
+MCode--> Varchar
+MName-->Varchar
+MAdd-->Varchar
+MPhone-->Int
+
+Data Types Categories:
+Binary Data types:
+Used to store hexadecimal data (0-9 and A-F)
+i)binary: syntax binary[(n)] 
+required memory: 0-8000 bytes
+
+ii)varbinary: syntax varbinary[(n)]
+required memory: length of data entered plus 4 bytes
+
+Text DataTypes:
+Used to store alphabetical or alphanumeric data
+i)char: syntax: char[(n)] -0-8000 chars
+ii)varchar: syntax: varchar[(n)] upto 8000 chars
+iii)text: 214,748,36470 chars
+iv)nvarchar: upto 64000 chars
+
+Date and Time:
+i)datetime: jan1 1753  to  dec31 9999
+ii)smalldatetime: jan 1 1900 to june 6 2079
+
+Numeric Data Types:
+a. Integers:
++ve or -ve Numbers without decimals
+tinyint: 1 byte (0-255)
+smallint: 2 bytes( + or - 2 to the power 15)
+int: 4 bytes (+ or - 2 to the power 31)
+bigint: 8 bytes
+b. Decimal Data:
++ve or -ve Numbers with decimals
+float: 8 bytes (+or - 1.79E+ 308)
+real: 4 bytes  (+ or - 3.4E+38)	
+
+Monetary Data: 
+Used to store the currency values with 4 digits of precision
+money: 8 bytes (+ or - 2 to the power 63)
+smallmoney: 4 bytes (+ or - 214,748,36470 bytes)
+
+Special Datatypes:
+image: to store image files (.bmp,.jpeg,.gif, .jpg)
+uniqueIdenfier(GUID):
+--> To generate unique hexadecimal value which is common globally
+--> To insert a record use newid() function for this field
+--> System generates a 32 character value, using 0-9 and A-F characters
+
+Example: 
+Creating table: create table demo(rid uniqueidentifier,sname varchar(10))
+Inserting values: insert into demo values(newid(),'Ramu')
+Records inserted: 3DDD562A-411D-46A5-97DA-BCB858A89AC1	Raju
+
+Query Techniques:
+Aggregate Functions:
+Sum(), avg(), min(), max(), count()
+
+Using Cube Operator:
+-->cube is an aggregate fucntion that produces comprehensive results which includes both the usual rows as well as summarising rows for each value specified in the group by class.
+
+Syntax:
+select col1 [,col2].. from table_name group by exp1 [,exp2].. with cube
+
+Example: select dno,sum(salary) "Total",count(dno) as "No of emps" from emp group by dno with cube
+Note:
+Rollup operator also can be use to create more summarised data like cube.
+It is similar to cube operator
+ex: select col1 [,col2].. from table_name group by exp1 [,exp2].. with rollup
+
+Compute and Compute By:
+-->The compute clause is used with select statement to produce summary rows with the help of aggregate function in the result set
+-->Compute by clause is used for further summarise the result set
+syntax:
+select col1 [,col2].. from table_name order by co1_name compute
+aggregate_function(col_name) [by col1 [,col2]....]
+
+example: 
+with compute
+-->select * from service order by ss_code compute avg(ss_fare)
+-->select empno,empname,dno,salary from emp order by dno compute avg(salary)
+with compute by
+-->select * from service order by ss_code compute avg(ss_fare) by ss_code
+-->select empno,empname,dno,salary from emp order by dno compute avg(salary) by dno
+
+Data Transformation Services:
+Importing Data
+Exporting Data
+	Sql Server Database-->Sql Server Database
+	Access	              -->Sql Server Database
+
+Exporting Data Using Enterprise Manager(Local Packages):
+Open Enterprise Manager-->Double click on 'Data Transformation Services'-->Right Click on 'local packages'-->New Package-->Drag 'Sql server' connection icon and place it on workspace-->System displays connection properties-->select new name infront of new connection-->Select the source database-->OK-->Drag 'Ms access' connection icon and place in on workpace-->In connection properties, type new name--> click on '...' button-->and select the access database-->OK-->click on 'Transform data task' icon on the toolbar-->select the source database as 'Northwind'-->select the destination database as 'Stronghold1'-->select the solid arrow, right click-->properties-->select the source table-->click on 'destination tab'-->create button-->OK-->Trasformation tab -->select all button-->OK-->package menu option-->Execute-->OK-->Done-->Package menu option-->save-->type the name for the local package-->OK
+
+Creating Backup of any Database:
+Tools-->Backup database-->select the database-->click on Add button-->select the location for the backup and type the backup file name-->OK-->OK-->OK
+Restoring the database using the created backup:
+Tools-->Restore Backup-->Type the name of the database to be restored-->select the database name to be restored using the option 'show backups of the database'-->ok-->Ok
+Note:Backup can be created using wizards also
+Tools-->Wizards-->Management-->Backup wizard
+
+Back copy Program: (BCP)
+-->It is used to copy the required table records from database to other.
+-->used to insert large number of  new rows into sql server table and vice versa
+-->user must understand the structure of the table,  type of data that are valid for the rows in the destination table 
+-->Data file containing imported data needs to be in row/col format so that the bcp utility can understand how the data is to be inserted
+-->terminator can be decribed
+
+1,Raju,Hyderad
+2, Ramu,Sec-Bad
+
+Prerequisite for bulk copying data are:
+a. the destination table must already exist
+b. Compatible datatype of the fields
+c. Relavant Permissions to bulk copy into fields of table
+
+syntax: bcp [database name].[owner].[table_name] {in|out} data_file_name -s [Server_name]  -T (specifies that bcp connect via a trusted connection) -n (sets the datatype as native)
+Ex: bcp pubs..employee out exercise.dat -T -n
+
+i) Date Integrity Constraints
+ii) Views
+iii) Stored Procedures
+iv) Triggers
+v) Cursors
+
+Security:
+-->Create users for the database
+-->Assign permissions for those users
+Steps:
+Creating user:
+Enterprise Manager-->Double click on any one database -->Right click on the 'users' option-->Select 'New Database User'-->displays a dialog box-->select 'new ' in 'login name' list box-->displays 'server login properties' dialog box-->type the user name-->select 'SQL server authentication'-->Type the password-->select the default database to be connection if user logs-->re-enter the password-->select 'accountant' in 'login name' from the list-->OK
+Assigning Permissions:
+Double click on the user create-->click on 'permissions' button-->select the required permissions (select,insert,delete,update,exec etc)-->OK-->OK
+Note: Rightclick on the user-->Delete-->Yes
+
+Cursors:
+-->Is a database object used by applications to manipulate the data by rows instead of sets.
+-->Using a cursor, multiple operations can be performed row by row against the result set with or without returning to the original table. 
+
+Two methods of creating cursors:
+-->Transact SQL:
+The transact sql language supports the syntax for using cursors modelled after the sql-92 cursor syntax
+-->Database application programming interface (API)
+
+Cursor Process:
+-->Associate a cursor with the result set of transact-sql statement and define characterstics of a cursor such as how the rows are going to be retrieved.
+-->Execute the transact-sql statement to populate the cursor
+-->Retrieve the rows in a cursor. The operation to retrieve one row or a set of rows from a cursor is called a fetch. Performing series of fetch to retrieve the rows backward or forward is called scrolling.
+-->Optionally, perform the modification (update or delete) on the row at the current cursor position
+-->Close the cursor
+
+i)Creating cursor:
+Declare <cursor_name> CURSOR
+For
+<Select statement>
+ii) Open <cursor_name>
+iii) Records are fetched from the cursor to display them on the screen.
+Fetch <cursor_name>
+iv)Optionally a cursor can be closed temporarily when it is not required.
+close <cursor_name>
+v) cursor is not required any more, its reference is removed.
+Deallocate <cursor_name>
+
+Fetching and scrolling the cursor:
+-->Fetch first, Fetch next, Fetch prior, fetch last, 
+-->Fetch absolute n -5
+a. n th row in the curors
+b. -ve means nth row before the last rows
+c. if 0 no rows are fetched
+-->Fetch relative n
+a. n th row from the previously fetch row
+b. -ve
+c. 0
+
+More options with Declare statement:
+Declare <cursor_name> cursor 
+[local | global] [forward only|scroll] 
+[static|keyset|Dynamic]
+[read_only|scroll_locks|optimistic]
+for <select statements>
+
+creating:
+declare cur1 cursor
+scroll
+for select pnr_no,titeck_no, from passenger
+where pnr_no=1
+opening:
+Open cur1
+fetching:
+fetch cur1
+next row:
+fetch next from cur1
+rast row
+fetch last from cur1
+-->fetch absolute 2 from cur1
+-->fetch relative  1 from cur1
+
+Forward only cursor:
+declare cur2 cursor
+forward_only
+for select * from reservation where class_code='FC' for update
+open cur2
+fetch cur2
+update reservation set journey_date='2001/5/15' where current of cur2 
+select * from reservation where class_code='FC'
+
+scroll cursor:
+declare cur3 cursor 
+scroll
+for 
+select aircraft_code,type,source,destination,dep_time from flight
+where source='Mum'
+open cur3
+fetch first from cur3
+while @@fetch_status=0
+begin
+fetch next from cur3
+end
+
+Transactions:
+They are group of database operations combined into a single unit of work that is either completely committed or rolled back. All the actions that occur on the database break down to one or more transactions.
+
+A logical unit of work must exibit four properties a called 'ACID properties'
+Atomicity:Either all its action should be performed or none of them should be performed.
+Consistency: Before the transaction starts, the system is in consistent state and when a transaction is completed, the system once again must be known in consistent state
+Isolation: Transactions must be stand-alone and have no dependence or effect on the other transactions.
+Durability: Durability implies that the transaction modifications are permanent and persistent.
+
+Begin tran or Begin Transaction:  
+Sql server starts the transaction.
+-->When the insert,select,update,delete statement is detected, sql server allocated a new transaction id and creates a log record in the memory. If the records are altered, a new record is created and recorded in the memory.
+-->All altered rows are recorded in the logs and then the data page is actually changed in memory.
+-->Sql server recieves 'commit tran' , the recordes are written to the transaction log of the database. This ensures that all the transactions can be recovered, in the event of power failure. The log records are stored separately in the tempory files and they cannot be accessed with any Transact sql statements. Only sql server internal process can access them.
+-->Once the transaction logs are written the changes are automatically applied to the database.
+
+Types of transactions:-
+Explicit transactions: These are manually configured transactions in which the beginning and the end of transaction are clearly defined.(User defined transcations)
+Reserved words:
+Begin Transaction, Commit Transaction, Commit work (transaction name) , Rollback transaction and rollback work <name of transaction>
+
+Statements not supported by explicit transaction:
+-->Alter database, drop database, restore database, create database, disk init, load database, load transaction
+
+Note: Explicit transcations last only for the duration of the transaction.
+
+Implicit Transaction:
+-->It is enabled with the statment 'set implicit_transaction on'
+-->Server commences
+-->keywords
+Alter table, revoke, create, select, delete, insert, drop, update
+-->set implicit_transaction off
+-->failed rollback
+-->no need for begin
+
+Ex:
+Autocommit Transactions:
+If statement is completed successfully, it is committed and if it encounters any error, it is rolled back.
+
+Use of @@Trancount system variable
+
+Locks:
+Lock is a restriction for accessing data in multiuser environment.
+--> To prevent concurrent data manipulation problems
+--> Ensure transactional integrity and database consistency.
+--> Prevents the user reading the data which is being changed by other users
+
+Types:
+i) Shared:
+-->Used for oprations that do not change the data (select), cannot be used for update,delete,insert etc
+--> Used for read only operations
+--> No other transactions can modify the data while shared locks exists on the resource
+ii) Exclusive:
+-->For data manipulation operations such as insert,update, delete 
+-->No other transaction can read or modify data locked with an exclusive lock
+-->held until a transaction commits and rollback
+iii)Update:
+-->Used for update transactions
+-->shared lock-->data found-->exculsive lock-->update
+-->only one session can obtain an update lock to a resource at a time.
+Lock Levels:
+Row, Key,Tables,Database
+
+Handling Problems:
+i) Blocks: (Blocking) This Occurs when one user who has acquired the resource first is doing continuous operations
+ii)Deadlock:
+-->A dead lock occurs when two users have locks on seperate objects and each user wants a lock on the other objects.
+-->Sql server automatically fixes the deadlock problem by choosing one application and forcing it to realease its lock, while allowing the other one to continue
+GuideLines:
+-->Avoid running transactions simultaneously
+
+New Features of SQL-Server 2000
+
+C:\Program Files\Microsoft SQL Server\80\Tools\HTML\studentres.htm
+
+Converting Sqlserver table data into data in Xml Format:
+select * from reservation for xml raw
+select * from reservation for xml auto: Displayes table name for each record converted into xml format
+
+	SQL SERVER
+	PROG IN VB.NET
+	APPLICATION DEV. CONCEPTS
+	WINFORMS USING VB.NET
+	PROJECT (WINFORMS, SQL SERVER)

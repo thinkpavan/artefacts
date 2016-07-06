@@ -1,0 +1,52 @@
+<html>
+<head><h2><b><i><u>Cricket Teams</u></i></b></h2>
+</head>
+<script  language="Javascript">
+function  goPrev()
+	{
+	      if(teams.recordset.absolutePosition>1)
+	        teams.recordset.movePrevious()
+	       else
+	             alert("Already at the first record ")
+
+  document.getElementById('recno').innerText = teams.recordset.absolutePosition
+
+	}
+
+function  goNext()
+	{
+	      if(teams.recordset.absolutePosition != teams.recordset.recordCount)
+	        teams.recordset.moveNext()
+	       else      
+	       alert("Already at the last record ")
+
+ document.getElementById('recno').innerText = teams.recordset.absolutePosition
+	}
+</script>
+<body bgcolor="ffff66" text="red">
+<object  ID="teams"
+	CLASSID = "clsid:333C7BC4-460F-11D0-BC04-0080C7055A83"
+	border=0  width=0  height=0>
+<PARAM   name="DataURL"   value="Details.txt" >
+<PARAM   name="UseHeader"   value="true" >
+</object>
+<form>
+<pre><b><h4>
+Team Name    :   <Input  type=text  DATASRC="#teams"  DATAFLD="Teamname"><br>
+Played       :   <Input  type=text  DATASRC="#teams"  DATAFLD="Played"><br>
+Won          :   <Input  type=text  DATASRC="#teams"  DATAFLD="Won"><br>
+Average      :   <Input  type=text  DATASRC="#teams"  DATAFLD="Avg"><br>
+Rank         :   <Input  type=text  DATASRC="#teams"  DATAFLD="Rank"><br>
+</h4></b></pre>
+<input  type=button  value="Prev"   onclick="goPrev()">   
+<input  type=button  value="Next"  onclick="goNext()">
+
+</form>
+<span  id="recno">  </span>&nbsp; of Records <span  id="recscount" >  </span>
+<script   language="Javascript">
+ document.getElementById('recno').innerText = teams.recordset.absolutePosition
+ document.getElementById('recscount').innerText = teams.recordset.recordCount
+</script>
+
+</body>
+</html>

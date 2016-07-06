@@ -1,0 +1,41 @@
+
+
+
+
+	Predefined typedefs for iterator	  Direction of ++					Capablity
+	
+	
+	iterator					forward											read/write
+	
+	const_iterator				forward											read
+	
+	reverse_iterator				backward											read/write
+	
+	const_reverse_iterator			backward											read
+	
+	
+	
+	iterator oprations			Descriptions
+	
+
+
+	All   Iterators 
+	
+	++p		preincrement an iterator
+	p++		postincrement an iterator
+	
+
+	Input iterator
+	
+	*p	dereference an iterator for use as an rvalue
+	p = p1 assign one 	iterator to another
+	p == p1 compare iterator for equality
+	p != p1 compare iterator for inequality
+	
+	output iterator
+	
+	*p dereference an iterator for use as an lvalue
+	p = p1 assign one iterator to another
+	
+	
+		

@@ -1,0 +1,22 @@
+
+   Inline Functions : The functions mentioned almost
+   in a line are called Inline Functions.
+      Inline functions are best reserved for
+   small, frequently used functions.
+
+	Loops, switch , and declaration of static
+   variables is not valid in inline functions.
+	The member functions defined inside the
+   class are by default inline functions.
+	The keyword inline is a request to
+   consider the the function as inline, and the
+   request may not be considered if the code is
+   lengthy or by using loops,etc.
+
+    syntax :
+
+  inline  RDT  <functionname> (Parameters,....)
+		{
+		  ---
+		-----
+		}

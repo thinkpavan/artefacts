@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+class Base{
+public:
+	void f(void) const{
+		cout<<"Base \n";
+	}
+};
+
+class Derived : public Base{
+public:
+	void f(void) const{
+		cout<<"Derived\n";
+	}
+};
+void test(Base *basePtr){
+
+	Derived *derivedPtr;
+	derivedPtr = static_cast<Derived *>(basePtr);// derivedPtr = (Derived *) basePtr;
+	derivedPtr->f();
+}
+
+int main(){
+	double d = 8.22;
+	int x  = static_cast<int>(d);
+	cout<<" \n D = "<<d<<"\t x = "<<x<<endl;
+	Base base;
+	test(&base);
+}

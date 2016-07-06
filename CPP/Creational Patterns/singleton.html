@@ -1,0 +1,269 @@
+<html><head><title>Singleton</title></head><body><h1><center>
+Singleton
+</center></h1>
+
+<h3>Intent</h3>
+
+<ul>
+<li>Ensure a class has only one instance, and provide a global point of
+access to it. [GoF, p127]
+</li><li>Encapsulated "just-in-time initialization" or "initialization on
+first use".
+</li></ul>
+
+
+<h3>Problem</h3>
+
+Application needs one, and only one, instance of an object.  Additionally,
+lazy initialization and global access are necessary.
+
+
+<h3>Discussion</h3>
+
+Make the class of the single instance object responsible for creation,
+initialization, access, and enforcement.  Declare the instance as a
+private static data member.  Provide a public static member function
+that encapsulates all initialization code, and provides access to the
+instance.<p>
+
+The client calls the accessor function (using the class name and scope
+resolution operator) whenever a reference to the single instance is
+required.</p><p>
+
+Singleton should be considered only if all three of the following
+criteria are satisfied:
+</p><ul>
+<li>Ownership of the single instance cannot be reasonably assigned
+</li><li>Lazy initialization is desirable
+</li><li>Global access is not otherwise provided for
+</li></ul>
+
+If ownership of the single instance, when and how initialization
+occurs, and global access are not issues, Singleton is not sufficiently
+interesting.<p>
+
+The Singleton pattern can be extended to support access to an
+application-specific number of instances.</p><p>
+
+The "static member function accessor" approach will not support
+subclassing of the Singleton class.  If subclassing is desired, refer
+to the discussion in the book.</p><p>
+
+Deleting a Singleton class/instance is a non-trivial design problem.
+See "To kill a Singleton" by John Vlissides (<cite>C++ Report</cite>,
+Jun 96, pp10-19) for a discussion.
+
+
+</p><h3>Structure</h3>
+
+<center>
+<img src="singleton_files/singleton_dcd.gif">
+</center>
+
+Make the class of the single instance responsible for access and
+"initialization on first use".  The single instance is a private
+static attribute. The accessor function is a public static method.
+
+<center>
+<img src="singleton_files/gof5.jpg">
+</center>
+
+
+<h3>Example</h3>
+
+The Singleton pattern ensures that a class has only one instance and
+provides a global point of access to that instance.  It is named after
+the singleton set, which is defined to be a set containing one
+element.  The office of the President of the United States is a
+Singleton.  The United States Constitution specifies the means by which
+a president is elected, limits the term of office, and defines the
+order of succession.  As a result, there can be at most one active
+president at any given time.  Regardless of the personal identity of
+the active president, the title, "The President of the United States"
+is a global point of access that identifies the person in the office.
+[Michael Duell, "Non-software examples of software design
+patterns", <cite>Object Magazine</cite>, Jul 97, p54]<p>
+
+</p><center>
+<img src="singleton_files/pateximg5.gif">
+</center>
+
+<!--
+Non-software <a href=http://www.agcs.com/supportv2/techpapers/patterns/papers/tutnotes/sld007.htm>example</a>
+-->
+
+
+<h3>Check list</h3>
+
+<ol>
+<li>Define a private <code>static</code> attribute in the "single
+instance" class.
+</li><li>Define a public <code>static</code> accessor function in the class.
+</li><li>Do "lazy initialization" (creation on first use) in the
+accessor function.
+</li><li>Define all constructors to be <code>protected</code> or
+<code>private</code>.
+</li><li>Clients may only use the accessor function to manipulate
+the Singleton.
+</li></ol>
+
+
+<h3>Before and after</h3>
+
+<table><tbody><tr><th>Before</th><th></th><th>After</th></tr>
+<tr><td valign="top"><pre>// A global variable is default initialized -
+// when it is declared - but it is not ini-
+// tialized in earnest until its first use.
+// This requires that the initialization
+// code be replicated throughout the appli-
+// cation.
+
+class GlobalClass {
+   int  m_value;
+public:
+   GlobalClass( int v=0 )  { m_value = v; }
+   int  get_value()        { return m_value; }
+   void set_value( int v ) { m_value = v; }
+};
+
+// Default initialization
+GlobalClass*   global_ptr = 0;
+
+void foo( void ) {
+   // Initialization on first use
+   if ( ! global_ptr )
+      global_ptr = new GlobalClass;
+   global_ptr-&gt;set_value( 1 );
+   cout &lt;&lt; "foo: global_ptr is "
+        &lt;&lt; global_ptr-&gt;get_value() &lt;&lt; '\n';
+}
+
+void bar( void ) {
+   if ( ! global_ptr )
+      global_ptr = new GlobalClass;
+   global_ptr-&gt;set_value( 2 );
+   cout &lt;&lt; "bar: global_ptr is "
+        &lt;&lt; global_ptr-&gt;get_value() &lt;&lt; '\n';
+}
+
+int main( void ) {
+   if ( ! global_ptr )
+      global_ptr = new GlobalClass;
+   cout &lt;&lt; "main: global_ptr is "
+        &lt;&lt; global_ptr-&gt;get_value() &lt;&lt; '\n';
+   foo();
+   bar();
+}
+
+// main: global_ptr is 0
+// foo: global_ptr is 1
+// bar: global_ptr is 2
+</pre></td><td> &nbsp; &nbsp; </td><td valign="top"><pre>// Make the class responsible for its own
+// global pointer and "initialization on
+// first use" (by using a private static
+// pointer and a public static accessor
+// method).  The client uses only the public
+// accessor method.
+
+class GlobalClass {
+   int    m_value;
+   static GlobalClass* s_instance;
+   GlobalClass( int v=0 ) { m_value = v; }
+public:
+   int  get_value()        { return m_value; }
+   void set_value( int v ) { m_value = v; }
+   static GlobalClass* instance() {
+      if ( ! s_instance )
+         s_instance = new GlobalClass;
+      return s_instance;
+   }
+};
+
+// Allocating and initializing GlobalClass's
+// static data member.  The pointer is being
+// allocated - not the object inself.
+GlobalClass* GlobalClass::s_instance = 0;
+
+void foo( void ) {
+   GlobalClass::instance()-&gt;set_value( 1 );
+   cout &lt;&lt; "foo: global_ptr is "
+        &lt;&lt; GlobalClass::instance()-&gt;get_value()
+        &lt;&lt; '\n';
+}
+
+void bar( void ) {
+   GlobalClass::instance()-&gt;set_value( 2 );
+   cout &lt;&lt; "bar: global_ptr is "
+        &lt;&lt; GlobalClass::instance()-&gt;get_value()
+        &lt;&lt; '\n';
+}
+
+int main( void ) {
+   cout &lt;&lt; "main: global_ptr is "
+        &lt;&lt; GlobalClass::instance()-&gt;get_value()
+        &lt;&lt; '\n';
+   foo();
+   bar();
+}
+
+// main: global_ptr is 0
+// foo: global_ptr is 1
+// bar: global_ptr is 2
+</pre></td></tr></tbody></table>
+
+
+<h3>Rules of thumb</h3>
+
+Abstract Factory, Builder, and Prototype can use Singleton in their
+implementation. [GoF, p134]<p>
+
+Facade objects are often Singletons because only one Facade object is
+required. [GoF, p193]</p><p>
+
+State objects are often Singletons. [GoF, p313]</p><p>
+
+It's relatively easy to protect Singleton against multiple
+instantiations because there is good language support in this
+area.  The most complicated problem is managing a Singleton's
+lifetime, especially its destruction ... There are serious
+threading issues surrounding the pattern. [Alexandrescu, p155]
+&nbsp; For C++ lifetime issues, see Alexandrescu, pp133-145.
+&nbsp; For C++ multi-threaded implementation, see Alexandrescu,
+pp145-148. &nbsp; For Java multi-threaded implementation,
+see Freeman, pp179-182. &nbsp; For subclassing the Singleton
+instance, see Gamma, pp130-131.</p><p>
+
+The advantage of Singleton over global variables is that you
+are absolutely sure of the number of instances when you use
+Singleton, and, you can change your mind and manage any number
+of instances. [Ralph Johnson]</p><p>
+
+The Singleton design pattern is one of the most inappropriately
+used patterns.  Singletons are intended to be used when a class
+must have exactly one instance, no more, no less ... [Designers]
+frequently use Singletons in a misguided attempt to replace
+global variables ... A Singleton is, for intents and purposes,
+a global variable.  The Singleton does not do away with the
+global; it merely renames it. [Hyslop, p51]</p><p>
+
+When is Singleton unnecessary? &nbsp; Short answer: most of the
+time. &nbsp; Long answer: when it's simpler to pass an object
+resource as a reference to the objects that need it, rather than
+letting objects access the resource globally ... The real problem
+with Singletons is that they give you such a good excuse not to
+think carefully about the appropriate visibility of an object.
+&nbsp; Finding the right balance of exposure and protection for
+an object is critical for maintaining flexibility. [Kerievsky,
+pp115-116]</p><p>
+
+Our group had a bad habit of using global data, so I did a study
+group on Singleton. &nbsp; The next thing I know Singletons
+appeared everywhere and none of the problems related to global
+data went away. &nbsp; The answer to the global data question
+is not, "Make it a Singleton." &nbsp; The answer is, "Why in the
+hell are you using global data?" &nbsp; Changing the name doesn't
+change the problem. &nbsp; In fact, it may make it worse because
+it gives you the opportunity to say, "Well I'm not doing that,
+I'm doing this&#8221; &#8211; even though this and that are the same thing.
+[Frieder Knauss]
+</p></body></html>

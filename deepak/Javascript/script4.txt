@@ -1,0 +1,19 @@
+
+ // Declare a Variable //
+var <variablename> = <value>
+
+ (or)
+
+<variablename> = <value>
+
+ Ex :
+
+    var   a;
+
+     a = 78;
+
+// String Operator //
+
+To join two or more string variables together, 
+use the + operator.
+

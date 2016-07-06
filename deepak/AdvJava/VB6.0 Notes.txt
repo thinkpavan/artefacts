@@ -1,0 +1,413 @@
+Picture Box: Displaying Pictures(.bmp, .jpeg)
+Picuture1.picture=loadpicture("c:\mypic.bmp")
+Functions:
+Time
+Date
+
+Form_load()
+Label1.caption=time$
+Label2.caption=date$
+
+Format functions used for date display:
+
+format$(now,"m-d-yy") --> 1-1-04
+format$(now,"m/d/yy") --> 1/1/04
+format$(now,"mm-dd-yy") --> 01-01-04
+format$(now,"dddd,mmmm d,yyyy") --> friday,january 1,2004
+format$(now,"d mmm,yyyy") --> 1 jan,2004
+format$(now,"hh:mm:ss mm/dd/yy") --> 01:20:57 01/01/04
+format$(now,"hh:mm:ss AM/PM  mm/dd/yy") --> 01:20:57 PM 01/01/04
+
+Form
+Label
+TextBox
+CheckBox
+RadioButton
+Button
+Scroll Bar(HSB,VSB)
+ListBox
+Combobox
+MaskedEditBox
+Frames
+PictureBox
+DriveListBox
+DirListBox
+FileListbox
+RichTextBox
+Timer
+ImageList
+
+Slider
+Tree
+Dialog boxes
+
+Menu Bar: (MenuItems)
+Creating Menu Bar:
+Right click on form in design view-->click on 'Menu Editor' option-->
+
+Ex:
+Private Sub mnublue_Click()
+Form1.BackColor = &HFF0000
+mnured.Checked = False
+mnublue.Checked = True
+mnugreen.Checked = False
+End Sub
+
+Private Sub mnuexit_Click()
+End
+End Sub
+
+Private Sub mnugreen_Click()
+Form1.BackColor = &HC000&
+mnured.Checked = False
+mnublue.Checked = False
+mnugreen.Checked = True
+End Sub
+
+Private Sub mnured_Click()
+Form1.BackColor = &HFF&
+mnured.Checked = True
+mnublue.Checked = False
+mnugreen.Checked = False
+End Sub
+
+
+Properties:
+Checked,visible,Enabled
+
+PopUp Menu: Menu displayed if user press right mouse button
+'vbleftbutton=1
+'vbRightButton = 2
+'vbMiddleButton = 4
+
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+'If Button = vbRightButton Then
+If Button = 1 Then
+PopupMenu mnucolor
+End If
+End Sub
+
+Adding Menu Items to menu bar at Runtime
+Private Sub Command1_Click()
+Static count As Integer
+count = count + 1
+Load mnunmenu(count)
+mnunmenu(count).Caption = "Item " & count
+mnumenu(count).Visible = True
+End Sub
+
+ToolBar: Buttons
+Adding Toolbar control to Toolbox:
+properties-->components-->select 'Microsoft window common control 5.0/6.0'-->ok
+Align properties:
+vbAligntop,botton,left,right, none(user can place any where on form)
+
+Adding Buttons To Toolbar:
+Right click on tbr-->properties-->click 'buttons' tab-->click on 'insert button'-->type the caption-->repeat the previous two steps
+Note:To insert a seperator between tbr buttons follow the above procedure and select the style of the button as 'tbrseperator'
+
+Adding Event Handling code to toolbar buttons:
+Private Sub Toolbar1_ButtonClick(ByVal Button As ComctlLib.Button)
+If Button.Index = 1 Then
+'MsgBox "clicked on red button"
+mnured_Click
+ElseIf Button.Index = 2 Then
+mnublue_Click
+'MsgBox "clicked on blue button"
+ElseIf Button.Index = 3 Then
+mnugreen_Click
+End If
+End Sub
+
+Adding Images To the Toolbar Buttons (Using ImageList)
+Place a image list-->right click on image list-->properties-->click on 'image tab'-->click on 'insert picture'-->ok
+right click on toolbar-->properties--> in general tab 'select image list'-->click on buttons tab-->type the image index infront of 'image option'-->ok
+
+Disabling Menu Options:
+using the property 'Enabled'
+Ex:
+mnured.Enabled = False
+mnublue.Enabled = True
+mnugreen.Enabled = True
+
+ToolTipText property of Toolbar Buttons:
+used to display text at runtime if user places a mouse cursor on the button
+Ex:-  button1.tooltiptext="New Document"
+
+Adding Checkbox buttons to Tbr:
+Select the style for buttons as 'tbrcheck' in properties pages
+
+Adding Button Groups in a Toolbar:
+Select the style for buttons as 'tbrbuttongroup' in properties pages
+
+Status Bar: Group of Panes
+
+Applications:
+SDI's : Single Document Interface
+Ex: Notepad, Wordpad
+
+MDI's: Multiple Document Interface
+Ex: MS-Word, Excel
+Multiple Document Interface Applications:
+-->Contains of a parent form (MDI Form) which can be used as a interface to open other forms and work with them simultaneosly.
+--> One MDI application must contain one mdi form only and may contain more than mdi child forms
+-->By running the application first system displays mdi parent on the screen
+-->Menu bar on mdi child forms is replaced with mdi parent form menu bar
+-->Controls with align property can be added on mdi parent form
+ex: picturebox, toolbar, status bar etc
+-->If Parent Form is closed all the opened child forms will be automatically unloaded from the memory
+
+Adding MDI Form to the Project:
+project-->Add MDI form-->open
+Converting Normal Forms into MDI Childs:
+Select the form in project explorer window-->In form properties change 'mdichild' property value as 'true'.
+
+Arranging Multiple child forms
+cascade(0),tile horizontal(1),tile vertical(2)
+
+Slidder:
+Properties: Min,Max,Large Change, Small Change, Ticker Frequency
+Min, Max values: Starting value and End value
+Large Change: If user clicks middle portion of the slider, change in the value
+
+Slider Orientation:
+0-sldHorizontal
+1-sldVertical
+
+Slider Style:
+0-sldBottonRight
+1-sldTopLeft
+2-sldBoth
+3-sldNoTicks
+
+Events: Click, Change
+
+Progress Bar: 
+----------------
+Used to display the percentage of task completion to the user
+
+Adding Control to Toolbox : 
+Project-->components-->Microsoft windows common controls 5.0,6.0
+
+Properties :
+Min: Minimum value of the Progress Bar
+Max:Maximum value of the progress Bar
+Value: This property is used to fill color in the progress bar
+
+Tree View Control
+---------------------
+Adding Control to Toolbox : 
+Project-->components-->Microsoft windows common controls 5.0,6.0
+--> Nodes (Root Node, ChildNode, Leaf)
+
+Adding Nodes to the Tree View Control:
+Dim n1 as Node
+set n1=tv1.Nodes.Add
+n1.text="Local Disk [C:]"
+n1.key="n1"
+
+Adding child Nodes to Existing Nodes:
+dim n1,n2,n3,n4 as Node
+set n1=tv1.Nodes.Add
+n1.text="Local Disk [C:]"
+n1.key="n1"
+//Add (relative,[relationship][,key][,text][,image])
+
+set n2=tv1.Nodes.Add(n1,tvwchild,n2,"Program Files")
+n2.text="Program Files"
+n2.key="n2"
+
+Adding Images to Tree View Control:
+Using Image list:
+add the images to the image list--> select the image list name for the treeview control-->assign the key of the images in the images list using following code
+tv1.Nodes(1).image="close"
+
+Events:
+Expand,Collapse,NodeClick
+
+UpDown Control
+---------------------
+Adding Control to Toolbox : 
+Project-->components-->Microsoft windows common controls-2 6.0
+Properties: max,min,value
+Events: change,DownClick,Upclick
+
+Dialog Boxes:
+Containers which contains group of related options used to accept input from user
+Points:
+-->display information to user (message boxes)
+-->accepts single input from user (input box)
+-->does not have any menus
+-->cannot be resized
+
+Classification 1:
+i) Modal: user cannot work with other options in the application until modal dialog box is closed.  Ex: Open,saveas, print etc
+ii)Modeless: user can work with other options by placing modeless dialog box on the screen
+Ex: Find, Replace , goto etc
+Classification 2:
+i) Common Dialog boxes: Common tasks for all types of applications can be performed using common dialog boxes 
+ex: Open, Saveas, Print, Font, Color, Message boxes, Input Box etc
+ii) Custom Dilaog boxes: Dialog boxes developed by programmer for his requirements
+
+Tips for Dialog boxes:
+i) use common dialog boxes
+ii)If Single input used input box
+iii) For just providing messages for user use message boxes
+iv) If multiple inputs required then create custome d boxes
+v) Less usage of modal dialog boxes
+
+Commom Dialog:
+Project-->Components-->microsoft commom dialog 6.0
+
+Action Property of Commom Dialog control:
+action=1 -->open
+action=2-->saveas
+action=3 -->color dialog box
+action=4 -->font dialog box
+action=5 -->print dialog box
+
+Custom Dialog: Project-->Add form-->select 'dialog'-->Open-->system creates a dialog box with two buttons and minimize, maximize buttons are absent.
+
+Scope of Variables:
+Local Variables:
+-->Variables which exist in the memory until a sub procedure execution is continued
+-->declared inside the sub procedures or function procedures
+Global Variables
+-->Variables which exist in the memory until application is terminated
+-->declared in general declaration section of form module (form code window)
+
+		Private			Public
+Procedure Level:	Limited to single Proc		All procedure in same module
+Module Level:	-All proc in same module	-All proc in same module
+		-other module proc cannot	-other module proc's can access
+		access
+Procedures:
+i) Sub Procedures: call sub procedures system will just executes the statements 
+syntax:
+Sub <Proc_name>([arglist])
+.....
+End Sub
+
+Example: 
+Procedure without arguments
+Public Sub square()
+num = CInt(InputBox("Enter a number:"))
+num = num * num
+End Sub
+
+Procedure with arguments
+dim max as integer
+Public sub maximum(byval n1 as integer,byval n2 as integer)
+if n1>n2 then
+max=n1
+else
+max=n2
+end if
+End Sub
+
+maximum(40,30) // passing parameters or passing values
+fn=60
+sn=30
+maximum(fn,sn)
+
+
+ByVal:
+ByRef
+
+ii) Function Procedures: after calling function procedure system will execute the statements in function and atlast returns a value also
+
+Function <func_name> ([arg_list]) as <return type>
+....
+End Function
+
+Front End		BackEnd
+
+Centralised mainframe systems:
+
+Client Server Applications:
+
+
+Database Applications:
+a. User interface & Application Code
+b. Database Engine
+c. Database
+d. Data Controls
+used to connect your forms to the tables of the database
+
+Data Controls:
+Properties:
+a. Database Name: which data base to be connected to the form
+b. Recordsource:which table data hase to be retrieved 
+
+Binding Controls to the database fields:
+Data source: used to select the data control name
+Data Field: used to select the field of the table
+
+Create Database using Visual data manager
+Add-ins-->Visual data manager-->File-->New-->Access-->Version 2.0 MDB-->Mention the database name and save it in a particular location-->right click on properties-->New Table-->Mention table name-->click on add field-->type the field name-->select the data type-->close-->build table
+
+To Enter records:
+Right click on the table-->Open-->Add-->enter data in the fields-->update
+
+Database Designer
+Database Adminstrator
+App Dev
+End User
+
+Example:
+
+Private Sub Command1_Click()
+Data1.Recordset.MoveFirst
+End Sub
+
+Private Sub Command2_Click()
+Data1.Recordset.MovePrevious
+If Data1.Recordset.BOF = True Then
+Data1.Recordset.MoveFirst
+End If
+
+End Sub
+
+Private Sub Command3_Click()
+Data1.Recordset.MoveNext
+If Data1.Recordset.EOF = True Then
+Data1.Recordset.MoveLast
+End If
+End Sub
+
+Private Sub Command4_Click()
+Data1.Recordset.MoveLast
+End Sub
+
+Private Sub Command5_Click()
+Data1.Recordset.AddNew
+End Sub
+
+Private Sub Command6_Click()
+Data1.Recordset.Delete
+Text1 = ""
+Text2 = ""
+Text3 = ""
+Text4 = ""
+End Sub
+
+Private Sub Command7_Click()
+Data1.Recordset.Edit
+Data1.Recordset.Update
+End Sub
+
+Private Sub Command8_Click()
+End
+End Sub
+
+Private Sub Command9_Click()
+Text1 = ""
+Text2 = ""
+Text3 = ""
+Text4 = ""
+End Sub
+
+Active X Controls:
+User defined or custom controls
+Creating: New project-->Activex control-->File-->make Projectname.ocx
+Using: Open an existing project-->project-->Components-->browse-->select the ocx file-->ok

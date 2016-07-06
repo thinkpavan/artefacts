@@ -1,0 +1,43 @@
+
+
+	
+		Conatiner				Description											Type of iterator supported
+		
+Sequence Containers 
+		
+Vector			rapid insertion and deletions at back				random access
+				direct access to any element
+		
+deque			rapid insertions and deletions at front	
+				or back bidirectional direct access 
+				to any element
+	
+list			double-linked list rapid insertion and deletion anywhere			bidirectional
+		
+Associative Containers
+	
+set				rapid lookup, no duplicates allowed									bidirectional
+
+multiset		rapid lookup, duplicate allowed										bidirectional
+	
+map				1-1 mapping no duplicates allowed, rapid key based 
+				lookup	bidirectional
+		
+multimap		1-1 mapping duplicates allowed, rapid key based 
+				lookup bidirectional
+		
+Container Adapters
+	
+stack			last in first out (LIFO)											no iterator support
+		
+queue			first in first out (FIFO)											no iterator support
+		
+priority_queue	highest priority element is always first to be out.					no iterator support
+		
+		
+		
+		
+		
+		
+		
+		
