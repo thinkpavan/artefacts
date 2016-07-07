@@ -1,0 +1,69 @@
+
+
+function mnpMenuDir()
+{
+	return "LTR";
+}
+
+function mnpMenuCT()
+{
+	
+	return true;
+}
+
+function m0665c1299e0991bfc174c8c9db358ca1()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Windows XP Home', '/windowsxp/default.asp', '', '', '_S1_Node1_S1_Node1');
+	this.items[n++] = new mnpPage('Windows XP Professional', '/windowsxp/pro/default.asp', '', '', '_S1_Node1_S1_Node2');
+	this.items[n++] = new mnpPage('Windows XP Home Edition', '/windowsxp/home/default.asp', '', '', '_S1_Node1_S1_Node3');
+	this.items[n++] = new mnpPage('Windows XP Media Center Edition', '/windowsxp/mediacenter/default.asp', '', '', '_S1_Node1_S1_Node4');
+	this.items[n++] = new mnpPage('Windows XP Tablet PC Edition', '/windowsxp/tabletpc/default.asp', '', '', '_S1_Node1_S1_Node5');
+}
+
+function m0ac43c643136f39013a782932a47c87b()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Windows Embedded Home', 'http://msdn.microsoft.com/embedded/default.aspx', '', '', '_S1_Node6_S1_Node1');
+	this.items[n++] = new mnpPage('Windows CE .NET', 'http://msdn.microsoft.com/embedded/ce.net/default.aspx', '', '', '_S1_Node6_S1_Node2');
+	this.items[n++] = new mnpPage('Windows XP Embedded', 'http://msdn.microsoft.com/embedded/xp/default.aspx', '', '', '_S1_Node6_S1_Node3');
+}
+
+function m27d756783373eb36ea88fa7e15c49a13()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Previous Versions: Overview', '/windows/previous/default.mspx', '', '', '_S1_Node8_S1_Node1');
+	this.items[n++] = new mnpPage('Windows 2000', '/windows2000/default.asp', '', '', '_S1_Node8_S1_Node2');
+	this.items[n++] = new mnpPage('Windows Me', '/windowsme/default.asp', '', '', '_S1_Node8_S1_Node3');
+	this.items[n++] = new mnpPage('Windows 98', '/windows98/default.asp', '', '', '_S1_Node8_S1_Node4');
+	this.items[n++] = new mnpPage('Windows 95', '/windows95/default.asp', '', '', '_S1_Node8_S1_Node5');
+	this.items[n++] = new mnpPage('Windows NT Workstation', '/ntworkstation/default.asp', '', '', '_S1_Node8_S1_Node6');
+	this.items[n++] = new mnpPage('Windows NT Server', '/ntserver/default.asp', '', '', '_S1_Node8_S1_Node7');
+}
+
+function m67214631a36b245b70e25de65e0774f7()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Trial Software: Overview', '/windows/trial/default.mspx', '', '', '_S3_Node2_S1_Node1');
+	this.items[n++] = new mnpPage('Windows Server 2003', '/windowsserver2003/evaluation/trial/', '', '', '_S3_Node2_S1_Node2');
+	this.items[n++] = new mnpPage('Microsoft Operations Manager', '/mom/evaluation/ordercd/default.asp', '', '', '_S3_Node2_S1_Node3');
+	this.items[n++] = new mnpPage('Systems Management Server', '/SMServer/evaluation/trial/default.asp', '', '', '_S3_Node2_S1_Node4');
+	this.items[n++] = new mnpPage('Windows Embedded Evaluation Kit', 'http://msdn.microsoft.com/embedded/evaluate/evalkit/default.aspx', '', '', '_S3_Node2_S1_Node5');
+	this.items[n++] = new mnpPage('Software for Companies Migrating to Windows from UNIX', '/windows2000/migrate/unix/mseval.asp', '', '', '_S3_Node2_S1_Node6');
+}
+
+function m8fcb59081a0928a55a6324abd304c9cf()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Communities: Overview', '/windows/communities/default.mspx', '', '', '_S3_Node5_S1_Node1');
+	this.items[n++] = new mnpPage('Windows XP Expert Zone Community', '/windowsxp/expertzone/default.asp', '', '', '_S3_Node5_S1_Node2');
+	this.items[n++] = new mnpPage('Windows Server Community', '/windows2000/community/default.asp', '', '', '_S3_Node5_S1_Node3');
+	this.items[n++] = new mnpPage('Windows Storage Community', '/windowsserversystem/storage/community/default.mspx', '', '', '_S3_Node5_S1_Node4');
+	this.items[n++] = new mnpPage('Windows Embedded Community', 'http://msdn.microsoft.com/embedded/community/default.aspx', '', '', '_S3_Node5_S1_Node5');
+}
+

@@ -1,0 +1,8 @@
+Thr1   -- show how to create a thread by creating a subclass of a thread.
+
+Thr2   -- shows how to create a thread by immplementing runnable interface
+
+Thr3   -- show how a single class can be used to create multiple threads
+	  and thread priority
+
+Thr4   -- shows how to wait till other thread finishes it's tasks

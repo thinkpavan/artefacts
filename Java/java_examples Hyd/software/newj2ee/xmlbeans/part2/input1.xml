@@ -1,0 +1,6 @@
+<simplemail xmlns="http://xyz.inetsolv.info/his/own/tags">
+	<to>xyz@abc.com</to>
+      <from>me@mydomain.com</from>
+	<subject>Hi this is my test mail</subject>
+	<content>Hi how are you</content>
+</simplemail>

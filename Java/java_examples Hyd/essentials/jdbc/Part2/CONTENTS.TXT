@@ -1,0 +1,7 @@
+getDataFrmAccess  - shows how to get data from access database
+
+RSType  -- shows about different resultsets (added in jdbc 2.0)
+
+ThinDriver  -- shows how we can use a thin driverwith oracle
+
+oci8  -- shows how to use a type 2 driver with oracle

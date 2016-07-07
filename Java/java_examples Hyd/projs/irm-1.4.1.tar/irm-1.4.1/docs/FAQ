@@ -1,0 +1,37 @@
+IRM FAQ
+-------
+
+When things just don't go as they should.
+
+1.  When I log in, IRM gives me 'Undefined function mysql_connect in...'
+-------------------------------------------------------------------------
+
+Simple problem, simple solution.  When you compiled PHP (you did compile
+it from sources, right?), you omitted the --with-mysql flag.  Simply run
+./configure again, and make sure you use --with-mysql and
+--enable-track-vars.
+
+2. setup.php doesn't really seem to do anything?
+------------------------------------------------
+
+IRM at this point requires register_globals to be enabled. This is a PHP setting
+which can supposedly be enabled in php.ini (doesn't always work as advertised) or
+in a .htaccess file. IRM includes two .htaccess files in both the root and users/
+directory, but Apache by default ignores .htaccess files. You will need to make
+sure Apache is reading them by setting this option in httpd.conf:
+
+<Directory "/path/to/irm">
+    AllowOverride Options FileInfo Limit
+</Directory>
+
+
+3. When I log in, I get 'failed to open ../irm.inc ...'
+-------------------------------------------------------
+
+You didn't follow the instructions.  You have to edit
+irm.inc and set the 'root path' variable after the copyright
+information
+
+
+
+

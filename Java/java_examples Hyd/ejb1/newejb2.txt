@@ -1,0 +1,13 @@
+As part of ejb 2 we have
+
+1) new type of bean -- Message driven bean.
+
+2) support for Local interfaces to improve performance.
+
+3) support for new query language EJB-QL.
+
+4) support for container managed relation ships between entities.
+
+5) support for ejbSelect.
+
+6) Home methods.

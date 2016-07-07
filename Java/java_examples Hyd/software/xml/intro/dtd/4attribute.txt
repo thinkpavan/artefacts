@@ -1,0 +1,67 @@
+Declaring Attributes:
+syntax
+
+<!ATTLIST element-name attribute-name 
+ attribute-type default-value>.
+
+example:
+
+<!ATTLIST book rating CDATA "bad">
+
+<book rating="good" /> 
+
+Attribute types
+
+CDATA  The value is character data
+ 
+(en1|en2|..) The value must be one from an enumerated list
+ 
+ID  The value is a unique id 
+ 
+etc.
+
+----------------------
+Specifying a Default attribute value
+DTD:
+<!ELEMENT square EMPTY>
+<!ATTLIST square width CDATA "0">
+
+Valid XML:
+<square width="100" /> 
+<square /> indicates that the width is 0.
+
+
+<!ATTLIST contact fax CDATA #IMPLIED>
+Valid XML:
+<contact fax="555-667788" />
+Valid XML:
+<contact /> 
+
+Use the #IMPLIED keyword if you don't want to force the author to include an attribute,
+and you don't have an option for a default value.
+
+Syntax
+<!ATTLIST element-name attribute_name 
+attribute-type #REQUIRED> 
+
+Example
+DTD:
+<!ATTLIST person number CDATA #REQUIRED>Valid XML:
+<person number="5677" />
+Invalid XML:
+<person /> 
+
+#FIXED
+Syntax
+<!ATTLIST element-name attribute-name 
+attribute-type #FIXED "value"> 
+
+Example
+DTD:
+<!ATTLIST sender company CDATA #FIXED "Microsoft">Valid XML:
+<sender company="Microsoft" />
+Invalid XML:
+<sender company="W3Schools" /> 
+
+
+ 

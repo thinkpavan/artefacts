@@ -1,0 +1,31 @@
+Directives -- list of directives described in jsp specifications
+
+Implicit vairables -- List of variables available for accesssing from the 
+page
+
+1) buffer.jsp   -- we set the buffer size to a small value
+to observe autoflush directive
+
+2) buffer1.jsp  -- shows how autoflush=true sends the content
+when buffer is full.
+
+we tested these two on weblogic4.5.1 and servletexec2.x. 
+and we got the expected result but in case of buffer.jsp
+these emgines should have returned an error code instead of
+doing nothing. We hope that these product vendors will
+make the modifications for this.
+
+3) run nobuffer.jsp also and check the result.
+
+===========================================================================
+
+
+4) testerror.jsp  shows how to use error pages to capture exceptions.
+Place errpage.jsp file also in the same directory as that of testerror.jsp.
+
+5) method.jsp  -- shows how to create methods in jsp page.
+
+( we found a bug in weblogic 4.5.1 implementation of jsp while running 
+method.jsp method, This runs fine on servletexec).
+
+

@@ -1,0 +1,1 @@
+ javadoc -sourcepath sources -d javadoc ServletEngineIdentification  ServletWriteTest com.ondelette.servlet com.ondelette.servlet.laf com.ondelette.servlet.webannonces com.ondelette.servlet.webforum -classpath servlet.zip

@@ -1,0 +1,49 @@
+<html>
+ <head>
+   <title>Shows how to Configure an Applet</title>
+    </head>
+  <body>
+<P>
+<APPLET code=AppTest.class codeBase=file://D:\java\Networking\Part9\ 
+height=160 width=460>
+	</APPLET>
+	 </P>
+<P>/* This show some of the restrictions placed on u'r applet code Author : Team 
+- J Version : 1.0 */ import java.util.*; // import all required classes import 
+java.applet.Appl</P>
+<P>et; import java.applet.AppletContext; import java.applet.AppletStub; import 
+java.applet.AudioClip; </P>
+<P>import java.awt.*; import java.awt.event.*; import javax.swing.*; import 
+java.net.*; import </P>
+<P>java.io.*; public class AppTest extends Applet{ Button b1,b2,b3,b4; 
+FileWriter fis ; public void init</P>
+<P>(){ String srv; try{ fis = new FileWriter(&quot;c:\\xyz.txt&quot;); 
+fis.write(&quot;in init &quot; + new Date()+&quot;\n&quot;); fis.flush</P>
+<P>(); }catch(Exception e){} System.out.println(&quot;before getting 
+parameter&quot;); srv = getParameter(new </P>
+<P>String(&quot;Servermsg&quot;)); System.out.println(&quot;after getting 
+parameter&quot;); System.out.println(&quot; I am in init </P>
+<P>method\n&quot;); b4.setLabel(&quot;This applet is downloaded from 
+&quot;+srv); } public void start() { // let us try </P>
+<P>to open some file AppletContext ac = getAppletContext(); try{ 
+fis.write(&quot;in start &quot; + new Date()</P>
+<P>+&quot;\n&quot;); fis.flush(); b4.setLabel(&quot;Successfully opened 
+file&quot;); // let us try to open network connection </P>
+<P>to other host InetAddress ia = 
+InetAddress.getByName(&quot;196.12.100.101&quot;); Socket s = new </P>
+<P>Socket(ia,80); b4.setLabel(&quot;Successfully opened connection with 
+host&quot;); }catch(Exception e)</P>
+<P>{b4.setLabel(e.getMessage());} } public void stop(){ try{ fis.write(&quot;in 
+stop &quot; + new Date()+&quot;\n&quot;); </P>
+<P>fis.flush(); }catch(Exception e){} System.out.println(&quot; I am in stop 
+method\n&quot;); } public AppTest(){ </P>
+<P>try{ setLayout(new FlowLayout()); add(b1 = new Button(&quot;b1&quot;)); 
+add(b2 = new Button(&quot;b2&quot;)); add</P>
+<P>(b3 = new Button(&quot;b3&quot;)); add(b4 = new Button(&quot;b4&quot;)); 
+}catch(Exception e ){e.printStackTrace();} </P>
+<P>} public void destroy() { try{ fis.write(&quot;in destroy &quot;+new 
+Date()+&quot;\n&quot;); fis.close(); }catch(Exception </P>
+<P>&nbsp;</P>
+<P>e){} } }</P>  
+  </body>
+</html>  

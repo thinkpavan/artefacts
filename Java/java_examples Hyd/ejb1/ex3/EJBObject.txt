@@ -1,0 +1,14 @@
+EJBObject extends Remote interface. This interface consists of the following 
+methods that can be used by ejb clients for following tasks
+
+1) To get the reference to the home interface associated with a bean
+   by using getEJBHome().
+
+2) To get the handle to ejb by using getHandle().
+
+3) To compare two ejb's by using isIdentical().
+
+4) To remove Ejb object by using remove().
+
+5) To get the primary ky associated with entity bean using getPrimaryKey().
+   This method throws exception if called on session bean. 

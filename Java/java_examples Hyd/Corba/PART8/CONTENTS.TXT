@@ -1,0 +1,5 @@
+Simple corba server returning string same as part 1 but shows
+a different (non -proprietory) way of getting server object
+reference.
+
+try this example by stopping OSAgent

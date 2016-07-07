@@ -1,0 +1,3 @@
+
+shows how to create a Web service based on a handler chain and a Java 
+backend component

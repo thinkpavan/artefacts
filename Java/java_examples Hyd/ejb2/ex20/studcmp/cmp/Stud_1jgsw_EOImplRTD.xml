@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rmi PUBLIC "-//BEA Systems, Inc.//RMI Runtime DTD 1.0//EN" "rmi.dtd">
+<rmi
+    name="cmp.Stud_1jgsw_EOImpl"
+    remote-ref-classname="weblogic.rmi.cluster.ClusterActivatableRemoteRef"
+    server-ref-classname="weblogic.rmi.cluster.ClusterActivatableServerRef"
+>
+<cluster
+    clusterable="true"
+    replica-handler-classname="weblogic.rmi.cluster.EntityBeanReplicaHandler"
+    propagate-environment="true"
+>
+</cluster>
+
+<lifecycle
+    dgc-policy="managed"
+>
+</lifecycle>
+
+<method
+    name="isIdentical(javax.ejb.EJBObject)"
+    requires-transaction="true"
+>
+</method>
+<method
+    name="getData()"
+    requires-transaction="true"
+>
+</method>
+<method
+    name="getHandle()"
+    requires-transaction="true"
+>
+</method>
+<method
+    name="getPrimaryKey()"
+    requires-transaction="true"
+>
+</method>
+<method
+    name="remove()"
+    requires-transaction="true"
+>
+</method>
+<method
+    name="getEJBHome()"
+    requires-transaction="true"
+>
+</method>
+
+<security
+    client-authentication="none"
+    client-cert-authentication="none"
+    identity-assertion="none"
+    confidentiality="none"
+    integrity="none"
+>
+</security>
+
+</rmi>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO8859_1"?>
+
+<!DOCTYPE application PUBLIC '-//Sun Microsystems, Inc.//DTD J2EE Application 1.2//EN' 'http://java.sun.com/j2ee/dtds/application_1_2.dtd'>
+<application>
+ <display-name>JSP Shop</display-name>
+ <description>OpenSource E-Commerce J2EE</description>
+ <module>
+  <ejb>jspShop.jar</ejb>
+ </module>
+ <module>
+  <ejb>counter.jar</ejb>
+ </module>
+ <module>
+   <web>
+     <web-uri>jspShop.war</web-uri>
+     <context-root>/jspShop</context-root>
+   </web>
+ </module>
+ <security-role>
+  <description>my role</description>
+  <role-name>everyone</role-name>
+ </security-role>
+</application>

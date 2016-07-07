@@ -1,0 +1,9 @@
+-- function that returns a number
+create or replace function func0(i number) return number
+as
+   BEGIN
+
+	return i+33;
+	
+  END func0;
+/

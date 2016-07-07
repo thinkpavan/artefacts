@@ -1,0 +1,25 @@
+<web-services xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+  <web-service 
+    name="mdb" 
+    targetNamespace="http://www.inet.com/mdb"
+    uri="/mdb">
+
+   <components>
+     <jms-send-destination name="jmsqueue1" connection-factory="weblogic.jms.ConnectionFactory">
+        <jndi-name path="jmsqueue1" />
+     </jms-send-destination>
+   </components>
+
+   <operations xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+     <operation invocation-style="one-way" name="submit" component="jmsqueue1" >
+        <params>
+	  <param name="param" style="in" type="xsd:string"/>
+        </params>
+     </operation>
+
+   </operations>
+ 
+ </web-service>
+
+</web-services>

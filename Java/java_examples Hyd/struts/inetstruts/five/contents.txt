@@ -1,0 +1,7 @@
+shows how to use dynamic forms with validations.
+
+in  plcae of DynaActionForm we can use DynaValidatorForm for validating the content.
+
+
+check struts-validator example supplied as part of struts for information on
+how to use a single bean in multiple pages.

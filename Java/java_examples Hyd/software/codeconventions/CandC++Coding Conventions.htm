@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0044)http://web.ics.purdue.edu/~cs240/coding.html -->
+<HTML><HEAD><TITLE>CS240 C and C++ Coding Conventions</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff>
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=middle bgColor=#000000><FONT 
+      color=#cccc99><BIG><BIG>&nbsp;<BR><B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      C And C++ Coding Conventions 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp; 
+  </BIG></BIG></FONT></B></TD></TR></TBODY></TABLE></CENTER>
+<P>
+<CENTER>Author: Pedro Morales </CENTER>
+<P>This document provides a convention for indenting and commenting your C and 
+C++ programs that will help you keep track of what you are trying to do, and 
+also be thorough enough so that your graders and lab TA's can help you with 
+problems in your code. Proper indentation allows you to step through the code 
+more easily. The presence of comments helps explain your code quickly to the TA 
+so he/she can help you faster and better. Graders will take points off for 
+programs that do not follow this coding convention. 
+<P>Please write your comments in complete sentences, or at least in complete 
+thoughts. Avoid ambiguously short comments (one or two-word comments), and avoid 
+commenting the obvious. (eg. a <B>printf </B>call is obvious, but an arithmetic 
+or string operation may not be.) Please note: you are not asked to be 
+obsessively thorough, with paragraphs of comments. However, include a brief 
+sentence or two in strategic places that will make it easier for people to 
+understand your code. 
+<H2>File Header</H2>At the beginning of each file there should be a comment 
+block that contains: 
+<OL>
+  <LI>The File Name 
+  <LI>Your Name 
+  <LI>Your Student ID Number 
+  <LI>Your Lab Section 
+  <LI>The date the program was completed 
+  <LI>A brief description of the program, most especially you should list the 
+  features that you have been able to successfully implement and any that you 
+  have been unable to implement </LI></OL>The format to be used is as follows: <PRE>//******************************************************************* 
+//                                                                    
+//  Program:  program name                                            
+//  Author:  your name                                             
+//  Student ID:  your SID                                    
+//  Lab Section:  section number and instructor's name
+//  Date:  date of completion
+//                       
+//  Description:  brief description of the program                    
+//                                                                    
+//*******************************************************************
+</PRE>Here is an example: <PRE>//*******************************************************************
+//
+//  Program:  Project 1 -- Address Book
+//  Author:  Jane Doe
+//  Student ID:  555-55-5555
+//  Lab Section:  0701 / (Johnson)
+//  Date:  August 26, 2003
+//
+//  Description:  The program functions as described in the handout,
+//                except that I was unable to finish the sort by 
+//                phone number menu option. 
+//
+//*******************************************************************
+</PRE>It is in your best intrest to make sure that you add such a header to the 
+top of each file that you submit. Failing to do so is known to be a pet peeve of 
+the course administrator.<BR>
+<H2>Variable Declarations</H2>Each variable declaration should be accompanied by 
+a brief description of what the variable is used for. This can be done with one 
+or two lines of comments that proceed to the end of line ( // ). If your 
+comments are too long, please put them at the top of the variable declaration, 
+so that you do not end up with a really long line of code. Please observe how 
+good variable names reduce the need for long comments and make code clearer. 
+Some variables, such as loop counter variables, need not be commented. 
+<P>Examples: <PRE>    1.   int age; 	    //stores a person's age
+
+    2.   // QTEnergy - thermal energy transfer crossing unit area per unit time
+
+         float QTEnergy;
+
+    3.   FILE* inputFile;   //file handle for reading data from the input file
+</PRE><BR>
+<H2>Conditionals: </H2>Conditional branching statements should include one or 
+two sentences of what you are trying to accomplish, and any variables that are 
+involved in the testing of the conditionals. 
+<P>Examples: <PRE>1.
+    // These statements decide what description of a person to print,
+    // based on his/her age (stored in 'age' variable). 
+    if (age &lt; 13) 
+    { 
+        printf ("young kid"); 
+    } 
+    else if (age &gt;= 13 || age &lt;= 19) 
+    { 
+        printf ("teenager"); 
+    } 
+    else 
+    { 
+        printf ("adult"); 
+    } 
+
+
+2.
+   // Here I decide what arithmetic operation to perform based on
+   // the operator (variable 'operator') entered by the user. 
+    switch (operator) 
+    { 
+        case '+': 
+                printf ("plus"); 
+                break; 
+        case '-': 
+                printf ("minus"); 
+                break; 
+        case '/': 
+                printf ("divided by"); 
+                break; 
+        case '*': 
+                printf ("times"); 
+                break; 
+        default: break; 
+    } 
+</PRE><BR>
+<H2>Loops</H2>A loop should have one or two sentences explaining in general 
+terms what you are trying to accomplish in the loop, and how you finally 
+terminate the loop. (i.e. explain when is it that the loop usually ends.) If 
+there are breaks, or continues, which interrupt normal loop flow, then you 
+should briefly explain the condition for breaking or continuing. Please see the 
+section on conditionals for this. 
+<P>Example <PRE>    int i = 0; 
+    int iSum = 0; 
+    int iArraySize = 100;
+
+    //This loop sums up all the positive integers in an array of integers. 
+    for (i = 0; i &lt; iArraySize; i++) 
+    { 
+        //This is the condition that skips negative numbers. 
+        if (array[i] &lt; 0) 
+        { 
+            continue; 
+        } 
+        iSum += array[i]; 
+    } 
+</PRE><BR>
+<H2>Method Headers</H2>C and C++ require function prototypes, unlike Java. The 
+method header should be followed by the method body. Do not put the header at 
+the prototype. A good method header should describe, in one or two sentences, 
+what the method does. It should also explain what its parameters are, and what 
+type of value it returns. Let's look again at the code for adding up positive 
+integers given above, implemented as a method, with headers. 
+<P>Note that using strategically placed blank lines to separate sections of code 
+makes it easier to read the code. 
+<P>Examples <PRE>    /* 
+       Description:  This method sums up all the positive integers in an
+                     array of integers. 
+       Parameters: 
+                     array-- the array of integers that are to be summed up. 
+                     iArraySize -- the size of the array 
+       Returns: 
+                     the sum of the positive integers in the array. 
+    */ 
+    int positiveSum (int[] array, int iArraySize) 
+    { 
+        int i = 0; 
+        int iSum = 0; 
+
+        //This loop sums up all the positive integers in an array of integers. 
+        for (i = 0; i &lt; iArraySize; i++) 
+        { 
+            //This is the condition that skips negative numbers. 
+            if (array[i] &lt; 0) 
+            { 
+                continue; 
+            } 
+            iSum += array[i]; 
+        } 
+        return iSum;
+    } 
+</PRE>
+<P>
+<P>Here is a method that returns more than one value (e.g. one which has pointer 
+arguments.) Such a method may affect the memory locations sent via the pointers, 
+and may also return an explicit value. One common method that does this is 
+<B>strcpy</B>. It copies the source string to the target string, and returns the 
+number of characters copied. One possible implementation of <B>strcpy</B> can be 
+as follows: <PRE>    /* 
+       Description:  This method copies the contents of string sSource
+                     to string sTarget. 
+       Parameters: 
+                     sTarget-- the string to be copied into, make a copy of the sSource 
+                     sSource -- the string to be copied to the sTarget 
+       Returns: 
+                     the number of characters copied (Explicit return) 
+                     a copy of the target string (implicit via the 'sTarget' variable) 
+    */ 
+    int strcpy (char* sTarget, char* sSource) 
+    { 
+        int iCharsCopied = 0;  //counter of characters copied from sSource to sTarget 
+        int i = 0;             //loop counter through the sSource string 
+
+        for (i = 0; sSource[i] != '\0'; i++) 
+        { 
+            sTarget[i] = sSource[i]; 
+            iCharsCopied++; 
+        } 
+        return iCharsCopied; 
+    } 
+</PRE><BR>
+<H2>Structs</H2>As seen in class, a struct is a complex, programmer defined data 
+type, much like the C++ and Java class. Please include at the top of the struct 
+declaration one or two sentences explaining what the struct is used for. Also, 
+each data member of the struct should be clearly identified. See the section on 
+commenting variable declarations. An exception can be made here. If the variable 
+name chosen is clear and helpful, you may obviate the need for commenting each 
+data member variable. 
+<P>Examples: <PRE>1.
+    // This struct describes a car, which has a make (a company),
+    // a model, and the year. 
+    struct car 
+    { 
+        char* make;       //the car's make, or brand 
+        char* model;      //the car's model 
+        int year;         //the car's year 
+    }; 
+  
+
+2. 
+    // This struct describes a student, has a name, middle initial
+    // (if any), a last name, an address at college, and address at home, 
+    // a set of lab grades, test scores, and homework grades. 
+    struct student 
+    { 
+        char* name; 
+        char middleInitial; 
+        char* lastName; 
+        struct address colllegeAddress; 
+        struct address homeAddress; 
+        int[] labGrades; 
+        int[] testScores; 
+        int[] homeworkGrades; 
+    }; 
+</PRE>
+<P>Please note that good variable names reduce the need for documentation, or 
+even make it redundant (see the car example). In some of the examples we used 
+the convention of prepending the data type of the variable to the actual 
+variable name. For example, a character string variable <B>firstname</B> may be 
+<B>sFirstName</B>, or a variable <B>sum</B> may be <B>iSum</B> if it is an 
+integer sum, or <B>fSum</B> if it is a floating point number. The advantage of 
+this scheme is that you know what the data type is for each variable without 
+tracing back to its declaration. This is useful when you do a large team project 
+and have to work with variables declared by other programmers. 
+</P></BODY></HTML>

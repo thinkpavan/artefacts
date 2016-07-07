@@ -1,0 +1,37 @@
+We are using the tools that are available with jdk to do this. There are some many tools using which u can do this.
+
+1) create public / private key pair.
+
+  use keytool -genkey -alias newkey 
+command which will generate a pair for u and store it in a key store.
+
+2) generate certficate signing request 
+
+  Use keytool -certreq -alias newky.
+
+This generates an output which can be sent to CA's like verisign.
+(verisign charges for signing the certificate).
+
+3) After receiving the certificate u can import the certificate into
+U'r key store.
+
+use keytool -import -alias impkey -file newkey.cer
+
+4) when ever u want to send a signed document u can send the certificate
+to the reciever so that the receiver can find that the public key belongs to u only.
+
+
+keytool -export -alias newkey -file newkey.cer.
+
+
+5) To verify what is there in the certificate u can use
+
+keytool -printcert -file newkey.cer.
+
+(note: when u create a key pair using key tool it genetrates a certificate signed by u'r key only)
+
+6) If u want o see what is there is key store u can use
+
+keytool -list command
+
+NOTE: Keystore is a place where u keep your's and other's keys and certificates.

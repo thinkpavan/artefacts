@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<inet:book xmlns:inet="http://www.inet.com/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.inet.com/ myschema.xsd">
+	<inet:name>book one</inet:name>
+	<inet:author>author one</inet:author>
+</inet:book>

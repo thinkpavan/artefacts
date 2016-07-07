@@ -1,0 +1,29 @@
+<project name="antproj1" default="all" basedir=".">
+
+<!-- definition of a list of files -->
+<property file="./build.properties"/>
+<property name="srcdir" value="./jsource"/>
+<property name="destdir" value="./jclass"/>
+
+
+  <target name="all" depends="compile,pack"/>
+
+<target name="compile" >
+    <echo message="We are current using ${CLASSPATH} as classpath" />	
+    <javac srcdir="${srcdir}"
+      destdir="${destdir}"
+      includes="one.java,two.java,app.java">
+    </javac>
+    <echo message="Compilation Over" />	
+</target>
+
+<target name="pack">
+	<jar jarfile="./app.jar" basedir="${destdir}"/>
+      <echo message="Packaging completed" />	
+</target>
+
+<target name="run">
+	<java classname="app" classpath="./app.jar"  fork="yes"/>
+      <echo message="Hope you have tested your app" />	
+</target>
+</project>

@@ -1,0 +1,20 @@
+Mycomputer--Properties--Advanced--Environmentalveriables:
+
+Variablename:JAVA_HOME
+Variablevalue:C:\j2sdk1.4.1_01
+
+
+variablename:CLASSPATH
+Variablevalue:C:\j2sdk1.4.1_01\bin;.
+
+Variablename:CATALINA_HOME
+Variablevalue:  ..	
+
+
+
+
+SYSTEMVARIABLES
+
+EDIT-PATH(existing)
+
+Add   ;C:\j2sdk1.4.1_01\bin;																							

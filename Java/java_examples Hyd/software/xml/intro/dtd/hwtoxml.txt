@@ -1,0 +1,17 @@
+In PO.xml example we have used a set of tags.
+
+In xml we have a way of defining what tags are valid in a particular xml
+doc and what are not valid. 
+
+For example I cannot write <purchaseOrder> tag when creating a document
+using mathml.
+
+To define our own language ( set of tags) we need to define a 
+DTD( document type definition).
+
+Defining DTD is very simple if we know a bit about regular expression
+we use with most of the unix commands like grep,egrep for seraching for
+patterns in text.
+
+DTD can be internal to the xml document or internal to an XML document.
+

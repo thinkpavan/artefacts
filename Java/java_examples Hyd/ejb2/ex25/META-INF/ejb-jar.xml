@@ -1,0 +1,91 @@
+<!DOCTYPE ejb-jar PUBLIC '-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN' 'http://java.sun.com/dtd/ejb-jar_2_0.dtd'>
+
+
+<!-- Generated XML! -->
+
+<ejb-jar>
+  <enterprise-beans>
+    <entity>
+      <ejb-name>Order</ejb-name>
+      <home>otm.OrderHome</home>
+      <remote>otm.OrderRemote</remote>
+      <local-home>otm.OrderLocalHome</local-home>
+      <local>otm.OrderLocal</local>
+      <ejb-class>otm.Order</ejb-class>
+      <persistence-type>Container</persistence-type>
+      <prim-key-class>otm.OrderPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <abstract-schema-name>Order</abstract-schema-name>
+      <cmp-field>
+        <field-name>custName</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>ordDate</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>ordId</field-name>
+      </cmp-field>
+    </entity>
+    <entity>
+      <ejb-name>OL</ejb-name>
+      <home>otm.OLHome</home>
+      <remote>otm.OLRemote</remote>
+      <local-home>otm.OLLocalHome</local-home>
+      <local>otm.OLLocal</local>
+      <ejb-class>otm.OL</ejb-class>
+      <persistence-type>Container</persistence-type>
+      <prim-key-class>otm.OLPK</prim-key-class>
+      <reentrant>False</reentrant>
+      <abstract-schema-name>OL</abstract-schema-name>
+      <cmp-field>
+        <field-name>itemName</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>lineId</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>orderId</field-name>
+      </cmp-field>
+      <cmp-field>
+        <field-name>qty</field-name>
+      </cmp-field>
+    </entity>
+  </enterprise-beans>
+
+
+  <relationships>
+    <ejb-relation>
+      <ejb-relation-name>Order-OrderLine</ejb-relation-name>
+      <ejb-relationship-role>
+        <ejb-relationship-role-name>
+          Order-Has-OL
+        </ejb-relationship-role-name>
+        <multiplicity>one</multiplicity>
+        <relationship-role-source>
+          <ejb-name>Order</ejb-name>
+        </relationship-role-source>
+        <cmr-field>
+          <cmr-field-name>ordLines</cmr-field-name>
+          <cmr-field-type>java.util.Set</cmr-field-type>
+        </cmr-field>
+      </ejb-relationship-role>
+      <ejb-relationship-role>
+        <ejb-relationship-role-name>
+          OL-Has-Order
+        </ejb-relationship-role-name>
+        <multiplicity>many</multiplicity>
+		<cascade-delete/>
+        <relationship-role-source>
+          <ejb-name>OL</ejb-name>
+        </relationship-role-source>
+       <cmr-field>
+          <cmr-field-name>order</cmr-field-name>
+        </cmr-field>
+      </ejb-relationship-role>
+    </ejb-relation>
+  </relationships>
+
+  <assembly-descriptor>
+  </assembly-descriptor>
+
+</ejb-jar>

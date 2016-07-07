@@ -1,0 +1,21 @@
+/* This is to show how to use java security features
+Author : Team -J
+Version : 1.0
+ run this prog using java -Djava.security.policy=mypolicy TestSec
+*/
+import java.net.*;
+import java.io.*;
+
+class TestSec{
+  static public void main(String[] args)throws Exception{
+	// create a new Server Socket
+	try{
+  	System.setSecurityManager( new java.rmi.RMISecurityManager());
+    System.out.println(System.getSecurityManager());
+		ServerSocket ss = new ServerSocket(16000);
+		// wait for the connections
+		Socket s = ss.accept();
+	}catch(Exception e){System.out.println(e);}
+  }
+}
+

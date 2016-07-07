@@ -1,0 +1,138 @@
+
+
+function mnpMenuDir()
+{
+	return "LTR";
+}
+
+function mnpMenuCT()
+{
+	
+	return true;
+}
+
+function m6afcf11ea42397a23ce00c852d2d3154()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Product Information: Overview', '/windowsserver2003/evaluation/default.mspx', '', '', '_S2_Node1_S1_Node1');
+	this.items[n++] = new mnpPage('What\'s New', '/windowsserver2003/evaluation/overview/technologies/default.mspx', '', '', '_S2_Node1_S1_Node2');
+	this.items[n++] = new mnpPage('Features', '/windowsserver2003/evaluation/features/default.mspx', '', '', '_S2_Node1_S1_Node3');
+	this.items[n++] = new mnpPage('Demos', '/windowsserver2003/evaluation/demos/default.mspx', '', '', '_S2_Node1_S1_Node4');
+	this.items[n++] = new mnpPage('Trial Software', '/windowsserver2003/evaluation/trial/default.mspx', '', '', '_S2_Node1_S1_Node5');
+	this.items[n++] = new mnpPage('System Requirements', '/windowsserver2003/evaluation/sysreqs/default.mspx', '', '', '_S2_Node1_S1_Node6');
+	this.items[n++] = new mnpPage('Analyst Reports', '/windowsserver2003/evaluation/news/analystreports/default.mspx', '', '', '_S2_Node1_S1_Node7');
+	this.items[n++] = new mnpPage('News &amp; Reviews', '/windowsserver2003/evaluation/news/default.mspx', '', '', '_S2_Node1_S1_Node8');
+	this.items[n++] = new mnpPage('Performance &amp; Scalability', '/windowsserver2003/evaluation/performance/default.mspx', '', '', '_S2_Node1_S1_Node9');
+	this.items[n++] = new mnpPage('Case Studies', '/windowsserver2003/evaluation/casestudies/default.mspx', '', '', '_S2_Node1_S1_Node10');
+	this.items[n++] = new mnpPage('Server Roles', '/windowsserver2003/evaluation/serverroles/default.mspx', '', '', '_S2_Node1_S1_Node11');
+}
+
+function m1a2edc41005049b385a78a22764b1419()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('How to Buy: Overview', '/windowsserver2003/howtobuy/default.mspx', '', '', '_S2_Node2_S1_Node1');
+	this.items[n++] = new mnpPage('Choosing the Right Operating System', '/windowsserver2003/evaluation/features/compareeditions.mspx', '', '', '_S2_Node2_S1_Node2');
+	this.items[n++] = new mnpPage('Pricing &amp; Licensing', '/windowsserver2003/howtobuy/licensing/default.mspx', '', '', '_S2_Node2_S1_Node3');
+	this.items[n++] = new mnpPage('Purchasing Options', '/windowsserver2003/howtobuy/purchasing/default.mspx', '', '', '_S2_Node2_S1_Node4');
+}
+
+function m88450c40850b4d798ba042e2564a310b()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Upgrading from Windows NT Server 4.0', '/windowsserver2003/upgrading/nt4/default.mspx', '', '', '_S2_Node3_S1_Node1');
+	this.items[n++] = new mnpPage('Upgrading from Windows 2000 Server', '/windowsserver2003/upgrading/w2k/default.mspx', '', '', '_S2_Node3_S1_Node2');
+	this.items[n++] = new mnpPage('Supported Applications', '/windowsserver2003/evaluation/suppapps/default.mspx', '', '', '_S2_Node3_S1_Node3');
+}
+
+function m30948906b44e806542e7b8e8b6ae3266()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Technical Resources: Overview', '/windowsserver2003/techinfo/default.mspx', '', '', '_S2_Node4_S1_Node1');
+	this.items[n++] = new mnpPage('Technical Overviews', '/windowsserver2003/techinfo/overview/default.mspx', '', '', '_S2_Node4_S1_Node2');
+	this.items[n++] = new mnpPage('Microsoft Broadens Commitment to 64-Bit Windows', '/presspass/press/2004/feb04/02-17ExtendedTechnologyPR.asp', '', '', '_S2_Node4_S1_Node3');
+	this.items[n++] = new mnpPage('Microsoft Systems Architecture (MSA)', '/windowsserver2003/msa/default.mspx', '', '', '_S2_Node4_S1_Node4');
+	this.items[n++] = new mnpPage('Developing Applications', '/windowsserver2003/developers/default.mspx', '', '', '_S2_Node4_S1_Node5');
+	this.items[n++] = new mnpPage('Product Documentation', '/windowsserver2003/proddoc/default.mspx', '', '', '_S2_Node4_S1_Node6');
+	this.items[n++] = new mnpPage('Windows Server 2003 Deployment Kit', '/windows/reskits/default.asp', '', '', '_S2_Node4_S1_Node7');
+	this.items[n++] = new mnpPage('Training &amp; Events', '/windowsserver2003/techinfo/training/default.mspx', '', '', '_S2_Node4_S1_Node8');
+	this.items[n++] = new mnpPage('Books', '/windowsserver2003/techinfo/bookstore/default.mspx', '', '', '_S2_Node4_S1_Node9');
+}
+
+function mbfed0b958759788e46a360211e3a8cbc()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Software Updates', '/windowsserver2003/downloads/updates/default.mspx', '', '', '_S2_Node5_S1_Node1');
+	this.items[n++] = new mnpPage('Feature Packs', '/windowsserver2003/downloads/featurepacks/default.mspx', '', '', '_S2_Node5_S1_Node2');
+	this.items[n++] = new mnpPage('Tools', '/windowsserver2003/downloads/tools/default.mspx', '', '', '_S2_Node5_S1_Node3');
+	this.items[n++] = new mnpPage('Trial Software Downloads', '/windowsserver2003/downloads/trialsoftware/default.mspx', '', '', '_S2_Node5_S1_Node4');
+}
+
+function m976221e44a9df4b77112ef56302eb403()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Technologies: Overview', '/windowsserver2003/technologies/default.mspx', '', '', '_S2_Node7_S1_Node1');
+	this.items[n++] = new mnpPage('Clustering Services', '/windowsserver2003/technologies/clustering/default.mspx', '', '', '_S2_Node7_S2_Node1');
+	this.items[n++] = new mnpPage('Directory Services', '/windowsserver2003/technologies/directory/default.mspx', '', '', '_S2_Node7_S2_Node2');
+	this.items[n++] = new mnpPage('File &amp; Print Services', '/windowsserver2003/technologies/fileandprint/default.mspx', '', '', '_S2_Node7_S2_Node3');
+	this.items[n++] = new mnpPage('Management Services', '/windowsserver2003/technologies/management/default.mspx', '', '', '_S2_Node7_S2_Node4');
+	this.items[n++] = new mnpPage('Networking &amp; Communications Services', '/windowsserver2003/technologies/networking/default.mspx', '', '', '_S2_Node7_S2_Node5');
+	this.items[n++] = new mnpPage('Security Services', '/windowsserver2003/technologies/security/default.mspx', '', '', '_S2_Node7_S2_Node6');
+	this.items[n++] = new mnpPage('Storage Services', '/windowsserver2003/technologies/storage/default.mspx', '', '', '_S2_Node7_S2_Node7');
+	this.items[n++] = new mnpPage('Terminal Services', '/windowsserver2003/technologies/terminalservices/default.mspx', '', '', '_S2_Node7_S2_Node8');
+	this.items[n++] = new mnpPage('Web &amp; Application Services', '/windowsserver2003/technologies/webapp/default.mspx', '', '', '_S2_Node7_S2_Node9');
+	this.items[n++] = new mnpPage('Windows Media Services', '/windowsserver2003/technologies/winmedia/default.mspx', '', '', '_S2_Node7_S2_Node10');
+	this.items[n++] = new mnpPage('Windows Rights Management Services', '/windowsserver2003/technologies/rightsmgmt/default.mspx', '', '', '_S2_Node7_S2_Node11');
+	this.items[n++] = new mnpPage('Windows SharePoint Services', '/windowsserver2003/technologies/sharepoint/default.mspx', '', '', '_S2_Node7_S2_Node12');
+}
+
+function m8bc94d6ea5047b67a1d6fc38e5fbe1c6()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Windows Family', '/windows/default.asp', '', '', '_S4_Node1_S1_Node1');
+	this.items[n++] = new mnpPage('Windows XP', '/windowsxp/default.asp', '', '', '_S4_Node1_S1_Node2');
+	this.items[n++] = new mnpPage('Windows Server 2003', '/windowsserver2003/default.mspx', '', '', '_S4_Node1_S1_Node3');
+	this.items[n++] = new mnpPage('Windows Storage Server 2003', '/windowsserversystem/wss2003/default.mspx', '', '', '_S4_Node1_S1_Node4');
+	this.items[n++] = new mnpPage('Windows 2000', '/windows2000/default.asp', '', '', '_S4_Node1_S1_Node5');
+	this.items[n++] = new mnpPage('Windows NT Workstation 4.0', '/ntworkstation/default.asp', '', '', '_S4_Node1_S1_Node6');
+	this.items[n++] = new mnpPage('Windows NT Server 4.0', '/ntserver/default.asp', '', '', '_S4_Node1_S1_Node7');
+	this.items[n++] = new mnpPage('Windows Me', '/windowsxp/windowsme.asp', '', '', '_S4_Node1_S1_Node8');
+	this.items[n++] = new mnpPage('Windows 98', '/windows98/default.asp', '', '', '_S4_Node1_S1_Node9');
+	this.items[n++] = new mnpPage('Windows 95', '/windows95/default.asp', '', '', '_S4_Node1_S1_Node10');
+	this.items[n++] = new mnpPage('Windows Embedded', 'http://msdn.microsoft.com/embedded/default.aspx', '', '', '_S4_Node1_S1_Node11');
+	this.items[n++] = new mnpPage('Internet Explorer', '/windows/ie/default.asp', '', '', '_S4_Node1_S1_Node12');
+	this.items[n++] = new mnpPage('Windows Media Player', '/windows/windowsmedia/default.asp', '', '', '_S4_Node1_S1_Node13');
+	this.items[n++] = new mnpPage('DirectX', '/windows/directx/default.asp', '', '', '_S4_Node1_S1_Node14');
+	this.items[n++] = new mnpPage('Smart Display', '/windowsxp/smartdisplay/default.asp', '', '', '_S4_Node1_S1_Node15');
+}
+
+function mdce34d15e64949548c414d732873474b()
+{
+	this.items = new Array();
+	var n = 0;
+	this.items[n++] = new mnpPage('Windows Server System: Overview', '/windowsserversystem/default.mspx', '', '', '_S4_Node2_S1_Node1');
+	this.items[n++] = new mnpPage('Windows Server', '/windowsserver2003/default.mspx', '', '', '_S4_Node2_S1_Node2');
+	this.items[n++] = new mnpPage('Application Center', '/applicationcenter/default.asp', '', '', '_S4_Node2_S1_Node3');
+	this.items[n++] = new mnpPage('BizTalk Server', '/biztalk/default.asp', '', '', '_S4_Node2_S1_Node4');
+	this.items[n++] = new mnpPage('Commerce Server', '/commerceserver/default.asp', '', '', '_S4_Node2_S1_Node5');
+	this.items[n++] = new mnpPage('Content Management Server', '/cmserver/', '', '', '_S4_Node2_S1_Node6');
+	this.items[n++] = new mnpPage('Exchange Server', '/exchange/default.asp', '', '', '_S4_Node2_S1_Node7');
+	this.items[n++] = new mnpPage('Host Integration Server', '/hiserver/default.asp', '', '', '_S4_Node2_S1_Node8');
+	this.items[n++] = new mnpPage('Identity Integration Server', '/miis/default.asp', '', '', '_S4_Node2_S1_Node9');
+	this.items[n++] = new mnpPage('ISA Server', '/isaserver/default.asp', '', '', '_S4_Node2_S1_Node10');
+	this.items[n++] = new mnpPage('Live Communications Server', '/office/livecomm/prodinfo/default.mspx', '', '', '_S4_Node2_S1_Node11');
+	this.items[n++] = new mnpPage('Operations Manager', '/mom/default.asp', '', '', '_S4_Node2_S1_Node12');
+	this.items[n++] = new mnpPage('SharePoint Portal Server', 'http://office.microsoft.com/sharepoint/default.asp', '', '', '_S4_Node2_S1_Node13');
+	this.items[n++] = new mnpPage('Speech Server', '/speech', '', '', '_S4_Node2_S1_Node14');
+	this.items[n++] = new mnpPage('SQL Server', '/sql/default.asp', '', '', '_S4_Node2_S1_Node15');
+	this.items[n++] = new mnpPage('Systems Management Server', '/sms/default.asp', '', '', '_S4_Node2_S1_Node16');
+	this.items[n++] = new mnpPage('Windows Small Business Server', '/windowsserver2003/sbs/', '', '', '_S4_Node2_S1_Node17');
+	this.items[n++] = new mnpPage('Windows Storage Server', '/windowsserversystem/wss2003/default.mspx', '', '', '_S4_Node2_S1_Node18');
+}
+

@@ -1,0 +1,32 @@
+create work directory.
+
+Proceduer to Create A jar file for deploying ejb.
+
+1) create a directory for working , let us say work.
+
+2) under this directory create META-INF directory.
+
+3) create ejb-jar.xml and weblogic-ejb-jar.xml files and place them under
+META-INF directory.
+
+4) create appropriate directory structure reflecting your package 
+structure under work.
+
+5) copy your class files under the directories.
+
+6) create jar file using jar tool.
+
+7) run ejbc and create a new jar file.
+
+
+The above procedure create a jar file say bean.jar.
+
+[OPTIONAL]
+Creating Enterprise Archive.
+
+1)create META-INF directory and place 
+application.xml 
+
+2)in the same directory copy your module.jar file.
+
+3) using jar tool create .ear file.

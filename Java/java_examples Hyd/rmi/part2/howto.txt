@@ -1,0 +1,23 @@
+We can start the server,rmiregistry and client on the same machine.
+
+But in a typical RMI system the server and client may be running on two
+different machines.
+
+To configure the system properly:
+
+For the server, the following classes must be available.
+
+Remote interface definitions 
+service implementations 
+Skeletons for the implementation classes for jdk1.1 
+Stubs for the implementation classes 
+All other classes used by the server.
+
+For the client, the following classes must be available.
+
+Remote interface definitions 
+Stubs for the remote service implementation classes 
+Server classes for objects used by the client 
+All other client classes
+
+

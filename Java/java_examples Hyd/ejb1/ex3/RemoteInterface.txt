@@ -1,0 +1,15 @@
+Remote Interface
+================
+
+Remote Interface declares all the business methods that are implemented by
+EJB. We need to follow the following rules to create this interface.
+
+1) Remote interface must extend from EJBObject.
+
+2) Since all the business methods are invoked from the remote clients, we
+   should decalre that the methods throws RemoteException apart from 
+   Application specific exceptions.
+
+	Note: we are not going to provide a class that implements the
+above interface. This interface will be implemented by the EJB container.
+we need to provide a seperate class implementing only the business methods.

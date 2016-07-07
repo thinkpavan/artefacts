@@ -1,0 +1,3 @@
+lwcomp -- shows how to develop custom componenet
+
+lwcomp1 -- same as above but shows how to create a new event and post it to a comp.

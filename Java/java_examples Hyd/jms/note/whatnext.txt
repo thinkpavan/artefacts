@@ -1,0 +1,18 @@
+javax.jms.Destination is the super class of
+
+javax.jms.Queue is P2P class
+
+and 
+
+javax.jms.Topic is pub/sub class.
+
+Applications uses connectionfactories to create connection.
+
+A connection is a communication channel to messaging system.
+
+Connection can be used to create Session.
+
+MessageProducer sends messages and MessageConsumer consumes
+messages.
+
+Session creates Producre and Consumer and attach them to Destination.

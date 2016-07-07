@@ -1,0 +1,1 @@
+shows about attributes/constants and exceptions

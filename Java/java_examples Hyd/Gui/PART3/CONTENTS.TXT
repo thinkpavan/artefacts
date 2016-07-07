@@ -1,0 +1,14 @@
+UseAwtLikeComp  -- shows a simple example of developing a gui program
+                   using swing components which are provided as replacement
+		   to AWT components.
+
+ButInBut        -- shows that a Jbutton can hold another Jbutton unlike awt
+		   Button
+
+Zorder          -- shows how lightweight components z order will be decided
+
+LZorder          -- shows how heavyweight components z order will be decided
+
+UseRPane       -- show what root and glasspane are
+
+UseLPane       -- show how to use layered pane

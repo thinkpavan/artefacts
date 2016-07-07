@@ -1,0 +1,64 @@
+<project name="mdbproj" default="all">
+
+  <property environment="env"/>
+  <property file="./build.properties"/>
+
+  <target name="all" depends="clean,build" />
+
+  <target name="clean" >
+    <delete dir="stageDir" />
+    <delete dir="classDir" />
+    <delete dir="svcDir" />
+    <delete dir="ejbcgen" />
+  </target>
+
+  <target name="build">
+    <mkdir dir="classDir" />
+
+    <!-- Create WebService war Specific Directories -->
+    <mkdir dir="stageDir" />
+    <mkdir dir="stageDir/mdb" />
+    <mkdir dir="stageDir/mdb/WEB-INF" />
+    <mkdir dir="stageDir/mdb/WEB-INF/classes" />
+ 
+    <!-- Create the WebService App Specific Directories -->
+    <mkdir dir="svcDir" />
+    <mkdir dir="svcDir/META-INF" />
+  
+    <!-- Create the EJB -->
+
+    <delete dir="classDir/temp" />
+    <mkdir dir="classDir/temp" />
+    <mkdir dir="classDir/temp/META-INF"/>
+    <copy file="ejb-jar.xml" todir="classDir/temp/META-INF" overwrite="yes"/>
+    <copy file="weblogic-ejb-jar.xml" todir="classDir/temp/META-INF" overwrite="yes"/>
+
+    <javac srcdir="." includes="mdb.java"
+      destdir="classDir/temp" />
+
+    <javac srcdir="." includes="mdb.java"
+      destdir="stageDir/mdb/WEB-INF/classes" />
+
+    <jar jarfile="classDir/mdb.jar" basedir="classDir/temp" />
+
+    <java classname="weblogic.ejbc" fork="true" failonerror="true" >
+      <arg line=" -noexit -compiler sj classDir/mdb.jar classDir/mdb.jar"/>
+    </java>
+
+    <copy file="web.xml" todir="stageDir/mdb/WEB-INF" />
+    <copy file="web-services.xml" todir="stageDir/mdb/WEB-INF" />
+
+     <jar jarfile="classDir/mdb.war" basedir="stageDir/mdb" />
+
+     <copy file="classDir/mdb.jar" todir="svcDir" />
+     <copy file="classDir/mdb.war" todir="svcDir" />
+     <copy file="application.xml" todir="svcDir/META-INF" />
+
+     <jar jarfile="classDir/mdb.ear" basedir="svcDir" />
+
+    <delete dir="classDir/temp" />
+    <delete dir="classDir/mdb.jar" />
+    <delete dir="classDir/mdb.war" />
+    
+  </target>
+</project>

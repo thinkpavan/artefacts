@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE weblogic-ejb-jar PUBLIC 
+'-//BEA Systems, Inc.//DTD WebLogic 7.0.0 EJB//EN' 
+'http://www.bea.com/servers/wls700/dtd/weblogic-ejb-jar.dtd'>
+
+<weblogic-ejb-jar>
+
+  <weblogic-enterprise-bean>
+    <ejb-name>sfses</ejb-name>
+	<stateful-session-descriptor>
+	      <stateful-session-cache>
+        		<max-beans-in-cache>10</max-beans-in-cache>
+	      </stateful-session-cache>
+	</stateful-session-descriptor>
+    <jndi-name>inetsolv.sfses</jndi-name>
+  </weblogic-enterprise-bean>
+
+</weblogic-ejb-jar>
+

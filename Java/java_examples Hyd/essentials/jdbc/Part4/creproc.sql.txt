@@ -1,0 +1,18 @@
+-- procedure that takes in/inout/out parameters
+-- Author: Team -J
+-- Version :1.0
+create or replace PROCEDURE proc1(inparam IN Number,outparam OUT NUMBER,inoutparam IN OUT NUMBER)
+as
+  CURSOR c IS SELECT sal from scott.emp;
+  BEGIN
+	outparam :=20000;
+insert into mytab values(2001,inoutparam);
+insert into mytab values(2002,inparam);
+	inoutparam := inparam + inoutparam;
+    FOR r IN c LOOP
+	
+	inoutparam:= inoutparam + nvl(r.sal,0);
+    END LOOP;
+	insert into mytab values(2000,inoutparam);
+  END proc1;
+/

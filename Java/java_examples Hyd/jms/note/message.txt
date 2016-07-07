@@ -1,0 +1,43 @@
+A JMS message has three parts: 
+
+A header 
+Properties (optional) 
+A body (optional) 
+
+Header has fields that describe different things like how to route a message.
+
+JMSDestination
+
+JMSDeliveryMode
+
+JMSExpiration
+ 
+JMSMessageID
+ 
+JMSTimestamp
+
+Properties can be used to set additional name/values that may be required for a
+specific JMS system.
+
+Ther are different types of messages.
+
+TextMessage
+ A java.lang.String object (for example, the contents of an Extensible Markup Language file).
+ 
+MapMessage
+ A set of name/value pairs, with names as String objects and values as primitive types in the Java programming language. The entries can be accessed sequentially by enumerator or randomly by name. The order of the entries is undefined.
+ 
+BytesMessage
+ A stream of uninterpreted bytes. This message type is for literally encoding a body to match an existing message format.
+ 
+StreamMessage
+ A stream of primitive values in the Java programming language, filled and read sequentially.
+ 
+ObjectMessage
+ A Serializable object in the Java programming language.
+ 
+Message
+ Nothing. Composed of header fields and properties only. This message type is useful when a message body is not required.
+ 
+
+ 

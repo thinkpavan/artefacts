@@ -1,0 +1,24 @@
+<project name="websrv1" default="all" basedir=".">
+ <target name="all" depends="ear"/>
+
+  <target name="ear" >
+    <servicegen
+       destEar="./ws1.ear"
+       warName="./ws1.war"> 
+       <service
+         ejbJar="./ws1.jar"
+         targetNamespace="http://www.inet.com/ws1"
+         serviceName="ws1"
+         serviceURI="/ws1ejb"
+	   generateTypes="True"
+         expandMethods="True"
+	   protocol="http">
+         <client 
+           packageName="ws1"
+           clientJarName="client.jar"
+	     saveWSDL="True"
+         />
+       </service>
+     </servicegen>
+  </target>
+</project>

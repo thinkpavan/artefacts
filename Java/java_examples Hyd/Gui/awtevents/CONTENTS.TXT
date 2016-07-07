@@ -1,0 +1,1 @@
+RecordEvents -- record all awt events

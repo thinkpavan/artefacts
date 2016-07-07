@@ -1,0 +1,28 @@
+
+
+XML can be used to define our own set of tags which suits our
+requirement.
+
+XML is not a replcaement to HTML.
+
+XML is mainly used as way to transfer data in a portable way between
+application ( this is the main use of XML).
+
+In most of the literature on XML you will find xml is used to describe the
+data but is it really the fact ?
+
+
+Some of the applications of XML are
+
+CML -- chemical markup language that is used to describe molecular structure.
+Mathml -- for representing mathematical formulae.
+XHTML -- reformalation of html using xml.
+CDF-- channel definition format.
+Now most of the files that stores the configuration details are stored
+using XML (ex. ejb deployment descriptors, web application configuration
+from servlet 2.2 spec).
+B2B -- XML is now being pushed mainly in this area . This enables two
+entirely different products to exhange data using XML.
+(most of the people in the market has misconception about xml related
+to this).
+

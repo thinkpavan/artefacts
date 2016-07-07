@@ -1,0 +1,7 @@
+Shows how to use transacted sessions.
+
+This use local transactions.
+
+We can use JTA user transaction to control transaction.
+
+We will see how to use JTA while discussing ejb.

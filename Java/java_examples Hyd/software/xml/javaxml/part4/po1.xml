@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!DOCTYPE PurchaseOrder[
+  <!ELEMENT PurchaseOrder (POLINE+)>
+  <!ELEMENT POLINE (itemid,qty)> <!-- this is to indicate that a poline
+	element should contain another two items itemid and qty-->
+  <!ELEMENT itemid (#PCDATA)> 
+  <!ELEMENT qty (#PCDATA)>   
+]>
+
+<PurchaseOrder><POLINE><itemid>101</itemid><qty>10</qty></POLINE><POLINE><itemid>111</itemid><qty>111</qty></POLINE></PurchaseOrder>
+

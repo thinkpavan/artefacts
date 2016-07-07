@@ -1,0 +1,57 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 1.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+    
+    <context-param>
+        <param-name>weblogic.servlet.reloadCheckSecs</param-name>
+        <param-value>0</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>Company name</param-name>
+        <param-value>Inetsolv Pvt Ltd</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>Developer Name</param-name>
+        <param-value>Student</param-value>
+    </context-param>
+  <!--  using the tags servlet and servlet-mapping we can configure
+   the servlets -->  
+
+	<servlet>
+	  <servlet-name>Init</servlet-name>
+        <servlet-class>Init</servlet-class>
+     	<init-param>
+  	  <param-name> param1 </param-name>
+   	  <param-value> value1 </param-value>
+	</init-param>
+     	<init-param>
+  	  <param-name> param2 </param-name>
+   	  <param-value> value2 </param-value>
+	</init-param>
+	</servlet>
+
+    <servlet>
+        <servlet-name>test</servlet-name>
+        <servlet-class>Scontext</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>test</servlet-name>
+        <url-pattern>testurl</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Init</servlet-name>
+        <url-pattern>/xyz/testini</url-pattern>
+    </servlet-mapping>    
+    <welcome-file-list>
+        <welcome-file>inetsolv.html</welcome-file>
+    </welcome-file-list>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.html</location>
+    </error-page>
+</web-app>

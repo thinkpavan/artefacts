@@ -1,0 +1,24 @@
+<!DOCTYPE weblogic-ejb-jar PUBLIC '-//BEA Systems, Inc.//DTD WebLogic 8.1.0 EJB//EN' 'http://www.bea.com/servers/wls810/dtd/weblogic-ejb-jar.dtd'>
+
+
+<!-- Generated XML! -->
+
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>SFSes</ejb-name>
+    <stateful-session-descriptor>
+      <stateful-session-cache>
+        <max-beans-in-cache>1</max-beans-in-cache>
+      </stateful-session-cache>
+
+      <stateful-session-clustering>
+      </stateful-session-clustering>
+
+    </stateful-session-descriptor>
+
+    <transaction-descriptor>
+    </transaction-descriptor>
+
+    <jndi-name>SFSes</jndi-name>
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

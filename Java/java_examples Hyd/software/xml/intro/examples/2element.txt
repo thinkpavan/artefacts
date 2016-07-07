@@ -1,0 +1,30 @@
+Elements can have different content types.
+An element can have 
+	element content.
+	mixed content.
+	simple content.
+	empty content.
+ 	attributes.
+
+<computer type="intel">
+	<builtby name="assemblername" />
+	<description> This is my machine </description>
+</computer>
+
+in the above example computer element has element content.
+
+also it has type as attribute.
+
+builtby has empty content.
+
+description has simple content.
+
+some elements can have mixed ie. element as well as text content.
+
+Element Naming Rules:
+
+Names can contain letters, numbers, and other characters 
+Names must not start with a number or punctuation character 
+Names must not start with the letters xml (or XML or Xml ..) 
+Names cannot contain spaces 
+

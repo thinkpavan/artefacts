@@ -1,0 +1,19 @@
+// InOut1.idl
+// Module in Corba is mapped to Package in Java
+module INetMod {
+// our own data type
+ struct Company{
+	string name;
+	// we know it is better to define another struct to hold date value,
+	// we leave this to our students.
+	long yoe;//year of eastablishment
+	string ceo;
+	string otherattrib;
+  } ;
+  
+  interface InOut1{
+	  Company passParam(inout Company c);
+  };
+
+};
+		  

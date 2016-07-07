@@ -1,0 +1,57 @@
+XML Attributes
+
+
+
+In HTML (and in XML) attributes provide additional information about elements:
+
+<img src="computer.gif">
+<a href="demo.asp"> 
+
+Attributes often provide information that is not a part of the data. 
+
+<file type="image/gif">computer.gif</file> 
+
+Attribute values must always be enclosed in quotes, but either single or double quotes can be used.
+
+Elements or Attributes
+
+Data can be stored in child elements or in attributes.
+
+
+<book rating="good">
+  <title>Book Name</title>
+</book> 
+	or
+<book>
+  <rating>good</rating>
+  <title>Book Name</title>
+</book> 
+
+in this example rating defined as element has an advantage. ???.
+
+
+Problems:
+
+attributes cannot contain multiple values.
+attributes are not easily expandable.
+attributes cannot describe structures.
+attributes are more difficult to manipulate by program code .
+attribute values are not easy to test against a DTD.
+
+
+Most people follow the following guidline.
+
+metadata (data about data) should be stored as attributes, and that data itself should be stored as elements.
+
+example prodid etc.
+------------------------------------------------------------------------------------------------------------------------------------------------
+A "Well Formed" XML document is a document that conforms to the XML syntax rules.
+
+Not all well formed docs are valid.
+
+How can we say whether a doc is valid or not.
+
+We use DTD's ( Document type Definitions) to store the rules that talks about
+which elements are valid and what they can contain in DTD.
+
+Looking at the DTD we can say whether the docs are valid or not.

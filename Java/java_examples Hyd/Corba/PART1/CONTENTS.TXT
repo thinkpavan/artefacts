@@ -1,0 +1,1 @@
+Simple corba server returning string

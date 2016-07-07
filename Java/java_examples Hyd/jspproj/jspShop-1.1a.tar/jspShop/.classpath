@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="applets/browser/src"/>
+	<classpathentry kind="src" path="applets/list/src"/>
+	<classpathentry kind="src" path="ejb/src"/>
+	<classpathentry kind="src" path="rae/src"/>
+	<classpathentry kind="src" path="tag/Class/src"/>
+	<classpathentry kind="src" path="tag/ClassProperty/src"/>
+	<classpathentry kind="src" path="tag/Login/src"/>
+	<classpathentry kind="src" path="tag/Object/src"/>
+	<classpathentry kind="src" path="tag/Property/src"/>
+	<classpathentry kind="src" path="tag/PropertyType/src"/>
+	<classpathentry kind="src" path="tag/Type/src"/>
+	<classpathentry kind="src" path="tag/TypeName/src"/>
+	<classpathentry kind="src" path="web/WEB-INF/classes"/>
+	<classpathentry kind="lib" path="bins/counter.jar"/>
+	<classpathentry kind="lib" path="bins/jspShop.jar"/>
+	<classpathentry kind="lib" path="web/admin/objectBrowse.jar"/>
+	<classpathentry kind="lib" path="web/admin/typeBrowse.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/classproperty-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/class-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/login-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/object-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/property-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/propertytype-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/rae.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/random.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/typename-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/type-tag.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/utiltags.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="web/WEB-INF/classes"/>
+</classpath>

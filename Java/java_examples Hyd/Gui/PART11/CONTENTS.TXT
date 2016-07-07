@@ -1,0 +1,13 @@
+UseJText  -- Shows how to use special features of text Componenets which
+	     are not available in awt text componenets (concentates
+	     mainly on centralized actions)
+
+UseJText1  -- Shows how to use special features of text Componenets which
+	     are not available in awt text componenets (shows
+		html files for editing)
+
+UseJText2  -- Shows how to use special features of text Componenets which
+	     are not available in awt text componenets
+
+UseJScrollPane  -- Shows How to use ScrollPane to scroll componenets
+

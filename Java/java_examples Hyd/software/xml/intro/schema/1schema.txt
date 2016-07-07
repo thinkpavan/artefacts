@@ -1,0 +1,23 @@
+
+The XML Schema language is also referred to as XML Schema Definition (XSD).
+
+Instead of using DTD we can use XSD to define what is valid in a XML doc.
+
+
+XSD can be used to define
+	elements that can appear in a document .
+	attributes that can appear in a document. 
+	which elements are child elements. 
+	order of child elements. 
+	number of child elements. 
+	whether an element is empty or can include text. 
+	data types for elements and attributes. 
+	default and fixed values for elements and attributes. 
+
+Why Schema's
+
+	extensible to future additions.
+	richer and more useful than DTDs.
+	Written in XML.
+	support data types.
+	support namespaces.

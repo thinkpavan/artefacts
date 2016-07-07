@@ -1,0 +1,52 @@
+We can put restrictions on elements and attributes.
+These are called as facets.
+
+Example:
+<xs:element name="age">
+<xs:simpleType>
+  <xs:restriction base="xs:integer">
+    <xs:minInclusive value="0"/>
+    <xs:maxInclusive value="100"/>
+  </xs:restriction>
+</xs:simpleType>
+</xs:element> 
+
+
+<xs:element name="car">
+<xs:simpleType>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="maruti"/>
+    <xs:enumeration value="ford"/>
+  </xs:restriction>
+</xs:simpleType>
+</xs:element>  
+
+<xs:element name="car" type="carType"/>
+<xs:simpleType name="carType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="maruti"/>
+    <xs:enumeration value="ford"/>
+  </xs:restriction>
+</xs:simpleType>
+
+
+we can use patterns like  
+<xs:pattern value="[a-z]"/>  a to z are valid
+<xs:pattern value="[xyz]"/> one letter x or y or z.
+<xs:pattern value="[0-9][0-9][0-9][0-9][0-9]"/> five digit no.
+<xs:pattern value="([a-z])*"/> zero or more occurances of small letters.
+<xs:pattern value="[a-zA-Z0-9]{8}"/> only 8 lower,upper or digits.
+===================================================
+  <xs:restriction base="xs:string">
+    <xs:length value="8"/>
+  </xs:restriction>
+
+  <xs:restriction base="xs:string">
+    <xs:minLength value="5"/>
+    <xs:maxLength value="8"/>
+  </xs:restriction>
+
+
+
+
+

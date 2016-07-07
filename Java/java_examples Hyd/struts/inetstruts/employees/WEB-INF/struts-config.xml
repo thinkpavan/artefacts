@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
+  "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+
+<struts-config>
+
+  <data-sources>
+    <data-source>
+      <set-property property="driverClass"
+        value="oracle.jdbc.driver.OracleDriver" />
+      <set-property property="url"
+        value="jdbc:oracle:thin:@localhost:1521:server" />
+      <set-property property="maxCount"
+        value="5"/>
+      <set-property property="minCount"
+        value="1"/>
+      <set-property property="user"
+        value="scott"/>
+      <set-property property="password"
+        value="tiger"/>
+    </data-source>
+  </data-sources>
+
+  <form-beans>
+    <form-bean name="loginForm"
+      type="com.wiley.LoginForm" />
+    <form-bean name="employeeForm"
+      type="com.wiley.EmployeeForm" />
+  </form-beans>
+
+  <global-forwards>
+    <forward name="login" path="/login.jsp"/>
+  </global-forwards>
+
+  <action-mappings>
+
+    <action path="/Login"
+      type="com.wiley.LoginAction"
+      validate="true"
+      input="/login.jsp"
+      name="loginForm"
+      scope="request" >
+      <forward name="success" path="/EmployeeList.do"/>
+    </action>
+
+    <action path="/EmployeeList"
+      type="com.wiley.EmployeeListAction"
+      scope="request" >
+      <set-property property="loginRequired" value="true"/>
+      <forward name="success" path="/employeelist.jsp"/>
+    </action>
+
+    <action path="/Add"
+      type="com.wiley.AddEmployeeAction"
+      name="employeeForm"
+      scope="request"
+      input="/addemployee.jsp"
+      validate="true" >
+      <set-property property="loginRequired" value="true"/>
+      <forward name="success" path="/EmployeeList.do"/>
+      <forward name="error" path="/addemployee.jsp"/>
+    </action>
+
+    <action path="/Edit"
+      type="com.wiley.GetEmployeeAction"
+      name="employeeForm"
+      scope="request"
+      validate="false" >
+      <set-property property="loginRequired" value="true"/>
+      <forward name="success" path="/editemployee.jsp"/>
+      <forward name="error" path="/EmployeeList.do"/>
+    </action>
+
+    <action path="/EditEmployee"
+      type="com.wiley.EditEmployeeAction"
+      name="employeeForm"
+      scope="request"
+      input="/editemployee.jsp"
+      validate="true" >
+      <set-property property="loginRequired" value="true"/>
+      <forward name="success" path="/EmployeeList.do"/>
+      <forward name="error" path="/editemployee.jsp"/>
+    </action>
+
+    <action path="/Delete"
+      type="com.wiley.DeleteEmployeeAction"
+      scope="request"
+      validate="false" >
+      <set-property property="loginRequired" value="true"/>
+      <forward name="success" path="/EmployeeList.do"/>
+    </action>
+
+  </action-mappings>
+
+</struts-config>

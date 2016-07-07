@@ -1,0 +1,16 @@
+db.jsp  -- shows how to connect to the database and fetch from the database.
+In this we will show how to connect and fetch data by writing code in jsp
+directly . (U can also use a bean which has the whole logic of connection to 
+database a perform the operations against the database). we will discuss
+the strategies to be used when connecting to database and performing action 
+against the database in class. Before running this example make sure that 
+the driver is placed in the class path of u'r servlet engine.
+
+With all the examples we have seen we can build any kind of web application.
+U only need to put all the concepts together to make a great web application.
+
+
+
+Thanks
+Team-J
+

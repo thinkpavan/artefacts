@@ -1,0 +1,28 @@
+<web-services>
+  <handler-chains>
+     <handler-chain name="msgchk">
+        <handler class-name="handler.MsgCheck" />
+     </handler-chain>
+  </handler-chains>
+  <web-service protocol="http" name="wsrv" uri="/wsrv" targetNamespace="http://www.inet.com/webservices/wsrv" style="rpc">
+    <components>
+      <java-class name="jcComp0" class-name="handler.WSrv">
+      </java-class>
+    </components>
+
+    <operations>
+      <operation method="GetMsg(java.lang.String)" handler-chain="msgchk"
+component="jcComp0" name="GetMsg">
+        <params>
+          <param location="body" class-name="java.lang.String" style="in" name="string" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="xsd:string">
+          </param>
+          <return-param location="body" class-name="java.lang.String" name="result" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="xsd:string">
+          </return-param>
+
+        </params>
+
+      </operation>
+    </operations>
+
+  </web-service>
+</web-services>

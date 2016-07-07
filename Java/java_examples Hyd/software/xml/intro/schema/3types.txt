@@ -1,0 +1,34 @@
+xs:string 
+xs:decimal 
+xs:integer 
+xs:boolean 
+xs:date 
+xs:time 
+
+are some of the data types supported by xml schema.
+
+Simple type elements can be define using the following syntax.
+
+<xs:element name="elemname" type="elemtype"/> 
+
+example
+
+<xs:element name="author" type="xs:string"/>
+
+<xs:element name="publisher" type="xs:string" default="TataMGHill"/> 
+
+Any element with attributes is considered as complex element.
+
+attributes can be defined using 
+
+<xs:attribute name="attrib-name" type="xs:string"/> 
+
+<xs:attribute name="lang" type="xs:string" fixed="EN"/> 
+
+<xs:attribute name="lang" type="xs:string" default="EN"/> 
+
+<xs:attribute name="lang" type="xs:string" use="required"/>
+
+
+
+

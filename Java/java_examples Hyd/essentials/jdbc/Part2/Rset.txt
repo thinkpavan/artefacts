@@ -1,0 +1,4 @@
+By default we can move only in forward direction only once and the result
+set is not updatable.
+
+we can create a resultset which can be updatable as well as scrollable.

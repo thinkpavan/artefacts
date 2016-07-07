@@ -1,0 +1,16 @@
+This examples shows how to use ejb from a servlet
+
+
+In this demonstartion we have just tried to execute a 
+method on ejb object and used the output to generate  
+html content. In building complex business web sites
+we can use ejb's to provide business logic and 
+presentation logic can be written in servlets.
+
+1) copy the servlet class to c:\weblogic\myserver\servlet_classes
+2) configure the servlet making entry in weblogic.properties
+3) Execute the servlet.
+
+
+We can execute method on any type of EJB from a servlet or applet( beware
+of security issues in applets).

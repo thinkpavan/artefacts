@@ -1,0 +1,16 @@
+<purchase-order  xmlns="http://openuri.org/easypo">
+  <customer age="22">
+	<name>cust_name</name>
+	<address>cust_address</address>
+  </customer>
+  <line-item>
+	<description>this is a pen</description>
+	<per-unit-ounces>22.2</per-unit-ounces>
+	<price>22.11</price>
+	<quantity>1</quantity>
+  </line-item>
+  <shipper>
+	<name>shipping company one</name>
+	<per-ounce-rate>11</per-ounce-rate>
+  </shipper>
+</purchase-order>

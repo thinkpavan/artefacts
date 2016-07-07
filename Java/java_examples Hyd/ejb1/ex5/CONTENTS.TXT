@@ -1,0 +1,10 @@
+How to test the cache property of weblogic.
+
+
+Start client3 ( this creats 20 objects to fill the cache).
+
+start client1 , now you should see ejbpassivate method output on weblogic console.
+
+after some time when the two clients executes the businessmethod2 you can see
+the ejbactivate method called by weblogic.
+

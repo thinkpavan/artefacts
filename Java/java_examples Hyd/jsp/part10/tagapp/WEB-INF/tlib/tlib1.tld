@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+    "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>firsttaglib</short-name>
+  <uri>http://www.inet.com/taglibs/samptags</uri>
+  <description>
+    Sample tag library
+  </description>
+
+  <tag>
+    <name>firsttag</name>
+    <tag-class>inet.FirstTag</tag-class>
+	<bodycontent>empty</bodycontent>
+    <description> Some sample tag </description>
+  </tag>       
+
+  <tag>
+    <name>secondtag</name>
+    <tag-class>inet.SecondTag</tag-class>
+	<bodycontent>empty</bodycontent>
+    <description> Some sample tag </description>
+  </tag>      
+  
+</taglib>

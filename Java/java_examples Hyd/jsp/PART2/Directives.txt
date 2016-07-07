@@ -1,0 +1,30 @@
+list of directives described in jsp specifications
+
+Directive name		default value		Description
+and possible values
+=============================================================================
+1)info	                 null			Information about the page.
+
+2) errorPage="errpage"    gives page to the error page which will be sent
+			  to client in case of error.
+
+3) isErrorPage=true/flase   flase       This should be set to error pages.
+
+4) contentType="text/html"               used to set content type to some
+					other mime type.
+
+5) isThreadSafe=true/false   true      multiple threads can simultaniously 					access this page. Developer has
+					to make sure the shared variables are 
+					managed properly.
+6) autoFlush=true/false      true       When the buffer is full automatically
+					data will be sent to client instead 					of throwing exception
+
+7) buffer=none/8kb/sizekb     8kb       indicates whether the buffer has to 	
+					be used before sending to client or 
+					not.
+8) session=true/false         true	to indicate whether session data is 
+					to be available to this page or not.
+
+9) extends="somepack.someclass"    the parent class of the generated servlet.
+
+We have already used language in previous examples.

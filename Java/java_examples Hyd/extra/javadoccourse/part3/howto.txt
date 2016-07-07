@@ -1,0 +1,15 @@
+
+
+1) Compile GetAllSubPackages.java
+
+2) Build a file containing a listing of package names, where each rootdir is a directory where package directories are rooted
+example : java GetAllSubPackages pack.txt .
+
+3) Then use @packages.txt for your source packages
+example: javadoc -d doc @pack.txt
+
+This step creates documentation in doc directory for packages listed in pack.txt
+
+
+For more information on javadoc check http://java.sun.com/j2se/javadoc/
+

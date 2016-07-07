@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>XML &amp; CBL Resources: CBL Documentation: Sample OrderStatusResult Document - DTD version</title>
+
+<link rel=stylesheet href="../../../stylesheet/style.css" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- -->
+
+<table cellpadding=0 cellspacing=0 border=0 width="100%">
+<tr>
+<td width=20 nowrap><img src="../../images/spacer.gif" alt="" width=20 height=1></td>
+<td align=left><img src="../../images/spacer.gif" alt="" width=1 height=20><br>
+<font id="leftheadertext">Sample OrderStatusResult Document (XML Instance for DTD Validation)</font></td>
+<td width=20 nowrap><img src="../../images/spacer.gif" alt="" width=20 height=1></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="#336699"><img src="../../images/spacer.gif" alt="" width=1 height=2></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><font id="bodytext"><b>[</b> <a href="samples.html">Back to samples</a> <b>]</b> </font></td>
+<td></td>
+</tr>
+
+<tr>
+<td colspan=3><img src="../../images/spacer.gif" alt="" width=1 height=20></td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+<font id="codetext">
+
+<PRE>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE OrderStatusResult SYSTEM "CBL.dtd"&gt;
+
+&lt;!-- OrderStatusResult1.xml is an example of an order status request document --&gt;
+
+&lt;OrderStatusResult&gt;
+	&lt;OrderStatusHeader&gt;
+		&lt;OrderStatusDate&gt;19990809T01:01:01&lt;/OrderStatusDate&gt;
+		&lt;OrderParty&gt;
+			&lt;BuyerParty&gt;
+			&lt;Party&gt;
+			&lt;NameAddress&gt;
+				&lt;Name1&gt;Mr. Muljadi Sulistio&lt;/Name1&gt;
+				&lt;Name2&gt;Attention: Business Service Division&lt;/Name2&gt;
+				&lt;Address1&gt;1600 Riviera Ave&lt;/Address1&gt;
+				&lt;Address2&gt;Suite# 200&lt;/Address2&gt;
+				&lt;City&gt;Walnut Creek&lt;/City&gt;
+				&lt;StateOrProvince&gt;CA&lt;/StateOrProvince&gt;
+				&lt;PostalCode&gt;94596&lt;/PostalCode&gt;
+				&lt;Country&gt;US&lt;/Country&gt;
+			&lt;/NameAddress&gt;
+			&lt;OrderContact&gt;
+				&lt;Contact&gt;
+				&lt;ContactName&gt;Mr. Mike Holloway&lt;/ContactName&gt;
+				&lt;Telephone&gt;(925) 941-3333&lt;/Telephone&gt;
+				&lt;Email&gt;mike.holloway@commerceone.com&lt;/Email&gt;
+				&lt;Fax&gt;(925) 941-4555&lt;/Fax&gt;
+				&lt;/Contact&gt;
+			&lt;/OrderContact&gt;
+			&lt;ReceivingContact&gt;
+				&lt;Contact&gt;
+				&lt;ContactName&gt;Mr. Debbie Dub&lt;/ContactName&gt;
+				&lt;Telephone&gt;(925) 941-2222&lt;/Telephone&gt;
+				&lt;Email&gt;debbie.dub@commerceone.com&lt;/Email&gt;
+				&lt;Fax&gt;(925) 941-4555&lt;/Fax&gt;
+				&lt;/Contact&gt;
+			&lt;/ReceivingContact&gt;
+			&lt;ShippingContact&gt;
+				&lt;Contact&gt;
+				&lt;ContactName&gt;Ms. John Wayne&lt;/ContactName&gt;
+				&lt;Telephone&gt;(925) 941-1111&lt;/Telephone&gt;
+				&lt;Email&gt;john.wayne@commerceone.com&lt;/Email&gt;
+				&lt;Fax&gt;(925) 941-4555&lt;/Fax&gt;
+				&lt;/Contact&gt;
+			&lt;/ShippingContact&gt;
+			&lt;/Party&gt;
+			&lt;/BuyerParty&gt;
+			&lt;SupplierParty&gt;
+			&lt;Party&gt;
+			&lt;NameAddress&gt;
+				&lt;Name1&gt;Millenium Supplier Corporation&lt;/Name1&gt;
+				&lt;Name2&gt;Attention: Office Supply Division&lt;/Name2&gt;
+				&lt;Address1&gt;355 Alameda Street&lt;/Address1&gt;
+				&lt;Address2&gt;Suite 100&lt;/Address2&gt;
+				&lt;City&gt;San Jose&lt;/City&gt;
+				&lt;StateOrProvince&gt;CA&lt;/StateOrProvince&gt;
+				&lt;PostalCode&gt;94588&lt;/PostalCode&gt;
+				&lt;Country&gt;US&lt;/Country&gt;
+			&lt;/NameAddress&gt;
+			&lt;/Party&gt;
+			&lt;/SupplierParty&gt;
+		&lt;/OrderParty&gt;
+	&lt;/OrderStatusHeader&gt;
+
+	&lt;ListOfOrderStatusDetailResult&gt;
+	&lt;OrderStatusDetailResult&gt;
+		&lt;OrderReference&gt;
+			&lt;AccountCode&gt;
+				&lt;Reference&gt;
+						&lt;RefNum&gt;OD11222S&lt;/RefNum&gt;
+				&lt;/Reference&gt;
+			&lt;/AccountCode&gt;
+			&lt;BuyerRefNum&gt;
+				&lt;Reference&gt;
+						&lt;RefNum&gt;PO1221&lt;/RefNum&gt;
+				&lt;/Reference&gt;
+			&lt;/BuyerRefNum&gt;
+			&lt;SupplierRefNum&gt;
+				&lt;Reference&gt;
+						&lt;RefNum&gt;009199111&lt;/RefNum&gt;
+				&lt;/Reference&gt;
+			&lt;/SupplierRefNum&gt;
+		&lt;/OrderReference&gt;
+
+		&lt;OrderDate&gt;19990809T01:01:01&lt;/OrderDate&gt;
+		&lt;OrderStatusDate&gt;19991001T01:01:01&lt;/OrderStatusDate&gt;
+
+		&lt;Status&gt;
+			&lt;StatusNote&gt; Hello &lt;/StatusNote&gt;
+			&lt;StatusEvent&gt;
+				&lt;StatusEventCodeElement&gt;Processing&lt;/StatusEventCodeElement&gt;
+			&lt;/StatusEvent&gt;
+		&lt;/Status&gt;
+
+	&lt;/OrderStatusDetailResult&gt;
+	&lt;/ListOfOrderStatusDetailResult&gt;
+	&lt;OrderStatusCheckSummary&gt;&lt;OrderStatusCheckItemErrors&gt;0&lt;/OrderStatusCheckItemErrors&gt;&lt;/OrderStatusCheckSummary&gt;
+&lt;/OrderStatusResult&gt;
+
+
+</PRE>
+
+</font>
+
+</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="#336699"><img src="../../images/spacer.gif" alt="" width=1 height=2></td>
+<td></td>
+</tr>
+
+<tr>
+<td colspan=3><img src="../../images/spacer.gif" alt="" width=1 height=20></td>
+</tr>
+</table>
+
+<TABLE BGCOLOR="#000033" WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+	<TD ALIGN="center" VALIGN="middle" HEIGHT="75">
+	<P><FONT SIZE="1" FACE="verdana,arial,helvetica,sans serif" COLOR="#FFFFFF"><A HREF="/index.html"><FONT COLOR="#FFCC00">Home</FONT></A> | <A HREF="/company/"><FONT COLOR="#FFCC00">Company</FONT></A> | <A HREF="/solutions/"><FONT COLOR="#FFCC00">Solutions</FONT></A> | <A HREF="/services/"><FONT COLOR="#FFCC00">Services</FONT></A> | <A HREF="/customers/"><FONT COLOR="#FFCC00">Customers</FONT></A> | <A HREF="http://search.commerceone.com"><FONT COLOR="#FFCC00">Search</FONT></A> | <A HREF="/company/contact_us.html"><FONT COLOR="#FFCC00">Contact Us</FONT></A></FONT></P>
+	<P><FONT SIZE="1" FACE="verdana,arial,helvetica,sans serif" COLOR="#FFFFFF">Please submit all comments regarding this site to <A HREF="mailto:webmaster@commerceone.com"><FONT COLOR="#FFCC00">webmaster@commerceone.com</FONT></A>.<BR>
+	Copyright &copy; 2000  Commerce One, Inc.  All rights reserved.  <A HREF="/company/legal.html"><FONT COLOR="#FFCC00">Legal Notices</FONT></A></FONT></P>
+    </TD>
+</TR>
+</TABLE>
+ 
+</body>
+</html>

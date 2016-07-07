@@ -1,0 +1,4 @@
+this exercise shows how u can use cookies to store the details of the user on the client browser.
+
+
+

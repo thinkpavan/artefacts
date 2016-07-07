@@ -1,0 +1,5 @@
+HWebServer1.java:255: Method close() not found in class java.lang.String.
+                s.close();
+                       ^
+Note: HWebServer1.java uses or overrides a deprecated API.  Recompile with "-deprecation" for details.
+1 error, 1 warning

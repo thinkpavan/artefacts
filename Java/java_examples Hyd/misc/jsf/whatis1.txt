@@ -1,0 +1,27 @@
+
+
+Java Server Faces -- provides a facility of cleanly seperating presentation code
+from logic.
+
+
+
+JSF provides a custom tag library ( similar to struts tag libs like html,bean etc).
+
+
+JSF provide HTML and CORE tag libraries.
+
+HTML tag lib can be used to generate html stuff and core tag lib can be used to
+wite event handlers, validators etc.
+
+
+
+Procedure for developing JSF application.
+
+1) Develop model object to hold data.
+
+2) Add managed bean declaration to app conf file.
+
+3) create pages using html and core tags.
+
+4) define page navigation.
+

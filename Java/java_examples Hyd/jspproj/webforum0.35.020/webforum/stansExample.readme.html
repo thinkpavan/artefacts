@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>file:///C:/Documents%20and%20Settings/stowianski/cvs/webforum/webforum/stansExample.readme.html</title>
+  <meta name="author" content="Ciber">
+</head>
+<body>
+<div style="text-align: center;"><big><big><span
+ style="text-decoration: underline; font-weight: bold;">Stan's Example
+Readme and Info.<br>
+</span></big></big>
+<div style="text-align: left;"><big><big><span
+ style="text-decoration: underline; font-weight: bold;"></span><span
+ style="font-weight: bold;"><small><small><br>
+</small></small></span><small style="font-weight: bold;"><span
+ style="text-decoration: underline;">How to get a couple of forums up
+and running:</span></small><span style="font-weight: bold;"><small><small><br>
+<br>
+</small></small></span><small><small>1.) unzip stansExample.zip.&nbsp;
+It contains paths to put the files where they would go for <br>
+my example to work.<br>
+It puts the data in /usr/local/data/exForums&nbsp;&nbsp; directory<br>
+It puts the main web pages in /usr/local/tomcat.devl/webapps/ROOT</small></small></big></big><big><big><small><small>&nbsp;&nbsp;
+directory</small></small></big></big><br>
+<big><big><small><small><br>
+Looking at this structure you should be able to see where things should
+go.<br>
+<br>
+2.) To get the webforums software working; from the 'sources' directory<br>
+copy 'com' to where your class files should go in your app server. In
+tomcat<br>
+you would copy 'com' and everything underneath it (cp -rp com) to <br>
+$CATALINA_HOME/webapps/ROOT/WEB-INF/classes<br>
+<br>
+3.) Then compile the java code:<br>
+<br>
+3.a)&nbsp; cd </small></small></big></big><big><big><small><small>$CATALINA_HOME/webapps/ROOT/WEB-INF/classes<br>
+<br>
+3.b)&nbsp; export CLASSPATH=.:$CATALINA_HOME/common/lib/servlet-api.jar<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+or servlet.jar at the end. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If you do not have a
+servlet-api.jar or servlet.jar file in this path you need<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; to download one and
+put it there.<br>
+<br>
+</small></small></big></big>3.c)&nbsp; javac
+com/ondelette/servlet/*.java<br>
+<big><big><span style="text-decoration: underline; font-weight: bold;"><small><small><br>
+</small></small></span></big></big>3.d)&nbsp; javac
+com/ondelette/servlet/laf/*.java<br>
+<span style="text-decoration: underline; font-weight: bold;"><br>
+</span>3.e)&nbsp; javac -deprecation
+com/ondelette/servlet/webforum/*.java<span
+ style="text-decoration: underline; font-weight: bold;"><br>
+<big><big><span style="text-decoration: underline; font-weight: bold;"><small><small><br>
+</small></small></span></big></big></span><big><big><small><small>You
+should be able to go the the web page
+http://localhost:8080/exForums.html<br>
+You could change localhost to your ip address or hostname<br>
+<br>
+<br>
+<big><span style="font-weight: bold; text-decoration: underline;">Information
+I have learned:</span></big><br>
+<br>
+1.) In each forum directory, the index.txt file contains the following:<br>
+&nbsp;&nbsp;&nbsp; a.) The first line is the number of messages that
+have been added. <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; If you wrote 4 messages,
+they would be filenames 0 thru 3 and<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; the first line would
+contain 4.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; It also seems that if you
+later delete messages, this number does<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; not go down so it seems to
+be just an increment of the highest number message ever written - 1<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; and will be the next
+filename used.<br>
+<br>
+&nbsp;&nbsp;&nbsp; b.) The next lines are the filenames of the files
+that are parentless messages for this forum.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; If you wrote a new post,
+and it has 9 children responses, they will all be numbered 0 - 9,<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; with 0 being the head or
+parentless message, therefore 0 will show up in the index.txt file<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; and 1 thru 9 will not.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; If you write a new post,
+10, with 3 children, then 10 will be in the index.txt file and 11 - 13<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; will not be.<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; In this case
+index.txt will contain:<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+14&nbsp;&nbsp;&nbsp;&nbsp; the number of messages, and the next number
+to use<br>
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+10&nbsp;&nbsp;&nbsp;&nbsp; the latest by date written parentless message<br>
+</small></small></big></big><big><big><small><small>&nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; 0&nbsp;&nbsp; &nbsp; &nbsp; the
+earlier by date written parentless message<br>
+</small></small></big></big><big><big><small><small><br>
+&nbsp;&nbsp;&nbsp; c.)&nbsp; The order of the number of&nbsp; the
+index.txt file (after the first line), determines the order the<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; messages will appear
+on the web screen.<br>
+<br>
+2.) Create one User that has administration priviledges. He will be
+able to 'reset server' and delete<br>
+&nbsp;&nbsp;&nbsp; &nbsp; messages, and manipulate/add/delete other
+users. Just create a user with a high enough LEVEL in the file like:<br>
+&lt;USER&gt;&lt;LOGIN&gt;stan&lt;/LOGIN&gt;&lt;PASSWORD&gt;1972&lt;/PASSWORD&gt;&lt;EMAIL&gt;stan@yy.com&lt;/EMAIL&gt;&lt;LEVEL&gt;256&lt;/LEVEL&gt;&lt;/USER&gt;<br>
+<br>
+3.) For file administration, the admin. user like above, will get extra
+buttons on the forum web screen.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; One button he will have is if you go to
+a message it will have an "erase post" button. This is the only<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "easy" way to delete posts. This "will"
+delete that message and all its children messages, which is helpful!<br>
+&nbsp;&nbsp;&nbsp; &nbsp; Otherwise you could manually delete the
+messages file easily enough, but that could be hard to look through<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and then you would have to check
+the index.txt file possibly.<br>
+<br>
+4.) If you add and/or delete messages, you will not see immediate
+changes in the index.txt or even the files created<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; because webforum caches things until a
+settable timeout period. <br>
+&nbsp;&nbsp;&nbsp; &nbsp; You can do 'reset' twice, or you can
+shutdown.sh&nbsp; your app server normally which will clear out the
+cache and<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; make the files be written out.<br>
+<br>
+5.) In the English.properties file, (that I put just above the forums,
+in the data directory),<br>
+&nbsp;&nbsp;&nbsp;&nbsp; I found that these properties do these things:<br>
+SizeOfForumFolders=20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+determines how many "head" posts to list per web screen page.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; It can be longer than say just 20, because if
+each head post had<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 10
+children then it would list 20 * 10 subject lines on the web screen.<br>
+<br>
+NumberOfFolders=30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+determines how many "pages" of web screens to allow in this forum.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; So,
+here we could have 30 pages of&nbsp; 20 "head" posts per page, plus
+children per post.<br>
+<br>
+NumberOfRowsForTextArea=15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+determines number of rows in the main message typing area.<br>
+<br>
+NumberOfColsForTextArea=75</small></small></big></big><big><big><small><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+determines number of columns in the main message typing area.</small></small></big></big><br>
+<big><big><small><small><br>
+6.) Once you go into a forum, it reads it settings from the
+*.properties files, and if you want to change them<br>
+&nbsp;&nbsp;&nbsp; &nbsp; it looks like you have to restart you app
+server to get them reread.<br>
+<br>
+<br>
+October/31/2003&nbsp;&nbsp; copyright (c) 2003 Stan J. Towianski<br>
+<br>
+</small></small></big></big><span
+ style="text-decoration: underline; font-weight: bold;"><big><big><span
+ style="text-decoration: underline; font-weight: bold;"></span></big></big></span><big><big><span
+ style="text-decoration: underline; font-weight: bold;"></span></big></big></div>
+</div>
+</body>
+</html>

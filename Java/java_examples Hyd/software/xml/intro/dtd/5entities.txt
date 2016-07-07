@@ -1,0 +1,34 @@
+<!-- this example shows how to define entities that can be used as replacement text (variable)
+-->
+
+<?xml version="1.0"?>
+
+<!DOCTYPE PurchaseOrder[
+  <!ELEMENT PurchaseOrder (POLINE+)>
+  <!ELEMENT POLINE (itemid,qty)> <!-- this is to indicate that a poline
+	element should contain another two items itemid and qty-->
+  <!ELEMENT itemid (#PCDATA)> 
+  <!ELEMENT qty (#PCDATA)>   
+  <!ENTITY five "5">
+]>
+
+
+We have to use the following syntax when declaring attributes in XML
+
+<!ATTLIST element-name attribute-name
+ attribute-type default-value>
+ 
+In the above example ID is used to indicate a unique value should be used.
+
+From the above dtd we can write an XML document as shown below.
+
+<PurchaseOrder pono="1">
+	<POLINE>
+		<itemid>101</itemid>
+		<qty>10</qty>
+	</POLINE>
+	<POLINE>
+		<itemid>111</itemid>
+		<qty>&five;</qty>
+	</POLINE>
+</PurchaseOrder>

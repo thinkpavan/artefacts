@@ -1,0 +1,6 @@
+ Durable subscriptions offer the reliability of queues.
+
+we can establish the unique identity of a durable subscriber by setting the following: 
+
+A) client ID for the connection 
+B) topic and a subscription name for the subscriber 

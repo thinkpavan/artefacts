@@ -1,0 +1,1 @@
+java  -Djava.security.policy=d:\course\misctopics\security\mypolicy -Djava.security.manager   %1

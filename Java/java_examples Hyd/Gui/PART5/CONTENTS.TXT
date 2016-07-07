@@ -1,0 +1,1 @@
+These examples shows how to handle events that occur on componenets.

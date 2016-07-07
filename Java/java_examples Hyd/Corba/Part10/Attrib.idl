@@ -1,0 +1,10 @@
+// attrib.idl
+module INetMod {
+interface attrib{
+		attribute long count;
+		//an operation/method can raise any no of exceptions
+		void dooperation();
+		};
+
+};
+		  

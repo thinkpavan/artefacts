@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<!-- in this example we are using an external dtd -->
+<!DOCTYPE PurchaseOrder >
+
+<PurchaseOrder><POLINE><itemid>101<itemid><qty>10</qty></POLINE><POLINE><itemid>111</itemid><qty>&five;</qty></POLINE></PurchaseOrder>
+
+<!-- in this example we have set standalone to no -->

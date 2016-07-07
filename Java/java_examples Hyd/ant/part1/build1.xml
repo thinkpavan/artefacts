@@ -1,0 +1,21 @@
+<project name="antproj1" default="target1" basedir=".">
+
+<property name="prop1" value="ant"/>
+<property name="prop2" value="${prop1}1"/>
+<property name="prop3" value="${prop1}2"/> 
+
+<target name="target1" depends="target2,target3">
+	<echo message="Finished building"/>
+</target>
+<target name="target2">
+	<delete dir="${prop2}"/>
+	<delete dir="${prop3}"/>
+	<echo message="Deleted the directories" />
+</target>
+<target name="target3">
+	<mkdir dir="${prop2}"/>
+	<mkdir dir="${prop3}"/>
+	<echo message=" ${prop2}, ${prop3}  Directories created" />
+</target>
+
+</project>

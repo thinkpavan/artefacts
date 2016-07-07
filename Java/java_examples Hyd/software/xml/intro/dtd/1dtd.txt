@@ -1,0 +1,33 @@
+<!-- this example shows how to write a DTD -->
+
+<?xml version="1.0"?>
+
+<!DOCTYPE PurchaseOrder[
+  <!ELEMENT PurchaseOrder (POLINE+)>
+  <!ELEMENT POLINE (itemid,qty)> <!-- this is to indicate that a poline
+	element should contain another two items itemid and qty-->
+  <!ELEMENT itemid (#PCDATA)> 
+  <!ELEMENT qty (#PCDATA)>   
+]>
+
+
++ is to indicate that this element can occur for one or more no of times.
+
+? is used to represent that the element can occur for zero or one time.
+
+* is used to represent zero or more times.
+
+Using the above dtd we can create a xml document as shown above (assuming that the above dtd is stored in po1.dtd file.
+
+<PurchaseOrder>
+	<POLINE>
+		<itemid>101</itemid>
+		<qty>10</qty>
+	</POLINE>
+	<POLINE>
+		<itemid>111</itemid>
+		<qty>111</qty>
+	</POLINE>
+</PurchaseOrder>
+
+

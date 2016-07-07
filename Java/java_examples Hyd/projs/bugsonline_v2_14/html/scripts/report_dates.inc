@@ -1,0 +1,7 @@
+<TD ALIGN=CENTER COLSPAN=2>
+<FONT FACE="Verdana, Arial" SIZE=1 COLOR=BLACK>
+
+<% = sText %>
+
+</FONT>
+</TD>

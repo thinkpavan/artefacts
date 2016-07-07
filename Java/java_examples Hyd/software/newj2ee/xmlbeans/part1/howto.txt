@@ -1,0 +1,14 @@
+1) use scomp command to generate java classes from the schema.
+
+ex: scomp -d classes -src source schema.xsd
+
+The above command creates java sources in source directory and classes will
+be placed in classes directory.
+
+2) Before writing the program check the sources generate to get the information on
+   methods we can use.
+
+3) develop the code to process xml document accoring to your application requirement.
+
+
+use xbeans.jar and classes directory as part of your CLASSPATH.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mb:book xmlns:mb="http://www.inet.com">
+	<mb:name>book one</mb:name>
+	<mb:errelem>author one</mb:errelem>
+	<mb:author>author one</mb:author>
+</mb:book>

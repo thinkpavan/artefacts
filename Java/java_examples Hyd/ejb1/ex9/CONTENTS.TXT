@@ -1,0 +1,16 @@
+In this example we will see how to call a business method on one bean from 
+other bean. We will also show some more transaction attributes in this
+example. Here we will use two ejb's 
+1) BeanClient which invokes method on other bean
+
+2) we will use the BeanServer as another bean
+
+with this example we will highlight the issue of
+re-entrance.
+
+This example also shows how to pack more than one ejb
+in a jar
+
+
+we can try out different combinations like tx_mandatory
+and tx_new_required on Serverbean

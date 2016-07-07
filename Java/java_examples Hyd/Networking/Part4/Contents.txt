@@ -1,0 +1,7 @@
+UseUrl -- shows how to create url
+
+ExamineUrl -- shows how to examine different props of url's
+
+HttpHead  -- show how to get information about http headers
+
+FtpClient -- shows how to create ftp client

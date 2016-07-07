@@ -1,0 +1,27 @@
+<xs:element name="name1" type="xs:string"/>
+<xs:element name="name2" substitutionGroup="name"/>
+
+<xs:complexType name="custinfo">
+  <xs:sequence>
+    <xs:element ref="name"/>
+  </xs:sequence>
+</xs:complexType>
+
+example:
+
+<customer>
+  <name1>John Smith</name1>
+</customer> 
+
+or
+
+<customer>
+  <name2>John Smith</name2>
+</customer> 
+
+we can block substitution using
+
+<xs:element name="name1" type="xs:string" block="substitution"/>
+<xs:element name="name2" substitutionGroup="name"/>
+
+in this case name2 can not be used for name1.

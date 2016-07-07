@@ -1,0 +1,5 @@
+FirstServlet  -- shows how to write a simple servlet
+
+Serv  -- shows details about service method
+
+init -- shows how to set init prams to servlet

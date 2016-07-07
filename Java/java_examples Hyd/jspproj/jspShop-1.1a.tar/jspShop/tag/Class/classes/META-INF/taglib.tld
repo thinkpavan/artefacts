@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>class</shortname>
+	
+  <tag>
+    <name>getChildren</name>
+    <tagclass>com.submersion.jspshop.classtag.GetChildrenTag</tagclass>
+    <teiclass>com.submersion.jspshop.classtag.GetChildrenTEI</teiclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+
+  <tag>
+    <name>iterate</name>
+    <tagclass>com.submersion.jspshop.classtag.IterateTag</tagclass>
+    <teiclass>com.submersion.jspshop.classtag.IterateTEI</teiclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>create</name>
+    <tagclass>com.submersion.jspshop.classtag.CreateTag</tagclass>
+    <teiclass>com.submersion.jspshop.classtag.CreateTEI</teiclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>className</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>inheritedFrom</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>description</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>get</name>
+    <tagclass>com.submersion.jspshop.classtag.GetTag</tagclass>
+    <teiclass>com.submersion.jspshop.classtag.GetTEI</teiclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>className</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+  </tag>
+
+  <tag>
+    <name>delete</name>
+    <tagclass>com.submersion.jspshop.classtag.DeleteTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+</taglib>

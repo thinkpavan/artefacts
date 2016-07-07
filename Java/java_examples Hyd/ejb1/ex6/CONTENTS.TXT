@@ -1,0 +1,13 @@
+This examples shows how to use a session bean to perform data base
+operations using transaction services provided by application servers.
+
+transwithnoclose is an ejb created by commenting con.close line.
+
+
+In this example we have used the concept of resource factory.
+
+In order to run this example configure JDBC datasource and Txdatasource
+from the console.
+
+inetsolv.oraclepool is the JNDI name of DataSource used in
+this example.

@@ -1,0 +1,8 @@
+Shows how we can use RMI class loader to load classes from
+http server.
+
+
+Copy the Client, Remote interface and stub to the directory which
+is set as doc root of http server.
+
+run RMICliLoader from a differnt directory.

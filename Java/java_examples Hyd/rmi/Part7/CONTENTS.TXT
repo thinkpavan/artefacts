@@ -1,0 +1,2 @@
+shows how to return a reference to a remote object from a
+remote method

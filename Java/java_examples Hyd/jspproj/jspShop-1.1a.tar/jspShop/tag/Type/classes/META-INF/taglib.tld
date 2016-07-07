@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+	<shortname>type</shortname>
+	
+  <tag>
+    <name>iterate</name>
+    <tagclass>com.submersion.jspshop.typetag.IterateTag</tagclass>
+    <teiclass>com.submersion.jspshop.typetag.IterateTEI</teiclass>
+    <bodycontent>JSP</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>valueID</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>typeID</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>create</name>
+    <tagclass>com.submersion.jspshop.typetag.CreateTag</tagclass>
+    <teiclass>com.submersion.jspshop.typetag.CreateTEI</teiclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+    </attribute>
+    <attribute>
+      <name>valueID</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>typeID</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>typeName</name>
+      <required>false</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>    
+    <attribute>
+        <name>property</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>delete</name>
+    <tagclass>com.submersion.jspshop.typetag.DeleteTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>      
+    </attribute>
+  </tag>
+  
+  <tag>
+    <name>modify</name>
+    <tagclass>com.submersion.jspshop.typetag.ModifyTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <attribute>
+      <name>id</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>      
+    </attribute>
+    <attribute>
+      <name>value</name>
+      <required>true</required>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
+    
+</taglib>

@@ -1,0 +1,605 @@
+<?xml version="1.0"?>
+<!DOCTYPE orion-ejb-jar PUBLIC "-//Evermind//DTD Enterprise JavaBeans 1.1 runtime//EN" "http://www.orionserver.com/dtds/orion-ejb-jar.dtd">
+
+<orion-ejb-jar deployment-version="1.5.2" deployment-time="e9835c342e">
+	<enterprise-beans>
+		<entity-deployment name="com.submersion.jspshop.ejb.Object" location="com.submersion.jspshop.ejb.Object" wrapper="ObjectHome_EntityHomeWrapper10" max-tx-retries="3" table="jspshop_Object" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="objectID" persistence-name="objectID" />
+			</primkey-mapping>
+			<cmp-field-mapping name="context" persistence-name="context" />
+			<cmp-field-mapping name="parentID" persistence-name="parentID" />
+			<cmp-field-mapping name="name" persistence-name="name" />
+			<cmp-field-mapping name="className" persistence-name="className" />
+			<finder-method query="order by $name">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspShop_Value b where a.objectID = b.objectID and b.value like $2 and a.parentID = $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspShop_Value b where a.objectID = b.objectID and b.value like ? and a.parentID = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByValue</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspShop_Value b where a.objectID = b.objectID and b.value like $2 and a.context like $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspShop_Value b where a.objectID = b.objectID and b.value like ? and a.context like ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByValueSub</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c, jspshop_type d where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = d.typeID and d.name like $2 and a.parentID = $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c, jspshop_type d where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = d.typeID and d.name like ? and a.parentID = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByType</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = $2 and a.parentID = $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = ? and a.parentID = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByType2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c, jspshop_type d where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = d.typeID and d.name like $2 and a.context like $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c, jspshop_type d where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = d.typeID and d.name like ? and a.context like ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByTypeSub</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = $2 and a.context like $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_Object a, jspshop_typevalue b, jspshop_value c where a.objectID = c.objectID and b.valueID = c.valueID and b.typeID = ? and a.context like ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByTypeSub2</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$parentID = $1 order by $name">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object where jspshop_Object.parentID = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByContext2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$context like $1 order by $name">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object where jspshop_Object.context like ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByContext</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$parentID = $1 and $className = $2 order by $name">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object where jspshop_Object.parentID = ? and jspshop_Object.className = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByClassName2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$className = $1 order by $name">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object where jspshop_Object.className = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByClassName</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b, jspshop_property c where a.objectID = b.objectID and b.propertyID = c.propertyID and c.name like $2 and a.parentID = $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b, jspshop_property c where a.objectID = b.objectID and b.propertyID = c.propertyID and c.name like ? and a.parentID = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByProperty</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b where a.objectID = b.objectID and b.propertyID = $2 and a.parentID = $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b where a.objectID = b.objectID and b.propertyID = ? and a.parentID = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByProperty2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b, jspshop_property c where a.objectID = b.objectID and b.propertyID = c.propertyID and c.name like $2 and a.context like $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b, jspshop_property c where a.objectID = b.objectID and b.propertyID = c.propertyID and c.name like ? and a.context like ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByPropertySub</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b where a.objectID = b.objectID and b.propertyID = $2 and a.context like $1 order by $name" partial="false">
+				<!-- Generated SQL: "select a.objectID, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_value b where a.objectID = b.objectID and b.propertyID = ? and a.context like ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByPropertySub2</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$context like $1 and className = $2 order by $name">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object where jspshop_Object.context like ? and className = ? order by jspshop_Object.name" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByClassNameSub</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select distinct a.objectid, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_object b where a.parentID = $1  and b.parentID = a.objectID" partial="false">
+				<!-- Generated SQL: "select distinct a.objectid, a.context, a.parentID, a.name, a.className from jspshop_object a, jspshop_object b where a.parentID = ?  and b.parentID = a.objectID" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByChildCheck</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$parentID = $1 and name = $2">
+				<!-- Generated SQL: "select jspshop_Object.objectID, jspshop_Object.context, jspshop_Object.parentID, jspshop_Object.name, jspshop_Object.className from jspshop_Object where jspshop_Object.parentID = ? and name = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+					<method-name>findByParentIDName</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<entity-deployment name="com.submersion.jspshop.ejb.Value" location="com.submersion.jspshop.ejb.Value" wrapper="ValueHome_EntityHomeWrapper12" max-tx-retries="3" table="jspshop_Value" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="valueID" persistence-name="valueID" />
+			</primkey-mapping>
+			<cmp-field-mapping name="propertyID" persistence-name="propertyID" />
+			<cmp-field-mapping name="objectID" persistence-name="objectID" />
+			<cmp-field-mapping name="value" persistence-name="value" />
+			<finder-method query="">
+				<!-- Generated SQL: "select jspshop_Value.valueID, jspshop_Value.propertyID, jspshop_Value.objectID, jspshop_Value.value from jspshop_Value" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$objectID = $1 and $value like $2">
+				<!-- Generated SQL: "select jspshop_Value.valueID, jspshop_Value.propertyID, jspshop_Value.objectID, jspshop_Value.value from jspshop_Value where jspshop_Value.objectID = ? and jspshop_Value.value like ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByObjectIDValue</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$objectID = $1">
+				<!-- Generated SQL: "select jspshop_Value.valueID, jspshop_Value.propertyID, jspshop_Value.objectID, jspshop_Value.value from jspshop_Value where jspshop_Value.objectID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByObjectID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$propertyID = $1">
+				<!-- Generated SQL: "select jspshop_Value.valueID, jspshop_Value.propertyID, jspshop_Value.objectID, jspshop_Value.value from jspshop_Value where jspshop_Value.propertyID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByPropertyID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.valueID, a.propertyID, a.objectID, a.value from jspshop_value a, jspshop_typevalue b where a.valueID = b.valueID and b.typeID = $2 and a.objectID = $1" partial="false">
+				<!-- Generated SQL: "select a.valueID, a.propertyID, a.objectID, a.value from jspshop_value a, jspshop_typevalue b where a.valueID = b.valueID and b.typeID = ? and a.objectID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByObjectIDType2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.valueID, a.propertyID, a.objectID, a.value from jspshop_value a, jspshop_typevalue b, jspshop_type c where a.valueID = b.valueID and b.typeID = c.typeID and a.objectID = $1 and c.name like $2" partial="false">
+				<!-- Generated SQL: "select a.valueID, a.propertyID, a.objectID, a.value from jspshop_value a, jspshop_typevalue b, jspshop_type c where a.valueID = b.valueID and b.typeID = c.typeID and a.objectID = ? and c.name like ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByObjectIDType</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$objectID = $1 and $propertyID = $2">
+				<!-- Generated SQL: "select jspshop_Value.valueID, jspshop_Value.propertyID, jspshop_Value.objectID, jspshop_Value.value from jspshop_Value where jspshop_Value.objectID = ? and jspshop_Value.propertyID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByObjectIDProperty2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.valueID, a.propertyID, a.objectID, a.value from jspshop_value a, jspshop_property b where a.propertyID = b.propertyID and a.objectID = $1 and b.name like $2" partial="false">
+				<!-- Generated SQL: "select a.valueID, a.propertyID, a.objectID, a.value from jspshop_value a, jspshop_property b where a.propertyID = b.propertyID and a.objectID = ? and b.name like ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByObjectIDProperty</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.valueID, a.propertyID, a.objectID, a.value from jspshop_Value a, jspshop_Property b, jspshop_object c, jspShop_Value d, jspShop_Property e where a.propertyID = b.propertyID and b.name = 'Password' and a.value = $2 and c.objectID = a.objectID and lower(c.name) = lower($1) and d.propertyID = e.propertyID and e.name='Verified' and d.value='true'" partial="false">
+				<!-- Generated SQL: "select a.valueID, a.propertyID, a.objectID, a.value from jspshop_Value a, jspshop_Property b, jspshop_object c, jspShop_Value d, jspShop_Property e where a.propertyID = b.propertyID and b.name = 'Password' and a.value = ? and c.objectID = a.objectID and lower(c.name) = lower(?) and d.propertyID = e.propertyID and e.name='Verified' and d.value='true'" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+					<method-name>findByPasswordCheck</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<entity-deployment name="com.submersion.jspshop.ejb.Property" location="com.submersion.jspshop.ejb.Property" wrapper="PropertyHome_EntityHomeWrapper14" max-tx-retries="3" table="jspshop_Property" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="propertyID" persistence-name="propertyID" />
+			</primkey-mapping>
+			<cmp-field-mapping name="name" persistence-name="name" />
+			<cmp-field-mapping name="className" persistence-name="className" />
+			<finder-method query="">
+				<!-- Generated SQL: "select jspshop_Property.propertyID, jspshop_Property.name, jspshop_Property.className from jspshop_Property" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Property</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$className = $1">
+				<!-- Generated SQL: "select jspshop_Property.propertyID, jspshop_Property.name, jspshop_Property.className from jspshop_Property where jspshop_Property.className = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Property</ejb-name>
+					<method-name>findByClassName</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$className = $1 and $name = $2">
+				<!-- Generated SQL: "select jspshop_Property.propertyID, jspshop_Property.name, jspshop_Property.className from jspshop_Property where jspshop_Property.className = ? and jspshop_Property.name = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Property</ejb-name>
+					<method-name>findByClassNameProperty</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<entity-deployment name="com.submersion.jspshop.ejb.TypeValue" location="com.submersion.jspshop.ejb.TypeValue" wrapper="TypeValueHome_EntityHomeWrapper16" max-tx-retries="3" table="jspshop_TypeValue" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="typeValueID" persistence-name="typeValueID" />
+			</primkey-mapping>
+			<cmp-field-mapping name="valueID" persistence-name="valueID" />
+			<cmp-field-mapping name="value" persistence-name="value" />
+			<cmp-field-mapping name="typeID" persistence-name="typeID" />
+			<finder-method query="">
+				<!-- Generated SQL: "select jspshop_TypeValue.typeValueID, jspshop_TypeValue.valueID, jspshop_TypeValue.value, jspshop_TypeValue.typeID from jspshop_TypeValue" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$valueID = $1">
+				<!-- Generated SQL: "select jspshop_TypeValue.typeValueID, jspshop_TypeValue.valueID, jspshop_TypeValue.value, jspshop_TypeValue.typeID from jspshop_TypeValue where jspshop_TypeValue.valueID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByValueID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$valueID = $1 and value like $2">
+				<!-- Generated SQL: "select jspshop_TypeValue.typeValueID, jspshop_TypeValue.valueID, jspshop_TypeValue.value, jspshop_TypeValue.typeID from jspshop_TypeValue where jspshop_TypeValue.valueID = ? and value like ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByValueIDValue</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$typeID = $1">
+				<!-- Generated SQL: "select jspshop_TypeValue.typeValueID, jspshop_TypeValue.valueID, jspshop_TypeValue.value, jspshop_TypeValue.typeID from jspshop_TypeValue where jspshop_TypeValue.typeID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByTypeID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$valueID = $1 and $typeID = $2">
+				<!-- Generated SQL: "select jspshop_TypeValue.typeValueID, jspshop_TypeValue.valueID, jspshop_TypeValue.value, jspshop_TypeValue.typeID from jspshop_TypeValue where jspshop_TypeValue.valueID = ? and jspshop_TypeValue.typeID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByValueIDType2</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.typeValueID, a.valueID, a.value, a.typeID from jspshop_typevalue a, jspshop_type b where a.typeID = b.typeID and a.valueID = $1 and b.name like $2" partial="false">
+				<!-- Generated SQL: "select a.typeValueID, a.valueID, a.value, a.typeID from jspshop_typevalue a, jspshop_type b where a.typeID = b.typeID and a.valueID = ? and b.name like ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByValueIDType</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.typeValueID, a.valueID, a.value, a.typeID from jspshop_typevalue a, jspshop_value b, jspshop_property c, jspshop_type d, jspshop_object e where e.objectID = $1 and e.objectID = b.objectID and b.propertyID = c.propertyID and c.name = $3 and b.value = $2 and b.valueID = a.valueID and a.typeID = d.typeID and d.name = $4" partial="false">
+				<!-- Generated SQL: "select a.typeValueID, a.valueID, a.value, a.typeID from jspshop_typevalue a, jspshop_value b, jspshop_property c, jspshop_type d, jspshop_object e where e.objectID = ? and e.objectID = b.objectID and b.propertyID = c.propertyID and c.name = ? and b.value = ? and b.valueID = a.valueID and a.typeID = d.typeID and d.name = ?;" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findBySecurity</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.typeValueID, a.valueID, a.value, a.typeID from jspshop_TypeValue a, jspShop_Value b where a.valueID = b.valueID and a.typeID = $2 and b.propertyID = $1" partial="false">
+				<!-- Generated SQL: "select a.typeValueID, a.valueID, a.value, a.typeID from jspshop_TypeValue a, jspShop_Value b where a.valueID = b.valueID and a.typeID = ? and b.propertyID = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+					<method-name>findByPropertyIDTypeID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<entity-deployment name="com.submersion.jspshop.ejb.Type" location="com.submersion.jspshop.ejb.Type" wrapper="TypeHome_EntityHomeWrapper18" max-tx-retries="3" table="jspshop_Type" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="typeID" persistence-name="typeID" />
+			</primkey-mapping>
+			<cmp-field-mapping name="name" persistence-name="name" />
+			<finder-method query="">
+				<!-- Generated SQL: "select jspshop_Type.typeID, jspshop_Type.name from jspshop_Type" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Type</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$typeID = $1">
+				<!-- Generated SQL: "select jspshop_Type.typeID, jspshop_Type.name from jspshop_Type" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Type</ejb-name>
+					<method-name>findByTypeID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$name = $1">
+				<!-- Generated SQL: "select jspshop_Type.typeID, jspshop_Type.name from jspshop_Type where jspshop_Type.name = ?" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Type</ejb-name>
+					<method-name>findByName</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$name = $1">
+				<!-- Generated SQL: "select jspshop_Type.typeID, jspshop_Type.name from jspshop_Type" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Type</ejb-name>
+					<method-name>findByTypeName</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<entity-deployment name="com.submersion.jspshop.ejb.Class" location="com.submersion.jspshop.ejb.Class" wrapper="ClassHome_EntityHomeWrapper20" max-tx-retries="3" table="jspshop_Class" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="className" persistence-name="className" />
+			</primkey-mapping>
+			<cmp-field-mapping name="parentName" persistence-name="parentName" />
+			<cmp-field-mapping name="context" persistence-name="context" />
+			<cmp-field-mapping name="description" persistence-name="description" />
+			<finder-method query="order by $className ASC">
+				<!-- Generated SQL: "select jspshop_Class.className, jspshop_Class.parentName, jspshop_Class.context, jspshop_Class.description from jspshop_Class order by jspshop_Class.className ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Class</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$context like $1 order by $className ASC">
+				<!-- Generated SQL: "select jspshop_Class.className, jspshop_Class.parentName, jspshop_Class.context, jspshop_Class.description from jspshop_Class where jspshop_Class.context like ? order by jspshop_Class.className ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Class</ejb-name>
+					<method-name>findByContext</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select distinct a.className, a.parentName, a.context, a.description from jspshop_class a, jspshop_class b where a.parentName = $1  and b.parentName = a.className" partial="false">
+				<!-- Generated SQL: "select distinct a.className, a.parentName, a.context, a.description from jspshop_class a, jspshop_class b where a.parentName = ?  and b.parentName = a.className order by a.className ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Class</ejb-name>
+					<method-name>findByChildCheck</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$parentName = $1 order by $className ASC">
+				<!-- Generated SQL: "select jspshop_Class.className, jspshop_Class.parentName, jspshop_Class.context, jspshop_Class.description from jspshop_Class where jspshop_Class.parentName = ? order by jspshop_Class.className ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.Class</ejb-name>
+					<method-name>findByParentName</method-name>
+					<method-params>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<entity-deployment name="com.submersion.jspshop.ejb.PropertyType" location="com.submersion.jspshop.ejb.PropertyType" wrapper="PropertyTypeHome_EntityHomeWrapper22" max-tx-retries="3" table="jspshop_PropertyType" data-source="/DefaultDS">
+			<primkey-mapping>
+				<cmp-field-mapping name="propertyTypeID" persistence-name="propertyTypeID" />
+			</primkey-mapping>
+			<cmp-field-mapping name="typeID" persistence-name="typeID" />
+			<cmp-field-mapping name="propertyID" persistence-name="propertyID" />
+			<finder-method query="select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspshop_type b where a.typeID = b.typeID order by b.name ASC" partial="false">
+				<!-- Generated SQL: "select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspshop_type b where a.typeID = b.typeID order by b.name ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.PropertyType</ejb-name>
+					<method-name>findByAll</method-name>
+					<method-params>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$propertyID = $1" partial="false">
+				<!-- Generated SQL: "select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspshop_type b where a.typeID = b.typeID and a.propertyID = ? order by b.name ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.PropertyType</ejb-name>
+					<method-name>findByPropertyID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="$typeID = $1" partial="false">
+				<!-- Generated SQL: "select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspshop_type b where a.typeID = b.typeID and a.typeID = ? order by b.name ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.PropertyType</ejb-name>
+					<method-name>findByTypeID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspShop_Type b where a.typeID = b.typeID and a.propertyID = $1 and b.name like $2">
+				<!-- Generated SQL: "select jspshop_PropertyType.propertyTypeID, jspshop_PropertyType.typeID, jspshop_PropertyType.propertyID from jspshop_PropertyType" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.PropertyType</ejb-name>
+					<method-name>findByPropertyIDTypeName</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.String</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<finder-method query="select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspshop_type b where a.typeID = b.typeID and a.typeID = $2 and a.propertyID = $1 order by b.name ASC" partial="false">
+				<!-- Generated SQL: "select a.propertyTypeID, a.typeID, a.propertyID from jspshop_propertytype a, jspshop_type b where a.typeID = b.typeID and a.typeID = ? and a.propertyID = ? order by b.name ASC" -->
+				<method>
+					<ejb-name>com.submersion.jspshop.ejb.PropertyType</ejb-name>
+					<method-name>findByPropertyIDTypeID</method-name>
+					<method-params>
+						<method-param>java.lang.Long</method-param>
+						<method-param>java.lang.Long</method-param>
+					</method-params>
+				</method>
+			</finder-method>
+			<ejb-ref-mapping name="ejb/Counter" />
+		</entity-deployment>
+		<session-deployment name="com.submersion.jspshop.ejb.RightSearch" location="com.submersion.jspshop.ejb.RightSearch" wrapper="RightSearchHome_StatelessSessionHomeWrapper8" max-tx-retries="3" cache-timeout="60" persistence-filename="com.submersion.jspshop.ejb.RightSearch" />
+	</enterprise-beans>
+	<assembly-descriptor>
+		<default-method-access>
+			<security-role-mapping name="&lt;default-ejb-caller-role&gt;" impliesAll="true" />
+		</default-method-access>
+	</assembly-descriptor>
+</orion-ejb-jar>

@@ -1,0 +1,11 @@
+inetstruts -- our struts course examples.
+
+
+strutsapp -- some sample apps on struts,tiles and strutsconsole tool.
+
+
+strutsex -- examples downloaded from jakatra site.
+
+
+websites -- some sample pages from popular sites to show you the
+importance of template/layout/tiles.

@@ -1,0 +1,10 @@
+-- procedure that takes no params
+create or replace PROCEDURE proc0
+as
+   i number;
+   BEGIN
+
+	i :=44+ 1;
+	insert into mytab values(1000,i);
+  END proc0;
+/

@@ -1,0 +1,13 @@
+// OneWay.idl
+// Module in Corba is mapped to Package in Java
+module INetMod {
+// our own data type
+  interface OneWay{
+	  oneway  void owmethod(in short s);
+	  void normalmethod();
+	  long normalmethod1();
+	  oneway  void owmethod1(inout short s);
+  };
+
+};
+		  

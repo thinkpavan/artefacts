@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+
+Name: WEB-INF/classes/NBDT/StudentCodec.class
+
+Name: WEB-INF/web-services.xml
+
+Name: ws4_client.jar
+
+Name: WEB-INF/web.xml
+
+Name: WEB-INF/classes/NBDT/holders/StudentHolder.class
+
+Name: META-INF/MANIFEST.MF
+
+Name: WEB-INF/classes/NBDT/holders/StudentHolder.java
+
+Name: WEB-INF/classes/NBDT/Student.class
+
+Name: WEB-INF/classes/NBDT/StudentCodec.java
+
+Name: WEB-INF/classes/NBDT/WS4.class
+

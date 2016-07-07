@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+ <data-sources/>
+ <!-- ========== Form Bean Definitions =================================== -->
+ <form-beans>
+ </form-beans>
+
+ <global-exceptions/>
+
+ <!-- ========== Global Forward Definitions ============================== -->
+ <global-forwards>
+  <forward name="home" path="/index.jsp"/>
+ </global-forwards>
+
+ <!-- ========== Action Mapping Definitions ============================== -->
+ <action-mappings>
+ </action-mappings>
+ <controller/>
+ <!-- ========== Message Resources Definitions =========================== -->
+<!-- by default message resource will be stored using org.apache.struts.action.MESSAGE
+as key -->
+<message-resources parameter="ApplicationResources" null="false" /> 
+<message-resources parameter="InetRes" null="false" key="INET_KEY" /> 
+
+ <!-- ========== Plug Ins Configuration ================================== 
+ 
+     Add multiple validator resource files by setting the pathnames property 
+     with a comma delimitted list of resource files to load. 
+  -->
+ <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+ </plug-in>
+</struts-config>

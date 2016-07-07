@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PurchaseOrder pono="10">
+  <POLINE>
+    <itemid>1000</itemid>
+    <qty>10</qty>
+  </POLINE>
+</PurchaseOrder>
+

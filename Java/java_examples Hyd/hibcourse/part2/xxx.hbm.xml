@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 2.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<hibernate-mapping>
+        <class name="Stud" table="student_tab">
+                <id name="studentId" column="usid" type="long">
+                        <generator class="increment"/>
+                </id>
+                <property name="name" />
+                <property name="fatherName" />
+                <property name="address" />
+        </class>
+</hibernate-mapping>

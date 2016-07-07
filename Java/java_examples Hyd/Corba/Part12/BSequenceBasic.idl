@@ -1,0 +1,16 @@
+
+//SequenceBasic.idl
+module INetSolv
+{
+
+	typedef sequence<long,20>	seq1;
+	typedef sequence<short,10>	seq2;
+	interface BSequenceBasic
+	{
+		void modifySequence(
+			inout seq1 inoutSeq, 
+			in seq2 inSeq); // a sequence in java will be mapped to java array
+	};
+};			
+
+

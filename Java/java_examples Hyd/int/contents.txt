@@ -1,0 +1,15 @@
+examples showing how to internationalize an application.
+
+
+Note: we have used an online translation service to find out german and french words for some of the english words. They need not be correct. Our intention here is to just demonstrate the concept.
+
+
+Int1.java -- shows how to create locale specific strings in seperate 
+property files and use it from the application.
+
+note : run the above example by removing the file APP_de_DE.properties and
+by setting Locale to german.
+
+Int2.java  -- shows how to use the dates according to locale specific 
+format. (example to show loacle aware classes in java core libraries.
+

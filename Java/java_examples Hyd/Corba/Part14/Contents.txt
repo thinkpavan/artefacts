@@ -1,0 +1,2 @@
+shows how to pass a non persistant Corba Object Reference to a Corba Client
+and also shows how to hold the state information between calls

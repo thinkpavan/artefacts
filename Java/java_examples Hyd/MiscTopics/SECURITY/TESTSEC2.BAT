@@ -1,0 +1,3 @@
+rem check the usage of == in system property
+
+java  -Djava.security.policy==d:\course\misctopics\security\mypolicy1 -Djava.security.manager   %1

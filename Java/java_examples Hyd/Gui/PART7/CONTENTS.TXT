@@ -1,0 +1,14 @@
+UseJOptionPane   -- shows how to use JOPtionPane
+
+UseJDialog        -- shows how to use JDialog 
+
+UseJDialog1	 -- shows how to add dialog (another example
+		on JDialog)
+
+UseFileChooser    -- shows how to use JFileChooser
+
+UseFileChooser1    -- shows how to set filters to JFileChooser
+
+UseFileChooser2    -- shows how to add Previewers to JFileChooser
+
+

@@ -1,0 +1,5 @@
+In this example we will see how EJB server throws an excpetion in case
+of thread re entring on same object.
+
+when we run this example it will be clear for us that a thread cannot
+re entrant on the same object in case of session bean.

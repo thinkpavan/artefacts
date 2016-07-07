@@ -1,0 +1,4 @@
+This example is same as that of part6 but we will try to go deep into
+how server automatically performs commits/rollbacks. We will try to highlight
+different issues of transactions by using admin tools associated with 
+EJB server.

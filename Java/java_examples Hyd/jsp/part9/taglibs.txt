@@ -1,0 +1,37 @@
+Jsp supports a set of tags like bean tag etc. 
+We can extend the tags that are supported by implementing a tag library.
+
+Maintainance of jsp can be simplefied if we can avoid the use of jsp 
+elements that embed scripting language code in the page.
+
+To use custom tags the library has to be loaded. This can be done by
+using taglib directive. 
+
+tag library is packaged as a jar file MANIFEST.MF in the
+directory META-INF. The jar file representing jsp tag library must
+include taglib.tld ( tag library description ).
+
+For implementing tag handlers we use the package
+javax.servlet.jsp.tagext
+
+Tag and BodyTag interfaces are part of the above packages
+which we need to implement directly or we can extend TagSupport
+and BodyTagSupport classes.
+
+BodyTag is for handlers that needs to process the body content
+of the jsp tag used in the page.
+
+sample custom tags
+
+Tag with body:
+
+<namespace:tag>
+  body
+</namespace:tag>
+
+Tag without body:
+
+<namespace:tag>
+  body
+</namespace:tag>
+

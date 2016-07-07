@@ -1,0 +1,14 @@
+shows how an object is serialized and de serialized
+
+Ser1  -- shows how to serialize an object to stream
+
+DSer1  -- shows how to deserialize an object from stream
+
+Ser2  -- shows how to serialize multiple object to stream
+
+DSer2  -- shows how to deserialize multiple object from stream
+
+
+Ser3  -- shows how to serialize an object to stream
+
+DSer3  -- shows how to deserialize an object from stream

@@ -1,0 +1,1663 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0055)http://www.microsoft.com/windowsserver2003/default.mspx -->
+<HTML dir=ltr><HEAD><TITLE>Microsoft Windows Server 2003 Home</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META content=en-us name=MS.LOCALE>
+<META content="Microsoft Windows Server 2003 Home" name=title>
+<META 
+content="Homepage for Microsoft Windows Server 2003 with product information, technical information, samples and downloads, developer community information and product news and reviews" 
+name=description>
+<META content="Windows Server 2003, Windows, Microsoft" name=keywords>
+<META content="February 16, 2004" name=last-updated><LINK 
+href="three_files/css.htm" type=text/css rel=stylesheet>
+<SCRIPT language=Javascript src="three_files/js.aspx" 
+type=text/javascript></SCRIPT>
+<LINK href="three_files/css.aspx" type=text/css rel=Stylesheet>
+<SCRIPT language=Javascript src="three_files/menujs" 
+type=text/javascript></SCRIPT>
+
+<SCRIPT language=Javascript>
+	var surveyFlag = false;
+	window.attachEvent("onunload", mnpSurvey1);
+	function mnpSurvey1()
+	{
+		if (Math.random() < 0.04)
+		{
+			if (mnpSurveyAllowed("MSRESEARCH"))
+			{
+				surveyFlag = true;
+		
+				mnpWebSurvey("Microsoft is conducting an online survey.   Your opinion counts!   Would you like to participate?", "http://www2.survey-poll.com/redirect/NETServers/netServers.html", "http://www2.survey-poll.com/redirect/NETServers/close.html");
+			
+			}
+		}
+	}
+</SCRIPT>
+
+<SCRIPT language=Javascript>
+var mnpSurveyCookieDays = 90;
+
+function mnpSurveyAllowed(cookieName)
+{
+	if (mnpSurveyCookie(cookieName)) return false;
+	mnpSetSurveyCookie(cookieName);
+	return mnpSurveyCookie(cookieName);
+}
+
+function mnpSurveyCookie(cookieName)
+{
+	var cookie = document.cookie;
+	var i = cookie.indexOf(cookieName + "=");
+	if (i == -1) return false;
+	if (i == 0) return true;
+	var ch = cookie.substring(i - 1, i);
+	return (ch <= " " || ch == ";");
+}
+
+function mnpSetSurveyCookie(cookieName)
+{
+	var expdate = new Date();
+	var base = new Date(0);
+	var skew = base.getTime();
+	if (skew > 0) expdate.setTime(expdate.getTime() - skew);
+	expdate.setTime(expdate.getTime() + mnpSurveyCookieDays * 86400000);
+	var expires = expdate.toGMTString();
+	document.cookie = cookieName + "=1; expires=" + expires + "; path=/; domain=.microsoft.com";
+}
+
+function mnpWebSurvey(popupText, acceptUrl, cancelUrl)
+{
+	var ok = window.confirm(popupText);
+	mnpSurveyProcess(ok, acceptUrl, cancelUrl, null);
+}
+
+function mnpEmailSurvey(popupText, acceptUrl, cancelUrl)
+{
+	var email, invalid;
+	var regGood = new RegExp("^.+\\@(\\[?)[a-zA-Z0-9\\-\\.]+\\.([a-zA-Z]{2,3}|[0-9]{1,3})(\\]?)$");
+	var regBad = new RegExp("(@.*@)|(\\.\\.)|(@\\.)|(^\\.)");
+	do
+	{
+		email = window.prompt(popupText, "");
+		if (email == null || email == "")
+			invalid = false;
+		else if (regBad.test(email))
+			invalid = true;
+		else
+			invalid = !regGood.test(email);
+	}
+	while (invalid);
+	mnpSurveyProcess(email != null && email != "", acceptUrl, cancelUrl, email);
+}
+
+function mnpSurveyProcess(ok, acceptUrl, cancelUrl, email)
+{
+	var url;
+	if (ok)
+	{
+		url = acceptUrl;
+		if (url.indexOf("?") == -1) url += "?";
+		url += "&location=" + escape(document.location);
+		url += "&referrer=" + escape(document.referrer);
+		url += "&browser=" + escape(navigator.userAgent);
+		if (email)
+			url += "&email=" + escape(email);
+		window.open(url, "surv_win", "toolbar=1,location=1,status=1,menuar=1,scrollbars=yes,resizable=1,width=650,height=320");
+	}
+	else
+		window.open(cancelUrl, "cancel_win", "toolbar=0,location=0,status=0,menubar=0,scrollbars=0,resizable=0,width=90,height=20,alwaysLowered=1,screenX=2000,screenY=2000");
+}</SCRIPT>
+<LINK href="F:\websites\microsoftwebsite\three_files\css(1).aspx" type=text/css 
+rel=stylesheet>
+<SCRIPT language=JavaScript>var doImage = doImage;
+var TType = TType;
+
+function mhHover(tbl, idx, cls)
+{
+	var t, d;
+	if (document.getElementById)
+		t = document.getElementById(tbl);
+	else
+		t = document.all(tbl);
+	if (t == null) return;
+	if (t.getElementsByTagName)
+		d = t.getElementsByTagName("TD");
+	else
+		d = t.all.tags("TD");
+	if (d == null) return;
+	if (d.length <= idx) return;
+	d[idx].className = cls;
+}
+
+function setMSResearch() {
+  var time = new Date();
+  if( document.cookie.indexOf( 'msresearch=1 ') == -1 ) {
+    document.cookie = 'msresearch=' + time.getTime() + ':' + escape( document.location) + ':' + escape( document.referrer) + '; path=/; domain=.microsoft.com; ';
+  }
+}
+
+function footerjs(doc)
+{
+	if (doImage == null)
+	{
+		var tt = TType == null ? "PV" : TType;
+		doc.write('<layer visibility="hide"><div style="display:none"><img src="http://c.microsoft.com/trans_pixel.asp?source=www&TYPE=' + tt + '&p=windowsserver2003&r=http%3a%2f%2fwww.microsoft.com%2fwindows%2fdefault.mspx" width=0 height=0 hspace=0 vspace=0 border=0 /></div></layer>');
+	}
+
+	if( ( document.cookie.indexOf( 'msresearch=1 ') == -1 ) 
+	 && ( document.cookie.indexOf( 'msresearch=')   != -1 ) ) {
+	  setInterval( "setMSResearch()", 1000 );
+	}
+}</SCRIPT>
+
+<SCRIPT language=Javascript>
+					if (self.name == "MNPMainFrame")
+						top.location.href = self.location.href;
+					
+					var e = 0;
+					var first = "";
+					function SetFirst(sName)
+					{
+						if (first == "")
+							first = sName;
+					}
+				</SCRIPT>
+
+<META content=favorite name=save>
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginheight="0" 
+marginwidth="0"><A name=top></A>
+<DIV id=msviMasthead 
+xmlns:Utility="http://www.microsoft.com/MSCOM/VisualIdentity/Utility">
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE height=22 cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD id=msviRegionIdGraphic bgColor=#ffffff></TD>
+          <TD id=msviRegionGradient1 
+          style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#C5C5C5', gradientType='1')" 
+          width="50%"></TD>
+          <TD id=msviRegionGradient2 
+          style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#C5C5C5', endColorStr='#8B8B8B', gradientType='1')" 
+          width="50%"></TD></TR></TBODY></TABLE></TD>
+    <TD id=msviGlobalToolbar dir=ltr noWrap align=left bgColor=#8b8b8b 
+height=22>
+      <TABLE cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=gt0 onmouseover="mhHover('msviGlobalToolbar', 0, 'gt1')" 
+          onmouseout="mhHover('msviGlobalToolbar', 0, 'gt0')" noWrap><A 
+            onclick=trackInfo(this) href="http://www.microsoft.com/" 
+            LinkID="GT_Drop1" LinkArea="GlobalToolbar">Microsoft.com Home</A></TD>
+          <TD class=gtsep>|</TD>
+          <TD class=gt0 onmouseover="mhHover('msviGlobalToolbar', 2, 'gt1')" 
+          onmouseout="mhHover('msviGlobalToolbar', 2, 'gt0')" noWrap><A 
+            onclick=trackInfo(this) 
+            href="http://www.microsoft.com/library/toolbar/3.0/sitemap/en-us.mspx" 
+            LinkID="GT_Drop2" LinkArea="GlobalToolbar">Site 
+      Map</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR vAlign=top>
+    <TD width="100%">
+      <TABLE height=42 cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD id=msviBrandBanner bgColor=#ffffff><A onclick=trackInfo(this) 
+            href="http://www.microsoft.com/windowsserversystem" LinkID="Banner" 
+            LinkArea="Masthead"><IMG title="" height=42 
+            alt="Windows Server System" src="three_files/wss_masthead_ltr.gif" 
+            width=288 border=0></A></TD>
+          <TD 
+          style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#ADADAD', gradientType='1')" 
+          width="100%"></TD></TR></TBODY></TABLE></TD>
+    <TD id=msviGlobalSearch bgColor=#adadad>Search Microsoft.com for:<BR>
+      <FORM id=msviSearchForm 
+      onsubmit="return trackSearch(msviSearchLink, msviSearchBox)" 
+      action=/library/toolbar/3.0/search.aspx><INPUT type=hidden value=en-us 
+      name=View><INPUT type=hidden value=iso-8859-1 name=charset><NOBR>
+      <DIV style="HEIGHT: 18px"><INPUT id=msviSearchBox maxLength=255 name=qu><INPUT id=msviGoButton type=submit value=Go></DIV></NOBR><A 
+      id=msviSearchLink style="DISPLAY: none" 
+      href="http://www.microsoft.com/library/toolbar/3.0/search.aspx?View=en-us&amp;charset=iso-8859-1&amp;qu=" 
+      LinkID="Search" LinkArea="Search"></A></FORM></TD></TR></TBODY></TABLE>
+<TABLE id=msviSubbanner cellSpacing=0 cellPadding=0 width="100%" bgColor=#757575 
+border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG title="" height=26 alt="Microsoft Windows Server 2003" src="" 
+      width=467 border=0></TD>
+    <TD width="100%">&nbsp;</TD></TR></TBODY></TABLE></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD style="OVERFLOW-X: hidden" width=181 height="100%">
+      <DIV class=mnpMenuTop id=mnpMenuTop dir=ltr 
+      style="OVERFLOW-X: hidden; WIDTH: 181px" 
+      url="/windowsserver2003/default.mspx">
+      <DIV class=mnpInherit>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #999999; BACKGROUND: white; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #999999; WIDTH: 176px; CURSOR: default; BORDER-TOP-COLOR: #999999; BORDER-RIGHT-COLOR: #999999"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/default.mspx" 
+      LinkID="Flyout_S1_Node1" LinkArea="Left Nav" aoff="yes">Windows Server 
+      2003 Home</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="m6afcf11ea42397a23ce00c852d2d3154"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/evaluation/default.mspx" 
+      LinkID="Flyout_S2_Node1" LinkArea="Left Nav">Product Information</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="m1a2edc41005049b385a78a22764b1419"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/howtobuy/default.mspx" 
+      LinkID="Flyout_S2_Node2" LinkArea="Left Nav">How to Buy</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="m88450c40850b4d798ba042e2564a310b"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/upgrading/default.mspx" 
+      LinkID="Flyout_S2_Node3" LinkArea="Left Nav">Upgrading</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="m30948906b44e806542e7b8e8b6ae3266"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/techinfo/default.mspx" 
+      LinkID="Flyout_S2_Node4" LinkArea="Left Nav">Technical Resources</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="mbfed0b958759788e46a360211e3a8cbc"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/downloads/default.mspx" 
+      LinkID="Flyout_S2_Node5" LinkArea="Left Nav">Downloads</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/support/default.mspx" 
+      LinkID="Flyout_S2_Node6" LinkArea="Left Nav">Support</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="m976221e44a9df4b77112ef56302eb403"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/technologies/default.mspx" 
+      LinkID="Flyout_S2_Node7" LinkArea="Left Nav">Technology Centers</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/partners/default.mspx" 
+      LinkID="Flyout_S2_Node8" LinkArea="Left Nav">Partners</A></DIV>
+      <DIV class=mnpMenuBorder style="WIDTH: 180px"></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/community/default.asp" 
+      LinkID="Flyout_S3_Node1" LinkArea="Left Nav">Windows Server 
+      Community</A></DIV>
+      <DIV class=mnpMenuBorder style="WIDTH: 180px"></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="m8bc94d6ea5047b67a1d6fc38e5fbe1c6"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windows/default.asp" 
+      LinkID="Flyout_S4_Node1" LinkArea="Left Nav">Windows Family</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1" 
+      menu="mdce34d15e64949548c414d732873474b"><IMG class=mnpMenuArrow title="" 
+      style="LEFT: 166px; VISIBILITY: hidden" height=7 alt=* 
+      src="three_files/arrowLTR.gif" width=4 border=0><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserversystem/default.mspx" 
+      LinkID="Flyout_S4_Node2" LinkArea="Left Nav">Windows Server 
+      System</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/sbs/default.mspx" 
+      LinkID="Flyout_S4_Node3" LinkArea="Left Nav">Windows Small Business Server 
+      2003</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windows/catalog/server2/default.aspx?subID=22" 
+      LinkID="Flyout_S4_Node4" LinkArea="Left Nav">Windows Server 
+      Catalog</A></DIV>
+      <DIV class=mnpMenuRow 
+      style="BORDER-LEFT-COLOR: #f1f1f1; BACKGROUND: #f1f1f1; OVERFLOW-X: hidden; BORDER-BOTTOM-COLOR: #f1f1f1; WIDTH: 176px; BORDER-TOP-COLOR: #f1f1f1; BORDER-RIGHT-COLOR: #f1f1f1"><IMG 
+      class=mnpMenuArrow title="" style="LEFT: 166px; VISIBILITY: hidden" 
+      height=7 alt=* src="three_files/arrowLTR.gif" width=4 border=0><A 
+      onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/worldwide/default.mspx" 
+      LinkID="Flyout_S5_Node1" LinkArea="Left Nav">Windows Server 2003 
+      Worldwide</A></DIV>
+      <DIV class=mnpMenuBorder 
+      style="MARGIN-BOTTOM: 0px; WIDTH: 180px"></DIV></DIV></DIV>
+      <DIV class=mnpAds 
+      style="BORDER-RIGHT: #999999 1px solid; BORDER-TOP: #999999 0px solid; BACKGROUND: #f1f1f1; MARGIN-BOTTOM: 20px; BORDER-LEFT: #999999 0px solid; WIDTH: 181px; BORDER-BOTTOM: #999999 0px solid; HEIGHT: 100%">
+      <CENTER>
+      <DIV 
+      style="BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 20px"></DIV><A 
+      onclick=trackInfo(this) href="http://go.microsoft.com/?LinkID=371310" 
+      LinkID="Flyout_Graphic1" LinkArea="Flyout_Graphic"><IMG 
+      alt="Get the facts on Windows and Linux" src="three_files/140x100.jpg" 
+      border=0></A><BR>
+      <DIV 
+      style="BACKGROUND: none transparent scroll repeat 0% 0%; HEIGHT: 20px"></DIV><A 
+      onclick=trackInfo(this) href="http://go.microsoft.com/?LinkID=360950" 
+      LinkID="Flyout_Graphic2" LinkArea="Flyout_Graphic"><IMG 
+      alt="Enter the Windows Server 2003 Challenge" 
+      src="three_files/challenge_medallion.gif" 
+    border=0></A><BR></CENTER></DIV></TD>
+    <TD dir=ltr oncopy="e++; SetFirst('5');" width="100%">
+      <TABLE cellSpacing=0 cellPadding=0 width="100%">
+        <TBODY>
+        <TR vAlign=top>
+          <TD width="100%">
+            <TABLE style="MARGIN-BOTTOM: 10px; MARGIN-RIGHT: 10px" cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD><IMG alt="Do more with less" 
+                  src="three_files/hro_domore2_left.jpg"></TD>
+                <TD><IMG alt="Do more with less" 
+                  src="three_files/hro_domore2_right.jpg"><BR clear=all><FONT 
+                  style="FONT-SIZE: 70%; LINE-HEIGHT: 150%; FONT-FAMILY: Verdana">The 
+                  Microsoft Windows Server™ 2003 family helps organizations do 
+                  more with less. Every day you're asked to make your 
+                  infrastructure more efficient, keep everyone productive, 
+                  deliver more applications. And do all this faster, more 
+                  securely, and at lower cost. Now you can. </FONT><BR 
+                  clear=all><IMG height=8 alt="" src="three_files/ts.gif" 
+                  width=1><BR clear=all>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=7><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/overview/family.mspx" 
+                        LinkID="TS_Topic1" LinkArea="Hero"><IMG height=7 
+                        alt="Read the product overview" hspace=0 
+                        src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD width=5><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=5></TD>
+                      <TD width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/overview/family.mspx" 
+                        LinkID="TS_Topic1" LinkArea="Hero"><FONT 
+                        style="FONT-SIZE: 70%" 
+                        face=Verdana,Arial,Helvetica,Sanserif size=2><B>Read the 
+                        product overview</B></FONT></A></TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=3 alt="" src="three_files/ts.gif" 
+                        width=1></TD>
+                      <TD></TD>
+                      <TD></TD></TR>
+                    <TR vAlign=top>
+                      <TD width=7><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/training/sims.mspx" 
+                        LinkID="TS_Topic2" LinkArea="Hero"><IMG height=7 
+                        alt="Try new interactive training simulations" hspace=0 
+                        src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD width=5><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=5></TD>
+                      <TD width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/training/sims.mspx" 
+                        LinkID="TS_Topic2" LinkArea="Hero"><FONT 
+                        style="FONT-SIZE: 70%" 
+                        face=Verdana,Arial,Helvetica,Sanserif size=2><B>Try new 
+                        interactive training simulations</B></FONT></A></TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=3 alt="" src="three_files/ts.gif" 
+                        width=1></TD>
+                      <TD></TD>
+                      <TD></TD></TR>
+                    <TR vAlign=top>
+                      <TD width=7><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/upgrading/nt4/default.mspx" 
+                        LinkID="TS_Topic3" LinkArea="Hero"><IMG height=7 
+                        alt="Upgrade from Windows NT 4.0" hspace=0 
+                        src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD width=5><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=5></TD>
+                      <TD width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/upgrading/nt4/default.mspx" 
+                        LinkID="TS_Topic3" LinkArea="Hero"><FONT 
+                        style="FONT-SIZE: 70%" 
+                        face=Verdana,Arial,Helvetica,Sanserif size=2><B>Upgrade 
+                        from Windows NT 4.0</B></FONT></A></TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=3 alt="" src="three_files/ts.gif" 
+                        width=1></TD>
+                      <TD></TD>
+                      <TD></TD></TR>
+                    <TR vAlign=top>
+                      <TD width=7><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/trial/evalkit.mspx" 
+                        LinkID="TS_Topic4" LinkArea="Hero"><IMG height=7 
+                        alt="Get the evaluation kit" hspace=0 
+                        src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD width=5><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=5></TD>
+                      <TD width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/trial/evalkit.mspx" 
+                        LinkID="TS_Topic4" LinkArea="Hero"><FONT 
+                        style="FONT-SIZE: 70%" 
+                        face=Verdana,Arial,Helvetica,Sanserif size=2><B>Get the 
+                        evaluation kit</B></FONT></A></TD></TR>
+                    <TR vAlign=top>
+                      <TD><IMG height=3 alt="" src="three_files/ts.gif" 
+                        width=1></TD>
+                      <TD></TD>
+                      <TD></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN-LEFT: 20px" height=19 cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#b8b8b8><IMG height=19 alt="" 
+                  src="three_files/ctk-curve-winNET.gif" width=10 border=0></TD>
+                <TD class=componentHeaderText noWrap width="100%" 
+                bgColor=#b8b8b8><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=1 border=0><B>Highlights</B></TD>
+                <TD width=175 background=three_files/tk-gradient-winNET.gif 
+                height=19><IMG height=19 alt="" src="three_files/ts.gif" 
+                  width=175 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD height=10><IMG height=10 alt="" src="three_files/ts.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN-LEFT: 20px; MARGIN-RIGHT: 10px" cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://go.microsoft.com/?LinkID=400890" 
+                        LinkID="KM_S1_Topic1" LinkArea="Highlights"><IMG 
+                        style="MARGIN-RIGHT: 0px" 
+                        alt="Download the latest security updates" hspace=0 
+                        src="three_files/hls_da.gif" vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://go.microsoft.com/?LinkID=400890" 
+                        LinkID="KM_S1_Topic1" LinkArea="Highlights"><B>Action: 
+                        Download the Latest Security Updates</B></A><BR>The 
+                        February security updates include critical updates for 
+                        Microsoft Windows and an important update for Virtual PC 
+                        for Mac. </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://go.microsoft.com/?LinkID=406795" 
+                        LinkID="KM_S1_Topic2" LinkArea="Highlights"><IMG 
+                        style="MARGIN-RIGHT: 0px" 
+                        alt="In-depth guidance for securing computer systems" 
+                        hspace=0 src="three_files/hls_sgc.gif" vspace=5 
+                        border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://go.microsoft.com/?LinkID=406795" 
+                        LinkID="KM_S1_Topic2" LinkArea="Highlights"><B>In-depth 
+                        Guidance for Securing Computer Systems</B></A><BR>The 
+                        new Microsoft Security Guidance Center provides quick 
+                        access to prescriptive guidance, tools, training, and 
+                        updates for IT professionals and developers. 
+                    </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windows/sfu" 
+                        LinkID="KM_S1_Topic3" LinkArea="Highlights"><IMG 
+                        style="MARGIN-RIGHT: 0px" 
+                        alt="Get Microsoft Windows Services for UNIX 3.5" 
+                        hspace=0 src="three_files/hls_sfu35.jpg" vspace=5 
+                        border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windows/sfu" 
+                        LinkID="KM_S1_Topic3" LinkArea="Highlights"><B>Get 
+                        Microsoft Windows Services for UNIX 
+                        3.5</B></A><BR>Download a complimentary copy of Services 
+                        for UNIX 3.5 (SFU) for tools that IT professionals need 
+                        to integrate Windows with UNIX and Linux environments. 
+                      </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://go.microsoft.com/?LinkID=393708" 
+                        LinkID="KM_S1_Topic4" LinkArea="Highlights"><IMG 
+                        style="MARGIN-RIGHT: 0px" alt="Mydoom virus alert" 
+                        hspace=0 src="three_files/hls_lock3_75x65.gif" vspace=5 
+                        border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://go.microsoft.com/?LinkID=393708" 
+                        LinkID="KM_S1_Topic4" LinkArea="Highlights"><B>Mydoom 
+                        Virus Alert</B></A><BR>Please review the Microsoft 
+                        security alert regarding W32/Mydoom@MM and take 
+                        appropriate action for your environment. This rapidly 
+                        spreading mass-mailer virus affects Microsoft Outlook®, 
+                        Microsoft Outlook Express, and Web-based e-mail. 
+                    </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN-LEFT: 20px" height=19 cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#b8b8b8><IMG height=19 alt="" 
+                  src="three_files/ctk-curve-winNET.gif" width=10 border=0></TD>
+                <TD class=componentHeaderText noWrap width="100%" 
+                bgColor=#b8b8b8><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=1 border=0><B>Top Stories</B></TD>
+                <TD width=175 background=three_files/tk-gradient-winNET.gif 
+                height=19><IMG height=19 alt="" src="three_files/ts.gif" 
+                  width=175 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD height=10><IMG height=10 alt="" src="three_files/ts.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN-LEFT: 20px; MARGIN-RIGHT: 10px" cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/presspass/press/2004/feb04/02-17ExtendedTechnologyPR.asp" 
+                        LinkID="KM_S2_Topic1" LinkArea="TopStories"><IMG 
+                        height=7 hspace=0 src="three_files/imgArrowPH.gif" 
+                        width=7 vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/presspass/press/2004/feb04/02-17ExtendedTechnologyPR.asp" 
+                        LinkID="KM_S2_Topic1" LinkArea="TopStories">Microsoft 
+                        Broadens Commitment to 64-Bit Windows</A><BR>Get the 
+                        details of Microsoft's announcement today at the Intel 
+                        Developer Forum in San Francisco. Learn how Windows 
+                        operating systems for 64-bit extended systems will be 
+                        fully compatible with Intel Corp.'s newly announced 
+                        processors with 64-bit extension technology. 
+                    </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.msmeasureup.com/test/home.asp" 
+                        LinkID="KM_S2_Topic2" LinkArea="TopStories"><IMG 
+                        height=7 hspace=0 src="three_files/imgArrowPH.gif" 
+                        width=7 vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.msmeasureup.com/test/home.asp" 
+                        LinkID="KM_S2_Topic2" LinkArea="TopStories">Free 
+                        Learning Plan</A><BR>Assess your knowledge of Windows 
+                        Server 2003 and receive personalized learning plans 
+                        based on your results. </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="https://www.microsoftelearning.com/home.aspx" 
+                        LinkID="KM_S2_Topic3" LinkArea="TopStories"><IMG 
+                        height=7 hspace=0 src="three_files/imgArrowPH.gif" 
+                        width=7 vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="https://www.microsoftelearning.com/home.aspx" 
+                        LinkID="KM_S2_Topic3" LinkArea="TopStories">Stay 
+                        Competitive with E-Learning</A><BR>Get rich, engaging, 
+                        self-paced e-learning covering Windows Server 2003. More 
+                        e-learning offerings, including security, will be 
+                        available soon! </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/msa/default.mspx" 
+                        LinkID="KM_S2_Topic4" LinkArea="TopStories"><IMG 
+                        height=7 hspace=0 src="three_files/imgArrowPH.gif" 
+                        width=7 vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/msa/default.mspx" 
+                        LinkID="KM_S2_Topic4" LinkArea="TopStories">Download 
+                        Microsoft Systems Architecture 2.0</A><BR>Get 
+                        architectural blueprints and implementation guidance for 
+                        your data center. Proven in the enterprise, Microsoft 
+                        Systems Architecture (MSA) helps you design and deploy 
+                        the infrastructure that matches your business needs, 
+                        tolerance for risk, and technical design goals. 
+                    </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/downloads/featurepacks/default.mspx" 
+                        LinkID="KM_S2_Topic5" LinkArea="TopStories"><IMG 
+                        height=7 hspace=0 src="three_files/imgArrowPH.gif" 
+                        width=7 vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/downloads/featurepacks/default.mspx" 
+                        LinkID="KM_S2_Topic5" LinkArea="TopStories">See What 
+                        You're Missing: Feature Packs at a Glance</A><BR>Get 
+                        downloadable feature packs that provide new Windows 
+                        Server 2003 solutions and functionality. 
+                  </TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN-LEFT: 20px" height=19 cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#b8b8b8><IMG height=19 alt="" 
+                  src="three_files/ctk-curve-winNET.gif" width=10 border=0></TD>
+                <TD class=componentHeaderText noWrap width="100%" 
+                bgColor=#b8b8b8><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=1 border=0><B>Featured Technical Content</B></TD>
+                <TD width=175 background=three_files/tk-gradient-winNET.gif 
+                height=19><IMG height=19 alt="" src="three_files/ts.gif" 
+                  width=175 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD height=10><IMG height=10 alt="" src="three_files/ts.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN-LEFT: 20px; MARGIN-RIGHT: 10px" cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR vAlign=top>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/overview/lockdown.mspx" 
+                        LinkID="KM_S3_Topic1" LinkArea="Featured"><IMG height=7 
+                        hspace=0 src="three_files/imgArrowPH.gif" width=7 
+                        vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/overview/lockdown.mspx" 
+                        LinkID="KM_S3_Topic1" LinkArea="Featured">Locking Down 
+                        Windows Server 2003 Terminal Server 
+                    Sessions</A><BR></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/hpc/default.mspx" 
+                        LinkID="KM_S3_Topic2" LinkArea="Featured"><IMG height=7 
+                        hspace=0 src="three_files/imgArrowPH.gif" width=7 
+                        vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/hpc/default.mspx" 
+                        LinkID="KM_S3_Topic2" LinkArea="Featured">High 
+                        Performance Computing for Windows Server 
+                    2003</A><BR></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/overview/articleindex.mspx" 
+                        LinkID="KM_S3_Topic3" LinkArea="Featured"><IMG height=7 
+                        hspace=0 src="three_files/imgArrowPH.gif" width=7 
+                        vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/overview/articleindex.mspx" 
+                        LinkID="KM_S3_Topic3" LinkArea="Featured">Index of 
+                        Windows Server 2003 Technical 
+                    Articles</A><BR></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD width=75><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/technologies/default.mspx" 
+                        LinkID="KM_S3_Topic4" LinkArea="Featured"><IMG height=7 
+                        hspace=0 src="three_files/imgArrowPH.gif" width=7 
+                        vspace=5 border=0></A></TD>
+                      <TD width=7><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=7></TD>
+                      <TD class=blurbs width="100%"><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/technologies/default.mspx" 
+                        LinkID="KM_S3_Topic4" LinkArea="Featured">Core 
+                        Technologies in Windows Server 
+                  2003</A><BR></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR vAlign=top>
+                      <TD height=10><IMG height=10 alt="" 
+                        src="three_files/ts.gif" width=1 
+                  border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <TABLE style="MARGIN: 25px 10px 5px 20px" cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top>
+                  <P style="FONT-SIZE: 65%">Last Updated: February 16, 
+                2004</P></TD></TR></TBODY></TABLE></TD>
+          <TD width=175></TD>
+          <TD 
+          style="PADDING-RIGHT: 10px; PADDING-LEFT: 0px; PADDING-BOTTOM: 20px; PADDING-TOP: 4px" 
+          vAlign=top align=left>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                width=10></TD>
+                <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                width=10></TD>
+                <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                width=10></TD></TR>
+              <TR>
+                <TD vAlign=top><IMG height=10 
+                  src="three_files/rep_greytopcurves.gif"></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#efefef 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=9><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=10 border=0></TD>
+                      <TD vAlign=top align=middle><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/management/training/mms.mspx" 
+                        LinkID="RN_S1_Graphic1" LinkArea="Right_Graphic"><IMG 
+                        height=70 alt="Register for Microsoft Management Summit" 
+                        src="three_files/promo_mms.jpg" width=140 
+                      border=0></A></TD>
+                      <TD width=9><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=10 border=0></TD></TR>
+                    <TR>
+                      <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                        width=10></TD>
+                      <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                        width=10></TD>
+                      <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                        width=10></TD></TR></TBODY></TABLE></TD>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD height=10><IMG height=10 
+                  src="three_files/rep_greyBottomCurves.gif" width=175></TD></TR>
+              <TR>
+                <TD height=10><IMG height=10 alt="" src="three_files/ts.gif" 
+                  width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top bgColor=#b8b8b8>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top bgColor=#b8b8b8><IMG height=10 
+                        src="three_files/rtk_lefttopcurve_WinNET.gif" width=10 
+                        border=0></TD></TR>
+                    <TR>
+                      <TD vAlign=top bgColor=#b8b8b8><IMG height=9 
+                        src="three_files/rtk_LeftSide_WinNET.gif" width=10 
+                        border=0></TD></TR></TBODY></TABLE></TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top bgColor=#b8b8b8><IMG height=2 
+                        src="three_files/tkgrey_top_WinNET.gif" width=155></TD></TR>
+                    <TR>
+                      <TD class=toolkitHeader vAlign=center width=155 
+                      bgColor=#b8b8b8 height=17>Quick 
+                Links</TD></TR></TBODY></TABLE></TD>
+                <TD vAlign=top bgColor=#b8b8b8>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top><IMG height=10 
+                        src="three_files/rtk_righttopcurve_WinNET.gif" width=10 
+                        border=0></TD></TR>
+                    <TR>
+                      <TD vAlign=top><IMG height=9 
+                        src="three_files/tkgrey_rightbox_WinNET.gif" width=10 
+                        border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#efefef 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/overview/family.mspx" 
+                        LinkID="RN_S1_Topic1" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/overview/family.mspx" 
+                        LinkID="RN_S1_Topic1" LinkArea="Quick">Product 
+                        overview</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/downloads/featurepacks/default.mspx" 
+                        LinkID="RN_S1_Topic2" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/downloads/featurepacks/default.mspx" 
+                        LinkID="RN_S1_Topic2" LinkArea="Quick">Feature 
+                      packs</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/features/featuresorter.aspx" 
+                        LinkID="RN_S1_Topic3" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/features/featuresorter.aspx" 
+                        LinkID="RN_S1_Topic3" LinkArea="Quick">Feature 
+                        Highlights Sorter</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/features/compareeditions.mspx" 
+                        LinkID="RN_S1_Topic4" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/features/compareeditions.mspx" 
+                        LinkID="RN_S1_Topic4" LinkArea="Quick">Compare the 
+                        editions</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/whyupgrade/top10best.mspx" 
+                        LinkID="RN_S1_Topic5" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/whyupgrade/top10best.mspx" 
+                        LinkID="RN_S1_Topic5" LinkArea="Quick">Top 10 
+                        benefits</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/trial/evalkit.mspx" 
+                        LinkID="RN_S1_Topic6" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/evaluation/trial/evalkit.mspx" 
+                        LinkID="RN_S1_Topic6" LinkArea="Quick">Evaluation 
+                      Kit</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/howtobuy/default.mspx" 
+                        LinkID="RN_S1_Topic7" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/howtobuy/default.mspx" 
+                        LinkID="RN_S1_Topic7" LinkArea="Quick">Pricing &amp; 
+                        licensing</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/security/default.mspx" 
+                        LinkID="RN_S1_Topic8" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/security/default.mspx" 
+                        LinkID="RN_S1_Topic8" LinkArea="Quick">Security 
+                        information</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/overview/faqindex.mspx" 
+                        LinkID="RN_S1_Topic9" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/overview/faqindex.mspx" 
+                        LinkID="RN_S1_Topic9" LinkArea="Quick">Windows Server 
+                        2003 FAQs</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/training/default.mspx" 
+                        LinkID="RN_S1_Topic10" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/techinfo/training/default.mspx" 
+                        LinkID="RN_S1_Topic10" LinkArea="Quick">Training &amp; 
+                        events</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/datacenter/default.mspx" 
+                        LinkID="RN_S1_Topic11" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/datacenter/default.mspx" 
+                        LinkID="RN_S1_Topic11" LinkArea="Quick">Datacenter 
+                        Edition</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/msa/default.mspx" 
+                        LinkID="RN_S1_Topic12" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/msa/default.mspx" 
+                        LinkID="RN_S1_Topic12" LinkArea="Quick">Microsoft 
+                        Systems Architecture</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/newsgroups/dgbrowser/en-us/default.mspx?dg=microsoft.public.windows.server.migration" 
+                        LinkID="RN_S1_Topic13" LinkArea="Quick"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/newsgroups/dgbrowser/en-us/default.mspx?dg=microsoft.public.windows.server.migration" 
+                        LinkID="RN_S1_Topic13" LinkArea="Quick">Newsgroup for 
+                        upgraders</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#b8b8b8 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#b8b8b8><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=toolkitHeader vAlign=center width=175 
+                      bgColor=#b8b8b8 height=19>Related 
+                  Sites</TD></TR></TBODY></TABLE></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD width=1 bgColor=#b8b8b8><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#efefef 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/technet/prodtechnol/windowsserver2003/default.asp" 
+                        LinkID="RN_S2_Topic1" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/technet/prodtechnol/windowsserver2003/default.asp" 
+                        LinkID="RN_S2_Topic1" 
+                    LinkArea="Related">TechNet</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://msdn.microsoft.com/windowsserver2003" 
+                        LinkID="RN_S2_Topic2" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://msdn.microsoft.com/windowsserver2003" 
+                        LinkID="RN_S2_Topic2" LinkArea="Related">MSDN</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://msdn.microsoft.com/vstudio/" 
+                        LinkID="RN_S2_Topic3" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://msdn.microsoft.com/vstudio/" 
+                        LinkID="RN_S2_Topic3" LinkArea="Related">Visual Studio 
+                        .NET 2003</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/net" 
+                        LinkID="RN_S2_Topic4" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/net" 
+                        LinkID="RN_S2_Topic4" LinkArea="Related">Microsoft 
+                        .NET</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://msdn.microsoft.com/netframework/" 
+                        LinkID="RN_S2_Topic5" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://msdn.microsoft.com/netframework/" 
+                        LinkID="RN_S2_Topic5" LinkArea="Related">.NET 
+                        Framework</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/executivecircle" 
+                        LinkID="RN_S2_Topic6" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/executivecircle" 
+                        LinkID="RN_S2_Topic6" LinkArea="Related">Executive 
+                        Circle</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#b8b8b8 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#b8b8b8><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=toolkitHeader vAlign=center width=175 
+                      bgColor=#b8b8b8 
+                height=19>Community</TD></TR></TBODY></TABLE></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD width=1 bgColor=#b8b8b8><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#efefef 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/" 
+                        LinkID="RN_S3_Topic1" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/" 
+                        LinkID="RN_S3_Topic1" LinkArea="Related">Join the 
+                        community</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/centers/" 
+                        LinkID="RN_S3_Topic2" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/centers/" 
+                        LinkID="RN_S3_Topic2" LinkArea="Related">Technology 
+                        centers</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/newsgroups/" 
+                        LinkID="RN_S3_Topic3" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/newsgroups/" 
+                        LinkID="RN_S3_Topic3" 
+                      LinkArea="Related">Newsgroups</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/usergroups/" 
+                        LinkID="RN_S3_Topic4" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/windowsserver2003/community/usergroups/" 
+                        LinkID="RN_S3_Topic4" LinkArea="Related">User 
+                      groups</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=12><A onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/technet/security/community/default.mspx" 
+                        LinkID="RN_S3_Topic5" LinkArea="Related"><IMG height=7 
+                        alt="" src="three_files/imgArrowPH.gif" width=7 vspace=4 
+                        border=0></A></TD>
+                      <TD class=componentBodyText width=144><A 
+                        onclick=trackInfo(this) 
+                        href="http://www.microsoft.com/technet/security/community/default.mspx" 
+                        LinkID="RN_S3_Topic5" LinkArea="Related">IT Pro Security 
+                        Zone</A></TD></TR>
+                    <TR>
+                      <TD><IMG height=10 src="three_files/ts.gif" width=1></TD>
+                      <TD><IMG height=10 src="three_files/ts.gif" 
+                    width=1></TD></TR></TBODY></TABLE></TD>
+                <TD width=9><IMG height=1 alt="" src="three_files/ts.gif" 
+                  width=9 border=0></TD>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 border=0>
+              <TBODY>
+              <TR>
+                <TD><IMG height=10 src="three_files/rep_greyBottomCurves.gif" 
+                  width=175></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                width=10></TD>
+                <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                width=10></TD>
+                <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                width=10></TD></TR>
+              <TR>
+                <TD vAlign=top><IMG height=10 
+                  src="three_files/rep_greytopcurves.gif"></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=175 bgColor=#efefef 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD>
+                <TD vAlign=top>
+                  <TABLE cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=9><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=10 border=0></TD>
+                      <TD vAlign=top align=middle><A onclick=trackInfo(this) 
+                        href="http://technetbeta.microsoft.com/technet/" 
+                        LinkID="RN_S3_Graphic1" LinkArea="Right_Graphic"><IMG 
+                        height=128 alt="Preview the new TechNet website" 
+                        src="three_files/TechNetBeta_137x128.gif" width=137 
+                        border=0></A></TD>
+                      <TD width=9><IMG height=1 alt="" 
+                        src="three_files/ts.gif" width=10 border=0></TD></TR>
+                    <TR>
+                      <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                        width=10></TD>
+                      <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                        width=10></TD>
+                      <TD vAlign=top><IMG height=5 src="three_files/ts.gif" 
+                        width=10></TD></TR></TBODY></TABLE></TD>
+                <TD width=1 bgColor=#cccccc><IMG height=1 alt="" 
+                  src="three_files/ts.gif" width=1 border=0></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD height=10><IMG height=10 
+                  src="three_files/rep_greyBottomCurves.gif" width=175></TD></TR>
+              <TR>
+                <TD height=10><IMG height=10 alt="" src="three_files/ts.gif" 
+                  width=1 
+  border=0></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><?xml version="1.0" encoding="utf-16"?>
+<STYLE xmlns:asp="null" xmlns:shell="null">#pageTools {
+	BORDER-TOP: #ccc 1px solid; FONT: 65% Verdana; BACKGROUND-COLOR: #f1f1f1
+}
+#pageTools A {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 2px; MARGIN: 1px; CURSOR: hand; COLOR: #000; PADDING-TOP: 2px; HEIGHT: 20px; TEXT-DECORATION: none
+}
+#pageTools A:hover {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 1px; MARGIN: 1px; BORDER-LEFT: #999 1px solid; CURSOR: hand; COLOR: #000; PADDING-TOP: 1px; BORDER-BOTTOM: #999 1px solid; HEIGHT: 20px; BACKGROUND-COLOR: #ccc; TEXT-DECORATION: none
+}
+</STYLE>
+
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0 xmlns:asp="null" 
+xmlns:shell="null">
+  <TBODY>
+  <TR vAlign=bottom>
+    <TD class=mnpMenuTop width=180>&nbsp;</TD>
+    <TD>
+      <DIV id=pagetools style="BEHAVIOR: url(#default#savefavorite)" 
+      onsave="c++; SetFirst('3');"><A 
+      onmouseover="window.status='View a printer-friendly version of this page'; return true" 
+      onclick="a++; SetFirst('1');" onmouseout="window.status=''; return true" 
+      href="http://www.microsoft.com/windowsserver2003/default.mspx?pf=true"><IMG 
+      title="" height=16 alt=* src="three_files/print.gif" width=16 
+      align=absMiddle border=0></IMG>&nbsp;Printer-Friendly Version</A><A 
+      onmouseover="window.status='Send this page'; return true" 
+      onclick="b++; SetFirst('2');" onmouseout="window.status=''; return true" 
+      href="mailto:?subject=Windows Server 2003 Home&amp;body=http://www.microsoft.com/windowsserver2003/default.mspx"><IMG 
+      title="" height=16 alt=* src="three_files/mail.gif" width=16 
+      align=absMiddle border=0></IMG>&nbsp;Send This Page</A><A 
+      onmouseover="window.status='Add this page to your favorites'; return true" 
+      onclick=fnAddToFavs() onmouseout="window.status=''; return true" 
+      href="javascript:void(0);"><IMG title="" height=16 alt=* 
+      src="three_files/favs.gif" width=16 align=absMiddle 
+      border=0></IMG>&nbsp;Add to Favorites</A><A 
+      onmouseover="window.status='Comment on this page'; return true" 
+      onclick="d++; SetFirst('4');" onmouseout="window.status=''; return true" 
+      href="http://www.microsoft.com/isapi/goregwiz.asp?target=/contactus/feedback.asp"><IMG 
+      title="" height=16 alt=* src="three_files/feedback.gif" width=16 
+      align=absMiddle border=0></IMG>&nbsp;Comments</A></DIV><IFRAME 
+      id=ListenerFrame style="DISPLAY: none" src="about:blank" 
+      frameBorder=0></IFRAME>
+      <SCRIPT language=JavaScript>
+   
+   var a = b = c = d = 0;
+   var e = e;
+   var time = addr = "";
+   var surveyFlag = surveyFlag;
+   var fav = true
+   
+   function fnAddToFavs()
+   {
+      c++;
+      SetFirst('3');
+      fav = false;
+      window.external.AddFavorite('http://www.microsoft.com/windowsserver2003/default.mspx', 'Windows Server 2003 Home');
+   }
+   
+   function DoPopup()
+   {
+      try
+      {
+		if (surveyFlag == null || surveyFlag == false)
+		{
+			if (Math.random() <= 0.33)
+			{  
+				if (GetCookie("cars") == null)
+				{  
+					SetCookie("cars", "1");
+		            
+					var retVal = window.showModalDialog("/library/mnp/2/aspx/surveypopup.aspx?locale=en-us","","dialogHeight: 290px; dialogWidth: 306px; dialogTop: px; dialogLeft: px; edge: Raised; center: Yes; help: No; resizable: No; scroll: No; status: No; unadorned: Yes; ");
+					if (retVal != null)
+					{
+						if (retVal != false)
+						{
+							time = retVal.substring(0, retVal.indexOf(";"));
+							addr =  retVal.substring(retVal.indexOf(";") + 1, retVal.length);
+						}
+					}
+				}
+			}
+		}
+      }
+      catch (e)
+      {
+		//noop
+      }
+   }
+   
+   function GetCookie(sName)
+   {
+      //cookies are separated by semicolons
+      var aCookie = document.cookie.split("; ");
+      for (var i=0; i  < aCookie.length; i++)
+      {
+         // a name/value pair (a crumb) is separated by an equal sign
+         var aCrumb = aCookie[i].split("=");
+         if (sName == aCrumb[0]) 
+			return unescape(aCrumb[1]);
+      }
+
+      // a cookie with the requested name does not exist
+      return null;
+   }
+
+   
+   function SetCookie(sName, sValue)
+   {
+      var date = new Date();
+      date.setDate(date.getDate() + 90);
+      document.cookie = sName + "=" + escape(sValue) + "; expires=" + date.toGMTString() + "; path=/; domain=microsoft.com";
+   }
+   
+   </SCRIPT>
+
+      <SCRIPT event=onbeforeunload for=window>
+      if (a  > 0 || b  > 0 || c  > 0 || d  > 0 || e  > 0)
+      {
+		if (fav)
+		{
+			DoPopup();
+			ListenerFrame.navigate('/library/mnp/2/aspx/listener.aspx?s=www.microsoft.com^/windowsserver2003/default.mspx' + '^' + a + '^' + b + '^' + c + '^' + d + "^" + e + "^" + time + "^" + addr + "^Windows Server 2003 Home^en-us^http://www.microsoft.com/windowsserver2003/default.mspx^" + first);
+		}
+		else
+		{
+			fav = true;
+		}
+      }
+   </SCRIPT>
+
+      <SCRIPT event=onbeforeprint for=window>
+      SetFirst('1');
+      a++;
+   </SCRIPT>
+    </TD></TR></TBODY></TABLE><BR style="OVERFLOW: hidden; LINE-HEIGHT: 1px" 
+clear=all>
+<TABLE id=msviFooter cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=bottom>
+    <TD id=msviFooter2 
+    style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#ADADAD', gradientType='1')">
+      <DIV id=msviLocalFooter><NOBR><A onclick=trackInfo(this) 
+      href="http://go.microsoft.com/?linkid=317027" LinkID="Footer_Link1" 
+      LinkArea="Footer">Manage Your Profile</A> |</NOBR><WBR><NOBR><A 
+      onclick=trackInfo(this) 
+      href="http://register.microsoft.com/contactus30/contactus.asp?domain=windows/winserver2003" 
+      LinkID="Footer_Link2" LinkArea="Footer">Contact Us</A> 
+      |</NOBR><WBR><NOBR><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/windowsserver2003/newsletters/default.mspx" 
+      LinkID="Footer_Link3" LinkArea="Footer">Free Newsletters</A></NOBR></DIV>
+      <DIV id=msviGlobalFooter><SPAN dir=ltr>©2004 Microsoft Corporation. All 
+      rights reserved.&nbsp;</SPAN><NOBR><A onclick=trackInfo(this) 
+      href="http://www.microsoft.com/info/cpyright.mspx" LinkID="Footer_Link4" 
+      LinkArea="Footer">Terms of Use</A> |</NOBR><WBR><NOBR><A 
+      onclick=trackInfo(this) href="http://www.microsoft.com/info/privacy.mspx" 
+      LinkID="Footer_Link5" LinkArea="Footer">Privacy 
+    Statement</A></NOBR></DIV></TD>
+    <TD width=105 bgColor=#adadad><IMG title="" height=29 alt=Microsoft 
+      src="three_files/text.jpg" width=105 border=0></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>var msviFooter2;if (document.getElementById){msviFooter2 = document.getElementById("msviFooter2");msviFooter2.style.filter = "";}</SCRIPT>
+
+<TABLE height=58 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD>
+      <DIV style="WIDTH: 200px"></DIV></TD>
+    <TD 
+    style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#ADADAD', gradientType='1')" 
+    width="100%"></TD></TR></TBODY></TABLE><LAYER visibility="hide">
+<DIV style="DISPLAY: none"><IMG height=0 hspace=0 
+src="three_files/trans_pixel.gif" width=0 border=0></DIV></LAYER></BODY></HTML>

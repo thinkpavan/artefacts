@@ -1,0 +1,7 @@
+Shows how to configure message driven bean as web service in weblogic.
+
+mdb.jar is taken from ex10 of ejb examples.
+
+we tried to generate web-services.xml automatically
+using JMS* attributes using servicegen , but it gave files
+with errors, so we have taken the files from WL - Examples.

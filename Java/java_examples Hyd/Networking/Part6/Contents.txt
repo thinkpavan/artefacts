@@ -1,0 +1,2 @@
+JarApplet  -- shows how to create an applet with multiple class and to
+              store them as a single file to reduce download time.

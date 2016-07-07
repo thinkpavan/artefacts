@@ -1,0 +1,3 @@
+Shows what happens if two clients modify the state of the same
+object, also shows that a single object
+can be bound to multiple names

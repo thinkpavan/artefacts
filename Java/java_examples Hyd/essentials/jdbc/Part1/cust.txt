@@ -1,0 +1,4 @@
+1,cust1,addr1,1000
+2,cust2,addr2,1000
+3,cust3,addr3,1000
+4,cust4,addr4,1000

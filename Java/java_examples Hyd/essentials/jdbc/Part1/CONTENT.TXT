@@ -1,0 +1,3 @@
+getdatinfo  - shows how to use resultset meta data
+
+getdatafromorcl -- shows how to get data from oracle

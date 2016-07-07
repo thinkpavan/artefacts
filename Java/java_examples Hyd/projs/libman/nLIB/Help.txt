@@ -1,0 +1,5 @@
+It is a software which is made for keeping records of books & members 
+in the Library. Keep "nLIB" folder on desktop & run "Project1" which is 
+inside "nLIB". In case of any problem, please contact me.
+
+email id: imsachinraut@hotmail.com

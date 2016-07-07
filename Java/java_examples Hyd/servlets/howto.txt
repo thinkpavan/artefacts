@@ -1,0 +1,45 @@
+Steps to configure Tomcat.
+
+Main configuration file for Tomcat is TOMCAT_DIR/conf/server.xml
+
+According to javasoft standards we can create any no of web app's and run on a
+single servlet container.
+
+A web application is defined as a hierarchy of directories and files in a standard layout.
+Such a hierarchy can be accessed without packing, or in a "packed" form known as a
+Web ARchive, or WAR file. 
+
+There are many ways of deploying our servlets on tomcat.
+
+1) create web application directory according to standard format under 
+TOMCAT_HOME/webapps directory.
+
+2) copy war file under TOMCAT_HOME/webapps directory.
+
+3) use tomcat admin tool to deploy a webapp.
+
+4) Add a <Context> entry in the TOMCAT_HOME//conf/server.xml configuration file
+
+
+Directory layout for web apps
+
+Under the document root. we can place html , jsp and other files.
+
+/WEB-INF/web.xml  is the configuration file of our application.
+
+/WEB-INF/classes/ to place java classes required for our application.
+
+/WEB-INF/lib/ to place jar files required for our application.
+
+
+Tomcat specific.
+
+TOMCAT_HOME/common/lib 
+
+ ---------------JAR files placed here are visible both to web applications and internal Tomcat code.
+
+TOMCAT_HOME/shared/lib
+
+---------------JAR files placed here are visible to all web applications, but not to internal Tomcat code.
+
+

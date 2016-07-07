@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="part6/temp.jar"/>
+	<classpathentry kind="lib" path="part6/trans.jar"/>
+	<classpathentry kind="lib" path="temp.jar"/>
+	<classpathentry kind="lib" path="trans.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

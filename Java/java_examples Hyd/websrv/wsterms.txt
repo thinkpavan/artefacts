@@ -1,0 +1,15 @@
+
+Types
+
+A container for abstract type definitions defined using XML Schema 
+
+Message
+A definition of an abstract message that may consist of multiple parts, each part may be of a different type 
+
+PortType
+An abstract set of operations supported by one or more endpoints (commonly known as an interface); Operations are defined by an exchange of messages 
+
+Binding
+A concrete protocol and data format specification for a particular portType 
+
+service A collection of related endpoints, where an endpoint is defined as a combination of a binding and an address (URI) 

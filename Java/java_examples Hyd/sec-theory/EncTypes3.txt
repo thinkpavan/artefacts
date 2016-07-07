@@ -1,0 +1,19 @@
+Two types of Encryption
+
+symmetric cipher : uses single secrete key to encrypt/decrypt.
+
+   These algorithms are faster.
+
+Currently data encryption standard (DES) is being used and in future it
+will be replaced by advanced encryption standard (AES)
+
+Asymmetric ciphers : uses two keys known as private (which is kept as secret
+and public key which is known to any one).
+
+encryption can be done using private/public key.
+
+If encrytion is done by public key then decryption can be done by private key only.
+
+If encrytion is done by private key then decryption can be done by public key only.
+
+Algorithms RSA, ElGamal

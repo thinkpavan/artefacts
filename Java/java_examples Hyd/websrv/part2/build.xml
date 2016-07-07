@@ -1,0 +1,73 @@
+<project name="ws1" default="all" basedir=".">
+
+  <!-- set global properties for this build -->
+  <property environment="env"/>
+  <property file="./build.properties"/>
+  <property name="source" value="."/>
+  <property name="build" value="${source}/build"/>
+  <property name="ejb_jar_file" value="ws2ejb.jar" />
+  <property name="war_file" value="ws2wapp.war" />
+  <property name="ear_file" value="ws2eapp.ear" />
+  <property name="client_jar_file" value="ws2client.jar" />
+  <property name="namespace"
+            value="http://www.inet.com/webservices/ws2" 
+  />
+
+  <target name="all" depends="clean, ear, client"/>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="ear" >
+    <servicegen
+       destEar="${build}/${ear_file}"
+       warName="${war_file}"> 
+       <service
+         ejbJar="${ejb_jar_file}"
+         targetNamespace="${namespace}"
+         serviceName="ws2ejb"
+         serviceURI="/ws2ejb"
+	 generateTypes="True"
+         expandMethods="True">
+         <client 
+           packageName="ws2"
+           clientJarName="${client_jar_file}"
+         />
+       </service>
+     </servicegen>
+  </target>
+
+  <target name="client" depends="ear">
+    <clientgen
+      ear="${build}/${ear_file}"
+      warName="${war_file}"
+      packageName="ws2"
+      clientJar="${build}/${client_jar_file}"
+    />
+
+    <javac srcdir="${source}"
+      destdir="${build}"
+      includes="Client.java">
+      <classpath>
+        <pathelement path="${build}/${client_jar_file}" />
+      </classpath>
+    </javac>
+  </target>
+
+
+  <target name="run" >
+    <java classname="ws2.Client" 
+          fork="true">
+      <arg value="http://localhost:7001/ws2wapp/ws2ejb?WSDL"/>
+      <classpath>
+        <pathelement location="${build}/${client_jar_file}"/>
+        <pathelement path="${java.class.path}"/>
+        <pathelement path="${build}"/>
+
+      </classpath>
+    </java>
+  </target>
+
+</project>

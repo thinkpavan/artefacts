@@ -1,0 +1,11 @@
+UseJTabbedPane  -- shows how to use JTabbedPane
+
+UseJTB  -- shows how to handle events in JTabbedPane
+
+UseJSP   -- shows how to use JSplitPane (uses no arg constructor)
+
+UseJSP1   -- shows how to use some of the methods of splitpane
+
+UseJSP2   -- shows how to add listeners to split panes
+
+UseJSP3   -- shows how to have split inside a split

@@ -1,0 +1,9 @@
+1) create ejb jar file by implementing a stateless session bean.
+
+2) using build.xml file run  the ant tool to generate webarchive and
+   client files.
+
+3) compile Client.java and run it after deploying web application.
+
+
+part1 and part2 contains webservices implemented as EJB's

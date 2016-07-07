@@ -1,0 +1,87 @@
+
+240-321 Advanced CPT (Java)
+Semester 2, 2004-2005
+Slide File Contents
+
+Dr. Andrew Davison
+October 29th, 2004
+
+The names of the slide files include a number, which indicate
+their position in the course material. The numbers start at 0.
+
+These slides are being revised, so will not all be present
+until later in the semester.
+
+
+File Name/Title		Purpose/Objectives
+---------		------------------
+prelim0.ppt		to give some background on the course 
+0. Preliminaries
+
+backgnd1.ppt
+1. background		to give a nontechnical overview of Java
+
+simple2.ppt		 to give some simple examples of Java
+2. Simple Java Programs  applications and applets
+
+impera3.ppt		consider C-like Java control structures, 
+3. Some Imperative	functions (methods), and arrays
+   Features
+
+classes4.ppt		to explain classes and objects;
+3. Classes and Objects	to go through a Stack example in Java;
+			to introduce packages
+
+oop5.ppt		to discuss object oriented programming (OOP) in Java
+5. Object Oriented Programming
+
+strs6.ppt		to look at the String, StringBuffer, Character, 
+6. Strings		and StringTokeniser classes
+
+gui7.ppt		describe the concepts behind the GUI components in Java
+7. Graphical User Interfaces (GUIs) I
+
+gui8.ppt		describe some of the GUI controls and programming 
+8. GUI Examples II	techniques in Java
+
+layout9.ppt		describe the basic layout managers for GUIs
+9. GUI Layout
+
+excpt10.ppt		examine Java exception (error) handling
+10. Exceptions
+
+graphs11.ppt		look at color, fonts, and how to draw shapes 
+11. Graphics		into applet/application windows
+
+multim12.ppt		introduce Java multimedia: images, audio, animations
+12.  Multimedia
+
+thrd13.ppt		describe basic threads in Java
+13. Threads I
+
+thrd14.ppt		introduce more complex concurrency ideas, 
+14. Threads 2		as seen in Java Threads
+			  -- e.g. synchronization
+
+io15.ppt		discuss stream I/O in Java
+15. Input/Output
+
+collect16.ppt		how to use Collection classes for coding standard 
+16.  Collections	data structures and algorithms
+
+
+style17.ppt		Coding style tips, especially useful for the project
+17.  Coding Style
+
+
+
+
+
+
+
+
+
+
+
+
+

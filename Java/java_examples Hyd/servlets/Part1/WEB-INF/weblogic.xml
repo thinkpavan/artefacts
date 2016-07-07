@@ -1,0 +1,34 @@
+<!DOCTYPE weblogic-web-app PUBLIC "-//BEA Systems, Inc.//DTD Web Application 8.1//EN" "http://www.bea.com/servers/wls810/dtd/weblogic810-web-jar.dtd">
+
+<weblogic-web-app>
+
+  <security-role-assignment>
+    <role-name>guest</role-name>
+  </security-role-assignment>
+
+
+
+  <jsp-descriptor>
+    <jsp-param>
+      <param-name>compileCommand</param-name>
+      <param-value>javac</param-value>
+    </jsp-param>
+    <jsp-param>
+      <param-name>workingDir</param-name>
+      <param-value>C:\DOCUME~1\CPAVAN~1\LOCALS~1\Temp\</param-value>
+    </jsp-param>
+    <jsp-param>
+      <param-name>keepgenerated</param-name>
+      <param-value>true</param-value>
+    </jsp-param>
+    <jsp-param>
+      <param-name>pageCheckSeconds</param-name>
+      <param-value>5</param-value>
+    </jsp-param>
+  </jsp-descriptor>
+
+
+
+
+</weblogic-web-app>
+

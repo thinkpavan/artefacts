@@ -1,0 +1,62 @@
+Messaging enables distributed communication that is loosely coupled.
+
+The Java Message Service is a Java API that allows applications to create, send,
+receive, and read messages. 
+
+Asynchronous. A JMS provider can deliver messages to a client as they arrive;
+ a client does not have to request messages in order to receive them. 
+
+Reliable. The JMS API can ensure that a message is delivered once and only
+once. Lower levels of reliability are available for applications that can afford 
+to miss messages or to receive duplicate messages. 
+
+Most important purpose of JMS was to allow Java applications to access existing
+messaging-oriented middleware (MOM) systems, such as MQSeries from IBM.
+==============================================================
+when to use
+a)The provider wants the components not to depend on information about other
+components' interfaces, so that components can be easily replaced. 
+b)The provider wants the application to run whether or not all components are 
+up and running simultaneously. 
+c)The application business model allows a component to send information to
+another and to continue to operate without receiving an immediate response. 
+
+==============================================================
+jms provider , jms client, messages and admin objects like destinations and
+connection factories.
+
+Domains:
+
+Provides  point-to-point and  publish/subscribe domains are supported by j2ee.
+
+
+P2P
+
+a)Each message has only one consumer. 
+b)Sender and a receiver of a message have no timing dependencies.
+The receiver can fetch the message whether or not it was running when the client sent the message. 
+c)The receiver acknowledges the successful processing of a message. 
+-->>>Use PTP messaging when every message you send must be processed successfully by one consumer. 
+
+Pub/Sub
+
+
+a)Each message may have multiple consumers. 
+b)Publishers and subscribers have a timing dependency.
+ A client that subscribes to a topic can consume only messages published after
+ the client has created a subscription, and the subscriber must continue to be active
+ in order for it to consume messages. 
+
+--->>>Use pub/sub messaging when each message can be processed by zero, one, or many consumers.
+
+Message Consumption.
+
+Synchronously. A subscriber or a receiver explicitly fetches the message from
+ the destination by calling the receive method. The receive method can block 
+until a message arrives or can time out if a message does not arrive within 
+a specified time limit. 
+
+Asynchronously. A client can register a message listener with a consumer. 
+A message listener is similar to an event listener. Whenever a message arrives
+ at the destination, the JMS provider delivers the message by calling the listener's
+ onMessage method, which acts on the contents of the message. 

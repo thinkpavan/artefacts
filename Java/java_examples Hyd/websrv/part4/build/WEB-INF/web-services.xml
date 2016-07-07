@@ -1,0 +1,49 @@
+<web-services>
+  <web-service protocol="http" name="ws4" uri="/ws4" targetNamespace="http://www.inet.com/webservices/ws4" style="rpc">
+    <types><xsd:schema  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:stns="java:NBDT"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  targetNamespace="java:NBDT">
+ <xsd:complexType   name="Student">
+  <xsd:sequence>
+   <xsd:element     maxOccurs="1"
+     name="address"
+     type="xsd:string"
+     minOccurs="1"
+     nillable="true">
+   </xsd:element>
+   <xsd:element     maxOccurs="1"
+     name="name"
+     type="xsd:string"
+     minOccurs="1"
+     nillable="true">
+   </xsd:element>
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema></types>
+    <type-mapping>
+      <type-mapping-entry deserializer="NBDT.StudentCodec" class-name="NBDT.Student" xmlns:p1="java:NBDT" type="p1:Student" serializer="NBDT.StudentCodec">
+      </type-mapping-entry>
+    </type-mapping>
+
+    <components>
+      <java-class name="jcComp0" class-name="NBDT.WS4">
+      </java-class>
+    </components>
+
+    <operations>
+      <operation method="method1(NBDT.Student)" component="jcComp0" name="method1">
+        <params>
+          <param location="body" class-name="NBDT.Student" style="in" name="student" xmlns:p1="java:NBDT" type="p1:Student">
+          </param>
+          <return-param location="body" class-name="NBDT.Student" name="result" xmlns:p1="java:NBDT" type="p1:Student">
+          </return-param>
+
+        </params>
+
+      </operation>
+    </operations>
+
+  </web-service>
+</web-services>

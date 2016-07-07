@@ -1,0 +1,19 @@
+// Greeting.idl
+// Module in Corba is mapped to Package in Java
+module INetMod {
+// Interface in Corba is very much similar to Java Interface  
+  interface BServer{
+// this corba object is to demonstrate idl/java maping
+ 	short someShort();
+	float someFloat();
+	long someLong();
+	double someDouble();
+	// we may loose info if we rely on java basic data types
+	unsigned long someULong();
+	char someChar();
+	wchar someWChar();
+	boolean someBoolean();
+  };
+
+};
+		  

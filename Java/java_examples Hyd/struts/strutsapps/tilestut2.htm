@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0057)http://www.lifl.fr/~dumoulin/tiles/doc/userGuideBody.html -->
+<HTML><HEAD><TITLE>Tiles User Guide</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2600.0" name=GENERATOR>
+<STYLE>@font-face {
+	font-family: Courier;
+}
+@font-face {
+	font-family: Wingdings;
+}
+@font-face {
+	font-family: Tahoma;
+}
+@page Section1 {size: 595.3pt 841.9pt; margin: 70.85pt 70.85pt 70.85pt 70.85pt; }
+P.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+LI.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+DIV.MsoNormal {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+H1 {
+	FONT-SIZE: 16pt; MARGIN: 12pt 0cm 3pt 21.6pt; TEXT-INDENT: -21.6pt; FONT-FAMILY: Arial; TEXT-ALIGN: justify
+}
+H2 {
+	FONT-SIZE: 14pt; MARGIN: 12pt 0cm 3pt 28.8pt; TEXT-INDENT: -28.8pt; FONT-STYLE: italic; FONT-FAMILY: Arial; TEXT-ALIGN: justify
+}
+H3 {
+	FONT-SIZE: 13pt; MARGIN: 12pt 0cm 3pt 36pt; TEXT-INDENT: -36pt; FONT-FAMILY: Arial; TEXT-ALIGN: justify
+}
+H4 {
+	FONT-SIZE: 14pt; MARGIN: 12pt 0cm 3pt 43.2pt; TEXT-INDENT: -43.2pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+H5 {
+	FONT-SIZE: 13pt; MARGIN: 12pt 0cm 3pt 50.4pt; TEXT-INDENT: -50.4pt; FONT-STYLE: italic; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+H6 {
+	FONT-SIZE: 11pt; MARGIN: 12pt 0cm 3pt 57.6pt; TEXT-INDENT: -57.6pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+P.MsoHeading7 {
+	FONT-SIZE: 12pt; MARGIN: 12pt 0cm 3pt 64.8pt; TEXT-INDENT: -64.8pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+LI.MsoHeading7 {
+	FONT-SIZE: 12pt; MARGIN: 12pt 0cm 3pt 64.8pt; TEXT-INDENT: -64.8pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+DIV.MsoHeading7 {
+	FONT-SIZE: 12pt; MARGIN: 12pt 0cm 3pt 64.8pt; TEXT-INDENT: -64.8pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+P.MsoHeading8 {
+	FONT-SIZE: 12pt; MARGIN: 12pt 0cm 3pt 72pt; TEXT-INDENT: -72pt; FONT-STYLE: italic; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+LI.MsoHeading8 {
+	FONT-SIZE: 12pt; MARGIN: 12pt 0cm 3pt 72pt; TEXT-INDENT: -72pt; FONT-STYLE: italic; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+DIV.MsoHeading8 {
+	FONT-SIZE: 12pt; MARGIN: 12pt 0cm 3pt 72pt; TEXT-INDENT: -72pt; FONT-STYLE: italic; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+P.MsoFooter {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+LI.MsoFooter {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+DIV.MsoFooter {
+	FONT-SIZE: 12pt; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: "Times New Roman"; TEXT-ALIGN: justify
+}
+P.MsoTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; MARGIN: 12pt 0cm 3pt; FONT-FAMILY: Arial; TEXT-ALIGN: center
+}
+LI.MsoTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; MARGIN: 12pt 0cm 3pt; FONT-FAMILY: Arial; TEXT-ALIGN: center
+}
+DIV.MsoTitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 16pt; MARGIN: 12pt 0cm 3pt; FONT-FAMILY: Arial; TEXT-ALIGN: center
+}
+A:link {
+	COLOR: blue; TEXT-DECORATION: underline
+}
+SPAN.MsoHyperlink {
+	COLOR: blue; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: purple; TEXT-DECORATION: underline
+}
+SPAN.MsoHyperlinkFollowed {
+	COLOR: purple; TEXT-DECORATION: underline
+}
+P.MsoDocumentMap {
+	FONT-SIZE: 12pt; BACKGROUND: navy; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: Tahoma; TEXT-ALIGN: justify
+}
+LI.MsoDocumentMap {
+	FONT-SIZE: 12pt; BACKGROUND: navy; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: Tahoma; TEXT-ALIGN: justify
+}
+DIV.MsoDocumentMap {
+	FONT-SIZE: 12pt; BACKGROUND: navy; MARGIN: 0cm 0cm 0pt; FONT-FAMILY: Tahoma; TEXT-ALIGN: justify
+}
+SPAN.code {
+	FONT-FAMILY: "Courier New"
+}
+P.CodewithBorder {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; PADDING-LEFT: 0cm; FONT-SIZE: 8pt; PADDING-BOTTOM: 0cm; MARGIN: 0cm 0cm 0pt; BORDER-LEFT: medium none; PADDING-TOP: 0cm; BORDER-BOTTOM: medium none; FONT-FAMILY: Courier; TEXT-ALIGN: justify
+}
+LI.CodewithBorder {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; PADDING-LEFT: 0cm; FONT-SIZE: 8pt; PADDING-BOTTOM: 0cm; MARGIN: 0cm 0cm 0pt; BORDER-LEFT: medium none; PADDING-TOP: 0cm; BORDER-BOTTOM: medium none; FONT-FAMILY: Courier; TEXT-ALIGN: justify
+}
+DIV.CodewithBorder {
+	BORDER-RIGHT: medium none; PADDING-RIGHT: 0cm; BORDER-TOP: medium none; PADDING-LEFT: 0cm; FONT-SIZE: 8pt; PADDING-BOTTOM: 0cm; MARGIN: 0cm 0cm 0pt; BORDER-LEFT: medium none; PADDING-TOP: 0cm; BORDER-BOTTOM: medium none; FONT-FAMILY: Courier; TEXT-ALIGN: justify
+}
+DIV.Section1 {
+	page: Section1
+}
+OL {
+	MARGIN-BOTTOM: 0cm
+}
+UL {
+	MARGIN-BOTTOM: 0cm
+}
+</STYLE>
+</HEAD>
+<BODY lang=FR vLink=purple link=blue>
+<DIV class=Section1>
+<P class=MsoTitle><SPAN lang=EN-US>Tiles User&nbsp; Guide</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-GB></SPAN>&nbsp;</P>
+<P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+lang=EN-GB>Author : </SPAN><A href="mailto:cedric.dumoulin@lifl.fr"><SPAN 
+lang=EN-GB>Cedric Dumoulin</SPAN></A></P>
+<P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN lang=EN-GB>Date 
+: </SPAN>22 juil. 2001</P>
+<P class=MsoFooter style="TEXT-ALIGN: center" align=center><SPAN lang=EN-US>Rev 
+: </SPAN><SPAN lang=EN-US>22 Jul. 2001</SPAN></P>
+<P class=MsoNormal>&nbsp;</P>
+<H1><SPAN lang=EN-US>1<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN dir=ltr><SPAN lang=EN-US>Tiles History</SPAN></SPAN></H1>
+<P class=MsoNormal><B><I><SPAN lang=EN-US>Tiles</SPAN></I></B><B><SPAN 
+lang=EN-US> </SPAN></B><SPAN lang=EN-US>framework was previously called 
+<B><I>Components</I></B> framework. Components name remain in a lot of classes 
+and jsp files. </SPAN></P>
+<H1><SPAN lang=EN-US>2<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN dir=ltr><SPAN lang=EN-US>Using Tiles</SPAN></SPAN></H1>
+<P class=MsoNormal><SPAN lang=EN-US>To use Tiles in your project, you need 
+following library :</SPAN></P>
+<UL style="MARGIN-TOP: 0cm" type=disc>
+  <LI class=MsoNormal><SPAN class=code><SPAN 
+  style="FONT-SIZE: 10pt">tiles.jar</SPAN></SPAN> 
+  <LI class=MsoNormal><SPAN class=code><SPAN 
+  style="FONT-SIZE: 10pt">commons-digester.jar</SPAN></SPAN> 
+  <LI class=MsoNormal><SPAN class=code><SPAN 
+  style="FONT-SIZE: 10pt">commons-beanutils.jar</SPAN></SPAN> 
+  <LI class=MsoNormal><SPAN class=code><SPAN 
+  style="FONT-SIZE: 10pt">commons-collections.jar</SPAN></SPAN> </LI></UL>
+<P class=MsoNormal><SPAN lang=EN-US>You also need file </SPAN><SPAN 
+class=code><SPAN style="FONT-SIZE: 10pt">tiles.tld</SPAN></SPAN><SPAN 
+lang=EN-US> containing tags definitions.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>If you use <I>definitions factory</I> 
+configuration file, you can validate it with appropriate DTD file </SPAN><SPAN 
+class=code><SPAN lang=EN-US style="FONT-SIZE: 10pt">tiles-config.dtd. 
+</SPAN></SPAN><SPAN lang=EN-US>You also need to initialize definitions factory. 
+</SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt"></SPAN></SPAN>&nbsp;</P>
+<H1><SPAN lang=EN-US>3<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN dir=ltr><SPAN lang=EN-US>Definitions Factory 
+initialization</SPAN></SPAN></H1>
+<P class=MsoNormal><SPAN lang=EN-US>If you want to use <I>definition 
+factory</I>, you need to initialize it. During this process, factory is 
+initialized and saved in appropriate jsp context.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>If you also use Struts, you can use one of 
+the provided servlets to initialize Tiles. These servlets also provide a 
+mechanism allowing to use definition names in Struts forwards.</SPAN></P>
+<UL style="MARGIN-TOP: 0cm" type=disc>
+  <LI class=MsoNormal><SPAN class=code><SPAN 
+  style="FONT-SIZE: 10pt">ActionComponentServlet.java</SPAN></SPAN><SPAN 
+  lang=EN-GB> (for Struts 1.0)</SPAN> 
+  <LI class=MsoNormal><SPAN class=code><SPAN 
+  style="FONT-SIZE: 10pt">TilesActionServlet.java</SPAN></SPAN><SPAN lang=EN-GB> 
+  (for Struts 1.1 dev) (todo)</SPAN> </LI></UL>
+<P class=MsoNormal><SPAN lang=EN-US>If you don’t want to use Struts</SPAN><SPAN 
+lang=EN-GB>, you need to initialize yourself the <I>definition factory</I>. 
+Check existing servlets to know how.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-GB>If you don’t want to use <I>definitions 
+factory</I>, don’t care about it.</SPAN></P>
+<H2><SPAN lang=EN-US>3.1<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN dir=ltr><SPAN lang=EN-US>Definition Factory 
+Parameters</SPAN></SPAN></H2>
+<P class=MsoNormal><SPAN lang=EN-US>Default <I>definition factory</I> accept 
+some parameters. If factory is initialized from a servlet, using the default 
+method (</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">DefinitionUtil.</SPAN></SPAN><SPAN class=code><SPAN 
+lang=EN-US style="FONT-SIZE: 10pt">createDefinitionsFactory</SPAN></SPAN><SPAN 
+lang=EN-US>), parameters can be set using the </SPAN><SPAN class=code><SPAN 
+lang=EN-GB style="FONT-SIZE: 10pt">web.xml</SPAN></SPAN><SPAN lang=EN-US> 
+file.</SPAN></P>
+<H3><SPAN lang=EN-US>3.1.1<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+dir=ltr><SPAN lang=EN-US>definitions-factory-class</SPAN></SPAN></H3>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-name&gt;<B>definitions-factory-class</B>&lt;/param-name&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-value</SPAN></SPAN><SPAN class=code><SPAN 
+style="FONT-SIZE: 10pt">&gt;<B>java.class.name</B></SPAN></SPAN><SPAN 
+class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&lt;/param-value&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt"></SPAN></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN lang=EN-US>Allows to specify a factory class name. This 
+factory must implements interface </SPAN><SPAN class=code><SPAN 
+style="FONT-SIZE: 10pt">ComponentDefinitionsFactory</SPAN></SPAN><SPAN 
+lang=EN-US>.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>If not specified, default factory is used 
+(</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">xmlDefinition.I18nFactorySet</SPAN></SPAN><SPAN 
+lang=EN-US>).</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>This parameter is taken into account by 
+</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">DefinitionUtil.</SPAN></SPAN><SPAN class=code><SPAN 
+lang=EN-US style="FONT-SIZE: 10pt">createDefinitionsFactory.</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US></SPAN>&nbsp;</P>
+<H3><SPAN lang=EN-US>3.1.2<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+dir=ltr><SPAN lang=EN-US>definitions-debug</SPAN></SPAN></H3>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-name&gt;</SPAN></SPAN><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN class=code><B><SPAN 
+style="FONT-SIZE: 10pt">definitions-debug</SPAN></B></SPAN><SPAN 
+class=code><SPAN style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN class=code><SPAN 
+lang=EN-US style="FONT-SIZE: 10pt">&lt;/param-name&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-value&gt;<B>integer</B>&lt;/param-value&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN lang=EN-US>If set, specify the debug details level. 0 
+means no debug information is outputted.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>This parameter is taken into account by 
+</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">DefinitionUtil.</SPAN></SPAN><SPAN class=code><SPAN 
+lang=EN-US style="FONT-SIZE: 10pt">createDefinitionsFactory.</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US></SPAN>&nbsp;</P>
+<H3><SPAN lang=EN-US>3.1.3<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+dir=ltr><SPAN lang=EN-US>definitions-config</SPAN></SPAN></H3>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-name&gt;</SPAN></SPAN><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN class=code><B><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">definitions-config</SPAN></B></SPAN><SPAN 
+class=code><SPAN lang=EN-GB style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN 
+class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&lt;/param-name&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-value&gt;<B>string</B>&lt;/param-value&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN lang=EN-US>Specify name of file containing definitions 
+configuration.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>It is possible to put several names, coma 
+separated. In this case, all names are used as base name.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>This parameter is taken into account by 
+</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">xmlDefinition.I18nFactorySet</SPAN></SPAN><SPAN 
+class=code><SPAN lang=EN-US style="FONT-SIZE: 10pt">.</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US></SPAN>&nbsp;</P>
+<H3><SPAN lang=EN-US>3.1.4<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+dir=ltr><SPAN lang=EN-US>definitions-parser-details</SPAN></SPAN></H3>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-name&gt;</SPAN></SPAN><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN class=code><B><SPAN 
+style="FONT-SIZE: 10pt">definitions-parser-details</SPAN></B></SPAN><SPAN 
+class=code><SPAN style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN class=code><SPAN 
+lang=EN-US style="FONT-SIZE: 10pt">&lt;/param-name&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-value&gt;<B>int</B>&lt;/param-value&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN lang=EN-US>Specify level of detail outputted by parser 
+(digester). Default is 0, meaning no details.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>This parameter is taken into account by 
+</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">xmlDefinition.I18nFactorySet</SPAN></SPAN><SPAN 
+class=code><SPAN lang=EN-US style="FONT-SIZE: 10pt">.</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US></SPAN>&nbsp;</P>
+<H3><SPAN lang=EN-US>3.1.5<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp; </SPAN></SPAN><SPAN 
+dir=ltr><SPAN lang=EN-US>definitions-parser-validate</SPAN></SPAN></H3>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-name&gt;</SPAN></SPAN><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN class=code><B><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">definitions-parser-validate</SPAN></B></SPAN><SPAN 
+class=code><SPAN lang=EN-GB style="FONT-SIZE: 10pt"> </SPAN></SPAN><SPAN 
+class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&lt;/param-name&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN class=code><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;param-value&gt;<B>true|false</B>&lt;/param-value&gt;</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US 
+style="FONT-SIZE: 10pt; FONT-FAMILY: 'Courier New'"></SPAN>&nbsp;</P>
+<P class=MsoNormal><SPAN lang=EN-US>Specify if we want to use a validating 
+parser or not. Default is no.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US>This parameter is taken into account by 
+</SPAN><SPAN class=code><SPAN lang=EN-GB 
+style="FONT-SIZE: 10pt">xmlDefinition.I18nFactorySet</SPAN></SPAN><SPAN 
+class=code><SPAN lang=EN-US style="FONT-SIZE: 10pt">.</SPAN></SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-US></SPAN>&nbsp;</P>
+<H1><SPAN lang=EN-US>4<SPAN 
+style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+</SPAN></SPAN><SPAN dir=ltr><SPAN lang=EN-US>XML Definition Factory 
+Syntax</SPAN></SPAN></H1>
+<P class=MsoNormal><SPAN lang=EN-GB>Please check </SPAN>tiles.dtd <SPAN 
+lang=EN-GB>and provided example for syntax.</SPAN></P>
+<P class=MsoNormal><SPAN lang=EN-GB>To do : explain syntax 
+here.</SPAN></P></DIV></BODY></HTML>

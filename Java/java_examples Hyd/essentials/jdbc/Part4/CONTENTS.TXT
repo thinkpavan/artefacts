@@ -1,0 +1,8 @@
+
+
+longs -- shows how to transfer binary data
+
+
+storePhoto  -- shows how to store photographs and other binary data
+
+CallProc -- shows how to call a database procedure

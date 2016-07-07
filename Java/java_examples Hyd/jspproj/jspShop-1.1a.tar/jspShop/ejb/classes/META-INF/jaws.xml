@@ -1,0 +1,409 @@
+<jaws>
+    <default-entity>
+        <create-table>true</create-table>
+        <remove-table>false</remove-table>
+        <tuned-update>true</tuned-update>
+        <read-only>false</read-only>
+        <time-out>300</time-out>
+        <select-for-update>false</select-for-update>
+    </default-entity>
+                
+    <enterprise-beans>
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.Object</ejb-name>
+            <table-name>jspShop_Object</table-name>
+            <finder>
+                <name>findByValue</name>
+                <query>, jspShop_Value 
+                       where jspShop_Object.objectID = jspShop_Value.objectID AND
+                       jspShop_Value.value like {1} AND
+                       jspShop_Object.parentID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByValueSub</name>
+                <query>, jspShop_Value
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_Value.value like {1} AND
+                        jspShop_Object like {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>                
+                <name>findByType</name>
+                <query>, jspShop_TypeValue, jspShop_Value, jspShop_Type 
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_TypeValue.valueID = jspShop_Value.valueID AND
+                        jspShop_TypeValue.typeID = jspShop_Type.typeID AND
+                        jspShop_Type.name like {1} AND
+                        jspShop_Object.parentID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByType2</name>
+                <query>,jspShop_TypeValue, jspShop_Value
+                        where jspShop_Object = jspShop_Value.objectID AND
+                        jspShop_TypeValue.valueID = jspShop_Value.valueID AND
+                        jspShop_TypeValue.typeID = {1} AND
+                        jspShop_Object.parentID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByTypeSub</name>
+                <query>, jspShop_TypeValue, jspShop_Value, jspShop_Type
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_TypeValue.valueID = jspShop_Value.valueID AND
+                        jspShop_TypeValue.typeID = jspShop_Type.typeID AND
+                        jspShop_Type.name like {1} AND
+                        jspShop_Object.context like {0}
+                </query>
+                <order></order>              
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByTypeSub2</name>
+                <query>, jspShop_TypeValue, jspShop_Value
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_TypeValue.valueID = jspShop_Value.valueID AND
+                        jspShop_TypeValue.typeID = {1} AND
+                        jspShop_Object.context like {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByContext2</name>
+                <query>parentID = {0} </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByContext</name>
+                <query>context like {0} </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByClassName2</name>
+                <query>parentID = {0} and className = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByClassName</name>
+                <query>className = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByProperty</name>
+                <query>, jspShop_Value, jspShop_Property
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_Value.propertyID = jspShop_Property.propertyID AND
+                        jspShop_Property.name like {1} AND
+                        jspShop_Object.parentID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByProperty2</name>
+                <query>, jspShop_Value
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_Value.propertyID = {1} AND
+                        jspShop_Object.parentID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPropertySub</name>
+                <query>, jspShop_Value, jspShop_Property
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_Value.propertyID = jspShop_Property.propertyID AND
+                        jspShop_Property.name like {1} AND
+                        jspShop_Object.context like {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPropertySub2</name>
+                <query>, jspShop_Value
+                        where jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_Value.propertyID = {1} AND
+                        jspShop_Object.context like {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByClassNameSub</name>
+                <query>context like {0} and className = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByChildCheck</name>
+                <query>, jspShop_Object b
+                        where jspShop_Object.parentID = {0} AND
+                        b.parentID = jspShop_Object.objectID
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByParentIDName</name>
+                <query>parentID = {0} and name = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>
+        
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.Value</ejb-name>
+            <table-name>jspShop_Value</table-name>
+            <finder>
+                <name>findByObjectIDValue</name>
+                <query>objectID = {0} and value like {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByObjectID</name>
+                <query>objectID = {0} </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPropertyID</name>
+                <query>propertyID = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByObjectIDType2</name>
+                <query>, jspShop_TypeValue
+                        where jspShop_Value.valueID = jspShop_TypeValue.valueID AND
+                        jspShop_TypeValue.typeID = {1} AND
+                        jspShop_Value.objectID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByObjectIDType</name>
+                <query>, jspShop_TypeValue, jspShop_Type
+                        where jspShop_Value.valueID = jspShop_TypeValue.valueID AND
+                        jspShop_TypeValue.typeID = jspShop_Type.typeID AND
+                        jspShop_Value.objectID = {0} AND
+                        jspShop_Type like {1}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByObjectIDProperty2</name>
+                <query>objectID = {0} and propertyID = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByObjectIDProperty</name>
+                <query>, jspShop_Property
+                        where jspShop_Value.propertyID = jspShop_Property.propertyID AND
+                        jspShop_Value.objectID = {0} AND
+                        jspShop_Property.name like {1}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPasswordCheck</name>
+                <query>, jspShop_Property b, jspShop_Object c, jspShop_Value d, jspShop_Property e
+                        where jspShop_Value.propertyID = b.propertyID AND
+                        b.name = 'Password' AND
+                        jspShop_Value.value = {1} AND
+                        c.objectID = jspShop_Value.objectID AND
+                        lower (c.name) = lower({0}) AND
+                        d.propertyID = e.propertyID AND
+                        e.name='Verified' AND
+                        d.value='true'
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>                            
+
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.Property</ejb-name>
+            <table-name>jspShop_Property</table-name>
+            <finder>
+                <name>findByClassName</name>
+                <query>className = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByClassNameProperty</name>
+                <query>className = {0} and name = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>
+        
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.TypeValue</ejb-name>
+            <table-name>jspShop_TypeValue</table-name>
+            <finder>
+                <name>findByValueID</name>
+                <query>valueID = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByValueIDValue</name>
+                <query>valueID = {0} and value like {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByTypeID</name>
+                <query>typeID = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByValueIDType2</name>
+                <query>valueID = {0} and typeID = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByValueIDType</name>
+                <query>, jspShop_Type
+                        where jspShop_TypeValue.typeID = jspShop_Type.typeID AND
+                        jspShop_TypeValue.valueID = {0} AND
+                        jspShop_Type.typeID =  {1}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findBySecurity</name>
+                <query>, jspShop_Value, jspShop_Property, jspShop_Type, jspShop_Object
+                        where jspShop_Object.objectID = {0} AND
+                        jspShop_Object.objectID = jspShop_Value.objectID AND
+                        jspShop_Value.propertyID = jspShop_Property.propertyID AND
+                        jspShop_Property.name = {2} AND
+                        jspShop_Value.value = {1} AND
+                        jspShop_Value.valueID = jspShop_TypeValue.valueID AND
+                        jspShop_TypeValue.typeID = jspShop_Type.typeID AND
+                        jspShop_Type.name = {3}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPropertyIDTypeID</name>
+                <query>, jspShop_Value
+                        where jspShop_TypeValue.valueID = jspShop_Value.valueID AND
+                        jspShop_TypeValue.typeID = {1} AND
+                        jspShop_Value.propertyID = {0}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>
+                
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.Type</ejb-name>
+            <table-name>jspShop_Type</table-name>
+            <finder>
+                <name>findByTypeID</name>
+                <query>typeID = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByName</name>
+                <query>name = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByTypeName</name>
+                <query>name = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>
+        
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.Class</ejb-name>
+            <table-name>jspShop_Class</table-name>
+            <finder>
+                <name>findByContext</name>
+                <query>context like {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByChildCheck</name>           
+                <query>, jspShop_Class b 
+                        where jspShop_Class.parentName = {0} AND 
+                        b.parentName = jspShop_Class.className                         
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByParentName</name>
+                <query>parentName = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>
+
+        <entity>
+            <ejb-name>com.submersion.jspshop.ejb.PropertyType</ejb-name>
+            <table-name>jspShop_PropertyType</table-name>
+            <finder>
+                <name>findByPropertyID</name>
+                <query>propertyID = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByTypeID</name>
+                <query>typeID = {0}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPropertyIDTypeName</name>
+                <query>, jspShop_Type
+                        where jspShop_Type.typeID = jspShop_PropertyType.typeID AND
+                        jspShop_PropertyType.propertyID = {0} AND
+                        jspShop_Type.name like {1}
+                </query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+            <finder>
+                <name>findByPropertyIDTypeID</name>
+                <query>propertyID = {0} AND typeID = {1}</query>
+                <order></order>
+                <read-ahead>true</read-ahead>
+            </finder>
+        </entity>
+        
+    </enterprise-beans>
+</jaws>

@@ -1,0 +1,16 @@
+UseJDeskTop    -- shows how to use desktop and internal frames
+
+UseJDeskTop2   -- shows how to use desktop and internal frames
+
+UseJDeskTop1   -- shows how to respond to internal frame events.
+
+BadUsage       -- shows that we should not use internal frames directly 
+		  with frames
+
+BadUsage2      -- shows why we cannot directly show light weight containers
+
+UseJDeskTop3   -- shows how to use addvetoablechanelistener (Constraint
+			properties)
+
+UseJdeskTop4   -- shows how to get the list of frames and manuplate them
+		  using desktop methods

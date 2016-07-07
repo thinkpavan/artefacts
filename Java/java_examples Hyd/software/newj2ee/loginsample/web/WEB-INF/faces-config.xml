@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+
+<faces-config>
+  <application>
+    <message-bundle>jsflogin.Resources</message-bundle>
+    <locale-config>
+      <default-locale>en</default-locale>
+      <supported-locale>en-us</supported-locale>
+      <supported-locale>fr</supported-locale>
+      <supported-locale>es</supported-locale>
+    </locale-config>
+  </application>
+
+  <navigation-rule>
+   <from-view-id>/login.jsp</from-view-id>
+   <navigation-case> 
+    <description>Handle case for successful login</description>
+    <from-action>#{LoginServer.loginAction}</from-action>
+    <from-outcome>success</from-outcome>
+    <to-view-id>/success.jsp</to-view-id>
+   </navigation-case>
+   <navigation-case>
+    <description>Handle case for unsuccessful login</description>
+    <from-action>#{LoginServer.loginAction}</from-action>
+    <from-outcome>failure</from-outcome>
+    <to-view-id>/failure.jsp</to-view-id>
+   </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+   <from-view-id>/success.jsp</from-view-id>
+   <navigation-case>
+    <from-outcome>return</from-outcome>
+    <to-view-id>/login.jsp</to-view-id>
+   </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+   <from-view-id>/failure.jsp</from-view-id>
+   <navigation-case>
+    <from-outcome>return</from-outcome>
+    <to-view-id>/login.jsp</to-view-id>
+   </navigation-case>
+  </navigation-rule>
+
+<managed-bean>
+  <managed-bean-name>LoginServer</managed-bean-name>
+  <managed-bean-class>jsflogin.loginServer</managed-bean-class>
+  <managed-bean-scope>session</managed-bean-scope>
+</managed-bean> 
+
+
+</faces-config>

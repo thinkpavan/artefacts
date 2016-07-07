@@ -1,0 +1,23 @@
+To use new event model:
+
+
+1) create a class that implements listener interface
+2) Pass the object of the above created class as parameter to
+   addxxxxxxlistener (xxxxxx is any listener)
+
+for example to handle action event:
+
+  1) create a class that impelements ActionListener interface and impelement
+   all the methods defined in ActionListener.
+	
+		class AList impelements ActionListener{
+			// implement action performed
+			actionPerformed(ActionEvent e) {
+			}
+		}
+
+  2) To Handle the action events instead of creating sub class of
+     the GUI component we can use addFocusListener on the object.
+	AList fl = new Alist();
+	Button b1 = new Button("button 1");
+	b1.addFocusListener((FocusListener)fl);

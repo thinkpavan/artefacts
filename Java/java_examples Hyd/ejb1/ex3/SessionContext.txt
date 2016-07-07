@@ -1,0 +1,28 @@
+SessionContext interface extends from EJBContext interface.
+
+SessionContext has the following methods
+
+getEJBObject()  -- This method can be invoked by the session bean to get
+   the reference to EJBObject associated with it .when ever session bean 
+   wants to pass it's reference it has to pass EJBObject associated with
+   it.
+
+EJBContext has the following methods
+
+1) getEnvironment  -- to get the EJB properties.
+
+2) getEJBHome -- returns ejb's home interface.
+
+3) getCallerPrincipal  -- to get the identity of caller.
+
+4) isCallerInRole  -- to check whether the caller is associated with
+   specific role or not.
+
+5) getUserTransaction  -- used to get getUserTransaction from a bean if
+   bean wats to manage transaction on it's own.
+
+6) setRollbackOnly  -- this will be called by container to mark that the
+   current transaction as rollback only. this method is calle by container
+   on beans whose transactions are managed by container.
+
+7) getRollbackOnly  -- this can be sed to know whether the transaction is set to rollback only or not.

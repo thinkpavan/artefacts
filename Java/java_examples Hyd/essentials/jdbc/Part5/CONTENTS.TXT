@@ -1,0 +1,2 @@
+
+dbcap  -- shows how to find out database capabilities

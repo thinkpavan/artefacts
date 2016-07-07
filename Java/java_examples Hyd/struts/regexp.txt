@@ -1,0 +1,40 @@
+\ Used to quote a meta-character (like '*')
+ \\ Matches a single '\' character 
+\0nnn Matches a given octal character 
+\xhh Matches a given 8-bit hexadecimal character 
+\\uhhhh Matches a given 16-bit hexadecimal character 
+\t Matches an ASCII tab character 
+\n Matches an ASCII newline character 
+\r Matches an ASCII return character 
+\f Matches an ASCII form feed character 
+
+
+[abc] Simple character class 
+[a-zA-Z] Character class with ranges 
+[^abc] Negated character class 
+. Matches any character other than newline 
+\w Matches a "word" character (alphanumeric plus "_") 
+\W Matches a non-word character 
+\s Matches a whitespace character 
+\S Matches a non-whitespace character 
+\d Matches a digit character 
+\D Matches a non-digit character 
+
+^ Matches only at the beginning of a line 
+$ Matches only at the end of a line
+
+A* Matches A 0 or more times
+A+ Matches A 1 or more times 
+A? Matches A 1 or 0 times 
+A{n} Matches A exactly n times
+A{n,} Matches A at least n times
+A{n,m} Matches A at least n but not more than m times
+AB Matches A followed by B
+A|B Matches either A or B 
+(A) Used for subexpression grouping
+
+ 
+
+
+
+

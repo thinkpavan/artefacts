@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<inet:PurchaseOrder  xmlns:inet="http://www.inet.com/po-schema" xmlns:sons="http://xyz.org/">
+	<sons:POLINE>
+		<inet:itemid>101</inet:itemid>
+		<inet:qty>10</inet:qty>
+	</sons:POLINE>
+	<sons:POLINE>
+		<inet:itemid>111</inet:itemid>
+		<inet:qty>5</inet:qty>
+	</sons:POLINE>
+</inet:PurchaseOrder>
+

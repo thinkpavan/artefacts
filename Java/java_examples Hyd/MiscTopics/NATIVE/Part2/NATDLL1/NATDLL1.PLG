@@ -1,0 +1,43 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: natdll1 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSPCE.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "c:\jdk1.2.1\include" /I "c:\jdk1.2.1\include\win32" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "NATDLL1_EXPORTS" /U "__cplusplus" /Fp"Debug/natdll1.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"D:\course\MiscTopics\native\Part2\natdll1\natdll1.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSPCE.tmp" 
+Creating temporary file "C:\TEMP\RSPCF.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "c:\jdk1.2.1\include" /I "c:\jdk1.2.1\include\win32" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /D "_USRDLL" /D "NATDLL1_EXPORTS" /U "__cplusplus" /Fp"Debug/natdll1.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ  /c 
+"D:\course\MiscTopics\native\Part2\natdll1\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSPCF.tmp" 
+Creating temporary file "C:\TEMP\RSPD0.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib jvm.lib /nologo /dll /incremental:yes /pdb:"Debug/natdll1.pdb" /debug /machine:I386 /out:"Debug/natdll1.dll" /implib:"Debug/natdll1.lib" /pdbtype:sept 
+.\Debug\StdAfx.obj
+.\Debug\natdll1.obj
+]
+Creating command line "link.exe @C:\TEMP\RSPD0.tmp"
+<h3>Output Window</h3>
+Compiling...
+StdAfx.cpp
+Compiling...
+natdll1.cpp
+D:\course\MiscTopics\native\Part2\natdll1\natdll1.cpp(26) : warning C4700: local variable 'i' used without having been initialized
+Linking...
+   Creating library Debug/natdll1.lib and object Debug/natdll1.exp
+
+
+
+<h3>Results</h3>
+natdll1.dll - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

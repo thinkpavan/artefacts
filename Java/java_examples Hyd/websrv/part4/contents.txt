@@ -1,0 +1,15 @@
+web service implemented as a simple java class.
+
+We need to follow the following rules while implementing webservice as
+a plain java class.
+
+1) must provide a no arument constructor.
+
+2) must not start any thread from our code.
+
+3) define all the methods that need to be exposed as web service operations as public.
+
+
+Web services can be synchronous ( request-response) or
+Asynchronous (one-way). This can be specified in invocation-style 
+attribute of <operation> element in web-service.xml.

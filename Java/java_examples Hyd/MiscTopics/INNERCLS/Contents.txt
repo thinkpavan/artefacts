@@ -1,0 +1,3 @@
+InnerCls1  -- shows how to create an inner class
+
+AnyCls1  -- shows how to create an Anonymous class

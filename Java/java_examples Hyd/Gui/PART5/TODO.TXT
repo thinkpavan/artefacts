@@ -1,0 +1,6 @@
+add examples on 
+
+toggle buttons showing a different way of writing 
+event handlers
+
+mouse events, mouse motion event ,window event

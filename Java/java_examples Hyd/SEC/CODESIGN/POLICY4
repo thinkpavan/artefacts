@@ -1,0 +1,9 @@
+/* AUTOMATICALLY GENERATED ON Sun Jun 04 11:06:45 GMT+05:30 2000*/
+/* DO NOT EDIT */
+
+keystore "file:/c:/f-drv/course/rmi/security/codesign/recvks";
+
+grant signedBy "sender",  codeBase "http://localhost:8080/" {
+  permission java.io.FilePermission "<<ALL FILES>>", "read, write, delete, execute";
+};
+

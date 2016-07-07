@@ -1,0 +1,8 @@
+FApplet  -- shos a simple applet.
+
+SApplet  -- shows how web browsers get classes if u'r applet is implemented as multiple
+	    classes.
+
+
+TApplet  -- shows how web browsers get classes if u'r applet is implemented as multiple
+	    classes.

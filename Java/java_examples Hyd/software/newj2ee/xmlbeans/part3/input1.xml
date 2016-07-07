@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purchase-order xmlns="http://inetsolv.info/po" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://inetsolv.info/po
+D:\xmlbeans\part3\mypo.xsd">
+	<customer age="44">
+		<name> name of customer</name>
+		<address>address of customer</address>
+	</customer>
+	<line-item>
+		<description>pen</description>
+		<price>22.22</price>
+		<quantity>22</quantity>
+	</line-item>
+		<line-item>
+		<description>pencil</description>
+		<price>22.22</price>
+		<quantity>22</quantity>
+	</line-item>
+</purchase-order>

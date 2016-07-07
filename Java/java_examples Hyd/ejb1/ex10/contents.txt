@@ -1,0 +1,22 @@
+Shows how to write a message driven bean.
+
+
+-----------------
+1) A message mean doesn't have a home,localhome, remote, local interfaces.
+
+2) Message driven bean have a single method onMessage(). This
+   method will be called when the message is placed in queue.
+
+Mesage beans are stateless. they cannot give a return value, but they
+can post a message back on the queue.
+
+---------------------------------------
+message driven bean has to implement
+
+javax.jms.MessageListener's onMessage method.
+
+and
+
+javax.ejb.MessageDrivenBean's ejbRemove and setMessageDrivenContext
+methods.
+

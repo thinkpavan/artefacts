@@ -1,0 +1,2 @@
+examples on how callbacks can be implemented using interfaces
+

@@ -1,0 +1,19 @@
+
+1)Is it good to expose ejb's as web services.
+
+http://ejbinfo.com/articles/00/10/28/0933234.shtml  
+
+
+2) When to use EJB for your projects.
+
+http://www-106.ibm.com/developerworks/library/ibm-ejb/
+
+
+3)For java resume's
+
+http://www.jvsearch.com/ADIdocs5/QueryResumeSearch.cfm
+
+
+
+
+

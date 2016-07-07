@@ -1,0 +1,1 @@
+Examples on how send / receive messages to/from queues ( P2P)

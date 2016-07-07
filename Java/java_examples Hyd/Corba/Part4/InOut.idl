@@ -1,0 +1,11 @@
+// InOut.idl
+// Module in Corba is mapped to Package in Java
+module INetMod {
+// Interface in Corba is very much similar to Java Interface  
+  interface InOut{
+	void passParam(out short s,inout wchar w);
+	void passParam1(inout string s,inout wstring ws);
+  };
+
+};
+		  

@@ -1,0 +1,254 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>XML &amp; CBL Resources: CBL Documentation: Sample PurchaseOrder Document - DTD version</title>
+
+<link rel=stylesheet href="../../../stylesheet/style.css" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- -->
+
+<table cellpadding=0 cellspacing=0 border=0 width="100%">
+<tr>
+<td width=20 nowrap><img src="../../images/spacer.gif" alt="" width=20 height=1></td>
+<td align=left><img src="../../images/spacer.gif" alt="" width=1 height=20><br>
+<font id="leftheadertext">Sample PurchaseOrder Document (XML Instance for DTD Validation)</font></td>
+<td width=20 nowrap><img src="../../images/spacer.gif" alt="" width=20 height=1></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="#336699"><img src="../../images/spacer.gif" alt="" width=1 height=2></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><font id="bodytext"><b>[</b> <a href="samples.html">Back to samples</a> <b>]</b> </font></td>
+<td></td>
+</tr>
+
+<tr>
+<td colspan=3><img src="../../images/spacer.gif" alt="" width=1 height=20></td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+<font id="codetext">
+
+<PRE>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE PurchaseOrder SYSTEM "CBL.dtd"&gt;
+
+&lt;!--
+  * Copyright (c) 1999 Commerce One. All rights reserved.  Redistribution and
+  * use in source and binary forms, with or without modification, is strictly
+  * prohibited without written permission from Commerce One.
+  --&gt;
+
+&lt;PurchaseOrder&gt;
+
+&lt;OrderHeader&gt;
+    &lt;!-- 19990805 --&gt;
+    &lt;POIssuedDate&gt;19990805T01:01:01&lt;/POIssuedDate&gt;
+    &lt;RequestedDeliveryDate&gt;19990807T01:01:01&lt;/RequestedDeliveryDate&gt;
+    &lt;ShipByDate&gt;19990809T01:01:01&lt;/ShipByDate&gt;
+    &lt;OrderReference&gt;
+      &lt;!-- An account is an agreement between a buyer and a supplier, specified
+               by the account code. Remember that an agreement can consists of
+               multiple contracts. Agreement is not the same as contract.
+               An agreement 'contains' contract(s). --&gt;
+      &lt;AccountCode&gt;&lt;Reference&gt;&lt;RefNum&gt;CTOP&lt;/RefNum&gt;&lt;/Reference&gt; &lt;/AccountCode&gt;
+
+      &lt;!--BuyerRefNum = Buyer's PO number. --&gt;
+      &lt;BuyerRefNum&gt;&lt;Reference&gt;&lt;RefNum&gt;100&lt;/RefNum&gt;&lt;/Reference&gt;&lt;/BuyerRefNum&gt;
+      &lt;!-- Notice I don't put the SupplierRefNum because it is optional --&gt;
+      &lt;SupplierRefNum&gt;&lt;Reference&gt;&lt;RefNum&gt;500&lt;/RefNum&gt;&lt;/Reference&gt;
+      &lt;/SupplierRefNum&gt;
+    &lt;/OrderReference&gt;
+    &lt;OrderParty&gt;
+        &lt;BuyerParty&gt;
+	    &lt;Party&gt;
+	    &lt;NameAddress&gt;
+	        &lt;Name1&gt;Mr. Muljadi Sulistio&lt;/Name1&gt;
+	        &lt;Name2&gt;Attention: Business Service Division&lt;/Name2&gt;
+	        &lt;Address1&gt;1600 Riviera Ave&lt;/Address1&gt;
+	        &lt;Address2&gt;Suite# 200&lt;/Address2&gt;
+	        &lt;City&gt;Walnut Creek&lt;/City&gt;
+	        &lt;StateOrProvince&gt;CA&lt;/StateOrProvince&gt;
+	        &lt;PostalCode&gt;94596&lt;/PostalCode&gt;
+	        &lt;Country&gt;US&lt;/Country&gt;
+	    &lt;/NameAddress&gt;
+	    &lt;OrderContact&gt;
+	        &lt;Contact&gt;
+	        &lt;ContactName&gt;Mr. Mike Holloway&lt;/ContactName&gt;
+	        &lt;Telephone&gt;(925) 941-3333&lt;/Telephone&gt;
+	        &lt;Email&gt;mike.holloway@commerceone.com&lt;/Email&gt;
+	        &lt;Fax&gt;(925) 941-4555&lt;/Fax&gt;
+	        &lt;/Contact&gt;
+	    &lt;/OrderContact&gt;
+	    &lt;ReceivingContact&gt;
+	        &lt;Contact&gt;
+	        &lt;ContactName&gt;Mr. Debbie Dub&lt;/ContactName&gt;
+	        &lt;Telephone&gt;(925) 941-2222&lt;/Telephone&gt;
+	        &lt;Email&gt;debbie.dub@commerceone.com&lt;/Email&gt;
+	        &lt;Fax&gt;(925) 941-4555&lt;/Fax&gt;
+	        &lt;/Contact&gt;
+	    &lt;/ReceivingContact&gt;
+	    &lt;ShippingContact&gt;
+	        &lt;Contact&gt;
+	        &lt;ContactName&gt;Ms. John Wayne&lt;/ContactName&gt;
+	        &lt;Telephone&gt;(925) 941-1111&lt;/Telephone&gt;
+	        &lt;Email&gt;john.wayne@commerceone.com&lt;/Email&gt;
+	        &lt;Fax&gt;(925) 941-4555&lt;/Fax&gt;
+	        &lt;/Contact&gt;
+	    &lt;/ShippingContact&gt;
+	    &lt;/Party&gt;
+        &lt;/BuyerParty&gt;
+        &lt;SupplierParty&gt;
+	    &lt;Party&gt;
+	    &lt;NameAddress&gt;
+	        &lt;Name1&gt;Millenium Supplier Corporation&lt;/Name1&gt;
+	        &lt;Name2&gt;Attention: Office Supply Division&lt;/Name2&gt;
+	        &lt;Address1&gt;355 Alameda Street&lt;/Address1&gt;
+	        &lt;Address2&gt;Suite 100&lt;/Address2&gt;
+	        &lt;City&gt;San Jose&lt;/City&gt;
+	        &lt;StateOrProvince&gt;CA&lt;/StateOrProvince&gt;
+	        &lt;PostalCode&gt;94588&lt;/PostalCode&gt;
+	        &lt;Country&gt;US&lt;/Country&gt;
+	    &lt;/NameAddress&gt;
+	    &lt;/Party&gt;
+        &lt;/SupplierParty&gt;
+    &lt;/OrderParty&gt;
+    &lt;Tax&gt;
+	&lt;TaxPercent&gt;000010.0000&lt;/TaxPercent&gt;
+	&lt;Location&gt;Walnut Creek&lt;/Location&gt;
+	&lt;!-- TaxId is only required if category is exempt --&gt;
+	&lt;TaxId&gt;12345&lt;/TaxId&gt;
+	&lt;TaxAmount&gt;000000000000100.000&lt;/TaxAmount&gt;
+	&lt;TaxableAmount&gt;000000000001000.000&lt;/TaxableAmount&gt;
+    &lt;/Tax&gt;
+    &lt;OrderCurrency&gt;USD&lt;/OrderCurrency&gt; &lt;!-- US Dollar --&gt;
+    &lt;OrderLanguage&gt;en&lt;/OrderLanguage&gt; &lt;!-- EN=English --&gt;
+    
+    &lt;Payment&gt;
+        &lt;PaymentMean&gt;CreditCard&lt;/PaymentMean&gt;
+        &lt;PaymentTerm&gt;Discount&lt;/PaymentTerm&gt;
+        &lt;DiscountPercent&gt;000005.0000&lt;/DiscountPercent&gt;
+        &lt;DiscountDaysDue&gt;10&lt;/DiscountDaysDue&gt;
+        &lt;DiscountTimeRef&gt;InvoiceDate&lt;/DiscountTimeRef&gt;
+        &lt;NetDaysDue&gt;30&lt;/NetDaysDue&gt;
+        &lt;NetTimeRef&gt;InvoiceDate&lt;/NetTimeRef&gt;
+        &lt;CardInfo&gt;
+            &lt;CardNum&gt;1234432112344321&lt;/CardNum&gt;
+            &lt;CardAuthCode&gt;JUBF123&lt;/CardAuthCode&gt;
+            &lt;CardRefNum&gt;123&lt;/CardRefNum&gt;
+            &lt;CardExpirationDate&gt;20000805T01:01:01&lt;/CardExpirationDate&gt;
+            &lt;CardType&gt;AMEX&lt;/CardType&gt;
+            &lt;CardHolderName&gt;Mr. Joe Smith&lt;/CardHolderName&gt;
+        &lt;/CardInfo&gt;
+     &lt;/Payment&gt;   
+     
+     &lt;PartialShipmentAllowed&gt;true&lt;/PartialShipmentAllowed&gt;
+     &lt;SpecialHandlingNote&gt;Please don't shake it.&lt;/SpecialHandlingNote&gt;
+     &lt;GeneralNote&gt;Rush it please.&lt;/GeneralNote&gt;
+     &lt;PartLocation&gt;Oakland&lt;/PartLocation&gt;
+     
+     &lt;Transport Direction="SupplierToBuyer"&gt;
+         &lt;Mode&gt;Air&lt;/Mode&gt;
+         &lt;Mean&gt;Express&lt;/Mean&gt;
+         &lt;Carrier&gt;Fedex&lt;/Carrier&gt;
+         &lt;CustShippingContractNum&gt;CTOP123&lt;/CustShippingContractNum&gt;
+         &lt;ShippingInstruction&gt;Please handle with care&lt;/ShippingInstruction&gt;
+     &lt;/Transport&gt;
+     
+     &lt;TermOfDelivery TODFunction_a="Delivery" &gt;
+         &lt;Code&gt;FOB&lt;/Code&gt;
+         &lt;FOBCity&gt;San Francisco&lt;/FOBCity&gt;
+         &lt;FOBLocation&gt;SFO Delta Airline Warehouse&lt;/FOBLocation&gt;
+         &lt;FOBInstruction&gt;Talk to the company agent in isle 2&lt;/FOBInstruction&gt;
+         &lt;ShippingPaymentMethod&gt;PrepaidBySeller&lt;/ShippingPaymentMethod&gt;
+     &lt;/TermOfDelivery&gt;
+     
+     &lt;OrderHeaderAttachment&gt;
+     &lt;ListOfAttachment&gt;
+     	&lt;Attachment Attachment="http://www.temporary.com/Pleasantondome.doc" &gt;
+	&lt;Purpose&gt;BluePrint&lt;/Purpose&gt;
+	&lt;/Attachment&gt;
+     &lt;/ListOfAttachment&gt;
+     &lt;/OrderHeaderAttachment&gt;
+     
+&lt;/OrderHeader&gt;
+
+&lt;ListOfOrderDetail&gt;
+&lt;OrderDetail&gt;
+    &lt;BaseItemDetail&gt;
+	&lt;LineItemNum&gt;1&lt;/LineItemNum&gt;
+	&lt;SupplierPartNum&gt;
+	&lt;PartNum&gt;
+	    &lt;Agency AgencyID="AssignedBySupplier"/&gt;
+	    &lt;PartID&gt;12345&lt;/PartID&gt;
+	&lt;/PartNum&gt;
+	&lt;/SupplierPartNum&gt;
+	&lt;ItemDescription&gt;Sanford Highlighting Marker&lt;/ItemDescription&gt;
+	&lt;Quantity&gt;
+	   &lt;Qty&gt;000000000001.000&lt;/Qty&gt;
+	   &lt;UnitOfMeasure&gt;&lt;UOM&gt;EA&lt;/UOM&gt;&lt;/UnitOfMeasure&gt;
+        &lt;/Quantity&gt;
+        &lt;Transport Direction="SupplierToBuyer"&gt;
+            &lt;Mode&gt;Air&lt;/Mode&gt;
+            &lt;Mean&gt;Express&lt;/Mean&gt;
+            &lt;Carrier&gt;Fedex&lt;/Carrier&gt;
+            &lt;CustShippingContractNum&gt;CTOP123&lt;/CustShippingContractNum&gt;
+            &lt;ShippingInstruction&gt;Please handle with care&lt;/ShippingInstruction&gt;
+        &lt;/Transport&gt;
+        &lt;OffCatalogFlag&gt;false&lt;/OffCatalogFlag&gt;
+    &lt;/BaseItemDetail&gt;
+    &lt;BuyerExpectedUnitPrice&gt;
+        &lt;Price&gt;&lt;UnitPrice&gt;00000000010.0000&lt;/UnitPrice&gt;&lt;/Price&gt;
+    &lt;/BuyerExpectedUnitPrice&gt;
+&lt;/OrderDetail&gt;
+&lt;/ListOfOrderDetail&gt;
+
+&lt;OrderSummary&gt;
+    &lt;TotalAmount&gt;000000000001000.000&lt;/TotalAmount&gt;
+    &lt;TotalLineNum&gt;1&lt;/TotalLineNum&gt;
+&lt;/OrderSummary&gt;
+
+&lt;/PurchaseOrder&gt;
+
+
+</PRE>
+
+</font>
+
+</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="#336699"><img src="../../images/spacer.gif" alt="" width=1 height=2></td>
+<td></td>
+</tr>
+
+<tr>
+<td colspan=3><img src="../../images/spacer.gif" alt="" width=1 height=20></td>
+</tr>
+</table>
+
+<TABLE BGCOLOR="#000033" WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+	<TD ALIGN="center" VALIGN="middle" HEIGHT="75">
+	<P><FONT SIZE="1" FACE="verdana,arial,helvetica,sans serif" COLOR="#FFFFFF"><A HREF="/index.html"><FONT COLOR="#FFCC00">Home</FONT></A> | <A HREF="/company/"><FONT COLOR="#FFCC00">Company</FONT></A> | <A HREF="/solutions/"><FONT COLOR="#FFCC00">Solutions</FONT></A> | <A HREF="/services/"><FONT COLOR="#FFCC00">Services</FONT></A> | <A HREF="/customers/"><FONT COLOR="#FFCC00">Customers</FONT></A> | <A HREF="http://search.commerceone.com"><FONT COLOR="#FFCC00">Search</FONT></A> | <A HREF="/company/contact_us.html"><FONT COLOR="#FFCC00">Contact Us</FONT></A></FONT></P>
+	<P><FONT SIZE="1" FACE="verdana,arial,helvetica,sans serif" COLOR="#FFFFFF">Please submit all comments regarding this site to <A HREF="mailto:webmaster@commerceone.com"><FONT COLOR="#FFCC00">webmaster@commerceone.com</FONT></A>.<BR>
+	Copyright &copy; 2000  Commerce One, Inc.  All rights reserved.  <A HREF="/company/legal.html"><FONT COLOR="#FFCC00">Legal Notices</FONT></A></FONT></P>
+    </TD>
+</TR>
+</TABLE>
+ 
+</body>
+</html>

@@ -1,0 +1,18 @@
+Home interface contains the methods to create,delete and find( only for
+Entity beans).
+
+Follow the belowing stps to create home interface.
+
+1) Home interface should extend from EJBHome.
+
+2) Home interface should have atleast one create method (only one
+   create is allowed for state less session bean). 
+
+Following are the methods available in EBHome interface.
+
+1) remove(Handle) -- this can be used to remove ejb object by passing handle.
+   can also be used by passing PK for entity bean.
+2) getEJBMetaData  -- this can be used by tools to get metadata of ejb.
+
+3) getHomeHandle  -- this can be used to get home handle. this is similar to    handle of ejb Object.
+   

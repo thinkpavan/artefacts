@@ -1,0 +1,21 @@
+1) Plainhtml -- check readme.txt for description on this
+examples.
+
+2) Pagedir.jsp -- this example shows how to use page 
+directives , also shows about how to use expressions in the
+jsp file.
+
+In pagedir1.jsp example we have set language to unknown.
+and ran this on weblogic and servletexec. We expected them to give an error message but both of them didn't gave any error 
+message after some time the browser disconnected from the server reporting that the page couldn't be fetched. ( note:
+server vendors should have implemneted logic throwing exception that the language is not supported).
+
+3) include.jsp -- shows how to include copyright notices etc.
+
+(note: try to save the same file as .jsp and include it and check).
+
+4) scriptlet.jsp  -- shows how to use scriptlets in jsp.
+
+5) scriptlet1.jsp -- same as above but slightly different impl.
+
+6) scriptlet2.jsp -- same as above but slightly different impl.

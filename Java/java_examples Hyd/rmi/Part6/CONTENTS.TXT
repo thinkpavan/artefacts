@@ -1,0 +1,1 @@
+shows how to create a simple rmi application by explictly exporting an object

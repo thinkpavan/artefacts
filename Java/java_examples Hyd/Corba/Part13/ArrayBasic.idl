@@ -1,0 +1,15 @@
+
+//ArrayBasic.idl
+module INetSolv
+{
+	typedef  long larray[20] ;
+	typedef short sarray[2][20] ;
+	interface ArrayBasic
+	{
+		void modifyArray(
+			inout larray inoutarr, 
+			in  sarray inarr); // a sequence in java will be mapped to java array
+	};
+};			
+
+

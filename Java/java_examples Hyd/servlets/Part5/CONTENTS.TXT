@@ -1,0 +1,6 @@
+ServeINSFiles  -- shows how to use web logic server to register our servlet
+		  to serve files that end with *.ins
+
+URLSF/URLFFSession  -- shows how to use url rewriting.
+
+To test this examples turn cookies off in the browser and set url rewritting enabled in the servletengine

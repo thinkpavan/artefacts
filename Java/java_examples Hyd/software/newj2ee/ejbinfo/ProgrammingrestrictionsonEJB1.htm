@@ -1,0 +1,637 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0070)http://www.javaworld.com/javaworld/jw-08-2000/jw-0825-ejbrestrict.html -->
+<HTML><HEAD><TITLE>Programming restrictions on EJB</TITLE><!-- ssilog 7814 -->
+<META content="text/html; charset=windows-1252" http-equiv=content-type>
+<META content=" EJB, components, J2EE, restrictions&#13;" name=keywords>
+<META 
+content="&#13;&#10;Sanjay provides an overview of the programming restrictions on EJB component code that developers should adhere to and lists the features in Java that you'd be wise to avoid in order to write reliable and portable EJB 1.1 components. (2,000 words)&#13;&#10;&#13;&#10;" 
+name=description>
+<META content=2000-08-25 name=date>
+<META content=2000-08-25 name=DC.Date>
+<META content=NOARCHIVE name=GOOGLEBOT><BASEFONT 
+face="verdana, arial, helvetica"><LINK 
+href="ProgrammingrestrictionsonEJB1_files/style.htm" rel=stylesheet 
+type=text/css>
+<SCRIPT language=javascript>
+<!--// IDG.net Scripts
+            function mail2Friend () {
+                window.parent.location = "/MailToFriend?url=" + escape(document.location);
+            }
+
+            function openBrWindow() {
+                win=window.open("http://www.javaworld.com/channel_content/jw-story-feedback.shtml",'Feedback','width=600,height=330,toolbar=no,location=no,directories=no,menubar=no,scrollbars=yes,resizable=yes');
+            }
+            //-->
+        </SCRIPT>
+
+<META content="MSHTML 5.00.3700.6699" name=GENERATOR></HEAD>
+<BODY aLink=#990033 bgColor=#ffffff bottomMargin=0 leftMargin=0 link=#990033 
+rightMargin=0 text=#000000 topMargin=0 vLink=#990033 marginwidth="0" 
+marginheight="0">
+<SCRIPT language=JavaScript 
+src="ProgrammingrestrictionsonEJB1_files/spinbox.macworld.htm"></SCRIPT>
+<IMG alt="" border=0 height=1 
+src="ProgrammingrestrictionsonEJB1_files/pixel.gif" width=1> 
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#006699 colSpan=2 width=186><A 
+      href="http://www.javaworld.com/"><IMG border=0 height=81 
+      src="ProgrammingrestrictionsonEJB1_files/top_jwlogo.gif" width=186></A></TD>
+    <TD align=middle bgColor=#cccccc vAlign=center width="100%"><!-- START TOP 728x90 BANNER jw-articles-top-ad.txt  -->
+      <TABLE border=0 cellPadding=0 cellSpacing=0>
+        <TBODY>
+        <TR>
+          <TD><FONT color=#000000 face=Arial,Helvetica,Sans-serif 
+            size=-2>Advertisement: Support JavaWorld, click here!</FONT><BR>
+            <SCRIPT language=JavaScript 
+            src="ProgrammingrestrictionsonEJB1_files/spinbox.macworld[3]"></SCRIPT>
+            <NOSCRIPT><A href="http://spinbox.macworld.com/?SHT=jw-TopBanner" 
+            target=_top><IMG 
+            src="ProgrammingrestrictionsonEJB1_files/spinbox.macworld.gif"></A> 
+            </NOSCRIPT></TD></TR></TBODY></TABLE><!-- END TOP 728x90 BANNER --></TD></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#006699 width=160><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=160></TD>
+    <TD align=left bgColor=#ffffff vAlign=top width=26><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/c_whtbottom.gif" width=8></TD>
+    <TD width="100%"><IMG border=0 height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+width=8></TD></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=middle bgColor=#006699 noWrap vAlign=center 
+      width=160><NOBR><FONT color=#ffffff face="Verdana, Arial, Sans-serif" 
+      size=2>August 2000</FONT></NOBR><IMG border=0 height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=160></TD>
+    <TD width=8><IMG border=0 height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+    <TD bgColor=#006699 vAlign=top width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/c_bltlft.gif" width=8></TD>
+    <TD align=middle bgColor=#006699 vAlign=center width="100%">
+      <TABLE border=0 cellPadding=5 cellSpacing=0 width="100%">
+        <TBODY>
+        <TR>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/"><FONT color=#ffffff 
+            face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+          size=1>HOME</FONT></A></TD>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/features/index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=1>FEATURED TUTORIALS</FONT></A></TD>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/columns/index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=1>COLUMNS</FONT></A></TD>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/news-reviews/index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=1>NEWS &amp; REVIEWS</FONT></A></TD>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/javaforums/"><FONT color=#ffffff 
+            face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=1>FORUM</FONT></A></TD>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/resources/index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=1>JW RESOURCES</FONT></A></TD>
+          <TD align=middle bgColor=#006699><A 
+            href="http://www.javaworld.com/info/jw-about-index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=1>ABOUT JW</FONT></A></TD></TR></TBODY></TABLE></TD>
+    <TD align=right bgColor=#006699 vAlign=top width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/c_bltrt.gif" width=8></TD>
+    <TD width=8><IMG border=0 height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+width=8></TD></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD align=middle bgColor=#006699 vAlign=top width=160>
+      <TABLE bgColor=#006699 border=0 cellPadding=0 cellSpacing=0 width=160 
+      summary="">
+        <TBODY>
+        <TR>
+          <TD width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+          <TD align=middle>
+            <FORM action=http://www.javaworld.com/isearch method=get 
+            name=search><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=2 
+            width=144><BR><BR><INPUT maxLength=2047 name=qt size=12><BR><INPUT 
+            alt=GO border=0 height=18 
+            src="ProgrammingrestrictionsonEJB1_files/button_blue.gif" type=image 
+            value=search width=97><BR><INPUT name=site type=hidden 
+            value=javaworld><BR><!-- <a href="http://www.google.com/"><img src="http://www.javaworld.com/images/google-power-fp.gif" width="108" height="45" border="0" alt="Google.com"></a>--><INPUT 
+            name=ms type=hidden value=1> <INPUT name=tid type=hidden value=1> 
+            <INPUT name=st type=hidden value=1> <INPUT name=rf type=hidden 
+            value=0> </FORM></TD>
+          <TD width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD></TR>
+        <TR>
+          <TD width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+          <TD><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=2 
+            width=144><BR><A 
+            href="http://www.javaworld.com/archives/index-year.html"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=2><STRONG>ARCHIVE</STRONG></FONT></A><BR><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=2 
+            width=144><BR><STRONG><A 
+            href="http://www.javaworld.com/channel_content/jw-topical-index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=2>TOPICAL INDEX</FONT></A></STRONG></FONT><BR>
+            <TABLE border=0 cellPadding=0 cellSpacing=0 summary="">
+              <TBODY>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/channel_content/jw-core-index.shtml"><FONT 
+                  color=#ffffff>Core Java</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/channel_content/jw-enterprise-index.shtml"><FONT 
+                  color=#ffffff>Enterprise Java</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/channel_content/jw-micro-index.shtml"><FONT 
+                  color=#ffffff>Micro Java</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/channel_content/jw-applied-index.shtml"><FONT 
+                  color=#ffffff>Applied Java</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/channel_content/jw-community-index.shtml"><FONT 
+                  color=#ffffff>Java 
+              Community</FONT></A></STRONG></FONT><BR></TD></TR></TBODY></TABLE><IMG 
+            alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=2 
+            width=144><BR><A 
+            href="http://www.javaworld.com/columns/jw-qna-index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=2><STRONG>JAVA Q&amp;A INDEX</STRONG></FONT></A><BR><IMG alt="" 
+            height=1 src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" 
+            vspace=2 width=144><BR><A 
+            href="http://www.javaworld.com/columns/jw-tips-index.shtml"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=2><STRONG>JAVA TIPS INDEX</STRONG></FONT></A><BR><IMG alt="" 
+            height=1 src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" 
+            vspace=2 width=144><BR><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=2 
+            width=144><BR><A 
+            href="http://www.javaworld.com/books/books-index.html"><FONT 
+            color=#ffffff face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=2><STRONG>JAVA BOOK INDEX</STRONG></FONT></A><BR><IMG alt="" 
+            height=1 src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" 
+            vspace=2 width=144><BR><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=8 
+            width=144><BR><FONT color=#cccccc 
+            face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+            size=2><STRONG>JavaWorld Services</STRONG></FONT><BR><IMG alt="" 
+            border=0 height=4 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=1> 
+            <TABLE border=0 cellPadding=0 cellSpacing=0 summary="">
+              <TBODY>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8><BR><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+                width=1></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/subscribe"><FONT 
+                  color=#ffffff>Newsletters</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8><BR><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+                width=1></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/subscribe"><FONT 
+                  color=#ffffff>Special Offers</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8><BR></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://javaworld.pricegrabber.com/"><FONT 
+                  color=#ffffff>ProductFinder </FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8><BR></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/gdiddoc/953822" 
+                  target=_new><FONT color=#ffffff>Education 
+                  Resources</FONT></A></STRONG></FONT></TD></TR>
+              <TR>
+                <TD><IMG alt="" border=0 height=7 
+                  src="ProgrammingrestrictionsonEJB1_files/arrow_closed.gif" 
+                  width=8><BR><IMG alt="" border=0 height=8 
+                  src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+                width=1></TD>
+                <TD><FONT face=Verdana,Geneva,Arial,Helvetica,sans-serif 
+                  size=1><STRONG><A 
+                  href="http://www.javaworld.com/white-paper/index.shtml"><FONT 
+                  color=#ffffff>White Paper 
+                  Library</A></FONT></STRONG></A></FONT></TD></TR><!--
+<tr> <td><img alt="" height="7" src="http://www.javaworld.com/images/arrow_closed.gif" width="8" border="0" /><br /></td> <td><font face="Verdana,Geneva,Arial,Helvetica,sans-serif" size="1">
+<P><font color="#FF0000"><em>NEW!</em></font><strong> <A HREF="http://www.click-one.net/mk/get/rational_gen_dev?ppsrc=java_wld_bn" class="SmNv"><font color="#ffffff">Rational Resources</A></P></strong></font>
+
+</td></tr>--></TBODY></TABLE><IMG 
+            alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" vspace=8 
+            width=144><BR></TD>
+          <TD width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD></TR>
+        <TR vAlign=bottom>
+          <TD width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+          <TD></TD>
+          <TD width=8><IMG alt="" height=8 
+            src="ProgrammingrestrictionsonEJB1_files/c_gryblbottom.gif" 
+          width=8></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc width=8></TD>
+          <TD bgColor=#cccccc></TD>
+          <TD bgColor=#cccccc width=8></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+          <TD align=middle bgColor=#cccccc><!-- SKYSCRAPER AD START HERE jw-articles-left-ad.txt -->
+            <SCRIPT language=JavaScript 
+            src="C:\Documents and Settings\Administrator\Desktop\ejbinfo\ProgrammingrestrictionsonEJB1_files\spinbox(1).macworld[3]"></SCRIPT>
+            <NOSCRIPT><A 
+            href="http://spinbox.macworld.com/?SHT=jw-LeftSkyScraper" 
+            target=_top><IMG 
+            src="C:\Documents and Settings\Administrator\Desktop\ejbinfo\ProgrammingrestrictionsonEJB1_files\spinbox.macworld(1).gif"></A> 
+            </NOSCRIPT><!-- SKYSCRAPER AD ENDS HERE --></TD>
+          <TD bgColor=#cccccc width=8><IMG alt="" height=8 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD></TR>
+        <TR>
+          <TD bgColor=#cccccc width=8></TD>
+          <TD bgColor=#cccccc></TD>
+          <TD bgColor=#cccccc width=8></TD></TR>
+        <TR vAlign=top>
+          <TD width=8><IMG alt="" height=1 
+            src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+          <TD></TD>
+          <TD width=8><IMG alt="" height=8 
+            src="ProgrammingrestrictionsonEJB1_files/c_grybltop.gif" 
+        width=8></TD></TR></TBODY></TABLE><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=160></TD>
+    <TD width=8><IMG alt="" height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD>
+    <TD width="100%"><!-- ## MAIN CONTENT STARTS HERE ### --><FONT 
+      face="verdana, arial, helvetica" size=3><STRONG>Enterprise JavaBeans 
+      </STRONG>
+      <P>
+      <H1 align=center>Programming restrictions on EJB </H1>
+      <H3 align=center>Learn to write reliable and portable EJB 1.1 components 
+      </H3>
+      <P></P><!--<BLOCKQUOTE><STRONG>Summary</STRONG><BR>-->
+      <BLOCKQUOTE><STRONG>Summary</STRONG><BR>Sanjay provides an overview of 
+        the programming restrictions on EJB component code that developers 
+        should adhere to and lists the features in Java that you'd be wise to 
+        avoid in order to write reliable and portable EJB 1.1 components. 
+        (<EM>2,000 words</EM>) </BLOCKQUOTE><!--</BLOCKQUOTE>--><A 
+      href="http://www.javaworld.com/feedback" target=Feedback><STRONG>By Sanjay 
+      Mahapatra </STRONG></A>
+      <P><IMG height=2 src="ProgrammingrestrictionsonEJB1_files/rule_ltblue.gif" 
+      width="100%"><BR><IMG align=absMiddle alt="Printer-friendly version" 
+      border=0 height=15 
+      src="ProgrammingrestrictionsonEJB1_files/jw-print-icon.gif" vspace=4 
+      width=16> <A 
+      href="http://www.javaworld.com/javaworld/jw-08-2000/jw-0825-ejbrestrict_p.html">Printer-friendly 
+      version</A> | <IMG alt="Send this article to a friend" border=0 height=15 
+      src="ProgrammingrestrictionsonEJB1_files/jw-email-icon.gif" width=20> <A 
+      href="javascript:mail2Friend()">Mail this to a friend</A></P>
+      <P><BR></P><FONT size=-1>Page 1 of 2</FONT> 
+      <P><!-- START BIG AD (336x280) jw-articles-336x280.txt -->
+      <TABLE align=right border=0 cellPadding=0 cellSpacing=0>
+        <TBODY>
+        <TR align=middle vAlign=bottom>
+          <TD><FONT color=#999999 face="verdana, arial, geneva, sans-serif" 
+            size=-2>Advertisement</FONT></TD></TR>
+        <TR>
+          <TD>
+            <TABLE border=1 borderColor=#cccccc cellPadding=0 cellSpacing=5>
+              <TBODY>
+              <TR>
+                <TD>
+                  <SCRIPT language=JavaScript 
+                  src="ProgrammingrestrictionsonEJB1_files/spinbox.macworld[1]"></SCRIPT>
+                  <NOSCRIPT><A href="http://spinbox.macworld.com/?SHT=jw-BigBox" 
+                  target=_top><IMG 
+                  src="C:\Documents and Settings\Administrator\Desktop\ejbinfo\ProgrammingrestrictionsonEJB1_files\spinbox.macworld(2).gif"></A> 
+                  </NOSCRIPT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><!-- END BIG AD (336x280) --></P>
+      <P>
+      <P><IMG align=left alt=E height=29 
+      src="ProgrammingrestrictionsonEJB1_files/E.gif" width=23>nterprise 
+      JavaBeans (EJB) is a specification and architecture for the development 
+      and deployment of distributed server-side, transactional, and secure 
+      business application components. The EJB architecture is the basis and 
+      core of the Java 2 Enterprise Edition (J2EE), which defines an entire 
+      standardized application development architecture as well as a deployment 
+      environment. In this architecture, application developers focus on 
+      encapsulating the business logic and business rules and leave the 
+      infrastructural service-related issues or plumbing to the application 
+      container and server. 
+      <P>Further, the runtime properties of the application components 
+      pertaining to transactions, persistence, security, and so on are 
+      customizable in the deployment environment, using the highly flexible 
+      declarative approach. The architecture defines a container and server 
+      model -- the container is the environment in which application component 
+      instances live and execute, while containers are in turn housed within a 
+      server. The J2EE platform thus provides a simplified development model, 
+      industrial-strength scalability, support for legacy integration, flexible 
+      deployment, application server and vendor independence, and generally 
+      tends to make proprietary application servers and proprietary distributed 
+      object frameworks almost archaic. 
+      <P><FONT size=+1><STRONG>EJB roles and responsibilities 
+      </STRONG></FONT><BR>The EJB specification defines several standard roles 
+      and responsibilities as listed below: 
+      <P>
+      <OL>
+        <LI><STRONG>EJB Server provider</STRONG> provides the EJB application 
+        server, and it is an expert in distributed transaction management, 
+        system services, and so on. 
+        <P></P>
+        <LI><STRONG>EJB Container provider</STRONG> provides the runtime 
+        environment for the EJB components' instances as well as the deployment 
+        tools. EJB Server/Container providers are typically OS vendors, database 
+        vendors, and application server vendors. The EJB server and EJB 
+        container are assumed to be provided by the same vendor because no 
+        interfaces between them have been defined in the specification -- both 
+        in the current EJB 1.1 (final version) as well as the EJB 2.0 
+        public-draft version, which is currently under review. 
+        <P></P>
+        <LI><STRONG>Bean provider</STRONG>, or EJB developer, develops EJB 
+        components that contain business logic and business functionality. The 
+        EJB developer provides for each EJB component: the EJB implementation 
+        containing all obligatory component-container contract methods, such as 
+        <CODE>ejbCreate()</CODE>, <CODE>ejbRemove()</CODE>, and so on, as well 
+        as the business methods; the <CODE>Home</CODE> interface; the 
+        <CODE>Remote</CODE> interface; and helper classes if necessary. The 
+        <CODE>Home</CODE> interface provides the signature for the methods that 
+        create, remove, and find EJB instances. The <CODE>Remote</CODE> 
+        interface defines the signatures for the business methods. 
+        <P></P>
+        <LI><STRONG>Application Assembler</STRONG> takes a set of EJB components 
+        developed by the Bean provider and assembles them into a complete J2EE 
+        application. 
+        <P></P>
+        <LI><STRONG>Deployer</STRONG> is an expert in the target production 
+        environment in which the application is to be deployed. The deployer 
+        installs the application components on the application server and 
+        configures their transactional, data persistence, and security aspects. 
+        Thus, you can declaratively address and manage complex issues such as 
+        transactions, concurrency, persistence, and security. 
+        <P></P>
+        <LI><STRONG>Systems Administrator</STRONG> is responsible for the 
+        server's configuration and administration, runtime monitoring, and load 
+        balancing. 
+        <P></P>
+        <LI><STRONG>Application Client/User Interface developer</STRONG> is 
+        responsible for the user interface and presentation logic. </LI></OL>
+      <P>The focus of this article is on the Bean provider/EJB developer and the 
+      programming restrictions that apply to the EJB components' implementation 
+      code. 
+      <P><FONT size=+1><STRONG>Restrictions on EJB components 
+      </STRONG></FONT><BR>The EJB developer must not program any systems-level 
+      services into the EJB component implementation code. EJB component 
+      providers/developers should be aware of and strictly follow certain 
+      restrictions in the interest of developing reliable and portable EJB 
+      components. 
+      <P>The following is a list of Java features that you should 
+      <STRONG>avoid</STRONG>, hence restricting their use in your EJB 
+      components' implementation code: 
+      <P>
+      <OL>
+        <LI><STRONG>Using <CODE>static</CODE>, non<CODE>final</CODE> 
+        fields.</STRONG> Declaring all <CODE>static</CODE> fields in the EJB 
+        component as <CODE>final</CODE> is recommended. That ensures consistent 
+        runtime semantics so that EJB containers have the flexibility to 
+        distribute instances across multiple JVMs. 
+        <P></P>
+        <LI><STRONG>Using thread synchronization primitives to synchronize 
+        multiple instance execution.</STRONG> By avoiding that feature, you 
+        allow the EJB container flexibility to distribute instances across 
+        multiple JVMs. 
+        <P></P>
+        <LI><STRONG>Using AWT functionality for keyboard input/display 
+        output.</STRONG> That restriction exists because server-side business 
+        components are meant to provide business functionality that excludes 
+        user interface and keyboard I/O functionality. 
+        <P></P>
+        <LI><STRONG>Using file access/java.io operations.</STRONG> EJB business 
+        components are meant to use resource managers such as JDBC to store and 
+        retrieve application data rather than the file system APIs. Also, 
+        deployment tools provide the facility for storing environment entry 
+        elements (env-entry) into the deployment descriptor, so that EJB 
+        components can perform environment entry lookups in a standardized 
+        manner via the environment-naming context. Thus, the need to use file 
+        system-based property files is mostly eliminated. 
+        <P></P>
+        <LI><STRONG>Listening to or accepting socket connections, or using a 
+        socket for multicast.</STRONG> EJB components are not meant to provide 
+        network socket server functionality; however, the architecture lets EJB 
+        components act as a socket client or RMI clients and thus communicate 
+        with code outside the container's managed environment. 
+        <P></P>
+        <LI><STRONG>Using the Reflection API to query classes that are not 
+        otherwise accessible to the EJB component due to Java's security 
+        rules.</STRONG> That restriction enforces Java platform security. 
+        <P></P>
+        <LI><STRONG>Attempting to create or obtain a class loader, set or create 
+        a new security manager, stop the JVM, change the input, output, and 
+        error streams.</STRONG> That restriction enforces security and maintains 
+        the EJB container's ability to manage the runtime environment. 
+        <P></P>
+        <LI><STRONG>Setting the socket factory used by the URL's ServerSocket, 
+        Socket, or stream handler.</STRONG> By avoiding that feature, you also 
+        enforce security and maintain the EJB container's ability to manage the 
+        runtime environment. 
+        <P></P>
+        <LI><STRONG>Starting, stopping, or managing threads in any way</STRONG>. 
+        That restriction eliminates the possibility of conflicts with the EJB 
+        container's responsibilities of managing locking, threading, and 
+        concurrency issues. 
+        <P><!--[PRODUCTION: IS THERE ANY WAY TO ALLOW THIS NEXT LINE TO RUN WITH THE BODY TEXT AND STILL KEEP THE LIST IN NUMBERED SEQUENCE?]-->By 
+        restricting your use of features 10-16, you aim to plug potential 
+        security holes: 
+        <P></P>
+        <LI><STRONG>Reading or writing a file descriptor directly.</STRONG> 
+        <P></P>
+        <LI><STRONG>Obtaining security policy information for a particular code 
+        source.</STRONG> 
+        <P></P>
+        <LI><STRONG>Loading native libraries.</STRONG> 
+        <P></P>
+        <LI><STRONG>Accessing packages and classes that the usual rules of Java 
+        make unavailable.</STRONG> 
+        <P></P>
+        <LI><STRONG>Defining a class in a package.</STRONG> 
+        <P></P>
+        <LI><STRONG>Accessing or modifying security configuration objects 
+        (<CODE>Policy</CODE>, <CODE>Security</CODE>, <CODE>Provider</CODE>, 
+        <CODE>Signer</CODE>, and <CODE>Identity</CODE>).</STRONG> 
+        <P></P>
+        <LI><STRONG>Using the subclass and object substitution features of the 
+        Java Serialization protocol.</STRONG> 
+        <P></P>
+        <LI><STRONG>Passing the <EM>this</EM> reference as an argument or 
+        returning the <EM>this</EM> reference as a result.</STRONG> Instead, you 
+        must use the result of the <CODE>getEJBObject()</CODE> available in 
+        <CODE>SessionContext</CODE> or <CODE>EntityContext</CODE>. </LI></OL>
+      <P><!-- break --><!-- PAGECOUNT 2 --><BR></P><FONT size=-1><A 
+      href="http://www.javaworld.com/javaworld/jw-08-2000/jw-0825-ejbrestrict-p2.html">Next 
+      page &gt;</A><BR>Page 1 Programming restrictions on EJB <BR>Page 2 <A 
+      href="http://www.javaworld.com/javaworld/jw-08-2000/jw-0825-ejbrestrict-p2.html">Java 
+      2 Platform Security policy </A><BR></FONT><!-- REPLACE TALKBACK -->
+      <P><IMG align=absMiddle alt="Printer-friendly version" border=0 height=15 
+      src="ProgrammingrestrictionsonEJB1_files/jw-print-icon.gif" vspace=4 
+      width=16> <A 
+      href="http://www.javaworld.com/javaworld/jw-08-2000/jw-0825-ejbrestrict_p.html">Printer-friendly 
+      version</A> | <IMG alt="Send this article to a friend" border=0 height=15 
+      src="ProgrammingrestrictionsonEJB1_files/jw-email-icon.gif" width=20> <A 
+      href="javascript:mail2Friend()">Mail this to a friend</A></P>
+      <P><!-- REPLACE BIO --><BR></P>
+      <P>
+      <UL><A name=resources></A><STRONG>Resources</STRONG> <BR>
+        <LI>Enterprise JavaBeans Specifications v1.1 Sun Microsystems: <BR><A 
+        href="http://java.sun.com/products/ejb/">http://java.sun.com/products/ejb/</A><BR>
+        <LI>Designing Enterprise Applications with Java 2 Platform, Enterprise 
+        Edition: <BR><A 
+        href="http://java.sun.com/j2ee/">http://java.sun.com/j2ee/</A><BR>Java 2 
+        Platform, Enterprise Edition specification, v1.2: <BR><A 
+        href="http://java.sun.com/j2ee/">http://java.sun.com/j2ee/</A><BR>
+        <LI>For a complete listing of <EM>JavaWorld</EM> articles covering EJB: 
+        <BR><A 
+        href="http://www.javaworld.com/javaworld/topicalindex/jw-ti-ejb.html">http://www.javaworld.com/javaworld/topicalindex/jw-ti-ejb.html</A><BR></LI></UL><BR>
+      <P></P><!-- REPLACE SIDEBAR --></FONT><!-- ## MAIN CONTENT ENDS HERE ### --><IFRAME 
+      border=0 frameBorder=no height=360 marginHeight=0 marginWidth=0 
+      scrolling=no src="ProgrammingrestrictionsonEJB1_files/ads.htm" 
+      width=500></IFRAME>
+      <TABLE border=0 cellPadding=3 cellSpacing=0 width=490>
+        <TBODY>
+        <TR>
+          <TD bgColor=#990033 vAlign=top><FONT color=#ffffff 
+            face="Geneva, Verdana, Arial, Helvetica" size=1><B>Top 
+            Offers</B></FONT> </TD></TR>
+        <TR>
+          <TD bgColor=#e4e4c0>
+            <P><FONT face="verdana, arial, sans-serif" size=1><A 
+            href="http://www.travelingto.net/">http://www.travelingto.net/</A>Travel 
+            Directory</FONT></P>
+            <P><FONT face="verdana, arial, sans-serif" size=1><A 
+            href="http://www.goapply.com/">Refinance Mortgage</A> Mortgage 
+            refinancing, home loans and home equity loans</FONT></P>
+            <P><FONT face="verdana, arial, sans-serif" size=1><A 
+            href="http://www.pricescan.com/">PriceSCAN</A> Unbiased Price 
+            Comparisons, Vendor Ratings and User Reviews. Don't Buy It Before 
+            You PriceSCAN It!</FONT></P><!--<p><font face="verdana, arial, sans-serif" size="1"><a href="http://www.101-asp-tutorials.com">ASP Tutorials:</a> Learn the basics of ASP (Active Server Pages) programming.  We are your online source for ASP Tutorials and ASP Tools.</font</p>--></TD></TR></TBODY></TABLE><!--<a href='http://stories2.devworld.com/phpads/adclick.php?n=aed75c45' target='_blank'><img src='http://stories2.devworld.com/phpads/adview.php?what=zone:1&amp;n=aed75c45' border='0' alt=''></a>--></TD>
+    <TD width=8><IMG border=0 height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+width=8></TD></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD bgColor=#006699 noWrap width=168><NOBR><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=160><IMG 
+      border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/c_bllftbottom.gif" 
+    width=8></NOBR></TD>
+    <TD width="100%"><IMG border=0 height=1 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=1></TD>
+    <TD width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+width=8></TD></TR></TBODY></TABLE>
+<TABLE align=center border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR>
+    <TD align=middle bgColor=#006699 width=186><NOBR><FONT 
+      face=Verdana,Geneva,Arial,Helvetica,sans-serif size=2></FONT></NOBR><A 
+      href="http://www.javaworld.com/"><IMG border=0 height=81 
+      src="ProgrammingrestrictionsonEJB1_files/top_jwlogo.gif" width=186></A></TD>
+    <TD bgColor=#cccccc vAlign=bottom width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/c_blgrylftbottom.gif" width=8></TD>
+    <TD align=middle bgColor=#cccccc vAlign=center width="100%"><!-- BOTTOM 468x60 AD STARTS HERE jw-articles-bottom-ad.txt -->
+      <TABLE border=0 cellPadding=0 cellSpacing=0>
+        <TBODY>
+        <TR>
+          <TD><FONT color=#000000 face=Arial,Helvetica,Sans-serif 
+            size=-2>Advertisement: Support JavaWorld, click here!</FONT><BR>
+            <SCRIPT language=JavaScript 
+            src="ProgrammingrestrictionsonEJB1_files/spinbox.macworld[2]"></SCRIPT>
+            <NOSCRIPT><A href="http://spinbox.macworld.com/?SHT=jw-BottomBanner" 
+            target=_top><IMG 
+            src="C:\Documents and Settings\Administrator\Desktop\ejbinfo\ProgrammingrestrictionsonEJB1_files\spinbox.macworld(3).gif"></A> 
+            </NOSCRIPT></TD></TR></TBODY></TABLE><!-- BOTTOM 468x60 AD ENDS HERE --></TD>
+    <TD width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+width=8></TD></TR></TBODY></TABLE>
+<TABLE align=center bgColor=#006699 border=0 cellPadding=0 cellSpacing=0 
+width="100%">
+  <TBODY>
+  <TR>
+    <TD align=middle vAlign=center width="100%"><FONT color=#ffffff 
+      face=Verdana,Geneva,Arial,Helvetica,sans-serif size=1>
+      <P><BR><A href="http://www.javaworld.com/"><FONT 
+      color=#ffffff>HOME</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://www.javaworld.com/features/index.shtml"><FONT 
+      color=#ffffff>FEATURED TUTORIALS</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://www.javaworld.com/columns/index.shtml"><FONT 
+      color=#ffffff>COLUMNS</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://www.javaworld.com/news-reviews/index.shtml"><FONT 
+      color=#ffffff>NEWS &amp; REVIEWS</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://forums.devworld.com/webx?13@@.ee6b802"><FONT 
+      color=#ffffff>FORUM</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://www.javaworld.com/resources/index.shtml"><FONT 
+      color=#ffffff>JW RESOURCES</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://www.javaworld.com/info/jw-about-index.shtml"><FONT 
+      color=#ffffff>ABOUT JW</FONT></A>&nbsp;|&nbsp; <A 
+      href="http://www.javaworld.com/feedback"><FONT 
+      color=#ffffff>FEEDBACK</FONT></A> </P>
+      <P><A 
+      href="http://www.javaworld.com/javaworld/common/jw-copyright.html"><FONT 
+      color=#ffffff>Copyright © 2004</FONT></A> JavaWorld.com, an IDG company 
+      </P></FONT></TD>
+    <TD bgColor=#ffffff width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" width=8></TD></TR>
+  <TR>
+    <TD align=right vAlign=top width="100%"><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/c_blrtbottom.gif" width=8></TD>
+    <TD bgColor=#ffffff width=8><IMG border=0 height=8 
+      src="ProgrammingrestrictionsonEJB1_files/spacer.gif" 
+width=8></TD></TR></TBODY></TABLE><!-- stories1.devworld.com --><!-- DOCID 658450 --><!--TALKBACK --><!-- EX: 951984000 --></BODY></BASEFONT></HTML>

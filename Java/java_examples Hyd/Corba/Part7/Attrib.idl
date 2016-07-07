@@ -1,0 +1,18 @@
+// attrib.idl
+// Module in another Module
+module com{
+	const long count = 999;
+	module INetMod {
+// a constant can be declared inside interface also
+		const long count = 333;
+		interface attrib{
+			attribute long count;//can we declare count here ??
+			readonly attribute short ro;
+			exception corbaexception { string exstr;};
+			//an operation/method can raise any no of exceptions
+			void dooperation() raises (corbaexception);
+		};
+
+	};
+};
+		  

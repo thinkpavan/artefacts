@@ -1,0 +1,35 @@
+EJB should implement the business defined in RemoteInterface and this
+class should impement SessionBean interface. (EntiyBean interface in case
+of entity beans).
+
+Following rules has to be followed in creating EJB
+
+1) implement all methods declared in Entity/SessionBean interface. This
+   is required and the complier also enfoces this since we have to
+   declare that this class implements Session/EntityBean.
+
+2)    public void ejbCreate() method has to be created. This method
+   will be called by the container when the ejb is created. This method
+   should return void. (Note: Create method in home interface returns
+   remote interface). If we have multiple create methods defined in home
+   interface for each create we should have a corresponding ejbCreate
+   method.
+
+3)  public void ejbRemove() method has to be implemented which will be called    when ejb is removed by the container.
+
+   (Note: complier doesn't enfore the implementation of the above two 
+   methods)
+
+4) Business methods that were defined in remote interface.
+
+  for example if a method
+
+	public void BusMethod1() throws remoteException in defined in Remote
+        interface. Then we need to provide the following method in EJB.
+     
+        public void BusMethod1() here we need not declare that the method
+        throws RemoteException as the method on this are called from 
+        EJBObject which is created by the container.
+
+   (Note: complier doesn't enfore the implementation of the above two 
+   methods)

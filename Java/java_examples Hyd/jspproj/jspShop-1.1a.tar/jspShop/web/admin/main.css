@@ -1,0 +1,11 @@
+body {  color: #000000; background-color: #FFFFFF }
+a {  
+	color: #0000FF;
+	text-decoration: none	
+}
+a:hover { color: #FFCC00 }
+.textBox { 
+	color: #000000; 
+  	background-color: #FFFFFF;
+}
+.insideLinks { color: #0066FF; text-decoration: none }

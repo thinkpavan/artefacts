@@ -1,0 +1,26 @@
+
+D:\java\RMI\PART1>java  -Djava.security.policy=d:\java\rmi\policy   PolicyServer 
+class sun.security.provider.PolicyFile
+class sun.security.provider.PolicyFile
+(java.net.SocketPermission localhost:1024- listen,resolve)
+(java.lang.RuntimePermission stopThread )
+(java.security.AllPermission <all permissions> <all actions>)
+(java.util.PropertyPermission java.specification.name read)
+(java.util.PropertyPermission java.version read)
+(java.util.PropertyPermission java.specification.version read)
+(java.util.PropertyPermission java.vm.vendor read)
+(java.util.PropertyPermission java.vm.specification.version read)
+(java.util.PropertyPermission os.arch read)
+(java.util.PropertyPermission java.vendor.url read)
+(java.util.PropertyPermission line.separator read)
+(java.util.PropertyPermission os.name read)
+(java.util.PropertyPermission java.vendor read)
+(java.util.PropertyPermission java.vm.specification.vendor read)
+(java.util.PropertyPermission java.specification.vendor read)
+(java.util.PropertyPermission java.vm.name read)
+(java.util.PropertyPermission java.vm.specification.name read)
+(java.util.PropertyPermission java.class.version read)
+(java.util.PropertyPermission os.version read)
+(java.util.PropertyPermission java.vm.version read)
+(java.util.PropertyPermission path.separator read)
+(java.util.PropertyPermission file.separator read)

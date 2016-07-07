@@ -1,0 +1,12 @@
+<log4j:event logger="root" timestamp="1081463764000" level="INFO" thread="main">
+<log4j:message><![CDATA[ This is an information message]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1081463765000" level="ERROR" thread="main">
+<log4j:message><![CDATA[This is an error message]]></log4j:message>
+</log4j:event>
+
+<log4j:event logger="root" timestamp="1081463766000" level="FATAL" thread="main">
+<log4j:message><![CDATA[This is a fatal error message]]></log4j:message>
+</log4j:event>
+

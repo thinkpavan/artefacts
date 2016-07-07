@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ex10"/>
+	<classpathentry kind="src" path="ex2/local"/>
+	<classpathentry kind="lib" path="ex1/ssb.jar"/>
+	<classpathentry kind="lib" path="ex1/temp.jar"/>
+	<classpathentry kind="lib" path="ex2/local.jar"/>
+	<classpathentry kind="lib" path="ex3/sfsb.jar"/>
+	<classpathentry kind="lib" path="ex3/slsb.jar"/>
+	<classpathentry kind="lib" path="ex3/temp.jar"/>
+	<classpathentry kind="lib" path="ex3/temp1.jar"/>
+	<classpathentry kind="lib" path="ex4/sesctx.jar"/>
+	<classpathentry kind="lib" path="ex4/temp.jar"/>
+	<classpathentry kind="lib" path="ex5/sfses.jar"/>
+	<classpathentry kind="lib" path="ex5/temp.jar"/>
+	<classpathentry kind="lib" path="ex6/part6/temp.jar"/>
+	<classpathentry kind="lib" path="ex6/part6/trans.jar"/>
+	<classpathentry kind="lib" path="ex6/temp.jar"/>
+	<classpathentry kind="lib" path="ex6/trans.jar"/>
+	<classpathentry kind="lib" path="ex7/temp.jar"/>
+	<classpathentry kind="lib" path="ex7/transact.jar"/>
+	<classpathentry kind="lib" path="ex8/temp.jar"/>
+	<classpathentry kind="lib" path="ex9/internal.jar"/>
+	<classpathentry kind="lib" path="ex9/temp.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="ex2/local"/>
+</classpath>

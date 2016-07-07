@@ -1,0 +1,1 @@
+set CLASSPATH=.\lib\hibernate2.jar;.\lib\jta.jar;.\lib\commons-logging.jar;.\lib\classes12_01.jar;.\lib\cglib2.jar;.\lib\commons-collections.jar;.\lib\dom4j.jar;.\lib\odmg.jar;.\lib\jdbc2_0-stdext.jar;.

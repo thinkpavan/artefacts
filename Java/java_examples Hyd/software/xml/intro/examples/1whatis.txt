@@ -1,0 +1,45 @@
+XML was designed to describe data.
+XML tags are not predefined. We must define your own tags.
+XML uses a Document Type Definition (DTD) or
+	XML Schema to describe the data.
+
+
+NOTE >>>> XML is a cross-platform, software and hardware independent
+	    tool for transmitting information.
+
+Difference between XML and HTML.
+
+<message>
+	<to>mydear friend</to>
+	<from>posani</from>
+	<mail-id>suresh@posani.com</mail-id>
+	<subject>Test Mail</subject>
+	<content>This is a test mail composed as XML doc</content>
+</message> 
+
+XML is not magic like most of the people say.
+
+creating software that can read and manipulate XML is very easy to do. Today we
+have several parsers available for manipulating XML documents.
+
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message>
+	<to>mydear friend</to>
+	<from>posani</from>
+	<mail-id>suresh@posani.com</mail-id>
+	<subject>Test Mail</subject>
+	<content>This is a test mail composed as XML doc</content>
+</message> 
+
+message is root element and we can say this document is of type message.
+All XML elements must have a closing tag.
+XML tags are case sensitive.
+All XML elements must be properly nested.
+Attribute values must always be quoted.
+With XML, white space is preserved.
+With XML, CR / LF is converted to LF.
+Comments can be added to XML doc using the following syntax.
+		<!-- This is a comment -->
+XML documents are Extensible.
+Elements are related as parents and children.

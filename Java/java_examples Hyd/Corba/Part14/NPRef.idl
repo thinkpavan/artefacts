@@ -1,0 +1,17 @@
+
+
+module INetSolv
+{
+	interface NPObj{
+		attribute wstring name;
+		void donothing();// added to show ho to call method on non persistant object
+	};
+
+	interface PerFactory
+	{
+		NPObj CreateNPObj();
+		void dosomeThing();
+	};
+};			
+
+

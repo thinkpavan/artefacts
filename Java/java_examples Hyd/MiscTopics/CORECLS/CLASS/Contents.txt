@@ -1,0 +1,7 @@
+Cls -- shows how to get refernce to class object
+
+Constructors   -- shows how to get info about constructors
+
+Methods -- shows how to find the details of methods in a class
+
+Fields  -- shows how to get the list of fields in a class

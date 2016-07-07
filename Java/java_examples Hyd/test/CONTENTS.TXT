@@ -1,0 +1,64 @@
+shows how to create a simple session bean.
+
+
+Follow the steps given below to create a stateless session bean
+
+1)  create Home interface
+
+2)  create Remote interface with all the business methods.
+
+3) Implement the business methods and additional methods in EJB class.
+
+4) place the classes generated from the above in appropriate directory.
+   we placed them under WL_HOME\classes (this directory is listed in 
+   class path).
+
+5) use ejbdeployer tool to create a serialized file for deployment
+ descriptor. ( this is simple way of creating DD).
+
+6) run ejbc -d c:\weblogic\classes dd.ser. this command creates all the
+   files that are required for deploying ejb. (dd.ser is the one that is
+   created in step 5)
+
+7)  create manifest file with following lines
+
+
+Manifest-Version: 1.0
+
+Name: part1/DD.ser
+Enterprise-Bean: True
+
+8) create ejb-jar file using the following command
+
+   jar cvfm HWorld.jar manifest part1.
+
+9) Place the jar file in c:\weblogic\myserver
+
+10) make modification to weblogic.properties file by
+adding the following lines.
+
+weblogic.ejb.deploy=C:/weblogic/myserver/HWorld.jar. (This line will
+be already there in the file we just need to add info related to HWorld.jar)
+
+11) stop weblogic server and start it again.
+
+12) run the client to test the application.
+
+Note: procedure for creating ejb-jar is much more simplified with weblogic 
+5.1 , read readme5.1.txt to package EJB.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Problem:
+
+  Create u'r own session bean with four different methods following
+the above procedure and deploy the bean and test it using two clients.
+
+Note: As it is very difficult to create the first bean we suggest 
+u to copy all the files in this directory to u'r working directory and
+change the class names by substuting myFirstBean for HWorld and then
+add three more simple methods.
+
+
+
+ 

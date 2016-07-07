@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib
+    PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+    "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+
+<taglib>
+
+  <tlib-version>1.0</tlib-version>
+  <jsp-version>1.2</jsp-version>
+  <short-name>bodytaglib</short-name>
+  <uri>http://www.inet.com/taglibs/bodytags</uri>
+  <description>
+    Sample body tag library
+  </description>
+
+  <tag>
+    <name>bt</name>
+    <tag-class>inet.BodyTag</tag-class>
+    <description> Some sample tag </description>
+  </tag>       
+  <tag>
+    <name>bt1</name>
+    <tag-class>inet.BodyTag1</tag-class>
+    <description> Some sample tag </description>
+  </tag>   
+
+   <tag>
+    <name>bt2</name>
+    <tag-class>inet.BodyTag2</tag-class>
+    <description> Some sample tag </description>
+  </tag> 
+
+    <tag>
+    <name>bt3</name>
+    <tag-class>inet.BodyTag3</tag-class>
+    <description> Some sample tag </description>
+    <attribute>
+       <name>iter</name>
+       <required>true</required>
+       <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag> 
+
+</taglib>

@@ -1,0 +1,6 @@
+Comp  -- shows about Compiler class
+
+
+RT  --  shows about runtime class
+
+finalizeobj  -- shows how to invoke garbage collector

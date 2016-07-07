@@ -1,0 +1,455 @@
+<html><head>
+<title>README -- JDK(tm) Software, Version 1.2</title>
+</head>
+
+<body>
+<!--======== ADD/DELETE IS NEEDED WHEN STRIPPING HTML FOR "README" ========-->
+
+<center>
+<h1>README</h1>
+<h3>Java<sup><font size="-2">TM</font></sup> Development Kit<br>
+Version 1.2</h3>
+
+          <font size="-1">
+<!--(ADD-START)=============================================
+       For a hypertext version of this file, see "README.html"
+    ================================================(ADD-END)-->
+          </font>
+</center>
+<p>
+
+<ul>
+    <li><a href=#introduction>Introduction</a>
+    <li><a href=#features>Features</a>
+    <li><a href=#docs>JDK Documentation</a>
+    <li><a href=#system>System Requirements</a>
+    <li><a href=#install>Installation</a>
+    <li><a href=#demos>Demos</a>
+
+<!--(ADD-START)=============================================
+   This further information is in README.html:
+    ================================================(ADD-END)-->
+
+    <li><a href=#changes>Changes</a>
+    <li><a href=#compatibility>Compatibility</a>
+    <li><a href=#bugs>Bug Reports and Feedback</a>
+    <li><a href=#contents>Contents of the Java Development Kit</a>
+    <li><a href=#jre>Java Runtime Environment including Java Plug-in</a>
+
+<!--(DELETE-START)=========================================== -->
+    <li><a href=#webpages>Sun Java Web Pages</a>
+<!-- =============================================(DELETE-END)-->
+</ul>
+
+<a name="introduction"><h2>Introduction</h2></a>
+<blockquote>
+Thank you for downloading this release of the 
+Java<sup><font size="-2">TM</font></sup> Development Kit, 
+version 1.2. The Java Development Kit 
+(JDK<sup><font size="-2">TM</font></sup>) is the development 
+environment for building applications, applets, and components 
+that can be deployed on the Java platform. This README file
+covers both the JDK Production Release for Windows and the 
+JDK Reference Implementation for Solaris. A <a href="http://java.sun.com/products/jdk/1.2/ja/README.html">Japanese version of this README</a> is 
+on the Java Software website. 
+<p>
+The JDK software includes tools useful for developing and 
+testing programs written in the Java programming language and running on 
+the Java 1.2 platform. These tools are designed to be used from the command 
+line. Except for appletviewer, these tools do not provide a graphical user
+interface.
+<p>
+On Windows, a separate Java Runtime Environment including
+Java Plug-in is also installed with the JDK.  On Solaris, you 
+can obtain this separately.  For more information,
+see <a href="#jre">Java Runtime Environment including Java Plug-in</a>.
+<p>
+
+<!--(DELETE-START)=========================================== -->
+   <font size="-1"><b>[web]</b></font> - This marker, which appears 
+   throughout this README file, indicates links to Sun's Java website.  
+   These markers appear next to links to local copies of the same
+   documents (which are broken links if you do not have the 
+   JDK documentation installed locally).
+<p>
+<!-- =============================================(DELETE-END)-->
+
+</blockquote>
+
+
+<a name=features><h2>Features</h2></a>
+<blockquote>
+
+Version 1.2 of the Java Development Kit offers significant improvements 
+in functionality, performance, security and global support. See:
+<ul>
+  <li><a href="docs/relnotes/features.html">Summary of New Features</a>
+<!--(DELETE-START)=========================================== -->
+     [<a href="http://java.sun.com/products/jdk/1.2/docs/relnotes/features.html"><font size="-1">web</font></a>]
+<!-- =============================================(DELETE-END)-->
+      - Features added since JDK 1.1.
+<!--(ADD-START)=============================================
+      http://java.sun.com/products/jdk/1.2/docs/relnotes/features.html
+    ================================================(ADD-END)-->
+
+  <li><a href="docs/index.html#guide">Guide to Features</a>
+<!--(DELETE-START)=========================================== -->
+      [<a href="http://java.sun.com/products/jdk/1.2/docs/index.html#guide"><font size="-1">web</font></a>]
+<!-- =============================================(DELETE-END)-->
+      - Complete list of all features.
+<!--(ADD-START)=============================================
+      http://java.sun.com/products/jdk/1.2/docs/index.html#guide
+    ================================================(ADD-END)-->
+</ul>
+</blockquote>
+
+<a name="docs"><h2>JDK Documentation</h2></a>
+<blockquote>
+
+The <a href="docs/index.html">JDK&nbsp;Documentation</a> 
+<!--(DELETE-START)=========================================== -->
+[<a href="http://java.sun.com/products/jdk/1.2/docs/index.html"><font size="-1">web</font></a>]
+<!-- =============================================(DELETE-END)-->
+contains release documentation, Java API specifications,
+developer guides, tool documentation, demos, and links to related
+documentation.  It is available in a separate download bundle.
+<p>
+If you have not already downloaded your own local copy of the JDK Docs, 
+you can do so from the 
+<a href="http://java.sun.com/products/jdk/1.2/">JDK 1.2 download page</a>.
+
+</blockquote>
+
+<a name="system"><h2>System Requirements</h2></a>
+<blockquote>
+The JDK 1.2 software is available on three platforms:
+<ul>
+    <li><b>Win32 Release</b> for Windows 95, Windows 98 and Windows NT 
+    on Intel hardware.  For Windows NT, only version 4.0 is supported. 
+    A 486/DX or faster processor and at least 48 megabytes of RAM are 
+    recommended.
+
+    <li><b>Solaris/SPARC Release</b>. Only Solaris versions 2.5.1,
+    2.6 and 7 (also known as 2.7) are supported. At least 48 megabytes 
+    of RAM is recommended.
+    <a href="http://java.sun.com/products/jdk/1.2/install-solaris-patches.html">Solaris 
+    patches</a> may need to be installed (see installation instructions).
+
+    <li><b>Solaris/Intel Release</b>. Only Solaris versions 2.5.1, 2.6
+    and 7 (also known as 2.7) are supported. A 486/DX or faster processor 
+    and at least 48 megabytes of RAM are recommended.
+    <a href="http://java.sun.com/products/jdk/1.2/install-solaris-patches.html">Solaris 
+    patches</a> may need to be installed (see installation instructions).
+
+</ul>
+On Solaris, Sun releases both a
+<a href="http://java.sun.com/products/jdk/faq.html#prod|ref">Reference 
+Implementation and Production Release</a>.
+<!--(ADD-START)=============================================
+See:  http://java.sun.com/products/jdk/faq.html#prod|ref
+    ================================================(ADD-END)-->
+<p>
+On all systems you should have 65 megabytes of free disk space before
+attempting to install the JDK software. If you also install the separate
+documentation download bundle, you need an additional 85 megabytes of
+free disk space.
+<p>
+JDK 1.2 is localized for Japanese.  For more information, see
+<!--(DELETE-START)=========================================== -->
+<a href="http://java.sun.com/products/jdk/1.2/japan-notes.html">Japanese 
+localization notes</a>.
+<!-- =============================================(DELETE-END)-->
+
+<!--(ADD-START)=============================================
+    http://java.sun.com/products/jdk/1.2/japan-notes.html
+    ================================================(ADD-END)-->
+
+</blockquote>
+
+<a name="install"><h2>Installation</h2></a>
+<blockquote>
+The complete JDK is composed of the JDK Software plus the JDK Documentation, 
+each of which is separately downloadable.  Installation instructions 
+for each release are maintained on the Java Software web site:
+<ul>
+    <li>For the Win32 Installation Instructions, go to 
+    <a href=http://java.sun.com/products/jdk/1.2/install-windows.html>http://java.sun.com/products/jdk/1.2/install-windows.html</a>.
+    <li>For the Solaris Installation Instructions, go to 
+    <a href=http://java.sun.com/products/jdk/1.2/install-solaris.html>http://java.sun.com/products/jdk/1.2/install-solaris.html</a>.
+</ul>
+<p>
+Refer to the <a href="COPYRIGHT">COPYRIGHT</a> and <a href="LICENSE">LICENSE</a> for legal terms of use.
+<p>
+</blockquote>
+
+<!--(DELETE-START)============================================= -->
+
+<p>
+<a name=demos><h2>Demos</h2></a>
+<blockquote>
+
+A <a href="demo/">demo</a> directory is included in this software bundle 
+with a variety of applets and Swing applications for you to try out. 
+The demos come with complete source code.
+</blockquote>  
+
+<p>
+<a name=changes><h2>Changes</h2></a>
+<blockquote>
+
+See <a href=http://java.sun.com/products/jdk/1.2/changes.html>Changes 
+and Release Notes</a> for a summary of changes to the JDK since the 
+previous release and other release notes. This file will be updated
+as needed, so users should check it form time to time.
+
+</blockquote>
+
+<a name=compatibility><h2>Compatibility</h2></a>
+<blockquote>
+
+<p>
+See <a href=http://java.sun.com/products/jdk/1.2/compatibility.html>JDK 
+Compatibility with Previous Releases</a>, on the Java Software web site, 
+for our list of known compatibility issues. Every effort has been made to 
+support programs written for the 1.0 or 1.1 platform. Although some 
+incompatible changes were necessary, most software should migrate to 
+Java platform 1.2 with no reprogramming.  Any failure to do so is 
+considered a bug, except for a small number of cases where compatibility 
+was deliberately broken, as described on our compatibility page. Some
+compatibility-breaking changes were required to close potential
+security holes or to fix implementation or design bugs.
+<p>
+
+</blockquote>
+
+
+<a name=bugs><h2>Bug Reports and Feedback</h2>
+<blockquote>
+The  
+<a href=http://developer.java.sun.com/developer/bugParade/>Bug Parade
+Web Page</a> on the Java Developer Connection website lets you search
+for and examine existing bug reports, 
+submit your own bug reports, and tell us which bug fixes matter most 
+to you.  To directly submit a bug or request a feature, fill out this 
+form:
+<blockquote>
+  <code><a href="http://java.sun.com/cgi-bin/bugreport.cgi">
+  http://java.sun.com/cgi-bin/bugreport.cgi</a></code>
+</blockquote>
+You can also send comments directly to 
+<a href=http://java.sun.com/mail/>Java Software engineering team 
+email addresses</a>. 
+<p>
+<b>Note</b> - You should not seek technical support from Bug Parade or our
+development teams. For support options, see
+<a href=http://java.sun.com/support/>Support and Services</a> on the
+Java Software web site.
+
+</blockquote>
+
+<a name=contents><h2>Contents of the Java Development Kit</h2></a>
+<blockquote>
+This section contains a general summary of the files and directories in
+the Java Development Kit. For specific descriptions, see
+<a href=docs/tooldocs/win32/software.html>JDK Software on Win32 Systems</a> 
+<font size="-1">[<a href=http://java.sun.com/products/jdk/1.2/docs/tooldocs/win32/software.html>web</a>]</font>
+or
+<a href=docs/tooldocs/solaris/software.html>JDK Software on Solaris
+Systems</a>
+<font size="-1">[<a href=http://java.sun.com/products/jdk/1.2/docs/tooldocs/solaris/software.html>web</a>]</font>.
+<dl>
+    <dt><b>Development Tools</b>
+	<dd>(In the <code>bin</code> subdirectory.) Programs that will
+	help you develop, execute, debug, and document programs written
+	in the Java programming language. For further information, see
+	the <a href=docs/tooldocs/tools.html>tool documentation</a>
+        <font size="-1">[<a href=http://java.sun.com/products/jdk/1.2/docs/tooldocs/tools.html>web</a>]</font>.
+
+    <p>
+        <dt><b>Java Runtime Environment</b>
+	<dd>(In the <code>jre</code> subdirectory.)
+	An implementation of the Java 1.2 platform, including a Java
+	virtual machine, class libraries, and other supporting files.
+	These files support the execution of programs written in the
+	Java programming language, including programs you develop, and
+	those JDK development tools written in the Java programming
+	language. For more information, see the
+	<a href=#jre>Java Runtime Environment including Java Plug-in</a> 
+        section below.
+    <p>
+        <dt><b>Additional libraries</b>
+	<dd>(In the <code>lib</code> subdirectory.) Additional class
+	libraries and support files required by the development tools.
+    <p>
+        <dt><b>Demo Applets and Applications</b>
+	<dd>(In the <code>demo</code> subdirectory.) Examples, with
+	source code, of programming for the Java platform. These
+	include examples that use Swing and other Java Foundation
+	Classes. For more details, see the
+	<a href=demo/>demo</a> directory.
+    <p>
+        <dt><b>C header Files</b>
+	<dd>(In the <code>include</code> subdirectory.) Header
+	files that support native-code programming using the
+	<a href="docs/guide/jni/index.html">Java Native Interface</a> 
+        <font size="-1">[<a href="http://java.sun.com/products/jdk/1.2/docs/guide/jni/index.html">web</a>]</font>.
+        and the 
+	<a href="docs/guide/jvmdi/index.html">Java Virtual Machine Debugger Interface</a>
+        <font size="-1">[<a href="http://java.sun.com/products/jdk/1.2/docs/guide/jvmdi/index.html">web</a>]</font>.
+    <p>
+        <dt><b>Old Native Interface Headers</b>
+	<dd>(In the <code>include-old</code> subdirectory.) Header
+	files that support native-code programming using older
+	interfaces. The header files in <code>include-old</code>
+	are provided only for
+	backward-compatibility. These interfaces are deprecated,
+	unsupported and
+	not available on all Java virtual machines.
+    <p>
+        <dt><b>Source Code</b>
+	<dd>(In <code>src.jar</code> archive file.) Java programming 
+        language source files for all classes that make up the Java 1.2
+        platform core API
+        (that is, java.*, javax.* and org.omg.*, but not com.sun.*). 
+        This source code is provided for informational purposes 
+        only, to help developers learn and use the Java programming
+        language. These files do not include platform-specific 
+        implementation code and cannot be used to rebuild the 
+        class libraries.  To extract these file, use:
+<pre>
+    jar xvf src.jar
+</pre>
+
+	<p>
+	Do not modify core API source files. To extend the behavior of
+	the core API, write subclasses of the core API classes.
+	<p>
+	For core API documentation, refer to the following sources:
+	<ul>
+	    <p><li><a href="docs/api/index.html">The Java Platform API Specification</a>
+        <font size="-1">[<a href="http://java.sun.com/products/jdk/1.2/docs/api/index.html">web</a>]</font>.  
+            This provides brief descriptions of the API with
+            an emphasis on specifications, not on examples.
+
+	    <p><li><i><a href=http://java.sun.com/docs/books/chanlee/>The
+	    Java Class Libraries</a></i>, Second Edition, published by
+	    Addison-Wesley Longman as part of 
+	    <a href=http://java.sun.com/docs/books/>The Java Series</a>.
+            These volumes include much more elaborate descriptions,
+            with definitions of terminology and examples for practically 
+            every class, interface and member.
+	</ul>
+    <p><dt><b>Documentation</b>
+	<dd>(In the <code>docs</code> subdirectory.)  This directory is
+        created when the JDK documentation is installed.  It contains
+        release documentation, Java API specifications, developer guides, 
+        tool documentation, demos, and links to related documentation.   
+</dl>
+</blockquote>
+
+<a name=jre>
+<h2>The Java Runtime Environment including Java Plug-in</h2></a>
+<blockquote>
+      The <b>Java Runtime Environment including Java Plug-in</b> 
+      is a Sun product that is composed of two parts:  The 
+      Java Runtime Environment and the Java Plug-in.
+<p>
+
+      The <b>Java Runtime Environment 1.2</b> (JRE) is the 
+      Java platform on which you can run, test and ship your own 
+      applications.  It consists of the Java virtual machine, 
+      the Java platform core classes, and supporting files. 
+      It contains no development tools -- no compiler, debugger, 
+      or other tools.  The JRE requires additional software --
+      the Java Plug-in -- to enable it to run applets in a browser. 
+<p>
+
+      The <b>Java Plug-in</b> software allows Java applets and JavaBeans
+      components to run in a browser using Sun's Java Runtime
+      Environment, instead of the browser's default Java runtime. 
+      The Java Plug-in works with Netscape Navigator and Microsoft
+      Internet Explorer.  For general information, see the
+      <a href="http://java.sun.com/products/plugin/1.2/overview.html">Java
+      Plug-in Overview</a>.  
+      For documentation and FAQ on the Java Plug-in, see
+      <a href="http://java.sun.com/products/plugin">Java Plug-in</a>.
+<p>
+     
+      The Java Runtime Environment including Java Plug-in is available
+      from Sun on both Windows and Solaris:
+<p>
+<ul>		
+  <li>The <b>Windows version</b> of the JDK includes a
+      redistributable version of the Java Runtime Environment 
+      including Java Plug-in, which plugs into a browser, upgrading
+      the browser to the Java 1.2 platform.  Once you install it, 
+      it will automatically load the Java 1.2 platform runtime 
+      environment when it hits a page with a special HTML tag.
+      This product is separate
+      from the JDK and is redistributable with your application,
+      applet or JavaBean components subject to the terms and 
+      conditions of its software license (found in the JRE/Plug-in README 
+      and LICENSE files).
+<p>
+
+  <li>The <b>Solaris version</b> is downloaded separately from the
+      JDK Reference Implementation. For more information, see Sun's
+      <a href=http://java.sun.com/products/plugin/>Java Plug-in website</a>.
+</ul>
+<p>
+
+      Note that the JDK has its own internal, complete, non-redistributable 
+      Java runtime environment in the <code>jre</code> subdirectory. 
+      This is the runtime environment used by the JDK tools (javac, javadoc, 
+      appletviewer, and so forth).
+<p>
+
+</blockquote>
+
+<!-- KEEP NEXT COMMENT LINE FOR DELETING TEXT FOR NON-HTML "README" -->
+<!-- =============================================(DELETE-END)-->
+
+<a name="webpages"><h2>Sun Java Web Pages</h2></a>
+<blockquote>
+For additional information, refer to these Sun Microsystems pages on the
+World Wide Web:
+<dl>
+    <dt><a href=http://java.sun.com/>http://java.sun.com/</a>
+    <dd>The Java Software web site, with the latest information on
+	Java technology, product information, news, and features.
+
+    <dt><a href=http://java.sun.com/products/jdk/1.2/index.html>http://java.sun.com/products/jdk/1.2/index.html</a>
+    <dd>JDK 1.2 Product and Download Page
+
+    <dt><a href="http://java.sun.com/docs">http://java.sun.com/docs</a>
+    <dd>Java Platform Documentation provides access to white papers, the
+        Java Tutorial and other documents.
+
+    <dt><a href=http://developer.java.sun.com/>http://developer.java.sun.com/</a>
+    <dd>The Java Developer Connection web site. (Free registration
+	required.) Additional technical information, news, and
+	features; user forums; support information, and much more.
+
+    <dt><a href=http://java.sun.com/products/>http://java.sun.com/products/</a>
+    <dd>Java Technology Products & API
+
+    <dt><a href=http://www.sun.com/solaris/java/>http://www.sun.com/solaris/java/</a>
+    <dd>Java Development Kit for Solaris - Production Release
+
+</dl>
+</blockquote>
+
+
+
+<p>
+<hr>
+<small>This Java Development Kit is a product of Java Software of
+Sun Microsystems<sup><small>(tm)</small></sup>, Inc.
+<p>
+Copyright &copy; 1997, 1998,  Sun Microsystems, Inc.
+<br>
+901 San Antonio Road, Palo Alto, California 94303-4900 USA.
+<br>
+All rights reserved.</small>
+</body></html>
+

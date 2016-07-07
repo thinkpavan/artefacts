@@ -1,0 +1,32 @@
+Reliability Mechanisms 
+
+Controlling message acknowledgment.
+
+In transacted session when the transaction is commited then an acknowledgement will be
+send.
+
+in non transacted session while creating the session we can specify.
+Session.AUTO_ACKNOWLEDGE
+Session.CLIENT_ACKNOWLEDGE -- client acks the receipt by calling message's
+acknowledge  method.
+
+Specifying message persistence. 
+producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT); 
+or
+producer.setDeliveryMode(DeliveryMode.PERSISTENT); 
+can be used to specify the mode.
+
+Setting message priority levels.
+priority range from 0 (lowest) to 9 (highest). 
+
+can be set using producer.setPriority method.
+
+Allowing messages to expire. 
+
+producer.setTimeToLive can be used to set expiration time of a message.
+0 indicates never expires.
+
+Creating temporary destinations. 
+
+Session.createTemporaryQueue 
+Session.createTemporaryTopic  can be used to create temporary destinations.

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<tomcat-users>
+  <role rolename="manager"/>
+  <role rolename="admin"/>
+  <role rolename="student"/>
+  <role rolename="teacher"/>
+  <role rolename="principal"/>
+  <user username="admin" password="admin" roles="admin,manager"/>
+  <user username="somex" password="somex" roles="principal"/>
+  <user username="teacher1" password="teacher1" roles="teacher"/>
+  <user username="teacher2" password="teacher2" roles="teacher"/>
+  <user username="teacher3" password="teacher3" roles="teacher"/>
+  <user username="student1" password="student1" roles="student"/>
+  <user username="student2" password="student2" roles="student"/>
+  <user username="student3" password="student3" roles="student"/>
+  <user username="student4" password="student4" roles="student"/>
+</tomcat-users>

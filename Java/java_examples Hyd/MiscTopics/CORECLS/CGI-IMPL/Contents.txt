@@ -1,0 +1,3 @@
+Exec - this program runs another program and takes
+control of stdin/err/out of the other prog. This program 
+shows how a web server spawns a cgi program

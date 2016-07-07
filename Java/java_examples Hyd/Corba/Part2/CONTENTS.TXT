@@ -1,0 +1,1 @@
+Simple corba server showing idl to java mapping

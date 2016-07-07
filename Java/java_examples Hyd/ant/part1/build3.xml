@@ -1,0 +1,12 @@
+<project name="antproj1" default="target1" basedir=".">
+
+<!-- definition of a list of files -->
+
+
+<target name="target1" >
+    <javac srcdir="jproj"
+      destdir="jproj"
+      includes="one.java,two.java">
+    </javac>
+</target>
+</project>

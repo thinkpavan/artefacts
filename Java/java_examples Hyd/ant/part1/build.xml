@@ -1,0 +1,11 @@
+<project name="antproj1" default="target1" basedir=".">
+
+<property name="prop1" value="ant"/>
+<property name="prop2" value="${prop1}1"/>
+<property name="prop3" value="${prop1}2"/> 
+
+<target name="target1" >
+	<exec dir="." executable="cmd.exe" os="Windows 2000" > <arg line="rmdir ${prop2}"/> </exec>
+
+</target>
+</project>

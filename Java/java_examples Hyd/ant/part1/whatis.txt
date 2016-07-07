@@ -1,0 +1,31 @@
+Ant is like make which is used to automate the task of
+building the applications.
+
+Ant, similar to make can be used to do any task other
+than building application.
+
+In makefiles we use commands to carry out tasks.
+
+In ant we use Ant Taska which are nothing but java
+classes to carry out a taks.
+
+Note: we can also run commands using exec task.
+
+make uses make files. ant uses xml build files.
+
+In ant's build file we can define the targets. A taget defines how
+to carry out things like compiling, removing, creating directory etc.
+
+
+A target may depend on other targets also.
+
+For example : when we want to compile a set of java classes we may manually do
+
+1) remove all the class files which are already created.
+
+2) create a fresh directory for storing new class files.
+
+3) create java class file using javac.
+
+4) pack them all in a jar file.
+

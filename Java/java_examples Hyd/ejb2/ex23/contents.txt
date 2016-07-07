@@ -1,0 +1,9 @@
+in case of bean managed persistant beans we need to 
+implement logic that maintain relation ships in
+
+ejb select , ejb store.
+
+
+Note: WLbuilder shipped with weblogic may not be able to create
+xml files properly for this example. We request you to make
+changes manually.

@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>XML &amp; CBL Resources: CBL Documentation: Sample ProductCatalog Document - DTD version</title>
+
+<link rel=stylesheet href="../../../stylesheet/style.css" type="text/css">
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<!-- -->
+
+<table cellpadding=0 cellspacing=0 border=0 width="100%">
+<tr>
+<td width=20 nowrap><img src="../../images/spacer.gif" alt="" width=20 height=1></td>
+<td align=left><img src="../../images/spacer.gif" alt="" width=1 height=20><br>
+<font id="leftheadertext">Sample ProductCatalog Document (XML Instance for DTD Validation)</font></td>
+<td width=20 nowrap><img src="../../images/spacer.gif" alt="" width=20 height=1></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="#336699"><img src="../../images/spacer.gif" alt="" width=1 height=2></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><font id="bodytext"><b>[</b> <a href="samples.html">Back to samples</a> <b>]</b> </font></td>
+<td></td>
+</tr>
+
+<tr>
+<td colspan=3><img src="../../images/spacer.gif" alt="" width=1 height=20></td>
+</tr>
+
+<tr>
+<td></td>
+<td>
+
+<font id="codetext">
+
+<PRE>
+&lt;?xml version="1.0"?&gt;
+&lt;!DOCTYPE ProductCatalog SYSTEM "CBL.dtd"&gt;
+&lt;!-- A Product Catalog:  A list of product information. --&gt;
+&lt;ProductCatalog&gt;
+	&lt;ProdCatHdr&gt;	
+		&lt;DocumentDate&gt;19990509&lt;/DocumentDate&gt;
+		&lt;DefaultCurrency&gt;USD&lt;/DefaultCurrency&gt;				
+		&lt;DefaultLanguage&gt;en&lt;/DefaultLanguage&gt;		
+		&lt;ListOfDescription&gt;
+			&lt;Description Lang="en"&gt;Catalog Description&lt;/Description&gt;
+		&lt;/ListOfDescription&gt;		
+		&lt;SupplierParty&gt;
+			&lt;Party AgencyID="CommerceOne" PartyID="1732" /&gt;
+		&lt;/SupplierParty&gt;		
+	&lt;/ProdCatHdr&gt;
+	
+	&lt;ListOfProdCatAction&gt;
+		&lt;ProdCatAction&gt;
+			&lt;CatalogDelete&gt;
+				&lt;PartNum&gt;
+					&lt;Agency AgencyID="CommerceOne" /&gt;
+					&lt;PartID&gt;1732|1812||&lt;/PartID&gt;
+				&lt;/PartNum&gt;
+			&lt;/CatalogDelete&gt;
+		&lt;/ProdCatAction&gt;
+					
+		&lt;ProdCatAction&gt;
+			&lt;ProdCatDetail&gt;
+				&lt;ProdAction&gt;Add&lt;/ProdAction&gt;
+				
+				&lt;PartNum&gt;
+					&lt;Agency AgencyID="CommerceOne" /&gt;
+					&lt;PartID&gt;1732|12345||&lt;/PartID&gt;
+				&lt;/PartNum&gt;
+				
+				&lt;ListOfDescription&gt;
+					&lt;Description Lang="en"&gt;500 sheets white paper, 20#&lt;/Description&gt;
+				&lt;/ListOfDescription&gt;
+				
+				&lt;RelatedParts&gt;
+					&lt;AdditionalIDs&gt;
+						&lt;ListOfPartNum&gt;
+							&lt;PartNum&gt;
+								&lt;Agency AgencyID="AssignedByBuyer" /&gt;
+								&lt;PartID&gt;XYZ12345&lt;/PartID&gt;
+							&lt;/PartNum&gt;
+							&lt;PartNum&gt;
+								&lt;Agency AgencyID="AssignedBySupplier" /&gt;
+								&lt;PartID&gt;12345&lt;/PartID&gt;
+							&lt;/PartNum&gt;
+						&lt;/ListOfPartNum&gt;
+					&lt;/AdditionalIDs&gt;
+					
+					&lt;SubstituteFor&gt;
+						&lt;ListOfPartNum&gt;
+							&lt;PartNum&gt;
+								&lt;Agency AgencyID="AssignedBySupplier" /&gt;
+								&lt;PartID&gt;12386&lt;/PartID&gt;
+								&lt;PartIDExt&gt;A&lt;/PartIDExt&gt;
+							&lt;/PartNum&gt;
+						&lt;/ListOfPartNum&gt;
+					&lt;/SubstituteFor&gt;
+					
+					&lt;OtherPartNums&gt;
+						&lt;ListOfRelatedPartNum&gt;
+							&lt;RelatedPartNum RelatedPartType="Version"&gt;
+								&lt;Agency AgencyID="AssignedBySupplier" /&gt;
+								&lt;PartID&gt;123.2&lt;/PartID&gt;
+							&lt;/RelatedPartNum&gt;
+						&lt;/ListOfRelatedPartNum&gt;
+					&lt;/OtherPartNums&gt;				
+				&lt;/RelatedParts&gt;
+			
+					
+				&lt;LeadTimeDays&gt;5&lt;/LeadTimeDays&gt;
+				
+				&lt;LongDesc&gt;
+					&lt;ListOfLangString&gt;
+						&lt;LangString Lang="en"&gt;A high quality paper product
+							designed for professional printing.
+						&lt;/LangString&gt;
+					&lt;/ListOfLangString&gt;
+				&lt;/LongDesc&gt;	
+							
+				&lt;ListOfDescInfo&gt;
+					&lt;DescInfo&gt;
+						&lt;AttribCode&gt;Color&lt;/AttribCode&gt;
+						&lt;ValueCode&gt;Red&lt;/ValueCode&gt;
+					&lt;/DescInfo&gt;
+				&lt;/ListOfDescInfo&gt;
+				
+
+				&lt;UnitOfMeasure&gt;&lt;UOM&gt;EA&lt;/UOM&gt;&lt;/UnitOfMeasure&gt;				
+				
+				&lt;ListOfProdAttribute&gt;
+					&lt;ProdAttribute&gt;
+						&lt;AttribName&gt;
+							&lt;LangString Lang="en"&gt;Fabric&lt;/LangString&gt;
+						&lt;/AttribName&gt;
+						&lt;AttribValue&gt;
+							&lt;LangString Lang="en"&gt;Red&lt;/LangString&gt;
+						&lt;/AttribValue&gt;
+					&lt;/ProdAttribute&gt;
+				
+					&lt;ProdAttribute&gt;
+						&lt;AttribName&gt;
+							&lt;LangString Lang="en"&gt;Drawer Height&lt;/LangString&gt;
+						&lt;/AttribName&gt;
+						&lt;Measurement UnitOfMeasure="FOT"&gt;1.0&lt;/Measurement&gt;
+					&lt;/ProdAttribute&gt;				
+				&lt;/ListOfProdAttribute&gt;
+				
+				&lt;ListOfAttachment&gt;
+					&lt;Attachment Attachment="http://www.mysite.com/xyz.gif"&gt;
+						&lt;Purpose&gt;Drawing&lt;/Purpose&gt;
+					&lt;/Attachment&gt;
+				&lt;/ListOfAttachment&gt;
+				
+				&lt;ListOfKeyVal&gt;
+					&lt;KeyVal Keyword="User Level"&gt;Professional&lt;/KeyVal&gt;
+					&lt;KeyVal Keyword="Rating"&gt;Four Stars&lt;/KeyVal&gt;
+				&lt;/ListOfKeyVal&gt;
+				
+				&lt;CategoryUNSPSC&gt;04378821&lt;/CategoryUNSPSC&gt;
+				
+				&lt;ListOfCategory&gt;
+					&lt;Category&gt;
+						&lt;CategoryID&gt;Printers&lt;/CategoryID&gt;
+						&lt;TreeName&gt;SupplierTree&lt;/TreeName&gt;
+					&lt;/Category&gt;
+				&lt;/ListOfCategory&gt;
+				
+				&lt;CountryOfOrigin&gt;US&lt;/CountryOfOrigin&gt;
+				
+				&lt;ListOfSpecialCond&gt;
+					&lt;SpecialCond&gt;
+						&lt;CondCode&gt;PriceIncludesTax&lt;/CondCode&gt;
+					&lt;/SpecialCond&gt;
+				&lt;/ListOfSpecialCond&gt;		
+				
+			&lt;/ProdCatDetail&gt;
+		&lt;/ProdCatAction&gt;
+	&lt;/ListOfProdCatAction&gt;
+&lt;/ProductCatalog&gt;
+
+
+</PRE>
+
+</font>
+
+</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td bgcolor="#336699"><img src="../../images/spacer.gif" alt="" width=1 height=2></td>
+<td></td>
+</tr>
+
+<tr>
+<td colspan=3><img src="../../images/spacer.gif" alt="" width=1 height=20></td>
+</tr>
+</table>
+
+<TABLE BGCOLOR="#000033" WIDTH="100%" BORDER="0" CELLSPACING="0" CELLPADDING="0">
+<TR>
+	<TD ALIGN="center" VALIGN="middle" HEIGHT="75">
+	<P><FONT SIZE="1" FACE="verdana,arial,helvetica,sans serif" COLOR="#FFFFFF"><A HREF="/index.html"><FONT COLOR="#FFCC00">Home</FONT></A> | <A HREF="/company/"><FONT COLOR="#FFCC00">Company</FONT></A> | <A HREF="/solutions/"><FONT COLOR="#FFCC00">Solutions</FONT></A> | <A HREF="/services/"><FONT COLOR="#FFCC00">Services</FONT></A> | <A HREF="/customers/"><FONT COLOR="#FFCC00">Customers</FONT></A> | <A HREF="http://search.commerceone.com"><FONT COLOR="#FFCC00">Search</FONT></A> | <A HREF="/company/contact_us.html"><FONT COLOR="#FFCC00">Contact Us</FONT></A></FONT></P>
+	<P><FONT SIZE="1" FACE="verdana,arial,helvetica,sans serif" COLOR="#FFFFFF">Please submit all comments regarding this site to <A HREF="mailto:webmaster@commerceone.com"><FONT COLOR="#FFCC00">webmaster@commerceone.com</FONT></A>.<BR>
+	Copyright &copy; 2000  Commerce One, Inc.  All rights reserved.  <A HREF="/company/legal.html"><FONT COLOR="#FFCC00">Legal Notices</FONT></A></FONT></P>
+    </TD>
+</TR>
+</TABLE>
+ 
+</body>
+</html>

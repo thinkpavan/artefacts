@@ -1,0 +1,4 @@
+Shows why local interfaces are to be used.
+
+
+supported by ejb 2.x

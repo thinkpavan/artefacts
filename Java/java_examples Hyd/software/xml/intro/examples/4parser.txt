@@ -1,0 +1,37 @@
+Parser is a software we use to maipulate XML documents.
+
+CDATA will not be parsed by parser where as PCDATA will be
+parsed by parser.
+
+The following are called a Entities.
+Entities act as replcaement texts.
+
+&lt; < less than 
+&gt; > greater than 
+&amp; & ampersand  
+&apos; ' apostrophe 
+&quot; " quotation mark 
+
+<element>10000 &lt;  100000</element> 
+
+If element is of type PCDATA then the parser gives you
+10000 < 100000.
+
+What is a namespace.
+
+why we need name spaces.
+
+<per:root xmlns:h="http://www.inet.com/myns/">
+   <pre:subelem> some text here </pre:sub>
+</pre:root> 
+
+W3C namespace specification states that the namespace itself should
+
+be a Uniform Resource Identifier (URI).
+
+The only purpose of URI  is to give the namespace a unique name.
+
+Uniform Resource Identifiers
+A Uniform Resource Identifier (URI) is a string of characters which identifies
+an Internet Resource. The most common URI is the Uniform Resource Locator
+(URL) which identifies an Internet domain address.

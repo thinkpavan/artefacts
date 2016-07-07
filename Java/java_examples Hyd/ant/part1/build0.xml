@@ -1,0 +1,16 @@
+<project name="antproj1" default="target1" basedir=".">
+
+ 
+  <target name="target1" depends="target2,target3">
+	<echo message="creating target1"/>
+  </target>
+  <target name="target2">
+	<echo> Now building every thing that is required for 
+		target2</echo> 
+
+  </target>
+  <target name="target3">
+	<echo message="creating target3"/>
+  </target>
+
+</project>

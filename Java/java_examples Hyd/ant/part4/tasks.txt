@@ -1,0 +1,19 @@
+Weblogic provides different Ant tasks.
+
+Some ant tasks are available as Command line utilities.
+
+tasks
+
+autotype    no CLU   generates serialization class etc for non built-in types.
+
+clientgen   weblogic.webservice.clientgen  generates a client JAR that contains java 				client to invoke webservice.
+
+servicegen weblogic.webservice.servicegen creates web-service.xml,
+				introspects EJB's and Java classes and 
+				generates supporting components.
+				generates client JAR.
+				Packs everything in EAR.
+
+source2wsdd    no CLU	generates web-services.xml from class implemented
+			webservice.
+wsdl2Service   no CLU                generates java class from wsdl file.

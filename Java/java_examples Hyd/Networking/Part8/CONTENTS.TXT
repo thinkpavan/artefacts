@@ -1,0 +1,9 @@
+FJApplet  - shows how to write Applets using Swing classes
+
+AppParam - shows how to pass parameters to applets
+
+AppCont  - shows how an applet can interect with it's environment/ typically
+	 with a browser
+
+AppCont1  - shows how an applet (awt applets)can interect with it's environment/ typically
+	 with a browser

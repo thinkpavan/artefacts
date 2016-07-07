@@ -1,0 +1,8 @@
+This example is same as part1, but shows more details of 
+Session Bean. The steps involved in creation of this is same as that of
+Part1 example.
+
+
+configure this bean as state less and statefull bean and see the difference.
+
+

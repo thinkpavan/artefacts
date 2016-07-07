@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="local"/>
+	<classpathentry kind="lib" path="local.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 5.5/common/lib/weblogic.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,8 @@
+This example is same as that of part7, but we configured this bean as
+stateless session bean. ( in earlier versions we configured as statefull
+session , that is why we have given it's name as SFTransaction.)
+
+
+When you use ejbc with this example supplied with weblogic 5.1
+the compiler gives error message saying that we shouldn't implement Sessionsync
+interface with stateless session bean.

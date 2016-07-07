@@ -1,0 +1,10 @@
+DeleteRow -- shows how to delete a row
+
+
+commit -- show how to use commit/rollback
+
+RsType  -- shows how to use different result types using access
+
+PrepStmt  -- shows how to execute aprepaed statement
+
+longs -- shows how to transfer binary data

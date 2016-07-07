@@ -1,0 +1,5 @@
+Shows
+
+1) how to write finder methods using EJBQL expressions.
+
+2) How to write Home methods.

@@ -1,0 +1,16 @@
+<project name="antproj1" default="target1" basedir=".">
+
+<!-- definition of a list of files -->
+<property file="./build.properties"/>
+<property name="srcdir" value="./jsource"/>
+<property name="destdir" value="./jclass"/>
+
+
+<target name="target1" >
+    <echo message="We are current using ${CLASSPATH} as classpath" />	
+    <javac srcdir="${srcdir}"
+      destdir="${destdir}"
+      includes="one.java,two.java">
+    </javac>
+</target>
+</project>

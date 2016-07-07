@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="ex13"/>
+	<classpathentry kind="lib" path="ex11/Env.jar"/>
+	<classpathentry kind="lib" path="ex12/sec.jar"/>
+	<classpathentry kind="lib" path="ex14/ref.jar"/>
+	<classpathentry kind="lib" path="ex15/cmt.jar"/>
+	<classpathentry kind="lib" path="ex16/atrans.jar"/>
+	<classpathentry kind="lib" path="ex17/rolltrans.jar"/>
+	<classpathentry kind="lib" path="ex18/sync.jar"/>
+	<classpathentry kind="lib" path="ex19/studbmp.jar"/>
+	<classpathentry kind="lib" path="ex20/studcmp.jar"/>
+	<classpathentry kind="lib" path="ex21/home.jar"/>
+	<classpathentry kind="lib" path="ex22/select.jar"/>
+	<classpathentry kind="lib" path="ex23/oto.jar"/>
+	<classpathentry kind="lib" path="ex24/otm.jar"/>
+	<classpathentry kind="lib" path="ex25/otm1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

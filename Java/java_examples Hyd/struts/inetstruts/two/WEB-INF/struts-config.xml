@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+ <data-sources/>
+ <form-beans>
+<form-bean name="userinfo" type="org.apache.struts.action.DynaActionForm">
+ <form-property name="fname" type="java.lang.String"/>
+ <form-property name="lname" type="java.lang.String"/>
+</form-bean> 
+
+ </form-beans>
+ <global-exceptions/>
+ <global-forwards>
+ </global-forwards>
+
+ <action-mappings>
+  <action input="/form.jsp"
+   name="userinfo" path="/processinput" scope="request"
+   type="InputAction" validate="true">
+   <forward name="input_fwd" path="/processed.jsp"/>
+  </action>
+ </action-mappings>
+ <controller/>
+<message-resources parameter="ApplicationResources" null="false" /> 
+</struts-config>

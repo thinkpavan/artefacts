@@ -1,0 +1,35 @@
+
+
+To start developing struts application use
+
+struts-blank.war as the starting point.
+
+This file contains all jar files ( with classes of struts),
+tld's and other config files.
+
+
+
+Copy struts-blank.war to webapps directory of tomcat or deploy it as
+web app in weblogic server.
+
+
+Use http://localhost:8080/struts-blank/index.jsp url if you have deployed
+your app in tomcat.
+
+
+
+
+
+check http://struts.sourceforge.net/ for information on sample projects
+using struts.
+
+
+http://www.livinglogic.de/Struts/exampleApp.html  for another project based
+on struts.
+
+
+
+Most of the eamples we used are bazed on code from http://examples.oreilly.com/jakarta/.
+
+Best book of Jakarta Struts programming jakarta struts from oreilly press (indian
+edition is available fromshroff publishers).

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+ <data-sources/>
+ <!-- ========== Form Bean Definitions =================================== -->
+ <form-beans>
+  <form-bean name="vform" type="org.apache.struts.validator.DynaValidatorForm">
+  <form-property name="byte" type="java.lang.String"/>
+  <form-property name="short" type="java.lang.String"/>
+  <form-property name="integer" type="java.lang.String"/>
+  <form-property name="long" type="java.lang.String"/>
+  <form-property name="float" type="java.lang.String"/>
+  <form-property name="floatRange" type="java.lang.String"/>
+  <form-property name="double" type="java.lang.String"/>
+  <form-property name="date" type="java.lang.String"/>
+  </form-bean>
+ </form-beans>
+
+ <global-exceptions/>
+
+ <!-- ========== Global Forward Definitions ============================== -->
+ <global-forwards>
+  <forward name="home" path="/index.jsp"/>
+ </global-forwards>
+
+ <!-- ========== Action Mapping Definitions ============================== -->
+ <action-mappings>
+  <action input="/testvalidation.jsp" name="vform"
+   path="/tv" scope="request"
+   type="ValidateAction" validate="true">
+   <forward name="success" path="/processed.jsp"/>
+  </action>
+ </action-mappings>
+ <controller/>
+ <!-- ========== Message Resources Definitions =========================== -->
+<message-resources parameter="ApplicationResources" null="false" /> 
+ <!-- ========== Plug Ins Configuration ================================== 
+ 
+     Add multiple validator resource files by setting the pathnames property 
+     with a comma delimitted list of resource files to load. 
+  -->
+ <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+  <set-property property="pathnames" value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+ </plug-in>
+</struts-config>

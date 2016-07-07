@@ -1,0 +1,11 @@
+expire.jsp   -- in this example we will show how to set the expiration time of the content before passing to web client.
+
+redirect.jsp -- shows how to redirectto a new resource.
+
+Forward.jsp  -- shows how to forward a request from one jsp to another jsp
+(beware of using buffer directive carefully).
+
+App.jsp   -- shows how to use implicit object application in jsp page
+
+
+

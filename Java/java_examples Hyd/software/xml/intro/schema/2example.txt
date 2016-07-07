@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="http://www.xyz.com"
+xmlns="http://www.xyz.com"
+elementFormDefault="qualified">
+<xs:element name="book">
+    <xs:complexType>
+      <xs:sequence>
+	<xs:element name="reldate" type="xs:date"/>
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="author" type="xs:string"/>
+	<xs:element name="publisher" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema> 
+
+In the above example book is the element of type complex ( contains other elements )
+
+The schema is defined using XML.
+
+In our xsd's the root element is "schema" with some attributes.
+
+xmlns:xs="http://www.w3.org/2001/XMLSchema" that the elements like schema,element,complexType
+etc are part of the namespace "http://www.w3.org/2001/XMLSchema".
+
+targetNamespace="http://www.xyz.com"
+
+indicates that the elements defined by this schema (book,reldate etc) are  from
+"http://www.xyz.com" name space.
+
+xmlns="http://www.xyz.com" indicates that the default namespace.
+
+elementFormDefault="qualified" 
+
+indicates that any elements used by the XML instance document which were
+declared in this schema must be namespace qualified.
+
+
+Example Instance:
+
+<?xml version="1.0"?>
+<book xmlns="http://www.xyz.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.xyz.com book.xsd">
+	<reldate>
+		....
+	</reldate>
+</book>

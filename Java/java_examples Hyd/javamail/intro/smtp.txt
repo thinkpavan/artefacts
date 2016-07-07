@@ -1,0 +1,16 @@
+Example SMTP Session.
+
+S: MAIL FROM:<Smith@Alpha.ARPA> 
+R: 250 OK 
+S: RCPT TO:<Jones@Beta.ARPA> 
+R: 250 OK 
+S: RCPT TO:<Green@Beta.ARPA> 
+R: 550 No such user here 
+S: RCPT TO:<Brown@Beta.ARPA> 
+R: 250 OK 
+S: DATA 
+R: 354 Start mail input; end with <CRLF>.<CRLF> 
+S: Blah blah blah... S: ...etc. etc. etc. 
+S: <CRLF>.<CRLF> 
+R: 250 OK 
+

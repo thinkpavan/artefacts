@@ -1,0 +1,19 @@
+Anchoring  -- shows how to use anchoring and gridx,gridy constraints
+
+Fill   -- shows how fill constraint can be used to specify how to fill
+          the grid cell if the size of cell is greater than components size
+
+gridWH1   -- shows how to specify no of cells to be used for a particular component
+
+
+gridWH2   -- shows how to specify no of cells to be used for a particular component
+
+
+weight  -- shows how to use weight
+
+ipad -- shows how to increase the size of the component (Internal Padding)
+
+inset  -- shows how to increase the size of external padding
+
+
+EmpForm   -- shows how to create an employee form using gridbag layout

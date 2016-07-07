@@ -1,0 +1,2 @@
+same as example3 but shows how to generate the javascript to validate
+the data on client (browser).

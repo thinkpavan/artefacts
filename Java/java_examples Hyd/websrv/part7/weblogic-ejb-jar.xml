@@ -1,0 +1,21 @@
+<!DOCTYPE weblogic-ejb-jar PUBLIC '-//BEA Systems, Inc.//DTD WebLogic 7.0.0 EJB//EN' 'http://www.bea.com/servers/wls700/dtd/weblogic-ejb-jar.dtd'>
+
+
+<!-- Generated XML! -->
+
+<weblogic-ejb-jar>
+  <weblogic-enterprise-bean>
+    <ejb-name>mdb</ejb-name>
+    <message-driven-descriptor>
+      <pool>
+      </pool>
+
+      <destination-jndi-name>jmsqueue1</destination-jndi-name>
+    </message-driven-descriptor>
+
+    <transaction-descriptor>
+    </transaction-descriptor>
+
+    <jndi-name>inetsolv.mdb</jndi-name>
+  </weblogic-enterprise-bean>
+</weblogic-ejb-jar>

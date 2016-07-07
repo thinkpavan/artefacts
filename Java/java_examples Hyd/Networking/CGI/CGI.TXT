@@ -1,0 +1,16 @@
+SERVER_SOFTWARE = Apache/1.2b4
+SERVER_NAME = www.scs.leeds.ac.uk
+GATEWAY_INTERFACE = CGI/1.1
+SERVER_PROTOCOL = HTTP/1.0
+SERVER_PORT = 80
+REQUEST_METHOD = GET
+HTTP_ACCEPT = 'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-excel, application/msword, application/vnd.ms-powerpoint, */*'
+PATH_INFO =
+ PATH_TRANSLATED =
+ SCRIPT_NAME = /Perl-cgi/environment-example
+QUERY_STRING = 
+REMOTE_HOST = 203.197.21.158
+REMOTE_ADDR = 203.197.21.158
+REMOTE_USER = 
+CONTENT_TYPE = 
+CONTENT_LENGTH = 

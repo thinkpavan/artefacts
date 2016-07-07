@@ -1,0 +1,11 @@
+
+
+1) What is EAI ?
+
+
+2) What are different techniques we can use for EAI ?
+
+3) Is Java Connector Architecture only solution ?
+
+4) What is Java Connector Architecture ?
+

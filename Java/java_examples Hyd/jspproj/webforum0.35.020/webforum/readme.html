@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org" />
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1" />
+<title>Readme.html for webforum (now in English)</title>
+</head>
+<body>
+<h1>Readme.html for webforum (now in English)</h1>
+
+<hr />
+<h2>Installation</h2>
+
+<p><strong>JDK1.1 or better required. Servlet API
+2.0.</strong></p>
+
+<p>Beside the optional CSS file (for HTML client-side formatting)
+and the provided locale file (English.properties,
+Italian.properties or French.properties), the servlet requires
+two configuration files that you may need to edit. The first file
+set the global properties for the forum and the second one is a
+user list. The user list file is specified in the global
+properties file.</p>
+
+<p>The servlet is called through the URL<br />
+http://mydomaine/servlet/com.ondelette.servlet.webforum.WebForumServlet?_FORUMFILE_=myconfigfile<br />
+</p>
+
+<h3>In short... (you might want to check the sample configuration
+files first)</h3>
+
+<ul>
+<li>Copy the *.class files in the "servlets" directory designated
+by your server, this is usually a directory called servlet. Under
+Tomcat, this will typically be a "classes" directory under your
+WEB-INF directory which is itself under ROOT (often).</li>
+
+<li>Copy a property file like "forumsample.properties" anywhere
+on your system (but make sure that the JVM can read the file).
+Let's assume you called this file "myconfigfile". Make sure that
+the "MessageArchiveDirectory" directory is both readable and
+writeable for the JVM. 
+
+<p>Be careful about this choice because here's how you call your
+servlet after that
+http://mydomain/servlet/com.ondelette.servlet.webforum.WebForumServlet?_FORUMFILE_=path/to/propertiesfile.
+You can use relative paths, as I do, but then your servlet engine
+must always be started from the same directory ("user.dir").
+Check with your sysadmin: Tomcat doesn't check these things in
+any reasonable way.</p>
+</li>
+
+<li>Copy the locale properties file (English.properties,
+French.properties...) in the location specified by
+myconfigfile.</li>
+
+<li>Copy a user list file in the location specified by
+myconfigfile. The file can be empty. Make sure the file is
+writable for the servlet.</li>
+
+<li>You might need to copy a CSS file at the URL specified by
+myconfigfile.</li>
+
+<li>Launch the servlet with<br />
+http://mydomain/servlet/com.ondelette.servlet.webforum.WebForumServlet?_FORUMFILE_=myconfigfile<br />
+ where myconfigfile is the path to your configuration file (it
+can be a relative path with respect to your JVM current directory
+or an absolute path). Please note that some web servlet might
+have a different alias for servlets (so it can be
+http://mydomain/myservlets/... for example). <b>WARNING:</b>
+again use relative paths carefully, the servlet expects the
+current directory of the JVM to remain constant whenever the
+server is restarted, if you restart the server from a different
+directory using a weak script, you might change the current
+directory of the JVM and then the JVM won't be able to find its
+files.</li>
+
+</ul>
+
+<p>sample configuration file ("myconfigfile")&nbsp;:</p>
+
+<pre>
+MessageArchiveDirectory=SampleForumDirectory
+ForumLocaleFile=English.properties
+UserListFile=forumSampleUserList.properties
+SaveDelay=60
+ForumTitle=A title (may contain HTML)
+ForumSubTitle=A subtitle (may contain HTML)
+ForumFooter=place some HTML here for your footer
+AuthorizationLevel=0
+CSSURL=http://mydomain/sample/sample.css
+WelcomeURL=http://mydomain/sample/forumsample.html
+/*
+* the following are optional properties
+*/
+FailedLoginURL=http://mydomain/sample/youfailedtologin.html
+PrefixURL=http://mydomain/sample/somepieceofhtmltoputbefore.html
+SuffixURL=http://mydomain/sample/somepieceofhtmltoputafter.html
+</pre>
+
+<p>Note&nbsp;: It isn't required to create the
+MessageArchiveDirectory, the servlet will do it if needed, but
+make sure the directory is writeable for the JVM.</p>
+
+<p>The parameter "AutorizationLevel" allows you to limit access
+to the forum to only these users with the proper autorization
+level</p>
+
+<p><strong>Definition of the autorization levels</strong></p>
+
+<pre>
+NORMAL = 0;
+IDENTIFIEDGUEST = 2;
+MEMBER = 32;
+EXECUTIVEMEMBER = 64;   // can erase messages on the forum
+VIPMEMBER = 128; // can erase messages on the forum, reset the forum, add and remove users to the user list
+ADMIN = 256; // same as VIPMEMBER except that the user cannot be erased or create (must be added manually to the user list file)
+</pre>
+
+<p>We can add a line such as "PostPrivilege=x" where x is an
+autorization number. This makes sure that the posting form is
+only visible to users having at least the specified autorization
+level. Posting is still possible for other users if they somebody
+provide a proper posting form (possibly as an HTML page).</p>
+
+<hr />
+<h2>FAQ</h2>
+
+<ul>
+<li>Isn't it dangerous to have the servlet read arbitrary files
+on my server (e.g. /etc/passwd) 
+
+<p>The servlet will read the file only (never write to it) and
+will check that it is a proper configuration file without ever
+disclosing its content if it isn't a proper configuration
+file.</p>
+</li>
+
+<li>I want to quickly check my installation? 
+
+<p>Type
+"http://mydomain/servlet/com.ondelette.servlet.webforum.WebForumServlet"
+once the .class files are in place. You don't need to configure a
+forum to check the installation.</p>
+</li>
+
+<li>I loose the messages on my forum after a few minutes. 
+
+<p>Check that the MessageArchiveDirectory is writeable for the
+servlet. Sometimes people use relative paths which makes things
+complicated, if you need debugging help, consider using the
+ServletWriteTest servlet that's part of this distribution.</p>
+</li>
+
+<li>My company wants to use this forum for a commercial web
+site... can I use WebForum? What will it cost us? 
+
+<p>Yes you can and it will be entirely free. Only if
+you redistribute the software to clients do you have
+the obligation of handing out your source code to your
+client as part of this license. If you only use the
+code for internal use, then the GPL doesn't say you must
+release your changes. It would be nice, though, to 
+contribute back some changes to the main tree.</p>
+</li>
+
+<li>I know it is free, but can I get commercial support in case
+something goes wrong? 
+
+<p>Yes you can, the servlet has been in used for years and
+several people could help you.</p>
+</li>
+
+<li>Does it work under Unix (including Linux), under Windows? 
+
+<p>Yes and yes. It should work everywhere servlet support is
+available.</p>
+</li>
+
+<li>What is the servlet I should call and what parameter do I
+need? 
+
+<p>The main servlet is
+com.ondelette.servlet.webforum.WebForumServlet. There are other
+servlets, but this is the first one you'll want to check and use.
+You need at least one parameter pointing to the file path of you
+configuration file (a properties file, see above for
+documentation) and that's the _FORUMFILE_ parameter.</p>
+</li>
+
+<li>Why isn't WebForum distributed with a War file for automatic
+installation on servlet 2.2 compliant systems? 
+
+<p>Currently, some systems only offer servlet 2.0 support
+(specifically JServ under Apache). Future versions of WebForum
+will have to support servlet 2.2 features. Creating a WAR file is
+trivial, but I (Daniel Lemire) doesn't use them very much so I
+didn't bother to create a script to package WebForum as a WAR
+file, if you want to contribute such a script, it is more than
+welcome!</p>
+</li>
+
+<li>Why only use JDK1.1 and servlet API 2.0. Isn't that obselete?
+
+
+<p>Probably a bit obselete, but the design of WebForum is to keep
+it low level. WebForum aims to be fast, feature complete, but not
+bloated and with minimal requirements.</p>
+</li>
+
+<li>Ater Reading the main help file, I can figure out how this
+system works at all. The Sample file contains french which I
+can't understand! 
+
+<p>Here's a recent sample file called
+forumsample.properties:</p>
+
+<pre>
+/*
+* This file is a sample configuration file for
+* webforum
+*
+* http://webforum.sourceforge.net
+* Daniel Lemire August 24th 2003
+*/
+
+
+
+/*
+* where to put the data files (a path on the server)
+*/
+MessageArchiveDirectory=ForumSampleDirectory
+/*
+* i18n locales
+*/
+ForumLocaleFile=English.properties
+
+/*
+* You can also add this type of line to modify 
+* the encoding (for some non-latin languages)
+* charset.encoding=utf-8
+*/
+
+/*
+* a path to the user list, the servlet will 
+* create that file if needed
+*/
+UserListFile=forumSampleUserList.properties
+/*
+* save every 60 minutes
+*/
+SaveDelay=60
+/*
+* Following stuff is mostly for your HTML
+* Not that you can put any HTML including images
+*/
+ForumTitle=A title (may contain HTML)
+ForumSubTitle=A subtitle (may contain HTML)
+ForumFooter=place some HTML here for your footer
+/*
+* raising the authorization level will force
+* users to registrer (=2)
+*/
+AuthorizationLevel=0
+/*
+* You CSS, see sample
+*/
+CSSURL=/sample/forumsample.css
+/*
+* A URL where user can register
+* see example
+*/
+WelcomeURL=/sample/forumsample.html
+/*
+* You can also add a FailedLoginURL if you want.
+* FailedLoginURL=myurl
+* Defaults to WelcomeURL
+* This is where user who fail to login are taken.
+*/
+/*
+* You can also add a PrefixURL if you want.
+* PrefixURL=myurl
+* Defaults to null
+* Loads up this piece of HTML and puts it "before"
+* the servlet output. Only the content of body 
+* is copied unless it is not HTML in which case everything
+* is appended.
+*/
+/*
+* You can also add a SuffixURL if you want.
+* SuffixURL=myurl
+* Defaults to null
+* Loads up this piece of HTML and puts it "after"
+* the servlet output. Only the content of body 
+* is copied unless it is not HTML in which case everything
+* is appended.
+*/
+
+</pre>
+
+
+<p>None of them contain any French. Only earlier versions
+contained French documentation, everything has been converted to
+English. Of course, this excludes sample HTML files that are not
+part of the documentation such as forumsample.html since the text
+there is irrelevant. It could be in any language and it wouldn't
+matter. You are not supposed to use the HTML text, this only an
+example of how you can call the servlet from HTML, but this only
+applies to my current server and you really need to check the
+documentation of your current servlet engine for this.</p>
+</li>
+
+<li>I have no clue how the servlet directory should be
+structured. 
+
+<p>Please check your servlet engine documentation on how to setup
+servlets using packages. It should be as straight-forward as
+copying the files and the directory provided with the
+releases.</p>
+</li>
+
+<li>Am I supposed to copy the com directory (with sub-dirs
+included) into the servlet dir? 
+
+<p>Typically, yes.</p>
+</li>
+
+<li>How is the User list supposed to be structured? 
+
+<p>It is actually generated by the servlet but you can add users
+using the following syntax... simply add the following
+text...&lt;USER&gt;&lt;LOGIN&gt;me&gt;/LOGIN&gt;&lt;PASSWORD&gt;mypass&lt;/PASSWORD&gt;&lt;EMAIL&gt;toto@wanadoo.fr&lt;/EMAIL&gt;&lt;LEVEL&gt;2&lt;/LEVEL&gt;&lt;/USER&gt;</p>
+</li>
+
+<li>My server crashed badly and my user list file was corrupted,
+I'm no longer able to login as an administrator, how do I fix
+this? 
+
+<p>First reset the servlet, you can do this current by calling
+the servlet with the parameter _RESET_ as such
+http://www.ondelette.com/servlet/com.ondelette.servlet.webforum.WebForumServlet?_RESET_.
+This will force the servlet to flush everything to disk and
+reload the configuration. Now, once you have done this, manually
+edit your user list file. Repeat the _RESET_ query
+immediately.</p>
+
+<p>Why two RESET? Because when the servlet exists, it saves its
+configuration if a change happened, thus, it might be useless to
+edit the user list file immediately.</p>
+
+<p>If it fails (for example, if someonem, a pirate, is adding new
+users every 1/10 of a second), shut down your servlet container,
+edit the user list file and restart it.</p>
+</li>
+
+<li>The servlet works, but when it tries to display some
+messages, it fails, throwing some kind of exception. How do I fix
+this. 
+
+<p>That should never happen, but if it does, try to edit the
+index.txt file that goes with your posting board. You should find
+it in the message archive directory. Check every number in the
+file except the first, it should have a corresponding file with the same name
+(files are named by numbers), if the file is not present, delete
+the number in the index.txt file. Then, restart the servlet
+(calling the _RESET_ query, see above). As above, you might have
+to call _RESET_ twice.</p>
+</li>
+
+<li>I've lost messages on my posting board, what gives? 
+
+<p>WebForum tries very hard to be safe, but if you server crash
+hard, there is little chance to flush the messages to disk in
+time.</p>
+</li>
+
+<li>It fails telling it can't find a config file! 
+
+<p>It should give you the path it expects, try to check if the
+file is there. Check it is readable (permissions).</p>
+</li>
+
+<li>My username/password uses UTF-8, yet it doesn't work! 
+
+<p>User information is stored using ISO-8859-1.</p>
+</li>
+
+<li>Does the servlet support UTF-8 as part of its i18n support? 
+
+<p>Yes, but if you don't use the latin encoding scheme, you need
+to specify it in your locale configuration file. Use the
+charset.encoding property. Messages should be saved/loaded in the
+specified encoding. Be careful though not to change the encoding
+scheme after some messages have be written as the servlet will
+just load them up using the new encoding scheme without
+conversion.</p>
+</li>
+<li>Does webforum has some kind of template mechanism so I can taylor the
+look and feel? 
+
+<p>Yes, for one thing, you can use the CSS file for
+the basic look and feel. Then, you can use the SuffixURL
+and PrefixURL property to load up some HTML before and
+after the forum itself. This is far simplier than having
+to use and learn another query language. If the URL points to
+a text file, the entire text file is simply appended, but HTML
+is processed so that only the body is included.
+</p>
+</li>
+
+</ul>
+
+<hr />
+<p>© 2000-2003, WebForum Project (written by Daniel Lemire)<br />
+This documentation is under GPL version 2.</p>
+</body>
+</html>
+
+

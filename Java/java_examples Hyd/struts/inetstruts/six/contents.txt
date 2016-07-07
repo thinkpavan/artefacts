@@ -1,0 +1,17 @@
+Example showing how to map jsp and other resources as struts resources.
+
+for simple forwards use org.apache.struts.actions.ForwardAction.
+
+add the lines as shown below in struts config.
+
+
+
+  <action input="/index.jsp" path="/one"
+   type="org.apache.struts.actions.ForwardAction"
+   parameter="/one.jsp">
+  </action>
+
+
+When we send request to one.do it will be executing one.jsp.
+
+

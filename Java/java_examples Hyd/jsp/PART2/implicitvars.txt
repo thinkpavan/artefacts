@@ -1,0 +1,27 @@
+ List of variables available for accesssing from the 
+page
+
+vairable		description
+=============================================================
+out			This represents ourput stream.
+
+request			represents request object(HttpRequest in servlet).
+
+response		represents response object( HttpResponse).
+
+pageContext	        represents the context of the page. This store info
+			about request,response and other jsp directives.
+
+session			http session object (We can access this to store and
+			retrieve java objects in session).
+
+application		In servlets this is servletContext which can be
+			obtained by getContext method on servletconfig.
+
+page 			this is like this keyword in java. When the servlet
+			wants to refer itself we can use page.
+
+exception		Subclass of Throwable which will be passed to 			errorPage.
+
+config			page configuration details.
+

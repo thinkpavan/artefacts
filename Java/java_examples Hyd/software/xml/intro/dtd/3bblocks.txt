@@ -1,0 +1,48 @@
+Elements 
+Tags 
+Attributes 
+Entities 
+PCDATA 
+CDATA 
+
+are the building blocks of XML docs.
+
+Declaring an Element
+syntax:
+
+<!ELEMENT element-name category>
+or
+<!ELEMENT element-name (element-content)> 
+
+example:
+<!ELEMENT element-name EMPTY>
+EMPTY is category.
+
+Element with character data.
+<!ELEMENT element-name (#PCDATA)>
+
+example:<!ELEMENT from (#PCDATA)> 
+
+<!ELEMENT element-name 
+ (child-element-name)>
+or
+<!ELEMENT element-name 
+ (child-element-name,child-element-name,.....)>.
+
+Declaring only one occurrence of the same element 
+<!ELEMENT element-name (child-name)>.
+
+
+Declaring minimum one occurrence of the same element
+<!ELEMENT element-name (child-name+).
+
+
+Declaring zero or more occurrences of the same element 
+<!ELEMENT element-name (child-name*)>.
+
+Declaring zero or one occurrences of the same element 
+<!ELEMENT element-name (child-name?)>.
+
+Declaring either/or content
+example:<!ELEMENT elem(child11|child12)>.
+

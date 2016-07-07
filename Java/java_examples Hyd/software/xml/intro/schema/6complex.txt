@@ -1,0 +1,28 @@
+<xs:element name="product">
+  <xs:complexType>
+    <xs:attribute name="prodid" type="xs:positiveInteger"/>
+  </xs:complexType>
+</xs:element> 
+
+
+<product prodid="1345" />
+
+
+=========================================
+<xs:element name="letter">
+  <xs:complexType mixed="true">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="orderid" type="xs:positiveInteger"/>
+      <xs:element name="shipdate" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element> 
+
+
+<letter>
+Dear Mr.<name>John Smith</name>.
+Your order <orderid>1032</orderid>
+will be shipped on <shipdate>2001-07-13</shipdate>.
+</letter>
+

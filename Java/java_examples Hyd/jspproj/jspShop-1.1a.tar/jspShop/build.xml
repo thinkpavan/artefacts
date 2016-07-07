@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+
+<!--
+     * ANT XML Build file for jspShop
+     * 
+     * author Darryl Bleau (darrylbleau@submersion.com)
+     * version 1.0
+     * Date Created: August 30, 2001
+     * Last changed: August 30, 2001
+     * Changed by: Darryl Bleau (darrylbleau@submersion.com)
+     *
+-->
+
+<project name="jspShop" default="help" basedir=".">
+
+<!-- ************************************************
+     *     Editable properties for all targets      *
+     ************************************************ -->
+     
+    <!-- *** Global Properties *** -->
+        <!-- Turns debug mode for javac on and off -->
+        <property name="debugFlag" value="on"/>
+        <!-- Turns optimize mode for javac on and off -->
+        <property name="optimizeFlag" value ="off"/>
+        <!-- Sets the location of the Bin directory -->
+        <property name="binDir" value="bins\"/>
+        <!-- Sets the file name of the j2ee jar -->
+        <property name="j2ee.jar" value="j2ee.jar"/>
+        <!-- Sets the file name of the counter jar -->
+        <property name="counter.jar" value="counter.jar"/>
+        <!-- Sets the Classpath -->
+        <property name="classPath" value="%CLASSPATH%"/>
+        <!-- Location of the javadoc files and subdirs -->
+        <property name="javadocs" value="docs\javadocs\"/>
+    
+    <!-- *** EJB Specific Properties *** -->
+        <!-- *** EJB Properties for JavaDoc *** -->
+            <!-- EJB package name -->
+            <property name="ejbPackageName" value="com.submersion.jspshop.ejb.*"/>
+            <!-- EJB source home -->
+            <property name="ejbSrcHome" value="ejb\src"/>
+            <!-- Sets the destination directory for the ejb docs -->
+            <property name="ejbDestDir" value="${javadocs}ejb\"/>
+            <!-- Turns author info on and off -->
+            <property name="ejbAuthorFlag" value="true"/>
+            <!-- Turns version info on and off -->
+            <property name="ejbVersionFlag" value="true"/>
+            <!-- Turns usage info on and off -->
+            <property name="ejbUseFlag" value="true"/>
+            <!-- Sets the window title -->
+            <property name="ejbWindowTitle" value="jspShop EJB API"/>
+        <!-- *** EJB Properties for Compilation *** -->
+            <!-- Location of the .java source files for the EJBs -->
+            <property name="ejbSrc" value="ejb\src\com\submersion\jspshop\ejb\"/>
+            <!-- Location of the root directory for the classes -->
+            <property name="ejbClassDir" value="ejb\classes\"/>
+            <!-- Location of the class files (relative to the ejbClassDir property) -->
+            <property name="ejbClasses" value="com\submersion\jspshop\ejb\*.class"/>
+            <!-- Location of the META-INF dir (relative to the ejbClassDir property) -->
+            <property name="ejbMetaInfDir" value="META-INF\"/>
+            <!-- Name of the XML file for the jar (relative to the metaInfDir property) -->
+            <property name="ejbMetaInfXMLFile" value="ejb-jar.xml"/>
+            <!-- Classpath to use when running javac on the EJBs -->
+            <property name="ejbClasspath" value="${classPath};${binDir}${counter.jar};${binDir}${j2ee.jar}"/>
+            <!-- Name of the file to create with jar -->
+            <property name="ejbJarName" value="jspShop.jar"/>
+            <!-- Turns on and off compression on the jar -->
+            <property name="ejbCompressJar" value="true"/>
+            <!-- for including the orion-ejb-jar.xml file -->
+            <property name="ejbOrion" value="orion\orion-ejb-jar.xml" />
+            <property name="ejbJBoss" value="META-INF\jaws.xml" />
+            
+
+    
+    <!-- *** RAE Specific Properties *** -->
+        <!-- *** RAE Properties for JavaDoc *** -->
+            <!-- RAE package name -->
+            <property name="raePackageName" value="com.submersion.jspshop.rae.*"/>
+            <!-- RAE source home -->
+            <property name="raeSrcHome" value="rae\src"/>
+            <!-- Sets the destination directory for rae docs -->
+            <property name="raeDestDir" value="${javadocs}rae\"/>
+            <!-- Turns author info on and off -->
+            <property name="raeAuthorFlag" value="true"/>
+            <!-- Turns version info on and off -->
+            <property name="raeVersionFlag" value="true"/>
+            <!-- Turns usage info on and off -->
+            <property name="raeUseFlag" value="true"/>
+            <!-- Sets the window title -->
+            <property name="raeWindowTitle" value="jspShop RAE API"/>
+        <!-- *** RAE Properties for Compilation *** -->
+            <!-- Location of the .java source files for RAE -->
+            <property name="raeSrc" value="rae\src\com\submersion\jspshop\rae\"/>
+            <!-- Location of the root directory for the classes -->
+            <property name="raeClassDir" value="rae\classes\"/>
+            <!-- Location of the class files (relative to the raeClassDir property) -->
+            <property name="raeClasses" value="com\submersion\jspshop\rae\*.class"/>
+            <!-- Classpath to use when running javac on RAE -->
+            <property name="raeClasspath" value="${classPath};${binDir}${ejbJarName}"/>
+            <!-- Name of the file to create with jar -->
+            <property name="raeJarName" value="rae.jar"/>
+            <!-- Turns on and off compression on the jar -->
+            <property name="raeCompressJar" value="true"/>
+            <!-- Sets the save path for the jar -->
+            <property name="raeJarSavePath" value="web\WEB-INF\lib\"/>
+            
+    <!-- *** Tag Specific Properties *** -->
+        <property name="tagClassPath" value="bins\jspShop.jar;web\WEB-INF\lib\rae.jar" />
+        <property name="tagCompressJar" value="true" />
+    
+        <property name="tagClassSrc" value="tag\Class\src\com\submersion\jspshop\classtag\"/>
+        <property name="tagClassDest" value="tag\Class\classes" />
+        <property name="tagClassClasses" value="com\submersion\jspshop\classtag\*.class" />
+        <property name="tagClassJarName" value="class-tag.jar" />
+        <property name="tagClassTLD" value="META-INF\taglib.tld" />
+        <property name="tagClassJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagClassPropertySrc" value="tag\ClassProperty\src\com\submersion\jspshop\classpropertytag\"/>
+        <property name="tagClassPropertyDest" value="tag\ClassProperty\classes" />
+        <property name="tagClassPropertyClasses" value="com\submersion\jspshop\classpropertytag\*.class" />
+        <property name="tagClassPropertyJarName" value="classproperty-tag.jar" />
+        <property name="tagClassPropertyTLD" value="META-INF\taglib.tld" />
+        <property name="tagClassPropertyJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagLoginSrc" value="tag\Login\src\com\submersion\jspshop\logintag\"/>
+        <property name="tagLoginDest" value="tag\Login\classes" />
+        <property name="tagLoginClasses" value="com\submersion\jspshop\logintag\*.class" />
+        <property name="tagLoginJarName" value="login-tag.jar" />
+        <property name="tagLoginTLD" value="META-INF\taglib.tld" />
+        <property name="tagLoginJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagObjectSrc" value="tag\Object\src\com\submersion\jspshop\objecttag\"/>
+        <property name="tagObjectDest" value="tag\Object\classes" />
+        <property name="tagObjectClasses" value="com\submersion\jspshop\objecttag\*.class" />
+        <property name="tagObjectJarName" value="object-tag.jar" />
+        <property name="tagObjectTLD" value="META-INF\taglib.tld" />
+        <property name="tagObjectJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagPropertySrc" value="tag\Property\src\com\submersion\jspshop\propertytag\"/>
+        <property name="tagPropertyDest" value="tag\Property\classes" />
+        <property name="tagPropertyClasses" value="com\submersion\jspshop\propertytag\*.class" />
+        <property name="tagPropertyJarName" value="property-tag.jar" />
+        <property name="tagPropertyTLD" value="META-INF\taglib.tld" />
+        <property name="tagPropertyJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagPropertyTypeSrc" value="tag\PropertyType\src\com\submersion\jspshop\propertytypetag\"/>
+        <property name="tagPropertyTypeDest" value="tag\PropertyType\classes" />
+        <property name="tagPropertyTypeClasses" value="com\submersion\jspshop\propertytypetag\*.class" />
+        <property name="tagPropertyTypeJarName" value="propertytype-tag.jar" />
+        <property name="tagPropertyTypeTLD" value="META-INF\taglib.tld" />
+        <property name="tagPropertyTypeJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagTypeSrc" value="tag\Type\src\com\submersion\jspshop\typetag\"/>
+        <property name="tagTypeDest" value="tag\Type\classes" />
+        <property name="tagTypeClasses" value="com\submersion\jspshop\typetag\*.class" />
+        <property name="tagTypeJarName" value="type-tag.jar" />
+        <property name="tagTypeTLD" value="META-INF\taglib.tld" />
+        <property name="tagTypeJarDest" value="web\WEB-INF\lib\" />
+
+        <property name="tagTypeNameSrc" value="tag\TypeName\src\com\submersion\jspshop\typenametag\"/>
+        <property name="tagTypeNameDest" value="tag\TypeName\classes" />
+        <property name="tagTypeNameClasses" value="com\submersion\jspshop\typenametag\*.class" />
+        <property name="tagTypeNameJarName" value="typename-tag.jar" />
+        <property name="tagTypeNameTLD" value="META-INF\taglib.tld" />
+        <property name="tagTypeNameJarDest" value="web\WEB-INF\lib\" />
+        
+    <!-- *** Web Specific Properties *** -->
+        <!-- where to save the war temporarily -->
+        <property name="webWarSavePath" value="${binDir}"/>
+        <!-- what to call the war -->
+        <property name="webWarSaveName" value="jspShop.war"/>
+        <!-- base dir for the jar command -->
+        <property name="webWarBaseDir" value="web\"/>
+        <!-- includes directive for the jar command -->
+        <property name="webWarIncludes" value="**"/>
+        <!-- Turns on and off compression for the war -->
+        <property name="webCompressWar" value="true"/>
+            
+    <!-- *** Ear Specific Properties *** -->
+        <property name="earName" value="jspShop.ear" />
+        <property name="earAppXML" value="META-INF\application.xml" />
+        <property name="earIncludes" value="counter.jar jspShop.war jspShop.jar ${earAppXML}" />
+        <property name="earCompress" value="true" />
+        
+    
+    
+<!-- ************************************************
+     *   End editable properties for all targets    *
+     ************************************************ -->    
+
+<!-- Should not need to edit past this point -->    
+    
+    <!-- primary initialization -->
+    <target name="init">
+        <!-- Sets the DSTAMP, TSTAMP and TODAY properties -->
+        <tstamp/>
+    </target>
+    
+    <!-- displays basic help information -->
+    <target name="help" description="outputs help information">
+        <echo>
+            run "ant -projecthelp" for full help information.
+        </echo>
+    </target>
+    
+    <!-- compiles everything into an .ear -->
+    <target name="ear" depends="init" description="jars everything into an .ear">    
+        <jar jarfile="${binDir}${earName}"
+             basedir="${binDir}"
+             compress="${earCompress}"
+             includes="${earIncludes}"
+        />
+    </target>
+    
+    <!-- runs javac on all the ejbs, makes the jar file -->
+    <target name="ejb" depends="init" description="makes the enterprise java beans">
+        <javac srcdir="${ejbSrc}"
+             destdir="${ejbClassDir}"
+             classpath="${ejbClasspath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${binDir}${ejbJarName}"
+             basedir="${ejbClassDir}"
+             compress="${ejbCompessJar}"
+             includes="${ejbMetaInfDir}${ejbMetaInfXMLFile} ${ejbClasses} ${ejbOrion} ${ejbJBoss}"
+        />
+    </target>
+    
+    <!-- runs javadoc on the ejb files -->
+    <target name="ejbdocs" depends="init" description="make the javadocs for the ejbs">
+        <javadoc packagenames="${ejbPackageName}"
+            sourcepath="${ejbSrcHome}"
+            destdir="${ejbDestDir}"
+            author="${ejbAuthorFlag}"
+            version="${ejbVersionFlag}"
+            use="${ejbUseFlag}"
+            windowtitle="${ejbWindowTitle}"
+        />  
+    </target>
+    
+    <target name="raeupdate" />
+    
+    <!-- runs javac on rae --> 
+    <target name="rae" depends="init" description="makes the resource application extension">
+        <javac srcdir="${raeSrc}"
+             destdir="${raeClassDir}"
+             classpath="${raeClasspath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${raeJarSavePath}${raeJarName}"
+             basedir="${raeClassDir}"
+             compress="${raeCompessJar}"
+             includes="${raeClasses}"
+        />   
+    </target>
+    
+    <!-- runs javadoc on all rae files -->
+    <target name="raedocs" depends="init" description="makes the javadocs for rae">
+        <javadoc packagenames="${raePackageName}"
+            sourcepath="${raeSrcHome}"
+            destdir="${raeDestDir}"
+            author="${raeAuthorFlag}"
+            version="${raeVersionFlag}"
+            use="${raeUseFlag}"
+            windowtitle="${raeWindowTitle}"
+        />     
+    </target>
+    
+    <!-- runs javac on the taglibs -->
+    <target name="tag" depends="init" description="makes the tag libraries">
+        <javac srcdir="${tagClassSrc}"
+             destdir="${tagClassDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagClassJarDest}${tagClassJarName}"
+             basedir="${tagClassDest}"
+             compress="${tagCompressJar}"
+             includes="${tagClassClasses} ${tagClassTLD}"
+        />   
+        <javac srcdir="${tagClassPropertySrc}"
+             destdir="${tagClassPropertyDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagClassPropertyJarDest}${tagClassPropertyJarName}"
+             basedir="${tagClassPropertyDest}"
+             compress="${tagCompressJar}"
+             includes="${tagClassPropertyClasses} ${tagClassPropertyTLD}"
+        />   
+        <javac srcdir="${tagLoginSrc}"
+             destdir="${tagLoginDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagLoginJarDest}${tagLoginJarName}"
+             basedir="${tagLoginDest}"
+             compress="${tagCompressJar}"
+             includes="${tagLoginClasses} ${tagLoginTLD}"
+        />   
+        <javac srcdir="${tagObjectSrc}"
+             destdir="${tagObjectDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagObjectJarDest}${tagObjectJarName}"
+             basedir="${tagObjectDest}"
+             compress="${tagCompressJar}"
+             includes="${tagObjectClasses} ${tagObjectTLD}"
+        />   
+        <javac srcdir="${tagPropertySrc}"
+             destdir="${tagPropertyDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagPropertyJarDest}${tagPropertyJarName}"
+             basedir="${tagPropertyDest}"
+             compress="${tagCompressJar}"
+             includes="${tagPropertyClasses} ${tagPropertyTLD}"
+        />   
+        <javac srcdir="${tagPropertyTypeSrc}"
+             destdir="${tagPropertyTypeDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagPropertyTypeJarDest}${tagPropertyTypeJarName}"
+             basedir="${tagPropertyTypeDest}"
+             compress="${tagCompressJar}"
+             includes="${tagPropertyTypeClasses} ${tagPropertyTypeTLD}"
+        />   
+        <javac srcdir="${tagTypeSrc}"
+             destdir="${tagTypeDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagTypeJarDest}${tagTypeJarName}"
+             basedir="${tagTypeDest}"
+             compress="${tagCompressJar}"
+             includes="${tagTypeClasses} ${tagTypeTLD}"
+        />   
+        <javac srcdir="${tagTypeNameSrc}"
+             destdir="${tagTypeNameDest}"
+             classpath="${tagClassPath}"
+             debug="${debugFlag}"
+             optimize="${optimizeFlag}"
+        />
+        <jar jarfile="${tagTypeNameJarDest}${tagTypeNameJarName}"
+             basedir="${tagTypeNameDest}"
+             compress="${tagCompressJar}"
+             includes="${tagTypeNameClasses} ${tagTypeNameTLD}"
+        />           
+    </target>
+    <!-- runs javadoc on the taglib files -->
+    <target name="tagdocs" depends="init" description="makes the javadocs for the taglibs"/>
+    
+    <!-- updates the web war -->
+    <target name="web" depends="init" description="updates web war">
+        <jar jarfile="${webWarSavePath}${webWarSaveName}"
+             basedir="${webWarBaseDir}"
+             compress="${webCompressWar}"
+             includes="${webWarIncludes}"
+             excludes="${webWarSaveName}"
+        />
+    </target>
+    
+    <target name="webupdate" />
+    
+    <!-- compiles all source -->
+    <target name="compile" depends="ejb, rae, tag, web, ear" description="makes tag, rae and the ejbs"/>
+    
+    <!-- makes all javadoc docs -->
+    <target name="javadoc" depends="tagdocs, raedocs, ejbdocs" description="makes javadocs for the tags, rae, and the ejbs"/>
+    
+    <!-- makes absolutely everything -->
+    <target name="all" depends="compile, javadoc" description="makes all source and documentation"/>
+
+</project>

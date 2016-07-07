@@ -1,0 +1,12 @@
+// Greeting.idl
+// Module in Corba is mapped to Package in Java
+module INetMod {
+// Interface in Corba is very much similar to Java Interface  
+  interface Greeting{
+  // today's greeting returns a greeting message to the client that
+  // is connected to this Server
+    wstring TGreeting();
+  };
+
+};
+		  

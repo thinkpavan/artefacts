@@ -1,0 +1,18 @@
+Important Misc  features of Swing
+
+1) BoundProp   -- shows about Bound Properties
+
+2) ClientProp   -- shows about Client properties.
+
+3) DbgGra    -- shows how to use debug graphics , this is useful
+ in writing custom components.
+
+4) UseTTip  -- shows how to show a tool tip on a componenet
+
+5) UseTimer  -- shows how to use timers
+
+6) UseDispThread,1 -- shows how to run code in dispatch thread
+
+7) UIResource   -- shows the advantages of using UIResource
+
+8) UseThemes    -- shows how to use themes 

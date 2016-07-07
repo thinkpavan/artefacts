@@ -1,0 +1,7 @@
+Contains examples on awt classes
+
+UseChoice -- shows how to use choice and checkboxes.
+
+uselist -- shows how to use list,textarea,textfield
+
+useMenu  --shows how to use menu

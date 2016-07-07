@@ -1,0 +1,66 @@
+<!DOCTYPE weblogic-rdbms-jar PUBLIC  '-//BEA Systems, Inc.//DTD WebLogic 7.0.0 EJB RDBMS Persistence//EN' 'http://www.bea.com/servers/wls700/dtd/weblogic-rdbms20-persistence-700.dtd'>
+
+
+<!-- Generated XML! -->
+
+<weblogic-rdbms-jar>
+  <weblogic-rdbms-bean>
+    <ejb-name>Order</ejb-name>
+    <data-source-name>inetsolv.oraclepool</data-source-name>
+    <table-map>
+      <table-name>ORDERS</table-name>
+      <field-map>
+        <cmp-field>custName</cmp-field>
+        <dbms-column>CUST_NAME</dbms-column>
+      </field-map>
+      <field-map>
+        <cmp-field>ordDate</cmp-field>
+        <dbms-column>ORD_DATE</dbms-column>
+      </field-map>
+      <field-map>
+        <cmp-field>ordId</cmp-field>
+        <dbms-column>ORD_ID</dbms-column>
+      </field-map>
+    </table-map>
+  </weblogic-rdbms-bean>
+  <weblogic-rdbms-bean>
+    <ejb-name>OL</ejb-name>
+    <data-source-name>inetsolv.oraclepool</data-source-name>
+    <table-map>
+      <table-name>ORDER_LINES</table-name>
+      <field-map>
+        <cmp-field>itemName</cmp-field>
+        <dbms-column>ITEM_NAME</dbms-column>
+      </field-map>
+      <field-map>
+        <cmp-field>lineId</cmp-field>
+        <dbms-column>LINE_ID</dbms-column>
+      </field-map>
+      <field-map>
+        <cmp-field>orderId</cmp-field>
+        <dbms-column>ORDER_ID</dbms-column>
+      </field-map>
+      <field-map>
+        <cmp-field>qty</cmp-field>
+        <dbms-column>QTY</dbms-column>
+      </field-map>
+    </table-map>
+  </weblogic-rdbms-bean>
+
+
+
+   <weblogic-rdbms-relation>
+    <relation-name>Order-OrderLine</relation-name>
+      <weblogic-relationship-role>
+        <relationship-role-name>OL-Has-Order</relationship-role-name>
+	<relationship-role-map>
+          <column-map>
+            <foreign-key-column>ORDER_ID</foreign-key-column>
+            <key-column>ORD_ID</key-column>
+          </column-map>
+	</relationship-role-map>
+      </weblogic-relationship-role>
+  </weblogic-rdbms-relation>
+
+  <create-default-dbms-tables>True</create-default-dbms-tables>
+</weblogic-rdbms-jar>

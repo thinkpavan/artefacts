@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS ENTITY="StrutsProcess">
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="home" LINK_SHAPE="11,0,37"
+  NAME="forward0" PATH="/index.jsp" SHAPE="24,73,110,27" TARGET="page0"
+  TITLE="home" TYPE="forward"/>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#registration"
+  NAME="action0" PATH="/registration" SHAPE="608,193,147,43"
+  TITLE="registrationForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/index.jsp" SHAPE="30,-216,-623,80,22"
+   TARGET="page0" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#jsType" NAME="action1"
+  PATH="/jsType" SHAPE="608,121,151,43" TITLE="jsTypeForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/index.jsp" SHAPE="26,-144,-623,80,22"
+   TARGET="page0" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#locale" NAME="action2"
+  PATH="/locale" SHAPE="224,241,110,43" TITLE="localeForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/index.jsp" SHAPE="11,48,-183,-232,22"
+   TARGET="page0" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#type" NAME="action3"
+  PATH="/type" SHAPE="608,41,154,43" TITLE="typeForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward0" PATH="/index.jsp" SHAPE="23,-64,-623,80,22"
+   TARGET="page0" TITLE="success" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" ID="#multiRegistration"
+  NAME="action4" PATH="/multiRegistration" SHAPE="24,337,195,75"
+  TITLE="multiRegistrationForm" TYPE="action">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="success"
+   NAME="forward2" PATH="/index.jsp" SHAPE="126,-48,-183,-232,22"
+   TARGET="page0" TITLE="success" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="input1"
+   NAME="forward0" PATH="/multiRegistration1.jsp" SHAPE="174,-64,46"
+   TARGET="page1" TITLE="input1" TYPE="forward"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" ID="input2"
+   NAME="forward1" PATH="/multiRegistration2.jsp" TARGET="page2"
+   TITLE="input2" TYPE="forward"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page0" PATH="/index.jsp"
+  SHAPE="192,74,56,126" SUBTYPE="jsp" TITLE="index.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/type.jsp" SHAPE="167,-64,24" SUBTYPE="confirmed"
+   TARGET="page3" TITLE="/type.jsp" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link3"
+   PATH="/jsType.jsp" SUBTYPE="confirmed" TARGET="page6"
+   TITLE="/jsType.jsp" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link1"
+   PATH="/registration.jsp" SHAPE="169,56,22" SUBTYPE="confirmed"
+   TARGET="page4" TITLE="/registration.jsp" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link2"
+   PATH="/jsRegistration.jsp" SHAPE="161,104,30" SUBTYPE="confirmed"
+   TARGET="page5" TITLE="/jsRegistration.jsp" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link4"
+   PATH="/multiRegistration1.jsp" SHAPE="145,152,46" SUBTYPE="confirmed"
+   TARGET="page1" TITLE="/multiRegistration1.jsp" TYPE="link"/>
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link5"
+   PATH="/locale.do" SHAPE="40,30,-113,42,41" SUBTYPE="confirmed"
+   TARGET="action2" TITLE="/locale.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page1"
+  PATH="/multiRegistration1.jsp" SHAPE="448,306,56,46" SUBTYPE="jsp"
+  TITLE="multiRegistration1.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/multiRegistration.do" SHORTCUT="yes" SUBTYPE="confirmed"
+   TARGET="action4" TITLE="/multiRegistration.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page2"
+  PATH="/multiRegistration2.jsp" SHAPE="448,386,56,46" SUBTYPE="jsp"
+  TITLE="multiRegistration2.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/multiRegistration.do" SHORTCUT="yes" SUBTYPE="confirmed"
+   TARGET="action4" TITLE="/multiRegistration.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page3" PATH="/type.jsp"
+  SHAPE="448,26,56,46" SUBTYPE="jsp" TITLE="type.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/type.do" SUBTYPE="confirmed" TARGET="action3" TITLE="type.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page4"
+  PATH="/registration.jsp" SHAPE="448,178,56,46" SUBTYPE="jsp"
+  TITLE="registration.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/registration.do" SHAPE="53,0,42" SUBTYPE="confirmed"
+   TARGET="action0" TITLE="registration.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page5"
+  PATH="/jsRegistration.jsp" SHAPE="448,242,56,46" SUBTYPE="jsp"
+  TITLE="jsRegistration.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/registration.do" SHAPE="53,-64,42" SUBTYPE="confirmed"
+   TARGET="action0" TITLE="registration.do" TYPE="link"/>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM ENTITY="StrutsProcessItem" NAME="page6"
+  PATH="/jsType.jsp" SHAPE="448,106,56,46" SUBTYPE="jsp"
+  TITLE="jsType.jsp" TYPE="page">
+  <PROCESS-ITEM-OUTPUT ENTITY="StrutsProcessItemOutput" NAME="link0"
+   PATH="/jsType.do" SUBTYPE="confirmed" TARGET="action1"
+   TITLE="jsType.do" TYPE="link"/>
+ </PROCESS-ITEM>
+</PROCESS>

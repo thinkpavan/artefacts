@@ -1,0 +1,1045 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0025)http://www.microsoft.com/ -->
+<!--TOOLBAR_EXEMPT--><HTML><HEAD><TITLE>Microsoft Corporation</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<META http-equiv=PICS-Label 
+content='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l gen true r (n 0 s 0 v 0 l 0))'>
+<META 
+content="products; headlines; downloads; news; Web site; what's new; solutions; services; software; contests; corporate news;" 
+name=KEYWORDS>
+<META 
+content="The entry page to Microsoft's Web site. Find software, solutions, answers, support, and Microsoft news." 
+name=DESCRIPTION>
+<META content=EN-US name=MS.LOCALE>
+<META content="home page" name=CATEGORY>
+<STYLE type=text/css>.hd1 {
+	FONT: bold 14px verdana; COLOR: #787878
+}
+.mnu1 {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.bt1 {
+	PADDING-LEFT: 15px; BACKGROUND: url(/homepage/gif/bulletK.gif) no-repeat left top; MARGIN-BOTTOM: 8px
+}
+.bt2 {
+	PADDING-LEFT: 15px; BACKGROUND: url(/homepage/gif/bulletK.gif) no-repeat left top; MARGIN-BOTTOM: 0px
+}
+.pd1 {
+	PADDING-LEFT: 15px
+}
+A:link {
+	COLOR: #003399
+}
+A:visited {
+	COLOR: #800080
+}
+A:hover {
+	COLOR: #ff3300
+}
+TD {
+	FONT-SIZE: xx-small; FONT-FAMILY: Verdana,Arial,Helvetica
+}
+</STYLE>
+
+<SCRIPT language=JavaScript>
+<!--
+var userAgent = navigator.userAgent;
+var MSIEIndex = userAgent.indexOf("MSIE");
+if (userAgent.indexOf("Win")  == -1 ||
+	userAgent.indexOf("MSIE") == -1 ||
+	userAgent.substring((MSIEIndex + 5),(MSIEIndex + 8)) < 5.5)
+	window.location.replace("/homepage/default.htm");
+//-->
+</SCRIPT>
+
+<SCRIPT language=Javascript src="one_files/ctredir.js"></SCRIPT>
+<LINK href="one_files/ms.css" type=text/css rel=stylesheet><xml id=hpflyout>
+<menu site="microsoft" subsite="Homepage">
+<submenu handle="support"><item href="http://support.microsoft.com/" label="Support Home" /><item href="http://support.microsoft.com?scid=fh;[ln];kbhowto" label="Knowledge Base" /></submenu>
+<submenu handle="updates"><item href="http://office.microsoft.com/productupdates" label="Office Update" /><item href="http://windowsupdate.microsoft.com/" label="Windows Update" /></submenu>
+<submenu handle="learning"><item href="/learning/training/" label="Training &amp; Certification" /><item href="/learning/books/" label="Books" /><item href="/seminar/events/" label="Events &amp; Webcasts" /><item href="/resources/practices/" label="Patterns &amp; Practices" /></submenu>
+<submenu handle="businesses"><item href="/smallbusiness/" label="Small Businesses" /><item href="/business/" label="Large Businesses" /><item href="resources/industry/default.aspx" label="Industry" /><item href="/resources/government/default.aspx" label="Government" /><item href="/serviceproviders/" label="Service Providers" /></submenu>
+</menu>
+</xml>
+<SCRIPT language=javascript>
+<!--
+var doImage = doImage;
+var TType = TType;
+
+function mhHover(tbl, idx, cls)
+{
+	var t = document.getElementById(tbl);
+	if (t == null) return;
+	var d = t.getElementsByTagName("TD");
+	if (d == null) return;
+	if (d.length <= idx) return;
+	d[idx].className = cls;
+}
+
+function setMSResearch() {
+  var time = new Date();
+  if( document.cookie.indexOf( 'msresearch=1 ') == -1 ) {
+    document.cookie = 'msresearch=' + time.getTime() + ':' + escape( document.location) + ':' + escape( document.referrer) + '; path=/; domain=.microsoft.com; ';
+  }
+}
+
+function footerjs(doc)
+{
+	if (doImage == null)
+	{
+		var a= new Array();
+		a[0] = prepTrackingString(window.location.hostname,7);
+		if (TType == null){a[1] = prepTrackingString('PV',8);}
+		else{a[1] = prepTrackingString(TType,8);}
+		
+		a[2] = prepTrackingString(window.location.pathname,0);
+		
+		if( '' != window.document.referrer){a[a.length] = prepTrackingString(window.document.referrer,5);}
+		
+		buildIMG(a);
+	}
+
+	if( ( document.cookie.indexOf( 'msresearch=1 ') == -1 ) 
+	 && ( document.cookie.indexOf( 'msresearch=')   != -1 ) ) {
+	  setInterval( "setMSResearch()", 1000 );
+	}
+}
+
+function buildIMG(pArr)
+{
+	var TG = '<LAYER visibility="hide"><div style="display:none;"><IMG src="' + location.protocol + '//c.microsoft.com/trans_pixel.asp?';
+	for(var i=0; i<pArr.length; i++)
+	{
+		if(0 == i) TG +=  pArr[i];
+		else TG += '&' + pArr[i];
+	}
+	TG +='" height="0" width="0" hspace="0" vspace="0" Border="0"></div></layer>';
+	document.writeln(TG);
+}
+
+function prepTrackingString(ts, type)
+{
+	var rArray;
+	var rString;
+	var pName = '';
+	if (0 == type){
+		pName = 'p=';
+		rString = ts.substring(1);
+		rArray = rString.split('/');
+	}
+	if (1 == type){
+		pName = 'qs=';
+		rString = ts.substring(1);
+		rArray = rString.split('&');		
+	}
+	if (2 == type){
+		pName = 'f=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (3 == type){
+		pName = 'tPage=';
+		rString = escape(ts);
+		return pName+rString;
+	}
+	if (4 == type){
+		pName = 'sPage=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (5 == type){
+		pName = 'r=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (6 == type){
+		pName = 'MSID=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	if (7 == type){
+		pName = 'source=';
+		rString = ts.toLowerCase();
+		if(rString.indexOf("microsoft.com") != -1){
+			rString = rString.substring(0,rString.indexOf("microsoft.com"));
+			if('' == rString)
+				rString = "www";
+			else
+				rString = rString.substring(0,rString.length -1);
+		}
+		return pName + rString;
+	}
+	if (8 == type){
+		pName = 'TYPE=';
+		rString = escape(ts);
+		return pName + rString;
+	}
+	rString = '';
+	if(null != rArray){
+		if(0 == type)
+			for( j=0; j < rArray.length - 1; j++)
+				rString += rArray[j] + '_';  
+		else
+			for( j=0; j < rArray.length  ; j++)
+				rString += rArray[j] + '_';  
+	}
+	rString = rString.substring(0, rString.length - 1);  	 	
+	return pName + rString;
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2600.0" name=GENERATOR></HEAD>
+<BODY text=#000000 bgColor=#ffffff leftMargin=0 topMargin=0 onload=initPopup() 
+onunload=exitPopup() MARGINHEIGHT="0" MARGINWIDTH="0"><BASEFONT 
+face="Verdana, Arial, Helvetica">
+<DIV class=resetStyles id=masthead>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="100%">
+      <TABLE id=Table2 height=22 cellSpacing=0 cellPadding=0 width="100%" 
+      border=0>
+        <TBODY>
+        <TR>
+          <TD id=regionIdGraphic bgColor=#4b92d9></TD>
+          <TD id=regionGradient1 
+          style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#4B92D9', endColorStr='#CEDFF6', gradientType='1')" 
+          width="50%"></TD>
+          <TD id=regionGradient2 
+          style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#CEDFF6', endColorStr='#1E77D3', gradientType='1')" 
+          width="50%"></TD></TR></TBODY></TABLE></TD>
+    <TD id=globalToolbar dir=ltr noWrap align=left bgColor=#1e77d3 height=22>
+      <TABLE id=Table3 cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD class=gt0 onmouseleave="mhHover('globalToolbar', 0*2, 'gt0')" 
+          onmouseenter="mhHover('globalToolbar', 0*2, 'gt1')" noWrap><A 
+            href="http://www.microsoft.com/">Microsoft.com Home</A></TD>
+          <TD class=gtsep>|</TD>
+          <TD class=gt0 onmouseleave="mhHover('globalToolbar', 1*2, 'gt0')" 
+          onmouseenter="mhHover('globalToolbar', 1*2, 'gt1')" noWrap><A 
+            href="http://www.microsoft.com/library/toolbar/3.0/sitemap/en-us.mspx">Site 
+            Map</A></TD></TR></TBODY></TABLE></TD></TR>
+  <TR vAlign=top>
+    <TD width="100%">
+      <TABLE id=Table4 height=42 cellSpacing=0 cellPadding=0 width="100%" 
+      border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD id=brandBanner bgColor=#0a6cce><A 
+            href="http://www.microsoft.com/"><IMG title="" height=42 
+            alt="Microsoft Home" src="one_files/ms_masthead_ltr.gif" width=136 
+            border=0></A></TD>
+          <TD 
+          style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#0A6CCE', endColorStr='#FFFFFF', gradientType='1')" 
+          width="100%">&nbsp;</TD></TR></TBODY></TABLE></TD>
+    <TD id=globalSearch bgColor=#ffffff>Search Microsoft.com for:<BR>
+      <FORM id=searchForm action=/library/toolbar/3.0/search.aspx><INPUT 
+      id=Hidden1 type=hidden value=en-us name=View><INPUT id=Hidden2 type=hidden 
+      value=iso-8859-1 name=charset><NOBR>
+      <DIV style="HEIGHT: 18px"><INPUT id=searchBox maxLength=255 name=qu><INPUT id=goButton type=submit value=Go name=goButton></DIV></NOBR></FORM></TD></TR></TBODY></TABLE>
+<DIV id=localToolbar>
+<TABLE id=Table5 height=19 cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD id=homePageLink noWrap><A 
+      href="http://www.microsoft.com/isapi/gomscom.asp?target=/">Microsoft.com 
+      Home</A></TD>
+    <TD><SPAN class=ltsep>|</SPAN></TD>
+    <TD class=lt0 onmouseleave="mhHover('localToolbar', 0*2+2, 'lt0')" 
+    onmouseenter="mhHover('localToolbar', 0*2+2, 'lt1')" noWrap><A 
+      href="http://www.msn.com/">MSN Home</A></TD>
+    <TD><SPAN class=ltsep>|</SPAN></TD>
+    <TD class=lt0 onmouseleave="mhHover('localToolbar', 1*2+2, 'lt0')" 
+    onmouseenter="mhHover('localToolbar', 1*2+2, 'lt1')" noWrap><A 
+      href="http://go.microsoft.com/?linkid=317769">Subscribe</A></TD>
+    <TD><SPAN class=ltsep>|</SPAN></TD>
+    <TD class=lt0 onmouseleave="mhHover('localToolbar', 2*2+2, 'lt0')" 
+    onmouseenter="mhHover('localToolbar', 2*2+2, 'lt1')" noWrap><A 
+      href="http://go.microsoft.com/?linkid=317027">Manage Your Profile</A></TD>
+    <TD width="100%"></TD></TR></TBODY></TABLE></DIV></DIV>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD vAlign=top width=180 bgColor=#f1f1f1>
+      <TABLE class=flyoutMenu 
+      style="BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      cellSpacing=0 cellPadding=2 width=180 border=0 menudata="#hpflyout">
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width=176 border=0>
+              <TBODY>
+              <TR>
+                <TD class=flyoutHeading>Product Families</TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node1.click();><A 
+                  id=Flyout_S1_Node1 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/windows/" 
+                  LinkID="Flyout_S1_Node1" LinkArea="Left Nav">Windows</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node2.click();><A 
+                  id=Flyout_S1_Node2 onclick=trackInfo(this); 
+                  href="http://office.microsoft.com/office/default.aspx" 
+                  LinkID="Flyout_S1_Node2" LinkArea="Left Nav">Office</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node3.click();><A 
+                  id=Flyout_S1_Node3 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/windowsmobile/default.mspx" 
+                  LinkID="Flyout_S1_Node3" LinkArea="Left Nav">Mobile 
+                Devices</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node4.click();><A 
+                  id=Flyout_S1_Node4 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/businesssolutions/" 
+                  LinkID="Flyout_S1_Node4" LinkArea="Left Nav">Business 
+                  Solutions</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node5.click();><A 
+                  id=Flyout_S1_Node5 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/windowsserversystem/" 
+                  LinkID="Flyout_S1_Node5" LinkArea="Left Nav">Servers</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node6.click();><A 
+                  id=Flyout_S1_Node6 onclick=trackInfo(this); 
+                  href="http://msdn.microsoft.com/" LinkID="Flyout_S1_Node6" 
+                  LinkArea="Left Nav">Developer Tools</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node7.click();><A 
+                  id=Flyout_S1_Node7 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/games/" 
+                  LinkID="Flyout_S1_Node7" LinkArea="Left Nav">Games and 
+                Xbox</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node8.click();><A 
+                  id=Flyout_S1_Node8 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/msn" LinkID="Flyout_S1_Node8" 
+                  LinkArea="Left Nav">MSN Services</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S1_Node9.click();><A 
+                  id=Flyout_S1_Node9 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/products/info/" 
+                  LinkID="Flyout_S1_Node9" LinkArea="Left Nav">All 
+                Products</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE class=flyoutMenu 
+      style="BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      cellSpacing=0 cellPadding=2 width=180 border=0 menudata="#hpflyout">
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width=176 border=0>
+              <TBODY>
+              <TR>
+                <TD class=flyoutHeading>Resources</TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node1.click(); 
+                handle="support"><A id=Flyout_S2_Node1 
+                  onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/homepage/nav.asp?pid=1" 
+                  LinkID="Flyout_S2_Node1" LinkArea="Left Nav">Support</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node2.click();><A 
+                  id=Flyout_S2_Node2 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/downloads/" 
+                  LinkID="Flyout_S2_Node2" 
+              LinkArea="Left Nav">Downloads</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node3.click();><A 
+                  id=Flyout_S2_Node3 onclick=trackInfo(this); 
+                  href="http://windowsupdate.microsoft.com/" 
+                  LinkID="Flyout_S2_Node3" LinkArea="Left Nav">Windows 
+                Update</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node4.click();><A 
+                  id=Flyout_S2_Node4 onclick=trackInfo(this); 
+                  href="http://office.microsoft.com/productupdates" 
+                  LinkID="Flyout_S2_Node4" LinkArea="Left Nav">Office 
+                Update</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node5.click(); 
+                handle="learning"><A id=Flyout_S2_Node5 
+                  onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/homepage/nav.asp?pid=3" 
+                  LinkID="Flyout_S2_Node5" LinkArea="Left Nav">Learning 
+                Tools</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node6.click();><A 
+                  id=Flyout_S2_Node6 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/communities/" 
+                  LinkID="Flyout_S2_Node6" 
+              LinkArea="Left Nav">Communities</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S2_Node7.click();><A 
+                  id=Flyout_S2_Node7 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/security/" 
+                  LinkID="Flyout_S2_Node7" 
+              LinkArea="Left Nav">Security</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE class=flyoutMenu 
+      style="BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      cellSpacing=0 cellPadding=2 width=180 border=0 menudata="#hpflyout">
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width=176 border=0>
+              <TBODY>
+              <TR>
+                <TD class=flyoutHeading>Information For</TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node1.click();><A 
+                  id=Flyout_S3_Node1 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/insider/" 
+                  LinkID="Flyout_S3_Node1" LinkArea="Left Nav">Home 
+              Users</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node2.click();><A 
+                  id=Flyout_S3_Node2 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/technet/" 
+                  LinkID="Flyout_S3_Node2" LinkArea="Left Nav">IT Professionals 
+                  (TechNet)</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node3.click();><A 
+                  id=Flyout_S3_Node3 onclick=trackInfo(this); 
+                  href="http://msdn.microsoft.com/" LinkID="Flyout_S3_Node3" 
+                  LinkArea="Left Nav">Developers (MSDN)</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node4.click();><A 
+                  id=Flyout_S3_Node4 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/partner/" 
+                  LinkID="Flyout_S3_Node4" LinkArea="Left Nav">Microsoft 
+                  Partners</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node5.click(); 
+                handle="businesses"><A id=Flyout_S3_Node5 
+                  onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/homepage/nav.asp?pid=4" 
+                  LinkID="Flyout_S3_Node5" LinkArea="Left Nav">Business 
+                  Professionals</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node6.click();><A 
+                  id=Flyout_S3_Node6 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/education/" 
+                  LinkID="Flyout_S3_Node6" 
+              LinkArea="Left Nav">Educators</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S3_Node7.click();><A 
+                  id=Flyout_S3_Node7 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/presspass/" 
+                  LinkID="Flyout_S3_Node7" 
+              LinkArea="Left Nav">Journalists</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE class=flyoutMenu 
+      style="BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      cellSpacing=0 cellPadding=2 width=180 border=0 menudata="#hpflyout">
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width=176 border=0>
+              <TBODY>
+              <TR>
+                <TD class=flyoutHeading>About Microsoft</TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S4_Node1.click();><A 
+                  id=Flyout_S4_Node1 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/mscorp/" 
+                  LinkID="Flyout_S4_Node1" LinkArea="Left Nav">Corporate 
+                  Information</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S4_Node2.click();><A 
+                  id=Flyout_S4_Node2 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/msft/" LinkID="Flyout_S4_Node2" 
+                  LinkArea="Left Nav">Investor Relations</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S4_Node3.click();><A 
+                  id=Flyout_S4_Node3 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/careers/" 
+                  LinkID="Flyout_S4_Node3" LinkArea="Left Nav">Careers</A></TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S4_Node4.click();><A 
+                  id=Flyout_S4_Node4 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/backstage/" 
+                  LinkID="Flyout_S4_Node4" LinkArea="Left Nav">About this 
+                  Site</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE class=flyoutMenu 
+      style="BORDER-TOP-WIDTH: 1px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
+      cellSpacing=0 cellPadding=2 width=180 border=0 menudata="#hpflyout">
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width=176 border=0>
+              <TBODY>
+              <TR>
+                <TD class=flyoutHeading>Worldwide</TD></TR>
+              <TR>
+                <TD class=flyoutLink onclick=Flyout_S5_Node1.click();><A 
+                  id=Flyout_S5_Node1 onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/worldwide/" 
+                  LinkID="Flyout_S5_Node1" LinkArea="Left Nav">Microsoft 
+                  Worldwide</A></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD>
+    <TD bgColor=#999999><IMG height=1 src="one_files/1ptrans.gif" width=1></TD>
+    <TD>
+      <TABLE cellSpacing=0 cellPadding=0 width=590 border=0>
+        <TBODY>
+        <TR vAlign=top>
+          <TD vAlign=top width=443>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD><A onclick=trackInfo(this); 
+                  href="http://windowsupdate.microsoft.com/" LinkID="TS_Top1" 
+                  LinkArea="Top Story" NewsID="1240103"><IMG 
+                  alt="Update your PC now: Visit Windows Update" 
+                  src="one_files/ts_feb13_winupdate.jpg" 
+              border=0></A></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=443 border=0>
+              <TBODY>
+              <TR>
+                <TD colSpan=2><IMG height=20 
+src="one_files/1ptrans.gif"></TD></TR>
+              <TR vAlign=top height=74>
+                <TD width=74><IMG 
+                  style="CLIP: rect(auto auto 74px auto); POSITION: absolute" 
+                  alt="home &amp; entertainment" 
+                src="one_files/audience1.jpg"></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15><IMG src="one_files/1ptrans.gif" 
+                      width=15></TD>
+                      <TD width="100%">
+                        <DIV class=hd1>home &amp; entertainment</DIV></TD></TR>
+                    <TR>
+                      <TD colSpan=2>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://my.msn.com/" LinkID="KM_S1_Topic1" 
+                        LinkArea="Audience Home" NewsID="1240100">Design your 
+                        own MSN home page -- in just a few clicks</A></DIV>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/hardware/broadbandnetworking/10_WhatIsNetwork.mspx" 
+                        LinkID="KM_S1_Topic2" LinkArea="Audience Home" 
+                        NewsID="1240070">What is a network? Everything you need 
+                        to know</A></DIV>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/windows/ie/using/articles/findyourway.asp" 
+                        LinkID="KM_S1_Topic3" LinkArea="Audience Home" 
+                        NewsID="1240071">Simple tools to help you find your way 
+                        around the Web</A></DIV></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=20 
+src="one_files/1ptrans.gif"></TD></TR>
+              <TR vAlign=top height=74>
+                <TD>
+                  <TABLE style="POSITION: absolute" cellSpacing=0 cellPadding=0 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        style="CLIP: rect(95px auto 180px auto); POSITION: absolute; TOP: -95px" 
+                        alt="technical resources" 
+                      src="one_files/audience1.jpg"></TD></TR></TBODY></TABLE><IMG 
+                  height=1 src="one_files/1ptrans.gif" width=74> </TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15><IMG src="one_files/1ptrans.gif" 
+                      width=15></TD>
+                      <TD width="100%">
+                        <DIV class=hd1>technical resources</DIV></TD></TR>
+                    <TR>
+                      <TD colSpan=2>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://go.microsoft.com/?LinkID=387814" 
+                        LinkID="KM_S2_Topic1" LinkArea="Audience Tech" 
+                        NewsID="1240072">Developer Security Webcast Week, 
+                        through February 20</A></DIV>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/downloads/details.aspx?FamilyID=43cb658e-8553-4de7-811a-562563eb5ebf&amp;DisplayLang=en" 
+                        LinkID="KM_S2_Topic2" LinkArea="Audience Tech" 
+                        NewsID="1240073">Download the File Replication Service 
+                        Diagnostics Tool</A></DIV>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/windowsmobile/information/events/devcon.mspx" 
+                        LinkID="KM_S2_Topic3" LinkArea="Audience Tech" 
+                        NewsID="1240074">Don't miss the Mobile Developers 
+                        Conference: March 
+              23-27</A></DIV></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=20 
+src="one_files/1ptrans.gif"></TD></TR>
+              <TR vAlign=top height=74>
+                <TD>
+                  <TABLE style="POSITION: absolute" cellSpacing=0 cellPadding=0 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        style="CLIP: rect(190px auto 259px auto); POSITION: absolute; TOP: -190px" 
+                        alt="business agility" 
+                    src="one_files/audience1.jpg"></TD></TR></TBODY></TABLE></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD width=15><IMG src="one_files/1ptrans.gif" 
+                      width=15></TD>
+                      <TD width="100%">
+                        <DIV class=hd1>business agility</DIV></TD></TR>
+                    <TR>
+                      <TD colSpan=2>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.bcentral.com/articles/enbysk/171.asp?ups=0" 
+                        LinkID="KM_S3_Topic1" LinkArea="Audience Biz" 
+                        NewsID="1240075">5 reasons to track website 
+                        traffic</A></DIV>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/licensing/programs/sa/default.mspx" 
+                        LinkID="KM_S3_Topic2" LinkArea="Audience Biz" 
+                        NewsID="1240117">Maximize your technology investment 
+                        with Software Assurance</A></DIV>
+                        <DIV class=bt2><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/Office/outlook/contactmanager/prodinfo/advantages.mspx" 
+                        LinkID="KM_S3_Topic3" LinkArea="Audience Biz" 
+                        NewsID="1240076">Toss your day planner: Try Business 
+                        Contact Manager 
+              instead</A></DIV></TD></TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD colSpan=2><IMG height=20 
+              src="one_files/1ptrans.gif"></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=443 border=0>
+              <TBODY>
+              <TR>
+                <TD colSpan=8>
+                  <HR width=443 color=#cecece SIZE=1 BORDER="0">
+                </TD></TR>
+              <TR>
+                <TD background=one_files/brandwhole_4.gif colSpan=8 
+                  height=80><IMG height=80 src="one_files/1ptrans.gif" width=443 
+                  useMap=#BrndMp1 border=0></TD></TR>
+              <TR vAlign=top>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width=142 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/windowsxp/pro/using/howto/default.asp" 
+                        LinkID="KM_S4_Topic1" LinkArea="Brand Windows" 
+                        NewsID="1240078">New computer? Visit the Windows XP 
+                        How-to Center</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/windows/ie/enthusiast/default.asp" 
+                        LinkID="KM_S4_Topic2" LinkArea="Brand Windows" 
+                        NewsID="1235173">Get more from the Web with Internet 
+                        Explorer 6</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://v4.windowsupdate.microsoft.com/en/default.asp" 
+                        LinkID="KM_S4_Topic3" LinkArea="Brand Windows" 
+                        NewsID="1237778">Automatically scan for critical Windows 
+                        updates</A><BR><BR></DIV></TD></TR></TBODY></TABLE></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width=142 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.bcentral.com/articles/elliott/154.asp?ups=0" 
+                        LinkID="KM_S5_Topic1" LinkArea="Brand Office" 
+                        NewsID="1240081">Why Outlook can be a business 
+                        traveler's best friend</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://office.microsoft.com/assistance/preview.aspx?AssetID=HA010929701033" 
+                        LinkID="KM_S5_Topic2" LinkArea="Brand Office" 
+                        NewsID="1240101">Research task pane: One-click access to 
+                        the Encarta dictionary and more</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://go.microsoft.com/fwlink/?LinkId=22867" 
+                        LinkID="KM_S5_Topic3" LinkArea="Brand Office" 
+                        NewsID="1240079">Webcast, February 19: Get started with 
+                        OneNote, the new note-taking 
+                    program</A><BR><BR></DIV></TD></TR></TBODY></TABLE></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width=142 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/business/executivecircle/content/page.aspx?cID=879&amp;subcatID=1" 
+                        LinkID="KM_S6_Topic1" LinkArea="Brand WinServ" 
+                        NewsID="1240083">5 lessons in security design for 
+                        Windows Server 2003 environments</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/downloads/details.aspx?FamilyID=c16ae515-c8f4-47ef-a1e4-a8dcbacff8e3&amp;displaylang=en" 
+                        LinkID="KM_S6_Topic2" LinkArea="Brand WinServ" 
+                        NewsID="1237877">Download the Windows Server 2003 
+                        Administration Tools Pack</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://go.microsoft.com/?LinkID=387832" 
+                        LinkID="KM_S6_Topic3" LinkArea="Brand WinServ" 
+                        NewsID="1240082">400+ sessions, including security and 
+                        mobility, at TechEd 
+                  2004</A><BR><BR></DIV></TD></TR></TBODY></TABLE></TD>
+                <TD></TD>
+              <TR vAlign=top>
+                <TD class=pd1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/windows/" 
+                  LinkID="KM_S4_GraphicMore1" LinkArea="Key Graphic"><B>More 
+                  Windows ...</B></A></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD class=pd1><A onclick=trackInfo(this); 
+                  href="http://office.microsoft.com/home/default.aspx" 
+                  LinkID="KM_S5_GraphicMore1" LinkArea="Key Graphic"><B>More 
+                  Office ...</B></A></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD class=pd1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/windowsserversystem/" 
+                  LinkID="KM_S6_GraphicMore1" LinkArea="Key Graphic"><B>More 
+                  Windows Server System ...</B></A></TD>
+                <TD></TD>
+              <TR>
+              <TR>
+                <TD><IMG height=20 src="one_files/1ptrans.gif" width=1></TD></TR>
+              <TR>
+                <TD colSpan=8 height=80><IMG height=80 
+                  src="one_files/1ptrans.gif" width=1> 
+                  <TABLE style="POSITION: absolute" cellSpacing=0 cellPadding=0 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><IMG 
+                        style="CLIP: rect(111px 438px 191px auto); POSITION: absolute; TOP: -111px" 
+                        src="one_files/brandwhole_4.gif" useMap=#BrndMp2 
+                        border=0></TD></TR></TBODY></TABLE></TD></TR>
+              <TR vAlign=top>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width=142 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://msdn.microsoft.com/data/" 
+                        LinkID="KM_S7_Topic1" LinkArea="Brand Visual" 
+                        NewsID="1240116">Explore the new Data Access and Storage 
+                        Developer Center on MSDN</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.msdn.microsoft.com/vstudio/default.aspx?pull=/library/en-us/dnsoftware/html/software01262004.asp" 
+                        LinkID="KM_S7_Topic2" LinkArea="Brand Visual" 
+                        NewsID="1240085">Starting a software company: Should you 
+                        take the plunge?</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://msdn.microsoft.com/subscriptions/levels/default.asp" 
+                        LinkID="KM_S7_Topic3" LinkArea="Brand Visual" 
+                        NewsID="1240084">Get immediate access to the latest MSDN 
+                        software</A><BR><BR></DIV></TD></TR></TBODY></TABLE></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width=142 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/BusinessSolutions/document.aspx?content=/businesssolutions/content/tsf_zero_percent.xml" 
+                        LinkID="KM_S8_Topic1" LinkArea="Brand MBS" 
+                        NewsID="1240087">Get 0% financing on business solutions 
+                        applications (U.S. and Canada only)</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/BusinessSolutions/Customer+Relationship+Management/default.mspx" 
+                        LinkID="KM_S8_Topic2" LinkArea="Brand MBS" 
+                        NewsID="1239027">CRM: Demos and solutions to get you 
+                        started today</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/BusinessSolutions/Retail+Management/default.mspx" 
+                        LinkID="KM_S8_Topic3" LinkArea="Brand MBS" 
+                        NewsID="1237883">Increase sales, reduce costs with 
+                        Microsoft Retail Management 
+                    System</A><BR><BR></DIV></TD></TR></TBODY></TABLE></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=0 width=142 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://msdn.microsoft.com/events/devdays/" 
+                        LinkID="KM_S9_Topic1" LinkArea="Brand .NET" 
+                        NewsID="1240086">Register for a DevDays 2004 event near 
+                        you</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://www.microsoft.com/learning/training/samples/developer.asp" 
+                        LinkID="KM_S9_Topic2" LinkArea="Brand .NET" 
+                        NewsID="1240089">12 free sample training modules about 
+                        .NET</A><BR><BR></DIV>
+                        <DIV class=bt1><A onclick=trackInfo(this); 
+                        href="http://msdn.microsoft.com/vstudio/productinfo/whitepapers/default.aspx" 
+                        LinkID="KM_S9_Topic3" LinkArea="Brand .NET" 
+                        NewsID="1238114">Compare 4 key programming 
+                        languages</A><BR><BR></DIV></TD></TR></TBODY></TABLE></TD>
+                <TD></TD>
+              <TR vAlign=top>
+                <TD class=pd1><A onclick=trackInfo(this); 
+                  href="http://msdn.microsoft.com/vstudio/" 
+                  LinkID="KM_S7_GraphicMore1" LinkArea="Key Graphic"><B>More 
+                  Visual Studio .NET ...</B></A></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD class=pd1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/businesssolutions/" 
+                  LinkID="KM_S8_GraphicMore1" LinkArea="Key Graphic"><B>More 
+                  Microsoft Business Solutions ...</B></A></TD>
+                <TD>
+                <TD width=1 bgColor=#cecece><IMG height=20 
+                  src="one_files/1ptrans.gif" width=1></TD>
+                <TD class=pd1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/net/" 
+                  LinkID="KM_S9_GraphicMore1" LinkArea="Key Graphic"><B>More 
+                  about .NET ...</B></A></TD>
+                <TD></TD></TR></TBODY></TABLE>
+            <P>
+            <TABLE cellSpacing=0 cellPadding=15 width="100%" border=0>
+              <TBODY>
+              <TR>
+                <TD>Last Updated: Wednesday, February 18, 2004 - 1:04 p.m. 
+                  Pacific Time</TD></TR></TBODY></TABLE></P></TD>
+          <TD width=1 bgColor=#cecece><IMG height=1 
+            src="one_files/1ptrans.gif" width=1></TD>
+          <TD width=145>
+            <TABLE id=tblAlert cellSpacing=0 cellPadding=0 width=145 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left colSpan=3><A 
+                  onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/security/protect/default.asp" 
+                  LinkID="WP_S1_alert1" LinkArea="Alert" NewsID="1239942"><IMG 
+                  height=150 alt="Protect your PC in 3 steps" 
+                  src="one_files/Promo_PYPC2.jpg" width=145 
+              border=0></A></TD></TR></TBODY></TABLE>
+            <TABLE cellSpacing=0 cellPadding=0 width=145 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left width=145 colSpan=2 height=12><IMG 
+                  height=12 src="one_files/1ptrans.gif" width=1></TD></TR>
+              <TR>
+                <TD vAlign=top align=left width=15 height=27 rowSpan=2><IMG 
+                  height=27 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%">
+                  <DIV class=hd1>today's news</DIV></TD></TR>
+              <TR>
+                <TD height=12></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/presspass/press/2004/feb04/02-17ExtendedTechnologyPR.asp" 
+                  LinkID="WP_S1_Topic1" LinkArea="News" NewsID="1240119">Intel 
+                  announces support for Windows Server 2003 for 64-Bit Extended 
+                  Systems</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://go.microsoft.com/?LinkID=406789" 
+                  LinkID="WP_S1_Topic2" LinkArea="News" 
+                  NewsID="1240060">Introducing the Security Guidance Center for 
+                  developers and IT pros</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/presspass/press/2004/Feb04/02-12windowssource.asp" 
+                  LinkID="WP_S1_Topic3" LinkArea="News" 
+                  NewsID="1240097">Statement from Microsoft regarding illegal 
+                  posting of Windows source code</A><BR></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top align=left width=15 height=39 rowSpan=2><IMG 
+                  height=39 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%"><BR><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/presspass/default.asp" 
+                  LinkID="WP_S1_TopicMore" LinkArea="News"><B>More Microsoft 
+                  News ...</B></A></TD></TR>
+              <TR>
+                <TD height=24></TD></TR>
+              <TR>
+                <TD bgColor=#cecece colSpan=2><IMG height=1 
+                  src="one_files/1ptrans.gif" width=125></TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width=145 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left width=15 height=27 rowSpan=2><IMG 
+                  height=27 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%">
+                  <DIV class=hd1>top downloads</DIV></TD></TR>
+              <TR>
+                <TD height=12></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/downloads/details.aspx?FamilyID=c14bfbe4-3d50-464d-a26c-9c287f8a08c5&amp;displaylang=en" 
+                  LinkID="WP_S2_Topic1" LinkArea="Downloads" 
+                  NewsID="1240092">Mydoom and Doomjuice Worm Removal 
+                  Tool</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/downloads/details.aspx?FamilyID=70530968-b59a-47c0-90d3-0c884910bc97&amp;displaylang=en" 
+                  LinkID="WP_S2_Topic2" LinkArea="Downloads" 
+                  NewsID="1240091">Cumulative security update for Internet 
+                  Explorer 6 SP1</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e0175119-9a5b-44c3-b1de-9b2a9aa6cff6&amp;displaylang=en" 
+                  LinkID="WP_S2_Topic3" LinkArea="Downloads" 
+                  NewsID="1240090">Windows Media Player 9 Series for previous 
+                  versions of Windows</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://messenger.msn.com/" LinkID="WP_S2_Topic4" 
+                  LinkArea="Downloads" NewsID="1239097">MSN Messenger 
+                  6.1</A><BR></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top align=left width=15 height=39 rowSpan=2><IMG 
+                  height=39 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%"><BR><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/downloads/search.asp" 
+                  LinkID="WP_S2_TopicMore" LinkArea="Downloads"><B>More 
+                  Downloads ...</B></A></TD></TR>
+              <TR>
+                <TD height=24></TD></TR>
+              <TR>
+                <TD bgColor=#cecece colSpan=2><IMG height=1 
+                  src="one_files/1ptrans.gif" width=1></TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width=145 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left width=15 height=27 rowSpan=2><IMG 
+                  height=27 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%">
+                  <DIV class=hd1>top searches</DIV></TD></TR>
+              <TR>
+                <TD height=12></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://search.microsoft.com/search/results.aspx?st=b&amp;qu=outlook+express&amp;view=en-us" 
+                  LinkID="WP_S3_Topic1" LinkArea="Searches" 
+                  NewsID="1239939">Outlook Express</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://search.microsoft.com/search/results.aspx?st=b&amp;na=90&amp;View=en-us&amp;qu=security+bulletins" 
+                  LinkID="WP_S3_Topic2" LinkArea="Searches" 
+                  NewsID="1240118">Security bulletins</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://search.microsoft.com/search/results.aspx?st=b&amp;na=88&amp;View=en-us&amp;qu=Mydoom" 
+                  LinkID="WP_S3_Topic3" LinkArea="Searches" 
+                  NewsID="1239994">Mydoom</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://search.microsoft.com/search/results.aspx?st=b&amp;View=en-us&amp;na=90&amp;qu=clip+art" 
+                  LinkID="WP_S3_Topic4" LinkArea="Searches" 
+                  NewsID="1240099">Clip art</A><BR></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top align=left width=15 height=39 rowSpan=2><IMG 
+                  height=39 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%"><BR><A onclick=trackInfo(this); 
+                  href="http://search.microsoft.com/" LinkID="WP_S3_TopicMore" 
+                  LinkArea="Searches"><B>More Searches ...</B></A></TD></TR>
+              <TR>
+                <TD height=24></TD></TR>
+              <TR>
+                <TD bgColor=#cecece colSpan=2><IMG height=1 
+                  src="one_files/1ptrans.gif" width=1></TD></TR></TBODY></TABLE><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width=145 border=0>
+              <TBODY>
+              <TR>
+                <TD vAlign=top align=left width=15 height=27 rowSpan=2><IMG 
+                  height=27 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%">
+                  <DIV class=hd1>support</DIV></TD></TR>
+              <TR>
+                <TD height=12></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/hardware/mouseandkeyboard/support/default.mspx" 
+                  LinkID="WP_S4_Topic1" LinkArea="Support" 
+                  NewsID="1240095">Support for Microsoft hardware 
+                  products</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://support.microsoft.com/default.aspx?scid=fh;RID;faqs" 
+                  LinkID="WP_S4_Topic2" LinkArea="Support" NewsID="1229173">Get 
+                  support information, troubleshooters, and FAQs</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/seminar/events/security.mspx" 
+                  LinkID="WP_S4_Topic3" LinkArea="Support" NewsID="1240094">Find 
+                  the latest security events and webcasts</A><BR></DIV>
+                  <DIV class=bt1><A onclick=trackInfo(this); 
+                  href="http://www.microsoft.com/windows/communities/default.mspx" 
+                  LinkID="WP_S4_Topic4" LinkArea="Support" NewsID="1227829">7 
+                  sites for free Windows tips, add-ins, and 
+                  downloads</A><BR></DIV></TD></TR>
+              <TR>
+                <TD vAlign=top align=left width=15 height=39 rowSpan=2><IMG 
+                  height=39 src="one_files/1ptrans.gif" width=15></TD>
+                <TD width="100%"><BR><A onclick=trackInfo(this); 
+                  href="http://support.microsoft.com/" LinkID="WP_S4_TopicMore" 
+                  LinkArea="Support"><B>More Support ...</B></A></TD></TR>
+              <TR>
+                <TD height=24></TD></TR></TBODY></TABLE></TD>
+          <TD width=5><IMG src="one_files/1ptrans.gif" 
+      width=5></TD></TR></TBODY></TABLE></TD>
+    <TD></TD></TR></TBODY></TABLE></BASEFONT><MAP name=BrndMp1><AREA 
+  onclick=trackInfo(this); shape=RECT alt=Windows coords=30,13,130,70 
+  href="http://www.microsoft.com/windows/" LinkID="KM_S4_Graphic1" 
+  LinkArea="Key Graphic"><AREA onclick=trackInfo(this); shape=RECT alt=Office 
+  coords=165,22,276,65 href="http://office.microsoft.com/home/default.aspx" 
+  LinkID="KM_S5_Graphic1" LinkArea="Key Graphic"><AREA onclick=trackInfo(this); 
+  shape=RECT alt="Windows Server System" coords=320,21,404,65 
+  href="http://www.microsoft.com/windowsserversystem/" LinkID="KM_S6_Graphic1" 
+  LinkArea="Key Graphic"></MAP><MAP name=BrndMp2><AREA onclick=trackInfo(this); 
+  shape=RECT alt="Visual Studio .NET" coords=30,124,115,185 
+  href="http://msdn.microsoft.com/vstudio/" LinkID="KM_S7_Graphic1" 
+  LinkArea="Key Graphic"><AREA onclick=trackInfo(this); shape=RECT 
+  alt="Microsoft Business Solutions" coords=169,133,276,185 
+  href="http://www.microsoft.com/businesssolutions/" LinkID="KM_S8_Graphic1" 
+  LinkArea="Key Graphic"><AREA onclick=trackInfo(this); shape=RECT alt=.NET 
+  coords=310,132,440,185 href="http://www.microsoft.com/net/" 
+  LinkID="KM_S9_Graphic1" LinkArea="Key Graphic"></MAP>
+<TABLE id=footer cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=bottom>
+    <TD id=footer2 
+    style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3F8CDA', gradientType='1')">
+      <DIV id=localFooter><NOBR><A onclick=trackInfo(this); 
+      href="http://go.microsoft.com/?linkid=317027" LinkID="Footer_Link7" 
+      LinkArea="Footer">Manage Your Profile</A> |</NOBR><WBR><NOBR><A 
+      onclick=trackInfo(this); 
+      href="http://www.microsoft.com/isapi/goregwiz.asp?target=/contactus/contactus.asp" 
+      LinkID="Footer_Link1" LinkArea="Footer">Contact Us</A> 
+      |</NOBR><WBR><NOBR><A onclick=trackInfo(this); 
+      href="http://www.microsoft.com/isapi/gomscom.asp?target=/misc/mstw/" 
+      LinkID="Footer_Link2" LinkArea="Footer">Microsoft This Week! 
+      Newsletter</A> |</NOBR><WBR><NOBR><A onclick=trackInfo(this); 
+      href="http://www.microsoft.com/isapi/gomscom.asp?target=/legal/" 
+      LinkID="Footer_Link3" LinkArea="Footer">Legal</A></NOBR><WBR> </DIV>
+      <DIV id=globalFooter><SPAN dir=ltr>©2004 Microsoft Corporation. All rights 
+      reserved.&nbsp;</SPAN><NOBR dir=ltr><A onclick=trackInfo(this); 
+      href="http://www.microsoft.com/info/cpyright.htm" LinkID="Footer_Link4" 
+      LinkArea="Footer">Terms of Use</A> |</NOBR><WBR><NOBR dir=ltr><A 
+      onclick=trackInfo(this); href="http://www.microsoft.com/info/privacy.htm" 
+      LinkID="Footer_Link5" LinkArea="Footer">Privacy 
+      Statement</A></NOBR><WBR></DIV></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>var footer2 = document.getElementById("footer2");footer2.style.filter = "";</SCRIPT>
+
+<TABLE height=58 cellSpacing=0 cellPadding=0 width="100%">
+  <TBODY>
+  <TR vAlign=top>
+    <TD>
+      <DIV style="WIDTH: 200px"></DIV></TD>
+    <TD 
+    style="FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#3F8CDA', gradientType='1')" 
+    width="100%"></TD></TR></TBODY></TABLE>
+<SCRIPT src="one_files/mshome_popup_Q4.js"></SCRIPT>
+
+<SCRIPT language=javascript>footerjs(document);</SCRIPT>
+</BODY></HTML>

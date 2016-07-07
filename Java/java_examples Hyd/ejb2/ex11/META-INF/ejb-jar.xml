@@ -1,0 +1,41 @@
+<!DOCTYPE ejb-jar PUBLIC '-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN' 'http://java.sun.com/dtd/ejb-jar_2_0.dtd'>
+
+
+<!-- Generated XML! -->
+
+<ejb-jar>
+  <enterprise-beans>
+    <session>
+      <ejb-name>HWorld</ejb-name>
+      <home>env.HWorldHome</home>
+      <remote>env.HWorldRemote</remote>
+      <ejb-class>env.HWorld</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+      <env-entry>
+        <env-entry-name>env1</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>iNetSolv</env-entry-value>
+      </env-entry>
+      <env-entry>
+        <env-entry-name>env2</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>AmeerPet</env-entry-value>
+      </env-entry>
+      <env-entry>
+        <env-entry-name>cname</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>AmeerPet</env-entry-value>
+      </env-entry>
+      <env-entry>
+        <env-entry-name>caddress</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>
+        <env-entry-value>iNetSolv</env-entry-value>
+      </env-entry>
+    </session>
+  </enterprise-beans>
+
+  <assembly-descriptor>
+  </assembly-descriptor>
+
+</ejb-jar>

@@ -1,0 +1,2 @@
+This example shows how to use envionment to set the configuration
+parameters that can be used by the bean.

@@ -1,0 +1,10 @@
+
+------=_Part_0_15684866.1065504763690
+Content-Type: text/xml; charset='utf-8'
+Content-Transfer-Encoding: 8bit
+Content-ID: __WLS__1065504763770__SOAP__
+
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><env:Body><inet:product><ProdName>Pen</ProdName><Price>10</Price></inet:product></env:Body></env:Envelope>
+------=_Part_0_15684866.1065504763690
+Content-Type: image/gif
+

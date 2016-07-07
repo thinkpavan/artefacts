@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- the above line is to say that we are using xml 1.0 syntax-->
+<!DOCTYPE PurchaseOrder[
+  <!ELEMENT PurchaseOrder (POLINE+)>
+  <!ELEMENT POLINE (itemid,qty)> <!-- this is to indicate that a poline
+	element should contain another two items itemid and qty-->
+  <!ELEMENT itemid (#PCDATA)> 
+  <!ELEMENT qty (#PCDATA)>   
+]>
+<!-- DTD is defined as part of the xml doc -->
+<PurchaseOrder>
+<!-- looking at this we can identify that the purchase order no is 001 -->
+	<pono> 001 </pono>
+	<poline no ="1">
+		<itemid>it100</itemid>
+		<qty>20</qty>
+	</poline>
+	<poline no ="2">
+		<itemid>it200</itemid>
+		<qty>11</qty>
+	</poline>
+</PurchaseOrder>

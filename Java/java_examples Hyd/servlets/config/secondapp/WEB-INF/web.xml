@@ -1,0 +1,100 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 1.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+    
+    <context-param>
+        <param-name>weblogic.servlet.reloadCheckSecs</param-name>
+        <param-value>0</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>Company name</param-name>
+        <param-value>Inetsolv Pvt Ltd</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>Developer Name</param-name>
+        <param-value>Student</param-value>
+    </context-param>
+  <!--  using the tags servlet and servlet-mapping we can configure
+   the servlets -->  
+
+	<servlet>
+	  <servlet-name>FS</servlet-name>
+        <servlet-class>FirstServlet</servlet-class>
+	</servlet>
+
+    <servlet>
+        <servlet-name>FHid</servlet-name>
+        <servlet-class>FHid</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SHid</servlet-name>
+        <servlet-class>SHid</servlet-class>
+    </servlet>
+
+	<servlet>
+	  <servlet-name>FFCookie</servlet-name>
+        <servlet-class>FFCookie</servlet-class>
+	</servlet>
+
+	<servlet>
+	  <servlet-name>SFCookie</servlet-name>
+        <servlet-class>SFCookie</servlet-class>
+	</servlet>
+
+	<servlet>
+	  <servlet-name>FFSession</servlet-name>
+        <servlet-class>FFSession</servlet-class>
+	</servlet>
+
+	<servlet>
+	  <servlet-name>SFSession</servlet-name>
+        <servlet-class>SFSession</servlet-class>
+	</servlet>
+
+    <servlet-mapping>
+        <servlet-name>SHid</servlet-name>
+        <url-pattern>SHid</url-pattern>
+    </servlet-mapping>    
+
+    <servlet-mapping>
+        <servlet-name>FHid</servlet-name>
+        <url-pattern>FHid</url-pattern>
+    </servlet-mapping>    
+
+    <servlet-mapping>
+        <servlet-name>FS</servlet-name>
+        <url-pattern>first</url-pattern>
+    </servlet-mapping>    
+
+    <servlet-mapping>
+        <servlet-name>SFCookie</servlet-name>
+        <url-pattern>SFCookie</url-pattern>
+    </servlet-mapping>    
+
+    <servlet-mapping>
+        <servlet-name>FFCookie</servlet-name>
+        <url-pattern>FFCookie</url-pattern>
+    </servlet-mapping>    
+
+    <servlet-mapping>
+        <servlet-name>FFSession</servlet-name>
+        <url-pattern>FFSession</url-pattern>
+    </servlet-mapping>    
+
+    <servlet-mapping>
+        <servlet-name>SFSession</servlet-name>
+        <url-pattern>SFSession</url-pattern>
+    </servlet-mapping>    
+
+    <welcome-file-list>
+        <welcome-file>welcome.html</welcome-file>
+    </welcome-file-list>
+    
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.html</location>
+    </error-page>
+</web-app>

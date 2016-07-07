@@ -1,0 +1,14 @@
+This example is similar to part3 but shows details of how to use get handle
+from the client/bean and other details of session context.
+
+No problem with current version
+
+
+while testing this example we found that weblogic is not
+return appropriate object with getEJBHome method()
+
+
+sesctxclient1 shows how to compare two objects and also shows how to write handle to persistance storage.
+
+sesctxclient2 shows how to get the connection to the object using the handle and this example is used to
+discuss other details of this mechanism.

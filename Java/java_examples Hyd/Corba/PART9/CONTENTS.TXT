@@ -1,0 +1,2 @@
+shows what happens if more than one client requests for a service
+on same CORBA object and also shows how to deactivate corba objects

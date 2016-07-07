@@ -1,0 +1,26 @@
+Exception: An exception is an error condition that voilates the rule
+of Java program. For example if we try to read a non existing file from
+the disk, an I/O exception will be thrown.
+
+1) Exception are thrown by methods to indicate the error condition.
+   For example: A method which opens a file can throw an exception
+                if it is not able to open the file for some reason
+ 		to indicate error.
+
+2) Any method that calls another method should either handle the exception
+   condition by using " Exception Handler code" or throw an exception
+   to indicate the error.
+
+3) There are two kinds of exceptions in Java Language 
+	a) Checked Exception and
+	b) Un Checked Exception.
+
+4) All checked exceptions are checked by the compiler at compile time.
+
+5) Java compiler will not check for unchecked exceptions. These exceptions
+   are also called as run time exceptions ( These exceptions are detected
+   at run time).
+
+6) Runtime exceptions are considered as un recoverable and therefore
+   we donot handle them.
+

@@ -1,0 +1,41 @@
+JCA is composed of three primary elements: 
+
+A)System contracts 
+
+System contracts define the connection between the application server and the EIS.
+
+Three types of system contracts are defined: 
+The connection management 
+The transaction management
+The security 	
+( This will be implemented as part of resource adapter).
+
+B)Client API
+	The API can be specific to the resource adapter or it can be the standard Common Client
+ Interface (CCI) as defined by JCA
+ 
+
+C)Resource adapter module
+
+The resource adapter module contains all of the elements necessary to provide
+EIS connectivity to applications.
+
+Specifically, the resource adapter module includes the following components:
+
+1)The Java classes and interfaces that implement the resource adapter 
+2)Any utility Java classes required by the resource adapter 
+3)Any EIS-specific platform-dependent native libraries 
+4)The deployment descriptor 
+
+
+RA's has to be packed in RAR files ( same as jar ).
+
+
+
+Some of the JCA RA's available from different vendors.
+
+
+http://www.librados.com/  ( provider of so many adapters for different systems ).
+
+
+java.sun.com/j2ee/connector/products.html

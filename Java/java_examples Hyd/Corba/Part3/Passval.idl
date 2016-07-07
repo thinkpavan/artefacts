@@ -1,0 +1,14 @@
+// Passval.idl
+// Module in Corba is mapped to Package in Java
+module INetMod {
+// Interface in Corba is very much similar to Java Interface  
+  interface Passval{
+// this corba object is to demonstrate idl/java maping
+	void passParam(in short s,in wchar w,in double d);
+	long passParam1(in char c,in long long ll);
+	// shows parameters that are pased by value, we have no problem mapping
+	// these params to java
+  };
+
+};
+		  

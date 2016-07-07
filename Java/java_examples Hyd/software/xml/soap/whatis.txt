@@ -1,0 +1,20 @@
+SOAP - Simple Object Access Protocol
+
+---> is a standard specification describing data encoding and packaging
+rules for XML based communication.
+
+-------------------------------------------------
+It describes how XML messages can be created, packaged and transmitted between systems.
+-------------------------------------------------
+
+JAX- RPC -- Java Api for XML based Remote Procedure Call.
+
+Using  JAX-RPC we can send remote procedure call using
+SOAP over internet and receive the results.
+
+SAAJ -- SOAP with attachements API for JAVA.
+can be used to create and send SOAP with attachements over the
+internet.
+
+JAXR -- Java API for XML registries.
+Standard way to access business registries and share information.

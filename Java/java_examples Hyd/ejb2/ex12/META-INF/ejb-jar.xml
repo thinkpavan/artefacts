@@ -1,0 +1,63 @@
+<!DOCTYPE ejb-jar PUBLIC '-//Sun Microsystems, Inc.//DTD Enterprise JavaBeans 2.0//EN' 'http://java.sun.com/dtd/ejb-jar_2_0.dtd'>
+
+
+<!-- Generated XML! -->
+
+<ejb-jar>
+  <enterprise-beans>
+    <session>
+      <ejb-name>Sec</ejb-name>
+      <home>sec.SecHome</home>
+      <remote>sec.SecRemote</remote>
+      <ejb-class>sec.Sec</ejb-class>
+      <session-type>Stateless</session-type>
+      <transaction-type>Container</transaction-type>
+    </session>
+  </enterprise-beans>
+
+  <assembly-descriptor>
+    <security-role>
+      <role-name>role1</role-name>
+    </security-role>
+    <method-permission>
+      <role-name>role1</role-name>
+      <method>
+        <ejb-name>Sec</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>busMethod1</method-name>
+        <method-params>
+        </method-params>
+
+      </method>
+    </method-permission>
+    <container-transaction>
+      <method>
+        <ejb-name>Sec</ejb-name>
+        <method-name>*</method-name>
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>Sec</ejb-name>
+        <method-name>busMethod1</method-name>
+        <method-params>
+        </method-params>
+
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+    <container-transaction>
+      <method>
+        <ejb-name>Sec</ejb-name>
+        <method-intf>Remote</method-intf>
+        <method-name>busMethod1</method-name>
+        <method-params>
+        </method-params>
+
+      </method>
+      <trans-attribute>Required</trans-attribute>
+    </container-transaction>
+  </assembly-descriptor>
+
+</ejb-jar>

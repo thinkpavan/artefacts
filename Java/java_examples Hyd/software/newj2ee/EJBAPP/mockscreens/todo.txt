@@ -1,0 +1,21 @@
+
+
+login page.
+
+mainmenupage.
+
+user mgmt.
+
+theatre mgmt.
+
+
+reports.
+
+tickets issued.
+
+theatre list.
+
+
+book tickets.
+
+cancel tickets.

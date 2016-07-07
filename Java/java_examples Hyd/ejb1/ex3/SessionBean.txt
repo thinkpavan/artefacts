@@ -1,0 +1,23 @@
+SessionBean interace should be implemented by all classes that implements
+the business methods of a session bean. This interface extends from
+EnterpriseBean which is an empty interface (acts as a marker).
+
+Following are the methods in this interface.
+
+1) ejbActivate -- this method will be  called by the container when it
+ activates a bean from pasive state.
+
+2) ejbPassivate -- this method will be called by container when the container    passivates the bean. resource has to be realeased when this is called and
+   they can be acquired again in activate method.
+
+3) ejbRemove() -- called when the EJBObject is removed from the container.
+   This will be called in one of the below casses.
+
+   a) when client calls remove method on remote reference.
+  
+   b) when the time out value of bean expires.
+
+4) setSessionContext -- called by the container to set the session context 
+   of the bean. SessionContext object provides a way for the bean to interact 
+   with the container. This method will be called when the instance is 
+   created.
