@@ -1,0 +1,821 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Using Swing Components: Examples</title>
+</head>
+<body BGCOLOR="#ffffff" LINK="#000099">
+<B><FONT SIZE="-1">The Java</font><font size="-2"><sup>TM</sup></font> <font size="-1">Tutorial</FONT></B>
+<br>
+<table width="550">
+<tr>
+<td align="left" valign="center">
+<a href="../../overview/example-swing/index.html"><img src="../../../images/PreviousArrow.gif" width="26" height="26" align="center" border="0" alt="Previous Page"></a>
+<a href="../../TOC.html#components"><img src="../../../images/TOCIcon.gif" width="26" height="26" align="center" border="0" alt="Lesson Contents"></a>
+<a href="../../misc/example-swing/index.html"><img src="../../../images/NextArrow.gif" width="26" height="26" align="center" border="0" alt="Next Page"></a></td>
+
+<td align="center" valign="center">
+<font size="-1">
+<a href="../../../index.html">Start of Tutorial</a>
+&gt;
+<a href="../../index.html">Start of Trail</a>
+&gt;
+<a href="../index.html">Start of Lesson</a>
+</font>
+</td>
+
+<td align="right" valign="center">
+<font size="-1">
+<a href="../../../search.html">Search</a>
+</font>
+</td>
+
+</tr>
+</table>
+<img src="../../../images/blueline.gif" width="550" height="8" ALIGN="BOTTOM" NATURALSIZEFLAG="3">
+<br>
+
+<font size="-1">
+<b>Trail</b>: Creating a GUI with JFC/Swing
+<br>
+<b>Lesson</b>: Using Swing Components
+</font>
+
+<h2>
+Using Swing Components: Examples
+</h2>
+<blockquote>
+
+<blockquote><hr><strong>Note:</strong>&nbsp;Examples are applications unless noted otherwise.
+<hr></blockquote>
+
+<p>
+For most examples,
+place the image files in a directory named <code>images</code>
+in the same directory as the source and class files for the example.
+For example, here's the setup for <code>ButtonDemo</code>:
+
+<blockquote><pre>
+                 <em>a directory</em>
+                      |
+          +-----------+-----------+
+          |                       |
+      ButtonDemo*               images
+                                  |   
+                     +------------+------------+
+                     |            |            | 
+                 left.gif      middle.gif   right.gif
+</pre></blockquote>
+
+[PENDING: draw real figure instead of ASCII figure]
+<p>
+Some examples, such as
+<a href="#CheckBoxDemo"><code>CheckBoxDemo</code></a> and
+<a href="#SliderDemo"><code>SliderDemo</code></a>,
+require the image files to be in a sub-directory of
+the <code>images</code> directory.
+<p>
+
+<table border="1">
+
+<tr>
+<td><strong>Source Files</td>
+<td><strong>Image & Other Files</strong></td>
+<td><strong>Where Described</td>
+</tr>
+
+<tr>
+<td><a name="ButtonDemo">
+    <a href="ButtonDemo.java"><code>ButtonDemo.java</code></a>
+    </a></td>
+<td><a href="images/right.gif"><code>right.gif</code></a>,
+    <a href="images/middle.gif"><code>middle.gif</code></a>,
+    <a href="images/left.gif"><code>left.gif</code></a></td>
+<td><a href="../button.html">
+    How to Use Buttons, <em>...</em></a></td>
+</tr>
+
+<tr>
+<td><a name="CheckBoxDemo">
+    <a href="CheckBoxDemo.java"><code>CheckBoxDemo.java</code></a>
+    </a></td>
+<td>All of the images in the
+    <a href="#geekimages"><code>images/geek</code></a> directory.</td>
+<td><a href="../button.html">
+    How to Use Buttons, <em>...</em></a></td>
+</tr>
+
+<tr>
+<td><a name="ColorChooserDemo">
+    <a href="ColorChooserDemo.java"><code>ColorChooserDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../colorchooser.html">
+    How to Use Color Choosers</a></td>
+</tr>
+
+<tr>
+<td><a name="ColorChooserDemo2">
+    <a href="ColorChooserDemo2.java"><code>ColorChooserDemo2.java</code></a>
+    <br>&nbsp;&nbsp;<a href="CrayonPanel.java"><code>CrayonPanel.java</code></a>
+    </a></td>
+<td><a href="images/red.gif"><code>red.gif</code></a>,
+    <a href="images/yellow.gif"><code>yellow.gif</code></a>,
+    <a href="images/green.gif"><code>green.gif</code></a>,
+    <a href="images/blue.gif"><code>blue.gif</code></a></td>
+<td><a href="../colorchooser.html">
+    How to Use Color Choosers</a></td>
+</tr>
+
+<tr>
+<td><a name="ComboBoxDemo">
+    <a href="ComboBoxDemo.java"><code>ComboBoxDemo.java</code></a>
+    </a></td>
+<td><a href="images/Bird.gif"><code>Bird.gif</code></a>,
+    <a href="images/Cat.gif"><code>Cat.gif</code></a>,
+    <a href="images/Dog.gif"><code>Dog.gif</code></a>,
+    <a href="images/Rabbit.gif"><code>Rabbit.gif</code></a>,
+    <a href="images/Pig.gif"><code>Pig.gif</code></a></td>
+<td><a href="../combobox.html">
+    How to Use Combo Boxes</a></td>
+</tr>
+
+<tr>
+<td><a name="ComboBoxDemo2">
+    <a href="ComboBoxDemo2.java"><code>ComboBoxDemo2.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../combobox.html">
+    How to Use Combo Boxes</a></td>
+</tr>
+
+<tr>
+<td><a name="CustomComboBoxDemo">
+    <a href="CustomComboBoxDemo.java"><code>CustomComboBoxDemo.java</code></a>
+    </a></td>
+<td><a href="images/Bird.gif"><code>Bird.gif</code></a>,
+    <a href="images/Cat.gif"><code>Cat.gif</code></a>,
+    <a href="images/Dog.gif"><code>Dog.gif</code></a>,
+    <a href="images/Rabbit.gif"><code>Rabbit.gif</code></a>,
+    <a href="images/Pig.gif"><code>Pig.gif</code></a></td>
+<td><a href="../combobox.html">
+    How to Use Combo Boxes</a></td>
+</tr>
+
+<tr>
+<td><a name="DialogDemo">
+    <a href="DialogDemo.java"><code>DialogDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="CustomDialog.java"><code>CustomDialog.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a></td>
+<td><a href="../dialog.html">
+    How to Use Dialogs</a></td>
+</tr>
+
+<tr>
+<td><a name="DynamicTreeDemo">
+    <a href="DynamicTreeDemo.java"><code>DynamicTreeDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="DynamicTree.java"><code>DynamicTree.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../tree.html">
+    How to Use Trees</a></td>
+</tr>
+
+<tr>
+<td><a name="FileChooserDemo">
+    <a href="FileChooserDemo.java"><code>FileChooserDemo.java</code></a>
+    </a></td>
+<td><a href="images/open.gif"><code>open.gif</code></a>,
+    <a href="images/save.gif"><code>save.gif</code></a></td>
+<td><a href="../filechooser.html">
+    How to Use File Choosers</a></td>
+</tr>
+
+<tr>
+<td><a name="FileChooserDemo2">
+    <a href="FileChooserDemo2.java"><code>FileChooserDemo2.java</code></a>
+    <br>&nbsp;&nbsp;<a href="ImageFileView.java"><code>ImageFileView.java</code></a>
+    <br>&nbsp;&nbsp;<a href="ImageFilter.java"><code>ImageFilter.java</code></a>
+    <br>&nbsp;&nbsp;<a href="ImagePreview.java"><code>ImagePreview.java</code></a>
+    <br>&nbsp;&nbsp;<a href="Utils.java"><code>Utils.java</code></a>
+    </a></td>
+<td><a href="images/jpgIcon.gif"><code>jpgIcon.gif</code></a>,
+    <a href="images/gifIcon.gif"><code>gifIcon.gif</code></a>,
+    <a href="images/tiffIcon.gif"><code>tiffIcon.gif</code></a></td>
+<td><a href="../filechooser.html">
+    How to Use File Choosers</a></td>
+</tr>
+
+<tr>
+<td><a name="FrameDemo">
+    <a href="FrameDemo.java"><code>FrameDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../frame.html">
+    How to Make Frames</a></td>
+</tr>
+
+<tr>
+<td><a name="Framework">
+    <a href="Framework.java"><code>Framework.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td>Nowhere</td>
+</tr>
+
+<tr>
+<td><a name="GenealogyExample">
+    <a href="GenealogyExample.java"><code>GenealogyExample.java</code></a>
+    <br>&nbsp;&nbsp;<a href="GenealogyModel.java"><code>GenealogyModel.java</code></a>
+    <br>&nbsp;&nbsp;<a href="GenealogyTree.java"><code>GenealogyTree.java</code></a>
+    <br>&nbsp;&nbsp;<a href="Person.java"><code>Person.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../tree.html">
+    How to Use Trees</a></td>
+</tr>
+
+<tr>
+<td><a name="GlassPaneDemo">
+    <a href="GlassPaneDemo.java"><code>GlassPaneDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../rootpane.html">
+    How to Use Root Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="HtmlDemo">
+    <a href="HtmlDemo.java"><code>HtmlDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../label.html">
+    How to Use Labels</a></td>
+</tr>
+
+<tr>
+<td><a name="InternalFrameDemo">
+    <a href="InternalFrameDemo.java"><code>InternalFrameDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="MyInternalFrame.java"><code>MyInternalFrame.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../internalframe.html">
+    How to Use Internal Frames</a></td>
+</tr>
+
+<tr>
+<td><a name="LabelDemo">
+    <a href="LabelDemo.java"><code>LabelDemo.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a></td>
+<td><a href="../label.html">
+    How to Use Labels</a></td>
+</tr>
+
+<tr>
+<td><a name="LayeredPaneDemo">
+    <a href="LayeredPaneDemo.java"><code>LayeredPaneDemo.java</code></a>
+    </a></td>
+<td><a href="images/dukeWaveRed.gif"><code>dukeWaveRed.gif</code></a></td>
+<td><a href="../layeredpane.html">
+    How to Use Layered Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="LayeredPaneDemo2">
+    <a href="LayeredPaneDemo2.java"><code>LayeredPaneDemo2.java</code></a>
+    </a></td>
+<td><a href="images/dukeWaveRed.gif"><code>dukeWaveRed.gif</code></a></td>
+<td><a href="../layeredpane.html">
+    How to Use Layered Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="ListDemo">
+    <a href="ListDemo.java"><code>ListDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../list.html">
+    How to Use Lists</a></td>
+</tr>
+
+<tr>
+<td><a name="ListDialog">
+    <a href="ListDialog.java"><code>ListDialog.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../button.html">
+    How to Use Buttons, <em>...</em></a></td>
+</tr>
+
+<tr>
+<td><a name="MenuLookDemo">
+    <a href="MenuLookDemo.java"><code>MenuLookDemo.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a></td>
+<td><a href="../menu.html">
+    How to Use Menus</a></td>
+</tr>
+
+<tr>
+<td><a name="MenuDemo">
+    <a href="MenuDemo.java"><code>MenuDemo.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a></td>
+<td><a href="../menu.html">
+    How to Use Menus</a></td>
+</tr>
+
+<tr>
+<td><a name="MenuGlueDemo">
+    <a href="MenuGlueDemo.java"><code>MenuGlueDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../menu.html">
+    How to Use Menus</a></td>
+</tr>
+
+<tr>
+<td><a name="MenuLayoutDemo">
+    <a href="MenuLayoutDemo.java"><code>MenuLayoutDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../menu.html">
+    How to Use Menus</a></td>
+</tr>
+
+<tr>
+<td><a name="PasswordDemo">
+    <a href="PasswordDemo.java"><code>PasswordDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../textfield.html">
+    How to Use Text Fields</a></td>
+</tr>
+
+<tr>
+<td><a name="PopupMenuDemo">
+    <a href="PopupMenuDemo.java"><code>PopupMenuDemo.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a></td>
+<td><a href="../menu.html">
+    How to Use Menus</a></td>
+</tr>
+
+<tr>
+<td><a name="ProgressBarDemo">
+    <a href="ProgressBarDemo.java"><code>ProgressBarDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="LongTask.java"><code>LongTask.java</code></a>
+    <br>&nbsp;&nbsp;<a href="SwingWorker.java"><code>SwingWorker.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../progress.html">
+    How to Monitor Progress</a></td>
+</tr>
+
+<tr>
+<td><a name="ProgressMonitorDemo">
+    <a href="ProgressMonitorDemo.java"><code>ProgressMonitorDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="LongTask.java"><code>LongTask.java</code></a>
+    <br>&nbsp;&nbsp;<a href="SwingWorker.java"><code>SwingWorker.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../progress.html">
+    How to Monitor Progress</a></td>
+</tr>
+
+<tr>
+<td><a name="RadioButtonDemo">
+    <a href="RadioButtonDemo.java"><code>RadioButtonDemo.java</code></a>
+    </a></td>
+<td><a href="images/Bird.gif"><code>Bird.gif</code></a>,
+    <a href="images/Cat.gif"><code>Cat.gif</code></a>,
+    <a href="images/Dog.gif"><code>Dog.gif</code></a>,
+    <a href="images/Rabbit.gif"><code>Rabbit.gif</code></a>,
+    <a href="images/Pig.gif"><code>Pig.gif</code></a></td>
+<td><a href="../button.html">
+    How to Use Buttons, <em>...</em></a></td>
+</tr>
+
+<tr>
+<td><a name="ScrollDemo">
+    <a href="ScrollDemo.java"><code>ScrollDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="Rule.java"><code>Rule.java</code></a>
+    <br>&nbsp;&nbsp;<a href="Corner.java"><code>Corner.java</code></a>
+    <br>&nbsp;&nbsp;<a href="ScrollablePicture.java"><code>ScrollablePicture.java</code></a>
+    </a> </td>
+<td><a href="images/youngdad.jpeg"><code>youngdad.jpeg</code></a></td>
+<td><a href="../scrollpane.html">
+    How to Use Scroll Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="ScrollDemo2">
+    <a href="ScrollDemo2.java"><code>ScrollDemo2.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../scrollpane.html">
+    How to Use Scroll Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="SharedModelDemo">
+    <a href="SharedModelDemo.java"><code>SharedModelDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td>Nowhere [PENDING: OK?]</td>
+</tr>
+
+<tr>
+<td><a name="SimpleTableDemo">
+    <a href="SimpleTableDemo.java"><code>SimpleTableDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="SimpleTableSelectionDemo">
+    <a href="SimpleTableSelectionDemo.java"><code>SimpleTableSelectionDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="SliderDemo">
+    <a href="SliderDemo.java"><code>SliderDemo.java</code></a>
+    </a></td>
+<td>All of the images in the
+    <a href="#doggyimages"><code>images/doggy</code></a> directory.</td>
+<td><a href="../slider.html">
+    How to Use Sliders</a></td>
+</tr>
+
+<tr>
+<td><a name="SliderDemo2">
+    <a href="SliderDemo2.java"><code>SliderDemo2.java</code></a>
+    </a></td>
+<td>All of the images in the
+    <a href="#doggyimages"><code>images/doggy</code></a> directory.</td>
+<td><a href="../slider.html">
+    How to Use Sliders</a></td>
+</tr>
+
+<tr>
+<td><a name="SplitPaneDemo">
+    <a href="SplitPaneDemo.java"><code>SplitPaneDemo.java</code></a>
+    </a></td>
+<td><a href="imagenames.properties"><code>imagenames.properties</code></a>
+     and all of the <a href="#splitpaneimages">image files</a>
+     listed in it.</td>
+<td><a href="../splitpane.html">
+    How to Use Split Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="SplitPaneDemo2">
+    <a href="SplitPaneDemo2.java"><code>SplitPaneDemo2.java</code></a>
+    </a></td>
+<td><a href="imagenames.properties"><code>imagenames.properties</code></a>
+     and all of the <a href="#splitpaneimages">image files</a>
+     listed in it.</td>
+<td><a href="../splitpane.html">
+    How to Use Split Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="TabbedPaneDemo">
+    <a href="TabbedPaneDemo.java"><code>TabbedPaneDemo.java</code></a>
+    </a></td>
+<td> <a href="images/middle.gif"><code>middle.gif</code></a></td>
+<td><a href="../tabbedpane.html">
+    How to Use Tabbed Panes</a></td>
+</tr>
+
+<tr>
+<td><a name="TableDemo">
+    <a href="TableDemo.java"><code>TableDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="TableEditDemo">
+    <a href="TableEditDemo.java"><code>TableEditDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="WholeNumberField.java"><code>WholeNumberField.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="TableDialogEditDemo">
+    <a href="TableDialogEditDemo.java"><code>TableDialogEditDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="WholeNumberField.java"><code>WholeNumberField.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="TableRenderDemo">
+    <a href="TableRenderDemo.java"><code>TableRenderDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="TableSorterDemo">
+    <a href="TableSorterDemo.java"><code>TableSorterDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="TableMap.java"><code>TableMap.java</code></a>
+    <br>&nbsp;&nbsp;<a href="TableSorter.java"><code>TableSorter.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../table.html">
+    How to Use Tables</a></td>
+</tr>
+
+<tr>
+<td><a name="TextComponentDemo">
+    <a href="TextComponentDemo.java"><code>TextComponentDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="LimitedStyledDocument.java"><code>LimitedStyledDocument.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../generaltext.html">
+    General Rules for Using Text Components</a></td>
+</tr>
+
+<tr>
+<td><a name="TextDemo">
+    <a href="TextDemo.java"><code>TextDemo.java</code></a>
+    <em>(an applet)</em>
+    </a></td>
+<td>To run the applet:
+    <a href="../TextDemo.html"><code>TextDemo.html</code></a>
+    <br>To view the &lt;APPLET&gt; tag: 
+    <a href="../TextDemo.atag"><code>TextDemo.atag</code></a></td>
+<td><a href="../textfield.html">
+    How to Use Text Fields</a></td>
+</tr>
+
+<tr>
+<td><a name="TextFieldDemo">
+    <a href="TextFieldDemo.java"><code>TextFieldDemo.java</code></a>
+    <br>&nbsp;&nbsp;<a href="DecimalField.java"><code>DecimalField.java</code></a>
+    <br>&nbsp;&nbsp;<a href="FormattedDocument.java"><code>FormattedDocument.java</code></a>
+    <br>&nbsp;&nbsp;<a href="WholeNumberField.java"><code>WholeNumberField.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../textfield.html">
+    How to Use Text Fields</a></td>
+</tr>
+
+<tr>
+<td><a name="TextSamplerDemo">
+    <a href="TextSamplerDemo.java"><code>TextSamplerDemo.java</code></a></td>
+<td><a href="images/Pig.gif"><code>Pig.gif</code></a>,
+    <a href="images/sound.gif"><code>sound.gif</code></a>,
+    <a href="images/dukeWaveRed.gif"><code>dukeWaveRed.gif</code></a>,
+    <a href="TextSamplerDemoHelp.html"><code>TextSamplerDemoHelp.html</code></a>
+    </a></td>
+<td><a href="../simpletext.html">
+    An Example of Using Each Text Component</a></td>
+</tr>
+
+<tr>
+<td><a name="ToolBarDemo">
+    <a href="ToolBarDemo.java"><code>ToolBarDemo.java</code></a>
+    </a></td>
+<td><a href="images/right.gif"><code>right.gif</code></a>,
+    <a href="images/middle.gif"><code>middle.gif</code></a>,
+    <a href="images/left.gif"><code>left.gif</code></a></td>
+<td><a href="../toolbar.html">
+    How to Use Tool Bars</a></td>
+</tr>
+
+<tr>
+<td><a name="ToolBarDemo2">
+    <a href="ToolBarDemo2.java"><code>ToolBarDemo2.java</code></a>
+    </a></td>
+<td><a href="images/right.gif"><code>right.gif</code></a>,
+    <a href="images/middle.gif"><code>middle.gif</code></a>,
+    <a href="images/left.gif"><code>left.gif</code></a></td>
+<td><a href="../toolbar.html">
+    How to Use Tool Bars</a></td>
+</tr>
+
+<tr>
+<td><a name="TopLevelDemo">
+    <a href="TopLevelDemo.java"><code>TopLevelDemo.java</code></a>
+    </a></td>
+<td> &nbsp;</td>
+<td><a href="../toplevel.html">
+    Using Top-Level Containers</a></td>
+</tr>
+
+<tr>
+<td><a name="TreeDemo">
+    <a href="TreeDemo.java"><code>TreeDemo.java</code></a>
+    </a></td>
+<td>Several <a href="#treefiles">html files</a>.</td>
+<td><a href="../tree.html">
+    How to Use Trees</a></td>
+</tr>
+
+<tr>
+<td><a name="TreeIconDemo">
+    <a href="TreeIconDemo.java"><code>TreeIconDemo.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a>
+    and several <a href="#treefiles">html files</a>.</td>
+<td><a href="../tree.html">
+    How to Use Trees</a></td>
+</tr>
+
+<tr>
+<td><a name="TreeIconDemo2">
+    <a href="TreeIconDemo2.java"><code>TreeIconDemo2.java</code></a>
+    </a></td>
+<td><a href="images/middle.gif"><code>middle.gif</code></a>
+    and several <a href="#treefiles">html files</a>.</td>
+<td><a href="../tree.html">
+    How to Use Trees</a></td>
+</tr>
+
+<tr>
+<td><a name="TumbleItem">
+    <a href="TumbleItem.java"><code>TumbleItem.java</code></a>
+    <em>(an applet)</em>
+    </a></td>
+<td>All of the images in the
+    <a href="#tumbleimages"><code>images/tumble</code></a> directory.
+    <br>To run the applet:
+    <a href="../TumbleItem.html"><code>TumbleItem.html</code></a>
+    <br>To view the &lt;APPLET&gt; tag:
+    <a href="../TumbleItem.atag"><code>TumbleItem.atag</code></a></td>
+<td><a href="../applet.html">
+    How to Make Applets</a></td>
+</tr>
+</table>
+
+<a name="geekimages">
+</blockquote>
+<h3>Geek Images</h3>
+<blockquote>
+<a href="images/geek/geek-----.gif"><code>geek-----.gif</code></a>,
+<a href="images/geek/geek-c---.gif"><code>geek-c---.gif</code></a>,
+<a href="images/geek/geek--g--.gif"><code>geek--g--.gif</code></a>,
+<a href="images/geek/geek---h-.gif"><code>geek---h-.gif</code></a>,
+
+<br><a href="images/geek/geek----t.gif"><code>geek----g.gif</code></a>,
+<a href="images/geek/geek-cg--.gif"><code>geek-cg--.gif</code></a>,
+<a href="images/geek/geek-c-h-.gif"><code>geek-c-h-.gif</code></a>,
+<a href="images/geek/geek-c--t.gif"><code>geek-c--t.gif</code></a>,
+
+<br><a href="images/geek/geek--gh-.gif"><code>geek--gh-.gif</code></a>,
+<a href="images/geek/geek--g-t.gif"><code>geek--g-t.gif</code></a>,
+<a href="images/geek/geek---ht.gif"><code>geek---h-.gif</code></a>,
+<a href="images/geek/geek-cg-t.gif"><code>geek-cg-t.gif</code></a>,
+
+<br><a href="images/geek/geek-cgh-.gif"><code>geek-cgh-.gif</code></a>,
+<a href="images/geek/geek-c-ht.gif"><code>geek-c-ht.gif</code></a>,
+<a href="images/geek/geek--ght.gif"><code>geek--ght.gif</code></a>,
+<a href="images/geek/geek-cght.gif"><code>geek-cght.gif</code></a>
+</blockquote>
+
+<a name="doggyimages">
+<h3>Doggy Images</h3>
+<blockquote>
+<a href="images/doggy/T0.gif"><code>T0.gif</code></a>,
+<a href="images/doggy/T1.gif"><code>T1.gif</code></a>,
+<a href="images/doggy/T2.gif"><code>T2.gif</code></a>,
+<a href="images/doggy/T3.gif"><code>T3.gif</code></a>,
+<a href="images/doggy/T4.gif"><code>T4.gif</code></a>,
+<a href="images/doggy/T5.gif"><code>T5.gif</code></a>,
+<a href="images/doggy/T6.gif"><code>T6.gif</code></a>,
+<br>
+<a href="images/doggy/T7.gif"><code>T7.gif</code></a>,
+<a href="images/doggy/T8.gif"><code>T8.gif</code></a>,
+<a href="images/doggy/T9.gif"><code>T9.gif</code></a>,
+<a href="images/doggy/T10.gif"><code>T10.gif</code></a>,
+<a href="images/doggy/T11.gif"><code>T11.gif</code></a>,
+<a href="images/doggy/T12.gif"><code>T12.gif</code></a>,
+<a href="images/doggy/T13.gif"><code>T13.gif</code></a>
+
+</blockquote>
+
+<a name="tumbleimages">
+<h3>Tumble Images</h3>
+<blockquote>
+<a href="images/tumble/T1.gif"><code>T1.gif</code></a>,
+<a href="images/tumble/T2.gif"><code>T2.gif</code></a>,
+<a href="images/tumble/T3.gif"><code>T3.gif</code></a>,
+<a href="images/tumble/T4.gif"><code>T4.gif</code></a>,
+<a href="images/tumble/T5.gif"><code>T5.gif</code></a>,
+
+<br><a href="images/tumble/T6.gif"><code>T6.gif</code></a>,
+<a href="images/tumble/T7.gif"><code>T7.gif</code></a>,
+<a href="images/tumble/T8.gif"><code>T8.gif</code></a>,
+<a href="images/tumble/T9.gif"><code>T9.gif</code></a>,
+<a href="images/tumble/T10.gif"><code>T10.gif</code></a>,
+
+<br><a href="images/tumble/T11.gif"><code>T11.gif</code></a>,
+<a href="images/tumble/T12.gif"><code>T12.gif</code></a>,
+<a href="images/tumble/T13.gif"><code>T13.gif</code></a>,
+<a href="images/tumble/T14.gif"><code>T14.gif</code></a>,
+<a href="images/tumble/T15.gif"><code>T15.gif</code></a>,
+
+<br><a href="images/tumble/T16.gif"><code>T16.gif</code></a>,
+<a href="images/tumble/T17.gif"><code>T17.gif</code></a>
+</blockquote>
+
+<a name="splitpaneimages">
+<h3>Images listed in imagenames.properties</h3>
+<blockquote>
+<a href="images/Bird.gif"><code>Bird.gif</code></a>,
+<a href="images/Cat.gif"><code>Cat.gif</code></a>,
+<a href="images/Dog.gif"><code>Dog.gif</code></a>,
+<a href="images/Rabbit.gif"><code>Rabbit.gif</code></a>,
+<a href="images/Pig.gif"><code>Pig.gif</code></a>,
+
+<br><a href="images/all.gif"><code>all.gif</code></a>,
+<a href="images/blue.gif"><code>blue.gif</code></a>,
+<a href="images/doggy/T1.gif"><code>doggy/T1.gif</code></a>,
+<a href="images/dukeWaveRed.gif"><code>dukeWaveRed.gif</code></a>,
+<a href="images/geek/geek-cght.gif"><code>geek/geek-cght.gif</code></a>,
+
+<br><a href="images/green.gif"><code>green.gif</code></a>,
+<a href="images/kathyCosmo.gif"><code>kathyCosmo.gif</code></a>,
+<a href="images/lainesTongue.gif"><code>lainesTongue.gif</code></a>,
+<a href="images/left.gif"><code>left.gif</code></a>,
+<a href="images/middle.gif"><code>middle.gif</code></a>,
+
+<br><a href="images/red.gif"><code>red.gif</code></a>,
+<a href="images/right.gif"><code>right.gif</code></a>,
+<a href="images/smallbabies.jpeg"><code>smallbabies.jpeg</code></a>,
+<a href="images/sophie.gif"><code>sophie.gif</code></a>,
+<a href="images/stickerface.gif"><code>stickerface.gif</code></a>,
+
+<br><a href="images/tumble/T7.gif"><code>tumble/T7.gif</code></a>,
+<a href="images/yellow.gif"><code>yellow.gif</code></a>,
+<a href="images/youngdad.jpeg"><code>youngdad.jpeg</code></a>,
+</blockquote>
+
+<a name="treefiles">
+<h3>HTML Files Required for Tree Demos</h3>
+<blockquote>
+<a href="TreeDemoHelp.html"><code>TreeDemoHelp.html</code></a>
+<br><a href="tutorial.html"><code>tutorial.html</code></a>
+<br><a href="tutorialcont.html"><code>tutorialcont.html</code></a>
+<br><a href="swingtutorial.html"><code>swingtutorial.html</code></a>
+<br><a href="arnold.html"><code>arnold.html</code></a>
+<br><a href="faq.html"><code>faq.html</code></a>
+<br><a href="chanlee.html"><code>chanlee.html</code></a>
+<br><a href="thread.html"><code>thread.html</code></a>
+<br><a href="vm.html"><code>vm.html</code></a>
+<br><a href="jls.html"><code>jls.html</code></a>
+
+
+
+</blockquote>
+
+<img src="../../../images/blueline.gif" width="550" height="8" ALIGN="BOTTOM" NATURALSIZEFLAG="3">
+<br>
+<table width="550">
+<tr>
+<td align="left" valign="center">
+<a href="../../overview/example-swing/index.html"><img src="../../../images/PreviousArrow.gif" width="26" height="26" align="center" border="0" alt="Previous Page"></a>
+<a href="../../TOC.html#components"><img src="../../../images/TOCIcon.gif" width="26" height="26" align="center" border="0" alt="Lesson Contents"></a>
+<a href="../../misc/example-swing/index.html"><img src="../../../images/NextArrow.gif" width="26" height="26" align="center" border="0" alt="Next Page"></a></td>
+
+<td align="center" valign="center">
+<font size="-1">
+<a href="../../../index.html">Start of Tutorial</a>
+&gt;
+<a href="../../index.html">Start of Trail</a>
+&gt;
+<a href="../index.html">Start of Lesson</a>
+</font>
+</td>
+
+<td align="right" valign="center">
+<font size="-1">
+<a href="../../../search.html">Search</a>
+</font>
+</td>
+
+</tr>
+</table>
+</body>
+</html>

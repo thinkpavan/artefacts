@@ -1,0 +1,151 @@
+Effective from 2000-2001
+                                     OSMANIA UNIVERSITY
+                                                 
+                                                 
+                       COURSE STRUCTURE AND SCHEME OF VALUATION
+                                         III YEAR - BCA
+  
+  
+ Subject 
+                            Subject Title
+                                               Instruction Hrs/week
+                                                               Univ.Exam 
+                                                                               Examination
+                                               L          T           P
+                                                                 Duration
+                                                                         Sess.Marks       Univ. Marks
+ I - SEMESTER  
+ Theory 
+                     
+                                                
+                                                                
+ BCA301
+                    Internet Protocols 
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ BCA302
+                    Web Programming 
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ BCA303 
+                    Object oriented System
+                    Development &UML
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ Elective-I
+                     (one of the following)
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ BCA311
+                    Advanced Java Programming 
+ BCA313
+                    UNIX Programming 
+ BCA314
+                    WINDOWS Programming
+ Practicals
+ BCA331
+                    Web Programming Laboratory 
+                                               -          -            6
+                                                                   3
+                                                                          25                           50
+ BCA332
+                    Elective Laboratory
+                                               -          -            6
+                                                                   3
+                                                                          25                           50
+ BCA333
+                    Seminar - I (Project)
+                                               -          -            3
+                                                                   3
+                                                                          25                           --
+ BCA334
+                    Personal Software Process 
+                                               2          -            -
+                                                                   3
+                                                                          25                           --
+ -------------------
+                    ---------------------------
+                                               --------------------
+                                                               ------------
+                                                                         ----------------------------
+                                               14        4          15
+                                                                   -
+                                                                          200                        400
+  II - SEMESTER
+ Theory
+ BCA351
+                    Mobile Computing 
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ BCA352 
+                    Electronic Commerce
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ BCA353
+                    Software Testing & Maintenance
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ Elective - II
+                    (one of the following) 
+                                               3          1            -
+                                                                   3
+                                                                          25                           75
+ BCA361
+                    Multi media
+ BCA362
+                    Enterprise Java
+ BCA363
+                    UNIX System Administration
+ Practicals
+ BCA381
+                    Project
+                                                                   12
+                                                                          75                       Grade*
+ BCA382
+                    Seminar - II
+                                                                   3
+                                                                          25                           --
+ -------------------
+                    ---------------------------
+                                               ---------------------
+                                                               ------------
+                                                                         -----------------------------
+ TOTAL
+                                               12       4            15
+                                                                              --
+                                                                          200                        300
+
+                 * Grades: Excellent/Good/Satisfactory/Not Satisfactory 
+                  L: Lecture Hours         T: Tutorials         P: Practicals 
+                                                 
+                                                 
+                                   III YEAR BCA - I SEMESTER
+                                                 
+
+Suggested Readings 
+
+  BCA301 - Internet Protocols :-  Behrouz A. Forouzan - TCP/IP Protocol syite, McGraw 2000 
+
+  BCA302 - Web Programming  :- Toipcs: HTML,DHTML, Java Scripts, XML, Perl 
+                                               Steven Hoizner - HTML Black book, Comprehensive Problem Solver, Dream Tech 2000
+  BCA303 - Object oriented System
+                    Development and UML   Ali Bahrami - Object oriented system development - McGraw 1999
+  BCA311 - Advanced Java:   Topics: Java Beans, JDBC, Servlets, JSP, Security, JNI, Reflection
+
+                                          Campione, Walrah, Huml - The Java Tutorial continued, the rest of JDK, Sun 1999
+
+                                               Larne Pekowsky - Java Server Pages - Addison Wesley 2000
+
+  BCA312 - Unix Programming:  W. Richard Stevens- Advanced programming in the UNIX environment, Addison
+Wesley1993
+  BCA313 - Windows Programming:  Herbert Schildt - Windows 2000 programming - from the ground up, McGraw 2000
+  BCA334 - Personal Software Process:  Watts S. Humphrey - Introduction to the personal software process, Addison 
+Wesley 1997
+ 

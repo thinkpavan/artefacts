@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname> Sridhar </shortname>
+
+<tag>
+        <name>display</name>
+        <tagclass>tagpack.SimpleTag</tagclass>
+        <bodycontent>empty</bodycontent>
+</tag>
+</taglib>

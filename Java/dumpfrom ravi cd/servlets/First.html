@@ -1,0 +1,20 @@
+<html>
+<script>
+	function test(){
+	if(document.forms[0].uname.value==''){
+		alert('Please Enter U R Name');
+		return false;
+	}
+	else
+	return true;
+}
+</script>
+<body bgcolor="yellow">
+<h3> Trendz IT People </h3>
+<form action="http://localhost:8080/examples/servlet/FirstServlet" method="get">
+Enter UserName<input type="text" name="uname"><br>
+Enter Password<input type="password" name="passwd"><br>
+<input type="submit" onClick="return test();">
+</form>
+</BODY>
+</HTML>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE empdetails SYSTEM "empdetails.dtd">
+<empdetails>
+	<emp>
+		<empno>1234</empno>
+		<ename>prasad</ename>
+	</emp>
+	<emp>
+		<empno>1235</empno>
+		<ename>Ramprasad</ename>
+	</emp>
+	<dept>
+		<deptno>10</deptno>
+		<dname>Salse</dname>
+	</dept>
+	<dept>
+		<deptno>20</deptno>
+		<dname>Purchse</dname>
+	</dept>
+</empdetails>

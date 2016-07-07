@@ -1,0 +1,12 @@
+staticmethoduse
+staticblock
+staticboxdemo
+boxdemo11
+objectParm
+
+javac -d c:\staff\ytrao\todaydemo8\mypack emp.java
+
+set classpath=%classpath%; c:\staff\ytrao\todaydemo8\mypack
+
+set classpath=%classpath%(current path); path of file
+javac -d . *.java

@@ -1,0 +1,14 @@
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>demo</shortname>
+<tag>
+	<name>hello</name>
+	<tagclass>tagdemo.HelloTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>name</name>
+		<required>false</required>
+	</attribute>
+</tag>
+</taglib>

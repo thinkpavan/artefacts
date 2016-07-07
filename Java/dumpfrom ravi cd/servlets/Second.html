@@ -1,0 +1,21 @@
+<html>
+<script>
+        function fun1(){
+        document.forms[0].var1.value='Click';
+        document.forms[0].submit();
+}
+        function fun2(){
+        document.forms[0].var1.value='submit';
+        document.forms[0].submit();
+}
+
+</script>
+<body bgcolor="yellow">
+<h3> Trendz IT People </h3>
+<form action="http://localhost:8080/examples/servlet/FirstServlet" method="get">
+<input type="hidden" name="var1" />
+<input type="button" value="Click" onClick="fun1();"/>
+<input type="button" value="Submit" onClick="fun2();"/>
+</form>
+</BODY>
+</HTML>

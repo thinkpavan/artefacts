@@ -1,0 +1,42 @@
+Compiled from Class.java
+public final class java.lang.Class extends java.lang.Object implements java.io.Serializable {
+    public java.lang.String toString();
+    public static java.lang.Class forName(java.lang.String) throws java.lang.ClassNotFoundException;
+    public static java.lang.Class forName(java.lang.String, boolean, java.lang.ClassLoader) throws java.lang.ClassNotFoundException;
+    public java.lang.Object newInstance() throws java.lang.InstantiationException, java.lang.IllegalAccessException;
+    public native boolean isInstance(java.lang.Object);
+    public native boolean isAssignableFrom(java.lang.Class);
+    public native boolean isInterface();
+    public native boolean isArray();
+    public native boolean isPrimitive();
+    public native java.lang.String getName();
+    public java.lang.ClassLoader getClassLoader();
+    public native java.lang.Class getSuperclass();
+    public java.lang.Package getPackage();
+    public native java.lang.Class getInterfaces()[];
+    public native java.lang.Class getComponentType();
+    public native int getModifiers();
+    public native java.lang.Object getSigners()[];
+    native void setSigners(java.lang.Object[]);
+    public native java.lang.Class getDeclaringClass();
+    public java.lang.Class getClasses()[];
+    public java.lang.reflect.Field getFields()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Method getMethods()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Constructor getConstructors()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Field getField(java.lang.String) throws java.lang.NoSuchFieldException, java.lang.SecurityException;
+    public java.lang.reflect.Method getMethod(java.lang.String, java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.SecurityException;
+    public java.lang.reflect.Constructor getConstructor(java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.SecurityException;
+    public java.lang.Class getDeclaredClasses()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Field getDeclaredFields()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Method getDeclaredMethods()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Constructor getDeclaredConstructors()[] throws java.lang.SecurityException;
+    public java.lang.reflect.Field getDeclaredField(java.lang.String) throws java.lang.NoSuchFieldException, java.lang.SecurityException;
+    public java.lang.reflect.Method getDeclaredMethod(java.lang.String, java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.SecurityException;
+    public java.lang.reflect.Constructor getDeclaredConstructor(java.lang.Class[]) throws java.lang.NoSuchMethodException, java.lang.SecurityException;
+    public java.io.InputStream getResourceAsStream(java.lang.String);
+    public java.net.URL getResource(java.lang.String);
+    public java.security.ProtectionDomain getProtectionDomain();
+    native void setProtectionDomain0(java.security.ProtectionDomain);
+    static native java.lang.Class getPrimitiveClass(java.lang.String);
+    static {};
+}

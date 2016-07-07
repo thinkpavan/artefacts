@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT empdetails (emp, dept)>
+<!ELEMENT emp (empno, ename)>
+<!ELEMENT empno (#PCDATA)>
+<!ELEMENT ename (#PCDATA)>
+<!ELEMENT dept (deptno, dname)>
+<!ELEMENT deptno (#PCDATA)>
+<!ELEMENT dname (#PCDATA)>

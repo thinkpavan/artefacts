@@ -1,0 +1,35 @@
+to connect to Oracle or any other sql server,msaccess
+you need a driver to connect
+you can create a driver object
+through control panel--odbc32---add new driver choose the
+driver associated with backend Oracle Driver for Oracle,MicrosoftOracle Driver
+Microsoft MSAccessDriver
+enter dsn(data source name)--any name
+enter server name--tit
+and use this object while connecting to a driver
+
+we have 4 types of driver
+type1
+  is created by sun microsystems using c libraries.it is JdbcOdbcDriver.
+  it creates a bridge between java and odbc(odbc32) call Jdbcodbc bridger
+  and odbc is connected to any rdbms.(oracle,msaccess)
+  it is  a dynamic link library(JdbcOdbc.dll)--jdk1.3\jre\bin
+  jdbc:odbc:dsn,"use","passwd
+  //loading driver in buffer
+  Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+  //making a connection
+  Connection con=DriverManager.getConnection("jdbc:odbc:dsn","user","passwd);
+
+type2
+oracle native driver--thinclient(8i),thick client(7.3)
+     java.sql.DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+     Connection con=DriverManager.getConnection("jdbc:oracle:thin:@100.100.100.1:1521:tit","scott","tiger")
+ search for  classes111.zip and put bin and lib in classpath and then use it
+type3
+-----
+   this is a driver used over the internet in client server technology
+type4
+-----
+    driver over internet but for 3 tier architechtures(RMI,EJB)
+    weblogicdriver
+

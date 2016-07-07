@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<taglib>
+  <tlibversion>1.0</tlibversion>
+  <jspversion>1.1</jspversion>
+  <shortname>Sridhar</shortname>
+  <tag>
+     <name>show</name>
+     <tagclass>tagpack.DataTag</tagclass>
+     <bodycontent>empty</bodycontent>
+
+     <attribute>
+         <name>Username</name>
+         <required>true</required>
+         <rtexprvalue>false</rtexprvalue>
+     </attribute>
+     <attribute>
+         <name>Password</name>
+         <required>true</required>
+         <rtexprvalue>false</rtexprvalue>
+     </attribute>
+     <attribute>
+         <name>Dsn</name>
+         <required>true</required>
+         <rtexprvalue>false</rtexprvalue>
+     </attribute>
+     <attribute>
+         <name>Table</name>
+         <required>true</required>
+         <rtexprvalue>false</rtexprvalue>
+     </attribute>
+  </tag>
+</taglib>
+

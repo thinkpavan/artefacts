@@ -1,0 +1,8 @@
+<html>
+<head><title>ParamServlet</title>
+<body bgcolor="lightyellow">
+<servlet  code="ParamServlet.class"  codebase="http://localhost:8080/" company="trendz">
+</servlet>
+</body>
+</head>
+</html>

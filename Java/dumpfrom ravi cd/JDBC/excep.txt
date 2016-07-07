@@ -1,0 +1,23 @@
+unchecked exceptions
+----------------------------
+ArithmeticException	--->arithmetic error, such as divide-by-zero
+ArrayIndexOutOfBoundsException --->array index is t-of-bounds.
+ArrayStroreException--->assignment to array element of an 		                         imcompatible type
+IllegalArgumentException ---> illegal arg used to invoke a method
+NullPointerException ---> invalid use of a null reference.
+NumberFormatException ---> Invalid conversion of a string to
+			 a numeric format.
+StringIndexOutOfBounds ---> attempt to index outside the bounds
+			of a string.
+--------------------------------------------------------------------------------------
+CHECKED EXCEPTIONS
+
+ClassNotFoundException --->class not found
+IllegalAccessException    ----> access to a class is denied.
+InstantiationException -----> attempt to create an object of an
+                                                abstract class or interface.
+InterruptedException ----> one thread has been interruped by 
+		        another thread.
+NoSuchFieldException ----> a requested field does not exist.
+NoSuchMethodException ---> a requested method does not exist.
+IOException 

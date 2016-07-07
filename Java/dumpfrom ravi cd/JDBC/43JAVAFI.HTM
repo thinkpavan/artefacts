@@ -1,0 +1,5266 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+
+
+<HTML>
+
+
+
+<HEAD>
+
+
+
+   <AUTHOR>Joseph Weber</AUTHOR>
+
+   <PUBDATE>November 1996</PUBDATE>
+
+   <TITLE>Special Edition Using Java, Second Edition - Chapter 44</TITLE>
+
+   <ISBN>0-7897-0936-8</ISBN>
+
+   <SUBJECT>Internet Programming</SUBJECT>
+
+   <KEYWORDS>computer programming Internet Java applets JavaScript HTML World Wide Web HotJava AWT JDK</KEYWORDS>
+
+   <ABSTRACT>This book provides extensive coverage of Java and building dynamic applets with Java.</ABSTRACT>
+
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (Win95; I) [Netscape]">
+
+
+
+</HEAD>
+
+
+
+<BODY BGCOLOR="#FFFFFF"><h5 align=center>&nbsp;- Special Edition Using Java, 2nd Edition -</h5><p><img src="que_sq.gif"border=0 height=81 width=108 align=bottom></p>
+
+
+
+
+
+
+
+<H2><B>Chapter 44</B></H2>
+
+
+
+
+
+
+
+<H2><B>Databases Introduced</B></H2>
+
+
+
+
+
+
+
+<P>
+
+
+
+<HR ALIGN=CENTER></P>
+
+
+
+
+
+
+
+<P><I>by Krishna Sankar</I></P>
+
+
+
+
+
+
+
+<P>This chapter is the introduction to a trilogy of chapters dealing with
+
+
+
+database access from a Java program. Standard relational data access is
+
+
+
+very important for Java programs because the Java applets by nature are
+
+
+
+not monolithic, all-consuming applications. As applets by nature are modular,
+
+
+
+they need to read persistent data from data stores, process the data, and
+
+
+
+write the data back to data stores for other applets to process. Monolithic
+
+
+
+programs could afford to have their own proprietary schemes of data handling.
+
+
+
+But as Java applets cross operating system and network boundaries, you
+
+
+
+need published open data access schemes. </P>
+
+
+
+
+
+
+
+<P>The Java Database Connectivity (JDBC) of the Java Enterprise APIs is
+
+
+
+the first of such cross-platform, cross-database approaches to database
+
+
+
+access from Java programs. The Enterprise APIs also consist of Remote Method
+
+
+
+Invocation (RMI) and serialization APIs (for Java programs to marshall
+
+
+
+objects across namespaces and invoke methods in remote objects), Java IDL
+
+
+
+(Interface Definition Language) for communicating with CORBA, and other
+
+
+
+object-oriented systems.</P>
+
+
+
+
+
+
+
+<P>This chapter introduces relational concepts as well as Microsoft's Open
+
+
+
+Database Connectivity (ODBC). This chapter describes ODBC because of two
+
+
+
+major reasons:</P>
+
+
+
+
+
+
+
+<UL>
+
+
+
+<LI>JDBC and ODBC are both based on SAG CLI (SQL Access Group Call Level
+
+
+
+Interface) specifications.</LI>
+
+
+
+
+
+
+
+<LI>JDBC design uses major abstractions and methods from ODBC. </LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<P>The idea (and correctly so) of basing JDBC design on ODBC is that, as
+
+
+
+ODBC is popular with ISVs (Independent Software Vendors) as well as users,
+
+
+
+implementing and using JDBC will be easier for database practitioners who
+
+
+
+have earlier experience with ODBC. Also Sun and Intersolv are developing
+
+
+
+a JDBC-ODBC bridge layer to take advantage of the ODBC drivers available
+
+
+
+in the market. So with the JDBC APIs and the JDBC-ODBC bridge, you can
+
+
+
+access and interact effectively with almost all databases from Java applets
+
+
+
+and applications.</P>
+
+
+
+
+
+
+
+<UL>
+
+
+
+<LI><B>Introduction to Relational databases<BR>
+
+
+
+</B>Database concepts such as SQL and Join </LI>
+
+
+
+
+
+
+
+<LI><B>ODBC concepts<BR>
+
+
+
+</B>Client/server concepts like transaction processing and replication</LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<H2><A NAME="I6"></A><A NAME="I7"></A><B><I>Relational Database Concepts</I></B></H2>
+
+
+
+
+
+
+
+<P>Databases, as you know, contain data that's specifically organized.
+
+
+
+A database can be as simple as a <I>flat file</I> (a single computer file
+
+
+
+with data usually in a tabular form) containing names and telephone numbers
+
+
+
+of one's friends, or as elaborate as the worldwide reservation system of
+
+
+
+a major airline. Many of the principles discussed in this chapter are applicable
+
+
+
+to a wide variety of database systems.</P>
+
+
+
+
+
+
+
+<P>Structurally, there are mainly three major types of databases:</P>
+
+
+
+
+
+
+
+<UL>
+
+
+
+<LI>Hierarchical</LI>
+
+
+
+
+
+
+
+<LI>Relational</LI>
+
+
+
+
+
+
+
+<LI>Network databases</LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<P>During the 1970s and 1980s, the hierarchical scheme was very popular.
+
+
+
+This scheme treats data as a tree-structured system with data records forming
+
+
+
+the leaves. Examples of the hierarchical implementations are schemes like
+
+
+
+b-tree and multi-tree data access. In the hierarchical scheme, to get to
+
+
+
+data, users need to traverse down and up the tree structure. The most common
+
+
+
+relationship in a hierarchical structure is a one-to-many relationship
+
+
+
+between the data records, and it is difficult to implement a many-to-many
+
+
+
+relationship without data redundancy.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="sidebar.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<CENTER><P><BQ ALIGN="CENTER"></P></CENTER>
+
+
+
+
+
+
+
+<CENTER><P><I>Relationships of the Database Kind</I></P></CENTER>
+
+
+
+
+
+
+
+<CENTER><P><BQ></P></CENTER>
+
+
+
+
+
+
+
+<P>Establishing and keeping track of relationships between data records
+
+
+
+in database tables can be more difficult than maintaining human relationships!
+
+
+
+</P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>There are three types of data record relationships between records :</P>
+
+
+
+
+
+
+
+<P></BQ></BQ></BQ></P>
+
+
+
+
+
+
+
+<UL>
+
+
+
+<LI><I>One-to-one</I>. One record in a table is related to at least one
+
+
+
+record in another table. The book/ISBN relationship (where a book has only
+
+
+
+one ISBN and an ISBN is associated with only one book) is a good example
+
+
+
+of a one-to-one relationship.</LI>
+
+
+
+
+
+
+
+<LI><I>One-to-many relationship</I>. One record in a table could be associated
+
+
+
+with many records in another table. Purchase order/line items (where a
+
+
+
+purchase order can have many line items while one line item can be associated
+
+
+
+only with a single purchase order) is an example of a one-to-many relationship.</LI>
+
+
+
+
+
+
+
+<LI><I>Many-to-many relationships</I>. Similar to the student/class relationships
+
+
+
+(where a student is taking many courses with different teachers in a semester,
+
+
+
+while a course has many students).</LI>
+
+
+
+</UL>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>You may wonder how is a database going to remember these data relationships.
+
+
+
+They are usually done either by keeping a common element like the student
+
+
+
+ID/class ID in both the tables, or by keeping a record ID table(called
+
+
+
+the <I>index</I>) of both records. Modern databases have many other sophisticates
+
+
+
+ways of keeping data record relationships intact to weather updates, deletes,
+
+
+
+and so on.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P>The network data model solved this problem by assuming a multi-relationship
+
+
+
+between data elements. In contrast to the hierarchical scheme where there
+
+
+
+is a parent-child relationship, in the network scheme, there is a peer-to-peer
+
+
+
+relationship. Most of the programs developed during those days used a combination
+
+
+
+of the hierarchical and network data storage and access model.</P>
+
+
+
+
+
+
+
+<P>During the 90s, the relational data access scheme came to the forefront.
+
+
+
+Relational scheme views data as rows of information. Each row contains
+
+
+
+columns of data, called <I>fields</I>. The main concept in the relational
+
+
+
+scheme is that the data is uniform. Each row contains the same number of
+
+
+
+columns. One such collection of rows and columns is called a <I>table</I>.
+
+
+
+Many such tables (which can be structurally different) form a <I>relational
+
+
+
+database</I>.</P>
+
+
+
+
+
+
+
+<P>Figure 44.1 shows a sample relational database schema (or table layout)
+
+
+
+for an enrollment database. In this example, the database consists of three
+
+
+
+tables: the Students table which contains student information, the Courses
+
+
+
+table which has the courses information, and the StudentCourses table which
+
+
+
+has the student-course relation. The student table has student ID, name,
+
+
+
+address, and so on; the courses table contains the course ID, subject name
+
+
+
+or course title, term offered, location, and so on.</P>
+
+
+
+
+
+
+
+<P><BR>
+
+
+
+<B><A HREF="44fig-01.gif">FIG. 44.1</A></B> </P>
+
+
+
+
+
+
+
+<P><I>A sample relational database schema for the Enrollment database.</I></P>
+
+
+
+
+
+
+
+<P>Now that you have the student and course tables of data, how do you
+
+
+
+relate the tables? That is where the relational part of the relational
+
+
+
+database comes in the picture. To relate two tables, either the two tables
+
+
+
+will have a common column or you need to create a third table with two
+
+
+
+columns, one from the first table and the second from the second table.
+
+
+
+</P>
+
+
+
+
+
+
+
+<P>Let's look at how this is done. In this example, to relate the student
+
+
+
+table with the course table, you need to make a new table StudentCourse
+
+
+
+table which has two columns: Student_ID and Course_ID. Whenever a student
+
+
+
+takes a course, create a row in the StudentClass table with that Student_ID
+
+
+
+and the Course_ID. Thus, the table has the student and course relationship.
+
+
+
+If you want to find a list of students and the subjects they take, go to
+
+
+
+the Student-Course table, read each row, find the student name corresponding
+
+
+
+to the Student_ID, from the Course table find the course title corresponding
+
+
+
+to the Course_ID, and select the Student_Name and the Course_Title columns.</P>
+
+
+
+
+
+
+
+<H3><A NAME="I8"></A><A NAME="I9"></A>SQL</H3>
+
+
+
+
+
+
+
+<P>Once relational databases started becoming popular, database experts
+
+
+
+wanted a universal database language to perform actions on data. The answer
+
+
+
+was <I>SQL</I>, or <I>Structured Query Language</I>. SQL has grown into
+
+
+
+a mainstream database language which has constructs for data manipulation
+
+
+
+such as create, update and delete; data definition such as create tables
+
+
+
+and column; security for restricting access to data elements, creating
+
+
+
+users and groups; data management including backup, bulk copy, and bulk
+
+
+
+update; and most importantly, transaction processing. SQL is used along
+
+
+
+with programming languages like Java, C++, and others, and is used for
+
+
+
+data handling and interaction with the backend database management system.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>Each database vendor has its own implementation of the SQL. In the Microsoft
+
+
+
+SQL server, which is one of the client/server relational DBMS, the SQL
+
+
+
+is called the <I>Transact/SQL</I>, while the Oracle SQL is called the <I>PL/SQL</I>.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>SQL became an ANSI (American National Standards Institute) standard
+
+
+
+in 1986 and later was revised to become SQL-92. JDBC is SQL-92 compliant.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H3><A NAME="I10"></A><A NAME="I11"></A>Joins</H3>
+
+
+
+
+
+
+
+<P>Just because a database consists of tables with rows of data does not
+
+
+
+mean that you are limited to view the data in the fixed tables in the database.
+
+
+
+<I>Join</I> is a process in which two or more tables are combined to form
+
+
+
+a single table. The join can be <I>dynamic</I> where two tables are merged
+
+
+
+to form a virtual table, or <I>static</I> where two tables are joined and
+
+
+
+saved for future reference. A static join is usually a stored procedure
+
+
+
+which can be invoked to refresh the saved table, and then the saved table
+
+
+
+is queried. Joins are performed on tables that have a column of common
+
+
+
+information. Conceptually, there are many types of joins which are discussed
+
+
+
+later in this section.</P>
+
+
+
+
+
+
+
+<P>Before you dive deeper into joins, look at the following example, where
+
+
+
+you fill the tables of the database schema in figure 44.1 with a few records
+
+
+
+as shown in tables 44.1, 44.2 and 44.3. In these tables, I show only the
+
+
+
+relevant fields or columns.</P>
+
+
+
+
+
+
+
+<P><I>Table 44.1 Students Table</I></P>
+
+
+
+
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Student_ID</B></TD>
+
+
+
+
+
+
+
+<TD><B>Student_Name</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>1</TD>
+
+
+
+
+
+
+
+<TD>John</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>2</TD>
+
+
+
+
+
+
+
+<TD>Mary</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>3</TD>
+
+
+
+
+
+
+
+<TD>Jan</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>4</TD>
+
+
+
+
+
+
+
+<TD>Jack</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<P><I>Table 44.2 Courses Table</I></P>
+
+
+
+
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Course_ID</B></TD>
+
+
+
+
+
+
+
+<TD><B>Course_Title</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>S1</TD>
+
+
+
+
+
+
+
+<TD>Math</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>S2</TD>
+
+
+
+
+
+
+
+<TD>English</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>S3</TD>
+
+
+
+
+
+
+
+<TD>Computer</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>S4</TD>
+
+
+
+
+
+
+
+<TD>Logic</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<P><I>Table 44.3 StudentCourses Table</I></P>
+
+
+
+
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Student_ID</B></TD>
+
+
+
+
+
+
+
+<TD><B>Course_ID</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>2</TD>
+
+
+
+
+
+
+
+<TD>S2</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>3</TD>
+
+
+
+
+
+
+
+<TD>S1</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>4</TD>
+
+
+
+
+
+
+
+<TD>S3</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<H4><A NAME="I12"></A><A NAME="I13"></A><B>Inner Join</B></H4>
+
+
+
+
+
+
+
+<P>A simple join called the <I>inner join</I> with the Student and StudentCourses
+
+
+
+table gives you a table like the one shown in table 44.4. You get a new
+
+
+
+table that combines the Students and StudentCourses tables by adding the
+
+
+
+Student_Name column to the StudentCourses table.</P>
+
+
+
+
+
+
+
+<P><I>Table 44.4 Inner Join Table</I></P>
+
+
+
+
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Student_ID</B></TD>
+
+
+
+
+
+
+
+<TD><B>Student_Name</B></TD>
+
+
+
+
+
+
+
+<TD><B>Course_ID</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>2</TD>
+
+
+
+
+
+
+
+<TD>Mary</TD>
+
+
+
+
+
+
+
+<TD>S2</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>3</TD>
+
+
+
+
+
+
+
+<TD>Jan</TD>
+
+
+
+
+
+
+
+<TD>S1</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>4</TD>
+
+
+
+
+
+
+
+<TD>Jack</TD>
+
+
+
+
+
+
+
+<TD>S3</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<P>Just because you are using the Student_ID to link the two tables does
+
+
+
+not mean you should fetch that column. You can exclude the key field from
+
+
+
+the result table of an inner join. The SQL statement for this inner join
+
+
+
+is as follows:</P>
+
+
+
+
+
+
+
+<PRE><TT><FONT COLOR="#238E23">SELECT Students.Student_Name, StudentCourses.Course_ID
+
+
+
+FROM Students, StudentCourses
+
+
+
+WHERE Students.Student_ID = StudentCourses.Student_ID</FONT></TT></PRE>
+
+
+
+
+
+
+
+<H4><A NAME="I14"></A><A NAME="I15"></A><B>Outer Join</B></H4>
+
+
+
+
+
+
+
+<P>An <I>outer join</I> between two tables (such as Table1 and Table2)
+
+
+
+occurs when the result table has all the rows of the first table and the
+
+
+
+common records of the second table. (The first and second table are determined
+
+
+
+by the order in the SQL statement) If you assume a SQL statement with the
+
+
+
+<TT><FONT COLOR="#238E23">FROM Table1,Table2</FONT></TT> clause, in a <I>left
+
+
+
+outer join</I>, all rows of the first table (Table1) and common rows of
+
+
+
+the second table (Table2) are selected. In a <I>right outer join</I>, all
+
+
+
+records of the second table (Table2) and common rows of the first table
+
+
+
+(Table1) are selected. A left outer join with the Students Table and the
+
+
+
+StudentCourses table creates table 44.5.</P>
+
+
+
+
+
+
+
+<P><I>Table 44.5 Outer Join Table</I></P>
+
+
+
+
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Student_ID</B></TD>
+
+
+
+
+
+
+
+<TD><B>Student_Name</B></TD>
+
+
+
+
+
+
+
+<TD><B>Course_ID</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>1</TD>
+
+
+
+
+
+
+
+<TD>John</TD>
+
+
+
+
+
+
+
+<TD>&lt;null&gt;</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>2</TD>
+
+
+
+
+
+
+
+<TD>Mary</TD>
+
+
+
+
+
+
+
+<TD>S2</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>3</TD>
+
+
+
+
+
+
+
+<TD>Jan</TD>
+
+
+
+
+
+
+
+<TD>S1</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>4</TD>
+
+
+
+
+
+
+
+<TD>Jack</TD>
+
+
+
+
+
+
+
+<TD>S3</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<P>This join is useful if you want the names of all students regardless
+
+
+
+of whether they are taking any subjects this term and the subjects taken
+
+
+
+by the students who have enrolled in this term. Some people call it an
+
+
+
+<I>if-any join</I>, as in, "Give me a list of all students and the subjects
+
+
+
+they are taking, if any."</P>
+
+
+
+
+
+
+
+<P>The SQL statement for this outer join is as follows:</P>
+
+
+
+
+
+
+
+<PRE><TT><FONT COLOR="#238E23">SELECT Students.Student_ID,Students.Student_Name,StudentCourses.Course_ID
+
+
+
+FROM {
+
+
+
+oj c:\enrol.mdb Students
+
+
+
+LEFT OUTER JOIN c:\enrol.mdb
+
+
+
+StudentCourses ON Students.Student_ID = StudentCourses .Student_ID
+
+
+
+}</FONT></TT></PRE>
+
+
+
+
+
+
+
+<P>The <I>full outer join</I>, as you may have guessed, returns all the
+
+
+
+records from both the tables merging the common rows as shown in table
+
+
+
+44.6.</P>
+
+
+
+
+
+
+
+<P><I>Table 44.6 Full Outer Join Table</I></P>
+
+
+
+
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Student_ID</B></TD>
+
+
+
+
+
+
+
+<TD><B>Student_Name</B></TD>
+
+
+
+
+
+
+
+<TD><B>Course_ID</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>1</TD>
+
+
+
+
+
+
+
+<TD>John</TD>
+
+
+
+
+
+
+
+<TD>&lt;null&gt;</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>2</TD>
+
+
+
+
+
+
+
+<TD>Mary</TD>
+
+
+
+
+
+
+
+<TD>S2</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>3</TD>
+
+
+
+
+
+
+
+<TD>Jan</TD>
+
+
+
+
+
+
+
+<TD>S1</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>4</TD>
+
+
+
+
+
+
+
+<TD>Jack</TD>
+
+
+
+
+
+
+
+<TD>S3</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>&lt;null&gt;</TD>
+
+
+
+
+
+
+
+<TD>&lt;null&gt;</TD>
+
+
+
+
+
+
+
+<TD>S4</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+
+
+
+
+<H4><A NAME="I16"></A><A NAME="I17"></A><B>Subtract Join</B></H4>
+
+
+
+
+
+
+
+<P>What if you want only the students who haven't enrolled in this term
+
+
+
+or the subjects who have no students (the tough subjects or professors)?
+
+
+
+Then you resort to the <I>subtract join</I>. In this case, the join returns
+
+
+
+the rows that are not in the second table. Remember, a subtract join has
+
+
+
+only the fields from the first table. As by definition, there are no records
+
+
+
+in the second table. The SQL statement looks like the following:</P>
+
+
+
+
+
+
+
+<PRE><TT><FONT COLOR="#238E23">SELECT Students.Student_Name
+
+
+
+FROM {
+
+
+
+oj c:\enrol.mdb Students
+
+
+
+LEFT OUTER JOIN c:\enrol.mdb
+
+
+
+StudentCourses ON Students.Student_ID = StudentCourses .Student_ID
+
+
+
+}
+
+
+
+WHERE (StudentCourses.Course_ID Is Null)</FONT></TT></PRE>
+
+
+
+
+
+
+
+<H4><A NAME="I18"></A><A NAME="I19"></A><B>General Discussion on Joins
+
+
+
+and SQL Statements</B></H4>
+
+
+
+
+
+
+
+<P>There are many other types of joins, such as the <I>self join</I> which
+
+
+
+is a left outer join of two tables with the same structure. An example
+
+
+
+is the assembly/parts explosion in a Bill of Materials application for
+
+
+
+manufacturing. But usually the join types you have learned about so far
+
+
+
+are enough for normal applications. As you gain more expertise in SQL statements,
+
+
+
+you will start developing exotic joins.</P>
+
+
+
+
+
+
+
+<P>In all of these joins, you were comparing columns that have the same
+
+
+
+values; these joins are called <I>equi-joins</I>. Joins are not restricted
+
+
+
+to comparing columns of equal values. You can join two tables based on
+
+
+
+column value conditions (such as the column of one table greater than the
+
+
+
+other).</P>
+
+
+
+
+
+
+
+<P>One more point: For equi-joins, as the column values are equal, you
+
+
+
+retrieved only one copy of the common column. Then the joins are called
+
+
+
+<I>natural joins</I>. When you have a non equi-join, you might need to
+
+
+
+retrieve the common columns from both tables.</P>
+
+
+
+
+
+
+
+<P>Once an SQL statement reaches a database management system, the DBMS
+
+
+
+parses the SQL statement and translates the SQL statements to an internal
+
+
+
+scheme called a <I>query plan</I> to retrieve data from the database tables.
+
+
+
+This internal scheme generator, in all the client/server databases, includes
+
+
+
+an <I>optimizer module</I>. This module, which is specific to a database,
+
+
+
+knows the limitations and advantages of the database implementation. </P>
+
+
+
+
+
+
+
+<P>In many databases-for example, the Microsoft SQL Server-the optimizer
+
+
+
+is a cost-based query optimizer. When given a query, this optimizer generates
+
+
+
+multiple query plans, computes the cost estimates for each (knowing the
+
+
+
+data storage schemes, page I/O, and so on), and then determines the most
+
+
+
+efficient access method for retrieving the data, including table join order
+
+
+
+and index usage. This optimized query is converted into a binary form called
+
+
+
+the <I>execution plan</I>, which is executed against the data to get the
+
+
+
+result. There are known cases where straight queries take hours to perform
+
+
+
+that when run through an optimizer, have resulted in an optimized query
+
+
+
+which is performed in minutes. All the major client/server databases have
+
+
+
+the query optimizer module built in which processes all the queries. A
+
+
+
+database system administrator can assign values to parameters such as cost,
+
+
+
+storage scheme, and so on, and fine-tune the optimizer.</P>
+
+
+
+
+
+
+
+<H2><A NAME="I20"></A><A NAME="I21"></A><B><I>ODBC Technical Overview</I></B></H2>
+
+
+
+
+
+
+
+<P>ODBC (Open Database Connectivity) is one of the most popular database
+
+
+
+interfaces in the PC world and is slowly moving into all other platforms.
+
+
+
+ODBC is Microsoft's implementation of the X/Open and SQL Access Group (SAG)
+
+
+
+Call Level Interface (CLI) specification. ODBC provides functions to interact
+
+
+
+with databases from a programming language, including adding, modifying,
+
+
+
+and deleting data; and obtaining details about the databases, tables, views,
+
+
+
+and indexes.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="tip.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>This discussion on ODBC is relevant from the Java and JDBC point of
+
+
+
+view. It is instructive to note the similarities and differences between
+
+
+
+the JDBC and ODBC architectures. Also the study of ODBC might give you
+
+
+
+some clues as to where JDBC is heading in the future. </P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P>Figure 44.2 shows a schematic view of the ODBC architecture. An ODBC
+
+
+
+application has five logical layers: Application, ODBC Interface, Driver
+
+
+
+Manager, Driver, and the Data Source.</P>
+
+
+
+
+
+
+
+<P><BR>
+
+
+
+<B><A HREF="41fig-02.gif">FIG. 44.2</A></B> </P>
+
+
+
+
+
+
+
+<P><I>Architecture Schematic showing the five ODBC layers.</I></P>
+
+
+
+
+
+
+
+<P>The Application layer provides the GUI and the Business logic and is
+
+
+
+written in languages like Java, Visual Basic, and C++. The application
+
+
+
+uses the ODBC functions in the ODBC interface to interact with the databases.</P>
+
+
+
+
+
+
+
+<P>The Driver Manager layer is part of the Microsoft ODBC. As the name
+
+
+
+implies, it manages various drivers present in the system including loading,
+
+
+
+directing calls to the right driver, and providing driver information to
+
+
+
+the application when needed. Because an application can be connected to
+
+
+
+more than one database (such as legacy systems and departmental databases),
+
+
+
+the Driver Manager makes sure that the right database management system
+
+
+
+gets all the program calls directed to it and that the data from the Data
+
+
+
+Source is routed to the application.</P>
+
+
+
+
+
+
+
+<P>The Driver is the actual component which knows about specific databases.
+
+
+
+Usually the driver is assigned to a specific database like the Access Driver,
+
+
+
+SQL Server Driver, and Oracle driver. The ODBC interface has a set of calls
+
+
+
+such as SQL statements, connection management, information about the database,
+
+
+
+and so on. It is the Driver's duty to implement all these functionalities.
+
+
+
+That means for some databases, the Driver has to emulate the ODBC interface
+
+
+
+functions not supported by the underlying DBMS. The Driver does the work
+
+
+
+of sending queries to the database, getting the data back, and routing
+
+
+
+the data to the application. For databases that are in local networked
+
+
+
+systems or on the Internet, the driver also handles the network communication.</P>
+
+
+
+
+
+
+
+<P>In the context of ODBC, the Data Source can be a database management
+
+
+
+system or just the data store which usually is a set of files in the hard
+
+
+
+disk. The Data Source can be a very simple MS Access database for the expense
+
+
+
+data of a small company, or as exotic as a multi-server, multi-gigabyte
+
+
+
+data store of all the customer billing details of a telephone company.
+
+
+
+It could be handling a data warehouse or a simple customer list.</P>
+
+
+
+
+
+
+
+<H3><A NAME="I22"></A><A NAME="I23"></A>ODBC Conformance Levels</H3>
+
+
+
+
+
+
+
+<P>The major piece of an ODBC system is the driver which knows about the
+
+
+
+DBMS and communicates with the database. ODBC does not require the drivers
+
+
+
+to support all the functions in the ODBC interface. Instead, ODBC defines
+
+
+
+API and SQL grammar conformance levels for drivers. The only requirement
+
+
+
+is that when a driver conforms to a certain level, it should support all
+
+
+
+the ODBC defined functions on that level, regardless of whether the underlying
+
+
+
+database supports them.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>ODBC driver specification sets no upper limits of supported functionalities.
+
+
+
+That means a driver that conforms to Level 1 can and might support a few
+
+
+
+of the Level 2 functionalities. The driver is still considered Level 1
+
+
+
+conformance, as it is not supporting all Level 2 functions. An application,
+
+
+
+however, can use the partial Level 2 support provided by that driver.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P>As mentioned in the ODBC technical overview, it is the driver's duty
+
+
+
+to emulate the ODBC functions not supported by the underlying DBMS so that
+
+
+
+the ODBC interface is shielded from the DBMS implementation. As far as
+
+
+
+the ODBC interface and the application is concerned, a conformance to an
+
+
+
+ODBC level means all the functionalities are available regardless of the
+
+
+
+underlying DBMS.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>Applications use the API calls like <TT><FONT COLOR="#238E23">SQLGetFunctions</FONT></TT>
+
+
+
+and <TT><FONT COLOR="#238E23">SQLGetInfo</FONT></TT> to get the functions
+
+
+
+supported by a driver.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P>Table 44.7 summarizes the levels of conformance for API and SQL.</P>
+
+
+
+
+
+
+
+<P><I>Table 44.7 API and SQL Conformance Levels for ODBC</I></P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<TABLE BORDER=1 >
+
+
+
+<TR>
+
+
+
+<TD><B>Type</B></TD>
+
+
+
+
+
+
+
+<TD><B>Conformance Level</B></TD>
+
+
+
+
+
+
+
+<TD><B>Description</B></TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>API conformance levels</TD>
+
+
+
+
+
+
+
+<TD>Core</TD>
+
+
+
+
+
+
+
+<TD>All functions in SAG CLI specification.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Allocate and free connection, statement, and environment handles.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Prepare and execute SQL statements.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Retrieve the result set and information about the result set.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Retrieve error information.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Capability to commit and roll back transactions.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Level 1</TD>
+
+
+
+
+
+
+
+<TD>Extended Set 1 is Core API plus capabilities to send and retrieve partial
+
+
+
+data set, retrieve catalog information, get information about the driver
+
+
+
+and database capabilities, and more.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Level 2</TD>
+
+
+
+
+
+
+
+<TD>Extended Set 2 is Level 1 plus capabilities to handle arrays as parameters,
+
+
+
+scrollable cursor, call transaction DLL, and more.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>SQL</TD>
+
+
+
+
+
+
+
+<TD>Minimum</TD>
+
+
+
+
+
+
+
+<TD>Create Table and Drop Table functions in the Data Definition Language.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>Grammar</TD>
+
+
+
+
+
+
+
+<TD>Grammar</TD>
+
+
+
+
+
+
+
+<TD>Select, Insert, Update and Delete functions (simple) in the Data Manipulation
+
+
+
+Language, Simple expressions.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD>Conformance levels</TD>
+
+
+
+
+
+
+
+<TD>Core Grammar</TD>
+
+
+
+
+
+
+
+<TD>Conformance to SAG CAE 1992 Specification Minimum grammar plus Alter
+
+
+
+Table, Create and Drop Index, and Create and Drop View for the DDL.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Full SELECT statement capability for the DML.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Functions such as SUM and MAX in the expressions.</TD>
+
+
+
+</TR>
+
+
+
+
+
+
+
+<TR>
+
+
+
+<TD></TD>
+
+
+
+
+
+
+
+<TD>Extended 
+
+
+
+<P>Grammar</P>
+
+
+
+</TD>
+
+
+
+
+
+
+
+<TD>Adds capabilities like Outer Joins, positioned Update, Delete, more
+
+
+
+expressions, more data types, procedure calls, and so on to the Core grammar.</TD>
+
+
+
+</TR>
+
+
+
+</TABLE>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H3><A NAME="I24"></A><A NAME="I25"></A>ODBC Functions and Command Set</H3>
+
+
+
+
+
+
+
+<P>The ODBC has a rich set of functions. They range from simple connect
+
+
+
+statements to handling multi-result set stored procedures. All the ODBC
+
+
+
+functions have the "SQL" prefix and can have one or more parameters which
+
+
+
+can be of type input (to the driver) or output (from the driver). Let's
+
+
+
+look at the general steps required to connect to an ODBC source, and then
+
+
+
+the actual ODBC command sequence..</P>
+
+
+
+
+
+
+
+<H4><A NAME="I26"></A><A NAME="I27"></A><B>Typical ODBC Steps</B></H4>
+
+
+
+
+
+
+
+<P>In a typical ODBC program, the first steps are to allocate environment
+
+
+
+and connection handles using the functions <TT><FONT COLOR="#238E23">SQLAllocEnv(&lt;envHandle&gt;)</FONT></TT>
+
+
+
+and <TT><FONT COLOR="#238E23">SQLAllocConnect(&lt;envHandle&gt;,&lt;databaseHandle&gt;)</FONT></TT>.
+
+
+
+Once you get a valid database handle, you can set various options using
+
+
+
+the <TT><FONT COLOR="#238E23">SQLSetConnectOption(&lt;databaseHandle&gt;,
+
+
+
+&lt;optionName&gt;,&lt;optionValue&gt;)</FONT></TT>. Then you can connect
+
+
+
+to the database using the <TT><FONT COLOR="#238E23">SQLConnect(&lt;dataSourceName&gt;,&lt;UID&gt;,&lt;PW&gt;,
+
+
+
+.. etc.)</FONT></TT>. </P>
+
+
+
+
+
+
+
+<H4><A NAME="I28"></A><B>ODBC Command Sequence</B></H4>
+
+
+
+
+
+
+
+<P>Now you are ready to work with statements. Figure 44.3 shows the ODBC
+
+
+
+command sequence to connect to a database, execute a SQL statement, process
+
+
+
+the result data, and close the connection.</P>
+
+
+
+
+
+
+
+<P><BR>
+
+
+
+<B><A HREF="41fig-03 .gif">FIG. 44.3 </A></B></P>
+
+
+
+
+
+
+
+<P><I>ODBC Program Flow Schematic shows the ODBC program flow schematic
+
+
+
+for a typical program.</I></P>
+
+
+
+
+
+
+
+<P>First, allocate statement handle using the <TT><FONT COLOR="#238E23">SQLAllocStmt(&lt;databaseHandle&gt;,
+
+
+
+&lt;statementHandle&gt;)</FONT></TT>. After the statement handle is allocated,
+
+
+
+you can execute SQL statements directly using the <TT><FONT COLOR="#238E23">SQLExecDirect</FONT></TT>
+
+
+
+function, or prepare a statement using the <TT><FONT COLOR="#238E23">SQLPrepare</FONT></TT>
+
+
+
+and then execute using the <TT><FONT COLOR="#238E23">SQLExec</FONT></TT>
+
+
+
+function. You first bind the columns to program variables and then read
+
+
+
+these variables after a <TT><FONT COLOR="#238E23">SQLFetch</FONT></TT>
+
+
+
+statement for a row of data. The <TT><FONT COLOR="#238E23">SQLFetch</FONT></TT>
+
+
+
+returns <TT><FONT COLOR="#238E23">SQL_NO_DATA_FOUND</FONT></TT> when there
+
+
+
+is no more data. </P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>JDBC also follows similar strategy for handling statements and data.
+
+
+
+But JDBC differs in the data binding to variables.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P>Now that you have processed the data, it is time to deallocate the handles
+
+
+
+and close the database using the following statement sequence:</P>
+
+
+
+
+
+
+
+<PRE><TT><FONT COLOR="#238E23">          SQLFreeStmt(&lt;statementHandle&gt;, ..)
+
+
+
+          SQLDisconnect(&lt;databaseHandle&gt;);
+
+
+
+          SQLFreeConnect(&lt;databaseHandle&gt;);
+
+
+
+   SQLFreeEnv(&lt;envHandle&gt;);</FONT></TT></PRE>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>In JDBC, the allocate statements and handles are not required.</P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>Because Java is an object-oriented language, you get the connection
+
+
+
+object which then gives you the statement object.</P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>As Java has automatic garbage collection, you don't need to free up
+
+
+
+handles, delete objects, and so on. Once an object loses scope, the JVM
+
+
+
+will reclaim the memory used by that object as a part of the automatic
+
+
+
+garbage collection.</P>
+
+
+
+
+
+
+
+<P></BQ></BQ></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H2><A NAME="I29"></A><A NAME="I30"></A><B><I>Advanced Client/Server Concepts</I></B></H2>
+
+
+
+
+
+
+
+<P>A typical client/server system is at least a department-wide system,
+
+
+
+and most likely an organizational system spanning many departments in an
+
+
+
+organization. <I>Mission-critical</I> and <I>line-of-business systems</I>
+
+
+
+such as brokerage, banking, manufacturing, and reservation systems fall
+
+
+
+into this category. Most systems are internal to an organization, and also
+
+
+
+span the customers and suppliers. Almost all such systems are on a local
+
+
+
+area network (LAN), plus they have wide area network connections (WAN)
+
+
+
+and dial-in capabilities. With the advent of the Internet/intranet and
+
+
+
+Java, these systems are getting more and more sophisticated and are capable
+
+
+
+of doing business in many new ways. </P>
+
+
+
+
+
+
+
+<P>Take the case of Federal Express. Their web site can now schedule package
+
+
+
+pickups, track a package from pickup to delivery, and get delivery information
+
+
+
+and time. You are now in the threshold of an era where online commerce
+
+
+
+will be as common as shopping malls. Let's look at some of the concepts
+
+
+
+that drive these kind of systems.</P>
+
+
+
+
+
+
+
+<H3><A NAME="I31"></A><A NAME="I32"></A>Client/Server System Tiers</H3>
+
+
+
+
+
+
+
+<P>Most of the application systems will involve modules with functions
+
+
+
+for a front-end GUI, business rules processing, and data access through
+
+
+
+a DBMS. In fact, major systems like online reservation, banking and brokerage,
+
+
+
+and utility billing involve thousands of business rules, heterogeneous
+
+
+
+databases spanning the globe, and hundreds of GUI systems. The development,
+
+
+
+administration, maintenance, and enhancement of these systems involve handling
+
+
+
+millions of lines of code, multiple departments, and coordinating the work
+
+
+
+of hundreds if not thousands of personnel across the globe. The multi-tier
+
+
+
+system design and development concepts are applied to a range of systems
+
+
+
+from departmental systems to such global information systems.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>In the two- and three-tier systems, an application is logically divided
+
+
+
+into three parts:</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<LI><I>GUI, Graphical User Interface</I>. Consists of the screens, windows,
+
+
+
+buttons, list boxes, and more.</LI>
+
+
+
+
+
+
+
+<LI><I>Business Logic</I>. The part of the program that deals with the
+
+
+
+various data element interactions. All processing is done based on values
+
+
+
+of data elements, such as the logic for determining the credit limit depending
+
+
+
+on the annual income, or the calculation of Income Tax based on the tax
+
+
+
+tables, or a re-order point calculation logic based on the material usage
+
+
+
+belong into this category.</LI>
+
+
+
+
+
+
+
+<LI><I>DBMS</I>. The Database management system that deals with the actual
+
+
+
+storage and retrieval of data.</LI>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H4><B>Two-Tier Systems</B></H4>
+
+
+
+
+
+
+
+<P>On the basic level, a <I>two-tier system</I> involves the GUI and business
+
+
+
+logic directly accessing the database. The GUI can be on a client system,
+
+
+
+and the database can be on the client system or on a server. Usually, the
+
+
+
+GUI is written in languages like C++, Visual Basic, PowerBuilder, Access
+
+
+
+Basic, and Lotus Script. The database systems typically are Microsoft Access,
+
+
+
+Lotus Approach, Sybase SQL Anywhere, or Watcom DB Engine and Personal Oracle.</P>
+
+
+
+
+
+
+
+<H4><B>Three-Tier Systems</B></H4>
+
+
+
+
+
+
+
+<P>Most of the organizational and many of the departmental client/server
+
+
+
+applications today follow the <I>three-tier strategy</I> where the GUI,
+
+
+
+business logic, and the DBMS are in logically three layers. Here the GUI
+
+
+
+development tools are Visual Basic, C++, and PowerBuilder. The middle tier
+
+
+
+development tools also tend to be C++ or Visual Basic, and the backend
+
+
+
+databases are Oracle, Microsoft SQL Server, or Sybase SQL Server.. The
+
+
+
+three-tier concept gave rise to an era of database servers, application
+
+
+
+servers, and GUI client machines. Operating systems such as UNIX, Windows
+
+
+
+NT, and Solaris rule the application server and database server world.
+
+
+
+Client operating systems like Windows are popular for the GUI front end.</P>
+
+
+
+
+
+
+
+<H4><B>Multi-Tier Systems</B></H4>
+
+
+
+
+
+
+
+<P>Now with Internet and Java, the era of "network is the computer" and
+
+
+
+"thin client" paradigm shifts have begun. The Java applets with their own
+
+
+
+objects and methods created the idea of multi-tiered client/server system.
+
+
+
+Theoretically, a Java applet can be a business rule, GUI, or DBMS interface.
+
+
+
+Each applet can be considered a layer. In fact, the Internet and Java were
+
+
+
+not the first to introduce the object-oriented, multi-tiered systems concept.
+
+
+
+OMG's CORBA architecture and Microsoft's OLE (now ActiveX) architectures
+
+
+
+are all proponents of modular object-oriented, multi-platform systems.
+
+
+
+With Java and the Internet, these concepts became much easier to implement.</P>
+
+
+
+
+
+
+
+<P>In short, the systems design and implementation progressed from two-tiered
+
+
+
+architecture to three-tiered architecture to the current internetworked,
+
+
+
+Java applet driven multi-tier architecture.</P>
+
+
+
+
+
+
+
+<H3><A NAME="I33"></A><A NAME="I34"></A>Transactions</H3>
+
+
+
+
+
+
+
+<P>The concept of transactions are an integral part of any client/server
+
+
+
+database. A <I>transaction</I> is a group of SQL statements that update,
+
+
+
+add, and delete rows and fields in a database. Transactions have an all
+
+
+
+or nothing property-either they are committed if all statements are successful,
+
+
+
+or the whole transaction is rolled back if any of the statements cannot
+
+
+
+be executed successfully. Transaction processing assures the data integrity
+
+
+
+and data consistency in a database.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>JDBC supports transaction processing with the <TT><FONT COLOR="#238E23">commit()</FONT></TT>
+
+
+
+and <TT><FONT COLOR="#238E23">rollback()</FONT></TT> methods. Also, JDBC
+
+
+
+has the <TT><FONT COLOR="#238E23">autocommit()</FONT></TT> which when on,
+
+
+
+all changes are committed automatically and if off, the Java program has
+
+
+
+to use the <TT><FONT COLOR="#238E23">commit()</FONT></TT> or <TT><FONT COLOR="#238E23">rollback()</FONT></TT>
+
+
+
+methods to effect the changes to the data.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H4><A NAME="I35"></A><A NAME="I36"></A><B>Transaction ACID Properties</B></H4>
+
+
+
+
+
+
+
+<P>The characteristics of a transaction is described in terms of the Atomicity,
+
+
+
+Consistency, Isolation, and Durability (ACID) properties.</P>
+
+
+
+
+
+
+
+<P>A transaction is <I>atomic </I>in the sense that it is an entity. All
+
+
+
+the components of a transaction happen or do not happen. There is no partial
+
+
+
+transaction. If only a partial transaction can happen, then the transaction
+
+
+
+is aborted. The atomicity is achieved by the <TT><FONT COLOR="#238E23">commit()</FONT></TT>
+
+
+
+or <TT><FONT COLOR="#238E23">rollback()</FONT></TT> methods.</P>
+
+
+
+
+
+
+
+<P>A transaction is <I>consistent</I> because it does not perform any actions
+
+
+
+which violate the business logic or relationships between data elements.
+
+
+
+The consistent property of a transaction is very important when you develop
+
+
+
+a client/server system, because there will be many transactions to a data
+
+
+
+store from different systems and objects. If a transaction leaves the data
+
+
+
+store inconsistent, all other transactions also would potentially be wrong,
+
+
+
+resulting in a system-wide crash or data corruption.</P>
+
+
+
+
+
+
+
+<P>A transaction is <I>isolated </I>because the results of a transaction
+
+
+
+are self-contained. They do not depend on any preceding or succeeding transaction.
+
+
+
+This related to a property called <I>serializability </I>which means<I>
+
+
+
+</I>the sequence of transactions are independent; in other words, a transaction
+
+
+
+does not assume any external sequence.</P>
+
+
+
+
+
+
+
+<P>Finally, a transaction is <I>durable</I>,<I> </I>meaning the effects
+
+
+
+of a transaction are permanent even in the face of a system failure. That
+
+
+
+means some form of permanent storage should be a part of a transaction.</P>
+
+
+
+
+
+
+
+<H4><A NAME="I37"></A><A NAME="I38"></A><B>Distributed Transaction Coordinator</B></H4>
+
+
+
+
+
+
+
+<P>A related topic in transactions is the coordination of transactions
+
+
+
+across heterogeneous data sources, systems, and objects. When the transactions
+
+
+
+are carried out in one relational database, you can use the <TT><FONT COLOR="#238E23">commit()</FONT></TT>,
+
+
+
+<TT><FONT COLOR="#238E23">rollback()</FONT></TT>, <TT><FONT COLOR="#238E23">beginTransaction()</FONT></TT>,
+
+
+
+and <TT><FONT COLOR="#238E23">endTransaction()</FONT></TT> statements to
+
+
+
+coordinate the process. But what if you have diversified systems participating
+
+
+
+in a transaction? How do you handle such a system? As an example, let's
+
+
+
+look at the Distributed Transaction Coordinator (DTC) available as a part
+
+
+
+of Microsoft SQL Server 6.5 database system.</P>
+
+
+
+
+
+
+
+<P>In the Microsoft DTC, a transaction manager facilitates the coordination.
+
+
+
+<I>Resource managers</I> are clients that implement resources to be protected
+
+
+
+by transactions-for example, relational databases and ODBC data sources.</P>
+
+
+
+
+
+
+
+<P>An application begins a transaction with the transaction manager and
+
+
+
+then starts transactions with the resource managers, registering the steps
+
+
+
+(<I>enlisting</I>) with the transaction manager. </P>
+
+
+
+
+
+
+
+<P>The transaction manager keeps track of all enlisted transactions. The
+
+
+
+application, at the end of the multi-data source transaction steps, calls
+
+
+
+the transaction manager to either commit or abort the transaction.</P>
+
+
+
+
+
+
+
+<P>When an application issues a commit command to the transaction manager,
+
+
+
+the DTC performs a two-phase commit protocol:</P>
+
+
+
+
+
+
+
+<P>It queries each resource manager if it is prepared to commit.</P>
+
+
+
+
+
+
+
+<P>If all resources are prepared to commit, DTC broadcasts a commit message
+
+
+
+to all of them.</P>
+
+
+
+
+
+
+
+<P>The Microsoft DTC is an example of very powerful next generation transaction
+
+
+
+coordinators from the database vendors. As more and more multi-platform,
+
+
+
+object-oriented Java systems are being developed, this type of transaction
+
+
+
+coordinators will gain importance. Already many middleware vendors are
+
+
+
+developing Java-oriented transaction systems.</P>
+
+
+
+
+
+
+
+<H3><A NAME="I39"></A><A NAME="I40"></A>Cursor</H3>
+
+
+
+
+
+
+
+<P>A relational database query normally returns many rows of data. But
+
+
+
+an application program usually deals with one row at a time. Even when
+
+
+
+an application can handle more than one row-for example, by displaying
+
+
+
+the data in a table or spreadsheet format-it can still handle only a limited
+
+
+
+number of rows. Also, updating, modifying, deleting, or adding data is
+
+
+
+done on a row basis.</P>
+
+
+
+
+
+
+
+<P>This is where the concept of cursors come in the picture. In this context,
+
+
+
+a <I>cursor</I> is a pointer to a row. It is like the cursor on the CRT-a
+
+
+
+location indicator. </P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="sidebar.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<CENTER><P><BQ ALIGN="CENTER"></P></CENTER>
+
+
+
+
+
+
+
+<CENTER><P><I>Data Concurrency and Cursor Schemes</I></P></CENTER>
+
+
+
+
+
+
+
+<CENTER><P><BQ></P></CENTER>
+
+
+
+
+
+
+
+<P>Different types of multi-user applications need different types of data
+
+
+
+sets in terms of data concurrency. Some applications need to know as soon
+
+
+
+as the data in the underlying database is changed. Such as the case with
+
+
+
+reservation systems, the dynamic nature of the seat allocation information
+
+
+
+is extremely important. Others such as statistical reporting systems need
+
+
+
+stable data; if data is in constant change, these programs cannot effectively
+
+
+
+display any results. The different cursor designs support the need for
+
+
+
+the various types of applications.</P>
+
+
+
+
+
+
+
+<CENTER><P></BQ></BQ></P></CENTER>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<P>A cursor can be viewed as the underlying data buffer. A fully scrollable
+
+
+
+cursor is one where the program can move forward and backward on the rows
+
+
+
+in the data buffer. If the program can update the data in the cursor, it
+
+
+
+is called a<I> scrollable, updatable cursor</I>.</P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="caution.gif" HEIGHT=35 WIDTH=400></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>An important point to remember when you think about cursors is the transaction
+
+
+
+isolation. If a user is updating a row, another user might be viewing the
+
+
+
+row in a cursor of his own. Data consistency is important here. Worse,
+
+
+
+the second user also might be updating the same row!</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>The <TT><FONT COLOR="#238E23">ResultSet</FONT></TT> in JDBC API is a
+
+
+
+Cursor. But it is only forward scrollable cursor-this means you can only
+
+
+
+move forward using the <TT><FONT COLOR="#238E23">getNext()</FONT></TT>
+
+
+
+method.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H4><B>ODBC Cursor Types</B></H4>
+
+
+
+
+
+
+
+<P>ODBC cursors are very powerful in terms of updatability, concurrency,
+
+
+
+data integrity, and functionality. The ODBC cursor scheme allows positioned
+
+
+
+delete and update and multiple row fetch (called a <I>rowset</I>) with
+
+
+
+protection against lost updates.</P>
+
+
+
+
+
+
+
+<P>ODBC supports static, keyset-driven and dynamic cursors.</P>
+
+
+
+
+
+
+
+<P>In the static cursor scheme, the data is read from the database once,
+
+
+
+and the data is in the snapshot recordset form. Because the data is a snapshot(a
+
+
+
+static view of the data at a point of time), the changes made to the data
+
+
+
+in the data source by other users are not visible. The dynamic cursor solves
+
+
+
+this problem by keeping live data, but this takes toll on network traffic
+
+
+
+and application performance.</P>
+
+
+
+
+
+
+
+<P>The keyset driven cursor is the middle ground where the rows are identified
+
+
+
+at the time of fetch, and thus changes to the data can be tracked. Keyset
+
+
+
+driven cursors are useful when you implement a backward scrollable cursor.
+
+
+
+In a keyset-driven cursor, additions and deletions of entire rows are not
+
+
+
+visible until a refresh. When you do a backward scroll, the driver fetches
+
+
+
+the newer row if any changes are made. </P>
+
+
+
+
+
+
+
+<BLOCKQUOTE>
+
+
+
+<P><IMG SRC="note.gif" HEIGHT=35 WIDTH=399></P>
+
+
+
+
+
+
+
+<P><BQ></P>
+
+
+
+
+
+
+
+<P>ODBC also supports a modified scheme, where only a small window of the
+
+
+
+keyset is fetched, called the <I>mixed cursor</I>, which exhibits the keyset
+
+
+
+cursor for the data window, and a dynamic cursor for rest of the data.
+
+
+
+In other words, the data in the data window (called a <TT><FONT COLOR="#238E23">RowSet</FONT></TT>)
+
+
+
+is keyset-driven, and when you access data outside the window, the dynamic
+
+
+
+scheme is used to fetch another keyset-driven buffer.</P>
+
+
+
+
+
+
+
+<P></BQ></P>
+
+
+
+
+
+
+
+<P><IMG SRC="bottom.gif" HEIGHT=20 WIDTH=400></P>
+
+
+
+</BLOCKQUOTE>
+
+
+
+
+
+
+
+<H4><B>Cursor Applications</B></H4>
+
+
+
+
+
+
+
+<P>You might be wondering where these cursor schemes are applied and why
+
+
+
+do you need such elaborate schemes. In a short sentence, all the cursor
+
+
+
+schemes have their place in information systems. </P>
+
+
+
+
+
+
+
+<P>Static cursors provide a stable view of the data, because the data does
+
+
+
+not change. They are good for data mining and data warehousing type of
+
+
+
+systems. For these applications, you want the data to be stable for reporting
+
+
+
+executive information systems or for statistical or analysis purposes.
+
+
+
+Also, the static cursor outperforms other schemes for large amounts of
+
+
+
+data retrieval.</P>
+
+
+
+
+
+
+
+<P>On the other hand, for online ordering systems or reservation systems,
+
+
+
+you need a dynamic view of the system with row locks and views of data
+
+
+
+as changes are made by other users. In such cases, you will use the dynamic
+
+
+
+cursor. In many of these applications, the data transfer is small, and
+
+
+
+the data access is performed on a row-by-row basis. For these online applications,
+
+
+
+aggregate data access is very rare.</P>
+
+
+
+
+
+
+
+<H4><A NAME="I41"></A><A NAME="I42"></A><B>Bookmark</B></H4>
+
+
+
+
+
+
+
+<P>Bookmark is a concept related to the cursor model, but is independent
+
+
+
+of the cursor scheme used. <I>Bookmark</I> is a placeholder for a data
+
+
+
+row in a table. The application program requests the underlying database
+
+
+
+management system a bookmark for a row. The DBMS usually returns a 32-bit
+
+
+
+marker which can be later used by the application program to get to that
+
+
+
+row of data. In ODBC, you use the <TT><FONT COLOR="#238E23">SQLExtendedFetch</FONT></TT>
+
+
+
+function with <TT><FONT COLOR="#238E23">SQL_FETCH_BOOKMARK</FONT></TT>
+
+
+
+option to get a bookmark. The bookmark is useful for increasing performance
+
+
+
+of GUI applications, especially the ones where the data is viewed through
+
+
+
+a spreadsheet-like interface.</P>
+
+
+
+
+
+
+
+<H4><A NAME="I44"></A><A NAME="I44"></A><B>Positioned Update/Delete</B></H4>
+
+
+
+
+
+
+
+<P>This is another cursor related concept. If a cursor model supports positioned
+
+
+
+update/delete, then you can update/delete the current row in a ResultSet
+
+
+
+without any more processing, such as a lock, read, and fetch.</P>
+
+
+
+
+
+
+
+<P>In SQL, a positioned update or delete statement is of the form </P>
+
+
+
+
+
+
+
+<P><TT><FONT COLOR="#238E23">UPDATE/DELETE &lt;<I>Field or Column values
+
+
+
+etc.</I>&gt; WHERE CURRENT OF &lt;<I>cursor name</I>&gt;</FONT></TT></P>
+
+
+
+
+
+
+
+<P>The positioned update statement to update the fields in the current
+
+
+
+row is </P>
+
+
+
+
+
+
+
+<P><TT><FONT COLOR="#238E23">UPDATE &lt;<I>table</I>&gt; SET &lt;<I>field</I>&gt;
+
+
+
+= &lt;<I>value</I>&gt; WHERE CURRENT OF &lt;<I>cursor name</I>&gt;</FONT></TT></P>
+
+
+
+
+
+
+
+<P>The positioned <TT><FONT COLOR="#238E23">delete</FONT></TT> statement
+
+
+
+to delete the current row takes the form </P>
+
+
+
+
+
+
+
+<P><TT><FONT COLOR="#238E23">DELETE &lt;<I>table</I>&gt; WHERE CURRENT
+
+
+
+OF &lt;<I>cursor name</I>&gt;</FONT></TT></P>
+
+
+
+
+
+
+
+<P>Generally, for this type of SQL statement to work, the underlying driver
+
+
+
+or the DBMShas to support updatability, concurrency, and dynamic scrollable
+
+
+
+cursors. But there are many other ways of providing the positioned update/delete
+
+
+
+capability at the application program level. Presently, JDBC does not support
+
+
+
+any of the advanced cursor functionalities. However, as the JDBC driver
+
+
+
+development progresses, I am sure there will be very sophisticated cursor
+
+
+
+management methods available in the JDBC API.</P>
+
+
+
+
+
+
+
+<H3><A NAME="I45"></A><A NAME="I46"></A>Replication</H3>
+
+
+
+
+
+
+
+<P><I>Data replication</I> is the distribution of corporate data to many
+
+
+
+locations across the organization, and it provides reliability, fault-tolerance,
+
+
+
+data access performance due to reduced communication, and in many cases,
+
+
+
+manageability as the data can be managed as a subsets.</P>
+
+
+
+
+
+
+
+<P>As you have seen, the client/server systems span an organization possibly
+
+
+
+it's clients and suppliers; most probably in a wide geographic locations.
+
+
+
+Systems spanning the entire globe are not uncommon when you're talking
+
+
+
+about mission-critical applications, especially in today's global business
+
+
+
+market. If all the data is concentrated in a central location, it would
+
+
+
+be almost impossible for the systems to effectively access data and offer
+
+
+
+high performance. Also, if data is centrally located, in the case of mission-critical
+
+
+
+systems, a single failure will bring the whole business down. So, replicating
+
+
+
+data across an organization at various geographic locations is a sound
+
+
+
+strategy.</P>
+
+
+
+
+
+
+
+<P>Different vendors handle replication differently. For example, the Lotus
+
+
+
+Notes groupware product uses a replication scheme where the databases are
+
+
+
+considered peers and additions/updates/deletions are passed between the
+
+
+
+databases. Lotus Notes has replication formulas that can select subsets
+
+
+
+of data to be replicated based on various criteria.</P>
+
+
+
+
+
+
+
+<P>The Microsoft SQL server, on the other hand, employs a publisher/subscriber
+
+
+
+scheme where a database or part of a database can be published to many
+
+
+
+subscribers. A database can be a publisher <I>and</I> a subscriber. For
+
+
+
+example, the western region can publish its slice of sales data while receiving
+
+
+
+(subscribing to) sales data from other regions.</P>
+
+
+
+
+
+
+
+<P>There are many other replication schemes from various vendors to manage
+
+
+
+and decentralize data. Replication is a young technology that is slowly
+
+
+
+finding its way into many other products.</P>
+
+
+
+
+
+
+
+<br><hr><center><p> | <A href="42javafi.htm"> Previous Chapter </a> | <A href="index.htm"> Table of Contents </a> | <A href="44javafi.htm"> Next Chapter </a> | </p> </center></BODY>
+
+
+
+</HTML>
+
+
+

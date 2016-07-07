@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="empdetails.xsl" type="text/xsl"?>
+<!DOCTYPE empdetails[
+<!ELEMENT empdetails (emp+,dept+) >
+<!ELEMENT emp (ename,empid) >
+<!ELEMENT ename (#PCDATA) >
+<!ELEMENT empid (#PCDATA) >
+<!ELEMENT dept (deptno,dname) >
+<!ELEMENT deptno (#PCDATA) >
+<!ELEMENT dname (#PCDATA) >
+]>
+
+<empdetails>
+	<emp>
+		<ename>Prasad</ename>
+		<empid>100</empid>
+	</emp>
+	<emp>
+		<ename>RamPrasad</ename>
+		<empid>200</empid>
+	</emp>
+	<emp>
+		<ename>Pavan</ename>
+		<empid>300</empid>
+	</emp>
+	<emp>
+		<ename>S.N.Rao</ename>
+		<empid>400</empid>
+	</emp>
+	<emp>
+		<ename>Vaidyantham</ename>
+		<empid>500</empid>
+	</emp>
+	<emp>
+		<ename>SitaRam</ename>
+		<empid>600</empid>
+	</emp>
+	<emp>
+		<ename>Jagannath</ename>
+		<empid>700</empid>
+	</emp>
+
+	<dept>
+		<deptno>10</deptno>
+		<dname>Sales</dname>
+	</dept>
+	<dept>
+		<deptno>20</deptno>
+		<dname>Marketing</dname>
+	</dept>
+	<dept>
+		<deptno>10</deptno>
+		<dname>Sales</dname>
+	</dept>
+	<dept>
+		<deptno>20</deptno>
+		<dname>Marketing</dname>
+	</dept>
+	<dept>
+		<deptno>10</deptno>
+		<dname>Sales</dname>
+	</dept>
+	<dept>
+		<deptno>20</deptno>
+		<dname>Marketing</dname>
+	</dept>
+	<dept>
+		<deptno>10</deptno>
+		<dname>Sales</dname>
+	</dept>
+
+</empdetails>
+
+
